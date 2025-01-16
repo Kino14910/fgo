@@ -1,0 +1,11 @@
+{
+  "modid": "fgo",
+  "name": "FGO Mod",
+  "author_list": ["Kino"],
+  "description": "This mod adds a new character Master in Fate/Grand Order, to Slay the Spire.",
+  "version": "0.0.1",
+  "sts_version": "12-18-2022",
+  "mts_version": "3.30.3",
+  "dependencies": ["basemod", "stslib"],
+  "update_json": ""
+}

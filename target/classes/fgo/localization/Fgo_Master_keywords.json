@@ -1,0 +1,228 @@
+[
+  {
+    "NAMES": [
+      "np"
+    ],
+    "DESCRIPTION": "To obtain a #yNoble #yPhantasm card, at least #b100% NP is required."
+  },
+  {
+    "NAMES": [
+      "noble phantasm",
+      "noble_phantasm",
+      "np"
+    ],
+    "DESCRIPTION": "Noble Phantasm cards #yRetain and #yExhaust are played."
+  },
+  {
+    "NAMES": [
+      "guts"
+    ],
+    "DESCRIPTION": "When you would die, heal HP instead."
+  },
+  {
+    "NAMES": [
+      "evil curse",
+      "evil_curse"
+    ],
+    "DESCRIPTION": "At the start of turn, lose HP equal to the number of Evil Curse."
+  },
+  {
+    "NAMES": [
+      "combust"
+    ],
+    "DESCRIPTION": "Combusted creatures lose HP at the start of their turn."
+  },
+  {
+    "NAMES": [
+      "sunlight"
+    ],
+    "DESCRIPTION": "At the end of your turn, double your #yVigor. Whenever you play a Attack card, return #yVigor."
+  },
+  {
+    "NAMES": [
+      "abyss of death",
+      "abyss_of_death"
+    ],
+    "DESCRIPTION": "Gain #b1 Strength during duration. When you would next die, heal HP instead and deal #yDouble #yDamage next turn."
+  },
+  {
+    "NAMES": [
+      "waterside"
+    ],
+    "DESCRIPTION": "At the start of your turn, gain #yBlock equal to this turn."
+  },
+  {
+    "NAMES": [
+      "defense down",
+      "defense_down"
+    ],
+    "DESCRIPTION": "Additional damage taken. At the end of its turn, reduce #b1."
+  },
+  {
+    "NAMES": [
+      "defense up",
+      "defense_up"
+    ],
+    "DESCRIPTION": "Reduce the next time damage taken. At the end of each turn, reduce #b1."
+  },
+  {
+    "NAMES": [
+      "buff block",
+      "buff_block"
+    ],
+    "DESCRIPTION": "Creature cannot gain #yStrength."
+  },
+  {
+    "NAMES": [
+      "overcharge"
+    ],
+    "DESCRIPTION": "Gain a effect for every #b100% NP. Up to gain #b5 effects at once."
+  },
+  {
+    "NAMES": [
+      "evasion"
+    ],
+    "DESCRIPTION": "Prevent you would attacked."
+  },
+  {
+    "NAMES": [
+      "invincibility"
+    ],
+    "DESCRIPTION": "Prevent you would lose HP."
+  },
+  {
+    "NAMES": [
+      "anti-purge defense",
+      "anti-purge_defense"
+    ],
+    "DESCRIPTION": "Prevent you would lose HP. When you Prevent, heal #b5 #yHP."
+  },
+  {
+    "NAMES": [
+      "ignore defense",
+      "ignore_defense"
+    ],
+    "DESCRIPTION": "At the start of your turn, remove all Block to ALL enemies."
+  },
+  {
+    "NAMES": [
+      "blessing of kur",
+      "blessing_of_kur"
+    ],
+    "DESCRIPTION": "Your next #yKur #yKigal #yIrkalla gain additional buffs: gain #b3 #yStrength and #yArtifact."
+  },
+  {
+    "NAMES": [
+      "np damage",
+      "np_damage"
+    ],
+    "DESCRIPTION": "NP Damage adds additional damage to Noble Phantasm attacks."
+  },
+  {
+    "NAMES": [
+      "cooldown"
+    ],
+    "DESCRIPTION": "You cannot play for cooldown turns."
+  },
+  {
+    "NAMES": [
+      "command spell",
+      "command_spell",
+      "command_spells"
+    ],
+    "DESCRIPTION": "Choose: heal #b30 HP or gain #b100% NP if you use #b1 #yCommand #ySpell."
+  },
+  {
+    "NAMES": [
+      "heroic king",
+      "heroic_king"
+    ],
+    "DESCRIPTION": "Whenever you deal #yCritical damage if you have Heroic King, gain #b1 Heroic King. Deal damage again for each Heroic King."
+  },
+  {
+    "NAMES": [
+      "np rate",
+      "np_rate"
+    ],
+    "DESCRIPTION": "Gain #b100% additional NP."
+  },
+  {
+    "NAMES": [
+      "star",
+      "stars"
+    ],
+    "DESCRIPTION": "When you obtain #b10 #yStars, deal #b100% additional #ynon-Noble #yPhantasm Attack damage and reduce #b10."
+  },
+  {
+    "NAMES": [
+      "critical"
+    ],
+    "DESCRIPTION": "Deal more damage from Stars Attack."
+  },
+  {
+    "NAMES": [
+      "star rate",
+      "star_rate"
+    ],
+    "DESCRIPTION": "Whenever you play a Quick card, gain double Stars."
+  },
+  {
+    "NAMES": [
+      "ignores invincibility",
+      "ignores_invincibility"
+    ],
+    "DESCRIPTION": "Remove all #yBlock, #yPlated #yArmor, #yMetallicize and #yIntangible from the enemy."
+  },
+  {
+    "NAMES": [
+      "seven beast crowns",
+      "seven_beast_crowns"
+    ],
+    "DESCRIPTION": "Gain #b3 #yThorns, #b4 #yPlated #yArmor, #b4 #yRegen, [E] and draw #b1 addition card each turn, #b1 #yIntangible and #b2 #yArtifact."
+  },
+  {
+    "NAMES": [
+      "growth"
+    ],
+    "DESCRIPTION": "Growth can prevent the next time you would lose HP equal to amount is at or below."
+  },
+  {
+    "NAMES": [
+      "ignores invincibility",
+      "ignores_invincibility"
+    ],
+    "DESCRIPTION": "Remove all #yBlock, #yPlated #yArmor, #yMetallicize and #yIntangible from the enemy."
+  },
+  {
+    "NAMES": [
+      "terror"
+    ],
+    "DESCRIPTION": "At the start of X turns, it is #yStunned."
+  },
+  {
+    "NAMES": [
+      "max hp",
+      "max_hp"
+    ],
+    "DESCRIPTION": "Raise your Max HP this combat. At the end of combat, lose all raise."
+  },
+  {
+    "NAMES": [
+      "stunned"
+    ],
+    "DESCRIPTION": "Stunning is not the enemy that stuns."
+  },
+  {
+    "NAMES": [
+      "eternal sleep",
+      "eternal_sleep"
+    ],
+    "DESCRIPTION": "At the end of your turn, #rremove your first buff."
+  },
+  {
+    "NAMES": [
+      "unacted"
+    ],
+    "DESCRIPTION": "At the start of turn end turn."
+  }
+]

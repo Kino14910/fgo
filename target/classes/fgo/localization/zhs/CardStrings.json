@@ -1,0 +1,798 @@
+{
+  "fgo:ExampleCard": {
+    "NAME": "Name",
+    "DESCRIPTION": "Description. NL Second line.",
+    "UPGRADE_DESCRIPTION": "This will automatically be used if the card is upgraded. Remove it if unneeded.",
+    "EXTENDED_DESCRIPTION": [
+      "You can put more text in here.",
+      "If you need to use it for stuff.",
+      "Blizzard is a good example for this."
+    ]
+  },
+  "fgo:Strike": {
+    "NAME": "打击",
+    "DESCRIPTION": "造成 !D! 点伤害。"
+  },
+  "fgo:Defend": {
+    "NAME": "防御",
+    "DESCRIPTION": "获得 !D! 点防御。"
+  },
+  "fgo:DreamUponTheStars": {
+    "NAME": "予星以梦",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 下一回合获得 [E] 。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 下一回合获得 [E] [E] 。"
+  },
+  "fgo:CharismaOfHope": {
+    "NAME": "2019年的格洛斯特",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 获得 !NP! % fgomaster:宝具值 。"
+  },
+  "fgo:WallOfSnowflakes": {
+    "NAME": "荣光坚毅的雪花之壁",
+    "DESCRIPTION": "在这个回合受到的攻击伤害降低 !M! %。",
+    "UPGRADE_DESCRIPTION": "获得 !D! 点防御。 NL 在这个回合受到的攻击伤害降低 !M! %。"
+  },
+  "BlackBarrel": {
+    "NAME": "悖论构造体",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 增加一名敌人当前格挡的伤害。 NL 消耗 。"
+  },
+  "CommandSpellGuts": {
+    "NAME": "灵基复原",
+    "DESCRIPTION": "免死并回复所有生命。 NL 获得300% fgomaster:宝具值 。 NL 在你要被杀死时显现，消耗3划令咒发动。"
+  },
+  "RepairSpiritOrigin": {
+    "NAME": "灵基修复",
+    "DESCRIPTION": "回复30点生命。 NL 使用1划令咒发动。"
+  },
+  "ReleaseNoblePhantasm": {
+    "NAME": "宝具解放",
+    "DESCRIPTION": "获得100% fgomaster:宝具值 。 NL 使用1划令咒发动。"
+  },
+  "BrilliantEscort": {
+    "NAME": "闪耀的陪同",
+    "DESCRIPTION": "获得10颗 fgomaster:暴击星 。 NL 获得 !NP! % fgomaster:宝具值 。"
+  },
+  "PureCoordinate": {
+    "NAME": "纯洁的搭配",
+    "DESCRIPTION": "在本回合获得 !M! 次 fgomaster:无敌 。"
+  },
+  "BlessedRegenerate": {
+    "NAME": "幸福的再生",
+    "DESCRIPTION": "获得 [E] 。 NL 抽 !M! 张牌。",
+    "UPGRADE_DESCRIPTION": "获得 [E] 。 NL 抽 !M! 张牌。"
+  },
+  "SionSkill": {
+    "NAME": "预测演算",
+    "DESCRIPTION": "丢弃1张牌。 NL 从抽牌堆中选择 !M! 张牌放入你的手牌。 NL 在第二幕追加。"
+  },
+  "HolyShroud": {
+    "NAME": "圣骸布",
+    "DESCRIPTION": "抽1张牌。 NL 下一回合获得 !B! 点 格挡 。"
+  },
+  "IntoxicatedMeal": {
+    "NAME": "毒之食馔",
+    "DESCRIPTION": "给予 !M! 层 中毒 。 NL 给予 !M! 层 fgomaster:防御破坏 。",
+    "UPGRADE_DESCRIPTION": "给予所有敌人 !M! 层 中毒 和 !M! 层 fgomaster:防御破坏 。"
+  },
+  "QueensCovenant": {
+    "NAME": "女王的契约",
+    "DESCRIPTION": "直到打出下一张能力牌 NL 获得 !M! 点 力量 。 NL 获得 !M! 点 敏捷 。"
+  },
+  "TrueClash": {
+    "NAME": "切磋",
+    "DESCRIPTION": "只有一名敌人的意图是攻击时才能被打出。 NL 造成 !D! 点伤害。",
+    "EXTENDED_DESCRIPTION": [
+      "现在还不是发起攻击的时机。"
+    ]
+  },
+  "MerlinMagic": {
+    "NAME": "幻术",
+    "DESCRIPTION": "当前每有一名敌人，就获得 !B! 点 格挡 。 NL 消耗 。",
+    "FLAVOR": "测试画风可以更改。"
+  },
+  "LivingFlame": {
+    "NAME": "妖星火轮",
+    "DESCRIPTION": "每当你被攻击时， NL 给予攻击者 !M! 层 fgomaster:灼烧 和1层 fgomaster:防御破坏 。",
+    "FLAVOR": "领域外生命。"
+  },
+  "PresenceDetection": {
+    "NAME": "气息感知",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 下回合多抽 !M! 张牌。"
+  },
+  "ComeOn": {
+    "NAME": "热情",
+    "DESCRIPTION": "随机对敌人造成 !D! 点伤害，将它的 fgomaster:灼烧 层数翻倍。",
+    "FLAVOR": "测试画风可以更改。"
+  },
+  "NFFSpecial": {
+    "NAME": "NFF尖塔特别服务",
+    "DESCRIPTION": "抽 !M! 张牌。 NL 将2张 *毒之刃 放入你的弃牌堆中。"
+  },
+  "PoisonousDagger": {
+    "NAME": "毒之刃",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 给予 !M! 层 中毒 。 NL 消耗 。"
+  },
+  "JourneyGuidance": {
+    "NAME": "旅途的引导",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL fgomaster:水边 ：获得 [E] [E] 。 NL 将一张 *花之邪神 加入你的手牌。"
+  },
+  "SoulOfWaterChannels": {
+    "NAME": "花之邪神",
+    "DESCRIPTION": "保留 。 NL 获得1层 fgomaster:诅呪 。 NL 获得 !M! 颗 fgomaster:暴击星 。 NL 消耗 。"
+  },
+  "BackAgain": {
+    "NAME": "雅号·异星蛸",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 如果本场战斗中打出的上一张牌是攻击牌，给予 !M! 层 fgomaster:防御破坏 。",
+    "FLAVOR": "领域外生命。"
+  },
+  "MonteCristoTreasure": {
+    "NAME": "基督山的秘宝",
+    "DESCRIPTION": "每当你造成 fgomaster:暴击 时， NL 获得未被 格挡 伤害的 格挡 。"
+  },
+  "DoppelgangerMaster": {
+    "NAME": "二重身",
+    "DESCRIPTION": "造成 !D! 点伤害2次。 NL 抽一张牌，将抽到的牌的一张复制品加入你的手牌中。"
+  },
+  "MaidenOfaFlowerPatio": {
+    "NAME": "花园少女",
+    "DESCRIPTION": "获得 !B! 点 格挡 2次。 NL 获得 !M! 层 fgomaster:诅呪 。",
+    "FLAVOR": "测试画风可以更改。"
+  },
+  "ItsInevitable": {
+    "NAME": "无可奈何",
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。在接下来两回合开始时再次发动，并且每次伤害增加 !M! 。",
+    "FLAVOR": "测试画风可以更改。"
+  },
+  "BlessedScion": {
+    "NAME": "后继者",
+    "DESCRIPTION": "选择一张手牌 消耗 ， NL 在抽牌堆顶部加入 !M! 张这张牌的复制品，它们在被打出之前耗能变为0。",
+    "FLAVOR": "测试画风可以更改。"
+  },
+  "BeastMagic": {
+    "NAME": "对兽魔术",
+    "DESCRIPTION": "每当你获得状态时，就获得 !M! 点 格挡 。"
+  },
+  "YinYangFish": {
+    "NAME": "阴阳鱼",
+    "DESCRIPTION": "失去10% fgomaster:宝具值 。 NL 回复 !M! 点生命。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "获得30% fgomaster:宝具值 。 NL 回复 !M! 点生命。 NL 失去10% fgomaster:宝具值 。 NL 消耗 。"
+  },
+  "WarriorsBlade": {
+    "NAME": "击剑矫捷如鹰隼",
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 获得 !M! 颗 fgomaster:暴击星 。"
+  },
+  "StarHunter": {
+    "NAME": "星之猎人",
+    "DESCRIPTION": "抽 !M! 张牌。 NL 获得10颗 fgomaster:暴击星 。 NL 获得2层 中毒 。 NL 消耗 。"
+  },
+  "BlessingOfKur": {
+    "NAME": "冥界佑护",
+    "DESCRIPTION": "获得 !B! 点 格挡 X次。 NL 获得X层 fgomaster:黄金律 。 NL 获得 fgomaster:冥界佑护 。 NL 消耗 。"
+  },
+  "OriginBullet": {
+    "NAME": "起源弹",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 额外造成敌人状态数量 !M! 倍的伤害。 NL 丢弃所有手牌。"
+  },
+  "StarPioneer": {
+    "NAME": "星之开拓者",
+    "DESCRIPTION": "获得 !M! 点 活力 。 NL 在本场战斗中 升级 手牌中的一张牌。",
+    "UPGRADE_DESCRIPTION": "获得 !M! 点 活力 。 NL 在本场战斗中 升级 手牌中的所有牌。"
+  },
+  "CurseHarmony": {
+    "NAME": "兔人的诅咒",
+    "DESCRIPTION": "在每回合结束时，随机给予敌人你 fgomaster:诅呪 层数 !M! 倍的 中毒 。",
+    "UPGRADE_DESCRIPTION": "在每回合结束时，随机给予敌人你 fgomaster:诅呪 层数 !M! 倍的 中毒 。"
+  },
+  "GodsExecution": {
+    "NAME": "封神执行",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 如果你有负面状态， NL 则给予 !M! 层 虚弱 。"
+  },
+  "CrownedWithLife": {
+    "NAME": "疯狂的晚宴",
+    "DESCRIPTION": "不能被打出 。 NL 当你抽到这张牌时，将 !M! 张 *花之邪神 加入你的手牌，然后 消耗 。"
+  },
+  "DragonCore": {
+    "NAME": "龙之炉心",
+    "DESCRIPTION": "消耗 手牌中所有非攻击牌，将等量随机攻击牌加入手牌。它们在本回合耗能变为0。 NL 消耗 。"
+  },
+  "AtTheWell": {
+    "NAME": "于泉之处",
+    "DESCRIPTION": "在下回合获得 !M! 层 fgomaster:毅力 ，下一次 fgomaster:毅力 发动时获得 [E] [E] [E] 并且抽3张牌，然后死亡。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "fgomaster:解除弱化 。 NL 回复 !M! 点生命。 NL fgomaster:献给世界树的活祭 。 NL 在下回合死亡。 NL 消耗 。"
+  },
+  "SquireOfProphecy": {
+    "NAME": "祈雨",
+    "DESCRIPTION": "你在接下来 !M! 回合第一次打出牌耗尽 [E] 时， NL 获得 [E] [E] 。 NL 消耗 。"
+  },
+  "BeyondTheFurthestEnd": {
+    "NAME": "来自止境",
+    "DESCRIPTION": "在接下来 !M! 回合结束时，给予所有敌人等于此状态回合数的 中毒 和1层 虚弱 。",
+    "FLAVOR": "测试画风可以更改。"
+  },
+  "EndOfADream": {
+    "NAME": "梦之终结",
+    "DESCRIPTION": "fgomaster:宝具牌 攻击伤害翻倍。 NL 在这个回合结束时， NL 获得 fgomaster:永久睡眠 。",
+    "UPGRADE_DESCRIPTION": "保留 。 NL fgomaster:宝具牌 攻击伤害翻倍。 NL 在这个回合结束时， NL 获得 fgomaster:永久睡眠 。"
+  },
+  "AbyssLight": {
+    "NAME": "于深渊化作光",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !NP! % fgomaster:宝具值 。 NL 获得 !M! % fgomaster:宝具威力 。",
+    "FLAVOR": "领域外生命。"
+  },
+  "SchwarzwaldFalke": {
+    "NAME": "黑森之鹰",
+    "DESCRIPTION": "在你的下 !M! 个回合结束时，获得1次 fgomaster:回避 。 NL 获得 !M! 层 fgomaster:黄金律 。 NL 消耗 。"
+  },
+  "ManaBurstGems": {
+    "NAME": "魔力放出（宝石）",
+    "DESCRIPTION": "在这个回合结束时，获得 !M! 点 力量 。 NL 在弃牌堆放入一张此牌的复制品。"
+  },
+  "VoidSpaceFineArts": {
+    "NAME": "虚数美术",
+    "DESCRIPTION": "获得10层 fgomaster:毅力 。 NL 获得1层 fgomaster:诅呪 3次。 NL 获得你 fgomaster:诅呪 数量 !M! 倍的 fgomaster:宝具值 。 消耗 。",
+    "FLAVOR": "领域外生命。"
+  },
+  "TheYellowHouse": {
+    "NAME": "黄房子",
+    "DESCRIPTION": "造成 !D! 点伤害 !M! 次。 NL 给予2层 fgomaster:防御破坏 。 NL 获得1层 fgomaster:诅呪 。 NL 将这张牌放入抽牌堆。",
+    "FLAVOR": "领域外生命。"
+  },
+  "Insanity": {
+    "NAME": "澪标之魂",
+    "DESCRIPTION": "你每打出一张攻击牌，移除你的1层 fgomaster:诅呪 并且成功时获得1点 力量 和 !NP! % fgomaster:宝具值 。 NL 吸收所有敌人的 fgomaster:诅呪 。",
+    "FLAVOR": "领域外生命。"
+  },
+  "TaisuiSMisfortune": {
+    "NAME": "血染的皇子",
+    "DESCRIPTION": "固有 。获得 [E] 。 NL 给予所有敌人在死亡时你获得 [E] [E] 的状态。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "固有 。获得 [E] 。 NL 给予所有敌人在死亡时你获得 [E] [E] [E] 的状态。 NL 消耗 。"
+  },
+  "Executioner": {
+    "NAME": "刽子手",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 给予 !M! 点 力量 。 NL 获得 [E] 。"
+  },
+  "HeroicKing": {
+    "NAME": "十二辉剑",
+    "DESCRIPTION": "随机对敌人造成 !D! 点伤害 !M! 次。本场战斗每次失去生命时，从弃牌堆放回你的手牌并且获得1层 fgomaster:王威 。",
+    "EXTENDED_DESCRIPTION": [
+      "对所有敌人造成 !D! 点伤害 !M! 次，给予 !M! 层 易伤 。"
+    ]
+  },
+  "TheOneWhoSawItAll": {
+    "NAME": "见证一切之人",
+    "DESCRIPTION": "随机将你抽牌堆中一张攻击牌加入你的手牌，它在本场战斗中攻击伤害增加 !M! 。"
+  },
+  "HalberdUsurpation": {
+    "NAME": "篡夺之矛",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 额外受到敌人 力量 影响，并且其失去双倍 力量 1回合。"
+  },
+  "MysticEyes": {
+    "NAME": "魔眼",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 给予 !M! 层 fgomaster:诅呪 。 NL 敌人 fgomaster:无法行动 一回合。 NL 消耗 。"
+  },
+  "HugeScale": {
+    "NAME": "巨型规模",
+    "DESCRIPTION": "在你的回合开始时， NL 获得 !M! 点 格挡 和 fgomaster:增殖 。将一张 *幼儿退化 加入你的手牌。"
+  },
+  "InfantileRegression": {
+    "NAME": "幼儿退化",
+    "DESCRIPTION": "保留 。 NL 移除 fgomaster:增殖 ，每移除 !M! 点就获得1点能量。"
+  },
+  "ChildrenSHero": {
+    "NAME": "孩子们的英雄",
+    "DESCRIPTION": "将你本回合打出的上一张牌的 !M! 张复制品放入你的手牌中。 NL 消耗 。",
+    "EXTENDED_DESCRIPTION": [
+      "我在本回合还没打出牌。"
+    ],
+    "FLAVOR": "测试画风可以更改。"
+  },
+  "Revelation": {
+    "NAME": "灿然圣光之复权",
+    "DESCRIPTION": "让一名敌人在本回合内失去 !M! 点 力量 。 NL 给予1层 易伤 。 NL 给予 !M! 层 fgomaster:防御破坏 。 NL 消耗 。"
+  },
+  "JewelOfFourteen": {
+    "NAME": "岩窟王",
+    "DESCRIPTION": "增加 *喝彩之焰 直到你的手牌满。",
+    "UPGRADE_DESCRIPTION": "增加 *喝彩之焰+ 直到你的手牌满。"
+  },
+  "FlamesofApplause": {
+    "NAME": "喝彩之焰",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 给予 !M! 层 fgomaster:灼烧 。 NL 消耗 。"
+  },
+  "SwordOfSelection": {
+    "NAME": "圣剑锻造",
+    "DESCRIPTION": "获得等于你手牌数的 fgomaster:宝具值 。 NL 抽 !M! 张牌。",
+    "EXTENDED_DESCRIPTION": [
+      " NL （获得",
+      "% 宝具值。）"
+    ]
+  },
+  "SparksRoute": {
+    "NAME": "火花路径∞",
+    "DESCRIPTION": "失去10% fgomaster:宝具值 ， NL 不足时 不能被打出 。 NL 其他手牌放回抽牌堆，重新抽等量牌。",
+    "UPGRADE_DESCRIPTION": "失去10% fgomaster:宝具值 ， NL 不足时 不能被打出 。 NL 其他手牌放回抽牌堆，重新抽等量牌。 NL 打出后返回手牌。",
+    "EXTENDED_DESCRIPTION": [
+      "燃料不足。"
+    ],
+    "FLAVOR": "测试画风可以更改。"
+  },
+  "WildRule": {
+    "NAME": "野性法则/强食",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 回复 !M! 点生命。 NL 使敌人失去1点 力量 。 NL 给予1层 易伤 。"
+  },
+  "TeslaCoil": {
+    "NAME": "特斯拉线圈",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !M! 层 fgomaster:黄金律 。"
+  },
+  "TameshiMono": {
+    "NAME": "试刀",
+    "DESCRIPTION": "消耗 手中最左侧的1张攻击牌。 NL 获得 !B! 点 格挡 。"
+  },
+  "SwanLake": {
+    "NAME": "天鹅湖",
+    "DESCRIPTION": "造成 !D! 点伤害 !M! 次。 NL 获得 fgomaster:水边 !M! 回合。 NL 能被多次 升级 。 NL 消耗 。"
+  },
+  "LuckySpinning": {
+    "NAME": "幸运的纺线",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 打出此牌后，在本回合每打出一张非攻击牌，获得 !M! 颗 fgomaster:暴击星 。"
+  },
+  "KnightStance": {
+    "NAME": "骑士的架势",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 在这个回合受到的攻击伤害降低20%。 NL 获得 !M! 层 fgomaster:黄金律 。"
+  },
+  "KarmicVision": {
+    "NAME": "业之瞳",
+    "DESCRIPTION": "fgomaster:无敌贯通 并且每次去除再额外造成 !D! 点伤害。 NL 造成 !D! 点伤害。",
+    "FLAVOR": "测试画风可以更改。"
+  },
+  "CurtainoftheNight": {
+    "NAME": "夜之帷幕",
+    "DESCRIPTION": "将弃牌堆中的一张牌放入你的手牌，并将这张牌 升级 。",
+    "UPGRADE_DESCRIPTION": "将弃牌堆中的 !M! 张牌放入你的手牌，并将这些牌 升级 。"
+  },
+  "TeachingsoftheEternal": {
+    "NAME": "无穷的教诲",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 你的下一回合开始时 格挡 不会消失。"
+  },
+  "MorningLark": {
+    "NAME": "晨之云雀",
+    "DESCRIPTION": "获得 !NP! % fgomaster:宝具值 。 NL 获得10颗 fgomaster:暴击星 。 NL 下一回合少抽1张牌。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "获得 !NP! % fgomaster:宝具值 。 NL 获得20颗 fgomaster:暴击星 。 NL 下一回合少抽1张牌。 NL 消耗 。"
+  },
+  "GraceUnexpectedBirth": {
+    "NAME": "不被祝福的诞生",
+    "DESCRIPTION": "获得 !NP! % fgomaster:宝具值 。 NL 你在接下来2回合内 NL 无法获得 fgomaster:宝具牌 。 NL 消耗 。"
+  },
+  "SongOfThePoet": {
+    "NAME": "歌仙的诗歌",
+    "DESCRIPTION": "造成 !D! 点伤害3次。 NL 获得造成的未被 格挡 伤害的 fgomaster:宝具值 。"
+  },
+  "CharismaOfTheJade": {
+    "NAME": "翡翠的魅力",
+    "DESCRIPTION": "造成 !D! 点伤害3次。 NL 可以使用20颗 fgomaster:暴击星 NL 使伤害提高200%。"
+  },
+  "GoldenGrail": {
+    "NAME": "黄金之杯",
+    "DESCRIPTION": "给予所有敌人 !M! 层 fgomaster:灼烧 X次。 NL 获得7-X层 fgomaster:七顶兽冠 。 NL 消耗 。"
+  },
+  "CrossingArcadia": {
+    "NAME": "越过阿卡迪亚",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 你的下 !M! 张攻击牌返还 NL fgomaster:暴击星 并且获得 [E] 。"
+  },
+  "GoddessMetamorphosisBeast": {
+    "NAME": "女神变生（兽）",
+    "DESCRIPTION": "虚无 。 NL 每当你造成一次攻击伤害时，就给予1层 中毒 、 fgomaster:诅呪 和 fgomaster:灼烧 。",
+    "UPGRADE_DESCRIPTION": "每当你造成一次攻击伤害时，就给予1层 中毒 、 fgomaster:诅呪 和 fgomaster:灼烧 。"
+  },
+  "AnimalDialogue": {
+    "NAME": "动物会话",
+    "DESCRIPTION": "你每有 !NP! % fgomaster:宝具值 ，就获得1 [E] 。 NL 失去所有 fgomaster:宝具值 。"
+  },
+  "Chasmatis": {
+    "NAME": "天之裂谷",
+    "DESCRIPTION": "每当你获得 fgomaster:诅呪 时， NL 抽 !M! 张牌。",
+    "UPGRADE_DESCRIPTION": "每当你获得 fgomaster:诅呪 时， NL 抽 !M! 张牌。 NL 获得1层 fgomaster:诅呪 。"
+  },
+  "WindsweptSlash": {
+    "NAME": "势如破竹",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 在你的抽牌堆中加入一张 *洞见 。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 将一张 *洞见 加入你的手牌。",
+    "FLAVOR": "测试画风可以更改。"
+  },
+  "GrailOfFieryHeavens": {
+    "NAME": "炽天之杯",
+    "DESCRIPTION": "在你的回合开始时，获得 !NP! % fgomaster:宝具值 。",
+    "UPGRADE_DESCRIPTION": "固有 。 NL 在你的回合开始时，获得 !NP! % fgomaster:宝具值 。"
+  },
+  "FacelessMoon": {
+    "NAME": "无貌之月",
+    "DESCRIPTION": "在本回合 保留 你的手牌，每 保留 一张牌，就获得 !M! 点 格挡 。",
+    "FLAVOR": "领域外生命。"
+  },
+  "RepayForLife": {
+    "NAME": "终身陪伴",
+    "DESCRIPTION": "获得与你失去生命相等的 格挡 。 NL 消耗 。",
+    "EXTENDED_DESCRIPTION": [
+      " NL （获得 !B! 点 格挡 。）"
+    ]
+  },
+  "HeroEli": {
+    "NAME": "勇者小伊丽的冒险",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 再随机对敌人造成 !D! 点伤害 !M! 次。 NL 抽 !M! 张牌。"
+  },
+  "CharismaofAdversity": {
+    "NAME": "逆境的魅力",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 如果你的生命等于或低于65、50、35或15时，则分别造成 !D! 点伤害。",
+    "EXTENDED_DESCRIPTION": [
+      " NL （造成 !D! 点伤害",
+      "次。）"
+    ]
+  },
+  "Swingby": {
+    "NAME": "重力助推",
+    "DESCRIPTION": "虚无 。 NL 丢弃所有手牌， NL 每张获得 !M! 点 格挡 和 fgomaster:暴击星 。",
+    "FLAVOR": "领域外生命。"
+  },
+  "KnightoftheLake": {
+    "NAME": "湖上骑士",
+    "DESCRIPTION": "在你没有 fgomaster:暴击威力 时， NL 获得 !M! % fgomaster:暴击威力 。 NL 否则，获得10颗 fgomaster:暴击星 。"
+  },
+  "CircuitConnect": {
+    "NAME": "回路连接",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 造成 !D! 点伤害。 NL 下一回合获得 !B! 点 格挡 。"
+  },
+  "GiantoftheBridge": {
+    "NAME": "桥之巨人",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 造成 !D! 点伤害。 NL 仅在第二、四幕生效两次。"
+  },
+  "Borrowingfrom": {
+    "NAME": "借转轮自在趺坐",
+    "DESCRIPTION": "将你的 fgomaster:宝具值 变为1.5倍。",
+    "UPGRADE_DESCRIPTION": "将你的 fgomaster:宝具值 翻倍。"
+  },
+  "MagicBulletCharging": {
+    "NAME": "魔弹装填",
+    "DESCRIPTION": "获得1个 *魔弹 X次。 NL 在你有 *魔弹 时改为失去所有，每个对所有敌人造成 !D! 点伤害。",
+    "EXTENDED_DESCRIPTION": [
+      "对所有敌人造成 !D! 点伤害",
+      "次。"
+    ]
+  },
+  "PhasingFluidBlade": {
+    "NAME": "相位滑剑",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 选择随机将你抽牌堆中 !M! 张攻击牌或技能牌加入你的手牌。"
+  },
+  "PhasingFluidBladeATTACK": {
+    "NAME": "相位滑剑",
+    "DESCRIPTION": "随机将你抽牌堆中 !M! 张 *攻击牌 加入你的手牌。"
+  },
+  "PhasingFluidBladeSKILL": {
+    "NAME": "相位滑剑",
+    "DESCRIPTION": "随机将你抽牌堆中 !M! 张 *技能牌 加入你的手牌。"
+  },
+  "Canopus": {
+    "NAME": "卡诺波",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 将一张 *呪灾 放入你的弃牌堆中。"
+  },
+  "CurseDisaster": {
+    "NAME": "呪灾",
+    "DESCRIPTION": "不能被打出 。 NL 抽到这张牌时给予你和所有敌人 !M! 层 fgomaster:诅呪 。 NL 虚无 。"
+  },
+  "EternalMemories": {
+    "NAME": "希望之星",
+    "DESCRIPTION": "fgomaster:宝具牌 。 NL 获得2点 力量 。 NL fgomaster:解除弱化 。 NL 获得 !M! 次 fgomaster:肃正防御 。"
+  },
+  "BeautifulJourney": {
+    "NAME": "超越边界的存在",
+    "DESCRIPTION": "fgomaster:宝具牌 。 NL 对所有敌人造成 !D! 点伤害。每有一名敌人，就获得20% fgomaster:宝具值 。"
+  },
+  "Failnaught": {
+    "NAME": "痛哭幻奏",
+    "DESCRIPTION": "fgomaster:宝具牌 。 NL 去除敌人的 格挡 和 人工制品 。 NL 造成 !D! 点伤害。"
+  },
+  "TsumukariMuramasa": {
+    "NAME": "无元剑制",
+    "DESCRIPTION": "fgomaster:宝具牌 。 NL 对所有敌人造成 !D! 点伤害6次，失去所有 力量 。"
+  },
+  "ImitationGodForce": {
+    "NAME": "伪·军神五兵",
+    "DESCRIPTION": "fgomaster:宝具牌 。 NL 对所有敌人造成 !D! 点伤害 !M! 次，给予 !M! 层 虚弱 。",
+    "EXTENDED_DESCRIPTION": [
+      "咴咴！"
+    ]
+  },
+  "BridalSpinWheel": {
+    "NAME": "赠予新娘的纺车",
+    "DESCRIPTION": "fgomaster:宝具牌 。 NL 获得 [E] [E] [E] [E] 。 NL 获得 !M! 颗 fgomaster:暴击星 。"
+  },
+  "IraLupus": {
+    "NAME": "狂暴少女狼",
+    "DESCRIPTION": "fgomaster:宝具牌 。 NL 使敌人失去 !D! 点生命。 NL 给予 !M! 层 易伤 。"
+  },
+  "LostLonginus": {
+    "NAME": "选定之枪",
+    "DESCRIPTION": "fgomaster:宝具牌 。 NL 对所有敌人造成 !D! 点伤害，移除 *坚不可摧 。"
+  },
+  "WickerMan": {
+    "NAME": "灼烧殆尽的炎笼",
+    "DESCRIPTION": "fgomaster:宝具牌 。 NL 对所有敌人造成 !D! 点伤害，给予 !M! 层 fgomaster:灼烧 和 易伤 。"
+  },
+  "ExcaliburGalatine": {
+    "NAME": "轮转胜利之剑",
+    "DESCRIPTION": "fgomaster:宝具牌 。 NL 获得 fgomaster:阳光照射 3回合。 NL 获得 !M! 点 活力 。"
+  },
+  "Overload": {
+    "NAME": "过重湖光",
+    "DESCRIPTION": "fgomaster:宝具牌 。 NL 去除敌人的 格挡 值。 NL 造成 !D! 点伤害。 NL 给予 !M! 层 fgomaster:防御破坏 。"
+  },
+  "GardenOfAvalon": {
+    "NAME": "永世隔绝的理想乡",
+    "DESCRIPTION": "fgomaster:宝具牌 。 NL 在你的回合开始时 NL 获得 !M! 点 格挡 ， NL 获得 !NP! % fgomaster:宝具值 ， NL 获得 !M! 颗 fgomaster:暴击星 。"
+  },
+  "ElementaryMyDear": {
+    "NAME": "这是常识",
+    "DESCRIPTION": "fgomaster:宝具牌 。 NL 在你的回合开始时，有 格挡 的敌人失去等于其 格挡 的生命并且给予其 !M! 层 易伤 ，然后去除所有敌人的 格挡 。"
+  },
+  "GreatRamNautilus": {
+    "NAME": "吾将远征，鹦鹉螺的大冲角",
+    "DESCRIPTION": "fgomaster:宝具牌 。 NL 造成 !D! 点伤害。 NL fgomaster:水边 ：伤害提高50%。 NL fgomaster:水边 ：获得 [E] 。"
+  },
+  "LieLikeVortigern": {
+    "NAME": "与彼方同坠的梦之瞳眸",
+    "DESCRIPTION": "fgomaster:宝具牌 。 NL 对所有敌人造成 !D! 点伤害，失去2点 力量 ， NL 给予 !M! 层 无实体 。 NL 获得 !M! 层 无实体 。"
+  },
+  "RoadlessCamelot": {
+    "NAME": "业已无法抵达的理想乡",
+    "DESCRIPTION": "fgomaster:宝具牌 。 NL 对所有敌人造成 !D! 点伤害3次。 NL 你打出的下一张 fgomaster:宝具牌 将被打出两次。",
+    "UPGRADE_DESCRIPTION": "fgomaster:宝具牌 。 NL 对所有敌人造成 !D! 点伤害3次。 NL 你打出的下 !M! 张 fgomaster:宝具牌 将被打出两次。"
+  },
+  "BlackdogGalatine": {
+    "NAME": "捕食日轮之角",
+    "DESCRIPTION": "fgomaster:宝具牌 。 NL 对所有敌人造成 !D! 点伤害5次。 NL 获得 !M! 层 *多层护甲 。"
+  },
+  "FetchFailnaught": {
+    "NAME": "痛幻哭奏",
+    "DESCRIPTION": "fgomaster:宝具牌 。 NL 造成 !D! 点伤害。 NL 敌人每有一层 fgomaster:诅呪 伤害就提高10%。 NL 给予 !M! 层 fgomaster:诅呪 。 NL 将敌人的 fgomaster:诅呪 层数翻倍。"
+  },
+  "InnocenceAroundight": {
+    "NAME": "尚未知晓的无垢湖光",
+    "DESCRIPTION": "fgomaster:宝具牌 。 NL 造成 !D! 点伤害。 NL 获得 !M! 层 fgomaster:黄金律 。 NL 将一张 *光之地平线+ 放入你的抽牌堆。"
+  },
+  "RayHorizon": {
+    "NAME": "光之地平线",
+    "DESCRIPTION": "获得 !NP! % fgomaster:宝具值 。 NL 阻止本回合你受到的所有攻击。 NL 下一张 fgomaster:宝具牌 固定为 *无人知晓的无垢搏动 。"
+  },
+  "HollowHeartAlbion": {
+    "NAME": "无人知晓的无垢搏动",
+    "DESCRIPTION": "fgomaster:宝具牌 。 NL 所有敌人失去 !D! 点生命。 NL 获得10颗 fgomaster:暴击星 。"
+  },
+  "Sevendrive": {
+    "NAME": "79式掷祸大社",
+    "DESCRIPTION": "fgomaster:宝具牌 。 NL 对所有敌人造成 !D! 点伤害8次。 NL 获得 !NP! % fgomaster:宝具值 。"
+  },
+  "Excalibur": {
+    "NAME": "誓约胜利之剑",
+    "DESCRIPTION": "fgomaster:宝具牌 。 NL 对所有敌人造成 !D! 点伤害。 NL 获得 !NP! % fgomaster:宝具值 。"
+  },
+  "Camelot": {
+    "NAME": "理想之城",
+    "DESCRIPTION": "fgomaster:宝具牌 。 NL 获得 !B! 点 格挡 。 NL 获得2点 力量 。 NL 在你的回合结束时，获得 !M! 点 格挡 。"
+  },
+  "EnferChateaudIf": {
+    "NAME": "虎啊，煌煌燎燃",
+    "DESCRIPTION": "fgomaster:宝具牌 。 NL 在你没有 *羽翼之靴 时，获得 *羽翼之靴 。",
+    "FLAVOR": "这张牌升级没有效果。 NL 在你有羽翼之靴时，这张牌不会出现在宝具选择界面。"
+  },
+  "Desterrennacht": {
+    "NAME": "星月夜",
+    "DESCRIPTION": "fgomaster:宝具牌 。 NL 给予所有敌人 !M! 层 fgomaster:恐怖 。 NL 获得2点 力量 和50% fgomaster:暴击威力 。 NL 每回合获得10颗 fgomaster:暴击星 。"
+  },
+  "LaPucelle": {
+    "NAME": "红莲圣女",
+    "DESCRIPTION": "fgomaster:宝具牌 。 NL 造成 !D! 点伤害。 NL 给予伤害一半的 fgomaster:灼烧 。 NL 在你的抽牌堆中加入一张 *灼伤+ 。"
+  },
+  "Shishifunjin": {
+    "NAME": "机关外法·狮子奋迅",
+    "DESCRIPTION": "fgomaster:宝具牌 。 NL 使 fgomaster:无法行动 的敌人失去最大生命的 !M! %。"
+  },
+  "Fragarach": {
+    "NAME": "斩剜战神之剑",
+    "DESCRIPTION": "fgomaster:宝具牌 。 NL 在本回合，每当你被攻击时，对攻击者造成 !D! 点伤害，并且你获得10颗 fgomaster:暴击星 。"
+  },
+  "LastSunXibalba": {
+    "NAME": "星，自宇宙降临",
+    "DESCRIPTION": "fgomaster:宝具牌 。 NL 对所有敌人造成 !D! 点伤害5次。 NL 获得 !M! 颗 fgomaster:暴击星 。",
+    "FLAVOR": "在你有boss遗物“Archetype ORT”时才会出现在宝具选择界面。"
+  },
+  "MahaPralaya": {
+    "NAME": "裁定归灭之回剑",
+    "DESCRIPTION": "fgomaster:宝具牌 。 NL 对所有敌人造成 !D! 点伤害5次。 NL 额外造成所有敌人总负面状态种类的伤害。"
+  },
+  "KurKigalIrkalla": {
+    "NAME": "灵峰踏抱冥府之鞴",
+    "DESCRIPTION": "fgomaster:宝具牌 。 NL 对所有敌人造成 !D! 点伤害，没有 *飞行 状态的敌人额外失去10%最大生命。",
+    "EXTENDED_DESCRIPTION": [
+      " NL 获得3点 力量 。 NL 获得3层 人工制品 。"
+    ]
+  },
+  "ParadisChateaudIf": {
+    "NAME": "星啊，往赴辉途",
+    "DESCRIPTION": "fgomaster:宝具牌 。 NL 造成等于敌人 fgomaster:灼烧 层数的伤害 !M! 次。 NL 敌人 fgomaster:无法行动 一回合。",
+    "UPGRADE_DESCRIPTION": "fgomaster:宝具牌 。 NL 造成等于敌人 fgomaster:灼烧 层数+1的伤害 !M! 次。 NL 敌人 fgomaster:无法行动 一回合。",
+    "EXTENDED_DESCRIPTION": [
+      " NL （造成 !D! 点伤害 !M! 次。）"
+    ]
+  },
+  "SecondLife": {
+    "NAME": "冥镜宝典",
+    "DESCRIPTION": "fgomaster:宝具牌 。 NL 选择一张已 消耗 的牌，将其 升级 并且放入你的手牌。",
+    "FLAVOR": "这张牌升级没有效果。"
+  },
+  "YewBow": {
+    "NAME": "祈祷之弓",
+    "DESCRIPTION": "fgomaster:宝具牌 。 NL 造成 !D! 点伤害。 NL 如果敌人有 中毒 状态 ，则再次造成 !D! 点伤害。"
+  },
+  "Unlimited": {
+    "NAME": "无限剑制",
+    "DESCRIPTION": "fgomaster:宝具牌 。 NL 立刻和每回合开始时，增加 !M! 张随机攻击牌到你的手牌。它们在本回合耗能变为0。"
+  },
+  "FgoInsight": {
+    "NAME": "洞见",
+    "DESCRIPTION": "保留 。 NL 抽 !M! 张牌。 NL 消耗 。",
+    "FLAVOR": "测试画风可以更改。"
+  },
+  "StarBasket": {
+    "NAME": "星之笼",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 给予 !M! 点 格挡 。 NL 获得1次随机正面状态。"
+  },
+  "PrimevalRune": {
+    "NAME": "冰冻暴风雪",
+    "DESCRIPTION": "给予所有敌人 !M! 层 虚弱 和 易伤 。"
+  },
+  "EightKindness": {
+    "NAME": "仁义八行",
+    "DESCRIPTION": "获得1点 力量 和 敏捷 。 NL 获得2层 *多层护甲 和 再生 。 NL 获得2点 荆棘 和 活力 。 NL 获得1层 无实体 和 人工制品 。 NL 消耗 。"
+  },
+  "MaraPapiyas": {
+    "NAME": "女神恩惠",
+    "DESCRIPTION": "失去2点最大生命值。 NL 回复 !M! 点 生命 。"
+  },
+  "AthnGabla": {
+    "NAME": "四枝之浅滩",
+    "DESCRIPTION": "获得 !M! 层 fgomaster:毅力 。 NL 每当你失去生命时，获得失去生命的 活力 。 NL 消耗 。"
+  },
+  "DeathOfDeath": {
+    "NAME": "死之渊",
+    "DESCRIPTION": "获得 !M! 层 fgomaster:毅力 。 NL 获得 fgomaster:死之渊 。 NL 消耗 。"
+  },
+  "PeerlessStrike": {
+    "NAME": "顷刻一击",
+    "DESCRIPTION": "只有在你的生命值等于或低于50%时才能被打出，然后 消耗 。 NL 使敌人失去 !D! 点生命。",
+    "EXTENDED_DESCRIPTION": [
+      "我的生命不够低。"
+    ]
+  },
+  "GloriousStrike": {
+    "NAME": "栗蓉馅打击",
+    "DESCRIPTION": "造成 !D! 点伤害2次。 NL 下一回合开始时移除你身上的所有负面状态。 NL 消耗 。"
+  },
+  "OneTimeOneMeeting": {
+    "NAME": "一期一会",
+    "DESCRIPTION": "在下个回合，每当你抽到一张非能力牌时， 消耗 其并增加一张随机能力牌到你的手牌。"
+  },
+  "SpringOfFire": {
+    "NAME": "纵使三度迎来落日",
+    "DESCRIPTION": "获得 !M! 层 fgomaster:毅力 3次。 NL 发动 fgomaster:毅力 时获得20% fgomaster:宝具威力 和 fgomaster:解除弱化 。 NL 获得 !M! 层 fgomaster:黄金律 。 NL 消耗 。",
+    "EXTENDED_DESCRIPTION": [
+      "@火焰之泉！@"
+    ]
+  },
+  "MillenniumCastle": {
+    "NAME": "光辉之月",
+    "DESCRIPTION": "在每回合开始时，失去1点 力量 ，所有敌人失去2点 力量 ，持续3回合。 NL 在结束时反转你的负面 力量 ，获得等量 敏捷 。",
+    "UPGRADE_DESCRIPTION": "固有 。 NL 在每回合开始时，失去1点 力量 ，所有敌人失去2点 力量 ，持续3回合。 NL 在结束时反转你的负面 力量 ，获得等量 敏捷 。"
+  },
+  "Shvibzik": {
+    "NAME": "小恶魔",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 在本场战斗中你获得 *冻结之眼 。 NL 消耗 。",
+    "FLAVOR": "测试画风可以更改。"
+  },
+  "PutOnFakeFace": {
+    "NAME": "大神祭坛",
+    "DESCRIPTION": "在每回合开始时随机： NL 获得 [E] 。 NL 回复5点生命。 NL 移除3层 fgomaster:诅呪 。"
+  },
+  "Trifas": {
+    "NAME": "身在图利法斯",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 移除你的所有 虚弱 。",
+    "FLAVOR": "测试画风可以更改。"
+  },
+  "LakeTexcoco": {
+    "NAME": "月之湖",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 获得 fgomaster:水边 !M! 回合。 NL 下一回合获得 !B! 点 格挡 。"
+  },
+  "BlueStarSea": {
+    "NAME": "苍之星海",
+    "DESCRIPTION": "回复 !M! 点生命。 NL 抽1张牌。"
+  },
+  "ReplicaAgateram": {
+    "NAME": "银之臂",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 失去所有负面状态1层，每层获得 !B! 点 格挡 。"
+  },
+  "BloomInSpring": {
+    "NAME": "春暖花开",
+    "DESCRIPTION": "回复X点生命X次。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "保留 。 NL 回复X点生命X次。 NL 消耗 。"
+  },
+  "LevelSlash": {
+    "NAME": "壹之突",
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。进入 平静 。 NL 将一张 *贰之突 放入你的抽牌堆中。 消耗 。"
+  },
+  "CrimsonSlash": {
+    "NAME": "贰之突",
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害，给予 !M! 层 易伤 。 NL 进入 愤怒 。 NL 将一张 *叁之突 放入你的抽牌堆中。 消耗 。"
+  },
+  "DivineDualEdge": {
+    "NAME": "叁之突",
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害2次。在每回合开始时额外抽1张牌。 NL 进入 神格 。 NL 消耗 。"
+  },
+  "TheGoldenFleece": {
+    "NAME": "金羊毛",
+    "DESCRIPTION": "回复 !M! 点生命。 NL 移除你身上的所有负面状态。 NL 消耗 。"
+  },
+  "UndeadBird": {
+    "NAME": "不死鸟落于大地",
+    "DESCRIPTION": "增加 !M! 张随机回复生命的牌到你的手牌。 NL 消耗 。"
+  },
+  "NightlessCharisma": {
+    "NAME": "不夜的魅力",
+    "DESCRIPTION": "在每回合开始时，随机将你抽牌堆中 !M! 张攻击牌加入你的手牌，并将其 升级 。"
+  },
+  "CrystallizationofWinter": {
+    "NAME": "冬之结晶",
+    "DESCRIPTION": "获得10层 fgomaster:毅力 。 NL 下一次发动 fgomaster:毅力 时额外获得 !M! 层 再生 。"
+  },
+  "CharismaOfConflict": {
+    "NAME": "斗争的魅力",
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 获得 !M! 层 fgomaster:毅力 。 NL 消耗 。"
+  },
+  "ProofAndRebuttal": {
+    "NAME": "证明与反证",
+    "DESCRIPTION": "抽1张牌。 NL 将手牌中的任意张牌放到抽牌堆的顶部。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "抽1张牌。 NL 将手牌中的任意张牌放到抽牌堆的顶部。",
+    "FLAVOR": "测试画风可以更改。"
+  },
+  "TakeRomance": {
+    "NAME": "享用浪漫",
+    "DESCRIPTION": "预见 !M! 。"
+  },
+  "FifthForm": {
+    "NAME": "第五势",
+    "DESCRIPTION": "在本回合，对一个敌人的攻击牌会打出两次，但伤害降低50%。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "在本回合，对一个敌人的攻击牌会打出两次，但伤害降低35%。 NL 消耗 。",
+    "FLAVOR": "测试画风可以更改。"
+  },
+  "Dumuzid": {
+    "NAME": "杜木兹",
+    "DESCRIPTION": "不能被打出 。 NL 在你的回合结束时，播放 *「The *end」 。"
+  },
+  "GrandOrder": {
+    "NAME": "命运指定",
+    "DESCRIPTION": "所有非boss敌人死亡。 NL 从牌组永久移除。 NL 消耗 。"
+  },
+  "Kaleidoscope": {
+    "NAME": "万华镜",
+    "DESCRIPTION": "获得 !NP! % fgomaster:宝具值 。"
+  },
+  "TheBlackGrail": {
+    "NAME": "黑之圣杯",
+    "DESCRIPTION": "获得 !M! % fgomaster:宝具威力 。"
+  },
+  "SarasvatiMeltout": {
+    "NAME": "弁财天五弦琵琶",
+    "DESCRIPTION": "fgomaster:宝具牌 。 NL 移除敌人的部分正面状态。 NL 造成 !D! 点伤害。",
+    "FLAVOR": "包括：多层护甲、人工制品、金属化和柔韧。"
+  },
+  "SupportCraft": {
+    "NAME": "支援牌",
+    "DESCRIPTION": "获得 !NP! % fgomaster:宝具值 。 NL 升级 没有效果。"
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "fgo:Example": {
+    "TEXT": [
+      "This is",
+      "an array of Strings."
+    ],
+    "EXTRA_TEXT": [
+      "This is another",
+      "array of Strings."
+    ],
+    "TEXT_DICT": {
+      "This": "Contains pairs of Strings, used to get values based on keys.",
+      "This is a key": "This is a value."
+    }
+  },
+
+  "MidsummerNightDream": {
+    "TEXT": [
+      "免疫"
+    ]
+  },
+  "PackMainMenuUI": {
+    "TEXT": [
+      "形象选择",
+      "请做出你的选择。注意，在您退出游戏时会被重置。",
+      "迦勒底（默认）",
+      "万圣节王室成员",
+      "奏章2校服",
+      "三咲高中校服",
+      "新春装束",
+      "白色圣诞",
+      "夏日街头",
+      "总耶高中校服",
+      "第五真实元素环境用迦勒底制服",
+      "华美的新年",
+      "热带夏日",
+      "2004年的碎片",
+      "月之背面的记忆",
+      "月之海的记忆",
+      "明亮夏日",
+      "王室品牌",
+      "金色庆典",
+      "迦勒底探险者",
+      "冬日便装",
+      "猫Arc"
+    ]
+  },
+  "SpireHeartText": {
+    "TEXT": [
+      "NL 你使用全部令咒……",
+      "御主",
+      "再一次从睡梦中醒来，这次你身处塔底。 NL 暴击和宝具将是你突破尖塔的关键。",
+      "御主",
+      "御主"
+    ]
+  },
+  "NPText": {
+    "TEXT": [
+      "宝具值",
+      "1.每当你打出一张牌，获得这张牌耗能 #b3 倍的宝具值。 NL 2.获得受到的攻击伤害 #b50% 的宝具值。",
+      "选择一张宝具牌加入你的手牌。",
+      "无限剑制：在每回合开始时，选择牌堆中的一张攻击牌的复制品加入你的手牌。",
+      "1.每当你打出一张牌，获得这张牌耗能 #b3 倍的宝具值。 NL 2.获得受到的攻击伤害 #b50%（+30%） 的宝具值。"
+    ]
+  },
+  "BlessedScionAction": {
+    "TEXT": [
+      "复制"
+    ]
+  },
+  "CurtainoftheNightAction": {
+    "TEXT": [
+      "放到你抽牌堆的顶部。"
+    ]
+  },
+  "NobleCardTabNamePatch": {
+    "TEXT": [
+      "宝具"
+    ]
+  },
+  "PictureSelectFgoPatch": {
+    "TEXT": [
+      "光の交差",
+      "星の軌跡",
+      "ID: 82330518",
+      "ID: 117839244"
+    ]
+  },
+  "CurrentNobleCardsTopPanelItem": {
+    "TEXT": [
+      "宝具牌堆",
+      "你可以查看当前 #y已解锁 的宝具牌。随着深入探索尖塔、获得遗物、获得新牌等都会解锁更多的宝具牌。",
+      "当前已解锁的宝具牌。"
+    ]
+  },
+  "AbsNoblePhantasmCard": {
+    "TEXT": [
+      "宝具值不够。"
+    ]
+  },
+  "InSonorousEffectCard": {
+    "TEXT": [
+      "圆桌骑士的祝福（前六层）",
+      "玛修的支援"
+    ]
+  },
+  "AlterOption": {
+    "TEXT": [
+      "？？？",
+      "选择获得一张宝具牌，随机升级你牌组中的一张牌。"
+    ]
+  }
+}
