@@ -3,6 +3,7 @@ C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\FGOMod.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\powers\GutsPower.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\hexui_lib\util\RenderCommandLayer.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\colorless\BlessedRegenerate.java
+C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\HolyShroud.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\noblecards\HollowHeartAlbion.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\relics\Avenger.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\relics\DreamChip.java
@@ -14,7 +15,6 @@ C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\powers\ViyViyViyPower.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\action\StarBasketAction.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\powers\NightlessCharismaPower.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\relics\MidsummerNightDream.java
-C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\colorless\BloomInSpring.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\colorless\SquireOfProphecy.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\colorless\Trifas.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\hexui_lib\util\RenderImageLayer.java
@@ -157,7 +157,6 @@ C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\colorless\FgoInsight.
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\powers\InfiniteGrowthPower.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\patches\Enum\ThmodClassEnum.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\colorless\StarBasket.java
-C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\SionSkill.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\hexui_lib\patches\RenderSingleCardTypePatch.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\powers\ArchetypeORTPower.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\potions\BasePotion.java
@@ -182,6 +181,7 @@ C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\colorless\TheGoldenFl
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\powers\NoPrayerForRainPower.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\colorless\PoisonousDagger.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\colorless\HalberdUsurpation.java
+C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\colorless\SionSkill.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\colorless\CommandSpellGuts.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\powers\BasePower.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\powers\WallOfSnowflakesPower.java

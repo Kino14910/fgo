@@ -14,27 +14,23 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.DrawPower;
 import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
+import fgo.cards.FGOCard;
+import fgo.util.CardStats;
 
-public class DivineDualEdge extends CustomCard {
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings("DivineDualEdge");
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    public static final String IMG_PATH = "fgo/images/cards/DivineDualEdge.png";
-    private static final int COST = 3;
-    public static final String ID = "DivineDualEdge";
+public class DivineDualEdge extends FGOCard {
+    public static final String ID = makeID(DivineDualEdge.class.getSimpleName());
+    private static final CardStats INFO = new CardStats(
+            CardColor.COLORLESS,
+            CardType.ATTACK,
+            CardRarity.SPECIAL,
+            CardTarget.ALL_ENEMY,
+            3
+    );
     public DivineDualEdge() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.ATTACK, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.ALL_ENEMY);
-        this.baseDamage = 10;
+        super(ID, INFO);
+        setDamage(10, 3);
         this.isMultiDamage = true;
-        this.exhaust = true;
-    }
-
-    @Override
-    public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeDamage(3);
-        }
+        setExhaust(true);
     }
 
     @Override

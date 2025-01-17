@@ -10,7 +10,7 @@ import fgo.cards.FGOCard;
 import fgo.util.CardStats;
 
 public class BlessedRegenerate extends FGOCard {
-    public static final String ID = makeID(BrilliantEscort.class.getSimpleName());
+    public static final String ID = makeID(BlessedRegenerate.class.getSimpleName());
     private static final CardStats INFO = new CardStats(
             CardColor.COLORLESS,
             CardType.POWER,

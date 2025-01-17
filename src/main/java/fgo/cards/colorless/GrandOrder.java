@@ -9,22 +9,26 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import fgo.cards.FGOCard;
+import fgo.util.CardStats;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class GrandOrder extends CustomCard {
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings("GrandOrder");
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    public static final String IMG_PATH = "fgo/images/cards/GrandOrder.png";
-    private static final int COST = 1;
-    public static final String ID = "GrandOrder";
+public class GrandOrder extends FGOCard {
+    public static final String ID = makeID(GrandOrder.class.getSimpleName());
+    private static final CardStats INFO = new CardStats(
+            CardColor.COLORLESS,
+            CardType.ATTACK,
+            CardRarity.RARE,
+            CardTarget.ENEMY,
+            1
+    );
     public GrandOrder() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.ATTACK, CardColor.COLORLESS, CardRarity.RARE, CardTarget.ALL_ENEMY);
-        this.baseDamage = 99999;
+        super(ID, INFO);
+        setDamage(9999);
         this.isMultiDamage = true;
-        this.exhaust = true;
+        setExhaust(true);
     }
 
     @Override

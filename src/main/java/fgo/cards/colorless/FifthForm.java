@@ -1,42 +1,33 @@
 package fgo.cards.colorless;
 
-import basemod.abstracts.CustomCard;
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.stslib.patches.FlavorText;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import fgo.cards.FGOCard;
 import fgo.powers.FifthFormPower;
+import fgo.util.CardStats;
 
-public class FifthForm extends CustomCard {
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings("FifthForm");
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    public static final String IMG_PATH = "fgo/images/cards/FifthForm.png";
-    private static final int COST = 0;
-    public static final String ID = "FifthForm";
+public class FifthForm extends FGOCard {
+    public static final String ID = makeID(FifthForm.class.getSimpleName());
+    private static final CardStats INFO = new CardStats(
+            CardColor.COLORLESS,
+            CardType.SKILL,
+            CardRarity.RARE,
+            CardTarget.SELF,
+            0
+    );
     public FifthForm() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.SKILL, CardColor.COLORLESS, CardRarity.RARE, CardTarget.SELF);
-        this.baseMagicNumber = 3;
-        this.magicNumber = this.baseMagicNumber;
-        this.portraitImg = ImageMaster.loadImage(IMG_PATH);
-        this.exhaust = true;
+        super(ID, INFO);
+        setMagic(3);
+        this.portraitImg = ImageMaster.loadImage("fgo/images/cards/skill/FifthForm.png");
+        setExhaust(true);
 
         FlavorText.AbstractCardFlavorFields.textColor.set(this, Color.CHARTREUSE);
         FlavorText.AbstractCardFlavorFields.flavorBoxType.set(this, FlavorText.boxType.TRADITIONAL);
-    }
-
-    @Override
-    public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
-            this.initializeDescription();
-        }
     }
 
     @Override

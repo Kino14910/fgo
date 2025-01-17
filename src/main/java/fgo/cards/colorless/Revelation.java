@@ -11,28 +11,23 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.GainStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
+import fgo.cards.FGOCard;
 import fgo.powers.DefenseDownPower;
+import fgo.util.CardStats;
 
-public class Revelation extends CustomCard {
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings("Revelation");
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    public static final String IMG_PATH = "fgo/images/cards/Revelation.png";
-    private static final int COST = 1;
-    public static final String ID = "Revelation";
+public class Revelation extends FGOCard {
+    public static final String ID = makeID(Revelation.class.getSimpleName());
+    private static final CardStats INFO = new CardStats(
+            CardColor.COLORLESS,
+            CardType.SKILL,
+            CardRarity.UNCOMMON,
+            CardTarget.ENEMY,
+            1
+    );
     public Revelation() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.SKILL, CardColor.COLORLESS, CardRarity.UNCOMMON, CardTarget.ENEMY);
-        this.baseMagicNumber = 4;
-        this.magicNumber = this.baseMagicNumber;
-        this.exhaust = true;
-    }
-
-    @Override
-    public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeMagicNumber(1);
-        }
+        super(ID, INFO);
+        setMagic(4, 1);
+        setExhaust(true);
     }
 
     @Override

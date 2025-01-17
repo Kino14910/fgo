@@ -1,7 +1,7 @@
 //package fgo.relics;
 //
 //import basemod.abstracts.CustomRelic;
-//import fgo.cards.SionSkill;
+//import fgo.cards.colorless.SionSkill;
 //import fgo.cards.colorless.BlessedRegenerate;
 //import fgo.cards.colorless.BrilliantEscort;
 //import fgo.cards.colorless.PureCoordinate;

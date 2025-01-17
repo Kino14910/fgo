@@ -14,27 +14,22 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.NextTurnBlockPower;
 import com.megacrit.cardcrawl.vfx.combat.ClashEffect;
+import fgo.cards.FGOCard;
+import fgo.util.CardStats;
 
-public class CircuitConnect extends CustomCard {
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings("CircuitConnect");
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    public static final String IMG_PATH = "fgo/images/cards/CircuitConnect.png";
-    private static final int COST = 0;
-    public static final String ID = "CircuitConnect";
+public class CircuitConnect extends FGOCard {
+    public static final String ID = makeID(CircuitConnect.class.getSimpleName());
+    private static final CardStats INFO = new CardStats(
+            CardColor.COLORLESS,
+            CardType.ATTACK,
+            CardRarity.UNCOMMON,
+            CardTarget.ENEMY,
+            0
+    );
     public CircuitConnect() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.ATTACK, CardColor.COLORLESS, CardRarity.UNCOMMON, CardTarget.ENEMY);
-        this.baseBlock = 3;
-        this.baseDamage = 3;
-    }
-
-    @Override
-    public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeDamage(1);
-            this.upgradeBlock(1);
-        }
+        super(ID, INFO);
+        setBlock(3, 1);
+        setDamage(3, 1);
     }
 
     @Override

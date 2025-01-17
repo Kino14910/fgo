@@ -10,32 +10,27 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.FlameBarrierEffect;
+import fgo.cards.FGOCard;
 import fgo.patches.Enum.CardTagsEnum;
 import fgo.powers.CursePower;
 import fgo.powers.StarGainPower;
+import fgo.util.CardStats;
 
-public class SoulOfWaterChannels extends CustomCard {
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings("SoulOfWaterChannels");
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    public static final String IMG_PATH = "fgo/images/cards/SoulOfWaterChannels.png";
-    private static final int COST = 0;
-    public static final String ID = "SoulOfWaterChannels";
+public class SoulOfWaterChannels extends FGOCard {
+    public static final String ID = makeID(SoulOfWaterChannels.class.getSimpleName());
+    private static final CardStats INFO = new CardStats(
+            CardColor.COLORLESS,
+            CardType.SKILL,
+            CardRarity.SPECIAL,
+            CardTarget.SELF,
+            0
+    );
     public SoulOfWaterChannels() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.SKILL, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.SELF);
-        this.baseMagicNumber = 10;
-        this.magicNumber = this.baseMagicNumber;
-        this.exhaust = true;
-        this.selfRetain = true;
+        super(ID, INFO);
+        setMagic(10, 5);
+        setExhaust(true);
+        setSelfRetain(true);
         this.tags.add(CardTagsEnum.Foreigner);
-    }
-
-    @Override
-    public void upgrade() {
-        if (!this.upgraded) {
-            upgradeName();
-            upgradeMagicNumber(5);
-        }
     }
 
     @Override

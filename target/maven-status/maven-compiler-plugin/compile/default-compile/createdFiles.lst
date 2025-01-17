@@ -46,6 +46,7 @@ fgo\cards\colorless\BrilliantEscort.class
 fgo\cards\colorless\Trifas.class
 fgo\powers\HeroicKingPower.class
 fgo\relics\SaveStone.class
+fgo\cards\colorless\SionSkill.class
 fgo\action\AttackComeOnAction.class
 fgo\powers\AtTheWellPower.class
 fgo\relics\SkullCandy.class
@@ -88,7 +89,6 @@ fgo\cards\BaseCard$VariableType.class
 fgo\hexui_lib\util\RenderImageLayer.class
 fgo\cards\colorless\TaisuiSMisfortune.class
 fgo\powers\NightlessCharismaPower.class
-fgo\cards\SionSkill.class
 fgo\powers\UnlimitedPower.class
 fgo\cards\colorless\HalberdUsurpation.class
 fgo\cards\colorless\Revelation.class
@@ -97,7 +97,6 @@ fgo\powers\CriticalDamageUpPower.class
 fgo\action\CurtainoftheNightAction.class
 fgo\util\NoblePhantasmVariable.class
 fgo\cards\colorless\TheGoldenFleece.class
-fgo\cards\colorless\BloomInSpring.class
 fgo\cards\colorless\KarmicVision.class
 fgo\cards\Defend.class
 fgo\action\RandomCardWithTagAction.class
@@ -195,6 +194,7 @@ fgo\util\GeneralUtils.class
 fgo\cards\colorless\ReplicaAgateram.class
 fgo\powers\DesterrennachtPower.class
 fgo\cards\FateMagineerCard.class
+fgo\cards\HolyShroud.class
 fgo\powers\StarHunterPower.class
 fgo\cards\colorless\FgoInsight.class
 fgo\cards\colorless\CircuitConnect.class

@@ -16,22 +16,25 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
+import fgo.cards.FGOCard;
+import fgo.util.CardStats;
 
-public class CrimsonSlash extends CustomCard {
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings("CrimsonSlash");
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    public static final String IMG_PATH = "fgo/images/cards/CrimsonSlash.png";
-    private static final int COST = 2;
-    public static final String ID = "CrimsonSlash";
+public class CrimsonSlash extends FGOCard {
+    public static final String ID = makeID(CrimsonSlash.class.getSimpleName());
+    private static final CardStats INFO = new CardStats(
+            CardColor.COLORLESS,
+            CardType.ATTACK,
+            CardRarity.SPECIAL,
+            CardTarget.ALL_ENEMY,
+            2
+    );
     public CrimsonSlash() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.ATTACK, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.ALL_ENEMY);
-        this.baseDamage = 8;
+        super(ID, INFO);
+        setDamage(8, 2);
         this.isMultiDamage = true;
-        this.baseMagicNumber = 2;
-        this.magicNumber = this.baseMagicNumber;
+        setMagic(2, 1);
         this.cardsToPreview = new DivineDualEdge();
-        this.exhaust = true;
+        setExhaust(true);
     }
 
     @Override

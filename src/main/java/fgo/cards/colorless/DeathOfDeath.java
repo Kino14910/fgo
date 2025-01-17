@@ -8,30 +8,25 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
+import fgo.cards.FGOCard;
 import fgo.powers.DeathOfDeathPower;
 import fgo.powers.GutsPower;
+import fgo.util.CardStats;
 
-public class DeathOfDeath extends CustomCard {
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings("DeathOfDeath");
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    public static final String IMG_PATH = "fgo/images/cards/DeathOfDeath.png";
-    private static final int COST = 2;
-    public static final String ID = "DeathOfDeath";
+public class DeathOfDeath extends FGOCard {
+    public static final String ID = makeID(DeathOfDeath.class.getSimpleName());
+    private static final CardStats INFO = new CardStats(
+            CardColor.COLORLESS,
+            CardType.SKILL,
+            CardRarity.RARE,
+            CardTarget.SELF,
+            2
+    );
     public DeathOfDeath() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.SKILL, CardColor.COLORLESS, CardRarity.RARE, CardTarget.SELF);
-        this.baseMagicNumber = 25;
-        this.magicNumber = this.baseMagicNumber;
-        this.exhaust = true;
+        super(ID, INFO);
+        setMagic(25, 15);
+        setExhaust(true);
         this.tags.add(CardTags.HEALING);
-    }
-
-    @Override
-    public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeMagicNumber(15);
-        }
     }
 
     @Override

@@ -14,26 +14,21 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import com.megacrit.cardcrawl.vfx.combat.BlizzardEffect;
+import fgo.cards.FGOCard;
+import fgo.util.CardStats;
 
-public class PrimevalRune extends CustomCard {
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings("PrimevalRune");
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    public static final String IMG_PATH = "fgo/images/cards/PrimevalRune.png";
-    private static final int COST = 1;
-    public static final String ID = "PrimevalRune";
+public class PrimevalRune extends FGOCard {
+    public static final String ID = makeID(PrimevalRune.class.getSimpleName());
+    private static final CardStats INFO = new CardStats(
+            CardColor.COLORLESS,
+            CardType.SKILL,
+            CardRarity.RARE,
+            CardTarget.ALL_ENEMY,
+            1
+    );
     public PrimevalRune() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.SKILL, CardColor.COLORLESS, CardRarity.RARE, CardTarget.ALL_ENEMY);
-        this.baseMagicNumber = 2;
-        this.magicNumber = this.baseMagicNumber;
-    }
-
-    @Override
-    public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeMagicNumber(1);
-        }
+        super(ID, INFO);
+        setMagic(2, 1);
     }
 
     @Override

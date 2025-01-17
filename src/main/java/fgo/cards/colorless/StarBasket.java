@@ -14,27 +14,22 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
+import fgo.cards.FGOCard;
+import fgo.util.CardStats;
 
-public class StarBasket extends CustomCard {
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings("StarBasket");
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    public static final String IMG_PATH = "fgo/images/cards/StarBasket.png";
-    private static final int COST = 1;
-    public static final String ID = "StarBasket";
+public class StarBasket extends FGOCard {
+    public static final String ID = makeID(StarBasket.class.getSimpleName());
+    private static final CardStats INFO = new CardStats(
+            CardColor.COLORLESS,
+            CardType.ATTACK,
+            CardRarity.UNCOMMON,
+            CardTarget.ENEMY,
+            1
+    );
     public StarBasket() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.ATTACK, CardColor.COLORLESS, CardRarity.UNCOMMON, CardTarget.ENEMY);
-        this.baseDamage = 14;
-        this.baseMagicNumber = 5;
-        this.magicNumber = this.baseMagicNumber;
-    }
-
-    @Override
-    public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeDamage(6);
-        }
+        super(ID, INFO);
+        setDamage(14, 6);
+        setMagic(5);
     }
 
     @Override

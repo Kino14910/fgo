@@ -13,27 +13,23 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.GrandFinalEffect;
+import fgo.cards.FGOCard;
+import fgo.util.CardStats;
 
-public class PeerlessStrike extends CustomCard  {
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings("PeerlessStrike");
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    public static final String IMG_PATH = "fgo/images/cards/PeerlessStrike.png";
-    private static final int COST = 0;
-    public static final String ID = "PeerlessStrike";
+public class PeerlessStrike extends FGOCard {
+    public static final String ID = makeID(PeerlessStrike.class.getSimpleName());
+    private static final CardStats INFO = new CardStats(
+            CardColor.COLORLESS,
+            CardType.ATTACK,
+            CardRarity.RARE,
+            CardTarget.ENEMY,
+            0
+    );
     public PeerlessStrike() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.ATTACK, CardColor.COLORLESS, CardRarity.RARE, CardTarget.ENEMY);
-        this.baseDamage = 30;
+        super(ID, INFO);
+        setDamage(30, 10);
         this.tags.add(CardTags.STRIKE);
-        this.exhaust = true;
-    }
-
-    @Override
-    public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeDamage(10);
-        }
+        setExhaust(true);
     }
 
     @Override

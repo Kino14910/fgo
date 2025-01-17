@@ -13,7 +13,7 @@ public class BlackBarrel extends FGOCard {
     public static final String ID = makeID(BlackBarrel.class.getSimpleName());
     private static final CardStats INFO = new CardStats(
             CardColor.COLORLESS,
-            CardType.SKILL,
+            CardType.ATTACK,
             CardRarity.SPECIAL,
             CardTarget.ENEMY,
             1

@@ -1,4 +1,4 @@
-package fgo.cards;
+package fgo.cards.colorless;
 
 import com.megacrit.cardcrawl.actions.common.BetterDrawPileToHandAction;
 import com.megacrit.cardcrawl.actions.common.DiscardAction;
@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import fgo.cards.FGOCard;
 import fgo.util.CardStats;
 
 public class SionSkill extends FGOCard {

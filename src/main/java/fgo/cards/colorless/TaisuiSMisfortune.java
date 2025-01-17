@@ -12,32 +12,24 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.OfferingEffect;
+import fgo.cards.FGOCard;
 import fgo.powers.TaisuiSPower;
+import fgo.util.CardStats;
 
-public class TaisuiSMisfortune extends CustomCard {
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings("TaisuiSMisfortune");
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    public static final String IMG_PATH = "fgo/images/cards/TaisuiSMisfortune.png";
-    private static final int COST = 0;
-
-    public static final String ID = "TaisuiSMisfortune";
+public class TaisuiSMisfortune extends FGOCard {
+    public static final String ID = makeID(TaisuiSMisfortune.class.getSimpleName());
+    private static final CardStats INFO = new CardStats(
+            CardColor.COLORLESS,
+            CardType.SKILL,
+            CardRarity.UNCOMMON,
+            CardTarget.ALL_ENEMY,
+            0
+    );
     public TaisuiSMisfortune() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.SKILL, CardColor.COLORLESS, CardRarity.UNCOMMON, CardTarget.ALL_ENEMY);
-        this.baseMagicNumber = 2;
-        this.magicNumber = this.baseMagicNumber;
-        this.exhaust = true;
-        this.isInnate = true;
-    }
-
-    @Override
-    public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeMagicNumber(1);
-            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
-            this.initializeDescription();
-        }
+        super(ID, INFO);
+        setMagic(2, 1);
+        setExhaust(true);
+        setInnate(true);
     }
 
     @Override

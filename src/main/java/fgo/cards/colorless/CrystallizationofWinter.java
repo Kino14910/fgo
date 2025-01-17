@@ -7,28 +7,25 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import fgo.cards.FGOCard;
 import fgo.powers.ComeOnPower;
 import fgo.powers.GutsPower;
+import fgo.util.CardStats;
 
-public class CrystallizationofWinter extends CustomCard {
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings("CrystallizationofWinter");
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    public static final String IMG_PATH = "fgo/images/cards/ConjureIce.png";
-    private static final int COST = 0;
-    public static final String ID = "CrystallizationofWinter";
+public class CrystallizationofWinter extends FGOCard {
+    public static final String ID = makeID(CrystallizationofWinter.class.getSimpleName());
+    private static final CardStats INFO = new CardStats(
+            CardColor.COLORLESS,
+            CardType.POWER,
+            CardRarity.SPECIAL,
+            CardTarget.SELF,
+            0
+    );
+    public static final String IMG = "fgo/images/cards/ConjureIce.png";
     public CrystallizationofWinter() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.POWER, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.SELF);
-        this.baseMagicNumber = 4;
-        this.magicNumber = this.baseMagicNumber;
-    }
+        super(ID, INFO, IMG);
+        setMagic(4, 1);
 
-    @Override
-    public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeMagicNumber(1);
-        }
     }
 
     @Override

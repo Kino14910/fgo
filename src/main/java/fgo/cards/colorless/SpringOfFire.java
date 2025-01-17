@@ -7,32 +7,27 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import fgo.cards.FGOCard;
 import fgo.powers.GutsPower;
 import fgo.powers.NPRatePower;
 import fgo.powers.SpringOfFirePower;
+import fgo.util.CardStats;
 
-public class SpringOfFire extends CustomCard {
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings("SpringOfFire");
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    public static final String IMG_PATH = "fgo/images/cards/SpringOfFire.png";
-    private static final int COST = 3;
-    public static final String ID = "SpringOfFire";
+public class SpringOfFire extends FGOCard {
+    public static final String ID = makeID(SpringOfFire.class.getSimpleName());
+    private static final CardStats INFO = new CardStats(
+            CardColor.COLORLESS,
+            CardType.SKILL,
+            CardRarity.RARE,
+            CardTarget.SELF,
+            3
+    );
     public SpringOfFire() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.SKILL, CardColor.COLORLESS, CardRarity.RARE, CardTarget.SELF);
-        this.baseMagicNumber = 3;
-        this.magicNumber = this.baseMagicNumber;
-        this.isEthereal = true;
-        this.exhaust = true;
+        super(ID, INFO);
+        setMagic(3, 3);
+        setEthereal(true);
+        setExhaust(true);
         this.tags.add(CardTags.HEALING);
-    }
-
-    @Override
-    public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeMagicNumber(3);
-        }
     }
 
     @Override
