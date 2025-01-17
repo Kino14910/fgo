@@ -1,32 +1,48 @@
 package fgo.cards.colorless;
 
-import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import fgo.cards.BaseCard;
-import fgo.patches.Enum.AbstractCardEnum;
+import fgo.cards.FGOCard;
 import fgo.powers.WallOfSnowflakesPower;
 import fgo.util.CardStats;
 
-@AutoAdd.Ignore
-public class WallOfSnowflakes extends BaseCard {
+import static com.megacrit.cardcrawl.core.Settings.language;
+
+
+public class WallOfSnowflakes extends FGOCard {
     public static final String ID = makeID(WallOfSnowflakes.class.getSimpleName());
-    private static final CardStats info = new CardStats(
-            AbstractCardEnum.Master_COLOR,
-            CardType.POWER,
+    private static final CardStats INFO = new CardStats(
+            CardColor.COLORLESS,
+            CardType.SKILL,
             CardRarity.SPECIAL,
             CardTarget.ENEMY,
             1
     );
     public WallOfSnowflakes() {
-        super(ID, info);
+        super(ID, INFO);
         setBlock(20);
         setMagic(15, 5);
         setCostUpgrade(2);
-        initializeDescription();
+    }
+
+    @Override
+    public float getTitleFontSize() {
+        if (language == Settings.GameLanguage.ZHS) {
+            return 24.0F;
+        }
+
+        return -1.0F;
+    }
+
+    @Override
+    protected void upgradeName() {
+        ++timesUpgraded;
+        upgraded = true;
+        name = "荣光坚毅的雪花之壁";
     }
 
     @Override

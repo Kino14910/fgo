@@ -2,12 +2,12 @@ package fgo.relics;
 
 import basemod.abstracts.CustomRelic;
 import basemod.helpers.RelicType;
-import fgo.util.GeneralUtils;
-import fgo.util.TextureLoader;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.RelicStrings;
+import fgo.util.GeneralUtils;
+import fgo.util.TextureLoader;
 
 import static fgo.FGOMod.relicPath;
 

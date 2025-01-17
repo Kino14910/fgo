@@ -20,8 +20,8 @@
 //
 //public class HalloweenRoyalty extends CustomRelic {
 //    public static final String ID = "HalloweenRoyalty";
-//    private static final String IMG = "img/relics_Master/HalloweenRoyalty.png";
-//    private static final String IMG_OTL = "img/relics_Master/outline/HalloweenRoyalty.png";
+//    private static final String IMG = "fgo/images/relics_Master/HalloweenRoyalty.png";
+//    private static final String IMG_OTL = "fgo/images/relics_Master/outline/HalloweenRoyalty.png";
 //    public HalloweenRoyalty() {
 //        super(ID, loadImage(IMG), loadImage(IMG_OTL), RelicTier.STARTER, LandingSound.FLAT);
 //    }

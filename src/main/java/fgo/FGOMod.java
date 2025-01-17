@@ -3,20 +3,11 @@ package fgo;
 import basemod.AutoAdd;
 import basemod.BaseMod;
 import basemod.interfaces.*;
-import com.badlogic.gdx.graphics.Color;
-import com.megacrit.cardcrawl.helpers.CardHelper;
-import com.megacrit.cardcrawl.unlock.UnlockTracker;
-import fgo.cards.BaseCard;
-import fgo.characters.master;
-import fgo.patches.Enum.AbstractCardEnum;
-import fgo.relics.*;
-import fgo.util.GeneralUtils;
-import fgo.util.KeywordInfo;
-import fgo.util.TextureLoader;
 import com.badlogic.gdx.Files;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.backends.lwjgl.LwjglFileHandle;
 import com.badlogic.gdx.files.FileHandle;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.utils.GdxRuntimeException;
 import com.evacipated.cardcrawl.modthespire.Loader;
@@ -24,8 +15,23 @@ import com.evacipated.cardcrawl.modthespire.ModInfo;
 import com.evacipated.cardcrawl.modthespire.Patcher;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
+import com.megacrit.cardcrawl.unlock.UnlockTracker;
+import fgo.action.FgoNpAction;
+import fgo.cards.BaseCard;
+import fgo.characters.master;
+import fgo.patches.Enum.FGOCardColor;
+import fgo.powers.NPRatePower;
+import fgo.relics.BaseRelic;
+import fgo.util.GeneralUtils;
+import fgo.util.KeywordInfo;
+import fgo.util.NoblePhantasmVariable;
+import fgo.util.TextureLoader;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.scannotation.AnnotationDB;
@@ -33,7 +39,7 @@ import org.scannotation.AnnotationDB;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 
-import static fgo.patches.Enum.ThmodClassEnum.Master_CLASS;
+import static fgo.patches.Enum.ThmodClassEnum.MASTER_CLASS;
 
 @SpireInitializer
 public class FGOMod implements
@@ -42,7 +48,9 @@ public class FGOMod implements
         EditStringsSubscriber,
         EditRelicsSubscriber,
         EditKeywordsSubscriber,
-        PostInitializeSubscriber {
+        PostInitializeSubscriber,
+        OnCardUseSubscriber
+        {
     public static ModInfo info;
     public static String modID; //Edit your pom.xml to change this
     static { loadModInfo(); }
@@ -58,25 +66,6 @@ public class FGOMod implements
     //This will be called by ModTheSpire because of the @SpireInitializer annotation at the top of the class.
     public static void initialize() {
         new FGOMod();
-    }
-
-    public FGOMod() {
-        BaseMod.subscribe(this); //This will make BaseMod trigger all the subscribers at their appropriate times.
-        BaseMod.addColor(AbstractCardEnum.Master_COLOR, SILVER, SILVER, SILVER, SILVER, SILVER, SILVER, SILVER, ATTACK_CC, SKILL_CC, POWER_CC, ENERGY_ORB_CC, ATTACK_CC_PORTRAIT, SKILL_CC_PORTRAIT, POWER_CC_PORTRAIT, ENERGY_ORB_CC_PORTRAIT, CARD_ENERGY_ORB);
-        BaseMod.addColor(AbstractCardEnum.Noble_Phantasm_COLOR, NOBLE, NOBLE, NOBLE, NOBLE, NOBLE, NOBLE, NOBLE, ATTACK_Noble, SKILL_Noble, POWER_Noble, ENERGY_ORB_CC, ATTACK_Noble_PORTRAIT, SKILL_Noble_PORTRAIT, POWER_Noble_PORTRAIT, ENERGY_ORB_CC_PORTRAIT, CARD_ENERGY_ORB);
-        logger.info(modID + " subscribed to BaseMod.");
-    }
-
-    @Override
-    public void receivePostInitialize() {
-        //This loads the image used as an icon in the in-game mods menu.
-        Texture badgeTexture = TextureLoader.getTexture(imagePath("badge.png"));
-        //Set up the mod information displayed in the in-game mods menu.
-        //The information used is taken from your pom.xml file.
-
-        //If you want to set up a config panel, that will be done here.
-        //The Mod Badges page has a basic example of this, but setting up config is overall a bit complex.
-        BaseMod.registerModBadge(badgeTexture, info.Name, GeneralUtils.arrToString(info.Authors), info.Description, null);
     }
 
     /*----------Create new Color----------*/
@@ -105,6 +94,25 @@ public class FGOMod implements
     private static final String MY_CHARACTER_BUTTON = "fgo/images/charSelect/MasterButton.png";
     //默认背景图片。
     private static final String MASTER_PORTRAIT = "fgo/images/charSelect/MasterPortrait1.png";
+
+    public FGOMod() {
+        BaseMod.subscribe(this); //This will make BaseMod trigger all the subscribers at their appropriate times.
+        BaseMod.addColor(FGOCardColor.FGO, SILVER, SILVER, SILVER, SILVER, SILVER, SILVER, SILVER, ATTACK_CC, SKILL_CC, POWER_CC, ENERGY_ORB_CC, ATTACK_CC_PORTRAIT, SKILL_CC_PORTRAIT, POWER_CC_PORTRAIT, ENERGY_ORB_CC_PORTRAIT, CARD_ENERGY_ORB);
+        BaseMod.addColor(FGOCardColor.Noble_Phantasm, NOBLE, NOBLE, NOBLE, NOBLE, NOBLE, NOBLE, NOBLE, ATTACK_Noble, SKILL_Noble, POWER_Noble, ENERGY_ORB_CC, ATTACK_Noble_PORTRAIT, SKILL_Noble_PORTRAIT, POWER_Noble_PORTRAIT, ENERGY_ORB_CC_PORTRAIT, CARD_ENERGY_ORB);
+        logger.info(modID + " subscribed to BaseMod.");
+    }
+
+    @Override
+    public void receivePostInitialize() {
+        //This loads the image used as an icon in the in-game mods menu.
+        Texture badgeTexture = TextureLoader.getTexture(imagePath("badge.png"));
+        //Set up the mod information displayed in the in-game mods menu.
+        //The information used is taken from your pom.xml file.
+
+        //If you want to set up a config panel, that will be done here.
+        //The Mod Badges page has a basic example of this, but setting up config is overall a bit complex.
+        BaseMod.registerModBadge(badgeTexture, info.Name, GeneralUtils.arrToString(info.Authors), info.Description, null);
+    }
 
     /*----------Localization----------*/
 
@@ -263,7 +271,7 @@ public class FGOMod implements
     @Override
     public void receiveEditCharacters() {
         //添加角色到MOD中
-        BaseMod.addCharacter(new master("Master"), MY_CHARACTER_BUTTON, MASTER_PORTRAIT, Master_CLASS);
+        BaseMod.addCharacter(new master("Master"), MY_CHARACTER_BUTTON, MASTER_PORTRAIT, MASTER_CLASS);
     }
 
     @Override
@@ -289,7 +297,34 @@ public class FGOMod implements
                     if (info.seen)
                         UnlockTracker.markRelicAsSeen(relic.relicId);
                 });
+        BaseMod.addDynamicVariable(new NoblePhantasmVariable());
     }
 
+    @Override
+    public void receiveCardUsed(AbstractCard abstractCard) {
+        if (!(AbstractDungeon.player instanceof master)) {
+            return;
+        }
+
+        int baseMultiplier = 3;
+        int npGain = 0;
+
+        // 如果你有黄金律，将倍数增加到6
+        if (AbstractDungeon.player.hasPower(NPRatePower.POWER_ID)) {
+            baseMultiplier = 6;
+        }
+
+        int costForTurn = abstractCard.costForTurn;
+
+        if (costForTurn == -1) {
+            npGain = EnergyPanel.totalCount * baseMultiplier; //X费用牌
+        } else if (costForTurn > 0) {
+            npGain = costForTurn * baseMultiplier;
+        }
+
+        if (npGain > 0) {
+            AbstractDungeon.actionManager.addToBottom(new FgoNpAction(npGain));
+        }
+    }
 
 }

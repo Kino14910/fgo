@@ -3,9 +3,6 @@ package fgo.cards;
 import basemod.BaseMod;
 import basemod.abstracts.CustomCard;
 import basemod.abstracts.DynamicVariable;
-import fgo.FGOMod;
-import fgo.util.CardStats;
-import fgo.util.TriFunction;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -13,6 +10,9 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import fgo.FGOMod;
+import fgo.util.CardStats;
+import fgo.util.TriFunction;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -54,11 +54,11 @@ public abstract class BaseCard extends CustomCard {
 
     final protected Map<String, LocalVarInfo> cardVariables = new HashMap<>();
 
-    public BaseCard(String ID, CardStats info) {
-        this(ID, info, getCardTextureString(removePrefix(ID), info.cardType));
+    public BaseCard(String ID, CardStats INFO) {
+        this(ID, INFO, getCardTextureString(removePrefix(ID), INFO.cardType));
     }
-    public BaseCard(String ID, CardStats info, String cardImage) {
-        this(ID, info.baseCost, info.cardType, info.cardTarget, info.cardRarity, info.cardColor, cardImage);
+    public BaseCard(String ID, CardStats INFO, String cardImage) {
+        this(ID, INFO.baseCost, INFO.cardType, INFO.cardTarget, INFO.cardRarity, INFO.cardColor, cardImage);
     }
     public BaseCard(String ID, int cost, CardType cardType, CardTarget target, CardRarity rarity, CardColor color) {
         this(ID, cost, cardType, target, rarity, color, getCardTextureString(removePrefix(ID), cardType));

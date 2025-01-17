@@ -1,16 +1,16 @@
 package fgo.cards;
 
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import fgo.patches.Enum.AbstractCardEnum;
-import fgo.util.CardStats;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import fgo.patches.Enum.FGOCardColor;
+import fgo.util.CardStats;
 
-public class Strike extends BaseCard {
+public class Strike extends FGOCard {
     public static final String ID = makeID(Strike.class.getSimpleName());
-    private static final CardStats info = new CardStats(
-            AbstractCardEnum.Master_COLOR,
+    private static final CardStats INFO = new CardStats(
+            FGOCardColor.FGO,
             CardType.ATTACK,
             CardRarity.BASIC,
             CardTarget.ENEMY,
@@ -18,7 +18,7 @@ public class Strike extends BaseCard {
     );
 
     public Strike() {
-        super(ID, info);
+        super(ID, INFO);
 
         setDamage(6, 3); //Sets the card's damage and how much it changes when upgraded.
 

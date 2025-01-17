@@ -1,27 +1,27 @@
 package fgo.cards;
 
-import fgo.action.FgoNpAction;
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.stslib.patches.FlavorText;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import fgo.patches.Enum.AbstractCardEnum;
+import fgo.action.FgoNpAction;
+import fgo.patches.Enum.FGOCardColor;
 import fgo.util.CardStats;
 
 public class CharismaOfHope extends FGOCard {
     public static final String ID = makeID(CharismaOfHope.class.getSimpleName());
-    private static final CardStats info = new CardStats(
-            AbstractCardEnum.Master_COLOR,
+    private static final CardStats INFO = new CardStats(
+            FGOCardColor.FGO,
             CardType.SKILL,
             CardRarity.BASIC,
             CardTarget.SELF,
             1
     );
     public CharismaOfHope() {
-        super(ID, info);
-        setBlock(7, 10);
+        super(ID, INFO);
+        setBlock(7, 3);
         setNP(10, 10);
         setCasterBg();
 

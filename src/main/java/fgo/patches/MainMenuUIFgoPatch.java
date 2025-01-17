@@ -87,64 +87,64 @@ public class MainMenuUIFgoPatch implements ISubscriber, CustomSavable<Integer> {
     }
 
     public static String refreshSkinFgo() {
-        String skinPath = "img/char_Master/Master0.png";
+        String skinPath = "fgo/images/char_Master/Master0.png";
         switch (modifierIndexes) {
             case 1:
-                skinPath = "img/char_Master/Master.png";
+                skinPath = "fgo/images/char_Master/Master.png";
                 break;
             case 2:
-                skinPath = "img/char_Master/Master2.png";
+                skinPath = "fgo/images/char_Master/Master2.png";
                 break;
             case 3:
-                skinPath = "img/char_Master/Master3.png";
+                skinPath = "fgo/images/char_Master/Master3.png";
                 break;
             case 4:
-                skinPath = "img/char_Master/Master4.png";
+                skinPath = "fgo/images/char_Master/Master4.png";
                 break;
             case 5:
-                skinPath = "img/char_Master/Master5.png";
+                skinPath = "fgo/images/char_Master/Master5.png";
                 break;
             case 6:
-                skinPath = "img/char_Master/Master6.png";
+                skinPath = "fgo/images/char_Master/Master6.png";
                 break;
             case 7:
-                skinPath = "img/char_Master/Master7.png";
+                skinPath = "fgo/images/char_Master/Master7.png";
                 break;
             case 8:
-                skinPath = "img/char_Master/Master8.png";
+                skinPath = "fgo/images/char_Master/Master8.png";
                 break;
             case 9:
-                skinPath = "img/char_Master/Master9.png";
+                skinPath = "fgo/images/char_Master/Master9.png";
                 break;
             case 10:
-                skinPath = "img/char_Master/Master10.png";
+                skinPath = "fgo/images/char_Master/Master10.png";
                 break;
             case 11:
-                skinPath = "img/char_Master/Master11.png";
+                skinPath = "fgo/images/char_Master/Master11.png";
                 break;
             case 12:
-                skinPath = "img/char_Master/Master12.png";
+                skinPath = "fgo/images/char_Master/Master12.png";
                 break;
             case 13:
-                skinPath = "img/char_Master/Master13.png";
+                skinPath = "fgo/images/char_Master/Master13.png";
                 break;
             case 14:
-                skinPath = "img/char_Master/Master14.png";
+                skinPath = "fgo/images/char_Master/Master14.png";
                 break;
             case 15:
-                skinPath = "img/char_Master/Master15.png";
+                skinPath = "fgo/images/char_Master/Master15.png";
                 break;
             case 16:
-                skinPath = "img/char_Master/Master16.png";
+                skinPath = "fgo/images/char_Master/Master16.png";
                 break;
             case 17:
-                skinPath = "img/char_Master/Master17.png";
+                skinPath = "fgo/images/char_Master/Master17.png";
                 break;
             case 18:
-                skinPath = "img/char_Master/Master18.png";
+                skinPath = "fgo/images/char_Master/Master18.png";
                 break;
             case 19:
-                skinPath = "img/char_Master/Cat_Arcueid_Brunestud.png";
+                skinPath = "fgo/images/char_Master/Cat_Arcueid_Brunestud.png";
                 break;
         }
         return skinPath;
@@ -165,7 +165,7 @@ public class MainMenuUIFgoPatch implements ISubscriber, CustomSavable<Integer> {
         @SpirePostfixPatch
         public static void Postfix(CharacterOption obj, SpriteBatch sb) {
             CharSelectInfo c = ReflectionHacks.getPrivate(obj, CharacterOption.class, "charInfo");
-            if (c != null && c.player.chosenClass.equals(ThmodClassEnum.Master_CLASS) && obj.selected) {
+            if (c != null && c.player.chosenClass.equals(ThmodClassEnum.MASTER_CLASS) && obj.selected) {
                 packDraftToggle.move(CHECKBOX_X, CHECKBOX_Y);
                 packDraftToggle.render(sb);
 
@@ -192,7 +192,7 @@ public class MainMenuUIFgoPatch implements ISubscriber, CustomSavable<Integer> {
         public static void Postfix(CharacterOption obj) {
             CharSelectInfo c = ReflectionHacks.getPrivate(obj, CharacterOption.class, "charInfo");
 
-            if (c != null && c.player.chosenClass.equals(ThmodClassEnum.Master_CLASS) && obj.selected) {
+            if (c != null && c.player.chosenClass.equals(ThmodClassEnum.MASTER_CLASS) && obj.selected) {
                 boolean stopInput = false;
                 if (customDraft) {
                     for (DropdownMenu d : dropdowns) {

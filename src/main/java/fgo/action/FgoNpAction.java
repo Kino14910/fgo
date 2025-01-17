@@ -19,23 +19,12 @@ public class FgoNpAction extends AbstractGameAction {
     }
 
     public void update() {
-//        if (this.amount > 0) {
-//            if (master.fgoNp + this.amount >= 300) {
-//                master.fgoNp = 300;
-//            } else {
-//                master.fgoNp += this.amount;
-//            }
-//        } else {
-//            if (master.fgoNp + this.amount <= 0) {
-//                master.fgoNp = 0;
-//            } else {
-//                master.fgoNp += this.amount;
-//            }
-//        }
-
-        master.fgoNp = master.fgoNp == 99
-                ? 100
-                : Math.min(Math.max(master.fgoNp + this.amount, 0), 300);
+        // 0 <= fgoNP <=300
+        master.fgoNp = Math.min(Math.max(master.fgoNp + this.amount, 0), 300);
+        // 保留了一部分fgo特性，让你知道自己在玩fgo
+        if(master.fgoNp == 99){
+            master.fgoNp = 100;
+        }
 
         if (this.canText) {
             String text = "NP" + (this.amount > 0 ? "+" : "") + this.amount + "%";
@@ -45,12 +34,6 @@ public class FgoNpAction extends AbstractGameAction {
             text,
             Color.WHITE.cpy()));
 }
-
-
-//        if (master.fgoNp == 99) {
-//            //如果你有99%的宝具值，立即获得1%宝具值。
-//            ++master.fgoNp;
-//        }
 
         if (AbstractDungeon.player instanceof master) {
             ((master)AbstractDungeon.player).TruthValueUpdatedEvent();

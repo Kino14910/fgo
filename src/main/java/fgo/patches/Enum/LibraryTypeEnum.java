@@ -5,9 +5,9 @@ import com.megacrit.cardcrawl.helpers.CardLibrary;
 
 public class LibraryTypeEnum {
   @SpireEnum
-  public static CardLibrary.LibraryType Master_COLOR;
+  public static CardLibrary.LibraryType FGO;
   @SpireEnum
-  public static CardLibrary.LibraryType Noble_Phantasm_COLOR;
+  public static CardLibrary.LibraryType Noble_Phantasm;
 }
 
 

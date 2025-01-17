@@ -7,13 +7,13 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import fgo.patches.Enum.AbstractCardEnum;
+import fgo.patches.Enum.FGOCardColor;
 import fgo.util.CardStats;
 
-public class Defend extends BaseCard {
+public class Defend extends FGOCard {
     public static final String ID = makeID(Defend.class.getSimpleName());
-    private static final CardStats info = new CardStats(
-            AbstractCardEnum.Master_COLOR,
+    private static final CardStats INFO = new CardStats(
+            FGOCardColor.FGO,
             CardType.SKILL,
             CardRarity.BASIC,
             CardTarget.SELF,
@@ -21,7 +21,7 @@ public class Defend extends BaseCard {
     );
 
     public Defend() {
-        super(ID, info);
+        super(ID, INFO);
 
         setBlock(5, 3);
 

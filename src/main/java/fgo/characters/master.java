@@ -17,7 +17,7 @@ import com.megacrit.cardcrawl.helpers.*;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import fgo.cards.DreamUponTheStars;
-import fgo.patches.Enum.AbstractCardEnum;
+import fgo.patches.Enum.FGOCardColor;
 import fgo.patches.Enum.ThmodClassEnum;
 import fgo.patches.MainMenuUIFgoPatch;
 import fgo.patches.PictureSelectFgoPatch;
@@ -56,14 +56,14 @@ public class master extends CustomPlayer{
     public static int fgoNp;
     public master(String name) {
         //构造方法，初始化参数
-        super(name, ThmodClassEnum.Master_CLASS, ORB_TEXTURES, "fgo/image/UI_Master/energyBlueVFX.png", LAYER_SPEED, null, null);
+        super(name, ThmodClassEnum.MASTER_CLASS, ORB_TEXTURES, "fgo/images/UI_Master/energyBlueVFX.png", LAYER_SPEED, null, null);
         this.dialogX = this.drawX + 0.0F * Settings.scale;
         this.dialogY = this.drawY + 220.0F * Settings.scale;
 
         initializeClass(
                 String.valueOf(MainMenuUIFgoPatch.refreshSkinFgo()),
-                "fgo/image/char_Master/shoulder2.png", "fgo/image/char_Master/shoulder1.png",
-                "fgo/image/char_Master/fallen.png",
+                "fgo/images/char_Master/shoulder2.png", "fgo/images/char_Master/shoulder1.png",
+                "fgo/images/char_Master/fallen.png",
                 getLoadout(),
                 0.0F, 5.0F,
                 240.0F, 300.0F,
@@ -77,8 +77,8 @@ public class master extends CustomPlayer{
     public ArrayList<String> getStartingDeck() {
         //添加初始卡组
         ArrayList<String> retVal = new ArrayList<>();
-        retVal.addAll(Collections.nCopies(4, "Strike_Master"));
-        retVal.addAll(Collections.nCopies(4, "Defend_Master"));
+        retVal.addAll(Collections.nCopies(4, "Strike"));
+        retVal.addAll(Collections.nCopies(4, "Defend"));
         Collections.addAll(retVal,
                 "DreamUponTheStars",
                 "CharismaOfHope"
@@ -124,7 +124,7 @@ public class master extends CustomPlayer{
     @Override
     public AbstractCard.CardColor getCardColor() {
         //选择卡牌颜色
-        return AbstractCardEnum.Master_COLOR;
+        return FGOCardColor.FGO;
     }
 
     @Override

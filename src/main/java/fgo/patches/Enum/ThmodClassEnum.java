@@ -4,5 +4,5 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 
 public class ThmodClassEnum {
     @SpireEnum
-    public static AbstractPlayer.PlayerClass Master_CLASS;
+    public static AbstractPlayer.PlayerClass MASTER_CLASS;
 }

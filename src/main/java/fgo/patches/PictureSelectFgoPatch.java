@@ -46,7 +46,7 @@ public class PictureSelectFgoPatch {
             }
 
             for (CharacterOption o : __instance.options) {
-                if (o.selected && o.c.chosenClass == ThmodClassEnum.Master_CLASS) {
+                if (o.selected && o.c.chosenClass == ThmodClassEnum.MASTER_CLASS) {
                     TalentRight.render(sb);
                     TalentLeft.render(sb);
 
@@ -80,7 +80,7 @@ public class PictureSelectFgoPatch {
         public static void Postfix(CharacterSelectScreen __instance) {
             // Update your buttons position, check if the player clicked them, and do something if they did
             for (CharacterOption o : __instance.options) {
-                if (o.selected && o.c.chosenClass == ThmodClassEnum.Master_CLASS) {
+                if (o.selected && o.c.chosenClass == ThmodClassEnum.MASTER_CLASS) {
                     if (InputHelper.justClickedLeft && TalentLeft.hovered) {
                         TalentLeft.clickStarted = true;
                         CardCrawlGame.sound.play("UI_CLICK_1");

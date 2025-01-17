@@ -1,23 +1,24 @@
 package fgo.cards.colorless;
 
-import fgo.action.FgoNpAction;
-import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import fgo.action.FgoNpAction;
+import fgo.cards.FGOCard;
+import fgo.util.CardStats;
 
-public class ReleaseNoblePhantasm extends CustomCard {
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings("ReleaseNoblePhantasm");
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    public static final String IMG_PATH = "fgo/images/cards/CommandSpellGuts.png";
-    private static final int COST = -2;
-
-    public static final String ID = "ReleaseNoblePhantasm";
+public class ReleaseNoblePhantasm extends FGOCard {
+    public static final String ID = makeID(ReleaseNoblePhantasm.class.getSimpleName());
+    private static final CardStats INFO = new CardStats(
+            CardColor.COLORLESS,
+            CardType.POWER,
+            CardRarity.SPECIAL,
+            CardTarget.NONE,
+            -2
+    );
+    public static final String IMG = "fgo/images/cards/power/CommandSpellGuts.png";
     public ReleaseNoblePhantasm() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.POWER, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.NONE);
+        super(ID, INFO, IMG);
     }
 
     @Override

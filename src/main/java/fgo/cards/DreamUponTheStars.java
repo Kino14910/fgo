@@ -8,13 +8,13 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.EnergizedPower;
-import fgo.patches.Enum.AbstractCardEnum;
+import fgo.patches.Enum.FGOCardColor;
 import fgo.util.CardStats;
 
-public class DreamUponTheStars extends BaseCard {
+public class DreamUponTheStars extends FGOCard {
     public static final String ID = makeID(DreamUponTheStars.class.getSimpleName());
-    private static final CardStats info = new CardStats(
-            AbstractCardEnum.Master_COLOR,
+    private static final CardStats INFO = new CardStats(
+            FGOCardColor.FGO,
             CardType.ATTACK,
             CardRarity.BASIC,
             CardTarget.ENEMY,
@@ -22,10 +22,9 @@ public class DreamUponTheStars extends BaseCard {
     );
 
     public DreamUponTheStars() {
-        super(ID, info);
+        super(ID, INFO);
         setDamage(12);
         setCustomVar("energy", 1, 1);
-        initializeDescription();
     }
 
     @Override

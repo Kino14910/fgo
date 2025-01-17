@@ -1,24 +1,25 @@
 package fgo.cards.colorless;
 
-import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import fgo.cards.FGOCard;
+import fgo.util.CardStats;
 
-public class RepairSpiritOrigin extends CustomCard {
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings("RepairSpiritOrigin");
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    public static final String IMG_PATH = "fgo/images/cards/CommandSpellGuts.png";
-    private static final int COST = -2;
-
-    public static final String ID = "RepairSpiritOrigin";
+public class RepairSpiritOrigin extends FGOCard {
+    public static final String ID = makeID(RepairSpiritOrigin.class.getSimpleName());
+    private static final CardStats INFO = new CardStats(
+            CardColor.COLORLESS,
+            CardType.POWER,
+            CardRarity.SPECIAL,
+            CardTarget.NONE,
+            -2
+    );
+    public static final String IMG = "fgo/images/cards/power/CommandSpellGuts.png";
     public RepairSpiritOrigin() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.POWER, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.NONE);
+        super(ID, INFO, IMG);
     }
 
     @Override
