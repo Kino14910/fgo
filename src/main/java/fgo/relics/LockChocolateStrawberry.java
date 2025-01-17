@@ -13,8 +13,8 @@
 //
 //public class LockChocolateStrawberry extends CustomRelic {
 //    public static final String ID = "LockChocolateStrawberry";
-//    private static final String IMG = "img/relics_Master/LockChocolateStrawberry.png";
-//    private static final String IMG_OTL = "img/relics_Master/outline/LockChocolateStrawberry.png";
+//    private static final String IMG = "fgo/images/relics_Master/LockChocolateStrawberry.png";
+//    private static final String IMG_OTL = "fgo/images/relics_Master/outline/LockChocolateStrawberry.png";
 //    //调用父类的构造方法，传参为super(遗物ID,遗物全图，遗物白底图，遗物稀有度，获得遗物时的音效)
 //    public LockChocolateStrawberry() {
 //        super(ID, loadImage(IMG), loadImage(IMG_OTL), RelicTier.SPECIAL, LandingSound.MAGICAL);

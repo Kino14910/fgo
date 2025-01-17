@@ -8,8 +8,8 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 public class SaveStone extends CustomRelic {
     public static final String ID = "SaveStone";
-    private static final String IMG = "img/relics_Master/SaveStone.png";
-    private static final String IMG_OTL = "img/relics_Master/outline/SaveStone.png";
+    private static final String IMG = "fgo/images/relics_Master/SaveStone.png";
+    private static final String IMG_OTL = "fgo/images/relics_Master/outline/SaveStone.png";
 
     //调用父类的构造方法，传参为super(遗物ID,遗物全图，遗物白底图，遗物稀有度，获得遗物时的音效)
     public SaveStone() {

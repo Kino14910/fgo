@@ -31,23 +31,23 @@
     "DESCRIPTION": "Reduce !M!% damage taken this turn. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Reduce !M!% damage taken this turn. NL Exhaust."
   },
-  "BlackBarrel": {
+  "fgo:BlackBarrel": {
     "NAME": "Black Barrel",
     "DESCRIPTION": "Deal !D! damage. NL Deal additional damage for Block from enemy. NL Exhaust."
   },
-  "CommandSpellGuts": {
+  "fgo:CommandSpellGuts": {
     "NAME": "Restore Spirit Origin",
     "DESCRIPTION": "Heal all HP instead die. NL Gain 300% fgomaster:NP. NL Choose when you would die, use 3 fgomaster:Command_Spells."
   },
-  "RepairSpiritOrigin": {
+  "fgo:RepairSpiritOrigin": {
     "NAME": "Repair Spirit Origin",
     "DESCRIPTION": "Heal 30 HP. NL Use 1 fgomaster:Command_Spell."
   },
-  "ReleaseNoblePhantasm": {
+  "fgo:ReleaseNoblePhantasm": {
     "NAME": "Release Noble Phantasm",
     "DESCRIPTION": "Gain 100% fgomaster:NP. NL Use 1 fgomaster:Command_Spell."
   },
-  "BrilliantEscort": {
+  "fgo:BrilliantEscort": {
     "NAME": "Brilliant Escort",
     "DESCRIPTION": "Gain 10 fgomaster:Stars. NL Gain !M!% fgomaster:NP."
   },

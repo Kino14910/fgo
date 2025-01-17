@@ -16,8 +16,8 @@ public class WallOfSnowflakesPower extends BasePower {
         super(POWER_ID, PowerType.BUFF, false, owner, amount);
             this.amount = Math.min(this.amount, 100);
 
-        String path128 = "img/powers_Master/DefenseUpPower84.png";
-        String path48 = "img/powers_Master/DefenseUpPower32.png";
+        String path128 = "fgo/images/powers_Master/DefenseUpPower84.png";
+        String path48 = "fgo/images/powers_Master/DefenseUpPower32.png";
         this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(path128), 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(path48), 0, 0, 32, 32);
         updateDescription();

@@ -31,23 +31,23 @@
     "DESCRIPTION": "在这个回合受到的攻击伤害降低 !M! %。",
     "UPGRADE_DESCRIPTION": "获得 !D! 点防御。 NL 在这个回合受到的攻击伤害降低 !M! %。"
   },
-  "BlackBarrel": {
+  "${modID}:BlackBarrel": {
     "NAME": "悖论构造体",
     "DESCRIPTION": "造成 !D! 点伤害。 NL 增加一名敌人当前格挡的伤害。 NL 消耗 。"
   },
-  "CommandSpellGuts": {
+  "${modID}:CommandSpellGuts": {
     "NAME": "灵基复原",
     "DESCRIPTION": "免死并回复所有生命。 NL 获得300% fgomaster:宝具值 。 NL 在你要被杀死时显现，消耗3划令咒发动。"
   },
-  "RepairSpiritOrigin": {
+  "${modID}:RepairSpiritOrigin": {
     "NAME": "灵基修复",
     "DESCRIPTION": "回复30点生命。 NL 使用1划令咒发动。"
   },
-  "ReleaseNoblePhantasm": {
+  "${modID}:ReleaseNoblePhantasm": {
     "NAME": "宝具解放",
     "DESCRIPTION": "获得100% fgomaster:宝具值 。 NL 使用1划令咒发动。"
   },
-  "BrilliantEscort": {
+  "${modID}:BrilliantEscort": {
     "NAME": "闪耀的陪同",
     "DESCRIPTION": "获得10颗 fgomaster:暴击星 。 NL 获得 !NP! % fgomaster:宝具值 。"
   },

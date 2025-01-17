@@ -56,14 +56,14 @@ public class master extends CustomPlayer{
     public static int fgoNp;
     public master(String name) {
         //构造方法，初始化参数
-        super(name, ThmodClassEnum.Master_CLASS, ORB_TEXTURES, "fgo/image/UI_Master/energyBlueVFX.png", LAYER_SPEED, null, null);
+        super(name, ThmodClassEnum.Master_CLASS, ORB_TEXTURES, "fgo/images/UI_Master/energyBlueVFX.png", LAYER_SPEED, null, null);
         this.dialogX = this.drawX + 0.0F * Settings.scale;
         this.dialogY = this.drawY + 220.0F * Settings.scale;
 
         initializeClass(
                 String.valueOf(MainMenuUIFgoPatch.refreshSkinFgo()),
-                "fgo/image/char_Master/shoulder2.png", "fgo/image/char_Master/shoulder1.png",
-                "fgo/image/char_Master/fallen.png",
+                "fgo/images/char_Master/shoulder2.png", "fgo/images/char_Master/shoulder1.png",
+                "fgo/images/char_Master/fallen.png",
                 getLoadout(),
                 0.0F, 5.0F,
                 240.0F, 300.0F,
