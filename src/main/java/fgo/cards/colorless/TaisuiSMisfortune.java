@@ -28,8 +28,8 @@ public class TaisuiSMisfortune extends FGOCard {
     public TaisuiSMisfortune() {
         super(ID, INFO);
         setMagic(2, 1);
-        setExhaust(true);
-        setInnate(true);
+        setExhaust();
+        setInnate();
     }
 
     @Override

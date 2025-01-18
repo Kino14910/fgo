@@ -24,7 +24,7 @@ public class FifthForm extends FGOCard {
         super(ID, INFO);
         setMagic(3);
         this.portraitImg = ImageMaster.loadImage("fgo/images/cards/skill/FifthForm.png");
-        setExhaust(true);
+        setExhaust();
 
         FlavorText.AbstractCardFlavorFields.textColor.set(this, Color.CHARTREUSE);
         FlavorText.AbstractCardFlavorFields.flavorBoxType.set(this, FlavorText.boxType.TRADITIONAL);

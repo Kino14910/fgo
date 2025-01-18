@@ -19,10 +19,11 @@ public class FgoNpAction extends AbstractGameAction {
     }
 
     public void update() {
+        int oldNp = master.fgoNp;
         // 0 <= fgoNP <=300
         master.fgoNp = Math.min(Math.max(master.fgoNp + this.amount, 0), 300);
         // 保留了一部分fgo特性，让你知道自己在玩fgo
-        if(master.fgoNp == 99){
+        if(master.fgoNp == 99 && oldNp < 99){
             master.fgoNp = 100;
         }
 

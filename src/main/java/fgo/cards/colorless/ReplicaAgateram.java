@@ -33,11 +33,11 @@ public class ReplicaAgateram extends FGOCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new GainBlockAction(p, p, this.block));
+        this.addToBot(new GainBlockAction(p, p, block));
         for (AbstractPower power : p.powers) {
             if (power.type == AbstractPower.PowerType.DEBUFF) {
                 this.addToBot(new ReducePowerAction(p, p, power, 1));
-                this.addToBot(new GainBlockAction(p, p, this.block));
+                this.addToBot(new GainBlockAction(p, p, block));
             }
         }
     }

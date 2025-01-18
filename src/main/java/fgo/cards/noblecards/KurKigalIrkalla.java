@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.FlightPower;
+import fgo.cards.AbsNoblePhantasmCard;
 import fgo.hexui_lib.util.RenderImageLayer;
 import fgo.hexui_lib.util.TextureLoader;
 import fgo.powers.BlessingOfKurPower;
@@ -20,8 +21,8 @@ public class KurKigalIrkalla extends AbsNoblePhantasmCard {
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings("KurKigalIrkalla");
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    public static final String IMG_PATH = "fgo/images/cards/cards_noble/KurKigalIrkalla.png";
-    public static final String IMG_PATH_P = "fgo/images/cards/cards_noble/KurKigalIrkalla_p.png";
+    public static final String IMG_PATH = "fgo/images/cards/noble/KurKigalIrkalla.png";
+    public static final String IMG_PATH_P = "fgo/images/cards/noble/KurKigalIrkalla_p.png";
     public static final String ID = "KurKigalIrkalla";
     public KurKigalIrkalla() {
         super(ID, NAME, IMG_PATH, DESCRIPTION, CardType.ATTACK, CardTarget.ALL_ENEMY);

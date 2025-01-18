@@ -30,7 +30,7 @@ public class DivineDualEdge extends FGOCard {
         super(ID, INFO);
         setDamage(10, 3);
         this.isMultiDamage = true;
-        setExhaust(true);
+        setExhaust();
     }
 
     @Override

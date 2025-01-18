@@ -16,7 +16,7 @@ import com.megacrit.cardcrawl.events.city.Vampires;
 import com.megacrit.cardcrawl.helpers.*;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
-import fgo.cards.DreamUponTheStars;
+import fgo.cards.fgo.DreamUponTheStars;
 import fgo.patches.Enum.FGOCardColor;
 import fgo.patches.Enum.ThmodClassEnum;
 import fgo.patches.MainMenuUIFgoPatch;
@@ -77,14 +77,14 @@ public class master extends CustomPlayer{
     public ArrayList<String> getStartingDeck() {
         //添加初始卡组
         ArrayList<String> retVal = new ArrayList<>();
-        retVal.addAll(Collections.nCopies(4, "Strike"));
-        retVal.addAll(Collections.nCopies(4, "Defend"));
+        retVal.addAll(Collections.nCopies(4, "fgo:Strike"));
+        retVal.addAll(Collections.nCopies(4, "fgo:Defend"));
         Collections.addAll(retVal,
-                "DreamUponTheStars",
-                "CharismaOfHope"
-//                "EternalMemories",
-//                "BeautifulJourney",
-//                "Failnaught"
+                "fgo:DreamUponTheStars",
+                "fgo:CharismaOfHope"
+//                "fgo:EternalMemories",
+//                "fgo:BeautifulJourney",
+//                "fgo:Failnaught"
         );
         return retVal;
     }

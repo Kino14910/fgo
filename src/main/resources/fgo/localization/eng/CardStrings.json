@@ -1,21 +1,11 @@
 {
-  "${modID}:ExampleCard": {
-    "NAME": "Name",
-    "DESCRIPTION": "Description. NL Second line.",
-    "UPGRADE_DESCRIPTION": "This will automatically be used if the card is upgraded. Remove it if unneeded.",
-    "EXTENDED_DESCRIPTION": [
-      "You can put more text in here.",
-      "If you need to use it for stuff.",
-      "Blizzard is a good example for this."
-    ]
-  },
   "${modID}:Strike": {
     "NAME": "Strike",
     "DESCRIPTION": "Deal !D! damage."
   },
   "${modID}:Defend": {
     "NAME": "Defend",
-    "DESCRIPTION": "Gain !B! block."
+    "DESCRIPTION": "Gain !B! Block."
   },
   "${modID}:DreamUponTheStars": {
     "NAME": "Dream Upon Stars",
@@ -24,7 +14,7 @@
   },
   "${modID}:CharismaOfHope": {
     "NAME": "Charisma of Hope",
-    "DESCRIPTION": "Gain !B! Block. NL Gain !NP!% NP."
+    "DESCRIPTION": "Gain !B! Block. NL Gain !NP!% fgo:NP."
   },
   "${modID}:WallOfSnowflakes": {
     "NAME": "Wall of Snow Flakes",
@@ -37,23 +27,23 @@
   },
   "${modID}:CommandSpellGuts": {
     "NAME": "Restore Spirit Origin",
-    "DESCRIPTION": "Heal all HP instead die. NL Gain 300% NP. NL Choose when you would die, use 3 Command_Spells."
+    "DESCRIPTION": "Heal all HP instead die. NL Gain !NP! % fgo:NP. NL Choose when you would die, use 3 fgo:Command_Spells."
   },
   "${modID}:RepairSpiritOrigin": {
     "NAME": "Repair Spirit Origin",
-    "DESCRIPTION": "Heal 30 HP. NL Use 1 Command_Spell."
+    "DESCRIPTION": "Heal 30 HP. NL Use 1 fgo:Command_Spell."
   },
   "${modID}:ReleaseNoblePhantasm": {
     "NAME": "Release Noble Phantasm",
-    "DESCRIPTION": "Gain 100% NP. NL Use 1 Command_Spell."
+    "DESCRIPTION": "Gain !NP! fgo:NP. NL Use 1 fgo:Command_Spell."
   },
   "${modID}:BrilliantEscort": {
     "NAME": "Brilliant Escort",
-    "DESCRIPTION": "Gain 10 Stars. NL Gain !M!% NP."
+    "DESCRIPTION": "Gain !M! fgo:Stars. NL Gain !NP! % fgo:NP."
   },
   "${modID}:PureCoordinate": {
     "NAME": "Pure Coordinate",
-    "DESCRIPTION": "Gain !M! Invincibility this turn."
+    "DESCRIPTION": "Gain !M! fgo:Invincibility this turn."
   },
   "${modID}:BlessedRegenerate": {
     "NAME": "Blessed Regenerate",
@@ -86,8 +76,8 @@
   },
   "${modID}:IntoxicatedMeal": {
     "NAME": "Intoxicated Meal",
-    "DESCRIPTION": "Apply !M! Poison. NL Apply !M! Defense_Down.",
-    "UPGRADE_DESCRIPTION": "Apply !M! Poison and Defense_Down to ALL enemies."
+    "DESCRIPTION": "Apply !M! Poison. NL Apply !M! fgo:Defense_Down.",
+    "UPGRADE_DESCRIPTION": "Apply !M! Poison and fgo:Defense_Down to ALL enemies."
   },
   "${modID}:QueensCovenant": {
     "NAME": "Queen's Covenant",
@@ -106,7 +96,7 @@
   },
   "${modID}:SpringOfFire": {
     "NAME": "Spring of Fire!",
-    "DESCRIPTION": "Gain !M! Guts 3 times, stackable with other Guts. Whenever you Trigger Guts, gain 20% NP_Damage and remove all of your debuff. NL Gain !M! NP_Rate. NL Exhaust."
+    "DESCRIPTION": "Gain !M! fgo:Guts 3 times, stackable with other Guts. Whenever you Trigger fgo:Guts, gain !NP! % fgo:NP_Damage and remove all of your debuff. NL Gain !M! fgo:NP_Rate. NL Exhaust."
   },
   "${modID}:HeroEli": {
     "NAME": "Hero Eli",
@@ -123,11 +113,11 @@
   },
   "${modID}:Swingby": {
     "NAME": "Swingby",
-    "DESCRIPTION": "Ethereal. NL Discard your hand. NL Gain !M! Block and Stars for each card discarded."
+    "DESCRIPTION": "Ethereal. NL Discard your hand. NL Gain !M! Block and fgo:Stars for each card discarded."
   },
   "${modID}:LivingFlame": {
     "NAME": "Living Flame",
-    "DESCRIPTION": "Whenever you are attacked, apply !M! Combust and 1 Defense_Down back."
+    "DESCRIPTION": "Whenever you are attacked, apply !M! fgo:Combust and 1 fgo:Defense_Down back."
   },
   "${modID}:RepayForLife": {
     "NAME": "Repay For Life",
@@ -151,7 +141,7 @@
   },
   "${modID}:ComeOn": {
     "NAME": "Come on",
-    "DESCRIPTION": "Deal !D! damage to a random enemy and double the enemy's Combust."
+    "DESCRIPTION": "Deal !D! damage to a random enemy and double the enemy's fgo:Combust."
   },
   "${modID}:NFFSpecial": {
     "NAME": "NFF Special",
@@ -159,15 +149,15 @@
   },
   "${modID}:JourneyGuidance": {
     "NAME": "Journey's Guidance",
-    "DESCRIPTION": "Deal !D! damage. NL Add a *Water *Channels into your hand. NL Waterside: gain [E] [E]."
+    "DESCRIPTION": "Deal !D! damage. NL Add a *Water *Channels into your hand. NL fgo:Waterside: gain [E] [E]."
   },
   "${modID}:SoulOfWaterChannels": {
     "NAME": "Water Channels",
-    "DESCRIPTION": "Retain. NL Gain 1 Evil_Curse. NL Gain !M! Star. NL Exhaust."
+    "DESCRIPTION": "Retain. NL Gain 1 fgo:Evil_Curse. NL Gain !M! fgo:Star. NL Exhaust."
   },
   "${modID}:BackAgain": {
     "NAME": "Extraterrestrial Octopus",
-    "DESCRIPTION": "Deal !D! damage. NL If the last card played this combat was a Attack, apply !M! Defense_Down."
+    "DESCRIPTION": "Deal !D! damage. NL If the last card played this combat was a Attack, apply !M! fgo:Defense_Down."
   },
   "${modID}:MaraPapiyas": {
     "NAME": "Mara-Papiyas",
@@ -175,19 +165,19 @@
   },
   "${modID}:MonteCristoTreasure": {
     "NAME": "Monte Cristo Treasure",
-    "DESCRIPTION": "Whenever you deal Critical damage, gain Block equal to unblocked Critical damage dealt."
+    "DESCRIPTION": "Whenever you deal fgo:Critical damage, gain Block equal to unblocked fgo:Critical damage dealt."
   },
   "${modID}:AthnGabla": {
     "NAME": "Ath nGabla",
-    "DESCRIPTION": "Gain !M! Guts. NL Whenever you lose HP, gain Vigor equal to lose HP. NL Exhaust."
+    "DESCRIPTION": "Gain !M! fgo:Guts. NL Whenever you lose HP, gain Vigor equal to lose HP. NL Exhaust."
   },
-  "${modID}:DoppelgangerMaster": {
+  "${modID}:Doppelganger": {
     "NAME": "Doppelgänger",
     "DESCRIPTION": "Deal !D! damage. NL Draw a card, put a copy of it in your hand."
   },
   "${modID}:MaidenOfaFlowerPatio": {
     "NAME": "Maiden of Flower",
-    "DESCRIPTION": "Gain !B! Block 2 times. NL Gain !M! Evil_Curse."
+    "DESCRIPTION": "Gain !B! Block 2 times. NL Gain !M! fgo:Evil_Curse."
   },
   "${modID}:ItsInevitable": {
     "NAME": "It's Inevitable",
@@ -211,7 +201,8 @@
   },
   "${modID}:YinYangFish": {
     "NAME": "Yin Yang Fish",
-    "DESCRIPTION": "Lose 10% NP. NL Heal !M! HP. NL Exhaust."
+    "DESCRIPTION": "Heal !M! HP. NL Lose !NP! % fgo:NP. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain 30 % fgo:NP. Heal !M! HP. NL Lose !NP! % fgo:NP. NL Exhaust."
   },
   "${modID}:LevelSlash": {
     "NAME": "First Thrust",
@@ -232,24 +223,24 @@
   },
   "${modID}:WarriorsBlade": {
     "NAME": "Manslayer",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Gain !M! Stars."
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Gain !M! fgo:Stars."
   },
   "${modID}:StarHunter": {
     "NAME": "Star Hunter",
-    "DESCRIPTION": "Draw !M! cards. NL Gain 10 Stars. NL Gain 2 Poison. NL Exhaust."
+    "DESCRIPTION": "Draw !M! cards. NL Gain 10 fgo:Stars. NL Gain 2 Poison. NL Exhaust."
   },
   "${modID}:BlessingOfKur": {
     "NAME": "Blessing of Kur",
-    "DESCRIPTION": "Gain !B! Block X times. NL Gain X Np_Rate. NL Gain Blessing_of_Kur. NL Exhaust."
+    "DESCRIPTION": "Gain !B! Block X times. NL Gain X fgo:Np_Rate. NL Gain fgo:Blessing_of_Kur. NL Exhaust."
   },
   "${modID}:GoddessMetamorphosisBeast": {
     "NAME": "Goddess Metamorphosis",
-    "DESCRIPTION": "Ethereal. NL Whenever an Attack deals damage, apply 1 Poison, Evil_Curse and Combust.",
-    "UPGRADE_DESCRIPTION": "Whenever an Attack deals damage, apply 1 Poison, Evil_Curse and Combust."
+    "DESCRIPTION": "Ethereal. NL Whenever an Attack deals damage, apply 1 Poison, fgo:Evil_Curse and fgo:Combust.",
+    "UPGRADE_DESCRIPTION": "Whenever an Attack deals damage, apply 1 Poison, fgo:Evil_Curse and fgo:Combust."
   },
   "${modID}:AnimalDialogue": {
     "NAME": "Animal Dialogue",
-    "DESCRIPTION": "Gain [E] for each !M!% NP. NL Lose all NP."
+    "DESCRIPTION": "Gain [E] for each !M!% fgo:NP. NL Lose all fgo:NP."
   },
   "${modID}:EightKindness": {
     "NAME": "Eight Kindness",
@@ -257,7 +248,7 @@
   },
   "${modID}:OriginBullet": {
     "NAME": "Origin Bullet",
-    "DESCRIPTION": "Deal !D! damage. NL Deals additional damage equal to !M! times each buff or debuff from the enemy. NL Discard your hand."
+    "DESCRIPTION": "Deal !D! damage. NL Deals additional damage equal to !M! times each buff or debuff from the enemy."
   },
   "${modID}:StarPioneer": {
     "NAME": "Star Pioneer",
@@ -266,8 +257,8 @@
   },
   "${modID}:CurseHarmony": {
     "NAME": "Curse Rabbitfolk",
-    "DESCRIPTION": "At the end of your turn, apply triple Evil_Curse Poison to a random enemy.",
-    "UPGRADE_DESCRIPTION": "At the end of your turn, apply quintuple Evil_Curse Poison to a random enemy."
+    "DESCRIPTION": "At the end of your turn, apply triple fgo:Evil_Curse Poison to a random enemy.",
+    "UPGRADE_DESCRIPTION": "At the end of your turn, apply quintuple fgo:Evil_Curse Poison to a random enemy."
   },
   "${modID}:GodsExecution": {
     "NAME": "God's Execution",
@@ -283,11 +274,11 @@
   },
   "${modID}:DeathOfDeath": {
     "NAME": "Abyss of Death",
-    "DESCRIPTION": "Gain !M! Guts. NL Gain Abyss_Of_Death. Gain 1 Strength during duration. NL Exhaust."
+    "DESCRIPTION": "Gain !M! fgo:Guts. NL Gain fgo:Abyss_Of_Death. Gain 1 Strength during duration. NL Exhaust."
   },
   "${modID}:AtTheWell": {
     "NAME": "At The Well",
-    "DESCRIPTION": "Next turn, gain !M! Guts, the next time you trigger Guts draw 3 cards and gain [E] [E] [E]. NL Die next turn. NL Exhaust."
+    "DESCRIPTION": "Next turn, gain !M! fgo:Guts, the next time you trigger fgo:Guts draw 3 cards and gain [E] [E] [E]. NL Die next turn. NL Exhaust."
   },
   "${modID}:SquireOfProphecy": {
     "NAME": "Prayer for Rain",
@@ -299,16 +290,16 @@
   },
   "${modID}:EndOfADream": {
     "NAME": "End of a Dream",
-    "DESCRIPTION": "Noble_Phantasm Attack deal double damage. NL At the end of this turn, gain Eternal_Sleep.",
-    "UPGRADE_DESCRIPTION": "Retain. NL Noble_Phantasm Attack deal double damage. NL At the end of this turn, gain Eternal_Sleep."
+    "DESCRIPTION": "fgo:Noble_Phantasm Attack deal double damage. NL At the end of this turn, gain fgo:Eternal_Sleep.",
+    "UPGRADE_DESCRIPTION": "Retain. NL fgo:Noble_Phantasm Attack deal double damage. NL At the end of this turn, gain fgo:Eternal_Sleep."
   },
   "${modID}:AbyssLight": {
     "NAME": "Abyss Light",
-    "DESCRIPTION": "Deal !D! damage. NL Gain !M!% NP. NL Gain !M!% NP_Damage."
+    "DESCRIPTION": "Deal !D! damage. NL Gain !M!% fgo:NP. NL Gain !M!% fgo:NP_Damage."
   },
   "${modID}:SchwarzwaldFalke": {
     "NAME": "Schwarzwald Falke",
-    "DESCRIPTION": "Gain 1 Evasion at the end of your next !M! turns. NL Gain !M! NP_Damage. NL Exhaust."
+    "DESCRIPTION": "Gain 1 fgo:Evasion at the end of your next !M! turns. NL Gain !M! fgo:NP_Damage. NL Exhaust."
   },
   "${modID}:ManaBurstGems": {
     "NAME": "Mana Burst Gems",
@@ -320,19 +311,19 @@
   },
   "${modID}:VoidSpaceFineArts": {
     "NAME": "Void Space Fine Arts",
-    "DESCRIPTION": "Gain 10 Guts. NL Gain 1 Evil_Curse 3 times. NL Gain NP equal to !M! times your Evil_Curse. NL Exhaust."
+    "DESCRIPTION": "Gain 10 fgo:Guts. NL Gain 1 fgo:Evil_Curse 3 times. NL Gain fgo:NP equal to !M! times your fgo:Evil_Curse. NL Exhaust."
   },
   "${modID}:TheYellowHouse": {
     "NAME": "The Yellow House",
-    "DESCRIPTION": "Deal !D! damage !M! times. NL Apply 2 Defense_Down. NL Gain 1 Evil_Curse. NL Shuffle this card into your draw pile."
+    "DESCRIPTION": "Deal !D! damage !M! times. NL Apply 2 fgo:Defense_Down. NL Gain 1 fgo:Evil_Curse. NL Shuffle this card into your draw pile."
   },
   "${modID}:Insanity": {
     "NAME": "Insanity",
-    "DESCRIPTION": "Whenever you play a Attack card, removes 1 Evil_Curse, gain 1 Strength and !M!% NP if removed. NL Absorbs ALL enemies Evil_Curse."
+    "DESCRIPTION": "Whenever you play a Attack card, removes 1 fgo:Evil_Curse, gain 1 Strength and !M!% fgo:NP if removed. NL Absorbs ALL enemies fgo:Evil_Curse."
   },
   "${modID}:CharismaOfConflict": {
     "NAME": "Charisma of Conflict",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Gain !M! Guts. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Gain !M! fgo:Guts. NL Exhaust."
   },
   "${modID}:TaisuiSMisfortune": {
     "NAME": "Bloodstained Prince",
@@ -341,7 +332,7 @@
   },
   "${modID}:LakeTexcoco": {
     "NAME": "Lake Texcoco",
-    "DESCRIPTION": "Deal !D! damage. NL Gain !M! Waterside. NL Gain !B! Block next turn."
+    "DESCRIPTION": "Deal !D! damage. NL Gain !M! fgo:Waterside. NL Gain !B! Block next turn."
   },
   "${modID}:TakeRomance": {
     "NAME": "Take Romance",
@@ -361,7 +352,7 @@
   },
   "${modID}:PutOnFakeFace": {
     "NAME": "God's Altar",
-    "DESCRIPTION": "Randomly gain a buff at the start of your turn: gain [E]. NL Heal 5 HP. NL Remove 3 Evil_Curse."
+    "DESCRIPTION": "Randomly gain a buff at the start of your turn: gain [E]. NL Heal 5 HP. NL Remove 3 fgo:Evil_Curse."
   },
   "${modID}:Trifas": {
     "NAME": "Trifas",
@@ -373,7 +364,7 @@
   },
   "${modID}:HeroicKing": {
     "NAME": "Heroic King",
-    "DESCRIPTION": "Deal !D! damage to a random enemy !M! times. NL Whenever you lose HP this combat, return this from the discard pile to your hand and gain 1 Heroic_King.",
+    "DESCRIPTION": "Deal !D! damage to a random enemy !M! times. NL Whenever you lose HP this combat, return this from the discard pile to your hand and gain 1 fgo:Heroic_King.",
     "EXTENDED_DESCRIPTION": [
       "Deal !D! damage !M! times and apply !M! Vulnerable to ALL enemies."
     ]
@@ -388,19 +379,19 @@
   },
   "${modID}:MysticEyes": {
     "NAME": "Mystic Eyes",
-    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Evil_Curse. NL The enemy Stunned this turn. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! fgo:Evil_Curse. NL The enemy fgo:Stunned this turn. NL Exhaust."
   },
   "${modID}:HugeScale": {
     "NAME": "Huge Scale",
-    "DESCRIPTION": "At the start of each turn, gain !M! Block and Growth. NL Add a *Infantile *Regression into your hand."
+    "DESCRIPTION": "At the start of each turn, gain !M! Block and fgo:Growth. NL Add a *Infantile *Regression into your hand."
   },
   "${modID}:InfantileRegression": {
     "NAME": "Infantile Regression",
-    "DESCRIPTION": "Retain. NL Remove all of your Growth, gain [E] for each !M! Growth."
+    "DESCRIPTION": "Retain. NL Remove all of your fgo:Growth, gain [E] for each !M! fgo:Growth."
   },
   "${modID}:ChildrenSHero": {
     "NAME": "Children's Hero",
-    "DESCRIPTION": "Add !M! copy of the last card played this turn into your hand. NL Noble_Phantasm cannot be copied. NL Exhaust.",
+    "DESCRIPTION": "Add !M! copy of the last card played this turn into your hand. NL fgo:Noble_Phantasm cannot be copied. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
       "I haven't played a card in this turn."
     ]
@@ -420,20 +411,19 @@
   },
   "${modID}:FlamesofApplause": {
     "NAME": "Flames of Applause",
-    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Combust. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! fgo:Combust. NL Exhaust."
   },
   "${modID}:SwordOfSelection": {
     "NAME": "Sword of Selection",
-    "DESCRIPTION": "Gian additional NP equal to hand number. NL Draw !M! card.",
+    "DESCRIPTION": "Draw !M! card. NL Gain additional fgo:NP equal to hand number.",
     "EXTENDED_DESCRIPTION": [
-      " NL (Gain ",
-      "% NP.)"
+      " NL (Gain !NP! % NP.)"
     ]
   },
   "${modID}:SparksRoute": {
     "NAME": "Sparks Route∞",
-    "DESCRIPTION": "Lose 10% NP, otherwise Unplayable. NL Put your hand back into your draw pile, then draw that many cards.",
-    "UPGRADE_DESCRIPTION": "Lose 10% NP, otherwise Unplayable. NL Put your hand back into your draw pile, then draw that many cards. NL Return to hand.",
+    "DESCRIPTION": "Lose 10% fgo:NP, otherwise Unplayable. NL Put your hand back into your draw pile, then draw that many cards.",
+    "UPGRADE_DESCRIPTION": "Lose 10% fgo:NP, otherwise Unplayable. NL Put your hand back into your draw pile, then draw that many cards. NL Return to hand.",
     "EXTENDED_DESCRIPTION": [
       "Insufficient fuel."
     ]
@@ -453,12 +443,12 @@
   },
   "${modID}:GrailOfFieryHeavens": {
     "NAME": "Grail of Fiery Heavens",
-    "DESCRIPTION": "At the start of your turn, gain !M!% NP.",
-    "UPGRADE_DESCRIPTION": "Innate. NL At the start of your turn, gain !M!% NP."
+    "DESCRIPTION": "At the start of your turn, gain !M!% fgo:NP.",
+    "UPGRADE_DESCRIPTION": "Innate. NL At the start of your turn, gain !M!% fgo:NP."
   },
   "${modID}:TeslaCoil": {
     "NAME": "Tesla Coil",
-    "DESCRIPTION": "Deal !D! damage. NL Gain !M! NP_Rate."
+    "DESCRIPTION": "Deal !D! damage. NL Gain !M! fgo:NP_Rate."
   },
   "${modID}:ReplicaAgateram": {
     "NAME": "Replica Agateram",
@@ -470,19 +460,19 @@
   },
   "${modID}:SwanLake": {
     "NAME": "Swan Lake",
-    "DESCRIPTION": "Deal !D! damage !M! times. NL Gain !M! Waterside. NL Can be Upgraded any number of times. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage !M! times. NL Gain !M! fgo:Waterside. NL Can be Upgraded any number of times. NL Exhaust."
   },
   "${modID}:LuckySpinning": {
     "NAME": "Lucky Spinning",
-    "DESCRIPTION": "Deal !D! damage. NL Whenever you play a non-Attack cards this turn, gain !M! Stars."
+    "DESCRIPTION": "Deal !D! damage. NL Whenever you play a non-Attack cards this turn, gain !M! fgo:Stars."
   },
   "${modID}:KnightStance": {
     "NAME": "Knight Stance",
-    "DESCRIPTION": "Gain !B! Block. NL Reduce 20% damage taken this turn. NL Gain !M! Np_Rate."
+    "DESCRIPTION": "Gain !B! Block. NL Reduce 20% damage taken this turn. NL Gain !M! fgo:Np_Rate."
   },
   "${modID}:KarmicVision": {
     "NAME": "Karmic Vision",
-    "DESCRIPTION": "Ignores_Invincibility and deal !D! damage for each removed. NL Deal !D! damage."
+    "DESCRIPTION": "fgo:Ignores_Invincibility and deal !D! damage for each removed. NL Deal !D! damage."
   },
   "${modID}:TheGoldenFleece": {
     "NAME": "The Golden Fleece",
@@ -498,16 +488,16 @@
   },
   "${modID}:MorningLark": {
     "NAME": "Morning Lark",
-    "DESCRIPTION": "Gain !M!% NP. NL Gain 10 Stars. NL Draw 1 less card next turn. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain !M!% NP. NL Gain 20 Stars. NL Draw 1 less card next turn. NL Exhaust."
+    "DESCRIPTION": "Gain !M!% fgo:NP. NL Gain 10 fgo:Stars. NL Draw 1 less card next turn. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain !M!% fgo:NP. NL Gain 20 fgo:Stars. NL Draw 1 less card next turn. NL Exhaust."
   },
   "${modID}:GraceUnexpectedBirth": {
     "NAME": "Grace Unexpected Birth",
-    "DESCRIPTION": "Gain !M!% NP. NL You cannot choose Noble_Phantasm card for !M! turns. NL Exhaust."
+    "DESCRIPTION": "Gain !M!% fgo:NP. NL You cannot choose fgo:Noble_Phantasm card for !M! turns. NL Exhaust."
   },
   "${modID}:KnightoftheLake": {
     "NAME": "Knight of the Lake",
-    "DESCRIPTION": "If you don't have Critical, gain !M!% Critical. NL Otherwise, gain 10 Stars."
+    "DESCRIPTION": "If you don't have fgo:Critical, gain !M!% fgo:Critical. NL Otherwise, gain 10 fgo:Stars."
   },
   "${modID}:GiantoftheBridge": {
     "NAME": "Giant of the Bridge",
@@ -515,15 +505,14 @@
   },
   "${modID}:Borrowingfrom": {
     "NAME": "Borrowing from...",
-    "DESCRIPTION": "Change your NP to 1.5 times.",
-    "UPGRADE_DESCRIPTION": "Double your NP."
+    "DESCRIPTION": "Change your fgo:NP to 1.5 times.",
+    "UPGRADE_DESCRIPTION": "Double your fgo:NP."
   },
   "${modID}:MagicBulletCharging": {
     "NAME": "Magic Bullet Charging",
     "DESCRIPTION": "Gain 1 *Magic *Bullet X times. NL Change to lose All when you have *Magic *Bullet, and deal !D! damage to All enemies for each lost.",
     "EXTENDED_DESCRIPTION": [
-      "Deal !D! damage to All enemies ",
-      " times."
+      "Deal !D! damage to All enemies !M! times."
     ]
   },
   "${modID}:PhasingFluidBlade": {
@@ -544,183 +533,183 @@
   },
   "${modID}:CurseDisaster": {
     "NAME": "Curse Disaster",
-    "DESCRIPTION": "Unplayable. NL Whenever this card is drawn, gain and apply !M! Evil_Curse to ALL enemies. NL Ethereal."
+    "DESCRIPTION": "Unplayable. NL Whenever this card is drawn, gain and apply !M! fgo:Evil_Curse to ALL enemies. NL Ethereal."
   },
   "${modID}:LastSunXibalba": {
     "NAME": "Last Sun Xibalba",
-    "DESCRIPTION": "Noble_Phantasm. NL Deal !D! damage 5 times to ALL enemies. NL Gain !M! Stars."
+    "DESCRIPTION": "fgo:Noble_Phantasm. NL Deal !D! damage 5 times to ALL enemies. NL Gain !M! fgo:Stars."
   },
   "${modID}:Unlimited": {
     "NAME": "Unlimited Blade Works",
-    "DESCRIPTION": "Noble_Phantasm. NL At the start of each turn, add !M! random Attack into your hand. It costs 0 this turn."
+    "DESCRIPTION": "fgo:Noble_Phantasm. NL At the start of each turn, add !M! random Attack into your hand. It costs 0 this turn."
   },
   "${modID}:GreatRamNautilus": {
     "NAME": "Great Ram Nautilus",
-    "DESCRIPTION": "Noble_Phantasm. NL Deal !D! damage. NL Waterside: damage +20%. NL Waterside: gain [E]."
+    "DESCRIPTION": "fgo:Noble_Phantasm. NL Deal !D! damage. NL fgo:Waterside: damage +20%. NL fgo:Waterside: gain [E]."
   },
   "${modID}:BridalSpinWheel": {
     "NAME": "Bridal Spin Wheel",
-    "DESCRIPTION": "Noble_Phantasm. NL Gain [E] [E] [E] [E]. NL Gain !M! Stars."
+    "DESCRIPTION": "fgo:Noble_Phantasm. NL Gain [E] [E] [E] [E]. NL Gain !M! fgo:Stars."
   },
   "${modID}:InnocenceAroundight": {
     "NAME": "Innocence Aroundight",
-    "DESCRIPTION": "Noble_Phantasm. NL Deal !D! damage. NL Gain !M! Np_Rate. NL Shuffle a *Ray *Horizon into your draw pile."
+    "DESCRIPTION": "fgo:Noble_Phantasm. NL Deal !D! damage. NL Gain !M! fgo:Np_Rate. NL Shuffle a *Ray *Horizon into your draw pile."
   },
   "${modID}:RayHorizon": {
     "NAME": "Ray Horizon",
-    "DESCRIPTION": "Gain !M!% NP. NL Prevent you would attacked this turn. NL Next Noble_Phantasm card must be *Hollow *Heart *Albion."
+    "DESCRIPTION": "Gain !M!% fgo:NP. NL Prevent you would attacked this turn. NL Next fgo:Noble_Phantasm card must be *Hollow *Heart *Albion."
   },
   "${modID}:HollowHeartAlbion": {
     "NAME": "Hollow Heart Albion",
-    "DESCRIPTION": "Noble_Phantasm. NL ALL enemies lose !D! HP. NL Gain 10 Stars."
+    "DESCRIPTION": "fgo:Noble_Phantasm. NL ALL enemies lose !D! HP. NL Gain 10 fgo:Stars."
   },
   "${modID}:BlackdogGalatine": {
     "NAME": "Blackdog Galatine",
-    "DESCRIPTION": "Noble_Phantasm. NL Deal !D! damage to ALL enemies 5 times. NL Gain !M! *Plated *Armor."
+    "DESCRIPTION": "fgo:Noble_Phantasm. NL Deal !D! damage to ALL enemies 5 times. NL Gain !M! *Plated *Armor."
   },
   "${modID}:Fragarach": {
     "NAME": "Fragarach",
-    "DESCRIPTION": "Noble_Phantasm. NL Whenever you are attacked this turn, deal !D! damage back and you gain 10 Stars."
+    "DESCRIPTION": "fgo:Noble_Phantasm. NL Whenever you are attacked this turn, deal !D! damage back and you gain 10 fgo:Stars."
   },
   "${modID}:ParadisChateaudIf": {
     "NAME": "Paradis Chateau d'If",
-    "DESCRIPTION": "Noble_Phantasm. NL Deal damage equal to the enemy's Combust !M! times. NL The enemy Stunned this turn.",
-    "UPGRADE_DESCRIPTION": "Noble_Phantasm. NL Deal damage equal to the enemy's Combust +1 !M! times. NL The enemy Stunned this turn.",
+    "DESCRIPTION": "fgo:Noble_Phantasm. NL Deal damage equal to the enemy's fgo:Combust !M! times. NL The enemy fgo:Stunned this turn.",
+    "UPGRADE_DESCRIPTION": "fgo:Noble_Phantasm. NL Deal damage equal to the enemy's fgo:Combust +1 !M! times. NL The enemy fgo:Stunned this turn.",
     "EXTENDED_DESCRIPTION": [
       " NL (Deal !D! damage !M! times.)"
     ]
   },
   "${modID}:Desterrennacht": {
     "NAME": "De sterrennacht",
-    "DESCRIPTION": "Noble_Phantasm. NL Apply !M! Terror to ALL enemies. NL Gain 2 Strength and 50% Critical. NL Gain 10 Stars each turn."
+    "DESCRIPTION": "fgo:Noble_Phantasm. NL Apply !M! fgo:Terror to ALL enemies. NL Gain 2 Strength and 50% fgo:Critical. NL Gain 10 fgo:Stars each turn."
   },
   "${modID}:ExcaliburGalatine": {
     "NAME": "Excalibur Galatine",
-    "DESCRIPTION": "Noble_Phantasm. NL Gain Sunlight for 3 turns. NL Gain !M! Vigor."
+    "DESCRIPTION": "fgo:Noble_Phantasm. NL Gain fgo:Sunlight for 3 turns. NL Gain !M! Vigor."
   },
   "${modID}:RoadlessCamelot": {
     "NAME": "Roadless Camelot",
-    "DESCRIPTION": "Noble_Phantasm. NL Deal !D! damage 3 times to ALL enemies. NL Your next Noble_Phantasm card is played twice."
+    "DESCRIPTION": "fgo:Noble_Phantasm. NL Deal !D! damage 3 times to ALL enemies. NL Your next fgo:Noble_Phantasm card is played twice."
   },
   "${modID}:LieLikeVortigern": {
     "NAME": "Lie Like Vortigern",
-    "DESCRIPTION": "Noble_Phantasm. NL Deal !D! damage, lose 2 Strength and apply !M! Intangible to ALL enemies. NL Gain !M! Intangible."
+    "DESCRIPTION": "fgo:Noble_Phantasm. NL Deal !D! damage, lose 2 Strength and apply !M! Intangible to ALL enemies. NL Gain !M! Intangible."
   },
   "${modID}:EternalMemories": {
     "NAME": "Around Caliburn",
-    "DESCRIPTION": "Noble_Phantasm. NL Gain 2 Strength. NL Remove all of debuffs. NL Gain !M! Anti-Purge_Defense."
+    "DESCRIPTION": "fgo:Noble_Phantasm. NL Gain 2 Strength. NL Remove all of debuffs. NL Gain !M! fgo:Anti-Purge_Defense."
   },
   "${modID}:Failnaught": {
     "NAME": "Failnaught",
-    "DESCRIPTION": "Noble_Phantasm. NL Remove all Block and Artifact from the enemy. NL Deal !D! damage."
+    "DESCRIPTION": "fgo:Noble_Phantasm. NL Remove all Block and Artifact from the enemy. NL Deal !D! damage."
   },
   "${modID}:LostLonginus": {
     "NAME": "Lost Longinus",
-    "DESCRIPTION": "Noble_Phantasm. NL Deal !D! damage to ALL enemies, remove *Invincible."
+    "DESCRIPTION": "fgo:Noble_Phantasm. NL Deal !D! damage to ALL enemies, remove *Invincible."
   },
   "${modID}:TsumukariMuramasa": {
     "NAME": "Tsumukari Muramasa",
-    "DESCRIPTION": "Noble_Phantasm. NL Deal !D! damage and lose all Strength to ALL enemies 6 times."
+    "DESCRIPTION": "fgo:Noble_Phantasm. NL Deal !D! damage and lose all Strength to ALL enemies 6 times."
   },
   "${modID}:Overload": {
     "NAME": "Over load",
-    "DESCRIPTION": "Noble_Phantasm. NL Remove all Block from the enemy. NL Deal !D! damage. NL Apply !M! Defense_Down."
+    "DESCRIPTION": "fgo:Noble_Phantasm. NL Remove all Block from the enemy. NL Deal !D! damage. NL Apply !M! fgo:Defense_Down."
   },
   "${modID}:WickerMan": {
     "NAME": "Wicker Man",
-    "DESCRIPTION": "Noble_Phantasm. NL Deal !D! damage, apply !M! Combust and Vulnerable to ALL enemies."
+    "DESCRIPTION": "fgo:Noble_Phantasm. NL Deal !D! damage, apply !M! fgo:Combust and Vulnerable to ALL enemies."
   },
   "${modID}:BeautifulJourney": {
     "NAME": "Beautiful Journey",
-    "DESCRIPTION": "Noble_Phantasm. NL Deal !D! damage to ALL enemies. NL Gain 20% NP for each enemy in combat."
+    "DESCRIPTION": "fgo:Noble_Phantasm. NL Deal !D! damage to ALL enemies. NL Gain 20% fgo:NP for each enemy in combat."
   },
   "${modID}:GardenOfAvalon": {
     "NAME": "Garden of Avalon",
-    "DESCRIPTION": "Noble_Phantasm. NL At the start of your turn, gain !M! Block, !M!% NP and !M! Vigor."
+    "DESCRIPTION": "fgo:Noble_Phantasm. NL At the start of your turn, gain !M! Block, !M!% fgo:NP and !M! Vigor."
   },
   "${modID}:IraLupus": {
     "NAME": "Ira Lupus",
-    "DESCRIPTION": "Noble_Phantasm. NL Enemy lose !D! HP. NL Apply !M! Vulnerable."
+    "DESCRIPTION": "fgo:Noble_Phantasm. NL Enemy lose !D! HP. NL Apply !M! Vulnerable."
   },
   "${modID}:Camelot": {
     "NAME": "Lord Camelot",
-    "DESCRIPTION": "Noble_Phantasm. NL Gain !B! Block. NL Gain 2 Strength. NL At the end of your turn, gain !M! Block."
+    "DESCRIPTION": "fgo:Noble_Phantasm. NL Gain !B! Block. NL Gain 2 Strength. NL At the end of your turn, gain !M! Block."
   },
   "${modID}:ImitationGodForce": {
     "NAME": "Imitation God Force",
-    "DESCRIPTION": "Noble_Phantasm. NL Deal !D! damage 4 times and apply !M! Weak to ALL enemies."
+    "DESCRIPTION": "fgo:Noble_Phantasm. NL Deal !D! damage 4 times and apply !M! Weak to ALL enemies."
   },
   "${modID}:ElementaryMyDear": {
     "NAME": "Elementary My Dear",
-    "DESCRIPTION": "Noble_Phantasm. NL At the start of your turn, remove all Block and lose HP equal to Block to ALL enemies, apply !M! Vulnerable to ALL enemies if them have Block."
+    "DESCRIPTION": "fgo:Noble_Phantasm. NL At the start of your turn, remove all Block and lose HP equal to Block to ALL enemies, apply !M! Vulnerable to ALL enemies if them have Block."
   },
   "${modID}:FetchFailnaught": {
     "NAME": "Fetch Failnaught",
-    "DESCRIPTION": "Noble_Phantasm. NL Deal !D! damage. NL Damage +10% for each Evil_Curse from the enemy. NL Apply !M! Evil_Curse. NL Double the enemy's Evil_Curse."
+    "DESCRIPTION": "fgo:Noble_Phantasm. NL Deal !D! damage. NL Damage +10% for each fgo:Evil_Curse from the enemy. NL Apply !M! fgo:Evil_Curse. NL Double the enemy's fgo:Evil_Curse."
   },
   "${modID}:KurKigalIrkalla": {
     "NAME": "Kur Kigal Irkalla",
-    "DESCRIPTION": "Noble_Phantasm. NL Deal !D! damage to ALL enemies.",
+    "DESCRIPTION": "fgo:Noble_Phantasm. NL Deal !D! damage to ALL enemies.",
     "EXTENDED_DESCRIPTION": [
-      "Noble_Phantasm. NL Deal !D! damage to ALL enemies. NL Gain 3 Strength. NL Gain 3 Artifact."
+      "fgo:Noble_Phantasm. NL Deal !D! damage to ALL enemies. NL Gain 3 Strength. NL Gain 3 Artifact."
     ]
   },
   "${modID}:Sevendrive": {
     "NAME": "Sevendrive",
-    "DESCRIPTION": "Noble_Phantasm. NL Deal !D! damage to ALL enemies 8 times. NL Gain !M!% NP."
+    "DESCRIPTION": "fgo:Noble_Phantasm. NL Deal !D! damage to ALL enemies 8 times. NL Gain !M!% fgo:NP."
   },
   "${modID}:MahaPralaya": {
     "NAME": "Maha Pralaya",
-    "DESCRIPTION": "Noble_Phantasm. NL Deal !D! damage to ALL enemies 5 times. NL Deal additional damage equal to total debuff for all enemies."
+    "DESCRIPTION": "fgo:Noble_Phantasm. NL Deal !D! damage to ALL enemies 5 times. NL Deal additional damage equal to total debuff for all enemies."
   },
   "${modID}:Excalibur": {
     "NAME": "Excalibur",
-    "DESCRIPTION": "Noble_Phantasm. NL Deal !D! damage to ALL enemies. NL Gain !M!% NP."
+    "DESCRIPTION": "fgo:Noble_Phantasm. NL Deal !D! damage to ALL enemies. NL Gain !M!% fgo:NP."
   },
   "${modID}:YewBow": {
     "NAME": "Yew Bow",
-    "DESCRIPTION": "Noble_Phantasm. NL Deal !D! damage. NL If the enemy has Poison, deal !D! damage again."
+    "DESCRIPTION": "fgo:Noble_Phantasm. NL Deal !D! damage. NL If the enemy has Poison, deal !D! damage again."
   },
   "${modID}:EnferChateaudIf": {
     "NAME": "Enfer Chateau d'If",
-    "DESCRIPTION": "Noble_Phantasm. NL Obtain *Wing *Boots."
+    "DESCRIPTION": "fgo:Noble_Phantasm. NL Obtain *Wing *Boots."
   },
   "${modID}:Shishifunjin": {
     "NAME": "Shishifunjin",
-    "DESCRIPTION": "Noble_Phantasm. NL All Stunned enemies lose their maximum HP !M!%."
+    "DESCRIPTION": "fgo:Noble_Phantasm. NL All fgo:Stunned enemies lose their maximum HP !M!%."
   },
   "${modID}:SecondLife": {
     "NAME": "Anpu Neb Ta Djeser",
-    "DESCRIPTION": "Noble_Phantasm. NL Put a card from your exhaust pile into your hand and Upgrade it."
+    "DESCRIPTION": "fgo:Noble_Phantasm. NL Put a card from your exhaust pile into your hand and Upgrade it."
   },
   "${modID}:LaPucelle": {
     "NAME": "La Pucelle",
-    "DESCRIPTION": "Noble_Phantasm. NL Deal !D! damage. NL Apply Combust equal to half damage. NL Shuffle 1 *Burn+ into your draw pile."
+    "DESCRIPTION": "fgo:Noble_Phantasm. NL Deal !D! damage. NL Apply fgo:Combust equal to half damage. NL Shuffle 1 *Burn+ into your draw pile."
   },
   "${modID}:CharismaOfTheJade": {
     "NAME": "Charisma of the Jade",
-    "DESCRIPTION": "Deal !D! damage 3 times. NL Deal triple Damage whenever you have 20+ Stars."
+    "DESCRIPTION": "Deal !D! damage 3 times. NL Deal triple Damage whenever you have 20+ fgo:Stars."
   },
   "${modID}:SongOfThePoet": {
     "NAME": "Song of the Poet",
-    "DESCRIPTION": "Deal !D! damage 3 times. NL Gain NP equal to unblocked damage dealt."
+    "DESCRIPTION": "Deal !D! damage 3 times. NL Gain fgo:NP equal to unblocked damage dealt."
   },
   "${modID}:GoldenGrail": {
     "NAME": "Golden Grail",
-    "DESCRIPTION": "Apply !M! Combust X times to All enemies. NL At the end of 7-X turns, gain Seven_Beast_Crowns. NL Exhaust."
+    "DESCRIPTION": "Apply !M! fgo:Combust X times to All enemies. NL At the end of 7-X turns, gain fgo:Seven_Beast_Crowns. NL Exhaust."
   },
   "${modID}:CrossingArcadia": {
     "NAME": "Crossing Arcadia",
-    "DESCRIPTION": "Gain !B! Block. NL The next !M! Attack you play return Stars and gain [E]."
+    "DESCRIPTION": "Gain !B! Block. NL The next !M! Attack you play return fgo:Stars and gain [E]."
   },
   "${modID}:CrystallizationofWinter": {
     "NAME": "Crystallization of Winter",
-    "DESCRIPTION": "Gain 10 Guts. NL The next time you Trigger Guts, gain !M! Regen."
+    "DESCRIPTION": "Gain 10 fgo:Guts. NL The next time you Trigger fgo:Guts, gain !M! Regen."
   },
   "${modID}:Chasmatis": {
     "NAME": "Chasmatis",
-    "DESCRIPTION": "Whenever you gain Evil_Curse, draw !M! card.",
-    "UPGRADE_DESCRIPTION": "Whenever you gain Evil_Curse, draw !M! card. NL Gain 1 Evil_Curse."
+    "DESCRIPTION": "Whenever you gain fgo:Evil_Curse, draw !M! card.",
+    "UPGRADE_DESCRIPTION": "Whenever you gain fgo:Evil_Curse, draw !M! card. NL Gain 1 fgo:Evil_Curse."
   },
   "${modID}:CurtainoftheNight": {
     "NAME": "Curtain of the Night",
@@ -736,24 +725,23 @@
     "NAME": "Charisma of Adversity",
     "DESCRIPTION": "Deal !D! damage. NL If your HP is at or below 65, 50, 35 or 15, deal !D! damage each.",
     "EXTENDED_DESCRIPTION": [
-      " NL (Deal !D! damage ",
-      " times.)"
+      " NL (Deal !D! damage !M! times.)"
     ]
   },
   "${modID}:Kaleidoscope": {
     "NAME": "Kaleidoscope",
-    "DESCRIPTION": "Gain !M!% NP."
+    "DESCRIPTION": "Gain !M!% fgo:NP."
   },
   "${modID}:TheBlackGrail": {
     "NAME": "The Black Grail",
-    "DESCRIPTION": "Gain !M!% NP_Damage."
+    "DESCRIPTION": "Gain !M!% fgo:NP_Damage."
   },
   "${modID}:SarasvatiMeltout": {
     "NAME": "Sarasvati Meltout",
-    "DESCRIPTION": "Noble_Phantasm. NL Remove all buff from the enemy. NL Deal !D! damage."
+    "DESCRIPTION": "fgo:Noble_Phantasm. NL Remove all buff from the enemy. NL Deal !D! damage."
   },
   "${modID}:SupportCraft": {
     "NAME": "Support",
-    "DESCRIPTION": "Gain !M!% NP."
+    "DESCRIPTION": "Gain !M!% fgo:NP."
   }
 }

@@ -28,7 +28,7 @@ public class GrandOrder extends FGOCard {
         super(ID, INFO);
         setDamage(9999);
         this.isMultiDamage = true;
-        setExhaust(true);
+        setExhaust();
     }
 
     @Override

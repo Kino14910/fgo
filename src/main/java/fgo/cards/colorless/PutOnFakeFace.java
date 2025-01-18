@@ -20,7 +20,7 @@ public class PutOnFakeFace extends FGOCard {
             CardTarget.SELF,
             0
     );
-    public static final String IMG = "fgo/images/cards/AtTheWell.png";
+    public static final String IMG = "fgo/images/cards/skill/AtTheWell.png";
     public PutOnFakeFace() {
         super(ID, INFO, IMG);
     }

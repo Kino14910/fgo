@@ -88,7 +88,7 @@ public abstract class FGOCard extends BaseCard {
         return this.np;
     }
 
-    public void setCasterBg() {
+    public void setCasterBackground() {
        this.setBackgroundTexture(
                "fgo/images/512/bg_skill_MASTER_caster_s.png",
                "fgo/images/1024/bg_skill_MASTER_caster.png");

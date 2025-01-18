@@ -23,7 +23,7 @@ public class SquireOfProphecy extends FGOCard {
     public SquireOfProphecy() {
         super(ID, INFO);
         setMagic(2, 1);
-        setExhaust(true);
+        setExhaust();
     }
 
     @Override

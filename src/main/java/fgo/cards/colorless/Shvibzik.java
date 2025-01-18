@@ -28,7 +28,7 @@ public class Shvibzik extends FGOCard {
     public Shvibzik() {
         super(ID, INFO);
         setDamage(20, 5);
-        setExhaust(true);
+        setExhaust();
         this.portraitImg = ImageMaster.loadImage("fgo/images/cards/attack/Shvibzik.png");
 
         FlavorText.AbstractCardFlavorFields.textColor.set(this, Color.CHARTREUSE);

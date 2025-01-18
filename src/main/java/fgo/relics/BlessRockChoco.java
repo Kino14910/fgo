@@ -9,8 +9,8 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 public class BlessRockChoco extends CustomRelic {
     public static final String ID = "BlessRockChoco";
-    private static final String IMG = "fgo/images/relics_Master/BlessRockChoco.png";
-    private static final String IMG_OTL = "fgo/images/relics_Master/outline/BlessRockChoco.png";
+    private static final String IMG = "fgo/images/relics/BlessRockChoco.png";
+    private static final String IMG_OTL = "fgo/images/relics/outline/BlessRockChoco.png";
     //调用父类的构造方法，传参为super(遗物ID,遗物全图，遗物白底图，遗物稀有度，获得遗物时的音效)
 
     public BlessRockChoco() {

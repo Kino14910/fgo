@@ -13,8 +13,8 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 public class MechanicalProtector extends CustomRelic {
     public static final String ID = "MechanicalProtector";
-    private static final String IMG = "fgo/images/relics_Master/MechanicalProtector.png";
-    private static final String IMG_OTL = "fgo/images/relics_Master/outline/MechanicalProtector.png";
+    private static final String IMG = "fgo/images/relics/MechanicalProtector.png";
+    private static final String IMG_OTL = "fgo/images/relics/outline/MechanicalProtector.png";
     public MechanicalProtector() {
         super(ID, ImageMaster.loadImage(IMG), ImageMaster.loadImage(IMG_OTL), RelicTier.UNCOMMON, LandingSound.FLAT);
         this.counter = 3;

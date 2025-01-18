@@ -27,7 +27,7 @@ public class Revelation extends FGOCard {
     public Revelation() {
         super(ID, INFO);
         setMagic(4, 1);
-        setExhaust(true);
+        setExhaust();
     }
 
     @Override

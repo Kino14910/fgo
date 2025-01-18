@@ -8,8 +8,8 @@ import static com.megacrit.cardcrawl.helpers.ImageMaster.loadImage;
 
 public class SkullCandy extends CustomRelic {
     public static final String ID = "SkullCandy";
-    private static final String IMG = "fgo/images/relics_Master/SkullCandy.png";
-    private static final String IMG_OTL = "fgo/images/relics_Master/outline/SkullCandy.png";
+    private static final String IMG = "fgo/images/relics/SkullCandy.png";
+    private static final String IMG_OTL = "fgo/images/relics/outline/SkullCandy.png";
     public SkullCandy() {
         super(ID, loadImage(IMG), loadImage(IMG_OTL), RelicTier.SPECIAL, LandingSound.HEAVY);
     }

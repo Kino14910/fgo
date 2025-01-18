@@ -368,10 +368,17 @@ public abstract class BaseCard extends CustomCard {
         this.costUpgrade = costUpgrade;
         this.upgradeCost = true;
     }
+
+    protected final void setExhaust() { this.setExhaust(true); }
+    protected final void setEthereal() { this.setEthereal(true); }
+    protected final void setInnate() { this.setInnate(true); }
+    protected final void setSelfRetain() { this.setSelfRetain(true); }
+
     protected final void setExhaust(boolean exhaust) { this.setExhaust(exhaust, exhaust); }
     protected final void setEthereal(boolean ethereal) { this.setEthereal(ethereal, ethereal); }
-    protected final void setInnate(boolean innate) {this.setInnate(innate, innate); }
-    protected final void setSelfRetain(boolean retain) {this.setSelfRetain(retain, retain); }
+    protected final void setInnate(boolean innate) { this.setInnate(innate, innate); }
+    protected final void setSelfRetain(boolean retain) { this.setSelfRetain(retain, retain); }
+
     protected final void setExhaust(boolean baseExhaust, boolean upgExhaust)
     {
         this.baseExhaust = baseExhaust;

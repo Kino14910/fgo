@@ -22,7 +22,7 @@ public class UndeadBird extends FGOCard {
     public UndeadBird() {
         super(ID, INFO);
         setMagic(1, 1);
-        setExhaust(true);
+        setExhaust();
     }
 
     @Override

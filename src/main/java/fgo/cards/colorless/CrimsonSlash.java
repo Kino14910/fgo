@@ -34,7 +34,7 @@ public class CrimsonSlash extends FGOCard {
         this.isMultiDamage = true;
         setMagic(2, 1);
         this.cardsToPreview = new DivineDualEdge();
-        setExhaust(true);
+        setExhaust();
     }
 
     @Override

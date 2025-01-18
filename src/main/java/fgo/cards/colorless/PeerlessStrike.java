@@ -29,7 +29,7 @@ public class PeerlessStrike extends FGOCard {
         super(ID, INFO);
         setDamage(30, 10);
         this.tags.add(CardTags.STRIKE);
-        setExhaust(true);
+        setExhaust();
     }
 
     @Override
