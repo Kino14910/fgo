@@ -1,9 +1,9 @@
 package fgo.action;
 
-import fgo.characters.master;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
+import fgo.characters.master;
 
 public class UpdateMasterImgAction extends AbstractGameAction {
     public UpdateMasterImgAction() {

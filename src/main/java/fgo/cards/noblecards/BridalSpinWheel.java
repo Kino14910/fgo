@@ -13,28 +13,17 @@ import fgo.hexui_lib.util.TextureLoader;
 import fgo.powers.StarGainPower;
 
 public class BridalSpinWheel extends AbsNoblePhantasmCard {
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings("BridalSpinWheel");
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String ID = makeID(BridalSpinWheel.class.getSimpleName());
     public static final String IMG_PATH = "fgo/images/cards/noble/BridalSpinWheel.png";
     public static final String IMG_PATH_P = "fgo/images/cards/noble/BridalSpinWheel_p.png";
-    public static final String ID = "BridalSpinWheel";
+
     public BridalSpinWheel() {
-        super(ID, NAME, IMG_PATH, DESCRIPTION, CardType.POWER, CardTarget.SELF);
-        this.baseMagicNumber = 10;
-        this.magicNumber = this.baseMagicNumber;
-        this.exhaust = true;
+        super(ID,CardType.POWER, CardTarget.SELF);
+        setMagic(10, 10);
+        setExhaust();
 
         cardArtLayers512.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH)));
         cardArtLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH_P)));
-    }
-
-    @Override
-    public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeMagicNumber(10);
-        }
     }
 
     @Override

@@ -1,22 +1,18 @@
 package fgo.cards.status;
 
-import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.ShockWaveEffect;
 import fgo.cards.FGOCard;
-import fgo.cards.fgo.Canopus;
 import fgo.patches.Enum.FGOCardColor;
-import fgo.util.CardStats;
 import fgo.powers.CursePower;
+import fgo.util.CardStats;
 
 public class CurseDisaster extends FGOCard {
     public static final String ID = makeID(CurseDisaster.class.getSimpleName());

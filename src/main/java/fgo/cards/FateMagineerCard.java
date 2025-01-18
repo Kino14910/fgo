@@ -1,13 +1,15 @@
 package fgo.cards;
 
-import basemod.abstracts.CustomCard;
 import fgo.hexui_lib.interfaces.CustomCardPortrait;
 import fgo.hexui_lib.interfaces.CustomCardTypeLocation;
 import fgo.hexui_lib.util.*;
 
 import java.util.ArrayList;
 
-public abstract class FateMagineerCard extends CustomCard implements CustomCardPortrait, CustomCardTypeLocation {
+import static fgo.util.GeneralUtils.removePrefix;
+import static fgo.util.TextureLoader.getCardTextureString;
+
+public abstract class FateMagineerCard extends FGOCard implements CustomCardPortrait, CustomCardTypeLocation {
     public static ArrayList<RenderLayer> outerCircuits512 = new ArrayList<>();
     public static ArrayList<RenderLayer> outerCircuits1024 = new ArrayList<>();
     public static ArrayList<RenderLayer> outerMagic512 = new ArrayList<>();
@@ -19,14 +21,17 @@ public abstract class FateMagineerCard extends CustomCard implements CustomCardP
     private final ArrayList<RenderLayer> portraitLayers1024 = new ArrayList<>();
     public ArrayList<RenderLayer> cardArtLayers512 = new ArrayList<>();
     public ArrayList<RenderLayer> cardArtLayers1024 = new ArrayList<>();
-
-    public FateMagineerCard(final String id, final String name, final String img, final int cost, final String rawDescription,
-                            final CardType type, final CardColor color,
-                            final CardRarity rarity, final CardTarget target) {
-        super(id, name, img, cost, rawDescription, type, color, rarity, target);
-
+    public FateMagineerCard(String ID, int cost, CardType cardType, CardTarget target, CardRarity rarity, CardColor color) {
+        super(ID, cost, cardType, target, rarity, color, getCardTextureString(removePrefix(ID), cardType));
         initializeDecoRenderLayers();
     }
+//    public FateMagineerCard(final String id, final String name, final String img, final int cost, final String rawDescription,
+//                            final CardType type, final CardColor color,
+//                            final CardRarity rarity, final CardTarget target) {
+//        super(id, name, img, cost, rawDescription, type, color, rarity, target);
+//
+//        initializeDecoRenderLayers();
+//    }
 
     private void initializeDecoRenderLayers() {
         if (decoRenderLayersInitialized) {

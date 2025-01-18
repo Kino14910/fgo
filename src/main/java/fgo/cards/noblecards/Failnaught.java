@@ -16,27 +16,17 @@ import fgo.hexui_lib.util.RenderImageLayer;
 import fgo.hexui_lib.util.TextureLoader;
 
 public class Failnaught extends AbsNoblePhantasmCard {
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings("Failnaught");
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String ID = makeID(Failnaught.class.getSimpleName());
     public static final String IMG_PATH = "fgo/images/cards/noble/Failnaught.png";
     public static final String IMG_PATH_P = "fgo/images/cards/noble/Failnaught_p.png";
-    public static final String ID = "Failnaught";
+
     public Failnaught() {
-        super(ID, NAME, IMG_PATH, DESCRIPTION, CardType.ATTACK, CardTarget.ENEMY);
-        this.baseDamage = 32;
-        this.exhaust = true;
+        super(ID,CardType.ATTACK, CardTarget.ENEMY);
+        setMagic(32, 8);
+        setExhaust();
 
         cardArtLayers512.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH)));
         cardArtLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH_P)));
-    }
-
-    @Override
-    public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeDamage(8);
-        }
     }
 
     @Override

@@ -17,28 +17,17 @@ import fgo.powers.DesterrennachtPower;
 import fgo.powers.StarRegenPower;
 
 public class Desterrennacht extends AbsNoblePhantasmCard {
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings("Desterrennacht");
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String ID = makeID(Desterrennacht.class.getSimpleName());
     public static final String IMG_PATH = "fgo/images/cards/noble/Desterrennacht.png";
     public static final String IMG_PATH_P = "fgo/images/cards/noble/Desterrennacht_p.png";
-    public static final String ID = "Desterrennacht";
+
     public Desterrennacht() {
-        super(ID, NAME, IMG_PATH, DESCRIPTION, CardType.POWER, CardTarget.ALL_ENEMY);
-        this.baseMagicNumber = 3;
-        this.magicNumber = this.baseMagicNumber;
+        super(ID,CardType.POWER, CardTarget.ALL_ENEMY);
+        setMagic(3, -1);
         this.tags.add(CardTagsEnum.Foreigner);
 
         cardArtLayers512.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH)));
         cardArtLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH_P)));
-    }
-
-    @Override
-    public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeMagicNumber(-1);
-        }
     }
 
     @Override

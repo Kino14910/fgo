@@ -18,29 +18,19 @@ import fgo.hexui_lib.util.TextureLoader;
 import fgo.powers.BlessingOfKurPower;
 
 public class KurKigalIrkalla extends AbsNoblePhantasmCard {
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings("KurKigalIrkalla");
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String ID = makeID(KurKigalIrkalla.class.getSimpleName());
     public static final String IMG_PATH = "fgo/images/cards/noble/KurKigalIrkalla.png";
     public static final String IMG_PATH_P = "fgo/images/cards/noble/KurKigalIrkalla_p.png";
-    public static final String ID = "KurKigalIrkalla";
+
     public KurKigalIrkalla() {
-        super(ID, NAME, IMG_PATH, DESCRIPTION, CardType.ATTACK, CardTarget.ALL_ENEMY);
-        this.baseDamage = 26;
+        super(ID,CardType.ATTACK, CardTarget.ALL_ENEMY);
+        setDamage(26, 8);
         this.isMultiDamage = true;
-        this.exhaust = true;
+        setExhaust();
         this.portraitImg = ImageMaster.loadImage(IMG_PATH);
 
         cardArtLayers512.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH)));
         cardArtLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH_P)));
-    }
-
-    @Override
-    public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeDamage(8);
-        }
     }
 
     @Override

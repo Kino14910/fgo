@@ -1,6 +1,5 @@
 package fgo.action;
 
-import fgo.cards.SupportCraft.SupportCraft;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -10,6 +9,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
+import fgo.cards.SupportCraft.SupportCraft;
 import fgo.patches.Enum.CardTagsEnum;
 
 public class BlessedScionAction extends AbstractGameAction {

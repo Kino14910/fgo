@@ -20,30 +20,19 @@ import fgo.hexui_lib.util.TextureLoader;
 import fgo.powers.StarGainPower;
 
 public class LastSunXibalba extends AbsNoblePhantasmCard {
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings("LastSunXibalba");
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String ID = makeID(LastSunXibalba.class.getSimpleName());
     public static final String IMG_PATH = "fgo/images/cards/noble/LastSunXibalba.png";
     public static final String IMG_PATH_P = "fgo/images/cards/noble/LastSunXibalba_p.png";
-    public static final String ID = "LastSunXibalba";
+//    public static final String ID = "LastSunXibalba";
     public LastSunXibalba() {
-        super(ID, NAME, IMG_PATH, DESCRIPTION, CardType.ATTACK, CardTarget.ALL_ENEMY);
-        this.baseDamage = 6;
+        super(ID,CardType.ATTACK, CardTarget.ALL_ENEMY);
+        setDamage(6, 2);
         this.isMultiDamage = true;
-        this.baseMagicNumber = 30;
-        this.magicNumber = this.baseMagicNumber;
-        this.exhaust = true;
+        setMagic(30);
+        setExhaust();
 
         cardArtLayers512.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH)));
         cardArtLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH_P)));
-    }
-
-    @Override
-    public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeDamage(2);
-        }
     }
 
     @Override

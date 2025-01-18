@@ -18,30 +18,19 @@ import fgo.hexui_lib.util.RenderImageLayer;
 import fgo.hexui_lib.util.TextureLoader;
 
 public class ImitationGodForce extends AbsNoblePhantasmCard {
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings("ImitationGodForce");
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String ID = makeID(ImitationGodForce.class.getSimpleName());
     public static final String IMG_PATH = "fgo/images/cards/noble/ImitationGodForce.png";
     public static final String IMG_PATH_P = "fgo/images/cards/noble/ImitationGodForce_p.png";
-    public static final String ID = "ImitationGodForce";
+
     public ImitationGodForce() {
-        super(ID, NAME, IMG_PATH, DESCRIPTION, CardType.ATTACK, CardTarget.ALL_ENEMY);
-        this.baseDamage = 7;
+        super(ID,CardType.ATTACK, CardTarget.ALL_ENEMY);
+        setDamage(7, 1);
         this.isMultiDamage = true;
-        this.baseMagicNumber = 4;
-        this.magicNumber = this.baseMagicNumber;
-        this.exhaust = true;
+        setMagic(4);
+        setExhaust();
 
         cardArtLayers512.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH)));
         cardArtLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH_P)));
-    }
-
-    @Override
-    public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeDamage(1);
-        }
     }
 
     @Override

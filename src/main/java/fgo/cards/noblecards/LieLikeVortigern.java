@@ -16,30 +16,19 @@ import fgo.hexui_lib.util.RenderImageLayer;
 import fgo.hexui_lib.util.TextureLoader;
 
 public class LieLikeVortigern extends AbsNoblePhantasmCard {
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings("LieLikeVortigern");
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String ID = makeID(LieLikeVortigern.class.getSimpleName());
     public static final String IMG_PATH = "fgo/images/cards/noble/LieLikeVortigern.png";
     public static final String IMG_PATH_P = "fgo/images/cards/noble/LieLikeVortigern_p.png";
-    public static final String ID = "LieLikeVortigern";
+//    public static final String ID = "LieLikeVortigern";
     public LieLikeVortigern() {
-        super(ID, NAME, IMG_PATH, DESCRIPTION, CardType.ATTACK, CardTarget.ALL_ENEMY);
-        this.baseDamage = 25;
+        super(ID,CardType.ATTACK, CardTarget.ALL_ENEMY);
+        setDamage(25, 7);
         this.isMultiDamage = true;
-        this.baseMagicNumber = 1;
-        this.magicNumber = this.baseMagicNumber;
-        this.exhaust = true;
+        setMagic(1);
+        setExhaust();
 
         cardArtLayers512.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH)));
         cardArtLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH_P)));
-    }
-
-    @Override
-    public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeDamage(7);
-        }
     }
 
     @Override

@@ -1,6 +1,5 @@
 package fgo.cards.fgo;
 
-import fgo.action.KarmicVisionAction;
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.stslib.patches.FlavorText;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -13,6 +12,7 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.StarBounceEffect;
 import com.megacrit.cardcrawl.vfx.combat.ViolentAttackEffect;
+import fgo.action.KarmicVisionAction;
 import fgo.cards.FGOCard;
 import fgo.patches.Enum.FGOCardColor;
 import fgo.util.CardStats;

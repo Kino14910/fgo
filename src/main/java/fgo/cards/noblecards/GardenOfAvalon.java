@@ -14,27 +14,16 @@ import fgo.powers.EnergyRegenPower;
 import fgo.powers.StarRegenPower;
 
 public class GardenOfAvalon extends AbsNoblePhantasmCard {
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings("GardenOfAvalon");
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String ID = makeID(GardenOfAvalon.class.getSimpleName());
     public static final String IMG_PATH = "fgo/images/cards/noble/GardenOfAvalon.png";
     public static final String IMG_PATH_P = "fgo/images/cards/noble/GardenOfAvalon_p.png";
-    public static final String ID = "GardenOfAvalon";
+
     public GardenOfAvalon() {
-        super(ID, NAME, IMG_PATH, DESCRIPTION, CardType.POWER, CardTarget.SELF);
-        this.baseMagicNumber = 5;
-        this.magicNumber = this.baseMagicNumber;
+        super(ID,CardType.POWER, CardTarget.SELF);
+        setMagic(5, 2);
 
         cardArtLayers512.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH)));
         cardArtLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH_P)));
-    }
-
-    @Override
-    public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeMagicNumber(2);
-        }
     }
 
     @Override

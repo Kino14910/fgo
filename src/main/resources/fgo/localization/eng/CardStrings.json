@@ -621,7 +621,7 @@
   },
   "${modID}:BeautifulJourney": {
     "NAME": "Beautiful Journey",
-    "DESCRIPTION": "fgo:Noble_Phantasm. NL Deal !D! damage to ALL enemies. NL Gain 20% fgo:NP for each enemy in combat."
+    "DESCRIPTION": "fgo:Noble_Phantasm. NL Deal !D! damage to ALL enemies. NL Gain !NP! % fgo:NP for each enemy in combat."
   },
   "${modID}:GardenOfAvalon": {
     "NAME": "Garden of Avalon",
@@ -656,7 +656,7 @@
   },
   "${modID}:Sevendrive": {
     "NAME": "Sevendrive",
-    "DESCRIPTION": "fgo:Noble_Phantasm. NL Deal !D! damage to ALL enemies 8 times. NL Gain !M!% fgo:NP."
+    "DESCRIPTION": "fgo:Noble_Phantasm. NL Deal !D! damage to ALL enemies 8 times. NL Gain !NP!% fgo:NP."
   },
   "${modID}:MahaPralaya": {
     "NAME": "Maha Pralaya",
@@ -664,7 +664,7 @@
   },
   "${modID}:Excalibur": {
     "NAME": "Excalibur",
-    "DESCRIPTION": "fgo:Noble_Phantasm. NL Deal !D! damage to ALL enemies. NL Gain !M!% fgo:NP."
+    "DESCRIPTION": "fgo:Noble_Phantasm. NL Deal !D! damage to ALL enemies. NL Gain !NP!% fgo:NP."
   },
   "${modID}:YewBow": {
     "NAME": "Yew Bow",
@@ -730,7 +730,7 @@
   },
   "${modID}:Kaleidoscope": {
     "NAME": "Kaleidoscope",
-    "DESCRIPTION": "Gain !M!% fgo:NP."
+    "DESCRIPTION": "Gain !NP!% fgo:NP."
   },
   "${modID}:TheBlackGrail": {
     "NAME": "The Black Grail",
@@ -742,6 +742,6 @@
   },
   "${modID}:SupportCraft": {
     "NAME": "Support",
-    "DESCRIPTION": "Gain !M!% fgo:NP."
+    "DESCRIPTION": "Gain !NP!% fgo:NP."
   }
 }

@@ -12,28 +12,17 @@ import fgo.hexui_lib.util.TextureLoader;
 import fgo.powers.FragarachPower;
 
 public class Fragarach extends AbsNoblePhantasmCard {
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings("Fragarach");
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String ID = makeID(Fragarach.class.getSimpleName());
     public static final String IMG_PATH = "fgo/images/cards/noble/Fragarach.png";
     public static final String IMG_PATH_P = "fgo/images/cards/noble/Fragarach_p.png";
-    public static final String ID = "Fragarach";
+
     public Fragarach() {
-        super(ID, NAME, IMG_PATH, DESCRIPTION, CardType.POWER, CardTarget.SELF);
-        this.baseDamage = 15;
-        this.exhaust = true;
+        super(ID,CardType.POWER, CardTarget.SELF);
+        setDamage(15, 5);
+        setExhaust();
 
         cardArtLayers512.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH)));
         cardArtLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH_P)));
-    }
-    //调用父类的构造方法，传参为super(卡牌ID,卡牌名称，能量花费，卡牌描述，卡牌类型，卡牌颜色，卡牌稀有度，卡牌目标)
-
-    @Override
-    public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeDamage(5);
-        }
     }
 
     @Override

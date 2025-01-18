@@ -1,10 +1,6 @@
 package fgo.relics;
 
 import basemod.abstracts.CustomRelic;
-import fgo.cards.colorless.ignore.SionSkill;
-import fgo.cards.colorless.ignore.BlessedRegenerate;
-import fgo.cards.colorless.ignore.BrilliantEscort;
-import fgo.cards.colorless.ignore.PureCoordinate;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -13,6 +9,10 @@ import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.RestRoom;
+import fgo.cards.colorless.ignore.BlessedRegenerate;
+import fgo.cards.colorless.ignore.BrilliantEscort;
+import fgo.cards.colorless.ignore.PureCoordinate;
+import fgo.cards.colorless.ignore.SionSkill;
 
 import java.util.ArrayList;
 

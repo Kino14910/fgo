@@ -14,27 +14,16 @@ import fgo.hexui_lib.util.RenderImageLayer;
 import fgo.hexui_lib.util.TextureLoader;
 
 public class YewBow extends AbsNoblePhantasmCard {
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings("YewBow");
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String ID = makeID(YewBow.class.getSimpleName());
     public static final String IMG_PATH = "fgo/images/cards/noble/YewBow.png";
     public static final String IMG_PATH_P = "fgo/images/cards/noble/YewBow_p.png";
-    public static final String ID = "YewBow";
     public YewBow() {
-        super(ID, NAME, IMG_PATH, DESCRIPTION, CardType.ATTACK, CardTarget.ENEMY);
-        this.baseDamage = 25;
-        this.exhaust = true;
+        super(ID,CardType.ATTACK, CardTarget.ENEMY);
+        setDamage(25, 5);
+        setExhaust();
 
         cardArtLayers512.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH)));
         cardArtLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH_P)));
-    }
-
-    @Override
-    public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeDamage(5);
-        }
     }
 
     @Override

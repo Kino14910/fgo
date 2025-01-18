@@ -16,27 +16,16 @@ import fgo.hexui_lib.util.TextureLoader;
 import fgo.powers.WatersidePower;
 
 public class GreatRamNautilus extends AbsNoblePhantasmCard {
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings("GreatRamNautilus");
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String ID = makeID(GreatRamNautilus.class.getSimpleName());
     public static final String IMG_PATH = "fgo/images/cards/noble/GreatRamNautilus.png";
     public static final String IMG_PATH_P = "fgo/images/cards/noble/GreatRamNautilus_p.png";
-    public static final String ID = "GreatRamNautilus";
+
     public GreatRamNautilus() {
-        super(ID, NAME, IMG_PATH, DESCRIPTION, CardType.ATTACK, CardTarget.ENEMY);
-        this.baseDamage = 34;
-        this.exhaust = true;
+        super(ID,CardType.ATTACK, CardTarget.ENEMY);
+        setDamage(34, 8);
 
         cardArtLayers512.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH)));
         cardArtLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH_P)));
-    }
-
-    @Override
-    public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeDamage(8);
-        }
     }
 
     @Override

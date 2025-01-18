@@ -21,29 +21,18 @@ import fgo.hexui_lib.util.TextureLoader;
 import fgo.powers.CursePower;
 
 public class FetchFailnaught extends AbsNoblePhantasmCard {
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings("FetchFailnaught");
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String ID = makeID(FetchFailnaught.class.getSimpleName());
     public static final String IMG_PATH = "fgo/images/cards/noble/FetchFailnaught.png";
     public static final String IMG_PATH_P = "fgo/images/cards/noble/FetchFailnaught_p.png";
-    public static final String ID = "FetchFailnaught";
+
     public FetchFailnaught() {
-        super(ID, NAME, IMG_PATH, DESCRIPTION, CardType.ATTACK, CardTarget.ENEMY);
-        this.baseDamage = 30;
-        this.baseMagicNumber = 3;
-        this.magicNumber = this.baseMagicNumber;
-        this.exhaust = true;
+        super(ID,CardType.ATTACK, CardTarget.ENEMY);
+        setDamage(30, 8);
+        setMagic(3);
+        setExhaust();
 
         cardArtLayers512.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH)));
         cardArtLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH_P)));
-    }
-
-    @Override
-    public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeDamage(8);
-        }
     }
 
     @Override

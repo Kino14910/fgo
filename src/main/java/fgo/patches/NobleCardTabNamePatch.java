@@ -14,7 +14,7 @@ public class NobleCardTabNamePatch {
     public static class TabNamePatch {
         @SpireInsertPatch(locator = TabNameLocator.class, localvars = {"tabName"})
         public static void InsertFix(ColorTabBar _instance, SpriteBatch sb, float y, ColorTabBar.CurrentTab curTab, @ByRef String[] tabName) {
-            if (tabName[0].equals("Noble_phantasm_color")) {
+            if (tabName[0].equals("Noble_phantasm")) {
                 tabName[0] = DESCRIPTIONS[0];
             }
         }

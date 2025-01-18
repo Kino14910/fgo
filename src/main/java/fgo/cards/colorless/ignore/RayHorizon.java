@@ -1,13 +1,13 @@
 package fgo.cards.colorless.ignore;
 
 import basemod.AutoAdd;
-import fgo.action.FgoNpAction;
-import fgo.cards.FGOCard;
-import fgo.cards.noblecards.HollowHeartAlbion;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import fgo.action.FgoNpAction;
+import fgo.cards.FGOCard;
+import fgo.cards.noblecards.HollowHeartAlbion;
 import fgo.powers.InvincibilityTurnPower;
 import fgo.powers.NoblePhantasmCardPower;
 import fgo.util.CardStats;
@@ -24,7 +24,7 @@ public class RayHorizon extends FGOCard {
     );
     public RayHorizon() {
         super(ID, INFO);
-        setMagic(50, 50);
+        setNP(50, 50);
         this.cardsToPreview = new HollowHeartAlbion();
         setExhaust();
     }
@@ -38,6 +38,6 @@ public class RayHorizon extends FGOCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new FgoNpAction(this.magicNumber));
         this.addToBot(new ApplyPowerAction(p, p, new NoblePhantasmCardPower(p, this.cardsToPreview)));
-        this.addToBot(new ApplyPowerAction(p, p, new InvincibilityTurnPower(p, 1), 1));
+        this.addToBot(new ApplyPowerAction(p, p, new InvincibilityTurnPower(p, np), np));
     }
 }

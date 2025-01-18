@@ -1,13 +1,13 @@
 package fgo.relics;
 
 import basemod.abstracts.CustomRelic;
-import fgo.cards.colorless.ignore.BlackBarrel;
-import fgo.cards.colorless.ignore.WallOfSnowflakes;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
+import fgo.cards.colorless.ignore.BlackBarrel;
+import fgo.cards.colorless.ignore.WallOfSnowflakes;
 
 import static com.megacrit.cardcrawl.helpers.ImageMaster.loadImage;
 

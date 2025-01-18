@@ -20,29 +20,18 @@ import fgo.hexui_lib.util.RenderImageLayer;
 import fgo.hexui_lib.util.TextureLoader;
 
 public class MahaPralaya extends AbsNoblePhantasmCard {
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings("MahaPralaya");
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String ID = makeID(MahaPralaya.class.getSimpleName());
     public static final String IMG_PATH = "fgo/images/cards/noble/MahaPralaya.png";
     public static final String IMG_PATH_P = "fgo/images/cards/noble/MahaPralaya_p.png";
-    public static final String ID = "MahaPralaya";
+//    public static final String ID = "MahaPralaya";
     public MahaPralaya() {
-        super(ID, NAME, IMG_PATH, DESCRIPTION, CardType.ATTACK, CardTarget.ALL_ENEMY);
-        this.baseDamage = 5;
+        super(ID,CardType.ATTACK, CardTarget.ALL_ENEMY);
+        setDamage(5, 1);
         this.isMultiDamage = true;
-        this.exhaust = true;
+        setExhaust();
 
         cardArtLayers512.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH)));
         cardArtLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH_P)));
-    }
-    //调用父类的构造方法，传参为super(卡牌ID,卡牌名称，能量花费，卡牌描述，卡牌类型，卡牌颜色，卡牌稀有度，卡牌目标)
-
-    @Override
-    public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeDamage(1);
-        }
     }
 
     @Override

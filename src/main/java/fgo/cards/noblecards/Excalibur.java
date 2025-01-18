@@ -16,31 +16,19 @@ import fgo.hexui_lib.util.RenderImageLayer;
 import fgo.hexui_lib.util.TextureLoader;
 
 public class Excalibur extends AbsNoblePhantasmCard {
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings("Excalibur");
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String ID = makeID(Excalibur.class.getSimpleName());
     public static final String IMG_PATH = "fgo/images/cards/noble/Excalibur.png";
     public static final String IMG_PATH_P = "fgo/images/cards/noble/Excalibur_p.png";
-    public static final String ID = "Excalibur";
+
     public Excalibur() {
-        super(ID, NAME, IMG_PATH, DESCRIPTION, CardType.ATTACK, CardTarget.ALL_ENEMY);
-        this.baseDamage = 25;
+        super(ID,CardType.ATTACK, CardTarget.ALL_ENEMY);
+        setDamage(25, 7);
         this.isMultiDamage = true;
-        this.baseMagicNumber = 20;
-        this.magicNumber = this.baseMagicNumber;
-        this.exhaust = true;
+        setNP(20, 30);
+        setExhaust();
 
         cardArtLayers512.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH)));
         cardArtLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH_P)));
-    }
-
-    @Override
-    public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeDamage(7);
-            this.upgradeMagicNumber(30);
-        }
     }
 
     @Override
@@ -53,6 +41,6 @@ public class Excalibur extends AbsNoblePhantasmCard {
         this.addToBot(new SFXAction("ATTACK_HEAVY"));
         this.addToBot(new VFXAction(p, new MindblastEffect(p.dialogX, p.dialogY, p.flipHorizontal), 0.1F));
         this.addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
-        this.addToBot(new FgoNpAction(this.magicNumber));
+        this.addToBot(new FgoNpAction(np));
     }
 }

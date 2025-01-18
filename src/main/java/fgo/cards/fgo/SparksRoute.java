@@ -1,21 +1,18 @@
 package fgo.cards.fgo;
 
-import fgo.action.FgoNpAction;
-import fgo.action.SparksRouteAction;
-import basemod.abstracts.CustomCard;
-import fgo.characters.master;
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.stslib.patches.FlavorText;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.ShuffleAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import fgo.action.FgoNpAction;
+import fgo.action.SparksRouteAction;
 import fgo.cards.FGOCard;
+import fgo.characters.master;
 import fgo.patches.Enum.FGOCardColor;
 import fgo.util.CardStats;
 

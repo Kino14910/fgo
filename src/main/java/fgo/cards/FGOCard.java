@@ -49,7 +49,7 @@ public abstract class FGOCard extends BaseCard {
 
         setCustomVar("NP", baseNP, npUpgrade);
     }
-
+    
     // 设置 NP 值
     protected final void setNP(int np) { setNP(np, npUpgrade); }
 

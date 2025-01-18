@@ -470,7 +470,7 @@
   },
   "fgo:BeautifulJourney": {
     "NAME": "超越边界的存在",
-    "DESCRIPTION": "fgo:宝具牌 。 NL 对所有敌人造成 !D! 点伤害。每有一名敌人，就获得20% fgo:宝具值 。"
+    "DESCRIPTION": "fgo:宝具牌 。 NL 对所有敌人造成 !D! 点伤害。每有一名敌人，就获得 !NP! % fgo:宝具值 。"
   },
   "fgo:Failnaught": {
     "NAME": "痛哭幻奏",
@@ -546,7 +546,7 @@
   },
   "fgo:RayHorizon": {
     "NAME": "光之地平线",
-    "DESCRIPTION": "获得 !M! % fgo:宝具值 。 NL 阻止本回合你受到的所有攻击。 NL 下一张 fgo:宝具牌 固定为 *无人知晓的无垢搏动 。"
+    "DESCRIPTION": "获得 !NP! % fgo:宝具值 。 NL 阻止本回合你受到的所有攻击。 NL 下一张 fgo:宝具牌 固定为 *无人知晓的无垢搏动 。"
   },
   "fgo:HollowHeartAlbion": {
     "NAME": "无人知晓的无垢搏动",
@@ -554,11 +554,11 @@
   },
   "fgo:Sevendrive": {
     "NAME": "79式掷祸大社",
-    "DESCRIPTION": "fgo:宝具牌 。 NL 对所有敌人造成 !D! 点伤害8次。 NL 获得 !M! % fgo:宝具值 。"
+    "DESCRIPTION": "fgo:宝具牌 。 NL 对所有敌人造成 !D! 点伤害8次。 NL 获得 !NP! % fgo:宝具值 。"
   },
   "fgo:Excalibur": {
     "NAME": "誓约胜利之剑",
-    "DESCRIPTION": "fgo:宝具牌 。 NL 对所有敌人造成 !D! 点伤害。 NL 获得 !M! % fgo:宝具值 。"
+    "DESCRIPTION": "fgo:宝具牌 。 NL 对所有敌人造成 !D! 点伤害。 NL 获得 !NP! % fgo:宝具值 。"
   },
   "fgo:Camelot": {
     "NAME": "理想之城",
@@ -767,7 +767,7 @@
   },
   "fgo:Kaleidoscope": {
     "NAME": "万华镜",
-    "DESCRIPTION": "获得 !M! % fgo:宝具值 。"
+    "DESCRIPTION": "获得 !NP! % fgo:宝具值 。"
   },
   "fgo:TheBlackGrail": {
     "NAME": "黑之圣杯",
@@ -780,6 +780,6 @@
   },
   "fgo:SupportCraft": {
     "NAME": "支援牌",
-    "DESCRIPTION": "获得 !M! % fgo:宝具值 。 NL 升级 没有效果。"
+    "DESCRIPTION": "获得 !NP! % fgo:宝具值 。 NL 升级 没有效果。"
   }
 }

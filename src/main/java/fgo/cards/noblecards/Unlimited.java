@@ -19,27 +19,15 @@ import fgo.hexui_lib.util.TextureLoader;
 import fgo.powers.UnlimitedPower;
 
 public class Unlimited extends AbsNoblePhantasmCard {
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings("Unlimited");
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String ID = makeID(Unlimited.class.getSimpleName());
     public static final String IMG_PATH = "fgo/images/cards/noble/Unlimited.png";
     public static final String IMG_PATH_P = "fgo/images/cards/noble/Unlimited_p.png";
-    public static final String ID = "Unlimited";
     public Unlimited() {
-        super(ID, NAME, IMG_PATH, DESCRIPTION, CardType.POWER, CardTarget.SELF);
-        this.baseMagicNumber = 1;
-        this.magicNumber = this.baseMagicNumber;
+        super(ID,CardType.POWER, CardTarget.SELF);
+        setMagic(1, 1);
 
         cardArtLayers512.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH)));
         cardArtLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH_P)));
-    }
-
-    @Override
-    public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeMagicNumber(1);
-        }
     }
 
     @Override

@@ -6,15 +6,14 @@ import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import fgo.patches.Enum.FGOCardColor;
 import fgo.patches.Enum.CardTagsEnum;
+import fgo.patches.Enum.FGOCardColor;
 
 public abstract class AbsNoblePhantasmCard extends FateMagineerCard {
-    public AbsNoblePhantasmCard(String id, String name, String img, String rawDescription, AbstractCard.CardType type, AbstractCard.CardTarget target) {
-        super(id, name, img, -2, rawDescription, type, FGOCardColor.Noble_Phantasm, AbstractCard.CardRarity.SPECIAL, target);
-        this.selfRetain = true;
+    public AbsNoblePhantasmCard(String id, AbstractCard.CardType type, AbstractCard.CardTarget target) {
+        super(id, -2, type, target, AbstractCard.CardRarity.SPECIAL, FGOCardColor.Noble_Phantasm);
+        setSelfRetain();
         this.tags.add(CardTagsEnum.Noble_Phantasm);
-
         FlavorText.AbstractCardFlavorFields.textColor.set(this, Color.CHARTREUSE);
         FlavorText.AbstractCardFlavorFields.flavorBoxType.set(this, FlavorText.boxType.TRADITIONAL);
     }

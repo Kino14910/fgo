@@ -1,6 +1,5 @@
 package fgo.powers;
 
-import fgo.action.SunlightAction;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
@@ -11,6 +10,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.watcher.VigorPower;
+import fgo.action.SunlightAction;
 
 public class SunlightPower extends AbstractPower {
     public static final String POWER_ID = "SunlightPower";

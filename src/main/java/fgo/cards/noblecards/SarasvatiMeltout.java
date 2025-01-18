@@ -15,29 +15,19 @@ import fgo.hexui_lib.util.TextureLoader;
 import fgo.patches.Enum.CardTagsEnum;
 
 public class SarasvatiMeltout extends AbsNoblePhantasmCard {
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings("SarasvatiMeltout");
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String ID = makeID(SarasvatiMeltout.class.getSimpleName());
     public static final String IMG_PATH = "fgo/images/cards/noble/SarasvatiMeltout.png";
     public static final String IMG_PATH_P = "fgo/images/cards/noble/SarasvatiMeltout_p.png";
-    public static final String ID = "SarasvatiMeltout";
+
     public SarasvatiMeltout() {
-        super(ID, NAME, IMG_PATH, DESCRIPTION, CardType.ATTACK, CardTarget.ENEMY);
-        this.baseDamage = 40;
-        this.exhaust = true;
-        this.selfRetain = true;
+        super(ID,CardType.ATTACK, CardTarget.ENEMY);
+        setDamage(40, 8);
+        setExhaust();
+        setSelfRetain();
         this.tags.add(CardTagsEnum.Noble_Phantasm);
 
         cardArtLayers512.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH)));
         cardArtLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH_P)));
-    }
-
-    @Override
-    public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeDamage(8);
-        }
     }
 
     @Override

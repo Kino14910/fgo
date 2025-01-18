@@ -11,14 +11,12 @@ import fgo.hexui_lib.util.RenderImageLayer;
 import fgo.hexui_lib.util.TextureLoader;
 
 public class EnferChateaudIf extends AbsNoblePhantasmCard {
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings("EnferChateaudIf");
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String ID = makeID(EnferChateaudIf.class.getSimpleName());
     public static final String IMG_PATH = "fgo/images/cards/noble/EnferChateaudIf.png";
     public static final String IMG_PATH_P = "fgo/images/cards/noble/EnferChateaudIf_p.png";
-    public static final String ID = "EnferChateaudIf";
+
     public EnferChateaudIf() {
-        super(ID, NAME, IMG_PATH, DESCRIPTION, CardType.POWER, CardTarget.SELF);
+        super(ID,CardType.POWER, CardTarget.SELF);
         cardArtLayers512.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH)));
         cardArtLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH_P)));
     }

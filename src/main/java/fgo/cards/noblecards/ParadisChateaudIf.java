@@ -16,31 +16,18 @@ import fgo.hexui_lib.util.TextureLoader;
 import fgo.powers.BurnDamagePower;
 
 public class ParadisChateaudIf extends AbsNoblePhantasmCard {
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings("ParadisChateaudIf");
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String ID = makeID(ParadisChateaudIf.class.getSimpleName());
     public static final String IMG_PATH = "fgo/images/cards/noble/ParadisChateaudIf.png";
     public static final String IMG_PATH_P = "fgo/images/cards/noble/ParadisChateaudIf_p.png";
-    public static final String ID = "ParadisChateaudIf";
+
     public ParadisChateaudIf() {
-        super(ID, NAME, IMG_PATH, DESCRIPTION, CardType.ATTACK, CardTarget.ENEMY);
-        this.baseDamage = 0;
-        this.baseMagicNumber = 5;
-        this.magicNumber = this.baseMagicNumber;
-        this.exhaust = true;
+        super(ID,CardType.ATTACK, CardTarget.ENEMY);
+        setDamage(0, 1);
+        setMagic(5);
+        setExhaust();
 
         cardArtLayers512.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH)));
         cardArtLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH_P)));
-    }
-
-    @Override
-    public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeDamage(1);
-            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
-            this.initializeDescription();
-        }
     }
 
     @Override

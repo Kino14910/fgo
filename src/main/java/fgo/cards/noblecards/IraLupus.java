@@ -18,31 +18,19 @@ import fgo.hexui_lib.util.RenderImageLayer;
 import fgo.hexui_lib.util.TextureLoader;
 
 public class IraLupus extends AbsNoblePhantasmCard {
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings("IraLupus");
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String ID = makeID(IraLupus.class.getSimpleName());
     public static final String IMG_PATH = "fgo/images/cards/noble/IraLupus.png";
     public static final String IMG_PATH_P = "fgo/images/cards/noble/IraLupus_p.png";
-    public static final String ID = "IraLupus";
+
     public IraLupus() {
-        super(ID, NAME, IMG_PATH, DESCRIPTION, CardType.ATTACK, CardTarget.ENEMY);
-        this.baseDamage = 35;
-        this.baseMagicNumber = 3;
-        this.magicNumber = this.baseMagicNumber;
-        this.exhaust = true;
+        super(ID,CardType.ATTACK, CardTarget.ENEMY);
+        setDamage(30, 10);
+        setMagic(3);
+        setExhaust();
 
         cardArtLayers512.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH)));
         cardArtLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH_P)));
     }
-
-    @Override
-    public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeDamage(10);
-        }
-    }
-
     @Override
     public AbstractCard makeCopy() {
         return new IraLupus();

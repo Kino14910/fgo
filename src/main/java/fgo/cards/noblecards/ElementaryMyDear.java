@@ -12,27 +12,16 @@ import fgo.hexui_lib.util.TextureLoader;
 import fgo.powers.IgnoreDefensePower;
 
 public class ElementaryMyDear extends AbsNoblePhantasmCard {
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings("ElementaryMyDear");
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String ID = makeID(ElementaryMyDear.class.getSimpleName());
     public static final String IMG_PATH = "fgo/images/cards/noble/ElementaryMyDear.png";
     public static final String IMG_PATH_P = "fgo/images/cards/noble/ElementaryMyDear_p.png";
-    public static final String ID = "ElementaryMyDear";
+
     public ElementaryMyDear() {
-        super(ID, NAME, IMG_PATH, DESCRIPTION, CardType.POWER, CardTarget.SELF);
-        this.baseMagicNumber = 2;
-        this.magicNumber = this.baseMagicNumber;
+        super(ID,CardType.POWER, CardTarget.SELF);
+        setMagic(2, 2);
 
         cardArtLayers512.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH)));
         cardArtLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH_P)));
-    }
-
-    @Override
-    public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeMagicNumber(2);
-        }
     }
 
     @Override

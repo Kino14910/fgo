@@ -1,12 +1,12 @@
 package fgo.powers;
 
-import fgo.action.NightlessCharismaAction;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import fgo.action.NightlessCharismaAction;
 
 public class NightlessCharismaPower extends AbstractPower {
     public static final String POWER_ID = "NightlessCharismaPower";
