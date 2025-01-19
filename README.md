@@ -26,3 +26,7 @@
 宝具牌卡背来自HexUILib和Magineer，我没有依赖这些mod而是整合进了这个mod，因为这些mod存在bug会导致闪退。
 https://steamcommunity.com/sharedfiles/filedetails/?id=1667206983
 https://steamcommunity.com/sharedfiles/filedetails/?id=1667220091
+
+
+
+I am seeking a reliable English database or resource for FGO-related queries. If you are interested in contributing your English translation skills to this mod, please do not hesitate to contact me.
