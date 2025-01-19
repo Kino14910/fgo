@@ -1,36 +1,24 @@
-# Basic Mod
+![御主衣服](https://s2.loli.net/2025/01/19/rvBtxkDLKnhzsS8.png)
+新增1名角色The Master（Fate/Grand Order的御主）。
+70+张标准专属卡牌。
+30+张宝具牌。
+25+张无色牌。
+20+遗物。
 
-This is an empty Slay the Spire mod + a modding tutorial.
+语言暂仅支持中文和英文。
+特别感谢某乎上的MOD制作文章。
 
-This tutorial will help with setup and the basics of Slay the Spire modding, but it will not teach you Java. If you know nothing of Java or programming in general, you are strongly recommended to look up a free online course and do at least some of it. It is possible to do modding with almost no proper knowledge, but it will make things much more difficult.
+机制
+*宝具：打牌和受到攻击都可以积攒宝具值，在达到100%时你可以选择获得一张效果强力的宝具牌打出，你还可以继续积攒宝具值获得额外的效果。
 
----
+*暴击：部分牌和能力可以获得暴击星，在你有10颗暴击星时，消耗10颗暴击星来提高下一次造成的攻击伤害。
 
-## Check the wiki to get started:
+*诅呪：获得诅咒的目标会在每回合掉血。你可以主动获得这个效果，通常获得这个效果的牌更具攻击性，你也可以给予敌人来消减敌人的生命力。
 
-https://github.com/Alchyr/BasicMod/wiki
-
----
-
-## Know what you're doing?
-
-You can still use this mod as a base, or you could use another template like https://github.com/DarkVexon/ProTemplate
-
-You can find more options in the pins of the #modding-technical channel in the Slay the Spire discord server.
-
----
-
-### Some HD Slay the Spire art assets (courtesy of Gremious, creator of DefaultMod):
-
-Includes:
-- Empty Relic Template feat. empty bottle
-- Empty Card Template
-- Color-Changable cardback
-- A couple of HD Monster vectors (Louse, Nob, Sentry, Sneaky Gremlin)
-- A coupe of HD items (J.A.X., A Coin)
-- 2 people silhouettes
-- A curse Background
-
-https://github.com/Gremious/StS-DefaultModBase#some-hd-slay-the-spire-art-assets
-
----
+参照
+宝具条设计参照明日方舟的斯卡蒂MOD。
+形象选择按钮来自卡包大师MOD。
+无限剑制切换背景来自废墟图书馆MOD
+宝具牌卡背来自HexUILib和Magineer，我没有依赖这些mod而是整合进了这个mod，因为这些mod存在bug会导致闪退。
+https://steamcommunity.com/sharedfiles/filedetails/?id=1667206983
+https://steamcommunity.com/sharedfiles/filedetails/?id=1667220091
