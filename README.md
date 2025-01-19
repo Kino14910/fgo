@@ -1,4 +1,5 @@
 ![御主衣服](https://s2.loli.net/2025/01/19/rvBtxkDLKnhzsS8.png)
+
 新增1名角色The Master（Fate/Grand Order的御主）。
 70+张标准专属卡牌。
 30+张宝具牌。
