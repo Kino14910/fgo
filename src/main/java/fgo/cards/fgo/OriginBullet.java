@@ -24,7 +24,7 @@ public class OriginBullet extends FGOCard {
     public OriginBullet() {
         super(ID, INFO);
         setDamage(8);
-        setMagic(3, 6);
+        setMagic(3, 3);
     }
 
     @Override
@@ -46,7 +46,6 @@ public class OriginBullet extends FGOCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new SFXAction("fatemaster:GUN2"));
         addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
 //        int theSize = AbstractDungeon.player.hand.size();
 //        addToTop(new DiscardAction(p, p, theSize, false));

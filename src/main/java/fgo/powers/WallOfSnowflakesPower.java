@@ -10,17 +10,18 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import static fgo.FGOMod.makeID;
 
-public class WallOfSnowflakesPower extends BasePower {
-    public static final String POWER_ID = makeID("WallOfSnowflakesPower");
-    public WallOfSnowflakesPower(AbstractCreature owner, int amount) {
-        super(POWER_ID, PowerType.BUFF, false, owner, amount);
-            this.amount = Math.min(this.amount, 100);
 
-        String path128 = "fgo/images/powers_Master/DefenseUpPower84.png";
-        String path48 = "fgo/images/powers_Master/DefenseUpPower32.png";
+import static fgo.FGOMod.makeID;
+
+public class WallOfSnowflakesPower extends BasePower {
+    public static final String POWER_ID = makeID(WallOfSnowflakesPower.class.getSimpleName());
+    public WallOfSnowflakesPower(AbstractCreature owner, int amount) {
+        super(POWER_ID, PowerType.BUFF, false, owner, Math.min(amount, 100));
+
+        String path128 = "fgo/images/powers/large/DefenseUpPower.png";
+        String path48 = "fgo/images/powers/DefenseUpPower.png";
         this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(path128), 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(path48), 0, 0, 32, 32);
-        updateDescription();
     }
 
     @Override

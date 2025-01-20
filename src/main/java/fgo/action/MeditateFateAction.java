@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import java.util.ArrayList;
 
 public class MeditateFateAction extends AbstractGameAction {
-    public static final String[] TEXT = (CardCrawlGame.languagePack.getUIString("BetterToHandAction")).TEXT;
+    public static final String[] TEXT = (CardCrawlGame.languagePack.getUIString("fgo:BetterToHandAction")).TEXT;
     private final AbstractPlayer player;
     private final int numberOfCards;
     private final boolean upgraded;

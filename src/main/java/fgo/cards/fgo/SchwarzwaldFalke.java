@@ -42,7 +42,7 @@ public class SchwarzwaldFalke extends FGOCard {
             addToBot(new VFXAction(new OfferingEffect(), 0.5F));
         }
 
-        addToBot(new ApplyPowerAction(p, p, new SchwarzwaldFalkePower(p, magicNumber), magicNumber));
-        addToBot(new ApplyPowerAction(p, p, new NPRatePower(p, magicNumber), magicNumber));
+        addToBot(new ApplyPowerAction(p, p, new SchwarzwaldFalkePower(p, magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new NPRatePower(p, magicNumber)));
     }
 }

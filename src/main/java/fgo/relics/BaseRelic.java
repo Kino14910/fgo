@@ -41,7 +41,7 @@ public abstract class BaseRelic extends CustomRelic {
     protected void loadTexture() {
         this.img = TextureLoader.getTextureNull(relicPath(imageName + ".png"), true);
         if (img != null) {
-            outlineImg = TextureLoader.getTextureNull(relicPath(imageName + "Outline.png"), true);
+            outlineImg = TextureLoader.getTextureNull(relicPath("outline/" + imageName + ".png"), true);
             if (outlineImg == null)
                 outlineImg = img;
         }

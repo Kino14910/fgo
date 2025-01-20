@@ -31,6 +31,6 @@ public class MonteCristoTreasure extends FGOCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new MonteCristoTreasurePower(p, magicNumber), magicNumber));
+        addToBot(new ApplyPowerAction(p, p, new MonteCristoTreasurePower(p, magicNumber)));
     }
 }

@@ -2,10 +2,12 @@ package fgo.cards.fgo;
 
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.stslib.patches.FlavorText;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 import fgo.action.FgoNpAction;
 import fgo.cards.FGOCard;
 import fgo.patches.Enum.FGOCardColor;
@@ -16,13 +18,13 @@ public class CharismaOfHope extends FGOCard {
     private static final CardStats INFO = new CardStats(
             FGOCardColor.FGO,
             CardType.SKILL,
-            CardRarity.BASIC,
+            CardRarity.UNCOMMON,
             CardTarget.SELF,
             1
     );
     public CharismaOfHope() {
         super(ID, INFO);
-        setBlock(7, 3);
+        setMagic(1);
         setNP(10, 10);
         setCasterBackground();
 
@@ -37,7 +39,7 @@ public class CharismaOfHope extends FGOCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GainBlockAction(p, p, block));
+        addToBot(new ApplyPowerAction(p,p,new StrengthPower(p,magicNumber)));
         addToBot(new FgoNpAction(np));
 
 //        switch (AbstractDungeon.actNum) {

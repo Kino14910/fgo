@@ -1,16 +1,18 @@
 package fgo.relics;
 
-import basemod.abstracts.CustomRelic;
+import basemod.interfaces.OnStartBattleSubscriber;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import fgo.action.FgoNpAction;
+import fgo.patches.Enum.FGOCardColor;
 
-import static com.megacrit.cardcrawl.helpers.ImageMaster.loadImage;
+import static fgo.FGOMod.makeID;
 
-public class SuitcaseFgo extends CustomRelic {
-    public static final String ID = "SuitcaseFgo";
-    private static final String IMG = "fgo/images/relics/SuitcaseFgo.png";
-    private static final String IMG_OTL = "fgo/images/relics/outline/SuitcaseFgo.png";
+public class SuitcaseFgo extends BaseRelic implements OnStartBattleSubscriber {
+    private static final String NAME = "SuitcaseFgo";
+    public static final String ID = makeID(NAME);
     public SuitcaseFgo() {
-        super(ID, loadImage(IMG), loadImage(IMG_OTL), RelicTier.RARE, LandingSound.MAGICAL);
+        super(ID, NAME, FGOCardColor.FGO, RelicTier.RARE, LandingSound.MAGICAL);
     }
 
     @Override
@@ -21,5 +23,10 @@ public class SuitcaseFgo extends CustomRelic {
     @Override
     public AbstractRelic makeCopy() {
         return new SuitcaseFgo();
+    }
+
+    @Override
+    public void receiveOnBattleStart(AbstractRoom abstractRoom) {
+        this.addToBot(new FgoNpAction(20));
     }
 }

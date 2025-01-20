@@ -8,24 +8,18 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-public class GutsPower extends AbstractPower {
-    public static final String POWER_ID = "GutsPower";
-    public static final String NAME = (CardCrawlGame.languagePack.getPowerStrings(POWER_ID)).NAME;
-    public static final String[] DESCRIPTIONS = (CardCrawlGame.languagePack.getPowerStrings(POWER_ID)).DESCRIPTIONS;
-    private int time;
-    public GutsPower(AbstractCreature owner, int amount, int time) {
-        this.ID = POWER_ID;
-        this.owner = owner;
-        this.amount = amount;
-        this.time = time;
-        this.type = PowerType.BUFF;
 
-        String path128 = "fgo/images/powers_Master/GutsPower84.png";
-        String path48 = "fgo/images/powers_Master/GutsPower32.png";
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(path128), 0, 0, 84, 84);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(path48), 0, 0, 32, 32);
-        this.name = NAME;
-        updateDescription();
+import static fgo.FGOMod.makeID;
+
+public class GutsPower extends BasePower {
+    public static final String POWER_ID = makeID(GutsPower.class.getSimpleName());
+    private static final PowerType TYPE = PowerType.BUFF;
+    private static final boolean TURN_BASED = false;
+    private int time;
+ 
+    public GutsPower(AbstractCreature owner, int amount, int time) {
+        super(POWER_ID, TYPE, TURN_BASED, owner, amount); 
+        this.time = time;
     }
 
     @Override

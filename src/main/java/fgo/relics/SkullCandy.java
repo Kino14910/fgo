@@ -1,17 +1,17 @@
 package fgo.relics;
 
-import basemod.abstracts.CustomRelic;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import fgo.patches.Enum.FGOCardColor;
 
 import static com.megacrit.cardcrawl.helpers.ImageMaster.loadImage;
+import static fgo.FGOMod.makeID;
 
-public class SkullCandy extends CustomRelic {
-    public static final String ID = "SkullCandy";
-    private static final String IMG = "fgo/images/relics/SkullCandy.png";
-    private static final String IMG_OTL = "fgo/images/relics/outline/SkullCandy.png";
+public class SkullCandy extends BaseRelic {
+    private static final String NAME = "SkullCandy";
+	public static final String ID = makeID(NAME);
     public SkullCandy() {
-        super(ID, loadImage(IMG), loadImage(IMG_OTL), RelicTier.SPECIAL, LandingSound.HEAVY);
+        super(ID, NAME, FGOCardColor.FGO, RelicTier.SPECIAL, LandingSound.HEAVY);
     }
 
     @Override

@@ -18,7 +18,7 @@ import com.megacrit.cardcrawl.screens.charSelect.CharacterSelectScreen;
 import fgo.patches.Enum.ThmodClassEnum;
 
 public class PictureSelectFgoPatch {
-    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("PictureSelectFgoPatch");
+    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("fgo:PictureSelectFgoPatch");
     public static final String[] TEXT = uiStrings.TEXT;
     public static int TalentCount = 0;
     public static Hitbox TalentRight;

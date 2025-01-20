@@ -51,6 +51,6 @@ public class ItsInevitable extends FGOCard {
             }
         }
         addToBot(new ApplyPowerAction(p, p, new ItsInevitablePower(p, 2, damage + magicNumber, magicNumber), magicNumber));
-        //addToBot(new ApplyPowerAction(p, p, new BurnDamagePower(p, magicNumber), magicNumber));
+        //addToBot(new ApplyPowerAction(p, p, new BurnDamagePower(p, magicNumber)));
     }
 }

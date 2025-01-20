@@ -35,7 +35,7 @@ public class BlessingOfKur extends FGOCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new BlessingOfKurAction(p, block, freeToPlayOnce, energyOnUse));
-        //addToBot(new ApplyPowerAction(p, p, new EnergizedPower(p, magicNumber), magicNumber));
-        addToBot(new ApplyPowerAction(p, p, new BlessingOfKurPower(p)));
+        //addToBot(new ApplyPowerAction(p, p, new EnergizedPower(p, magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new BlessingOfKurPower((p))));
     }
 }

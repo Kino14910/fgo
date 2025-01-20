@@ -4,7 +4,7 @@
       "Immune"
     ]
   },
-  "PackMainMenuUI": {
+  "fgo:PackMainMenuUI": {
     "TEXT": [
       "Mystic Codes or...",
       "Please make your choice. Note that it will be reset when you exit the game.",
@@ -30,7 +30,7 @@
       "Arcueid Brunestud ?"
     ]
   },
-  "SpireHeartText": {
+  "fgo:SpireHeartText": {
     "TEXT": [
       "NL You use all the Command Spells...",
       "Master",
@@ -39,7 +39,7 @@
       "The Master"
     ]
   },
-  "NPText": {
+  "fgo:NPText": {
     "TEXT": [
       "NP",
       "1) Whenever you are attacked, gain NP equal to half damaged. NL 2) Whenever you play a card, gain NP equal to triple cost.",
@@ -48,22 +48,22 @@
       "1) Whenever you are attacked, gain NP equal to #bhalf(+30%) damaged. NL 4) Whenever you play a card, gain NP equal to triple cost."
     ]
   },
-  "BlessedScionAction": {
+  "fgo:BlessedScionAction": {
     "TEXT": [
       "Copy"
     ]
   },
-  "CurtainoftheNightAction": {
+  "fgo:CurtainoftheNightAction": {
     "TEXT": [
       "put on top of your draw pile."
     ]
   },
-  "NobleCardTabNamePatch": {
+  "fgo:NobleCardTabNamePatch": {
     "TEXT": [
       "Noble Phantasm"
     ]
   },
-  "PictureSelectFgoPatch": {
+  "fgo:PictureSelectFgoPatch": {
     "TEXT": [
       "Light-Cross",
       "Starry Trail",
@@ -71,25 +71,25 @@
       "ID: 117839244"
     ]
   },
-  "CurrentNobleCardsTopPanelItem": {
+  "fgo:CurrentNobleCardsTopPanelItem": {
     "TEXT": [
       "Noble Phantasm Card",
       "You can view all Noble Phantasm cards.",
       "Display all Noble Phantasm cards, some of which require special conditions."
     ]
   },
-  "AbsNoblePhantasmCard": {
+  "fgo:AbsNoblePhantasmCard": {
     "TEXT": [
       "Insufficient NP gauge."
     ]
   },
-  "InSonorousEffectCard": {
+  "fgo:InSonorousEffectCard": {
     "TEXT": [
       "Blessings of the Knights of the Round Table (first 6 Num)",
       "Mashu's Support"
     ]
   },
-  "AlterOption": {
+  "fgo:AlterOption": {
     "TEXT": [
       "???",
       "Choose obtain a Noble Phantasm card, Upgrade a random card."

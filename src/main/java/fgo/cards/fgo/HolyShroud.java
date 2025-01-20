@@ -21,7 +21,7 @@ public class HolyShroud extends FGOCard {
     );
     public HolyShroud() {
         super(ID, INFO);
-        setBlock(3, 3);
+        setBlock(5, 3);
     }
 
     @Override

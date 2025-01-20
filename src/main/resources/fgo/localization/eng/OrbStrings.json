@@ -8,5 +8,13 @@
       " NL #yEvoke: Deal #b",
       " damage to all enemies."
     ]
+  },
+  "${modID}:NoblePhantasmButton": {
+    "DESCRIPTION": [
+      "When you have #b100% #yNP, click choose a #yNoble #yPhantasm card into your hand and NP will drop to #b0%. NL NL ",
+      "If you have >= #b200% #yNP, #yUpgrade #yNoble #yPhantasm card. NL ",
+      "If you have #b300% #yNP, put two #yNoble #yPhantasm card into your hand."
+    ],
+    "NAME": "Noble Phantasm"
   }
 }

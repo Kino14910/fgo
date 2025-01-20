@@ -35,6 +35,6 @@ public class LuckySpinning extends FGOCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-        addToBot(new ApplyPowerAction(p, p, new StarRatePower(p, magicNumber), magicNumber));
+        addToBot(new ApplyPowerAction(p, p, new StarRatePower(p, magicNumber)));
     }
 }

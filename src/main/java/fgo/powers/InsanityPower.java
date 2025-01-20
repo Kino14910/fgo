@@ -12,27 +12,27 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import fgo.action.FgoNpAction;
 
-public class InsanityPower extends AbstractPower {
-    public static final String POWER_ID = "InsanityPower";
-    public static final String NAME = (CardCrawlGame.languagePack.getPowerStrings(POWER_ID)).NAME;
-    public static final String[] DESCRIPTIONS = (CardCrawlGame.languagePack.getPowerStrings(POWER_ID)).DESCRIPTIONS;
-    public InsanityPower(AbstractCreature owner, int amount) {
-        this.ID = POWER_ID;
-        this.owner = owner;
-        this.amount = amount;
-        this.type = PowerType.BUFF;
 
-        String path128 = "fgo/images/powers_Master/FightToDeathPower84.png";
-        String path48 = "fgo/images/powers_Master/FightToDeathPower32.png";
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(path128), 0, 0, 84, 84);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(path48), 0, 0, 32, 32);
-        this.name = NAME;
-        updateDescription();
+import static fgo.FGOMod.makeID;
+
+public class InsanityPower extends BasePower {
+    public static final String POWER_ID = makeID(InsanityPower.class.getSimpleName());
+    private static final PowerType TYPE = PowerType.BUFF;
+    private static final boolean TURN_BASED = false;
+
+    public InsanityPower(AbstractCreature owner, int amount) {
+        super(POWER_ID, TYPE, TURN_BASED, owner, amount); 
     }
 
     @Override
     public void updateDescription() {
         this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
+
+        String path128 = "img/powers_Master/FightToDeathPower84.png";
+        String path48 = "img/powers_Master/FightToDeathPower32.png";
+        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(path128), 0, 0, 84, 84);
+        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(path48), 0, 0, 32, 32);
+
     }
 
     @Override

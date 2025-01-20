@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import fgo.action.AttackComeOnAction;
+import fgo.action.ComeOnAction;
 import fgo.cards.FGOCard;
 import fgo.patches.Enum.FGOCardColor;
 import fgo.util.CardStats;
@@ -37,7 +37,7 @@ public class ComeOn extends FGOCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         //addToBot(new ApplyPowerAction(p, p, new CursePower(p, 1), 1));
-        addToBot(new AttackComeOnAction(this, AbstractGameAction.AttackEffect.FIRE));
+        addToBot(new ComeOnAction(this, AbstractGameAction.AttackEffect.FIRE));
         //addToBot(new ModifyMagicNumAction(uuid, magicNumber));
     }
 }

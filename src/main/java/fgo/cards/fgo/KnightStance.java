@@ -22,7 +22,7 @@ public class KnightStance extends FGOCard {
     );
     public KnightStance() {
         super(ID, INFO);
-        setBlock(10, 3);
+        setBlock(11, 4);
         setMagic(1);
     }
 
@@ -34,7 +34,7 @@ public class KnightStance extends FGOCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainBlockAction(p, p, block));
-        addToBot(new ApplyPowerAction(p, p, new WallOfSnowflakesPower(p, 20), 20));
-        addToBot(new ApplyPowerAction(p, p, new NPRatePower(p, magicNumber), magicNumber));
+        addToBot(new ApplyPowerAction(p, p, new WallOfSnowflakesPower(p, 20)));
+        addToBot(new ApplyPowerAction(p, p, new NPRatePower(p, magicNumber)));
     }
 }

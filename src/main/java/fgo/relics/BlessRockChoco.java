@@ -1,20 +1,18 @@
 package fgo.relics;
 
-import basemod.abstracts.CustomRelic;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import fgo.patches.Enum.FGOCardColor;
 
-public class BlessRockChoco extends CustomRelic {
-    public static final String ID = "BlessRockChoco";
-    private static final String IMG = "fgo/images/relics/BlessRockChoco.png";
-    private static final String IMG_OTL = "fgo/images/relics/outline/BlessRockChoco.png";
-    //调用父类的构造方法，传参为super(遗物ID,遗物全图，遗物白底图，遗物稀有度，获得遗物时的音效)
+import static fgo.FGOMod.makeID;
 
+public class BlessRockChoco extends BaseRelic {
+    private static final String NAME = "BlessRockChoco";
+	public static final String ID = makeID(NAME);
     public BlessRockChoco() {
-        super(ID, ImageMaster.loadImage(IMG), ImageMaster.loadImage(IMG_OTL), RelicTier.UNCOMMON, LandingSound.FLAT);
+        super(ID, NAME, FGOCardColor.FGO, RelicTier.UNCOMMON, LandingSound.FLAT);
     }
 
     @Override

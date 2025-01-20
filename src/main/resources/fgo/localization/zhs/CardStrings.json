@@ -14,7 +14,7 @@
   },
   "${modID}:CharismaOfHope": {
     "NAME": "2019年的格洛斯特",
-    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 获得 !NP! % fgo:宝具值 。"
+    "DESCRIPTION": "获得 !M! 点 力量 。 NL 获得 !NP! % fgo:宝具值 。"
   },
   "${modID}:WallOfSnowflakes": {
     "NAME": "现为脆弱的雪花之壁",
@@ -90,7 +90,8 @@
   },
   "${modID}:ComeOn": {
     "NAME": "热情",
-    "DESCRIPTION": "随机对敌人造成 !D! 点伤害，将它的 fgo:灼烧 层数翻倍。",
+    "DESCRIPTION": "将一名敌人的 fgo:灼烧 层数翻倍。",
+    "UPGRADE_DESCRIPTION": "将一名敌人的 fgo:灼烧 层数变为三倍。",
     "FLAVOR": "测试画风可以更改。"
   },
   "${modID}:NFFSpecial": {
@@ -174,7 +175,7 @@
   },
   "${modID}:GodsExecution": {
     "NAME": "封神执行",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 如果你有负面状态， NL 则给予 !M! 层 虚弱 。"
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 如果你有负面状态， NL 则给予 !M! 层 虚弱 。"
   },
   "${modID}:CrownedWithLife": {
     "NAME": "疯狂的晚宴",
@@ -187,7 +188,7 @@
   "${modID}:AtTheWell": {
     "NAME": "于泉之处",
     "DESCRIPTION": "在下回合获得 !M! 层 fgo:毅力 ，下一次 fgo:毅力 发动时获得 [E] [E] [E] 并且抽3张牌，然后死亡。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "fgo:解除弱化 。 NL 回复 !M! 点生命。 NL fgo:献给世界树的活祭 。 NL 在下回合死亡。 NL 消耗 。"
+    "UPGRADE_DESCRIPTION": "fgo:解除弱化 。 NL 回复 !M! 点生命。 NL fgo:献给世界树的活祭 。 NL 消耗 。"
   },
   "${modID}:SquireOfProphecy": {
     "NAME": "祈雨",
@@ -306,7 +307,7 @@
   },
   "${modID}:WildRule": {
     "NAME": "野性法则/强食",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 回复 !M! 点生命。 NL 使敌人失去1点 力量 。 NL 给予1层 易伤 。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 回复2点生命。 NL 使敌人失去1点 力量 ， NL 如果成功，给予 !M! 层 易伤 。"
   },
   "${modID}:TeslaCoil": {
     "NAME": "特斯拉线圈",
@@ -330,7 +331,7 @@
   },
   "${modID}:KarmicVision": {
     "NAME": "业之瞳",
-    "DESCRIPTION": "fgo:无敌贯通 并且每次去除再额外造成 !D! 点伤害。 NL 造成 !D! 点伤害。",
+    "DESCRIPTION": "fgo:无敌贯通 每去除一种状态，就造成 !D! 点伤害。",
     "FLAVOR": "测试画风可以更改。"
   },
   "${modID}:CurtainoftheNight": {
@@ -344,12 +345,11 @@
   },
   "${modID}:MorningLark": {
     "NAME": "晨之云雀",
-    "DESCRIPTION": "获得 !M! % fgo:宝具值 。 NL 获得10颗 fgo:暴击星 。 NL 下一回合少抽1张牌。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "获得 !M! % fgo:宝具值 。 NL 获得20颗 fgo:暴击星 。 NL 下一回合少抽1张牌。 NL 消耗 。"
+    "DESCRIPTION": "获得 !NP! % fgo:宝具值 。 NL 获得 !M! 颗 fgo:暴击星 。 NL 在你的回合结束时，失去 20% fgo:宝具值 NL 消耗 。"
   },
   "${modID}:GraceUnexpectedBirth": {
     "NAME": "不被祝福的诞生",
-    "DESCRIPTION": "获得 !M! % fgo:宝具值 。 NL 你在接下来2回合内 NL 无法获得 fgo:宝具牌 。 NL 消耗 。"
+    "DESCRIPTION": "获得 !NP! % fgo:宝具值 。 NL 你在接下来2回合内 NL 无法获得 fgo:宝具牌 。 NL 消耗 。"
   },
   "${modID}:SongOfThePoet": {
     "NAME": "歌仙的诗歌",
@@ -387,10 +387,10 @@
     "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 将一张 *洞见 加入你的手牌。",
     "FLAVOR": "测试画风可以更改。"
   },
-  "${modID}:GrailOfFieryHeavens": {
-    "NAME": "炽天之杯",
-    "DESCRIPTION": "在你的回合开始时，获得 !M! % fgo:宝具值 。",
-    "UPGRADE_DESCRIPTION": "固有 。 NL 在你的回合开始时，获得 !M! % fgo:宝具值 。"
+  "${modID}:DesiresSalvation": {
+    "NAME": "祈祷救济之人",
+    "DESCRIPTION": "在你的回合开始时，获得 !NP! % fgo:宝具值 。",
+    "UPGRADE_DESCRIPTION": "固有 。 NL 在你的回合开始时，获得 !NP! % fgo:宝具值 。"
   },
   "${modID}:FacelessMoon": {
     "NAME": "无貌之月",

@@ -33,7 +33,7 @@ public class HugeScale extends FGOCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new HugeScalePower(p, magicNumber), magicNumber));
+        addToBot(new ApplyPowerAction(p, p, new HugeScalePower(p, magicNumber)));
         addToTop(new MakeTempCardInHandAction(cardsToPreview, 1));
         //addToBot(new ApplyPowerAction(p, p, new ArtifactPower(p, 1), 1));
     }

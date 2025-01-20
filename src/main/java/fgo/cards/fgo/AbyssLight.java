@@ -47,6 +47,6 @@ public class AbyssLight extends FGOCard {
         addToBot(new ExpungeVFXAction(m));
         addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
         addToBot(new FgoNpAction(np));
-        addToBot(new ApplyPowerAction(p, p, new NPDamagePower(p, magicNumber), magicNumber));
+        addToBot(new ApplyPowerAction(p, p, new NPDamagePower(p, magicNumber)));
     }
 }

@@ -41,7 +41,7 @@ public class BrilliantEscort extends FGOCard {
     public void onChoseThisOption() {
         AbstractPlayer p = AbstractDungeon.player;
         this.addToBot(new VFXAction(p, new InflameEffect(p), 1.0F));
-        this.addToBot(new ApplyPowerAction(p, p, new StarGainPower(p, magicNumber), magicNumber));
+        this.addToBot(new ApplyPowerAction(p, p, new StarGainPower(p, magicNumber)));
         this.addToBot(new FgoNpAction(np));
     }
 }

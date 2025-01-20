@@ -1,24 +1,22 @@
 package fgo.relics;
 
-import basemod.abstracts.CustomRelic;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import fgo.patches.Enum.CardTagsEnum;
+import fgo.patches.Enum.FGOCardColor;
 
-public class Salem extends CustomRelic {
-    public static final String ID = "Salem";
-    private static final String IMG = "fgo/images/relics/Salem.png";
-    private static final String IMG_OTL = "fgo/images/relics/outline/Salem.png";
+import static fgo.FGOMod.makeID;
 
-    //调用父类的构造方法，传参为super(遗物ID,遗物全图，遗物白底图，遗物稀有度，获得遗物时的音效)
+public class Salem extends BaseRelic {
+    private static final String NAME = "Salem";
+	public static final String ID = makeID(NAME);
     public Salem() {
-        super(ID, ImageMaster.loadImage(IMG), ImageMaster.loadImage(IMG_OTL), RelicTier.UNCOMMON, LandingSound.FLAT);
+        super(ID, NAME, FGOCardColor.FGO, RelicTier.UNCOMMON, LandingSound.FLAT);
     }
 
     @Override

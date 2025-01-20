@@ -13,7 +13,7 @@ import fgo.patches.Enum.CardTagsEnum;
 import fgo.powers.NoblePhantasmCardPower;
 
 public class NoblePhantasmSelectAction extends AbstractGameAction {
-    private static final String[] NPTEXT = CardCrawlGame.languagePack.getUIString("NPText").TEXT;
+    private static final String[] NPTEXT = CardCrawlGame.languagePack.getUIString("fgo:NPText").TEXT;
     private final boolean upgraded;
     public NoblePhantasmSelectAction(boolean upgraded, int amount) {
         this.actionType = ActionType.CARD_MANIPULATION;

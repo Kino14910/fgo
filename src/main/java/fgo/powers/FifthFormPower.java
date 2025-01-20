@@ -14,26 +14,20 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-public class FifthFormPower extends AbstractPower {
-    public static final String POWER_ID = "FifthFormPower";
-    public static final String NAME = (CardCrawlGame.languagePack.getPowerStrings(POWER_ID)).NAME;
-    public static final String[] DESCRIPTIONS = (CardCrawlGame.languagePack.getPowerStrings(POWER_ID)).DESCRIPTIONS;
+
+import static fgo.FGOMod.makeID;
+
+public class FifthFormPower extends BasePower {
+    public static final String POWER_ID = makeID(FifthFormPower.class.getSimpleName());
+    private static final PowerType TYPE = PowerType.BUFF;
+    private static final boolean TURN_BASED = false;
     private boolean justApplied = false;
+   
     public FifthFormPower(AbstractCreature owner, int amount, boolean upgraded) {
-        this.ID = POWER_ID;
-        this.owner = owner;
-        this.amount = amount;
+        super(POWER_ID, TYPE, TURN_BASED, owner, amount); 
         if (upgraded) {
             this.justApplied = true;
         }
-        this.type = PowerType.BUFF;
-
-        String path128 = "fgo/images/powers_Master/FifthFormPower84.png";
-        String path48 = "fgo/images/powers_Master/FifthFormPower32.png";
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(path128), 0, 0, 84, 84);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(path48), 0, 0, 32, 32);
-        this.name = NAME;
-        updateDescription();
     }
 
     @Override

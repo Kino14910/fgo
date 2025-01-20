@@ -43,6 +43,6 @@ public class TeslaCoil extends FGOCard {
         }
 
         addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.NONE, true));
-        addToBot(new ApplyPowerAction(p, p, new NPRatePower(p, magicNumber), magicNumber));
+        addToBot(new ApplyPowerAction(p, p, new NPRatePower(p, magicNumber)));
     }
 }

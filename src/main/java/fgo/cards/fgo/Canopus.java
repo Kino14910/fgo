@@ -25,7 +25,7 @@ public class Canopus extends FGOCard {
     );
     public Canopus() {
         super(ID, INFO);
-        setDamage(13, 4);
+        setDamage(12, 4);
         cardsToPreview = new CurseDisaster();
     }
 

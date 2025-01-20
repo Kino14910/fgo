@@ -24,7 +24,7 @@ public class GraceUnexpectedBirth extends FGOCard {
     );
     public GraceUnexpectedBirth() {
         super(ID, INFO);
-        setMagic(30, 20);
+        setNP(30, 20);
         setExhaust();
     }
 
@@ -44,7 +44,7 @@ public class GraceUnexpectedBirth extends FGOCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new FgoNpAction(magicNumber));
+        addToBot(new FgoNpAction(np));
         addToBot(new ApplyPowerAction(p, p, new SealNPPower(p, 2), 2));
         //addToBot(new ApplyPowerAction(p, p, new DrawReductionPower(p, 1), 1));
     }

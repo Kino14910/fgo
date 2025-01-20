@@ -6,36 +6,34 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.AbstractPower.PowerType;
 import fgo.action.FgoNpAction;
 
-public class ArchetypeORTPower extends AbstractPower {
-    public static final String POWER_ID = "ArchetypeORTPower";
-    public static final String NAME = (CardCrawlGame.languagePack.getPowerStrings(POWER_ID)).NAME;
-    public static final String[] DESCRIPTIONS = (CardCrawlGame.languagePack.getPowerStrings(POWER_ID)).DESCRIPTIONS;
-    public ArchetypeORTPower(AbstractCreature owner) {
-        this.ID = POWER_ID;
-        this.owner = owner;
-        this.type = PowerType.BUFF;
+import static fgo.FGOMod.makeID;
 
-        String path128 = "fgo/images/powers_Master/ArchetypeORTPower84.png";
-        String path48 = "fgo/images/powers_Master/ArchetypeORTPower32.png";
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(path128), 0, 0, 84, 84);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(path48), 0, 0, 32, 32);
-        this.name = NAME;
-        updateDescription();
+
+import static fgo.FGOMod.makeID;
+
+public class ArchetypeORTPower extends BasePower {
+    public static final String POWER_ID = makeID(ArchetypeORTPower.class.getSimpleName());
+    private static final PowerType TYPE = PowerType.BUFF;
+    private static final boolean TURN_BASED = false;
+
+    public ArchetypeORTPower(AbstractCreature owner) {
+        super(POWER_ID, TYPE, TURN_BASED, owner);
     }
 
     @Override
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0];
+        description = DESCRIPTIONS[0];
     }
 
     @Override
     public void atStartOfTurn() {
-        this.flash();
-        this.addToBot(new ApplyPowerAction(this.owner, this.owner, new StarGainPower(this.owner, 10), 10));
-        this.addToBot(new FgoNpAction(3));
+        flash();
+        addToBot(new ApplyPowerAction(owner, owner, new StarGainPower(owner, 10), 10));
+        addToBot(new FgoNpAction(3));
     }
 
-    public AbstractPower makeCopy() {return new ArchetypeORTPower(this.owner);}
+    public AbstractPower makeCopy() {return new ArchetypeORTPower(owner);}
 }

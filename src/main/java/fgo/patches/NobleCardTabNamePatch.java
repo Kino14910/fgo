@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.screens.mainMenu.ColorTabBar;
 import javassist.CtBehavior;
 public class NobleCardTabNamePatch {
-    private static final String[] DESCRIPTIONS = (CardCrawlGame.languagePack.getUIString("NobleCardTabNamePatch")).TEXT;
+    private static final String[] DESCRIPTIONS = (CardCrawlGame.languagePack.getUIString("fgo:NobleCardTabNamePatch")).TEXT;
     @SpirePatch(
             cls = "basemod.patches.com.megacrit.cardcrawl.screens.mainMenu.ColorTabBar.ColorTabBarFix$Render",
             method = "Insert")

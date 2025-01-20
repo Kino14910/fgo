@@ -12,22 +12,22 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.PoisonPower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 
-public class BeyondTheFurthestEndPower extends AbstractPower {
-    public static final String POWER_ID = "BeyondTheFurthestEndPower";
-    public static final String NAME = (CardCrawlGame.languagePack.getPowerStrings(POWER_ID)).NAME;
-    public static final String[] DESCRIPTIONS = (CardCrawlGame.languagePack.getPowerStrings(POWER_ID)).DESCRIPTIONS;
-    public BeyondTheFurthestEndPower(AbstractCreature owner, int amount) {
-        this.ID = POWER_ID;
-        this.owner = owner;
-        this.amount = amount;
-        this.type = PowerType.BUFF;
 
-        String path128 = "fgo/images/powers_Master/BuffRegenPower84.png";
-        String path48 = "fgo/images/powers_Master/BuffRegenPower32.png";
+import static fgo.FGOMod.makeID;
+
+public class BeyondTheFurthestEndPower extends BasePower {
+    public static final String POWER_ID = "BeyondTheFurthestEndPower";
+    private static final PowerType TYPE = PowerType.BUFF;
+    private static final boolean TURN_BASED = false;
+
+    public BeyondTheFurthestEndPower(AbstractCreature owner, int amount) {
+         super(POWER_ID, TYPE, TURN_BASED, owner, amount);
+
+        String path128 = "img/powers_Master/BuffRegenPower84.png";
+        String path48 = "img/powers_Master/BuffRegenPower32.png";
         this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(path128), 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(path48), 0, 0, 32, 32);
-        this.name = NAME;
-        updateDescription();
+
     }
 
     @Override

@@ -40,7 +40,7 @@ public class Insanity extends FGOCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new InsanityPower(p, magicNumber), magicNumber));
+        addToBot(new ApplyPowerAction(p, p, new InsanityPower(p, magicNumber)));
         for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
             if (mo.hasPower(CursePower.POWER_ID)) {
                 int CurseAmt = 0;

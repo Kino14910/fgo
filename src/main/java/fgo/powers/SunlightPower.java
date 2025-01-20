@@ -12,24 +12,17 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 import fgo.action.SunlightAction;
 
-public class SunlightPower extends AbstractPower {
-    public static final String POWER_ID = "SunlightPower";
-    public static final String NAME = (CardCrawlGame.languagePack.getPowerStrings(POWER_ID)).NAME;
-    public static final String[] DESCRIPTIONS = (CardCrawlGame.languagePack.getPowerStrings(POWER_ID)).DESCRIPTIONS;
+
+import static fgo.FGOMod.makeID;
+
+public class SunlightPower extends BasePower {
+    public static final String POWER_ID = makeID(SunlightPower.class.getSimpleName());
+   private static final PowerType TYPE = PowerType.BUFF;
+    private static final boolean TURN_BASED = false;
+
     public SunlightPower(AbstractCreature owner, int amount) {
-        this.ID = POWER_ID;
-        this.owner = owner;
-        this.amount = amount;
-        this.type = PowerType.BUFF;
-
-        String path128 = "fgo/images/powers_Master/SunlightPower84.png";
-        String path48 = "fgo/images/powers_Master/SunlightPower32.png";
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(path128), 0, 0, 84, 84);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(path48), 0, 0, 32, 32);
-        this.name = NAME;
-        updateDescription();
+        super(POWER_ID, TYPE, TURN_BASED, owner, amount);
     }
-
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
         if (card.type == AbstractCard.CardType.ATTACK) {

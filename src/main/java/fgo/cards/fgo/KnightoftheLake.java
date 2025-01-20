@@ -39,7 +39,7 @@ public class KnightoftheLake extends FGOCard {
         addToBot(new VFXAction(p, new FlameBarrierEffect(p.hb.cX, p.hb.cY), duration));
 
         if (!p.hasPower(CriticalDamageUpPower.POWER_ID)) {
-            addToBot(new ApplyPowerAction(p, p, new CriticalDamageUpPower(p, magicNumber), magicNumber));
+            addToBot(new ApplyPowerAction(p, p, new CriticalDamageUpPower(p, magicNumber)));
         } else {
             addToBot(new ApplyPowerAction(p, p, new StarGainPower(p, 10), 10));
         }

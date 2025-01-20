@@ -8,5 +8,18 @@
       " into a description.",
       " Exactly how depends on the potion, and you can set it up however you want."
     ]
+  },
+  "${modID}:ElixirofRejuvenation": {
+    "NAME": "返老还童的灵药",
+    "DESCRIPTIONS": [
+      "回复 #b",
+      " 点生命。移除你身上的所有负面效果。这瓶药水无法在战斗外饮用。"
+    ]
+  },
+  "${modID}:ExtremelySpicyMapoTofu": {
+    "NAME": "罐装特辣麻婆豆腐",
+    "DESCRIPTIONS": [
+      "获得 #b80% #y宝具值 或 #b60% #y宝具威力 。"
+    ]
   }
 }

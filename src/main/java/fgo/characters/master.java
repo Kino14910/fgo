@@ -22,6 +22,7 @@ import fgo.patches.Enum.ThmodClassEnum;
 import fgo.patches.MainMenuUIFgoPatch;
 import fgo.patches.PictureSelectFgoPatch;
 import fgo.relics.Avenger;
+import fgo.relics.CommandSpell;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -50,8 +51,8 @@ public class master extends CustomPlayer{
     public Color FgoNpShadowColor = new Color(0.0F, 0.0F, 0.0F, 0.5F);
     public Color FgoNpBgColor = new Color(0.0F, 0.0F, 0.0F, 0.5F);
     public Color FgoNptextColor = new Color(1.0F, 1.0F, 1.0F, 1.0F);
-    private static final String[] TEXT = CardCrawlGame.languagePack.getUIString("SpireHeartText").TEXT;
-    private static final String[] NPTEXT = CardCrawlGame.languagePack.getUIString("NPText").TEXT;
+    private static final String[] TEXT = CardCrawlGame.languagePack.getUIString("fgo:SpireHeartText").TEXT;
+    private static final String[] NPTEXT = CardCrawlGame.languagePack.getUIString("fgo:NPText").TEXT;
     private float FgoNpWidth;
     public static int fgoNp;
     public master(String name) {
@@ -62,8 +63,8 @@ public class master extends CustomPlayer{
 
         initializeClass(
                 String.valueOf(MainMenuUIFgoPatch.refreshSkinFgo()),
-                "fgo/images/char_Master/shoulder2.png", "fgo/images/char_Master/shoulder1.png",
-                "fgo/images/char_Master/fallen.png",
+                "fgo/images/character/shoulder2.png", "fgo/images/character/shoulder1.png",
+                "fgo/images/character/fallen.png",
                 getLoadout(),
                 0.0F, 5.0F,
                 240.0F, 300.0F,
@@ -81,10 +82,9 @@ public class master extends CustomPlayer{
         retVal.addAll(Collections.nCopies(4, "fgo:Defend"));
         Collections.addAll(retVal,
                 "fgo:DreamUponTheStars",
-                "fgo:CharismaOfHope"
-//                "fgo:EternalMemories",
-//                "fgo:BeautifulJourney",
-//                "fgo:Failnaught"
+                "fgo:EternalMemories",
+                "fgo:BeautifulJourney",
+                "fgo:Failnaught"
         );
         return retVal;
     }
@@ -93,10 +93,11 @@ public class master extends CustomPlayer{
     public ArrayList<String> getStartingRelics() {
         //添加初始遗物
         ArrayList<String> retVal = new ArrayList<>();
-        retVal.add("SuitcaseFgo");
-        UnlockTracker.markRelicAsSeen("SuitcaseFgo");
-        retVal.add("HalloweenRoyalty");
-        UnlockTracker.markRelicAsSeen("HalloweenRoyalty");
+//        retVal.add("SuitcaseFgo");
+//        UnlockTracker.markRelicAsSeen("SuitcaseFgo");
+//        retVal.add("HalloweenRoyalty");
+//        UnlockTracker.markRelicAsSeen("HalloweenRoyalty");
+        retVal.add(CommandSpell.ID);
         return retVal;
     }
 

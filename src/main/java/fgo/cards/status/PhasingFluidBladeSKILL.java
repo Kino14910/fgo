@@ -1,5 +1,6 @@
 package fgo.cards.status;
 
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.utility.DrawPileToHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -7,6 +8,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import fgo.cards.FGOCard;
 import fgo.util.CardStats;
 
+@AutoAdd.Ignore
 public class PhasingFluidBladeSKILL extends FGOCard {
     public static final String ID = makeID(PhasingFluidBladeSKILL.class.getSimpleName());
     private static final CardStats INFO = new CardStats(

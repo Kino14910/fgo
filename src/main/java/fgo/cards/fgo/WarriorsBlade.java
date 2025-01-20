@@ -40,6 +40,6 @@ public class WarriorsBlade extends FGOCard {
         addToBot(new SFXAction("ATTACK_HEAVY"));
         addToBot(new VFXAction(p, new CleaveEffect(), 0.1F));
         addToBot(new DamageAllEnemiesAction(p, multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
-        addToBot(new ApplyPowerAction(p, p, new StarGainPower(p, magicNumber), magicNumber));
+        addToBot(new ApplyPowerAction(p, p, new StarGainPower(p, magicNumber)));
     }
 }

@@ -1,15 +1,15 @@
 package fgo.relics;
 
-import basemod.abstracts.CustomRelic;
-import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import fgo.patches.Enum.FGOCardColor;
 
-public class BowInsignia extends CustomRelic {
-    public static final String ID = "BowInsignia";
-    private static final String IMG = "fgo/images/relics/BowInsignia.png";
-    private static final String IMG_OTL = "fgo/images/relics/outline/BowInsignia.png";
+import static fgo.FGOMod.makeID;
+
+public class BowInsignia extends BaseRelic {
+    private static final String NAME = "BowInsignia";
+	public static final String ID = makeID(NAME);
     public BowInsignia() {
-        super(ID, ImageMaster.loadImage(IMG), ImageMaster.loadImage(IMG_OTL), RelicTier.SPECIAL, LandingSound.FLAT);
+        super(ID, NAME, FGOCardColor.FGO, RelicTier.SPECIAL, LandingSound.FLAT);
     }
 
     @Override

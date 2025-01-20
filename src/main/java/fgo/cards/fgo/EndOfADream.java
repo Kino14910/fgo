@@ -32,7 +32,7 @@ public class EndOfADream extends FGOCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new PowerUpBoostPower(p, magicNumber), magicNumber));
-        addToBot(new ApplyPowerAction(p, p, new EndOfADreamPower(p)));
+        addToBot(new ApplyPowerAction(p, p, new PowerUpBoostPower(p, magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new EndOfADreamPower((p))));
     }
 }

@@ -14,26 +14,26 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import fgo.relics.MisoPotato;
 
-public class ItsInevitablePower extends AbstractPower {
-    public static final String POWER_ID = "ItsInevitablePower";
-    public static final String NAME = (CardCrawlGame.languagePack.getPowerStrings(POWER_ID)).NAME;
-    public static final String[] DESCRIPTIONS = (CardCrawlGame.languagePack.getPowerStrings(POWER_ID)).DESCRIPTIONS;
+
+import static fgo.FGOMod.makeID;
+
+public class ItsInevitablePower extends BasePower {
+    public static final String POWER_ID = makeID(ItsInevitablePower.class.getSimpleName());
+    private static final PowerType TYPE = PowerType.BUFF;
+    private static final boolean TURN_BASED = false;
     private int damage;
     private final int raise;
+
     public ItsInevitablePower(AbstractCreature owner, int amount, int damage, int raise) {
-        this.ID = POWER_ID;
-        this.owner = owner;
-        this.amount = amount;
+        super(POWER_ID, TYPE, TURN_BASED, owner, amount); 
         this.damage = damage;
         this.raise = raise;
-        this.type = PowerType.BUFF;
 
-        String path128 = "fgo/images/powers_Master/BurningPower84.png";
-        String path48 = "fgo/images/powers_Master/BurningPower32.png";
+        String path128 = "img/powers_Master/BurningPower84.png";
+        String path48 = "img/powers_Master/BurningPower32.png";
         this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(path128), 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(path48), 0, 0, 32, 32);
-        this.name = NAME;
-        updateDescription();
+
     }
 
     @Override

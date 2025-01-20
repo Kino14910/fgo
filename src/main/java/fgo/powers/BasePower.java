@@ -27,6 +27,10 @@ public abstract class BasePower extends AbstractPower {
     protected Color redColor2 = Color.RED.cpy();
     protected Color greenColor2 = Color.GREEN.cpy();
 
+    public BasePower(String id, PowerType powerType, boolean isTurnBased, AbstractCreature owner) {
+        this(id, powerType, isTurnBased, owner, null, -1);
+    }
+
     public BasePower(String id, PowerType powerType, boolean isTurnBased, AbstractCreature owner, int amount) {
         this(id, powerType, isTurnBased, owner, null, amount);
     }

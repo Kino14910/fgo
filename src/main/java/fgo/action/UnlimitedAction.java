@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
 @Deprecated
 public class UnlimitedAction extends AbstractGameAction {
-    private static final String[] NPTEXT = CardCrawlGame.languagePack.getUIString("NPText").TEXT;
+    private static final String[] NPTEXT = CardCrawlGame.languagePack.getUIString("fgo:NPText").TEXT;
     public UnlimitedAction() {
         this.actionType = ActionType.CARD_MANIPULATION;
         this.duration = Settings.ACTION_DUR_MED;

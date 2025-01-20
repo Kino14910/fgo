@@ -26,7 +26,7 @@ public class MainMenuUIFgoPatch implements ISubscriber, CustomSavable<Integer> {
     public static final ArrayList<DropdownMenu> dropdowns = new ArrayList<>();
     public static final ArrayList<String> packSetups = new ArrayList<>();
     private static final Hitbox packDraftToggle = new Hitbox(40.0f * Settings.scale, 40.0f * Settings.scale);
-    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("PackMainMenuUI");
+    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("fgo:PackMainMenuUI");
     private static final String[] TEXT = uiStrings.TEXT;
     private static final ArrayList<PowerTip> toggleTips = new ArrayList<>();
     private static final ArrayList<String> options = new ArrayList<>();
@@ -39,7 +39,7 @@ public class MainMenuUIFgoPatch implements ISubscriber, CustomSavable<Integer> {
     private static final float DROPDOWNS_START_Y = CHECKBOX_Y + DROPDOWNS_SPACING * (1.5f);
     public static HashMap<String, Integer> idToIndex;
     public static boolean customDraft;
-    public static int modifierIndexes;
+    public static int modifierIndexes = 0;
 
     static {
         options.addAll(Arrays.asList(TEXT).subList(2, 22));
@@ -87,65 +87,9 @@ public class MainMenuUIFgoPatch implements ISubscriber, CustomSavable<Integer> {
     }
 
     public static String refreshSkinFgo() {
-        String skinPath = "fgo/images/char_Master/Master0.png";
-        switch (modifierIndexes) {
-            case 1:
-                skinPath = "fgo/images/char_Master/Master.png";
-                break;
-            case 2:
-                skinPath = "fgo/images/char_Master/Master2.png";
-                break;
-            case 3:
-                skinPath = "fgo/images/char_Master/Master3.png";
-                break;
-            case 4:
-                skinPath = "fgo/images/char_Master/Master4.png";
-                break;
-            case 5:
-                skinPath = "fgo/images/char_Master/Master5.png";
-                break;
-            case 6:
-                skinPath = "fgo/images/char_Master/Master6.png";
-                break;
-            case 7:
-                skinPath = "fgo/images/char_Master/Master7.png";
-                break;
-            case 8:
-                skinPath = "fgo/images/char_Master/Master8.png";
-                break;
-            case 9:
-                skinPath = "fgo/images/char_Master/Master9.png";
-                break;
-            case 10:
-                skinPath = "fgo/images/char_Master/Master10.png";
-                break;
-            case 11:
-                skinPath = "fgo/images/char_Master/Master11.png";
-                break;
-            case 12:
-                skinPath = "fgo/images/char_Master/Master12.png";
-                break;
-            case 13:
-                skinPath = "fgo/images/char_Master/Master13.png";
-                break;
-            case 14:
-                skinPath = "fgo/images/char_Master/Master14.png";
-                break;
-            case 15:
-                skinPath = "fgo/images/char_Master/Master15.png";
-                break;
-            case 16:
-                skinPath = "fgo/images/char_Master/Master16.png";
-                break;
-            case 17:
-                skinPath = "fgo/images/char_Master/Master17.png";
-                break;
-            case 18:
-                skinPath = "fgo/images/char_Master/Master18.png";
-                break;
-            case 19:
-                skinPath = "fgo/images/char_Master/Cat_Arcueid_Brunestud.png";
-                break;
+        String skinPath = "fgo/images/character/Master" + modifierIndexes + ".png";
+        if(modifierIndexes == 19) {
+            skinPath = "fgo/images/character/Cat_Arcueid_Brunestud.png";
         }
         return skinPath;
     }
@@ -209,26 +153,27 @@ public class MainMenuUIFgoPatch implements ISubscriber, CustomSavable<Integer> {
                     }
                 }
 
-                if (!stopInput) {
-                    packDraftToggle.update();
-                    if (packDraftToggle.hovered) {
-                        if (toggleTips.isEmpty()) {
-                            toggleTips.add(new PowerTip(uiStrings.TEXT[0], uiStrings.TEXT[1]));
-                        }
-                        if (InputHelper.mX < 1400.0f * Settings.scale) {
-                            TipHelper.queuePowerTips(InputHelper.mX + 60.0f * Settings.scale, InputHelper.mY - 50.0f * Settings.scale, toggleTips);
-                        } else {
-                            TipHelper.queuePowerTips(InputHelper.mX - 350.0f * Settings.scale, InputHelper.mY - 50.0f * Settings.scale, toggleTips);
-                        }
+                if(stopInput)
+                    return;
 
-                        if (InputHelper.justClickedLeft) {
-                            CardCrawlGame.sound.playA("UI_CLICK_1", -0.4f);
-                            packDraftToggle.clickStarted = true;
-                        }
-                        if (packDraftToggle.clicked) {
-                            customDraft = !customDraft;
-                            packDraftToggle.clicked = false;
-                        }
+                packDraftToggle.update();
+                if (packDraftToggle.hovered) {
+                    if (toggleTips.isEmpty()) {
+                        toggleTips.add(new PowerTip(uiStrings.TEXT[0], uiStrings.TEXT[1]));
+                    }
+                    if (InputHelper.mX < 1400.0f * Settings.scale) {
+                        TipHelper.queuePowerTips(InputHelper.mX + 60.0f * Settings.scale, InputHelper.mY - 50.0f * Settings.scale, toggleTips);
+                    } else {
+                        TipHelper.queuePowerTips(InputHelper.mX - 350.0f * Settings.scale, InputHelper.mY - 50.0f * Settings.scale, toggleTips);
+                    }
+
+                    if (InputHelper.justClickedLeft) {
+                        CardCrawlGame.sound.playA("UI_CLICK_1", -0.4f);
+                        packDraftToggle.clickStarted = true;
+                    }
+                    if (packDraftToggle.clicked) {
+                        customDraft = !customDraft;
+                        packDraftToggle.clicked = false;
                     }
                 }
             }

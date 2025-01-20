@@ -12,7 +12,7 @@ import java.util.Iterator;
 
 public class CurtainoftheNightAction extends AbstractGameAction {
     private final AbstractPlayer p;
-    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("CurtainoftheNightAction");
+    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("fgo:CurtainoftheNightAction");
     public static final String[] TEXT = uiStrings.TEXT;
     public CurtainoftheNightAction() {
         this.p = AbstractDungeon.player;

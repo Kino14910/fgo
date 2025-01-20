@@ -28,7 +28,7 @@ public class KarmicVision extends FGOCard {
     );
     public KarmicVision() {
         super(ID, INFO);
-        setDamage(6, 5);
+        setDamage(9, 3);
         this.portraitImg = ImageMaster.loadImage("fgo/images/cards/attack/KarmicVision.png");
 
         FlavorText.AbstractCardFlavorFields.textColor.set(this, Color.CHARTREUSE);

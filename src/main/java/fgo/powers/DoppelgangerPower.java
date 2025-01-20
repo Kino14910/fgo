@@ -13,19 +13,16 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import fgo.patches.Enum.CardTagsEnum;
 
-public class DoppelgangerPower extends AbstractPower {
-    public static final String POWER_ID = "DoppelgangerPower";
-    public static final String NAME = (CardCrawlGame.languagePack.getPowerStrings(POWER_ID)).NAME;
-    public static final String[] DESCRIPTIONS = (CardCrawlGame.languagePack.getPowerStrings(POWER_ID)).DESCRIPTIONS;
-    public DoppelgangerPower(AbstractCreature owner, int amount) {
-        this.ID = POWER_ID;
-        this.owner = owner;
-        this.amount = amount;
-        this.type = PowerType.BUFF;
 
-        this.loadRegion("doubleTap");
-        this.name = NAME;
-        updateDescription();
+import static fgo.FGOMod.makeID;
+
+public class DoppelgangerPower extends BasePower {
+    public static final String POWER_ID = makeID(DoppelgangerPower.class.getSimpleName());
+    private static final PowerType TYPE = PowerType.BUFF;
+    private static final boolean TURN_BASED = false;
+
+    public DoppelgangerPower(AbstractCreature owner, int amount) {
+        super(POWER_ID, TYPE, TURN_BASED, owner, amount); 
     }
 
     @Override

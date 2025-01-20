@@ -14,12 +14,12 @@
     }
   },
 
-  "MidsummerNightDream": {
+  "${modID}:MidsummerNightDream": {
     "TEXT": [
       "Immune"
     ]
   },
-  "PackMainMenuUI": {
+  "${modID}:PackMainMenuUI": {
     "TEXT": [
       "Mystic Codes or...",
       "Please make your choice. Note that it will be reset when you exit the game.",
@@ -45,7 +45,7 @@
       "Arcueid Brunestud ?"
     ]
   },
-  "SpireHeartText": {
+  "${modID}:SpireHeartText": {
     "TEXT": [
       "NL You use all the Command Spells...",
       "Master",
@@ -54,7 +54,7 @@
       "The Master"
     ]
   },
-  "NPText": {
+  "${modID}:NPText": {
     "TEXT": [
       "NP",
       "1) Whenever you are attacked, gain NP equal to half damaged. NL 2) Whenever you play a card, gain NP equal to triple cost.",
@@ -63,22 +63,22 @@
       "1) Whenever you are attacked, gain NP equal to #bhalf(+30%) damaged. NL 4) Whenever you play a card, gain NP equal to triple cost."
     ]
   },
-  "BlessedScionAction": {
+  "${modID}:BlessedScionAction": {
     "TEXT": [
       "Copy"
     ]
   },
-  "CurtainoftheNightAction": {
+  "${modID}:CurtainoftheNightAction": {
     "TEXT": [
       "put on top of your draw pile."
     ]
   },
-  "NobleCardTabNamePatch": {
+  "${modID}:NobleCardTabNamePatch": {
     "TEXT": [
       "Noble Phantasm"
     ]
   },
-  "PictureSelectFgoPatch": {
+  "${modID}:PictureSelectFgoPatch": {
     "TEXT": [
       "Light-Cross",
       "Starry Trail",
@@ -86,25 +86,25 @@
       "ID: 117839244"
     ]
   },
-  "CurrentNobleCardsTopPanelItem": {
+  "${modID}:CurrentNobleCardsTopPanelItem": {
     "TEXT": [
       "Noble Phantasm Card",
       "You can view all Noble Phantasm cards.",
       "Display all Noble Phantasm cards, some of which require special conditions."
     ]
   },
-  "AbsNoblePhantasmCard": {
+  "${modID}:AbsNoblePhantasmCard": {
     "TEXT": [
       "Insufficient NP gauge."
     ]
   },
-  "InSonorousEffectCard": {
+  "${modID}:InSonorousEffectCard": {
     "TEXT": [
       "Blessings of the Knights of the Round Table (first 6 Num)",
       "Mashu's Support"
     ]
   },
-  "AlterOption": {
+  "${modID}:AlterOption": {
     "TEXT": [
       "???",
       "Choose obtain a Noble Phantasm card, Upgrade a random card."

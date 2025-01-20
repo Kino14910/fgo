@@ -13,7 +13,7 @@ import fgo.cards.SupportCraft.SupportCraft;
 import fgo.patches.Enum.CardTagsEnum;
 
 public class BlessedScionAction extends AbstractGameAction {
-    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("BlessedScionAction");
+    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("fgo:BlessedScionAction");
     public static final String[] TEXT = uiStrings.TEXT;
     private final AbstractPlayer p;
     private static final float DURATION = Settings.ACTION_DUR_XFAST;

@@ -26,6 +26,8 @@ import fgo.action.FgoNpAction;
 import fgo.cards.BaseCard;
 import fgo.characters.master;
 import fgo.patches.Enum.FGOCardColor;
+import fgo.patches.Enum.ThmodClassEnum;
+import fgo.potions.BasePotion;
 import fgo.powers.NPRatePower;
 import fgo.relics.BaseRelic;
 import fgo.util.GeneralUtils;
@@ -104,6 +106,7 @@ public class FGOMod implements
 
     @Override
     public void receivePostInitialize() {
+        registerPotions();
         //This loads the image used as an icon in the in-game mods menu.
         Texture badgeTexture = TextureLoader.getTexture(imagePath("badge.png"));
         //Set up the mod information displayed in the in-game mods menu.
@@ -277,27 +280,39 @@ public class FGOMod implements
     @Override
     public void receiveEditCards() { //somewhere in the class
         new AutoAdd(modID) //Loads files from this mod
-        .packageFilter(BaseCard.class) //In the same package as this class
-        .setDefaultSeen(true) //And marks them as seen in the compendium
-        .cards(); //Adds the cards
+            .packageFilter(BaseCard.class) //In the same package as this class
+            .setDefaultSeen(true) //And marks them as seen in the compendium
+            .cards(); //Adds the cards
+        BaseMod.addDynamicVariable(new NoblePhantasmVariable());
     }
 
     @Override
     public void receiveEditRelics() {
         new AutoAdd(modID)
-                .packageFilter(BaseRelic.class)
-                .any(BaseRelic.class, (info, relic) -> { //Run this code for any classes that extend this class
-                    if (relic.pool != null)
-                        BaseMod.addRelicToCustomPool(relic, relic.pool); //Register a custom character specific relic
-                    else
-                        BaseMod.addRelic(relic, relic.relicType); //Register a shared or base game character specific relic
+            .packageFilter(BaseRelic.class)
+            .any(BaseRelic.class, (info, relic) -> { //Run this code for any classes that extend this class
+                if (relic.pool != null)
+                    BaseMod.addRelicToCustomPool(relic, relic.pool); //Register a custom character specific relic
+                else
+                    BaseMod.addRelic(relic, relic.relicType); //Register a shared or base game character specific relic
 
-                    //If the class is annotated with @AutoAdd.Seen, it will be marked as seen, making it visible in the relic library.
-                    //If you want all your relics to be visible by default, just remove this if statement.
-                    if (info.seen)
-                        UnlockTracker.markRelicAsSeen(relic.relicId);
-                });
-        BaseMod.addDynamicVariable(new NoblePhantasmVariable());
+                //If the class is annotated with @AutoAdd.Seen, it will be marked as seen, making it visible in the relic library.
+                //If you want all your relics to be visible by default, just remove this if statement.
+//                if (info.seen)
+                    UnlockTracker.markRelicAsSeen(relic.relicId);
+            });
+    }
+
+     public static void registerPotions() {
+        new AutoAdd(modID) //Loads files from this mod
+            .packageFilter(BasePotion.class) //In the same package as this class
+            .any(BasePotion.class, (info, potion) -> { //Run this code for any classes that extend this class
+                //These three null parameters are colors.
+                //If they're not null, they'll overwrite whatever color is set in the potions themselves.
+                //This is an old feature added before having potions determine their own color was possible.
+                BaseMod.addPotion(potion.getClass(), BaseMod.getPotionLiquidColor(potion.ID), BaseMod.getPotionHybridColor(potion.ID), BaseMod.getPotionSpotsColor(potion.ID), potion.ID, MASTER_CLASS);
+                //playerClass will make a potion character-specific. By default, it's null and will do nothing.
+            });
     }
 
     @Override

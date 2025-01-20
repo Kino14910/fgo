@@ -1,6 +1,5 @@
 package fgo.relics;
 
-import basemod.abstracts.CustomRelic;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -9,21 +8,19 @@ import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.RestRoom;
-import fgo.cards.colorless.ignore.BlessedRegenerate;
-import fgo.cards.colorless.ignore.BrilliantEscort;
-import fgo.cards.colorless.ignore.PureCoordinate;
-import fgo.cards.colorless.ignore.SionSkill;
+import fgo.cards.colorless.ignore.*;
+import fgo.patches.Enum.FGOCardColor;
 
 import java.util.ArrayList;
 
-import static com.megacrit.cardcrawl.helpers.ImageMaster.loadImage;
+import static fgo.FGOMod.makeID;
 
-public class HalloweenRoyalty extends CustomRelic {
-    public static final String ID = "HalloweenRoyalty";
-    private static final String IMG = "fgo/images/relics/HalloweenRoyalty.png";
-    private static final String IMG_OTL = "fgo/images/relics/outline/HalloweenRoyalty.png";
+public class HalloweenRoyalty extends BaseRelic {
+    private static final String NAME = "HalloweenRoyalty";
+	public static final String ID = makeID(NAME);
+    private boolean canUse = false;
     public HalloweenRoyalty() {
-        super(ID, loadImage(IMG), loadImage(IMG_OTL), RelicTier.STARTER, LandingSound.FLAT);
+        super(ID, NAME, FGOCardColor.FGO, RelicTier.RARE, LandingSound.FLAT);
     }
 
     @Override
@@ -56,6 +53,12 @@ public class HalloweenRoyalty extends CustomRelic {
         }
 
         if (this.counter == 5) {
+            this.canUse = true;
+        }
+    }
+
+    protected void onRightClick() {
+        if (this.counter > 0 && AbstractDungeon.currMapNode != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
             this.counter = 0;
             this.flash();
             this.addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
@@ -74,6 +77,7 @@ public class HalloweenRoyalty extends CustomRelic {
             }
 
             this.addToBot(new ChooseOneAction(stanceChoices));
+            canUse = false;
         }
     }
 

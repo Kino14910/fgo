@@ -1,22 +1,22 @@
 package fgo.relics;
 
-import basemod.abstracts.CustomRelic;
 import com.evacipated.cardcrawl.mod.stslib.powers.StunMonsterPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import fgo.patches.Enum.FGOCardColor;
 
-public class MechanicalProtector extends CustomRelic {
-    public static final String ID = "MechanicalProtector";
-    private static final String IMG = "fgo/images/relics/MechanicalProtector.png";
-    private static final String IMG_OTL = "fgo/images/relics/outline/MechanicalProtector.png";
+import static fgo.FGOMod.makeID;
+
+public class MechanicalProtector extends BaseRelic {
+    private static final String NAME = "MechanicalProtector";
+	public static final String ID = makeID(NAME);
     public MechanicalProtector() {
-        super(ID, ImageMaster.loadImage(IMG), ImageMaster.loadImage(IMG_OTL), RelicTier.UNCOMMON, LandingSound.FLAT);
+        super(ID, NAME, FGOCardColor.FGO, RelicTier.UNCOMMON, LandingSound.FLAT);
         this.counter = 3;
     }
 

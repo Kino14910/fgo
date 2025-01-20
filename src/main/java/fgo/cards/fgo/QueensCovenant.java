@@ -32,8 +32,8 @@ public class QueensCovenant extends FGOCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, magicNumber), magicNumber));
-        addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, magicNumber), magicNumber));
-        addToBot(new ApplyPowerAction(p, p, new MyFairSoldierPower(p, magicNumber), magicNumber));
+        addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new MyFairSoldierPower(p, magicNumber)));
     }
 }

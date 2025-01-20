@@ -6,15 +6,14 @@
       "Gain [E] at the start of your turn. [E] is an energy icon."
     ]
   },
-
-  "SuitcaseFgo": {
+  "${modID}:SuitcaseFgo": {
     "NAME": "Suitcase",
     "FLAVOR": "",
     "DESCRIPTIONS": [
-      "At the start of combat, gain #b20% #yfgomaster:NP."
+      "At the start of combat, gain #b20% #yfgo:NP."
     ]
   },
-  "HalloweenRoyalty": {
+  "${modID}:HalloweenRoyalty": {
     "NAME": "Mystic Code",
     "FLAVOR": "A prestigious and noble product. Now you can be the (Halloween) Crown Prince!",
     "DESCRIPTIONS": [
@@ -22,43 +21,43 @@
       "Every #b5 turns, use Mystic Code's Master skill(+)."
     ]
   },
-  "CommandSpell": {
+  "${modID}:CommandSpell": {
     "NAME": "Command Spell",
     "FLAVOR": "Command Spells are extremely powerful magic granted to each Master.",
     "DESCRIPTIONS": [
-      "#yfgomaster:Command_Spell are the three absolute commands which can be used with the #yRight click in Battle."
+      "#yfgo:Command_Spell are the three absolute commands which can be used with the #yRight click in Battle."
     ]
   },
-  "SurpriseChocolate": {
+  "${modID}:SurpriseChocolate": {
     "NAME": "Surprise Chocolate",
     "FLAVOR": "The first time seems like just an attempt... let's do it again!",
     "DESCRIPTIONS": [
       "At the start of combat, gain #b1 random buff."
     ]
   },
-  "LockChocolate": {
+  "${modID}:LockChocolate": {
     "NAME": "Lock Chocolate",
     "FLAVOR": "Make a choice and give it to someone important to you.",
     "DESCRIPTIONS": [
-      "Gain [E] at the start of your turn. At the start of combat, gain #b1 #yfgomaster:Evil_Curse."
+      "Gain [E] at the start of your turn. At the start of combat, gain #b1 #yfgo:Evil_Curse."
     ]
   },
-  "LockChocolateStrawberry": {
+  "${modID}:LockChocolateStrawberry": {
     "NAME": "Lock Chocolate Strawberry",
     "FLAVOR": "Carefully select the recipient of the gift.",
     "DESCRIPTIONS": [
       "Upon pickup, add a #yWall #yof #ySnow #yFlakes and #yBlack #yBarrel to your deck."
     ]
   },
-  "AstrologicalTeapot": {
+  "${modID}:AstrologicalTeapot": {
     "NAME": "Astrological Teapot",
     "FLAVOR": "Drink it and deepen the bonds.",
     "DESCRIPTIONS": [
       "Whenever you use a potion, gain #b",
-      " #yfgomaster:Guts."
+      " #yfgo:Guts."
     ]
   },
-  "SaveStone": {
+  "${modID}:SaveStone": {
     "NAME": "Save Stone",
     "FLAVOR": "Use it promptly.",
     "DESCRIPTIONS": [
@@ -66,63 +65,63 @@
       "% #yGold."
     ]
   },
-  "BlessRockChoco": {
+  "${modID}:BlessRockChoco": {
     "NAME": "Blessed Lock-On Choco",
     "FLAVOR": "\"Super special blessing chocolate.\"",
     "DESCRIPTIONS": [
       "Whenever you draw a card is at or above #b3, reduce its cost by #b1 this turn."
     ]
   },
-  "PoisonApple": {
+  "${modID}:PoisonApple": {
     "NAME": "Poison Apple",
     "FLAVOR": "An apple that looks suspicious no matter how it looks. The person who takes this and is willing to eat it must be a super good person.",
     "DESCRIPTIONS": [
       "Whenever you gain #yBlock, apply #b1 #yPoison to a random enemy."
     ]
   },
-  "MisoPotato": {
+  "${modID}:MisoPotato": {
     "NAME": "Miso Potato",
     "FLAVOR": "Smuggled from the ZHIFU Mountains and circulated as simple food on the black market.",
     "DESCRIPTIONS": [
-      "#yIt's #yInevitable apply #b2 #yfgomaster:Combust to ALL enemies for each damage."
+      "#yIt's #yInevitable apply #b2 #yfgo:Combust to ALL enemies for each damage."
     ]
   },
-  "FanNight": {
+  "${modID}:FanNight": {
     "NAME": "Fan Night",
     "FLAVOR": "Let's play all night tonight!",
     "DESCRIPTIONS": [
       "Whenever you break an enemy's #yBlock the first time each combat, heal for #b20% of your MAX HP."
     ]
   },
-  "BurgerKing": {
+  "${modID}:BurgerKing": {
     "NAME": "Burger King",
     "FLAVOR": "Since protein can be converted into muscle, that's definitely 0 calories.",
     "DESCRIPTIONS": [
       "Upon pickup, raise your Max HP by #b40 and obtain a unique #rCurse."
     ]
   },
-  "DreamChip": {
+  "${modID}:DreamChip": {
     "NAME": "Dream Chip",
     "FLAVOR": "A luxurious casino chip carrying dreams.",
     "DESCRIPTIONS": [
       "Whenever you shuffle your draw pile the first time each combat, add a #yCalculated #yGamble into your hand."
     ]
   },
-  "CosmicMedallion": {
+  "${modID}:CosmicMedallion": {
     "NAME": "Cosmic Medallion",
     "FLAVOR": "From the Universe Medal.",
     "DESCRIPTIONS": [
       "Block is not removed at the start of your next #b3 turn."
     ]
   },
-  "MidsummerNightDream": {
+  "${modID}:MidsummerNightDream": {
     "NAME": "Midsummer Night Dream",
     "FLAVOR": "While these visions did appear. And this weak and idle theme, no more yielding but a dream.",
     "DESCRIPTIONS": [
-      "You can no longer become #yfgomaster:Evil_Curse."
+      "You can no longer become #yfgo:Evil_Curse."
     ]
   },
-  "Salem": {
+  "${modID}:Salem": {
     "NAME": "Existence Outside the Domain",
     "FLAVOR": "Visitors from the void.",
     "DESCRIPTIONS": [
@@ -133,56 +132,56 @@
       " #rCurses."
     ]
   },
-  "SkullCandy": {
+  "${modID}:SkullCandy": {
     "NAME": "Skull Candy",
     "FLAVOR": "Candy that has been resold multiple times.",
     "DESCRIPTIONS": [
       "#yUpgrade your Mystic Code's Master skill."
     ]
   },
-  "ArchetypeORT": {
+  "${modID}:ArchetypeORT": {
     "NAME": "Archetype ORT",
     "FLAVOR": "使用ORT的心脏与星际外来种融合制作（设计）出来的生命体。",
     "DESCRIPTIONS": [
-      "Converts your #yfgomaster:Invincibility to #yfgomaster:Anti-Purge_Defense. At the start of your 2nd turn and after each turn, gain #b10 fgomaster:Stars and #b3% fgomaster:NP."
+      "Converts your #yfgo:Invincibility to #yfgo:Anti-Purge_Defense. At the start of your 2nd turn and after each turn, gain #b10 fgo:Stars and #b3% fgo:NP."
     ]
   },
-  "Avenger": {
+  "${modID}:Avenger": {
     "NAME": "Avenger",
     "FLAVOR": "作为复仇者，人的怨恨和怨念集于一身形成的技能。",
     "DESCRIPTIONS": [
-      "Whenever you are attacked, gain additional #yfgomaster:NP equal to #b30% damaged. At the start of each combat, gain #b1 #yFrail."
+      "Whenever you are attacked, gain additional #yfgo:NP equal to #b30% damaged. At the start of each combat, gain #b1 #yFrail."
     ]
   },
-  "OblivionCorrection": {
+  "${modID}:OblivionCorrection": {
     "NAME": "Oblivion Correction",
     "FLAVOR": "虽然人是很健忘的生物，但是复仇者绝不会忘却。",
     "DESCRIPTIONS": [
-      "At the start of each combat, gain #b30% #yfgomaster:Critical."
+      "At the start of each combat, gain #b30% #yfgo:Critical."
     ]
   },
-  "SelfReplenishmentMagic": {
+  "${modID}:SelfReplenishmentMagic": {
     "NAME": "Self-Replenishment (Magic)",
     "FLAVOR": "直到复仇完成为止，魔力会不断涌出。",
     "DESCRIPTIONS": [
-      "At the start of each turn, gain additional #b6% #yfgomaster:NP."
+      "At the start of each turn, gain additional #b6% #yfgo:NP."
     ]
   },
-  "BB": {
+  "${modID}:BB": {
     "NAME": "BB",
     "FLAVOR": "好巧不巧。",
     "DESCRIPTIONS": [
       "At the start of each combat, gain Buff or Debuff. Buff: gain #b2 #yStrength and #yDexterity. Debuff: gain #b1 #yVulnerable, #yFrail or #yWeak."
     ]
   },
-  "BowInsignia": {
+  "${modID}:BowInsignia": {
     "NAME": "Bow Insignia",
     "FLAVOR": "A seal engraved with the Archer emblem.",
     "DESCRIPTIONS": [
       ""
     ]
   },
-  "MechanicalProtector": {
+  "${modID}:MechanicalProtector": {
     "NAME": "Mechanical Protector",
     "FLAVOR": "",
     "DESCRIPTIONS": [

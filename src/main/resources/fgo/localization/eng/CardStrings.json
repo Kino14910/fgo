@@ -435,7 +435,7 @@
   },
   "${modID}:WildRule": {
     "NAME": "Wild Rule",
-    "DESCRIPTION": "Deal !D! damage. NL Heal !M! HP. NL Enemy loses 1 Strength. NL Apply 1 Vulnerable."
+    "DESCRIPTION": "Deal !D! damage. NL Heal 2 HP. NL Enemy loses 1 Strength. NL If Success, Apply !M! Vulnerable."
   },
   "${modID}:StarBasket": {
     "NAME": "Star Basket",

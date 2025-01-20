@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.VerticalAuraEffect;
 import fgo.cards.FGOCard;
@@ -25,6 +26,7 @@ public class ManaBurstGems extends FGOCard {
     public ManaBurstGems() {
         super(ID, INFO);
         setMagic(2, 1);
+        portraitImg = ImageMaster.loadImage("fgo/images/cards/skill/ManaBurstGems.png");
     }
 
     @Override

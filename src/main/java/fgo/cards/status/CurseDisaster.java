@@ -1,5 +1,6 @@
 package fgo.cards.status;
 
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
@@ -14,6 +15,7 @@ import fgo.patches.Enum.FGOCardColor;
 import fgo.powers.CursePower;
 import fgo.util.CardStats;
 
+@AutoAdd.Ignore
 public class CurseDisaster extends FGOCard {
     public static final String ID = makeID(CurseDisaster.class.getSimpleName());
     private static final CardStats INFO = new CardStats(

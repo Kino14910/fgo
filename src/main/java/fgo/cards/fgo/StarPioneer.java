@@ -40,7 +40,7 @@ public class StarPioneer extends FGOCard {
             addToBot(new VFXAction(p, new FlameBarrierEffect(p.hb.cX, p.hb.cY), 0.5F));
         }
 
-        addToBot(new ApplyPowerAction(p, p, new VigorPower(p, magicNumber), magicNumber));
+        addToBot(new ApplyPowerAction(p, p, new VigorPower(p, magicNumber)));
         addToBot(new ArmamentsAction(upgraded));
     }
 }

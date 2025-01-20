@@ -8,5 +8,18 @@
       " into a description.",
       " Exactly how depends on the potion, and you can set it up however you want."
     ]
+  },
+  "${modID}:ElixirofRejuvenation": {
+    "NAME": "Elixir of Rejuvenation",
+    "DESCRIPTIONS": [
+      "Heal #b",
+      " HP. Remove all of your debuff."
+    ]
+  },
+  "${modID}:ExtremelySpicyMapoTofu": {
+    "NAME": "Mapo Tofu",
+    "DESCRIPTIONS": [
+      "Gain #b80% #yNP or #b60% #yNP #yDamage."
+    ]
   }
 }

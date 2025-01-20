@@ -19,7 +19,7 @@ public class CrystallizationofWinter extends FGOCard {
             CardTarget.SELF,
             0
     );
-    public static final String IMG = "fgo/images/cards/ConjureIce.png";
+    public static final String IMG = "fgo/images/cards/power/ConjureIce.png";
     public CrystallizationofWinter() {
         super(ID, INFO, IMG);
         setMagic(4, 1);

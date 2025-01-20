@@ -14,12 +14,12 @@
     }
   },
 
-  "MidsummerNightDream": {
+  "${modID}:MidsummerNightDream": {
     "TEXT": [
       "免疫"
     ]
   },
-  "PackMainMenuUI": {
+  "${modID}:PackMainMenuUI": {
     "TEXT": [
       "形象选择",
       "请做出你的选择。注意，在您退出游戏时会被重置。",
@@ -45,7 +45,7 @@
       "猫Arc"
     ]
   },
-  "SpireHeartText": {
+  "${modID}:SpireHeartText": {
     "TEXT": [
       "NL 你使用全部令咒……",
       "御主",
@@ -54,7 +54,7 @@
       "御主"
     ]
   },
-  "NPText": {
+  "${modID}:NPText": {
     "TEXT": [
       "宝具值",
       "1.每当你打出一张牌，获得这张牌耗能 #b3 倍的宝具值。 NL 2.获得受到的攻击伤害 #b50% 的宝具值。",
@@ -63,22 +63,22 @@
       "1.每当你打出一张牌，获得这张牌耗能 #b3 倍的宝具值。 NL 2.获得受到的攻击伤害 #b50%（+30%） 的宝具值。"
     ]
   },
-  "BlessedScionAction": {
+  "${modID}:BlessedScionAction": {
     "TEXT": [
       "复制"
     ]
   },
-  "CurtainoftheNightAction": {
+  "${modID}:CurtainoftheNightAction": {
     "TEXT": [
       "放到你抽牌堆的顶部。"
     ]
   },
-  "NobleCardTabNamePatch": {
+  "${modID}:NobleCardTabNamePatch": {
     "TEXT": [
       "宝具"
     ]
   },
-  "PictureSelectFgoPatch": {
+  "${modID}:PictureSelectFgoPatch": {
     "TEXT": [
       "光の交差",
       "星の軌跡",
@@ -86,25 +86,25 @@
       "ID: 117839244"
     ]
   },
-  "CurrentNobleCardsTopPanelItem": {
+  "${modID}:CurrentNobleCardsTopPanelItem": {
     "TEXT": [
       "宝具牌堆",
       "你可以查看当前 #y已解锁 的宝具牌。随着深入探索尖塔、获得遗物、获得新牌等都会解锁更多的宝具牌。",
       "当前已解锁的宝具牌。"
     ]
   },
-  "AbsNoblePhantasmCard": {
+  "${modID}:AbsNoblePhantasmCard": {
     "TEXT": [
       "宝具值不够。"
     ]
   },
-  "InSonorousEffectCard": {
+  "${modID}:InSonorousEffectCard": {
     "TEXT": [
       "圆桌骑士的祝福（前六层）",
       "玛修的支援"
     ]
   },
-  "AlterOption": {
+  "${modID}:AlterOption": {
     "TEXT": [
       "？？？",
       "选择获得一张宝具牌，随机升级你牌组中的一张牌。"

@@ -1,5 +1,6 @@
 package fgo.cards.fgo;
 
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -20,13 +21,13 @@ public class GodsExecution extends FGOCard {
             FGOCardColor.FGO,
             CardType.ATTACK,
             CardRarity.COMMON,
-            CardTarget.ENEMY,
+            CardTarget.ALL_ENEMY,
             1
     );
     public GodsExecution() {
         super(ID, INFO);
-        setDamage(8, 2);
-        setMagic(2, 1);
+        setDamage(6);
+        setMagic(1, 1);
     }
 
     @Override
