@@ -325,6 +325,7 @@ fgo\powers\SchwarzwaldFalkePower.class
 fgo\relics\OblivionCorrection.class
 fgo\powers\MorningLarkPower.class
 fgo\event\ManofChaldea$1.class
+fgo\patches\Button\NoblePhantasmButton.class
 fgo\powers\DeathOfDeathPower.class
 fgo\powers\WallOfSnowflakesPower.class
 fgo\relics\CosmicMedallion.class

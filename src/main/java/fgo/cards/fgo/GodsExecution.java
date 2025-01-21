@@ -41,7 +41,9 @@ public class GodsExecution extends FGOCard {
 
         for (AbstractPower power : p.powers) {
             if (power.type == AbstractPower.PowerType.DEBUFF) {
-                addToBot(new ApplyPowerAction(m, p, new WeakPower(m, magicNumber, false), magicNumber));
+                for(AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters){
+                    addToBot(new ApplyPowerAction(mo, p, new WeakPower(mo, magicNumber, false)));
+                }
                 break;
             }
         }
