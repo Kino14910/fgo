@@ -22,6 +22,7 @@ fgo\action\BlessingOfKurAction.class
 fgo\cards\fgo\DesiresSalvation.class
 fgo\util\TriFunction.class
 fgo\hexui_lib\CardRenderer.class
+fgo\cards\fgo\Ignore\KarmicVision.class
 fgo\powers\NPDamagePower.class
 fgo\powers\MagicBulletPower.class
 fgo\cards\colorless\ignore\FlamesofApplause.class
@@ -63,7 +64,6 @@ fgo\cards\fgo\StarBasket.class
 fgo\relics\BurgerKing.class
 fgo\hexui_lib\patches\RenderCardTypePatch$Locator.class
 fgo\cards\fgo\SparksRoute.class
-fgo\cards\fgo\TeachingsoftheEternal.class
 fgo\action\NightlessCharismaAction.class
 fgo\cards\noblecards\MahaPralaya.class
 fgo\action\NoblePhantasmSelectAction.class
@@ -128,6 +128,7 @@ fgo\relics\Avenger.class
 fgo\cards\fgo\BlessedScion.class
 fgo\relics\FanNight.class
 fgo\cards\fgo\MerlinMagic.class
+fgo\cards\fgo\Ignore\QueensCovenant.class
 fgo\cards\fgo\MysticEyes.class
 fgo\powers\EternalMemoriesPower.class
 fgo\hexui_lib\patches\RenderCardPortraitPatch.class
@@ -140,6 +141,7 @@ fgo\relics\PoisonApple.class
 fgo\cards\noblecards\TsumukariMuramasa.class
 fgo\cards\fgo\CharismaOfHope.class
 fgo\relics\BlessRockChoco.class
+fgo\cards\fgo\Ignore\TeachingsoftheEternal.class
 fgo\hexui_lib\util\TextureLoader.class
 fgo\monster\Emiya.class
 fgo\cards\fgo\LivingFlame.class
@@ -148,6 +150,7 @@ fgo\cards\fgo\GloriousStrike.class
 fgo\powers\StarRatePower.class
 fgo\hexui_lib\util\LangUtil.class
 fgo\cards\noblecards\GardenOfAvalon.class
+fgo\cards\fgo\Ignore\StarPioneer.class
 fgo\powers\ComeOnPower.class
 fgo\hexui_lib\util\RenderCommandLayer$COMMAND.class
 fgo\action\HeroicKingAction.class
@@ -155,11 +158,11 @@ fgo\cards\fgo\MorningLark.class
 fgo\cards\fgo\SwordOfSelection.class
 fgo\cards\noblecards\Unlimited.class
 fgo\event\ManofChaldea$CUR_SCREEN.class
-fgo\cards\fgo\QueensCovenant.class
 fgo\cards\colorless\ignore\SionSkill.class
 fgo\cards\noblecards\SarasvatiMeltout.class
 fgo\cards\fgo\GraceUnexpectedBirth.class
 fgo\patches\MainMenuUIFgoPatch$UpdateOptions.class
+fgo\cards\fgo\Ignore\HolyShroud.class
 fgo\event\DevilSlot.class
 fgo\cards\fgo\DeathOfDeath.class
 fgo\hexui_lib\util\BetaPortraitGenerator.class
@@ -216,12 +219,10 @@ fgo\cards\noblecards\Camelot.class
 fgo\relics\LockChocolate.class
 fgo\patches\Enum\CardTagsEnum.class
 fgo\powers\GutsPower.class
-fgo\cards\fgo\KarmicVision.class
 fgo\powers\EnergyRegenPower.class
 fgo\cards\colorless\PutOnFakeFace.class
 fgo\relics\BB.class
 fgo\cards\fgo\JourneyGuidance.class
-fgo\cards\fgo\HolyShroud.class
 fgo\vfx\HKExpungeVFXAction.class
 fgo\action\ViyViyViyAction.class
 fgo\cards\curse\Dumuzid.class
@@ -360,7 +361,6 @@ fgo\cards\fgo\MonteCristoTreasure.class
 fgo\cards\fgo\CharismaOfTheJade.class
 fgo\powers\InsanityPower.class
 fgo\hexui_lib\patches\RenderCardTypePatch.class
-fgo\cards\fgo\StarPioneer.class
 fgo\powers\NPOverchargePower.class
 fgo\cards\colorless\ignore\PoisonousDagger.class
 fgo\cards\AbsNoblePhantasmCard.class

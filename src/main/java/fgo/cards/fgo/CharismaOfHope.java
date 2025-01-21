@@ -18,7 +18,7 @@ public class CharismaOfHope extends FGOCard {
     private static final CardStats INFO = new CardStats(
             FGOCardColor.FGO,
             CardType.SKILL,
-            CardRarity.UNCOMMON,
+            CardRarity.BASIC,
             CardTarget.SELF,
             1
     );
@@ -26,6 +26,7 @@ public class CharismaOfHope extends FGOCard {
         super(ID, INFO);
         setMagic(1);
         setNP(20, 10);
+        setBlock(7);
         setCasterBackground();
 
         FlavorText.AbstractCardFlavorFields.textColor.set(this, Color.CHARTREUSE);
@@ -41,6 +42,7 @@ public class CharismaOfHope extends FGOCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p,p,new StrengthPower(p,magicNumber)));
         addToBot(new FgoNpAction(np));
+        addToBot(new GainBlockAction(p,p,block));
 
 //        switch (AbstractDungeon.actNum) {
 //            case 1:

@@ -9,12 +9,11 @@
   },
   "fgo:DreamUponTheStars": {
     "NAME": "予星以梦",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 下一回合获得 [E] 。",
-    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 下一回合获得 [E] [E] 。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !NP! % fgo:宝具值 。"
   },
   "fgo:CharismaOfHope": {
     "NAME": "2019年的格洛斯特",
-    "DESCRIPTION": "获得 !M! 点 力量 。 NL 获得 !NP! % fgo:宝具值 。"
+    "DESCRIPTION": "获得 !M! 点 力量 。 NL 获得 !NP! % fgo:宝具值 。 NL 获得 !B! 点 格挡 。"
   },
   "fgo:WallOfSnowflakes": {
     "NAME": "现为脆弱的雪花之壁",
@@ -86,7 +85,7 @@
   },
   "fgo:PresenceDetection": {
     "NAME": "气息感知",
-    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 下回合多抽 !M! 张牌。"
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 下一回合多抽 !M! 张牌。"
   },
   "fgo:ComeOn": {
     "NAME": "热情",
@@ -187,12 +186,12 @@
   },
   "fgo:AtTheWell": {
     "NAME": "于泉之处",
-    "DESCRIPTION": "在下回合获得 !M! 层 fgo:毅力 ，下一次 fgo:毅力 发动时获得 [E] [E] [E] 并且抽3张牌，然后死亡。 NL 消耗 。",
+    "DESCRIPTION": "在下一回合获得 !M! 层 fgo:毅力 ，下一次 fgo:毅力 发动时获得 [E] [E] [E] 并且抽3张牌，然后死亡。 NL 消耗 。",
     "UPGRADE_DESCRIPTION": "fgo:解除弱化 。 NL 回复 !M! 点生命。 NL fgo:献给世界树的活祭 。 NL 消耗 。"
   },
   "fgo:SquireOfProphecy": {
     "NAME": "祈雨",
-    "DESCRIPTION": "你在接下来 !M! 回合第一次打出牌耗尽 [E] 时， NL 获得 [E] [E] 。 NL 消耗 。"
+    "DESCRIPTION": "在接下来 !M! 回合第一次打出牌耗尽 [E] 时， NL 获得 [E] [E] 。 NL 消耗 。"
   },
   "fgo:BeyondTheFurthestEnd": {
     "NAME": "来自止境",
@@ -332,7 +331,7 @@
   },
   "fgo:KarmicVision": {
     "NAME": "业之瞳",
-    "DESCRIPTION": "fgo:无敌贯通 每去除一种状态，就造成 !D! 点伤害。",
+    "DESCRIPTION": "fgo:无敌贯通  NL 每去除一种状态，就造成 !D! 点伤害。",
     "FLAVOR": "测试画风可以更改。"
   },
   "fgo:CurtainoftheNight": {
@@ -665,7 +664,7 @@
   },
   "fgo:OneTimeOneMeeting": {
     "NAME": "一期一会",
-    "DESCRIPTION": "在下个回合，每当你抽到一张非能力牌时， 消耗 其并增加一张随机能力牌到你的手牌。"
+    "DESCRIPTION": "在下一回合，每当你抽到一张非能力牌时， 消耗 其并增加一张随机能力牌到你的手牌。"
   },
   "fgo:SpringOfFire": {
     "NAME": "纵使三度迎来落日",

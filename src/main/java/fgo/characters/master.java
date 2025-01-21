@@ -16,7 +16,11 @@ import com.megacrit.cardcrawl.events.city.Vampires;
 import com.megacrit.cardcrawl.helpers.*;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
+import fgo.cards.fgo.CharismaOfHope;
 import fgo.cards.fgo.DreamUponTheStars;
+import fgo.cards.noblecards.BeautifulJourney;
+import fgo.cards.noblecards.EternalMemories;
+import fgo.cards.noblecards.Failnaught;
 import fgo.patches.Enum.FGOCardColor;
 import fgo.patches.Enum.ThmodClassEnum;
 import fgo.patches.MainMenuUIFgoPatch;
@@ -81,10 +85,11 @@ public class master extends CustomPlayer{
         retVal.addAll(Collections.nCopies(4, "fgo:Strike"));
         retVal.addAll(Collections.nCopies(4, "fgo:Defend"));
         Collections.addAll(retVal,
-                "fgo:DreamUponTheStars",
-                "fgo:EternalMemories",
-                "fgo:BeautifulJourney",
-                "fgo:Failnaught"
+                CharismaOfHope.ID,
+                DreamUponTheStars.ID,
+                EternalMemories.ID,
+                BeautifulJourney.ID,
+                Failnaught.ID
         );
         return retVal;
     }

@@ -1,39 +1,38 @@
-package fgo.cards.fgo;
+package fgo.cards.fgo.Ignore;
 
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.DexterityPower;
-import com.megacrit.cardcrawl.powers.StrengthPower;
 import fgo.cards.FGOCard;
 import fgo.patches.Enum.FGOCardColor;
-import fgo.powers.MyFairSoldierPower;
+import fgo.powers.CurseHarmonyPower;
 import fgo.util.CardStats;
 
-public class QueensCovenant extends FGOCard {
-    public static final String ID = makeID(QueensCovenant.class.getSimpleName());
+@AutoAdd.Ignore
+public class CurseHarmony extends FGOCard {
+    public static final String ID = makeID(CurseHarmony.class.getSimpleName());
     private static final CardStats INFO = new CardStats(
             FGOCardColor.FGO,
             CardType.POWER,
             CardRarity.UNCOMMON,
             CardTarget.SELF,
-            2
+            1
     );
-    public QueensCovenant() {
+    public CurseHarmony() {
         super(ID, INFO);
-        setMagic(3, 1);
+        setMagic(3, 2);
     }
 
     @Override
     public AbstractCard makeCopy() {
-        return new QueensCovenant();
+        return new CurseHarmony();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, magicNumber)));
-        addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, magicNumber)));
-        addToBot(new ApplyPowerAction(p, p, new MyFairSoldierPower(p, magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new CurseHarmonyPower(p, magicNumber)));
     }
+
 }

@@ -1,5 +1,6 @@
-package fgo.cards.fgo;
+package fgo.cards.fgo.Ignore;
 
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.unique.ArmamentsAction;
@@ -13,6 +14,7 @@ import fgo.cards.FGOCard;
 import fgo.patches.Enum.FGOCardColor;
 import fgo.util.CardStats;
 
+@AutoAdd.Ignore
 public class StarPioneer extends FGOCard {
     public static final String ID = makeID(StarPioneer.class.getSimpleName());
     private static final CardStats INFO = new CardStats(

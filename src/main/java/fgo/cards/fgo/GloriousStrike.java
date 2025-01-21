@@ -17,7 +17,7 @@ public class GloriousStrike extends FGOCard {
     private static final CardStats INFO = new CardStats(
             FGOCardColor.FGO,
             CardType.ATTACK,
-            CardRarity.RARE,
+            CardRarity.UNCOMMON,
             CardTarget.ENEMY,
             1
     );

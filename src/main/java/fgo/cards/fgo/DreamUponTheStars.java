@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.EnergizedPower;
+import fgo.action.FgoNpAction;
 import fgo.cards.FGOCard;
 import fgo.patches.Enum.FGOCardColor;
 import fgo.util.CardStats;
@@ -19,19 +20,19 @@ public class DreamUponTheStars extends FGOCard {
             CardType.ATTACK,
             CardRarity.BASIC,
             CardTarget.ENEMY,
-            2
+            1
     );
 
     public DreamUponTheStars() {
         super(ID, INFO);
-        setDamage(12);
-        setCustomVar("energy", 1, 1);
+        setDamage(9, 12);
+        setNP(10);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-        addToBot(new ApplyPowerAction(p, p, new EnergizedPower(p, customVar("energy")), customVar("energy")));
+        addToBot(new FgoNpAction(np));
     }
 
     @Override

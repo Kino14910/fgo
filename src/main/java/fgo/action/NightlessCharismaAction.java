@@ -58,6 +58,7 @@ public class NightlessCharismaAction extends AbstractGameAction {
                         AbstractDungeon.player.hand.refreshHandLayout();
                         AbstractDungeon.player.hand.applyPowers();
                     }
+
                     if (card.canUpgrade()) {
                         card.upgrade();
                         card.superFlash();

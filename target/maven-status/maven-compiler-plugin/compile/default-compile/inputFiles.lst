@@ -15,6 +15,7 @@ C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\relics\AstrologicalTeapot.j
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\fgo\BeyondTheFurthestEnd.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\event\DevilSlot.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\colorless\ignore\SoulOfWaterChannels.java
+C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\fgo\Ignore\StarPioneer.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\fgo\KnightoftheLake.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\relics\DreamChip.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\event\FGOLibrary.java
@@ -153,6 +154,7 @@ C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\hexui_lib\util\TextureLoade
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\fgo\GoldenGrail.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\colorless\ignore\BlackBarrel.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\colorless\ignore\CommandSpellGuts.java
+C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\fgo\Ignore\KarmicVision.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\noblecards\Excalibur.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\curse\Dumuzid.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\hexui_lib\interfaces\CustomCardTypeLocation.java
@@ -186,6 +188,7 @@ C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\powers\DesterrennachtPower.
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\action\SunlightAction.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\noblecards\EternalMemories.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\powers\BlessingOfKurPower.java
+C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\fgo\Ignore\QueensCovenant.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\powers\ItsInevitablePower.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\action\HeroicKingAction.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\powers\EternalSleepPower.java
@@ -243,7 +246,6 @@ C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\fgo\Chasmatis.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\util\TriFunction.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\colorless\TaisuiSMisfortune.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\powers\deprecated\DefenseUpPower.java
-C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\fgo\TeachingsoftheEternal.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\powers\SealNPPower.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\util\TextureLoader.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\fgo\CurtainoftheNight.java
@@ -251,7 +253,6 @@ C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\hexui_lib\patches\RenderCar
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\fgo\Executioner.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\patches\PictureSelectFgoPatch.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\powers\StarRegenPower.java
-C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\fgo\StarPioneer.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\noblecards\LastSunXibalba.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\noblecards\YewBow.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\fgo\PresenceDetection.java
@@ -266,10 +267,10 @@ C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\FateMagineerCard.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\powers\CriticalDamageUpPower.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\noblecards\Failnaught.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\action\ModifyMagicNumAction.java
-C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\fgo\KarmicVision.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\fgo\DragonCore.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\powers\deprecated\QuickPerformancePower.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\util\GeneralUtils.java
+C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\fgo\Ignore\TeachingsoftheEternal.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\powers\CursePower.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\powers\NoblePhantasmCardPower.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\relics\SurpriseChocolate.java
@@ -291,6 +292,7 @@ C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\powers\InfiniteGrowthPower.
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\action\DragonCoreAction.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\noblecards\GardenOfAvalon.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\powers\deprecated\StarGainDeprecatedPower.java
+C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\fgo\Ignore\HolyShroud.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\patches\Enum\ThmodClassEnum.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\fgo\SwanLake.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\fgo\SwordOfSelection.java
@@ -307,7 +309,6 @@ C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\potions\ExtremelySpicyMapoT
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\fgo\CharismaOfTheJade.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\patches\Enum\FGOCardColor.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\action\FgoNpAction.java
-C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\fgo\QueensCovenant.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\powers\monster\StarGainMonsterPower.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\fgo\SchwarzwaldFalke.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\powers\SquireOfProphecyPower.java
@@ -344,7 +345,6 @@ C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\powers\deprecated\CooldownP
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\powers\WallOfSnowflakesPower.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\relics\SuitcaseFgo.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\relics\BowInsignia.java
-C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\fgo\HolyShroud.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\powers\DoppelgangerPower.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\powers\PowerUpBoostPower.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\powers\PutOnFakeFacePower.java

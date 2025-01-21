@@ -20,7 +20,7 @@ public class StarHunter extends FGOCard {
     private static final CardStats INFO = new CardStats(
             FGOCardColor.FGO,
             CardType.SKILL,
-            CardRarity.RARE,
+            CardRarity.UNCOMMON,
             CardTarget.SELF,
             0
     );

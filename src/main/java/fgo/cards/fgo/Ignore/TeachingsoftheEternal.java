@@ -1,5 +1,6 @@
-package fgo.cards.fgo;
+package fgo.cards.fgo.Ignore;
 
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -12,6 +13,7 @@ import fgo.cards.FGOCard;
 import fgo.patches.Enum.FGOCardColor;
 import fgo.util.CardStats;
 
+@AutoAdd.Ignore
 public class TeachingsoftheEternal extends FGOCard {
     public static final String ID = makeID(TeachingsoftheEternal.class.getSimpleName());
     private static final CardStats INFO = new CardStats(
