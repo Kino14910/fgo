@@ -18,13 +18,7 @@ public class ComeOnPower extends BasePower {
     private static final boolean TURN_BASED = false;
 
     public ComeOnPower(AbstractCreature owner, int amount) {
-        super(POWER_ID, TYPE, TURN_BASED, owner, amount);
-
-        String path128 = "img/powers_Master/GutsTriggerPower84.png";
-        String path48 = "img/powers_Master/GutsTriggerPower32.png";
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(path128), 0, 0, 84, 84);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(path48), 0, 0, 32, 32);
-
+        super(POWER_ID, TYPE, TURN_BASED, owner, amount, "GutsTriggerPower");
     }
 
     @Override

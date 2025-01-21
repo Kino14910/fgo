@@ -22,7 +22,7 @@ public class ViyViyViyPower extends BasePower {
     private final AbstractPlayer p;
     private final String rName;
     public ViyViyViyPower(AbstractCreature owner, AbstractRelic r) {
-        super(POWER_ID, TYPE, TURN_BASED, owner);
+        super(POWER_ID, TYPE, TURN_BASED, owner, "ConcentrateSpellsPower");
         this.ID = "PropBagPower" + IdOffset;
         IdOffset++;
         this.r = r;
@@ -30,12 +30,6 @@ public class ViyViyViyPower extends BasePower {
         this.rName = r.name;
         AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F, r);
         r.atBattleStart();
-
-        String path128 = "fgo/images/powers/large/ConcentrateSpellsPower.png";
-        String path48 = "fgo/images/powers/ConcentrateSpellsPower.png";
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(path128), 0, 0, 84, 84);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(path48), 0, 0, 32, 32);
-
     }
 
     @Override

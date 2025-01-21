@@ -18,16 +18,10 @@ import static fgo.FGOMod.makeID;
 public class BeyondTheFurthestEndPower extends BasePower {
     public static final String POWER_ID = "BeyondTheFurthestEndPower";
     private static final PowerType TYPE = PowerType.BUFF;
-    private static final boolean TURN_BASED = false;
+    private static final boolean TURN_BASED = true;
 
     public BeyondTheFurthestEndPower(AbstractCreature owner, int amount) {
-         super(POWER_ID, TYPE, TURN_BASED, owner, amount);
-
-        String path128 = "img/powers_Master/BuffRegenPower84.png";
-        String path48 = "img/powers_Master/BuffRegenPower32.png";
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(path128), 0, 0, 84, 84);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(path48), 0, 0, 32, 32);
-
+         super(POWER_ID, TYPE, TURN_BASED, owner, amount, "BuffRegenPower");
     }
 
     @Override

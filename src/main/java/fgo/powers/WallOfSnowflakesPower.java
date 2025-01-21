@@ -15,14 +15,12 @@ import static fgo.FGOMod.makeID;
 
 public class WallOfSnowflakesPower extends BasePower {
     public static final String POWER_ID = makeID(WallOfSnowflakesPower.class.getSimpleName());
-    public WallOfSnowflakesPower(AbstractCreature owner, int amount) {
-        super(POWER_ID, PowerType.BUFF, false, owner, Math.min(amount, 100));
+    private static final PowerType TYPE = PowerType.BUFF;
+    private static final boolean TURN_BASED = false;
 
-        String path128 = "fgo/images/powers/large/DefenseUpPower.png";
-        String path48 = "fgo/images/powers/DefenseUpPower.png";
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(path128), 0, 0, 84, 84);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(path48), 0, 0, 32, 32);
-    }
+    public WallOfSnowflakesPower(AbstractCreature owner, int amount) {
+        super(POWER_ID, PowerType.BUFF, false, owner, Math.min(amount, 100), "DefenseUpPower");
+}
 
     @Override
     public void updateDescription() {

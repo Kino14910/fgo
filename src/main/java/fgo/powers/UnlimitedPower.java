@@ -18,13 +18,7 @@ public class UnlimitedPower extends BasePower {
     private static final boolean TURN_BASED = false;
 
     public UnlimitedPower(AbstractCreature owner, int amount) {
-        super(POWER_ID, TYPE, TURN_BASED, owner, amount);
-
-        String path128 = "fgo/images/powers/large/PutOnFakeFacePower.png";
-        String path48 = "fgo/images/powers/PutOnFakeFacePower.png";
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(path128), 0, 0, 84, 84);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(path48), 0, 0, 32, 32);
-
+        super(POWER_ID, TYPE, TURN_BASED, owner, amount, "PutOnFakeFacePower");
     }
 
     @Override

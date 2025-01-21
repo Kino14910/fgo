@@ -39,7 +39,7 @@ public class Unlimited extends AbsNoblePhantasmCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.topLevelEffects.add(new FadeWipeParticle());
         this.addToBot(new WaitFgoAction(1.0F));
-        this.addToBot(new VFXAction(new ChangeSceneEffect(ImageMaster.loadImage("img/vfx_master/UnlimitedBg.png"))));
+        this.addToBot(new VFXAction(new ChangeSceneEffect(ImageMaster.loadImage("fgo/images/vfx_master/UnlimitedBg.png"))));
         CardCrawlGame.music.silenceTempBgmInstantly();
         CardCrawlGame.music.silenceBGMInstantly();
         AbstractDungeon.getCurrRoom().playBgmInstantly("UBW_Extended.mp3");

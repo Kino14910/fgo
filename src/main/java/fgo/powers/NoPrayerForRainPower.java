@@ -16,13 +16,7 @@ public class NoPrayerForRainPower extends BasePower {
     private static final boolean TURN_BASED = false;
 
     public NoPrayerForRainPower(AbstractCreature owner) {
-        super(POWER_ID, TYPE, TURN_BASED, owner);
-
-        String path128 = "img/powers_Master/PutOnFakeFacePower84.png";
-        String path48 = "img/powers_Master/PutOnFakeFacePower32.png";
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(path128), 0, 0, 84, 84);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(path48), 0, 0, 32, 32);
-
+        super(POWER_ID, TYPE, TURN_BASED, owner, "PutOnFakeFacePower");
     }
 
     @Override

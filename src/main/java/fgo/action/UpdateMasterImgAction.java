@@ -11,7 +11,7 @@ public class UpdateMasterImgAction extends AbstractGameAction {
 
     public void update() {
         if (AbstractDungeon.player instanceof master) {
-            AbstractDungeon.player.img = ImageMaster.loadImage("img/char_Master/Romani_Archaman.png");
+            AbstractDungeon.player.img = ImageMaster.loadImage("fgo/images/character/Romani_Archaman.png");
         }
 
         this.isDone = true;

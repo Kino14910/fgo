@@ -25,15 +25,9 @@ public class ItsInevitablePower extends BasePower {
     private final int raise;
 
     public ItsInevitablePower(AbstractCreature owner, int amount, int damage, int raise) {
-        super(POWER_ID, TYPE, TURN_BASED, owner, amount); 
+        super(POWER_ID, TYPE, TURN_BASED, owner, amount, "BurningPower");
         this.damage = damage;
         this.raise = raise;
-
-        String path128 = "img/powers_Master/BurningPower84.png";
-        String path48 = "img/powers_Master/BurningPower32.png";
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(path128), 0, 0, 84, 84);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(path48), 0, 0, 32, 32);
-
     }
 
     @Override

@@ -206,7 +206,7 @@
   },
   "${modID}:AbyssLight": {
     "NAME": "于深渊化作光",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !M! % fgo:宝具值 。 NL 获得 !M! % fgo:宝具威力 。",
+    "DESCRIPTION": "在接下来3回合，获得 10 % fgo:宝具值 。 NL 获得 !M! % fgo:宝具值 。 NL 获得 !M! % fgo:宝具威力 。",
     "FLAVOR": "领域外生命。"
   },
   "${modID}:SchwarzwaldFalke": {
@@ -215,7 +215,8 @@
   },
   "${modID}:ManaBurstGems": {
     "NAME": "魔力放出（宝石）",
-    "DESCRIPTION": "在这个回合结束时，获得 !M! 点 力量 。 NL 在弃牌堆放入一张此牌的复制品。"
+    "DESCRIPTION": "在这个回合结束时，获得 !M! 点 力量 。 NL 在弃牌堆放入一张此牌的复制品。",
+    "FLAVOR": "测试画风可以更改。"
   },
   "${modID}:VoidSpaceFineArts": {
     "NAME": "虚数美术",
@@ -349,7 +350,7 @@
   },
   "${modID}:GraceUnexpectedBirth": {
     "NAME": "不被祝福的诞生",
-    "DESCRIPTION": "获得 !NP! % fgo:宝具值 。 NL 你在接下来2回合内 NL 无法获得 fgo:宝具牌 。 NL 消耗 。"
+    "DESCRIPTION": "获得 !NP! % fgo:宝具值 。 NL 你在这个回合内 NL 无法获得 fgo:宝具牌 。 NL 消耗 。"
   },
   "${modID}:SongOfThePoet": {
     "NAME": "歌仙的诗歌",
@@ -693,8 +694,8 @@
     "FLAVOR": "测试画风可以更改。"
   },
   "${modID}:LakeTexcoco": {
-    "NAME": "月之湖",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 获得 fgo:水边 !M! 回合。 NL 下一回合获得 !B! 点 格挡 。"
+    "NAME": "第三太阳",
+    "DESCRIPTION": "获得 !NP! % fgo:宝具值 。 NL 在接下来3回合，获得 !M! % fgo:宝具值 。 NL 获得 fgo:水边 3回合。消耗"
   },
   "${modID}:BlueStarSea": {
     "NAME": "苍之星海",

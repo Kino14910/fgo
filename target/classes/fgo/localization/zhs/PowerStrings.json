@@ -211,10 +211,10 @@
     ]
   },
   "fgo:EnergyRegenPower": {
-    "NAME": "E循环",
+    "NAME": "每回合获得NP",
     "DESCRIPTIONS": [
-      "在每回合开始时充能 #b",
-      " %。"
+      "在每回合开始时获得 #b",
+      " % #y宝具值 。"
     ]
   },
   "fgo:EvasionPower": {
@@ -364,7 +364,7 @@
   "fgo:WatersidePower": {
     "NAME": "水边",
     "DESCRIPTIONS": [
-      "在每回合开始时，获得 #b",
+      "在每回合开始时，你和所有敌人获得 #b",
       " 点 #y格挡 。持续时间 #b",
       " 回合。"
     ]
@@ -647,6 +647,13 @@
     "NAME": "暴击！",
     "DESCRIPTIONS": [
       "这名敌人每次攻击将使用 #b10 颗暴击星，使其下一次攻击伤害提高 #b100% 。"
+    ]
+  },
+  "fgo:NextTurnNpPower": {
+    "NAME": "获得NP",
+    "DESCRIPTIONS": [
+      "下回合获得 #b",
+      "宝具值"
     ]
   }
 }

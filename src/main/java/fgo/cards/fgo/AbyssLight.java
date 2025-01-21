@@ -14,6 +14,7 @@ import fgo.action.FgoNpAction;
 import fgo.cards.FGOCard;
 import fgo.patches.Enum.CardTagsEnum;
 import fgo.patches.Enum.FGOCardColor;
+import fgo.powers.EnergyRegenPower;
 import fgo.powers.NPDamagePower;
 import fgo.util.CardStats;
 
@@ -28,9 +29,8 @@ public class AbyssLight extends FGOCard {
     );
     public AbyssLight() {
         super(ID, INFO);
-        setDamage(15, 5);
-        setMagic(15, 5);
-        setNP(15, 5);
+        setMagic(20, 10);
+        setNP(20, 10);
         tags.add(CardTagsEnum.Foreigner);
 
         FlavorText.AbstractCardFlavorFields.textColor.set(this, Color.CHARTREUSE);
@@ -45,7 +45,7 @@ public class AbyssLight extends FGOCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ExpungeVFXAction(m));
-        addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
+        addToBot(new ApplyPowerAction(p, p, new EnergyRegenPower(p, 10, 3)));
         addToBot(new FgoNpAction(np));
         addToBot(new ApplyPowerAction(p, p, new NPDamagePower(p, magicNumber)));
     }

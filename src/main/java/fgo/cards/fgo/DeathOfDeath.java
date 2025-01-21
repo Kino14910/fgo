@@ -34,9 +34,9 @@ public class DeathOfDeath extends FGOCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ApplyPowerAction(p, p, new GutsPower(p, this.magicNumber, 1), this.magicNumber));
-        this.addToBot(new ApplyPowerAction(p, p, new DeathOfDeathPower(p, 1), 1));
-        this.addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, 1), 1));
+        this.addToBot(new ApplyPowerAction(p, p, new GutsPower(p, this.magicNumber, 1)));
+        this.addToBot(new ApplyPowerAction(p, p, new DeathOfDeathPower(p, 2)));
+        this.addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, 2)));
         //this.addToBot(new ApplyPowerAction(p, p, new BriefStrengthPower(p, 1), 1));
     }
 }

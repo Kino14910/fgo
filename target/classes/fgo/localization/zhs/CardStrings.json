@@ -175,7 +175,7 @@
   },
   "fgo:GodsExecution": {
     "NAME": "封神执行",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 如果你有负面状态， NL 则给予 !M! 层 虚弱 。"
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 如果你有负面状态， NL 则给予 !M! 层 虚弱 。"
   },
   "fgo:CrownedWithLife": {
     "NAME": "疯狂的晚宴",
@@ -206,7 +206,7 @@
   },
   "fgo:AbyssLight": {
     "NAME": "于深渊化作光",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !M! % fgo:宝具值 。 NL 获得 !M! % fgo:宝具威力 。",
+    "DESCRIPTION": "在接下来3回合，获得 10 % fgo:宝具值 。 NL 获得 !M! % fgo:宝具值 。 NL 获得 !M! % fgo:宝具威力 。",
     "FLAVOR": "领域外生命。"
   },
   "fgo:SchwarzwaldFalke": {
@@ -215,7 +215,8 @@
   },
   "fgo:ManaBurstGems": {
     "NAME": "魔力放出（宝石）",
-    "DESCRIPTION": "在这个回合结束时，获得 !M! 点 力量 。 NL 在弃牌堆放入一张此牌的复制品。"
+    "DESCRIPTION": "在这个回合结束时，获得 !M! 点 力量 。 NL 在弃牌堆放入一张此牌的复制品。",
+    "FLAVOR": "测试画风可以更改。"
   },
   "fgo:VoidSpaceFineArts": {
     "NAME": "虚数美术",
@@ -345,11 +346,11 @@
   },
   "fgo:MorningLark": {
     "NAME": "晨之云雀",
-    "DESCRIPTION": "获得 !NP! % fgo:宝具值 。 NL 获得 !M! 颗 fgo:暴击星 。 NL在你的回合结束时，失去 20% fgo:宝具值 NL 消耗 。"
+    "DESCRIPTION": "获得 !NP! % fgo:宝具值 。 NL 获得 !M! 颗 fgo:暴击星 。 NL 在你的回合结束时，失去 20% fgo:宝具值 NL 消耗 。"
   },
   "fgo:GraceUnexpectedBirth": {
     "NAME": "不被祝福的诞生",
-    "DESCRIPTION": "获得 !NP! % fgo:宝具值 。 NL 你在接下来2回合内 NL 无法获得 fgo:宝具牌 。 NL 消耗 。"
+    "DESCRIPTION": "获得 !NP! % fgo:宝具值 。 NL 你在这个回合内 NL 无法获得 fgo:宝具牌 。 NL 消耗 。"
   },
   "fgo:SongOfThePoet": {
     "NAME": "歌仙的诗歌",
@@ -693,8 +694,8 @@
     "FLAVOR": "测试画风可以更改。"
   },
   "fgo:LakeTexcoco": {
-    "NAME": "月之湖",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 获得 fgo:水边 !M! 回合。 NL 下一回合获得 !B! 点 格挡 。"
+    "NAME": "第三太阳",
+    "DESCRIPTION": "获得 !NP! % fgo:宝具值 。 NL 在接下来3回合，获得 !M! % fgo:宝具值 。 NL 获得 fgo:水边 3回合。消耗"
   },
   "fgo:BlueStarSea": {
     "NAME": "苍之星海",

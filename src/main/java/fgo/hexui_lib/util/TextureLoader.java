@@ -29,7 +29,7 @@ public class TextureLoader {
                 loadTexture(textureString);
             } catch (GdxRuntimeException e) {
                 logger.error("Could not find texture: " + textureString);
-                return getTexture("images/missing_texture.png");
+                return getTexture("fgo/images/missing_texture.png");
             }
         }
         return textures.get(textureString);

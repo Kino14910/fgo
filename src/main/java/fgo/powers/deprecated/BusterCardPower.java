@@ -26,8 +26,8 @@ import static fgo.FGOMod.makeID;
 //        this.owner = owner;
 //        this.type = PowerType.BUFF;
 //
-//        String path128 = "img/powers_Master/BusterCardPower84.png";
-//        String path48 = "img/powers_Master/BusterCardPower32.png";
+//        String path128 = "fgo/images/powers/large/BusterCardPower.png";
+//        String path48 = "fgo/images/powers/BusterCardPower.png";
 //        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(path128), 0, 0, 84, 84);
 //        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(path48), 0, 0, 32, 32);
 //        this.name = NAME;

@@ -12,6 +12,9 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import fgo.util.GeneralUtils;
 import fgo.util.TextureLoader;
+import static fgo.FGOMod.*;
+
+import java.util.Objects;
 
 public abstract class BasePower extends AbstractPower {
     private static PowerStrings getPowerStrings(String ID)
@@ -28,19 +31,28 @@ public abstract class BasePower extends AbstractPower {
     protected Color greenColor2 = Color.GREEN.cpy();
 
     public BasePower(String id, PowerType powerType, boolean isTurnBased, AbstractCreature owner) {
-        this(id, powerType, isTurnBased, owner, null, -1);
+        this(id, powerType, isTurnBased, owner, null, -1, null);
+    }
+
+    public BasePower(String id, PowerType powerType, boolean isTurnBased, AbstractCreature owner, String img) {
+        this(id, powerType, isTurnBased, owner, null, -1, img);
     }
 
     public BasePower(String id, PowerType powerType, boolean isTurnBased, AbstractCreature owner, int amount) {
-        this(id, powerType, isTurnBased, owner, null, amount);
+        this(id, powerType, isTurnBased, owner, null, amount, null);
     }
-    public BasePower(String id, PowerType powerType, boolean isTurnBased, AbstractCreature owner, AbstractCreature source, int amount) {
-        this(id, powerType, isTurnBased, owner, source, amount, true);
+
+    public BasePower(String id, PowerType powerType, boolean isTurnBased, AbstractCreature owner, int amount, String img) {
+        this(id, powerType, isTurnBased, owner, null, amount, img);
     }
-    public BasePower(String id, PowerType powerType, boolean isTurnBased, AbstractCreature owner, AbstractCreature source, int amount, boolean initDescription) {
-        this(id, powerType, isTurnBased, owner, source, amount, initDescription, true);
+
+    public BasePower(String id, PowerType powerType, boolean isTurnBased, AbstractCreature owner, AbstractCreature source, int amount, String img) {
+        this(id, powerType, isTurnBased, owner, source, amount, img, true);
     }
-    public BasePower(String id, PowerType powerType, boolean isTurnBased, AbstractCreature owner, AbstractCreature source, int amount, boolean initDescription, boolean loadImage) {
+    public BasePower(String id, PowerType powerType, boolean isTurnBased, AbstractCreature owner, AbstractCreature source, int amount, String img, boolean initDescription) {
+        this(id, powerType, isTurnBased, owner, source, amount, img, initDescription, true);
+    }
+    public BasePower(String id, PowerType powerType, boolean isTurnBased, AbstractCreature owner, AbstractCreature source, int amount, String img, boolean initDescription, boolean loadImage) {
         this.ID = id;
         this.isTurnBased = isTurnBased;
 
@@ -55,7 +67,7 @@ public abstract class BasePower extends AbstractPower {
 
         if (loadImage)
         {
-            String unPrefixed = GeneralUtils.removePrefix(id);
+            String unPrefixed = Objects.nonNull(img) ? img : GeneralUtils.removePrefix(id);
             Texture normalTexture = TextureLoader.getPowerTexture(unPrefixed);
             Texture hiDefImage = TextureLoader.getHiDefPowerTexture(unPrefixed);
             if (hiDefImage != null)

@@ -27,7 +27,6 @@ public class KurKigalIrkalla extends AbsNoblePhantasmCard {
         setDamage(26, 8);
         this.isMultiDamage = true;
         setExhaust();
-        this.portraitImg = ImageMaster.loadImage(IMG_PATH);
 
         cardArtLayers512.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH)));
         cardArtLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH_P)));

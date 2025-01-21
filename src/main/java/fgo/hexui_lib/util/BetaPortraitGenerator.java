@@ -21,9 +21,9 @@ public class BetaPortraitGenerator {
         }
 
         ArrayList<RenderLayer> cardArtLayers = new ArrayList<>();
-        String betaFolder = "images/cards/512/beta/";
+        String betaFolder = "fgo/images/cards/512/beta/";
         if (isBigCard) {
-            betaFolder = "images/cards/1024/beta/";
+            betaFolder = "fgo/images/cards/1024/beta/";
         }
 
         Random rng = LangUtil.getSeededRandom(cardID);

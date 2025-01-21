@@ -16,13 +16,7 @@ public class CurseEvilFormPower extends BasePower {
     private static final boolean TURN_BASED = false;
 
     public CurseEvilFormPower(AbstractCreature owner, int amount) {
-        super(POWER_ID, TYPE, TURN_BASED, owner, amount);
-
-        String path128 = "img/powers_Master/CursePower84.png";
-        String path48 = "img/powers_Master/CursePower32.png";
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(path128), 0, 0, 84, 84);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(path48), 0, 0, 32, 32);
-
+        super(POWER_ID, TYPE, TURN_BASED, owner, amount, "CursePower");
     }
 
     @Override

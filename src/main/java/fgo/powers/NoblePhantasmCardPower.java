@@ -20,15 +20,9 @@ public class NoblePhantasmCardPower extends BasePower {
     private final AbstractCard card;
  
     public NoblePhantasmCardPower(AbstractCreature owner, AbstractCard copyMe) {
-        super(POWER_ID, TYPE, TURN_BASED, owner);
+        super(POWER_ID, TYPE, TURN_BASED, owner, "PutOnFakeFacePower");
         this.card = copyMe.makeStatEquivalentCopy();
         this.card.resetAttributes();
-
-        String path128 = "img/powers_Master/PutOnFakeFacePower84.png";
-        String path48 = "img/powers_Master/PutOnFakeFacePower32.png";
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(path128), 0, 0, 84, 84);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(path48), 0, 0, 32, 32);
-
     }
 
     @Override

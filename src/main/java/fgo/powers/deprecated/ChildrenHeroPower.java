@@ -27,8 +27,8 @@ import static fgo.FGOMod.makeID;
 //        }
 //        this.type = PowerType.BUFF;
 //
-//        String path128 = "img/powers_Master/PeacockStrutPower84.png";
-//        String path48 = "img/powers_Master/PeacockStrutPower32.png";
+//        String path128 = "fgo/images/powers/large/PeacockStrutPower.png";
+//        String path48 = "fgo/images/powers/PeacockStrutPower.png";
 //        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(path128), 0, 0, 84, 84);
 //        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(path48), 0, 0, 32, 32);
 //        this.name = NAME;

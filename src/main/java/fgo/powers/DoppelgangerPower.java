@@ -1,5 +1,6 @@
 package fgo.powers;
 
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
@@ -16,6 +17,7 @@ import fgo.patches.Enum.CardTagsEnum;
 
 import static fgo.FGOMod.makeID;
 
+@AutoAdd.Ignore
 public class DoppelgangerPower extends BasePower {
     public static final String POWER_ID = makeID(DoppelgangerPower.class.getSimpleName());
     private static final PowerType TYPE = PowerType.BUFF;

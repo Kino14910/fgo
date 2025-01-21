@@ -111,7 +111,7 @@ public class Emiya extends AbstractMonster {
             case 6:
                 AbstractDungeon.topLevelEffects.add(new FadeWipeParticle());
                 this.addToBot(new WaitFgoAction(1.0F));
-                this.addToBot(new VFXAction(new ChangeSceneEffect(ImageMaster.loadImage("img/vfx_master/UnlimitedBg.png"))));
+                this.addToBot(new VFXAction(new ChangeSceneEffect(ImageMaster.loadImage("fgo/images/vfx_master/UnlimitedBg.png"))));
                 this.addToBot(new WaitAction(2.5F));
                 CardCrawlGame.music.silenceTempBgmInstantly();
                 CardCrawlGame.music.silenceBGMInstantly();

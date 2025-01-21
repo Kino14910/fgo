@@ -19,28 +19,22 @@ public class DeathOfDeathPower extends BasePower {
     private static final boolean TURN_BASED = false;
 
     public DeathOfDeathPower(AbstractCreature owner, int amount) {
-        super(POWER_ID, TYPE, TURN_BASED, owner, amount);
-
-        String path128 = "img/powers_Master/GutsTriggerPower84.png";
-        String path48 = "img/powers_Master/GutsTriggerPower32.png";
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(path128), 0, 0, 84, 84);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(path48), 0, 0, 32, 32);
-
+        super(POWER_ID, TYPE, TURN_BASED, owner, amount, "GutsTriggerPower");
     }
 
     @Override
     public void onSpecificTrigger() {
-        this.addToBot(new ApplyPowerAction(this.owner, this.owner, new PhantasmalPower(this.owner, 1), 1));
-        this.addToBot(new ApplyPowerAction(this.owner, this.owner, new StrengthPower(this.owner, -this.amount), -this.amount));
-        this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
+        addToBot(new ApplyPowerAction(owner, owner, new PhantasmalPower(owner, 1)));
+        addToBot(new ApplyPowerAction(owner, owner, new StrengthPower(owner, -amount)));
+        addToBot(new RemoveSpecificPowerAction(owner, owner, ID));
     }
 
     @Override
     public void updateDescription() {
-        this.description = String.format(DESCRIPTIONS[0], this.amount);
+        description = String.format(DESCRIPTIONS[0], amount);
     }
 
     public AbstractPower makeCopy() {
-        return new DeathOfDeathPower(this.owner, this.amount);
+        return new DeathOfDeathPower(owner, amount);
     }
 }

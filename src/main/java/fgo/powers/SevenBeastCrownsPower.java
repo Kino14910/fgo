@@ -18,15 +18,9 @@ public class SevenBeastCrownsPower extends BasePower {
     private static final boolean TURN_BASED = false;
     private static int BeastIdOffset;
     public SevenBeastCrownsPower(AbstractCreature owner, int amount) {
-        super(POWER_ID, TYPE, TURN_BASED, owner, amount);
+        super(POWER_ID, TYPE, TURN_BASED, owner, amount, "DracoPower");
         this.ID = POWER_ID + BeastIdOffset;
         BeastIdOffset++;
-
-        String path128 = "img/powers_Master/DracoPower84.png";
-        String path48 = "img/powers_Master/DracoPower32.png";
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(path128), 0, 0, 84, 84);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(path48), 0, 0, 32, 32);
-
     }
 
     @Override

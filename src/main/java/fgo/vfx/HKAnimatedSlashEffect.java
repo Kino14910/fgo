@@ -21,7 +21,7 @@ public class HKAnimatedSlashEffect extends AbstractGameEffect {
     private float scaleY;
     private final float targetScale;
     private final Color color2;
-    private static final Texture HK = ImageMaster.loadImage("fgo/images/vfx_master/HK.png");
+    private static final Texture HK = ImageMaster.loadImage("fgo/images/vfx/HK.png");
     public HKAnimatedSlashEffect(float x, float y, float dX, float dY, float angle, Color color1, Color color2) {
         this(x, y, dX, dY, angle, 2.0F, color1, color2);
     }
