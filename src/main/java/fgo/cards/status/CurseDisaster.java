@@ -1,6 +1,7 @@
 package fgo.cards.status;
 
 import basemod.AutoAdd;
+import com.evacipated.cardcrawl.mod.stslib.actions.common.AllEnemyApplyPowerAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
@@ -45,14 +46,15 @@ public class CurseDisaster extends FGOCard {
 
     @Override
     public void triggerWhenDrawn() {
+        AbstractPlayer p = AbstractDungeon.player;
         this.addToBot(new SFXAction("ATTACK_PIERCING_WAIL"));
 
         this.addToBot(
                 new VFXAction(
-                        AbstractDungeon.player,
+                        p,
                         new ShockWaveEffect(
-                                AbstractDungeon.player.hb.cX,
-                                AbstractDungeon.player.hb.cY,
+                                p.hb.cX,
+                                p.hb.cY,
                                 Settings.GREEN_TEXT_COLOR,
                                 ShockWaveEffect.ShockWaveType.CHAOTIC
                         ),
@@ -61,22 +63,9 @@ public class CurseDisaster extends FGOCard {
         );
 
         this.addToBot(
-                new ApplyPowerAction(
-                        AbstractDungeon.player,
-                        AbstractDungeon.player,
-                        new CursePower(AbstractDungeon.player, magicNumber),
-                        magicNumber
-                )
+                new ApplyPowerAction(p, p, new CursePower(p, magicNumber))
         );
-        for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-            this.addToBot(
-                    new ApplyPowerAction(
-                            mo,
-                            AbstractDungeon.player,
-                            new CursePower(mo, magicNumber),
-                            magicNumber
-                    )
-            );
-        }
+        addToBot(new AllEnemyApplyPowerAction(p, magicNumber,
+                monster -> new CursePower(monster, magicNumber)));
     }
 }

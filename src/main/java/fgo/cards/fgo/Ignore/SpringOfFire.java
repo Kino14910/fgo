@@ -25,7 +25,7 @@ public class SpringOfFire extends FGOCard {
     public SpringOfFire() {
         super(ID, INFO);
         setMagic(3, 3);
-        setEthereal();
+        setEthereal(true, false);
         setExhaust();
         this.tags.add(CardTags.HEALING);
     }
@@ -41,7 +41,7 @@ public class SpringOfFire extends FGOCard {
             this.addToBot(new ApplyPowerAction(p, p, new GutsPower(p, this.magicNumber, 3), this.magicNumber));
         }
         if (!p.hasPower(SpringOfFirePower.POWER_ID)) {
-            this.addToBot(new ApplyPowerAction(p, p, new SpringOfFirePower(p, 20)));
+            this.addToBot(new ApplyPowerAction(p, p, new SpringOfFirePower(p, magicNumber)));
         }
         this.addToBot(new ApplyPowerAction(p, p, new NPRatePower(p, this.magicNumber), this.magicNumber));
     }

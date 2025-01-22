@@ -77,7 +77,7 @@ public class ConflictEvent extends PhasedEvent {
                         return;
                     case 1:
                         this.imageEventText.updateBodyText(DESCRIPTIONS[2]);
-                        if (AbstractDungeon.player.hasRelic("SkullCandy")) {
+                        if (AbstractDungeon.player.hasRelic(SkullCandy.ID)) {
                             this.gift = new Circlet();
                             AbstractDungeon.getCurrRoom().spawnRelicAndObtain((float)(Settings.WIDTH / 2), (float)(Settings.HEIGHT / 2), this.gift);
                         } else {

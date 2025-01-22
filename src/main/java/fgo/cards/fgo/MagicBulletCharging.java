@@ -28,8 +28,7 @@ public class MagicBulletCharging extends FGOCard {
     );
     public MagicBulletCharging() {
         super(ID, INFO);
-        setDamage(15, 5);
-        isMultiDamage = true;
+        setDamage(15, 5, true);
     }
 
     @Override

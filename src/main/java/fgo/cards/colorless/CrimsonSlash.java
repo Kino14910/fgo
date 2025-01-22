@@ -27,8 +27,7 @@ public class CrimsonSlash extends FGOCard {
     );
     public CrimsonSlash() {
         super(ID, INFO);
-        setDamage(8, 2);
-        this.isMultiDamage = true;
+        setDamage(8, 2, true);
         setMagic(2, 1);
         this.cardsToPreview = new DivineDualEdge();
         setExhaust();

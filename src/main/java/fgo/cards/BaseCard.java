@@ -95,14 +95,23 @@ public abstract class BaseCard extends CustomCard {
     {
         this.setDamage(damage, 0);
     }
+    protected final void setDamage(int damage, boolean isMultiDamage)
+    {
+        this.setDamage(damage, 0, isMultiDamage);
+    }
+
     protected final void setDamage(int damage, int damageUpgrade)
     {
+        this.setDamage(damage, damageUpgrade, false);
+    }
+    protected final void setDamage(int damage, int damageUpgrade, boolean isMultiDamage) {
         this.baseDamage = this.damage = damage;
         if (damageUpgrade != 0)
         {
             this.upgradeDamage = true;
             this.damageUpgrade = damageUpgrade;
         }
+        this.isMultiDamage = isMultiDamage;
     }
 
     protected final void setBlock(int block)

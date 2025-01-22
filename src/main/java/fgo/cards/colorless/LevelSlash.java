@@ -24,8 +24,7 @@ public class LevelSlash extends FGOCard {
     );
     public LevelSlash() {
         super(ID, INFO);
-        setDamage(6, 3);
-        this.isMultiDamage = true;
+        setDamage(6, 3, true);
         this.cardsToPreview = new CrimsonSlash();
         setExhaust();
     }

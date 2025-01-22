@@ -25,8 +25,7 @@ public class CharismaOfConflict extends FGOCard {
     );
     public CharismaOfConflict() {
         super(ID, INFO);
-        setDamage(10, 4);
-        isMultiDamage = true;
+        setDamage(10, 4, true);
         setMagic(20, 10);
         setExhaust();
         tags.add(CardTags.HEALING);
@@ -41,7 +40,8 @@ public class CharismaOfConflict extends FGOCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new SFXAction("ATTACK_HEAVY"));
         addToBot(new VFXAction(p, new CleaveEffect(), 0.1F));
-        addToBot(new DamageAllEnemiesAction(p, multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
+        addToBot(new DamageAllEnemiesAction(p, damage, damageTypeForTurn, AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+        addToBot(new DamageAllEnemiesAction(p, damage, damageTypeForTurn, AbstractGameAction.AttackEffect.BLUNT_HEAVY));
 
         if (!p.hasPower(GutsPower.POWER_ID)) {
             addToBot(new ApplyPowerAction(p, p, new GutsPower(p, magicNumber, 1), magicNumber));

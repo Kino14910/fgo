@@ -28,8 +28,7 @@ public class ItsInevitable extends FGOCard {
     );
     public ItsInevitable() {
         super(ID, INFO);
-        setDamage(4, 1);
-        isMultiDamage = true;
+        setDamage(4, 1, true);
         setMagic(2, 1);
         portraitImg = ImageMaster.loadImage("fgo/images/cards/attack/ItsInevitable.png");
 

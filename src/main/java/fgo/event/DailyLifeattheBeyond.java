@@ -63,7 +63,7 @@ public class DailyLifeattheBeyond extends PhasedEvent {
                     //按钮顺序。
                     case 0:
                         //获得遗物。
-                        if (AbstractDungeon.player.hasRelic("Avenger")) {
+                        if (AbstractDungeon.player.hasRelic(Avenger.ID)) {
                             this.gift1 = new Circlet();
                             AbstractDungeon.getCurrRoom().spawnRelicAndObtain((float)(Settings.WIDTH / 2), (float)(Settings.HEIGHT / 2), this.gift1);
                         } else {
@@ -74,7 +74,7 @@ public class DailyLifeattheBeyond extends PhasedEvent {
                         return;
                     case 1:
                         //获得遗物。
-                        if (AbstractDungeon.player.hasRelic("OblivionCorrection")) {
+                        if (AbstractDungeon.player.hasRelic(OblivionCorrection.ID)) {
                             this.gift2 = new Circlet();
                             AbstractDungeon.getCurrRoom().spawnRelicAndObtain((float)(Settings.WIDTH / 2), (float)(Settings.HEIGHT / 2), this.gift2);
                         } else {
@@ -85,7 +85,7 @@ public class DailyLifeattheBeyond extends PhasedEvent {
                         return;
                     case 2:
                         //获得遗物。
-                        if (AbstractDungeon.player.hasRelic("SelfReplenishmentMagic")) {
+                        if (AbstractDungeon.player.hasRelic(SelfReplenishmentMagic.ID)) {
                             this.gift3 = new Circlet();
                             AbstractDungeon.getCurrRoom().spawnRelicAndObtain((float)(Settings.WIDTH / 2), (float)(Settings.HEIGHT / 2), this.gift3);
                         } else {

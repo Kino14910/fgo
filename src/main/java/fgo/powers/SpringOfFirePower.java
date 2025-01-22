@@ -22,16 +22,16 @@ public class SpringOfFirePower extends BasePower {
 
     @Override
     public void onSpecificTrigger() {
-        this.addToBot(new ApplyPowerAction(this.owner, this.owner, new NPDamagePower(this.owner, this.amount), this.amount));
-        this.addToBot(new RemoveDebuffsAction(this.owner));
+        addToBot(new RemoveDebuffsAction(owner));
+        addToBot(new ApplyPowerAction(owner, owner, new NPDamagePower(owner, amount)));
     }
 
     @Override
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
+        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
     }
 
     public AbstractPower makeCopy() {
-        return new SpringOfFirePower(this.owner, this.amount);
+        return new SpringOfFirePower(owner, amount);
     }
 }

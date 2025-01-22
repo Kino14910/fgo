@@ -20,14 +20,13 @@ public class WarriorsBlade extends FGOCard {
             FGOCardColor.FGO,
             CardType.ATTACK,
             CardRarity.UNCOMMON,
-            CardTarget.ENEMY,
+            CardTarget.ALL_ENEMY,
             1
     );
     public WarriorsBlade() {
         super(ID, INFO);
-        setDamage(7, 3);
+        setDamage(7, 3, true);
         setMagic(6);
-        isMultiDamage = true;
     }
 
     @Override

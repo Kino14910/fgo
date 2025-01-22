@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import fgo.action.FgoNpAction;
 
 
 import static fgo.FGOMod.makeID;
@@ -24,8 +25,7 @@ public class GutsAtTheWellPower extends BasePower {
     @Override
     public void onSpecificTrigger() {
         this.flash();
-        this.addToBot(new DrawCardAction(this.owner, this.amount));
-        this.addToBot(new GainEnergyAction(this.amount));
+        this.addToBot(new FgoNpAction(80));
         this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
     }
 

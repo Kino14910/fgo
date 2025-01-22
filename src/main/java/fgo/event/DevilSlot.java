@@ -46,7 +46,7 @@ public class DevilSlot extends PhasedEvent {
                 if (buttonPressed == 0) {
                     this.imageEventText.updateBodyText(DESCRIPTIONS[2]);
                     this.imageEventText.updateDialogOption(0, OPTIONS[2]);
-                    if (AbstractDungeon.player.hasRelic("BB")) {
+                    if (AbstractDungeon.player.hasRelic(BB.ID)) {
                         AbstractDungeon.getCurrRoom().spawnRelicAndObtain((float)(Settings.WIDTH / 2), (float)(Settings.HEIGHT / 2), new Circlet());
                     } else {
                         AbstractDungeon.getCurrRoom().spawnRelicAndObtain((float)(Settings.WIDTH / 2), (float)(Settings.HEIGHT / 2), new BB());

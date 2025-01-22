@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 
 public class DisplayStarModifier extends AbstractCardModifier {
-    public static String MOD_ID = "DisplayStarModifier";
+    public static String MOD_ID = "fgo:DisplayStarModifier";
     private static final Texture tex = ImageMaster.loadImage("fgo/images/UI_Master/DisplayModifier.png");
     private final int amount;
     public DisplayStarModifier(int amount) {

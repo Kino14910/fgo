@@ -25,6 +25,7 @@ fgo\hexui_lib\CardRenderer.class
 fgo\cards\fgo\Ignore\KarmicVision.class
 fgo\powers\NPDamagePower.class
 fgo\powers\MagicBulletPower.class
+fgo\characters\AlterOptionEffect.class
 fgo\cards\colorless\ignore\FlamesofApplause.class
 fgo\relics\MechanicalProtector.class
 fgo\cards\fgo\Swingby.class
@@ -46,6 +47,7 @@ fgo\event\Beyondthe$1.class
 fgo\action\EnferChateaudIfAction.class
 fgo\cards\fgo\GiantoftheBridge.class
 fgo\hexui_lib\patches\RenderSingleCardPortraitFramePatch.class
+fgo\patches\CurrentNobleCardsTopPanelItem$ControllerUseAlt$Locator.class
 fgo\cards\fgo\IntoxicatedMeal.class
 fgo\relics\BowInsignia.class
 fgo\cards\fgo\Strike.class
@@ -56,16 +58,19 @@ fgo\cards\fgo\KnightStance.class
 fgo\action\ComeOnAction.class
 fgo\cards\colorless\PrimevalRune.class
 fgo\event\ManofChaldea.class
+fgo\cards\fgo\Ignore\CurseHarmony.class
 fgo\action\lor\ChangeSceneEffect.class
 fgo\cards\fgo\NFFSpecial.class
 fgo\cards\noblecards\KurKigalIrkalla.class
 fgo\cards\fgo\SchwarzwaldFalke.class
 fgo\cards\fgo\StarBasket.class
+fgo\patches\RevivePatch$hasEnoughEnergyPatcher.class
 fgo\relics\BurgerKing.class
 fgo\hexui_lib\patches\RenderCardTypePatch$Locator.class
 fgo\cards\fgo\SparksRoute.class
 fgo\action\NightlessCharismaAction.class
 fgo\cards\noblecards\MahaPralaya.class
+fgo\patches\CurrentNobleCardsTopPanelItem$UpdateAltClick.class
 fgo\action\NoblePhantasmSelectAction.class
 fgo\cards\fgo\MaidenOfaFlowerPatio.class
 fgo\patches\PictureSelectFgoPatch$CharacterSelectScreenPatch_Initialize.class
@@ -76,6 +81,7 @@ fgo\event\DailyLifeattheBeyond.class
 fgo\cards\noblecards\LieLikeVortigern.class
 fgo\action\GoldenGrailAction.class
 fgo\cards\fgo\NightlessCharisma.class
+fgo\cards\fgo\AtTheWell.class
 fgo\powers\EternalSleepPower.class
 fgo\relics\LockChocolateStrawberry.class
 fgo\powers\HugeScalePower.class
@@ -104,9 +110,11 @@ fgo\relics\SkullCandy.class
 fgo\action\SunlightAction.class
 fgo\powers\MonteCristoTreasurePower.class
 fgo\cards\noblecards\BlackdogGalatine.class
+fgo\patches\CurrentNobleCardsTopPanelItem$HideAltCards$Locator.class
 fgo\action\MeditateFateAction.class
 fgo\cards\fgo\PhasingFluidBlade.class
 fgo\cards\fgo\StarHunter.class
+fgo\patches\CurrentNobleCardsTopPanelItem$UpdateAltPositions.class
 fgo\powers\GoddessMetamorphosisBeastPower.class
 fgo\powers\GutsAtTheWellPower.class
 fgo\cards\noblecards\FetchFailnaught.class
@@ -115,6 +123,7 @@ fgo\relics\AstrologicalTeapot.class
 fgo\util\KeywordInfo.class
 fgo\cards\colorless\potionCards\TheBlackGrail.class
 fgo\powers\CursePower.class
+fgo\patches\CurrentNobleCardsTopPanelItem.class
 fgo\cards\colorless\ProofAndRebuttal.class
 fgo\action\FacelessMoonAction.class
 fgo\cards\noblecards\ElementaryMyDear.class
@@ -131,6 +140,7 @@ fgo\cards\fgo\MerlinMagic.class
 fgo\cards\fgo\Ignore\QueensCovenant.class
 fgo\cards\fgo\MysticEyes.class
 fgo\powers\EternalMemoriesPower.class
+fgo\patches\MidsummerNightPatch.class
 fgo\hexui_lib\patches\RenderCardPortraitPatch.class
 fgo\patches\PictureSelectFgoPatch$CharacterSelectScreenPatch_Render.class
 fgo\cards\fgo\CircuitConnect.class
@@ -174,6 +184,7 @@ fgo\relics\ArchetypeORT.class
 fgo\cards\BaseCard$VariableType.class
 fgo\hexui_lib\util\RenderImageLayer.class
 fgo\cards\colorless\TaisuiSMisfortune.class
+fgo\characters\AlterOption.class
 fgo\event\Beyondthe.class
 fgo\powers\NightlessCharismaPower.class
 fgo\powers\UnlimitedPower.class
@@ -210,6 +221,7 @@ fgo\cards\fgo\GodsExecution.class
 fgo\cards\colorless\EightKindness.class
 fgo\powers\GloriousStrikePower.class
 fgo\cards\colorless\potionCards\Kaleidoscope.class
+fgo\patches\CurrentNobleCardsTopPanelItem$UpdateAltPositions$Locator.class
 fgo\cards\noblecards\BridalSpinWheel.class
 fgo\cards\noblecards\WickerMan.class
 fgo\action\DoppelgangerMaster.class
@@ -217,10 +229,13 @@ fgo\cards\noblecards\LastSunXibalba.class
 fgo\powers\FifthFormPower.class
 fgo\cards\noblecards\Camelot.class
 fgo\relics\LockChocolate.class
+fgo\patches\CurrentNobleCardsTopPanelItem$CalcAltBounds.class
 fgo\patches\Enum\CardTagsEnum.class
 fgo\powers\GutsPower.class
 fgo\powers\EnergyRegenPower.class
+fgo\patches\NoblePhantasmDeckPatch.class
 fgo\cards\colorless\PutOnFakeFace.class
+fgo\patches\CurrentNobleCardsTopPanelItem$RenderAlt.class
 fgo\relics\BB.class
 fgo\cards\fgo\JourneyGuidance.class
 fgo\vfx\HKExpungeVFXAction.class
@@ -237,19 +252,20 @@ fgo\cards\fgo\FacelessMoon.class
 fgo\relics\Salem.class
 fgo\cards\FateMagineerCard$1.class
 fgo\cards\fgo\HugeScale.class
+fgo\patches\CurrentNobleCardsTopPanelItem$HideAltCards.class
 fgo\cards\fgo\KnightoftheLake.class
 fgo\powers\DefenseDownPower.class
 fgo\powers\NPRatePower.class
 fgo\cards\fgo\ManaBurstGems.class
-fgo\cards\fgo\Ignore\AtTheWell.class
+fgo\patches\CurrentNobleCardsTopPanelItem$1.class
 fgo\cards\fgo\BlessingOfKur.class
 fgo\powers\LoseCritDamagePower.class
 fgo\powers\SunlightPower.class
 fgo\cards\fgo\ChildrenSHero.class
 fgo\powers\InvincibilityTurnPower.class
 fgo\action\ExtraterrestrialAction.class
+fgo\patches\CurrentNobleCardsTopPanelItem$DefinitelyNotViewingPool.class
 fgo\powers\NoblePhantasmCardPower.class
-fgo\cards\fgo\CurseHarmony.class
 fgo\cards\fgo\WildRule.class
 fgo\powers\CurseEvilFormPower.class
 fgo\patches\Enum\ThmodClassEnum.class
@@ -262,6 +278,7 @@ fgo\cards\SupportCraft\SupportCraft.class
 fgo\powers\WatersidePower.class
 fgo\cards\noblecards\Excalibur.class
 fgo\cards\noblecards\Failnaught.class
+fgo\patches\CurrentNobleCardsTopPanelItem$ControllerUseAlt.class
 fgo\action\MagicBulletChargingAction.class
 fgo\cards\noblecards\LaPucelle.class
 fgo\characters\master.class
@@ -281,6 +298,7 @@ fgo\hexui_lib\patches\RenderSingleCardTypePatch.class
 fgo\potions\BasePotion.class
 fgo\cards\status\PhasingFluidBladeATTACK.class
 fgo\powers\ArchetypeORTPower.class
+fgo\patches\RevivePatch$hasEnoughEnergyPatcher$Locator.class
 fgo\cards\colorless\UndeadBird.class
 fgo\powers\SealNPPower.class
 fgo\cards\noblecards\LostLonginus.class
@@ -307,6 +325,7 @@ fgo\cards\colorless\SquireOfProphecy.class
 fgo\cards\fgo\WarriorsBlade.class
 fgo\cards\fgo\Insanity.class
 fgo\cards\BaseCard$QuickDynamicVariable.class
+fgo\patches\CurrentNobleCardsTopPanelItem$UpdateAltClick$Locator.class
 fgo\powers\ArtsPerformancePower.class
 fgo\powers\CurseHarmonyPower.class
 fgo\cards\fgo\MagicBulletCharging.class
@@ -316,6 +335,7 @@ fgo\util\CardStats.class
 fgo\cards\colorless\Shvibzik.class
 fgo\patches\NobleCardTabNamePatch$TabNamePatch.class
 fgo\cards\colorless\CrimsonSlash.class
+fgo\patches\CurrentNobleCardsTopPanelItem$DefinitelyNotViewingPool$Locator.class
 fgo\cards\fgo\PresenceDetection.class
 fgo\cards\fgo\CrownedWithLife.class
 fgo\cards\colorless\ignore\BrilliantEscort.class
@@ -341,6 +361,7 @@ fgo\cards\fgo\Borrowingfrom.class
 fgo\cards\noblecards\Desterrennacht.class
 fgo\cards\FateMagineerCard.class
 fgo\relics\HalloweenRoyalty.class
+fgo\patches\RevivePatch.class
 fgo\powers\StarHunterPower.class
 fgo\cards\colorless\ignore\CommandSpellGuts.class
 fgo\powers\MaxHPPower.class
@@ -361,6 +382,7 @@ fgo\cards\fgo\MonteCristoTreasure.class
 fgo\cards\fgo\CharismaOfTheJade.class
 fgo\powers\InsanityPower.class
 fgo\hexui_lib\patches\RenderCardTypePatch.class
+fgo\patches\CampfireOptionPatch.class
 fgo\powers\NPOverchargePower.class
 fgo\cards\colorless\ignore\PoisonousDagger.class
 fgo\cards\AbsNoblePhantasmCard.class
@@ -373,6 +395,7 @@ fgo\hexui_lib\patches\RenderSingleCardTypePatch$Locator.class
 fgo\cards\fgo\Chasmatis.class
 fgo\event\ProofAndRebuttalEvent.class
 fgo\hexui_lib\CardRenderer$1.class
+fgo\patches\CampfireOptionPatch$1.class
 fgo\patches\Modifier\DisplayStarModifier.class
 fgo\powers\ManaBurstGemsPower.class
 fgo\cards\fgo\DragonCore.class

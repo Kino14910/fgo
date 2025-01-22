@@ -2,11 +2,15 @@ package fgo.cards.fgo;
 
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.stslib.patches.FlavorText;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.LoseStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import fgo.action.FgoNpAction;
 import fgo.cards.FGOCard;
@@ -17,16 +21,15 @@ public class CharismaOfHope extends FGOCard {
     public static final String ID = makeID(CharismaOfHope.class.getSimpleName());
     private static final CardStats INFO = new CardStats(
             FGOCardColor.FGO,
-            CardType.SKILL,
+            CardType.ATTACK,
             CardRarity.BASIC,
-            CardTarget.SELF,
+            CardTarget.ENEMY,
             1
     );
     public CharismaOfHope() {
         super(ID, INFO);
-        setMagic(1);
+        setDamage(9);
         setNP(20, 10);
-        setBlock(7);
         setCasterBackground();
 
         FlavorText.AbstractCardFlavorFields.textColor.set(this, Color.CHARTREUSE);
@@ -40,34 +43,7 @@ public class CharismaOfHope extends FGOCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p,p,new StrengthPower(p,magicNumber)));
         addToBot(new FgoNpAction(np));
-        addToBot(new GainBlockAction(p,p,block));
-
-//        switch (AbstractDungeon.actNum) {
-//            case 1:
-//                addToBot(new FgoNpAction(10, true));
-//                break;
-//            case 2:
-//                addToBot(new FgoNpAction(20, true));
-//                addToBot(new DrawCardAction(p, 1));
-//                break;
-//            default:
-//                addToBot(new FgoNpAction(30, true));
-//                addToBot(new DrawCardAction(p, 2));
-//                break;
-//        }
+        addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
     }
-
-    /*@Override
-    public void applyPowers() {
-        super.applyPowers();
-        if (AbstractDungeon.actNum == 2) {
-            rawDescription = cardStrings.EXTENDED_DESCRIPTION[0];
-        } else if (AbstractDungeon.actNum > 2) {
-            rawDescription = cardStrings.EXTENDED_DESCRIPTION[1];
-        }
-
-        initializeDescription();
-    }*/
 }

@@ -9,11 +9,11 @@
   },
   "fgo:DreamUponTheStars": {
     "NAME": "予星以梦",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !NP! % fgo:宝具值 。"
+    "DESCRIPTION": "获得 !M! % fgo:宝具威力 。 NL 获得 !NP! % fgo:宝具值 。 NL 获得 !B! 点 格挡 。"
   },
   "fgo:CharismaOfHope": {
     "NAME": "2019年的格洛斯特",
-    "DESCRIPTION": "获得 !M! 点 力量 。 NL 获得 !NP! % fgo:宝具值 。 NL 获得 !B! 点 格挡 。"
+    "DESCRIPTION": "获得 !NP! % fgo:宝具值 。 NL 造成 !D! 点伤害。"
   },
   "fgo:WallOfSnowflakes": {
     "NAME": "现为脆弱的雪花之壁",
@@ -186,8 +186,7 @@
   },
   "fgo:AtTheWell": {
     "NAME": "于泉之处",
-    "DESCRIPTION": "在下一回合获得 !M! 层 fgo:毅力 ，下一次 fgo:毅力 发动时获得 [E] [E] [E] 并且抽3张牌，然后死亡。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "fgo:解除弱化 。 NL 回复 !M! 点生命。 NL fgo:献给世界树的活祭 。 NL 消耗 。"
+    "DESCRIPTION": "fgo:解除弱化 。 NL 回复 !M! 点生命。 NL fgo:献给世界树的活祭 。 NL 消耗 。"
   },
   "fgo:SquireOfProphecy": {
     "NAME": "祈雨",
@@ -200,8 +199,8 @@
   },
   "fgo:EndOfADream": {
     "NAME": "梦之终结",
-    "DESCRIPTION": "fgo:宝具牌 攻击伤害翻倍。 NL 在这个回合结束时， NL 获得 fgo:永久睡眠 。",
-    "UPGRADE_DESCRIPTION": "保留 。 NL fgo:宝具牌 攻击伤害翻倍。 NL 在这个回合结束时， NL 获得 fgo:永久睡眠 。"
+    "DESCRIPTION": "fgo:宝具牌 攻击伤害翻倍。 NL 在你的回合结束时， NL 获得 fgo:永久睡眠 。",
+    "UPGRADE_DESCRIPTION": "保留 。 NL fgo:宝具牌 攻击伤害翻倍。 NL 在你的回合结束时， NL 获得 fgo:永久睡眠 。"
   },
   "fgo:AbyssLight": {
     "NAME": "于深渊化作光",
@@ -214,7 +213,7 @@
   },
   "fgo:ManaBurstGems": {
     "NAME": "魔力放出（宝石）",
-    "DESCRIPTION": "在这个回合结束时，获得 !M! 点 力量 。 NL 在弃牌堆放入一张此牌的复制品。",
+    "DESCRIPTION": "在你的回合结束时，获得 !M! 点 力量 。 NL 在弃牌堆放入一张此牌的复制品。",
     "FLAVOR": "测试画风可以更改。"
   },
   "fgo:VoidSpaceFineArts": {
@@ -426,7 +425,7 @@
   },
   "fgo:CircuitConnect": {
     "NAME": "回路连接",
-    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 造成 !D! 点伤害。 NL 下一回合获得 !B! 点 格挡 。"
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 造成 !D! 点伤害。"
   },
   "fgo:GiantoftheBridge": {
     "NAME": "桥之巨人",
@@ -694,7 +693,7 @@
   },
   "fgo:LakeTexcoco": {
     "NAME": "第三太阳",
-    "DESCRIPTION": "获得 !NP! % fgo:宝具值 。 NL 在接下来3回合，获得 !M! % fgo:宝具值 。 NL 获得 fgo:水边 3回合。消耗"
+    "DESCRIPTION": "获得 !NP! % fgo:宝具值 。 NL 在接下来3回合，获得 !M! % fgo:宝具值 。 NL 获得 fgo:水边 3回合。 NL 消耗 "
   },
   "fgo:BlueStarSea": {
     "NAME": "苍之星海",
@@ -739,7 +738,7 @@
   },
   "fgo:CharismaOfConflict": {
     "NAME": "斗争的魅力",
-    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 获得 !M! 层 fgo:毅力 。 NL 消耗 。"
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害2次。 NL 获得 !M! 层 fgo:毅力 。 NL 消耗 。"
   },
   "fgo:ProofAndRebuttal": {
     "NAME": "证明与反证",

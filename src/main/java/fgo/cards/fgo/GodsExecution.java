@@ -1,9 +1,11 @@
 package fgo.cards.fgo;
 
 import basemod.AutoAdd;
+import com.evacipated.cardcrawl.mod.stslib.actions.common.AllEnemyApplyPowerAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -37,13 +39,12 @@ public class GodsExecution extends FGOCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+        addToBot(new DamageAllEnemiesAction(p, damage, damageTypeForTurn, AbstractGameAction.AttackEffect.BLUNT_HEAVY));
 
         for (AbstractPower power : p.powers) {
             if (power.type == AbstractPower.PowerType.DEBUFF) {
-                for(AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters){
-                    addToBot(new ApplyPowerAction(mo, p, new WeakPower(mo, magicNumber, false)));
-                }
+                addToBot(new AllEnemyApplyPowerAction(p, magicNumber,
+                        monster -> new WeakPower(monster, magicNumber, false)));
                 break;
             }
         }

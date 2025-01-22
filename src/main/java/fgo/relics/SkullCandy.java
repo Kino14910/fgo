@@ -21,8 +21,8 @@ public class SkullCandy extends BaseRelic {
 
     @Override
     public void onEquip() {
-        if (AbstractDungeon.player.hasRelic("HalloweenRoyalty")) {
-            AbstractDungeon.player.getRelic("HalloweenRoyalty").onTrigger();
+        if (AbstractDungeon.player.hasRelic(HalloweenRoyalty.ID)) {
+            AbstractDungeon.player.getRelic(HalloweenRoyalty.ID).onTrigger();
         }
     }
 

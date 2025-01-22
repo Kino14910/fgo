@@ -27,6 +27,7 @@ import fgo.patches.MainMenuUIFgoPatch;
 import fgo.patches.PictureSelectFgoPatch;
 import fgo.relics.Avenger;
 import fgo.relics.CommandSpell;
+import fgo.relics.SuitcaseFgo;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -98,10 +99,8 @@ public class master extends CustomPlayer{
     public ArrayList<String> getStartingRelics() {
         //添加初始遗物
         ArrayList<String> retVal = new ArrayList<>();
-//        retVal.add("SuitcaseFgo");
-//        UnlockTracker.markRelicAsSeen("SuitcaseFgo");
+        retVal.add(SuitcaseFgo.ID);
 //        retVal.add("HalloweenRoyalty");
-//        UnlockTracker.markRelicAsSeen("HalloweenRoyalty");
         retVal.add(CommandSpell.ID);
         return retVal;
     }

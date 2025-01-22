@@ -20,7 +20,7 @@ import fgo.powers.SealNPPower;
 
 public class NoblePhantasmButton {
     public static NoblePhantasmButton inst;
-    private static final OrbStrings orbString = CardCrawlGame.languagePack.getOrbString("NoblePhantasmButton");
+    private static final OrbStrings orbString = CardCrawlGame.languagePack.getOrbString("fgo:NoblePhantasmButton");
     private final Vector2 position = new Vector2();
     public Hitbox hb;
     private final Color renderColor;

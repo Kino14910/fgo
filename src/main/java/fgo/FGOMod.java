@@ -9,6 +9,7 @@ import com.badlogic.gdx.backends.lwjgl.LwjglFileHandle;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.GdxRuntimeException;
 import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.ModInfo;
@@ -20,11 +21,13 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import fgo.action.FgoNpAction;
 import fgo.cards.BaseCard;
 import fgo.characters.master;
+import fgo.patches.Button.NoblePhantasmButton;
 import fgo.patches.Enum.FGOCardColor;
 import fgo.patches.Enum.ThmodClassEnum;
 import fgo.potions.BasePotion;
@@ -51,7 +54,9 @@ public class FGOMod implements
         EditRelicsSubscriber,
         EditKeywordsSubscriber,
         PostInitializeSubscriber,
-        OnCardUseSubscriber
+        OnCardUseSubscriber,
+        PostUpdateSubscriber,
+        PostRenderSubscriber
         {
     public static ModInfo info;
     public static String modID; //Edit your pom.xml to change this
@@ -339,6 +344,24 @@ public class FGOMod implements
 
         if (npGain > 0) {
             AbstractDungeon.actionManager.addToBottom(new FgoNpAction(npGain));
+        }
+    }
+
+
+    @Override
+    public void receivePostRender(SpriteBatch sb) {
+        if (NoblePhantasmButton.inst != null && AbstractDungeon.player != null) {
+            NoblePhantasmButton.inst.render(sb);
+        }
+    }
+
+    @Override
+    public void receivePostUpdate() {
+        if (AbstractDungeon.getCurrMapNode() != null && AbstractDungeon.getCurrRoom() != null && (AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT) {
+            if (NoblePhantasmButton.inst == null) {
+                NoblePhantasmButton.inst = new NoblePhantasmButton(AbstractDungeon.player.hb.x - 17.0F * Settings.scale, AbstractDungeon.player.hb.cY + AbstractDungeon.player.hb.height / 2 + 10.0F * Settings.scale);
+            }
+            NoblePhantasmButton.inst.update();
         }
     }
 
