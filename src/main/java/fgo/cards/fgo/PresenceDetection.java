@@ -25,10 +25,7 @@ public class PresenceDetection extends FGOCard {
         setMagic(1);
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new PresenceDetection();
-    }
+    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

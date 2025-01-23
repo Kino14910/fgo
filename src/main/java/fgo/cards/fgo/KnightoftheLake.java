@@ -28,10 +28,7 @@ public class KnightoftheLake extends FGOCard {
         setMagic(50, 50);
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new KnightoftheLake();
-    }
+    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

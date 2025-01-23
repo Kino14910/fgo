@@ -32,10 +32,7 @@ public class MaidenOfaFlowerPatio extends FGOCard {
         FlavorText.AbstractCardFlavorFields.flavorBoxType.set(this, FlavorText.boxType.TRADITIONAL);
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new MaidenOfaFlowerPatio();
-    }
+
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

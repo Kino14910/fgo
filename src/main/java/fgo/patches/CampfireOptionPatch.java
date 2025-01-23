@@ -6,6 +6,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.rooms.CampfireUI;
 import com.megacrit.cardcrawl.ui.campfire.AbstractCampfireOption;
+import fgo.characters.Master;
 import javassist.CannotCompileException;
 import javassist.expr.ExprEditor;
 import javassist.expr.FieldAccess;
@@ -30,7 +31,7 @@ public class CampfireOptionPatch {
     }
 
     public static void insertCampfireOptions(ArrayList<AbstractCampfireOption> buttons) {
-        if (AbstractDungeon.player instanceof fgo.characters.master)
+        if (AbstractDungeon.player instanceof Master)
             buttons.add(new AlterOption());
     }
 }

@@ -27,10 +27,7 @@ public class Revelation extends FGOCard {
         setExhaust();
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new Revelation();
-    }
+
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

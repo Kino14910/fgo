@@ -6,7 +6,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import fgo.action.FgoNpAction;
 import fgo.cards.FGOCard;
-import fgo.characters.master;
+import fgo.characters.Master;
 import fgo.patches.Enum.FGOCardColor;
 import fgo.util.CardStats;
 
@@ -24,22 +24,19 @@ public class AnimalDialogue extends FGOCard {
         setMagic(20, -5);
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new AnimalDialogue();
-    }
+
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (master.fgoNp >= magicNumber) {
-            addToBot(new GainEnergyAction(master.fgoNp / magicNumber));
-            addToBot(new FgoNpAction(-master.fgoNp));
+        if (Master.fgoNp >= magicNumber) {
+            addToBot(new GainEnergyAction(Master.fgoNp / magicNumber));
+            addToBot(new FgoNpAction(-Master.fgoNp));
         }
     }
 
     @Override
     public void triggerOnGlowCheck() {
-        if (master.fgoNp >= magicNumber) {
+        if (Master.fgoNp >= magicNumber) {
             glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
         } else {
             glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();

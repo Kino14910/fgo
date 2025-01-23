@@ -42,10 +42,7 @@ public class BeyondTheFurthestEnd extends FGOCard {
         return -1.0F;
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new BeyondTheFurthestEnd();
-    }
+    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

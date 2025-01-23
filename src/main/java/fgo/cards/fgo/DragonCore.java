@@ -24,10 +24,7 @@ public class DragonCore extends FGOCard {
         setCostUpgrade(1);
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new DragonCore();
-    }
+    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

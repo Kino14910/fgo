@@ -26,10 +26,7 @@ public class KnightStance extends FGOCard {
         setMagic(1);
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new KnightStance();
-    }
+
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

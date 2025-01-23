@@ -24,10 +24,7 @@ public class MonteCristoTreasure extends FGOCard {
         setCostUpgrade(2);
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new MonteCristoTreasure();
-    }
+    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

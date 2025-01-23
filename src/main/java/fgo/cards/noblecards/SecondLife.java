@@ -25,10 +25,7 @@ public class SecondLife extends AbsNoblePhantasmCard {
     public void upgrade() {
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new SecondLife();
-    }
+
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

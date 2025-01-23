@@ -12,7 +12,6 @@ import fgo.patches.Enum.FGOCardColor;
 import fgo.powers.AtTheWellPower;
 import fgo.util.CardStats;
 
-@AutoAdd.Ignore
 public class AtTheWell extends FGOCard {
     public static final String ID = makeID(AtTheWell.class.getSimpleName());
     private static final CardStats INFO = new CardStats(
@@ -29,10 +28,7 @@ public class AtTheWell extends FGOCard {
         tags.add(CardTags.HEALING);
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new AtTheWell();
-    }
+
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

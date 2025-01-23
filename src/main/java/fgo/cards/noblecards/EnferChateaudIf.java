@@ -26,10 +26,7 @@ public class EnferChateaudIf extends AbsNoblePhantasmCard {
     public void upgrade() {
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new EnferChateaudIf();
-    }
+    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

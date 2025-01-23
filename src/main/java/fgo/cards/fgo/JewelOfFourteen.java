@@ -1,11 +1,10 @@
 package fgo.cards.fgo;
 
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import fgo.action.JewelOfFourteenAction;
 import fgo.cards.FGOCard;
-import fgo.cards.colorless.ignore.FlamesofApplause;
+import fgo.cards.tempCards.FlamesofApplause;
 import fgo.patches.Enum.FGOCardColor;
 import fgo.util.CardStats;
 
@@ -29,10 +28,7 @@ public class JewelOfFourteen extends FGOCard {
         cardsToPreview.upgrade();
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new JewelOfFourteen();
-    }
+    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

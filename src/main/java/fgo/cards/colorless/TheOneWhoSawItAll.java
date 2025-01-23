@@ -21,10 +21,7 @@ public class TheOneWhoSawItAll extends FGOCard {
         setMagic(4, 2);
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new TheOneWhoSawItAll();
-    }
+
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

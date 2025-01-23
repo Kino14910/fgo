@@ -29,10 +29,7 @@ public class TaisuiSMisfortune extends FGOCard {
         setInnate();
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new TaisuiSMisfortune();
-    }
+    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

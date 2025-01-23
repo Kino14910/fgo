@@ -35,10 +35,7 @@ public class HalberdUsurpation extends FGOCard {
         }
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new HalberdUsurpation();
-    }
+    
 
     @Override
     public void calculateCardDamage(AbstractMonster mo) {

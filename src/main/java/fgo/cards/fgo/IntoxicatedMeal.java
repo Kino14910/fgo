@@ -33,10 +33,7 @@ public class IntoxicatedMeal extends FGOCard {
         }
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new IntoxicatedMeal();
-    }
+
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

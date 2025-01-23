@@ -27,10 +27,7 @@ public class MorningLark extends FGOCard {
         setMagic(10, 10);
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new MorningLark();
-    }
+    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

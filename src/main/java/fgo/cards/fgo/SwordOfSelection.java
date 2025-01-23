@@ -25,10 +25,7 @@ public class SwordOfSelection extends FGOCard {
         setCasterBackground();
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new SwordOfSelection();
-    }
+
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

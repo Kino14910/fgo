@@ -29,8 +29,7 @@ public class GiantoftheBridge extends FGOCard {
         setBlock(3, 2);
     }
 
-    @Override
-    public AbstractCard makeCopy() {return new GiantoftheBridge();}
+    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

@@ -30,10 +30,7 @@ public class TeslaCoil extends FGOCard {
         setMagic(3, 1);
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new TeslaCoil();
-    }
+    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

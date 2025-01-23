@@ -29,10 +29,7 @@ public class SchwarzwaldFalke extends FGOCard {
         setCostUpgrade(2);
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new SchwarzwaldFalke();
-    }
+    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

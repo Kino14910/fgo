@@ -6,6 +6,8 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.dungeons.TheBeyond;
+import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.relics.Circlet;
@@ -16,7 +18,7 @@ import fgo.relics.SelfReplenishmentMagic;
 
 import static fgo.FGOMod.makeID;
 
-public class DailyLifeattheBeyond extends PhasedEvent {
+public class DailyLifeattheBeyond extends BaseEvent {
     public static final String ID = makeID(DailyLifeattheBeyond.class.getSimpleName());
     private static final EventStrings eventStrings = CardCrawlGame.languagePack.getEventString(ID);
     private static final String[] DESCRIPTIONS = eventStrings.DESCRIPTIONS;

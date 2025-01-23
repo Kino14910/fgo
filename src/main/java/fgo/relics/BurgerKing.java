@@ -1,10 +1,8 @@
 package fgo.relics;
 
-import basemod.abstracts.CustomRelic;
-import fgo.cards.curse.Dumuzid;
+import fgo.cards.curses.Dumuzid;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;

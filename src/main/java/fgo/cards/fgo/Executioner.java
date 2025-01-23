@@ -29,10 +29,7 @@ public class Executioner extends FGOCard {
         setMagic(1);
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new Executioner();
-    }
+    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

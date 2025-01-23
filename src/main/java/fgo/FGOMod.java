@@ -2,6 +2,7 @@ package fgo;
 
 import basemod.AutoAdd;
 import basemod.BaseMod;
+import basemod.eventUtil.AddEventParams;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Files;
 import com.badlogic.gdx.Gdx;
@@ -16,23 +17,42 @@ import com.evacipated.cardcrawl.modthespire.ModInfo;
 import com.evacipated.cardcrawl.modthespire.Patcher;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.dungeons.Exordium;
+import com.megacrit.cardcrawl.dungeons.TheBeyond;
+import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.monsters.MonsterGroup;
+import com.megacrit.cardcrawl.powers.ArtifactPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
+import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDrawPileEffect;
 import fgo.action.FgoNpAction;
 import fgo.cards.BaseCard;
-import fgo.characters.master;
+import fgo.characters.Master;
+import fgo.event.*;
+import fgo.monster.Emiya;
 import fgo.patches.Button.NoblePhantasmButton;
 import fgo.patches.Enum.FGOCardColor;
 import fgo.patches.Enum.ThmodClassEnum;
 import fgo.potions.BasePotion;
+import fgo.potions.ElixirofRejuvenation;
+import fgo.potions.ExtremelySpicyMapoTofu;
+import fgo.powers.EvasionPower;
 import fgo.powers.NPRatePower;
+import fgo.relics.Avenger;
 import fgo.relics.BaseRelic;
+import fgo.relics.LockChocolateStrawberry;
+import fgo.relics.SuitcaseFgo;
 import fgo.util.GeneralUtils;
 import fgo.util.KeywordInfo;
 import fgo.util.NoblePhantasmVariable;
@@ -55,6 +75,9 @@ public class FGOMod implements
         EditKeywordsSubscriber,
         PostInitializeSubscriber,
         OnCardUseSubscriber,
+        OnStartBattleSubscriber,
+        OnPlayerDamagedSubscriber,
+        PostBattleSubscriber,
         PostUpdateSubscriber,
         PostRenderSubscriber
         {
@@ -112,14 +135,24 @@ public class FGOMod implements
     @Override
     public void receivePostInitialize() {
         registerPotions();
+        registerEvents();
         //This loads the image used as an icon in the in-game mods menu.
-        Texture badgeTexture = TextureLoader.getTexture(imagePath("badge.png"));
+        Texture badgeTexture = TextureLoader.getTexture(imagePath("UI_Master/badge.png"));
         //Set up the mod information displayed in the in-game mods menu.
         //The information used is taken from your pom.xml file.
 
         //If you want to set up a config panel, that will be done here.
         //The Mod Badges page has a basic example of this, but setting up config is overall a bit complex.
         BaseMod.registerModBadge(badgeTexture, info.Name, GeneralUtils.arrToString(info.Authors), info.Description, null);
+
+        Master.fgoNp = 0;
+        //顶部宝具牌预览。
+        //BaseMod.addTopPanelItem(new CurrentNobleCardsTopPanelItem());
+
+
+        BaseMod.addMonster(Emiya.ID, Emiya.NAME, () -> new MonsterGroup(new AbstractMonster[]{new Emiya()}));
+        BaseMod.addBoss(TheCity.ID, Emiya.ID, "fgo/images/monster/map_emiya.png", "fgo/images/monster/map_emiya_outline.png");
+
     }
 
     /*----------Localization----------*/
@@ -150,6 +183,7 @@ public class FGOMod implements
                 e.printStackTrace();
             }
         }
+
     }
 
     private void loadLocalization(String lang) {
@@ -171,6 +205,10 @@ public class FGOMod implements
                 localizationPath(lang, "RelicStrings.json"));
         BaseMod.loadCustomStringsFile(UIStrings.class,
                 localizationPath(lang, "UIStrings.json"));
+        BaseMod.loadCustomStringsFile(MonsterStrings.class,
+                localizationPath(lang, "MonsterStrings.json"));
+        BaseMod.loadCustomStringsFile(TutorialStrings.class,
+                localizationPath(lang, "TutorialStrings.json"));
     }
 
     @Override
@@ -279,7 +317,7 @@ public class FGOMod implements
     @Override
     public void receiveEditCharacters() {
         //添加角色到MOD中
-        BaseMod.addCharacter(new master("Master"), MY_CHARACTER_BUTTON, MASTER_PORTRAIT, MASTER_CLASS);
+        BaseMod.addCharacter(new Master("Master"), MY_CHARACTER_BUTTON, MASTER_PORTRAIT, MASTER_CLASS);
     }
 
     @Override
@@ -320,9 +358,30 @@ public class FGOMod implements
             });
     }
 
+    public static void registerEvents() {
+//        new AutoAdd(modID)
+//                .packageFilter(BaseEvent.class)
+//                .any(BaseEvent.class, (info, event) -> {
+//                    BaseMod.addEvent(event.id, event.getClass(), event.dungeonID);
+//                });
+        //事件。
+        BaseMod.addEvent(WinterEvent.ID, WinterEvent.class, TheCity.ID);
+        //BaseMod.addEvent("FGOLibrary", FGOLibrary.class, "TheCity");
+        BaseMod.addEvent(ConflictEvent.ID, ConflictEvent.class, TheBeyond.ID);
+        BaseMod.addEvent(ProofAndRebuttalEvent.ID, ProofAndRebuttalEvent.class, Exordium.ID);
+        BaseMod.addEvent(ManofChaldea.ID, ManofChaldea.class, TheBeyond.ID);
+        BaseMod.addEvent(Beyondthe.ID, Beyondthe.class, TheBeyond.ID);
+        BaseMod.addEvent(DailyLifeattheBeyond.ID, DailyLifeattheBeyond.class, TheCity.ID);
+        BaseMod.addEvent(DevilSlot.ID, DevilSlot.class, TheBeyond.ID);
+        BaseMod.addEvent((new AddEventParams.Builder(FGOLibrary.ID, FGOLibrary.class))
+                .dungeonID(TheCity.ID)
+                .playerClass(MASTER_CLASS)
+                .create());
+    }
+
     @Override
     public void receiveCardUsed(AbstractCard abstractCard) {
-        if (!(AbstractDungeon.player instanceof master)) {
+        if (!(AbstractDungeon.player instanceof Master)) {
             return;
         }
 
@@ -347,6 +406,50 @@ public class FGOMod implements
         }
     }
 
+    @Override
+    public void receiveOnBattleStart(AbstractRoom abstractRoom) {
+        if (AbstractDungeon.player instanceof Master) {
+            if (AbstractDungeon.player.hasRelic(SuitcaseFgo.ID)) {
+                AbstractDungeon.actionManager.addToBottom(new FgoNpAction(20, true));
+            }
+        }
+    }
+
+    @Override
+    public void receivePostBattle(AbstractRoom r) {
+        if (AbstractDungeon.player instanceof Master) {
+            //在每场战斗开始时宝具值变为0。
+            AbstractDungeon.actionManager.addToBottom(new FgoNpAction(-300));
+            //第一幕boss战获得玛修的两张牌。
+//            if (AbstractDungeon.floorNum == 16) {
+//                AbstractDungeon.getCurrRoom().addRelicToRewards(new LockChocolateStrawberry());
+//            }
+        }
+    }
+
+    @Override
+    public int receiveOnPlayerDamaged(int i, DamageInfo damageInfo) {
+        if (!(AbstractDungeon.player instanceof Master)) {
+            return i;
+        }
+
+        if (damageInfo.type != DamageInfo.DamageType.NORMAL ||
+            damageInfo.owner == null ||
+            damageInfo.owner == AbstractDungeon.player ||
+            AbstractDungeon.currMapNode == null ||
+            AbstractDungeon.getCurrRoom().phase != AbstractRoom.RoomPhase.COMBAT ||
+            i == 99999) {
+            AbstractDungeon.actionManager.addToBottom(new FgoNpAction(100));
+            return i;
+        }
+
+        AbstractDungeon.actionManager.addToBottom(new FgoNpAction(AbstractDungeon.player.hasPower(NPRatePower.POWER_ID) ? i : i/2));
+
+        if (AbstractDungeon.player.hasRelic(Avenger.ID)) {
+            AbstractDungeon.actionManager.addToBottom(new FgoNpAction(i / 10 * 3));
+        }
+        return i;
+    }
 
     @Override
     public void receivePostRender(SpriteBatch sb) {
@@ -357,12 +460,14 @@ public class FGOMod implements
 
     @Override
     public void receivePostUpdate() {
-        if (AbstractDungeon.getCurrMapNode() != null && AbstractDungeon.getCurrRoom() != null && (AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT) {
+        if (AbstractDungeon.getCurrMapNode() != null &&
+                AbstractDungeon.getCurrRoom() != null &&
+                (AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT) {
             if (NoblePhantasmButton.inst == null) {
-                NoblePhantasmButton.inst = new NoblePhantasmButton(AbstractDungeon.player.hb.x - 17.0F * Settings.scale, AbstractDungeon.player.hb.cY + AbstractDungeon.player.hb.height / 2 + 10.0F * Settings.scale);
+                NoblePhantasmButton.inst = new NoblePhantasmButton(AbstractDungeon.player.hb.x - 17.0F * Settings.scale,
+                        AbstractDungeon.player.hb.cY + AbstractDungeon.player.hb.height / 2 + 10.0F * Settings.scale);
             }
             NoblePhantasmButton.inst.update();
         }
     }
-
-}
+        }

@@ -24,10 +24,7 @@ public class GoldenGrail extends FGOCard {
         setExhaust();
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new GoldenGrail();
-    }
+    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

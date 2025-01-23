@@ -24,10 +24,7 @@ public class GoddessMetamorphosisBeast extends FGOCard {
         setEthereal(true, false);
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new GoddessMetamorphosisBeast();
-    }
+    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

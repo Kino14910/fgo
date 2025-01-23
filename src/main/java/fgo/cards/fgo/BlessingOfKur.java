@@ -27,10 +27,7 @@ public class BlessingOfKur extends FGOCard {
         setExhaust();
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new BlessingOfKur();
-    }
+
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

@@ -27,10 +27,7 @@ public class DeathOfDeath extends FGOCard {
         this.tags.add(CardTags.HEALING);
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new DeathOfDeath();
-    }
+    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

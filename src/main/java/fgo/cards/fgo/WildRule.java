@@ -34,10 +34,7 @@ public class WildRule extends FGOCard {
         setMagic(1, 2);
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new WildRule();
-    }
+    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

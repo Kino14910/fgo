@@ -8,7 +8,10 @@ import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.RestRoom;
-import fgo.cards.colorless.ignore.*;
+import fgo.cards.tempCards.BlessedRegenerate;
+import fgo.cards.tempCards.BrilliantEscort;
+import fgo.cards.tempCards.PureCoordinate;
+import fgo.cards.tempCards.SionSkill;
 import fgo.patches.Enum.FGOCardColor;
 
 import java.util.ArrayList;

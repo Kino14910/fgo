@@ -186,7 +186,7 @@
   },
   "fgo:AtTheWell": {
     "NAME": "于泉之处",
-    "DESCRIPTION": "fgo:解除弱化 。 NL 回复 !M! 点生命。 NL fgo:献给世界树的活祭 。 NL 消耗 。"
+    "DESCRIPTION": "fgo:解除弱化 。 NL 回复 !M! 点生命。 NL  fgo:献给世界树的活祭 。 NL 消耗 。"
   },
   "fgo:SquireOfProphecy": {
     "NAME": "祈雨",
@@ -425,7 +425,7 @@
   },
   "fgo:CircuitConnect": {
     "NAME": "回路连接",
-    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 造成 !D! 点伤害。"
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 造成 !D! 点伤害。 NL 打出此牌后，在本回合每打出一张非攻击牌，获得 !M! 颗 fgo:暴击星 。"
   },
   "fgo:GiantoftheBridge": {
     "NAME": "桥之巨人",
@@ -628,7 +628,7 @@
   },
   "fgo:StarBasket": {
     "NAME": "星之笼",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 给予 !M! 点 格挡 。 NL 获得1次随机正面状态。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 给予目标 !M! 点 格挡 。 NL 获得1次随机正面状态。"
   },
   "fgo:PrimevalRune": {
     "NAME": "冰冻暴风雪",
@@ -659,7 +659,7 @@
   },
   "fgo:GloriousStrike": {
     "NAME": "栗蓉馅打击",
-    "DESCRIPTION": "造成 !D! 点伤害2次。 NL 下一回合开始时移除你身上的所有负面状态。 NL 消耗 。"
+    "DESCRIPTION": "造成 !D! 点伤害 !M! 次。 NL 下一回合开始时， fgo:解除弱化 。 NL 消耗 。"
   },
   "fgo:OneTimeOneMeeting": {
     "NAME": "一期一会",

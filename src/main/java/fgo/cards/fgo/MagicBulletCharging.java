@@ -31,10 +31,7 @@ public class MagicBulletCharging extends FGOCard {
         setDamage(15, 5, true);
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new MagicBulletCharging();
-    }
+
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

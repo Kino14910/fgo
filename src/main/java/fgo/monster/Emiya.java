@@ -1,9 +1,10 @@
 package fgo.monster;
 
+import com.megacrit.cardcrawl.audio.MainMusic;
 import fgo.action.WaitFgoAction;
 import fgo.action.lor.ChangeSceneEffect;
 import fgo.cards.noblecards.Unlimited;
-import fgo.characters.master;
+import fgo.characters.Master;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -26,10 +27,12 @@ import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import fgo.powers.CriticalDamageUpPower;
 import fgo.powers.monster.StarGainMonsterPower;
 
+import static fgo.FGOMod.makeID;
+
 public class Emiya extends AbstractMonster {
-    public static final String ID = "FgoMaster:Emiya";
-    public static final String IMG = "img/monster/Emiya.png";
-    private static final MonsterStrings monsterStrings = CardCrawlGame.languagePack.getMonsterStrings("FgoMaster:Emiya");
+    public static final String ID = makeID(Emiya.class.getSimpleName());
+    public static final String IMG = "fgo/images/monster/Emiya.png";
+    private static final MonsterStrings monsterStrings = CardCrawlGame.languagePack.getMonsterStrings("fgo:Emiya");
     public static final String NAME = monsterStrings.NAME;
     public static final String[] MOVES = monsterStrings.MOVES;
     public static final String[] DIALOG = monsterStrings.DIALOG;
@@ -111,7 +114,7 @@ public class Emiya extends AbstractMonster {
             case 6:
                 AbstractDungeon.topLevelEffects.add(new FadeWipeParticle());
                 this.addToBot(new WaitFgoAction(1.0F));
-                this.addToBot(new VFXAction(new ChangeSceneEffect(ImageMaster.loadImage("fgo/images/vfx_master/UnlimitedBg.png"))));
+                this.addToBot(new VFXAction(new ChangeSceneEffect(ImageMaster.loadImage("fgo/images/vfx/UnlimitedBg.png"))));
                 this.addToBot(new WaitAction(2.5F));
                 CardCrawlGame.music.silenceTempBgmInstantly();
                 CardCrawlGame.music.silenceBGMInstantly();
@@ -151,7 +154,7 @@ public class Emiya extends AbstractMonster {
         super.die();
         //CardCrawlGame.sound.play("CHOSEN_DEATH");
         //如果你没有无限剑制。
-        if (!CardHelper.hasCardWithID(Unlimited.ID) && AbstractDungeon.player instanceof master) {
+        if (!CardHelper.hasCardWithID(Unlimited.ID) && AbstractDungeon.player instanceof Master) {
             AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new Unlimited(), (float)Settings.WIDTH / 2.0F + 190.0F * Settings.scale, (float)Settings.HEIGHT / 2.0F));
         }
     }

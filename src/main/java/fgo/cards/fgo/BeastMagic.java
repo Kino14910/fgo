@@ -23,10 +23,7 @@ public class BeastMagic extends FGOCard {
         setMagic(2, 1);
     }
     
-    @Override
-    public AbstractCard makeCopy() {
-        return new BeastMagic();
-    }
+    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

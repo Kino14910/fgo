@@ -8,14 +8,13 @@ import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
 import fgo.cards.FGOCard;
-import fgo.cards.colorless.ignore.FgoInsight;
+import fgo.cards.tempCards.FgoInsight;
 import fgo.patches.Enum.FGOCardColor;
 import fgo.util.CardStats;
 
@@ -39,10 +38,7 @@ public class WindsweptSlash extends FGOCard {
         FlavorText.AbstractCardFlavorFields.flavorBoxType.set(this, FlavorText.boxType.TRADITIONAL);
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new WindsweptSlash();
-    }
+    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

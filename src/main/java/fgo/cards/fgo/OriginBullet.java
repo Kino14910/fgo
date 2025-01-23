@@ -27,8 +27,7 @@ public class OriginBullet extends FGOCard {
         setMagic(3, 3);
     }
 
-    @Override
-    public AbstractCard makeCopy() {return new OriginBullet();}
+    
 
     @Override
     public void calculateCardDamage(AbstractMonster mo) {

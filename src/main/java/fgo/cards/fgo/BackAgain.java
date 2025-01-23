@@ -34,10 +34,7 @@ public class BackAgain extends FGOCard {
         FlavorText.AbstractCardFlavorFields.flavorBoxType.set(this, FlavorText.boxType.TRADITIONAL);
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new BackAgain();
-    }
+    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

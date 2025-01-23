@@ -22,10 +22,7 @@ public class UndeadBird extends FGOCard {
         setExhaust();
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new UndeadBird();
-    }
+
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

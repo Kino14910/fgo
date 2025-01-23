@@ -19,7 +19,7 @@ public class WarriorsBlade extends FGOCard {
     private static final CardStats INFO = new CardStats(
             FGOCardColor.FGO,
             CardType.ATTACK,
-            CardRarity.UNCOMMON,
+            CardRarity.COMMON,
             CardTarget.ALL_ENEMY,
             1
     );
@@ -29,10 +29,7 @@ public class WarriorsBlade extends FGOCard {
         setMagic(6);
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new WarriorsBlade();
-    }
+    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

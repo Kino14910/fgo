@@ -27,10 +27,7 @@ public class PutOnFakeFace extends FGOCard {
     public void upgrade() {
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new PutOnFakeFace();
-    }
+    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

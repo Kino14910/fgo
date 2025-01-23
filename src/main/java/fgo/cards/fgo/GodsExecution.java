@@ -32,10 +32,7 @@ public class GodsExecution extends FGOCard {
         setMagic(1, 1);
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new GodsExecution();
-    }
+    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

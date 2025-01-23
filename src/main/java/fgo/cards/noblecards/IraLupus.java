@@ -31,10 +31,7 @@ public class IraLupus extends AbsNoblePhantasmCard {
         cardArtLayers512.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH)));
         cardArtLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH_P)));
     }
-    @Override
-    public AbstractCard makeCopy() {
-        return new IraLupus();
-    }
+
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

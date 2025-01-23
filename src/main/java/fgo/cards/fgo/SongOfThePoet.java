@@ -24,10 +24,7 @@ public class SongOfThePoet extends FGOCard {
         setMagic(3);
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new SongOfThePoet();
-    }
+
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

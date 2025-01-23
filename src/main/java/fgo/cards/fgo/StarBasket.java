@@ -30,10 +30,7 @@ public class StarBasket extends FGOCard {
         setMagic(5);
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new StarBasket();
-    }
+    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

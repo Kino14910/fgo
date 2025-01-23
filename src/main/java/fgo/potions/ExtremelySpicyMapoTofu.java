@@ -1,10 +1,8 @@
 package fgo.potions;
 
 import basemod.BaseMod;
-import basemod.abstracts.CustomPotion;
-import com.badlogic.gdx.utils.compression.lzma.Base;
-import fgo.cards.colorless.potionCards.Kaleidoscope;
-import fgo.cards.colorless.potionCards.TheBlackGrail;
+import fgo.cards.optionCards.Kaleidoscope;
+import fgo.cards.optionCards.TheBlackGrail;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;

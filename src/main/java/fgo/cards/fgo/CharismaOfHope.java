@@ -28,7 +28,7 @@ public class CharismaOfHope extends FGOCard {
     );
     public CharismaOfHope() {
         super(ID, INFO);
-        setDamage(9);
+        setDamage(9, 3);
         setNP(20, 10);
         setCasterBackground();
 
@@ -36,10 +36,7 @@ public class CharismaOfHope extends FGOCard {
         FlavorText.AbstractCardFlavorFields.flavorBoxType.set(this, FlavorText.boxType.TRADITIONAL);
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new CharismaOfHope();
-    }
+    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

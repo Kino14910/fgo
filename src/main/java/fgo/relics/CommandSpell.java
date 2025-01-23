@@ -6,9 +6,9 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.input.InputHelper;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
-import fgo.cards.colorless.ignore.CommandSpellGuts;
-import fgo.cards.colorless.ignore.ReleaseNoblePhantasm;
-import fgo.cards.colorless.ignore.RepairSpiritOrigin;
+import fgo.cards.optionCards.RestoreSpiritOrigin;
+import fgo.cards.optionCards.ReleaseNoblePhantasm;
+import fgo.cards.optionCards.RepairSpiritOrigin;
 import fgo.patches.Enum.FGOCardColor;
 
 import java.util.ArrayList;
@@ -78,7 +78,13 @@ public class CommandSpell extends BaseRelic {
     @Override
     public void onTrigger() {
         ArrayList<AbstractCard> stanceChoices = new ArrayList<>();
-        stanceChoices.add(new CommandSpellGuts());
+        if(AbstractDungeon.currMapNode == null ||
+            AbstractDungeon.getCurrRoom().phase != AbstractRoom.RoomPhase.COMBAT){
+            new RestoreSpiritOrigin().use(AbstractDungeon.player, null);
+            this.setCounter(0);
+            return;
+        }
+        stanceChoices.add(new RestoreSpiritOrigin());
 
         this.addToBot(new ChooseOneAction(stanceChoices));
         this.setCounter(0);

@@ -23,10 +23,7 @@ public class Chasmatis extends FGOCard {
         setMagic(1, 1);
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new Chasmatis();
-    }
+    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

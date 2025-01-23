@@ -29,10 +29,7 @@ public class DivineDualEdge extends FGOCard {
         setExhaust();
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new DivineDualEdge();
-    }
+    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

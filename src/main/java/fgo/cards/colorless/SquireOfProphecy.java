@@ -23,10 +23,7 @@ public class SquireOfProphecy extends FGOCard {
         setExhaust();
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new SquireOfProphecy();
-    }
+    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

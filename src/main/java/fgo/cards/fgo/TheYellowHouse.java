@@ -38,10 +38,7 @@ public class TheYellowHouse extends FGOCard {
         FlavorText.AbstractCardFlavorFields.flavorBoxType.set(this, FlavorText.boxType.TRADITIONAL);
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new TheYellowHouse();
-    }
+
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

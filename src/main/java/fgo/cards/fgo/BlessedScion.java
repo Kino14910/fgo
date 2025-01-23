@@ -37,10 +37,7 @@ public class BlessedScion extends FGOCard {
         }
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new BlessedScion();
-    }
+    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

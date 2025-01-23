@@ -23,10 +23,7 @@ public class ReplicaAgateram extends FGOCard {
         setBlock(6, 4);
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new ReplicaAgateram();
-    }
+
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

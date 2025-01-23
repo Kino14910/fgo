@@ -31,10 +31,7 @@ public class GrandOrder extends FGOCard {
     public void upgrade() {
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new GrandOrder();
-    }
+    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

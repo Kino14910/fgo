@@ -29,10 +29,7 @@ public class PeerlessStrike extends FGOCard {
         setExhaust();
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new PeerlessStrike();
-    }
+    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

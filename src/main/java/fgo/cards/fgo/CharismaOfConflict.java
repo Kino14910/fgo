@@ -25,16 +25,13 @@ public class CharismaOfConflict extends FGOCard {
     );
     public CharismaOfConflict() {
         super(ID, INFO);
-        setDamage(10, 4, true);
+        setDamage(10, 3, true);
         setMagic(20, 10);
         setExhaust();
         tags.add(CardTags.HEALING);
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new CharismaOfConflict();
-    }
+
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

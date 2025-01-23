@@ -31,10 +31,7 @@ public class MysticEyes extends FGOCard {
         setExhaust();
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new MysticEyes();
-    }
+    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

@@ -25,10 +25,7 @@ public class MillenniumCastle extends FGOCard {
         this.portraitImg = ImageMaster.loadImage("fgo/images/cards/power/MillenniumCastle.png");
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new MillenniumCastle();
-    }
+    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

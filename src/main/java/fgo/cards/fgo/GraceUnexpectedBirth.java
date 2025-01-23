@@ -37,10 +37,7 @@ public class GraceUnexpectedBirth extends FGOCard {
         return -1.0F;
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new GraceUnexpectedBirth();
-    }
+    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

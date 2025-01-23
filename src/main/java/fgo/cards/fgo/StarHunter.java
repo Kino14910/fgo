@@ -30,10 +30,7 @@ public class StarHunter extends FGOCard {
         setExhaust();
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new StarHunter();
-    }
+    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

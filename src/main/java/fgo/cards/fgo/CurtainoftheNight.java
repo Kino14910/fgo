@@ -22,10 +22,7 @@ public class CurtainoftheNight extends FGOCard {
         setMagic(1, 1);
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new CurtainoftheNight();
-    }
+    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

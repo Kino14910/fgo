@@ -4,7 +4,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import fgo.cards.colorless.ignore.FlamesofApplause;
+import fgo.cards.tempCards.FlamesofApplause;
 
 public class JewelOfFourteenAction extends AbstractGameAction {
     private final boolean upgrade;

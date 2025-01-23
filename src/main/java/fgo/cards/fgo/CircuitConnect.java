@@ -13,6 +13,8 @@ import com.megacrit.cardcrawl.powers.NextTurnBlockPower;
 import com.megacrit.cardcrawl.vfx.combat.ClashEffect;
 import fgo.cards.FGOCard;
 import fgo.patches.Enum.FGOCardColor;
+import fgo.powers.StarRatePower;
+import fgo.powers.StarRegenPower;
 import fgo.util.CardStats;
 
 public class CircuitConnect extends FGOCard {
@@ -26,21 +28,20 @@ public class CircuitConnect extends FGOCard {
     );
     public CircuitConnect() {
         super(ID, INFO);
-        setBlock(3, 1);
-        setDamage(3, 1);
+        setDamage(3, 2);
+        setBlock(3, 2);
+        setMagic(1);
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new CircuitConnect();
-    }
+    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new GainBlockAction(p, p, block));
+        addToBot(new GainBlockAction(p, p, block));
         if (m != null) {
-            this.addToBot(new VFXAction(new ClashEffect(m.hb.cX, m.hb.cY), 0.1F));
+            addToBot(new VFXAction(new ClashEffect(m.hb.cX, m.hb.cY), 0.1F));
         }
-        this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
+        addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
+        addToBot(new ApplyPowerAction(p, p, new StarRatePower(p, magicNumber)));
     }
 }

@@ -25,10 +25,7 @@ public class EndOfADream extends FGOCard {
         setSelfRetain(false, true);
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new EndOfADream();
-    }
+    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

@@ -30,10 +30,7 @@ public class FacelessMoon extends FGOCard {
         FlavorText.AbstractCardFlavorFields.flavorBoxType.set(this, FlavorText.boxType.TRADITIONAL);
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new FacelessMoon();
-    }
+    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

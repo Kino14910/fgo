@@ -25,10 +25,7 @@ public class ExcaliburGalatine extends AbsNoblePhantasmCard {
         cardArtLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH_P)));
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new ExcaliburGalatine();
-    }
+    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

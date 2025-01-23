@@ -36,10 +36,7 @@ public class CurseDisaster extends FGOCard {
     public void upgrade() {
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new CurseDisaster();
-    }
+    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {}

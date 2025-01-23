@@ -11,8 +11,8 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
 import fgo.cards.FGOCard;
-import fgo.cards.status.PhasingFluidBladeATTACK;
-import fgo.cards.status.PhasingFluidBladeSKILL;
+import fgo.cards.optionCards.PhasingFluidBladeATTACK;
+import fgo.cards.optionCards.PhasingFluidBladeSKILL;
 import fgo.patches.Enum.FGOCardColor;
 import fgo.util.CardStats;
 
@@ -33,10 +33,7 @@ public class PhasingFluidBlade extends FGOCard {
         setMagic(2);
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new PhasingFluidBlade();
-    }
+    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

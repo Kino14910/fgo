@@ -30,7 +30,7 @@ public class DreamUponTheStars extends FGOCard {
         super(ID, INFO);
         setBlock(8, 3);
         setNP(10);
-        setMagic(20, 30);
+        setMagic(20, 10);
     }
 
     @Override
@@ -40,9 +40,6 @@ public class DreamUponTheStars extends FGOCard {
         addToBot(new ApplyPowerAction(p, p, new NPDamagePower(p, magicNumber)));
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new DreamUponTheStars();
-    }
+
 
 }

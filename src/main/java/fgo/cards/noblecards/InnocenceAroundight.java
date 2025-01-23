@@ -4,14 +4,11 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import fgo.cards.AbsNoblePhantasmCard;
-import fgo.cards.colorless.ignore.RayHorizon;
+import fgo.cards.tempCards.RayHorizon;
 import fgo.hexui_lib.util.RenderImageLayer;
 import fgo.hexui_lib.util.TextureLoader;
 import fgo.powers.NPRatePower;
@@ -34,8 +31,7 @@ public class InnocenceAroundight extends AbsNoblePhantasmCard {
         cardArtLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH_P)));
     }
 
-    @Override
-    public AbstractCard makeCopy() {return new InnocenceAroundight();}
+    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

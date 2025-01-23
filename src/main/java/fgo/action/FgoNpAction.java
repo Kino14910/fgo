@@ -4,7 +4,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.vfx.TextAboveCreatureEffect;
-import fgo.characters.master;
+import fgo.characters.Master;
 
 public class FgoNpAction extends AbstractGameAction {
     private final int amount;
@@ -19,12 +19,12 @@ public class FgoNpAction extends AbstractGameAction {
     }
 
     public void update() {
-        int oldNp = master.fgoNp;
+        int oldNp = Master.fgoNp;
         // 0 <= fgoNP <=300
-        master.fgoNp = Math.min(Math.max(master.fgoNp + this.amount, 0), 300);
+        Master.fgoNp = Math.min(Math.max(Master.fgoNp + this.amount, 0), 300);
         // 保留了一部分fgo特性，让你知道自己在玩fgo
-        if(master.fgoNp == 99 && oldNp < 99){
-            master.fgoNp = 100;
+        if(Master.fgoNp == 99 && oldNp < 99){
+            Master.fgoNp = 100;
         }
 
         if (this.canText) {
@@ -36,8 +36,8 @@ public class FgoNpAction extends AbstractGameAction {
             Color.WHITE.cpy()));
 }
 
-        if (AbstractDungeon.player instanceof master) {
-            ((master)AbstractDungeon.player).TruthValueUpdatedEvent();
+        if (AbstractDungeon.player instanceof Master) {
+            ((Master)AbstractDungeon.player).TruthValueUpdatedEvent();
         }
 
         this.isDone = true;

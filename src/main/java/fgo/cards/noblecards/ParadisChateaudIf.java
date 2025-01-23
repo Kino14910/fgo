@@ -30,10 +30,7 @@ public class ParadisChateaudIf extends AbsNoblePhantasmCard {
         cardArtLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH_P)));
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new ParadisChateaudIf();
-    }
+    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

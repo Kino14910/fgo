@@ -1,6 +1,5 @@
 package fgo.event;
 
-import basemod.abstracts.events.PhasedEvent;
 import fgo.cards.colorless.*;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -12,12 +11,12 @@ import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import fgo.cards.fgo.DeathOfDeath;
-import fgo.cards.fgo.Ignore.SpringOfFire;
+import fgo.cards.fgo.SpringOfFire;
 
 
 import static fgo.FGOMod.makeID;
 
-public class FGOLibrary extends PhasedEvent {
+public class FGOLibrary extends BaseEvent {
     public static final String ID = makeID(FGOLibrary.class.getSimpleName());
     private static final EventStrings eventStrings = CardCrawlGame.languagePack.getEventString(ID);
     private static final String[] DESCRIPTIONS = eventStrings.DESCRIPTIONS;

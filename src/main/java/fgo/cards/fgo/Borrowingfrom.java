@@ -1,11 +1,10 @@
 package fgo.cards.fgo;
 
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import fgo.action.FgoNpAction;
 import fgo.cards.FGOCard;
-import fgo.characters.master;
+import fgo.characters.Master;
 import fgo.patches.Enum.FGOCardColor;
 import fgo.util.CardStats;
 
@@ -23,13 +22,10 @@ public class Borrowingfrom extends FGOCard {
         setMagic(2, 1);
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new Borrowingfrom();
-    }
+    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new FgoNpAction(master.fgoNp / magicNumber));
+        addToBot(new FgoNpAction(Master.fgoNp / magicNumber));
     }
 }

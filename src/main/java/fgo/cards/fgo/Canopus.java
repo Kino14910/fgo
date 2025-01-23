@@ -29,10 +29,7 @@ public class Canopus extends FGOCard {
         cardsToPreview = new CurseDisaster();
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new Canopus();
-    }
+
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

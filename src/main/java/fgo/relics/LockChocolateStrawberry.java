@@ -5,8 +5,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
-import fgo.cards.colorless.ignore.BlackBarrel;
-import fgo.cards.colorless.ignore.WallOfSnowflakes;
+import fgo.cards.colorless.mash.BlackBarrel;
+import fgo.cards.colorless.mash.WallOfSnowflakes;
 import fgo.patches.Enum.FGOCardColor;
 
 import static com.megacrit.cardcrawl.helpers.ImageMaster.loadImage;

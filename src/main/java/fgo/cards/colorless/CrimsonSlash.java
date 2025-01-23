@@ -42,10 +42,7 @@ public class CrimsonSlash extends FGOCard {
         }
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new CrimsonSlash();
-    }
+
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

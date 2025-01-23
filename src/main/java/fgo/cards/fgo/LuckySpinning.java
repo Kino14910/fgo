@@ -27,10 +27,7 @@ public class LuckySpinning extends FGOCard {
         setMagic(3, 1);
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new LuckySpinning();
-    }
+
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

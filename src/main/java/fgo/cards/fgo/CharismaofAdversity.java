@@ -27,10 +27,7 @@ public class CharismaofAdversity extends FGOCard {
         setDamage(6, 2);
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new CharismaofAdversity();
-    }
+    
 
 
     int[] healthThresholds = {65, 50, 35, 15};

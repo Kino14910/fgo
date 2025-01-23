@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import fgo.cards.FGOCard;
-import fgo.cards.SupportCraft.SupportCraft;
+import fgo.cards.tempCards.SupportCraft;
 import fgo.patches.Enum.CardTagsEnum;
 import fgo.patches.Enum.FGOCardColor;
 import fgo.util.CardStats;
@@ -33,10 +33,7 @@ public class ChildrenSHero extends FGOCard {
         FlavorText.AbstractCardFlavorFields.flavorBoxType.set(this, FlavorText.boxType.TRADITIONAL);
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new ChildrenSHero();
-    }
+
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

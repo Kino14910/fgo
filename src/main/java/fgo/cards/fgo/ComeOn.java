@@ -29,10 +29,7 @@ public class ComeOn extends FGOCard {
         setExhaust();
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new ComeOn();
-    }
+
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

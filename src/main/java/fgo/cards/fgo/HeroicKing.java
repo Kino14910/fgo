@@ -27,10 +27,7 @@ public class HeroicKing extends FGOCard {
         setMagic(2);
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new HeroicKing();
-    }
+    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

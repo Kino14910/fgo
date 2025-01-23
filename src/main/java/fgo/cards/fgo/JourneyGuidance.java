@@ -15,7 +15,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.StarBounceEffect;
 import com.megacrit.cardcrawl.vfx.combat.ViolentAttackEffect;
 import fgo.cards.FGOCard;
-import fgo.cards.colorless.ignore.SoulOfWaterChannels;
+import fgo.cards.tempCards.SoulOfWaterChannels;
 import fgo.patches.Enum.FGOCardColor;
 import fgo.powers.WatersidePower;
 import fgo.util.CardStats;
@@ -35,8 +35,7 @@ public class JourneyGuidance extends FGOCard {
         cardsToPreview = new SoulOfWaterChannels();
     }
 
-    @Override
-    public AbstractCard makeCopy() {return new JourneyGuidance();}
+    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

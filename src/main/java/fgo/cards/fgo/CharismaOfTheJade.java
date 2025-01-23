@@ -27,10 +27,7 @@ public class CharismaOfTheJade extends FGOCard {
         setDamage(9, 3);
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new CharismaOfTheJade();
-    }
+    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

@@ -29,8 +29,7 @@ public class ManaBurstGems extends FGOCard {
         portraitImg = ImageMaster.loadImage("fgo/images/cards/skill/ManaBurstGems.png");
     }
 
-    @Override
-    public AbstractCard makeCopy() {return new ManaBurstGems();}
+    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

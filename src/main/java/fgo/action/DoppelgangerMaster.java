@@ -6,7 +6,7 @@ import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import fgo.cards.SupportCraft.SupportCraft;
+import fgo.cards.tempCards.SupportCraft;
 import fgo.patches.Enum.CardTagsEnum;
 
 public class DoppelgangerMaster extends AbstractGameAction {

@@ -1,6 +1,8 @@
 package fgo.event;
 
 import basemod.abstracts.events.PhasedEvent;
+import com.badlogic.gdx.utils.compression.lzma.Base;
+import com.megacrit.cardcrawl.dungeons.TheBeyond;
 import fgo.cards.colorless.Shvibzik;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -12,13 +14,13 @@ import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 
 import static fgo.FGOMod.makeID;
 
-public class Beyondthe extends PhasedEvent {
+public class Beyondthe extends BaseEvent {
     public static final String ID = makeID(Beyondthe.class.getSimpleName());
     private static final EventStrings eventStrings = CardCrawlGame.languagePack.getEventString(ID);
     private static final String[] DESCRIPTIONS = eventStrings.DESCRIPTIONS;
     private static final String[] OPTIONS = eventStrings.OPTIONS;
     private static final String title = eventStrings.NAME;
-    private ManofChaldea.CUR_SCREEN screen;
+    private CUR_SCREEN screen;
     private final int maxHPAmt;
     public Beyondthe() {
         super(ID, title, "fgo/images/events/Beyondthe.png");
@@ -28,7 +30,7 @@ public class Beyondthe extends PhasedEvent {
         } else {
             this.maxHPAmt = MathUtils.round(6);
         }
-        this.screen = ManofChaldea.CUR_SCREEN.CONTINUE0;
+        this.screen = CUR_SCREEN.CONTINUE0;
         //人类即为过去延续到未来的足迹（记忆）， NL 只有一直积累经验、知识与故事， NL 才能作为人而不断成长。
         this.imageEventText.setDialogOption(OPTIONS[0]);
     }
@@ -40,7 +42,7 @@ public class Beyondthe extends PhasedEvent {
                 this.imageEventText.updateBodyText(DESCRIPTIONS[1]);
                 this.imageEventText.updateDialogOption(0, OPTIONS[1], new Shvibzik());
                 this.imageEventText.setDialogOption(OPTIONS[2] + this.maxHPAmt + OPTIONS[3]);
-                this.screen = ManofChaldea.CUR_SCREEN.CONTINUE1;
+                this.screen = CUR_SCREEN.CONTINUE1;
                 break;
             case CONTINUE1:
                 switch (buttonPressed) {
@@ -49,14 +51,14 @@ public class Beyondthe extends PhasedEvent {
                         this.imageEventText.clearAllDialogs();
                         this.imageEventText.setDialogOption(OPTIONS[4]);
                         this.imageEventText.updateBodyText(DESCRIPTIONS[2]);
-                        this.screen = ManofChaldea.CUR_SCREEN.CONTINUE2;
+                        this.screen = CUR_SCREEN.CONTINUE2;
                         return;
                     case 1:
                         AbstractDungeon.player.increaseMaxHp(this.maxHPAmt, true);
                         this.imageEventText.clearAllDialogs();
                         this.imageEventText.setDialogOption(OPTIONS[4]);
                         this.imageEventText.updateBodyText(DESCRIPTIONS[2]);
-                        this.screen = ManofChaldea.CUR_SCREEN.CONTINUE2;
+                        this.screen = CUR_SCREEN.CONTINUE2;
                         return;
                 }
                 break;

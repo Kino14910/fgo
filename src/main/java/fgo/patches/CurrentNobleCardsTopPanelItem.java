@@ -2,10 +2,10 @@ package fgo.patches;
 
 import basemod.ReflectionHacks;
 import basemod.TopPanelItem;
-import fgo.cards.colorless.ignore.BlackBarrel;
+import fgo.cards.colorless.mash.BlackBarrel;
 import fgo.cards.colorless.Revelation;
-import fgo.cards.colorless.ignore.WallOfSnowflakes;
-import fgo.cards.colorless.ignore.FlamesofApplause;
+import fgo.cards.colorless.mash.WallOfSnowflakes;
+import fgo.cards.tempCards.FlamesofApplause;
 import fgo.cards.fgo.*;
 import fgo.cards.noblecards.*;
 import com.badlogic.gdx.Gdx;

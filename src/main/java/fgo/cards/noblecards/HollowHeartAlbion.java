@@ -29,10 +29,7 @@ public class HollowHeartAlbion extends AbsNoblePhantasmCard {
         cardArtLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH_P)));
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new HollowHeartAlbion();
-    }
+
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

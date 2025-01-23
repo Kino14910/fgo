@@ -32,10 +32,7 @@ public class LostLonginus extends AbsNoblePhantasmCard {
         cardArtLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH_P)));
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new LostLonginus();
-    }
+    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

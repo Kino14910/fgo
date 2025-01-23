@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import fgo.action.FgoNpAction;
 import fgo.action.SparksRouteAction;
 import fgo.cards.FGOCard;
-import fgo.characters.master;
+import fgo.characters.Master;
 import fgo.patches.Enum.FGOCardColor;
 import fgo.util.CardStats;
 
@@ -35,10 +35,7 @@ public class SparksRoute extends FGOCard {
         FlavorText.AbstractCardFlavorFields.flavorBoxType.set(this, FlavorText.boxType.TRADITIONAL);
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new SparksRoute();
-    }
+    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -56,7 +53,7 @@ public class SparksRoute extends FGOCard {
         if (!canUse) {
             return false;
         } else {
-            if (master.fgoNp <= 10) {
+            if (Master.fgoNp <= 10) {
                 canUse = false;
                 cantUseMessage = cardStrings.EXTENDED_DESCRIPTION[0];
             }
@@ -67,7 +64,7 @@ public class SparksRoute extends FGOCard {
 
     @Override
     public void triggerOnGlowCheck() {
-        if (master.fgoNp >= 10) {
+        if (Master.fgoNp >= 10) {
             glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
         }
     }

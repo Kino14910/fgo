@@ -24,10 +24,7 @@ public class DesiresSalvation extends FGOCard {
         setInnate(false, true);
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new DesiresSalvation();
-    }
+    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

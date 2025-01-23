@@ -23,20 +23,19 @@ public class GloriousStrike extends FGOCard {
     );
     public GloriousStrike() {
         super(ID, INFO);
-        setDamage(8, 4);
+        setDamage(6);
+        setMagic(2, 1);
         setExhaust();
         tags.add(CardTags.STRIKE);
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new GloriousStrike();
-    }
+
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-        addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+        for (int i = 0; i < magicNumber; i++) {
+            addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+        }
         addToBot(new ApplyPowerAction(p, p, new GloriousStrikePower(p)));
     }
 }

@@ -42,10 +42,7 @@ public class VoidSpaceFineArts extends FGOCard {
         }
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new VoidSpaceFineArts();
-    }
+    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

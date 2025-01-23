@@ -1,6 +1,8 @@
 package fgo.event;
 
 import basemod.abstracts.events.PhasedEvent;
+import com.megacrit.cardcrawl.dungeons.Exordium;
+import com.megacrit.cardcrawl.dungeons.TheBeyond;
 import fgo.cards.colorless.ProofAndRebuttal;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -22,7 +24,7 @@ import java.util.Random;
 
 import static fgo.FGOMod.makeID;
 
-public class ProofAndRebuttalEvent extends PhasedEvent {
+public class ProofAndRebuttalEvent extends BaseEvent {
     public static final String ID = makeID(ProofAndRebuttalEvent.class.getSimpleName());
     private static final EventStrings eventStrings = CardCrawlGame.languagePack.getEventString(ID);
     private static final String[] DESCRIPTIONS = eventStrings.DESCRIPTIONS;

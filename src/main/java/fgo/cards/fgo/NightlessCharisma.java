@@ -24,10 +24,7 @@ public class NightlessCharisma extends FGOCard {
         setCostUpgrade(0);
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new NightlessCharisma();
-    }
+    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

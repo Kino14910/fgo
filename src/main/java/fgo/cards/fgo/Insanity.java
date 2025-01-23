@@ -33,10 +33,7 @@ public class Insanity extends FGOCard {
         FlavorText.AbstractCardFlavorFields.flavorBoxType.set(this, FlavorText.boxType.TRADITIONAL);
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new Insanity();
-    }
+    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

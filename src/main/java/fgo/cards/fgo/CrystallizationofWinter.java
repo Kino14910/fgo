@@ -26,10 +26,7 @@ public class CrystallizationofWinter extends FGOCard {
 
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new CrystallizationofWinter();
-    }
+
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

@@ -26,10 +26,7 @@ public class YinYangFish extends FGOCard {
         setExhaust();
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new YinYangFish();
-    }
+    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

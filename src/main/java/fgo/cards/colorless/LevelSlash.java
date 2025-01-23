@@ -29,10 +29,7 @@ public class LevelSlash extends FGOCard {
         setExhaust();
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new LevelSlash();
-    }
+    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

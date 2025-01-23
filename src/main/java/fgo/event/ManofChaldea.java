@@ -3,13 +3,14 @@ package fgo.event;
 import basemod.abstracts.events.PhasedEvent;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.dungeons.TheBeyond;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.vfx.RainingGoldEffect;
 
 
 import static fgo.FGOMod.makeID;
 
-public class ManofChaldea extends PhasedEvent {
+public class ManofChaldea extends BaseEvent {
     public static final String ID = makeID(ManofChaldea.class.getSimpleName());
     private static final EventStrings eventStrings = CardCrawlGame.languagePack.getEventString(ID);
     private static final String[] DESCRIPTIONS = eventStrings.DESCRIPTIONS;
@@ -91,23 +92,5 @@ public class ManofChaldea extends PhasedEvent {
             case CONTINUE11:
                 this.openMap();
             }
-    }
-
-    enum CUR_SCREEN {
-        CONTINUE0,
-        CONTINUE1,
-        CONTINUE2,
-        CONTINUE3,
-        CONTINUE4,
-        CONTINUE5,
-        CONTINUE6,
-        CONTINUE7,
-        CONTINUE8,
-        CONTINUE9,
-        CONTINUE10,
-        CONTINUE11;
-
-        CUR_SCREEN() {
-        }
     }
 }

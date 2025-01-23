@@ -28,10 +28,7 @@ public class LakeTexcoco extends FGOCard {
         setMagic(5, 5);
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new LakeTexcoco();
-    }
+    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

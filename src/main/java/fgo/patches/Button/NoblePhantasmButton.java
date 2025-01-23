@@ -2,7 +2,7 @@ package fgo.patches.Button;
 
 import fgo.action.FgoNpAction;
 import fgo.action.NoblePhantasmSelectAction;
-import fgo.characters.master;
+import fgo.characters.Master;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -38,13 +38,13 @@ public class NoblePhantasmButton {
         //this.position.x = AbstractDungeon.player.hb.x - 20.0F * Settings.scale;
         this.hb.move(this.position.x, this.position.y);
         if (this.hb.hovered) {
-            if (InputHelper.justClickedLeft && master.fgoNp >= 100 && !AbstractDungeon.player.hasPower(SealNPPower.POWER_ID)) {
+            if (InputHelper.justClickedLeft && Master.fgoNp >= 100 && !AbstractDungeon.player.hasPower(SealNPPower.POWER_ID)) {
                 InputHelper.justClickedLeft = false;
                 AbstractDungeon.actionManager.addToBottom(new FgoNpAction(-300));
 
-                if (master.fgoNp == 300) {
+                if (Master.fgoNp == 300) {
                     AbstractDungeon.actionManager.addToBottom(new NoblePhantasmSelectAction(true, 2));
-                } else if (master.fgoNp >= 200) {
+                } else if (Master.fgoNp >= 200) {
                     AbstractDungeon.actionManager.addToBottom(new NoblePhantasmSelectAction(true, 1));
                 } else {
                     AbstractDungeon.actionManager.addToBottom(new NoblePhantasmSelectAction(false, 1));
@@ -55,7 +55,7 @@ public class NoblePhantasmButton {
             if (this.hb.justHovered) {
                 CardCrawlGame.sound.playA("UI_HOVER", -0.4F);
             }
-            if ((AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT && master.fgoNp >= 100) {
+            if ((AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT && Master.fgoNp >= 100) {
                 TipHelper.renderGenericTip(0, this.hb.cY + 64.0F * Settings.scale, orbString.NAME, orbString.DESCRIPTION[0] + orbString.DESCRIPTION[1] + orbString.DESCRIPTION[2]);
             }
             this.renderColor.r = 1.0F;
@@ -70,7 +70,7 @@ public class NoblePhantasmButton {
 
     public void render(SpriteBatch sb) {
         sb.setColor(this.renderColor);
-        if (master.fgoNp >= 100 && !AbstractDungeon.player.hasPower(SealNPPower.POWER_ID)) {
+        if (Master.fgoNp >= 100 && !AbstractDungeon.player.hasPower(SealNPPower.POWER_ID)) {
             sb.draw(NP_MAX, this.hb.cX - 32.0F, this.hb.cY - 32.0F, 64.0F, 64.0F, 64.0F, 64.0F, Settings.scale, Settings.scale, 0.0F, 0, 0, 64, 64, false, false);
             //FontHelper.renderFontCentered(sb, FontHelper.healthInfoFont, "√", this.hb.cX, this.hb.cY, this.renderColor);
         }

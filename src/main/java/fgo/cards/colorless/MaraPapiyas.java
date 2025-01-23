@@ -22,10 +22,7 @@ public class MaraPapiyas extends FGOCard {
         setMagic(12, 4);
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new MaraPapiyas();
-    }
+    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

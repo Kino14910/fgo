@@ -1,0 +1,15 @@
+{
+  "fgo:Emiya": {
+    "MOVES": [
+      "心眼（真）",
+      "鹰之瞳",
+      "Circuit Connect"
+    ],
+    "NAME": "Emiya",
+    "DIALOG": [
+      "习惯不太好呢。",
+      "Trace, on！",
+      "趁这个机会，彻底解决掉吧。"
+    ]
+  }
+}
