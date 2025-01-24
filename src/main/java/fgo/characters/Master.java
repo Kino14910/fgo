@@ -60,6 +60,7 @@ public class Master extends CustomPlayer{
     private static final String[] NPTEXT = CardCrawlGame.languagePack.getUIString("fgo:NPText").TEXT;
     private float FgoNpWidth;
     public static int fgoNp;
+    public static int commandSpellCount = 3;
     public Master(String name) {
         //构造方法，初始化参数
         super(name, ThmodClassEnum.MASTER_CLASS, ORB_TEXTURES, "fgo/images/UI_Master/energyBlueVFX.png", LAYER_SPEED, null, null);
@@ -78,6 +79,7 @@ public class Master extends CustomPlayer{
 
         fgoNp = 0;
     }
+
 
     @Override
     public ArrayList<String> getStartingDeck() {
@@ -107,7 +109,7 @@ public class Master extends CustomPlayer{
         ArrayList<String> retVal = new ArrayList<>();
         retVal.add(SuitcaseFgo.ID);
 //        retVal.add("HalloweenRoyalty");
-        retVal.add(CommandSpell.ID);
+//        retVal.add(CommandSpell.ID);
         return retVal;
     }
 
@@ -222,13 +224,8 @@ public class Master extends CustomPlayer{
     }
 
     public void TruthValueUpdatedEvent() {
-        if (fgoNp > 200) {
-            this.FgoNpWidth = this.hb.width * (fgoNp - 200) / 100.0F;
-        } else if (fgoNp > 100) {
-            this.FgoNpWidth = this.hb.width * (fgoNp - 100) / 100.0F;
-        } else {
-            this.FgoNpWidth = this.hb.width * fgoNp / 100.0F;
-        }
+        int base = fgoNp > 200 ? 200 : (fgoNp > 100 ? 100 : 0);
+        this.FgoNpWidth = this.hb.width * (fgoNp - base) / 100.0F;
     }
 
     public void renderHealth(SpriteBatch sb) {
@@ -252,13 +249,9 @@ public class Master extends CustomPlayer{
     }
 
     private void renderTruthValueBar(SpriteBatch sb, float x) {
-        if (fgoNp > 200) {
-            sb.setColor(this.FgoNpBarColor3);
-        } else if (fgoNp > 100) {
-            sb.setColor(this.FgoNpBarColor2);
-        } else {
-            sb.setColor(this.FgoNpBarColor1);
-        }
+        Color color = fgoNp > 200 ? FgoNpBarColor3 : (fgoNp > 100 ? FgoNpBarColor2 : FgoNpBarColor1);
+        sb.setColor(color);
+
         sb.draw(ImageMaster.HEALTH_BAR_L, x - FgoNp_BAR_HEIGHT, this.FgoNp.cY - FgoNp_BAR_HEIGHT / 2.0F, 20.0F * Settings.scale, FgoNp_BAR_HEIGHT);
         sb.draw(ImageMaster.HEALTH_BAR_B, x, this.FgoNp.cY - FgoNp_BAR_HEIGHT / 2.0F, this.FgoNpWidth, FgoNp_BAR_HEIGHT);
         sb.draw(ImageMaster.HEALTH_BAR_R, x + this.FgoNpWidth, this.FgoNp.cY - FgoNp_BAR_HEIGHT / 2.0F, 20.0F * Settings.scale, FgoNp_BAR_HEIGHT);
@@ -271,13 +264,9 @@ public class Master extends CustomPlayer{
     }
 
     private void TruthValueBgRender(SpriteBatch sb, float x, float y) {
-        if (fgoNp > 200) {
-            sb.setColor(this.FgoNpBarColor2);
-        } else if (fgoNp > 100) {
-            sb.setColor(this.FgoNpBarColor1);
-        } else {
-            sb.setColor(this.FgoNpShadowColor);
-        }
+        Color color = fgoNp > 200 ? FgoNpBarColor2 : (fgoNp > 100 ? FgoNpBarColor1 : FgoNpShadowColor);
+        sb.setColor(color);
+
         //宝具值外框颜色。
         sb.draw(ImageMaster.HB_SHADOW_L, x - FgoNp_BAR_HEIGHT, this.FgoNp.cY - FgoNp_BAR_HEIGHT / 2.0F, 20.0F * Settings.scale, FgoNp_BAR_HEIGHT);
         sb.draw(ImageMaster.HB_SHADOW_B, x, this.FgoNp.cY - FgoNp_BAR_HEIGHT / 2.0F, this.hb.width, FgoNp_BAR_HEIGHT);

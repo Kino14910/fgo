@@ -19,35 +19,42 @@ public class SevenBeastCrownsPower extends BasePower {
     private static int BeastIdOffset;
     public SevenBeastCrownsPower(AbstractCreature owner, int amount) {
         super(POWER_ID, TYPE, TURN_BASED, owner, amount, "DracoPower");
-        this.ID = POWER_ID + BeastIdOffset;
+        ID = POWER_ID + BeastIdOffset;
         BeastIdOffset++;
+        if(amount <= 0) {
+            SevenBeastCrownsAction();
+        }
     }
 
     @Override
     public void updateDescription() {
-        if (this.amount <= 1) {
-            this.description = DESCRIPTIONS[0];
+        if (amount <= 1) {
+            description = DESCRIPTIONS[0];
         } else {
-            this.description = DESCRIPTIONS[1] + this.amount + DESCRIPTIONS[2];
+            description = DESCRIPTIONS[1] + amount + DESCRIPTIONS[2];
         }
+    }
+    
+    public void SevenBeastCrownsAction() {
+        addToBot(new ApplyPowerAction(owner, owner, new ThornsPower(owner, 3), 3));
+        addToBot(new ApplyPowerAction(owner, owner, new PlatedArmorPower(owner, 4), 4));
+        addToBot(new ApplyPowerAction(owner, owner, new RegenPower(owner, 4), 4));
+        addToBot(new ApplyPowerAction(owner, owner, new BerserkPower(owner, 1), 1));
+        addToBot(new ApplyPowerAction(owner, owner, new DrawPower(owner, 1), 1));
+        addToBot(new ApplyPowerAction(owner, owner, new IntangiblePlayerPower(owner, 2), 2));
+        addToBot(new ApplyPowerAction(owner, owner, new ArtifactPower(owner, 2), 2));
     }
 
     public void atEndOfTurn(boolean isPlayer) {
         if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
-            this.addToBot(new ReducePowerAction(this.owner, this.owner, this, 1));
-            if (this.amount == 1) {
-                this.addToBot(new ApplyPowerAction(this.owner, this.owner, new ThornsPower(this.owner, 3), 3));
-                this.addToBot(new ApplyPowerAction(this.owner, this.owner, new PlatedArmorPower(this.owner, 4), 4));
-                this.addToBot(new ApplyPowerAction(this.owner, this.owner, new RegenPower(this.owner, 4), 4));
-                this.addToBot(new ApplyPowerAction(this.owner, this.owner, new BerserkPower(this.owner, 1), 1));
-                this.addToBot(new ApplyPowerAction(this.owner, this.owner, new DrawPower(this.owner, 1), 1));
-                this.addToBot(new ApplyPowerAction(this.owner, this.owner, new IntangiblePlayerPower(this.owner, 2), 2));
-                this.addToBot(new ApplyPowerAction(this.owner, this.owner, new ArtifactPower(this.owner, 2), 2));
+            addToBot(new ReducePowerAction(owner, owner, this, 1));
+            if (amount == 1) {
+                SevenBeastCrownsAction();
             }
         }
     }
 
     public AbstractPower makeCopy() {
-        return new SevenBeastCrownsPower(this.owner, this.amount);
+        return new SevenBeastCrownsPower(owner, amount);
     }
 }

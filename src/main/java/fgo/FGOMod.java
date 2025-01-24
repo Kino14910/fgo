@@ -17,11 +17,8 @@ import com.evacipated.cardcrawl.modthespire.ModInfo;
 import com.evacipated.cardcrawl.modthespire.Patcher;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.dungeons.Exordium;
@@ -31,27 +28,21 @@ import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
-import com.megacrit.cardcrawl.powers.ArtifactPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
-import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDrawPileEffect;
 import fgo.action.FgoNpAction;
 import fgo.cards.BaseCard;
 import fgo.characters.Master;
 import fgo.event.*;
 import fgo.monster.Emiya;
+import fgo.patches.Button.CommandSpellButton;
 import fgo.patches.Button.NoblePhantasmButton;
 import fgo.patches.Enum.FGOCardColor;
-import fgo.patches.Enum.ThmodClassEnum;
 import fgo.potions.BasePotion;
-import fgo.potions.ElixirofRejuvenation;
-import fgo.potions.ExtremelySpicyMapoTofu;
-import fgo.powers.EvasionPower;
 import fgo.powers.NPRatePower;
 import fgo.relics.Avenger;
 import fgo.relics.BaseRelic;
-import fgo.relics.LockChocolateStrawberry;
 import fgo.relics.SuitcaseFgo;
 import fgo.util.GeneralUtils;
 import fgo.util.KeywordInfo;
@@ -65,6 +56,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.*;
 
 import static fgo.patches.Enum.ThmodClassEnum.MASTER_CLASS;
+import static fgo.util.GeneralUtils.addToBot;
 
 @SpireInitializer
 public class FGOMod implements
@@ -147,7 +139,7 @@ public class FGOMod implements
 
         Master.fgoNp = 0;
         //顶部宝具牌预览。
-        //BaseMod.addTopPanelItem(new CurrentNobleCardsTopPanelItem());
+        //BaseMod.addTopPanelItem(new CurrentNobleCards());
 
 
         BaseMod.addMonster(Emiya.ID, Emiya.NAME, () -> new MonsterGroup(new AbstractMonster[]{new Emiya()}));
@@ -402,7 +394,7 @@ public class FGOMod implements
         }
 
         if (npGain > 0) {
-            AbstractDungeon.actionManager.addToBottom(new FgoNpAction(npGain));
+            addToBot(new FgoNpAction(npGain));
         }
     }
 
@@ -410,7 +402,7 @@ public class FGOMod implements
     public void receiveOnBattleStart(AbstractRoom abstractRoom) {
         if (AbstractDungeon.player instanceof Master) {
             if (AbstractDungeon.player.hasRelic(SuitcaseFgo.ID)) {
-                AbstractDungeon.actionManager.addToBottom(new FgoNpAction(20, true));
+                addToBot(new FgoNpAction(20, true));
             }
         }
     }
@@ -419,7 +411,7 @@ public class FGOMod implements
     public void receivePostBattle(AbstractRoom r) {
         if (AbstractDungeon.player instanceof Master) {
             //在每场战斗开始时宝具值变为0。
-            AbstractDungeon.actionManager.addToBottom(new FgoNpAction(-300));
+            addToBot(new FgoNpAction(-300));
             //第一幕boss战获得玛修的两张牌。
 //            if (AbstractDungeon.floorNum == 16) {
 //                AbstractDungeon.getCurrRoom().addRelicToRewards(new LockChocolateStrawberry());
@@ -433,20 +425,20 @@ public class FGOMod implements
             return i;
         }
 
-        if (damageInfo.type != DamageInfo.DamageType.NORMAL ||
-            damageInfo.owner == null ||
-            damageInfo.owner == AbstractDungeon.player ||
-            AbstractDungeon.currMapNode == null ||
-            AbstractDungeon.getCurrRoom().phase != AbstractRoom.RoomPhase.COMBAT ||
-            i == 99999) {
-            AbstractDungeon.actionManager.addToBottom(new FgoNpAction(100));
+        if (damageInfo.type != DamageInfo.DamageType.NORMAL
+                || damageInfo.owner == null
+                || damageInfo.owner == AbstractDungeon.player
+                || AbstractDungeon.currMapNode == null
+                || AbstractDungeon.getCurrRoom().phase != AbstractRoom.RoomPhase.COMBAT
+                || i == 99999) {
+            addToBot(new FgoNpAction(100));
             return i;
         }
 
-        AbstractDungeon.actionManager.addToBottom(new FgoNpAction(AbstractDungeon.player.hasPower(NPRatePower.POWER_ID) ? i : i/2));
+        addToBot(new FgoNpAction(AbstractDungeon.player.hasPower(NPRatePower.POWER_ID) ? i : i/2));
 
         if (AbstractDungeon.player.hasRelic(Avenger.ID)) {
-            AbstractDungeon.actionManager.addToBottom(new FgoNpAction(i / 10 * 3));
+            addToBot(new FgoNpAction(i / 10 * 3));
         }
         return i;
     }
@@ -456,18 +448,30 @@ public class FGOMod implements
         if (NoblePhantasmButton.inst != null && AbstractDungeon.player != null) {
             NoblePhantasmButton.inst.render(sb);
         }
+        if (CommandSpellButton.inst != null && AbstractDungeon.player != null) {
+            CommandSpellButton.inst.render(sb);
+        }
     }
 
     @Override
     public void receivePostUpdate() {
-        if (AbstractDungeon.getCurrMapNode() != null &&
-                AbstractDungeon.getCurrRoom() != null &&
-                (AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT) {
-            if (NoblePhantasmButton.inst == null) {
-                NoblePhantasmButton.inst = new NoblePhantasmButton(AbstractDungeon.player.hb.x - 17.0F * Settings.scale,
-                        AbstractDungeon.player.hb.cY + AbstractDungeon.player.hb.height / 2 + 10.0F * Settings.scale);
-            }
-            NoblePhantasmButton.inst.update();
+        if (AbstractDungeon.getCurrMapNode() == null ||
+            AbstractDungeon.getCurrRoom() == null ||
+            (AbstractDungeon.getCurrRoom()).phase != AbstractRoom.RoomPhase.COMBAT){
+            return;
         }
+
+        if (NoblePhantasmButton.inst == null) {
+            NoblePhantasmButton.inst = new NoblePhantasmButton(AbstractDungeon.player.hb.x - 30.0F * Settings.scale,
+                    AbstractDungeon.player.hb.cY + AbstractDungeon.player.hb.height / 2 + 20.0F * Settings.scale);
+        }
+        NoblePhantasmButton.inst.update();
+
+        if(CommandSpellButton.inst == null) {
+            CommandSpellButton.inst = new CommandSpellButton(Settings.WIDTH - 128.0f * Settings.scale, Settings.HEIGHT - 256.0f * Settings.scale);
+        }
+        CommandSpellButton.inst.update();
     }
-        }
+
+
+}

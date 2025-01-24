@@ -1,13 +1,16 @@
 package fgo.action;
 
+import com.evacipated.cardcrawl.mod.stslib.actions.common.AllEnemyApplyPowerAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.*;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import fgo.powers.BurnDamagePower;
+import fgo.powers.SevenBeastCrownsPower;
 
 public class GoldenGrailAction extends AbstractGameAction {
     private final boolean freeToPlayOnce;
@@ -24,26 +27,32 @@ public class GoldenGrailAction extends AbstractGameAction {
 
     public void update() {
         int effect = EnergyPanel.totalCount;
-        if (this.energyOnUse != -1) {
-            effect = this.energyOnUse;
+        if (energyOnUse != -1) {
+            effect = energyOnUse;
         }
 
-        if (this.p.hasRelic("Chemical X")) {
+        if (p.hasRelic("Chemical X")) {
             effect += 2;
-            this.p.getRelic("Chemical X").flash();
+            p.getRelic("Chemical X").flash();
         }
+
 
         if (effect >= 0) {
-            for (int i = 0; i < effect; ++i) {
-                for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-                    this.addToBot(new ApplyPowerAction(mo, p, new BurnDamagePower(mo, this.amount), this.amount, AttackEffect.NONE));
-                }
+
+            for (int i = 0; i < effect; i++) {
+                addToBot(new AllEnemyApplyPowerAction(p, amount,
+                        monster -> new BurnDamagePower(monster, amount)
+                        )
+                );
             }
-            if (!this.freeToPlayOnce) {
-                this.p.energy.use(EnergyPanel.totalCount);
+
+                addToBot(new ApplyPowerAction(p, p, new SevenBeastCrownsPower(p, 7 - effect), 7 - effect));
+
+            if (!freeToPlayOnce) {
+                p.energy.use(EnergyPanel.totalCount);
             }
         }
 
-        this.isDone = true;
+        isDone = true;
     }
 }

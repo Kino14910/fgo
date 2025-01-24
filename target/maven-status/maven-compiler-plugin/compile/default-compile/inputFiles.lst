@@ -63,11 +63,9 @@ C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\colorless\ProofAndReb
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\powers\LivingFlamePower.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\powers\NPOverchargePower.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\fgo\WarriorsBlade.java
-C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\patches\CurrentNobleCardsTopPanelItem.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\action\TheOneWhoSawItAllAction.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\fgo\MaidenOfaFlowerPatio.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\tempCards\BrilliantEscort.java
-C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\action\SevenBeastCrownsAction.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\action\SongOfThePoetAction.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\fgo\JourneyGuidance.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\colorless\Shvibzik.java
@@ -238,6 +236,7 @@ C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\fgo\PhasingFluidBlade
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\fgo\FacelessMoon.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\noblecards\BlackdogGalatine.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\powers\FragarachPower.java
+C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\patches\SoundPatch.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\fgo\AbyssLight.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\fgo\WindsweptSlash.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\noblecards\InnocenceAroundight.java
@@ -352,6 +351,7 @@ C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\powers\BasePower.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\powers\deprecated\CooldownPower.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\powers\WallOfSnowflakesPower.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\relics\SuitcaseFgo.java
+C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\patches\Button\CommandSpellButton.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\relics\BowInsignia.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\powers\DoppelgangerPower.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\powers\PowerUpBoostPower.java

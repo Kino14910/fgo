@@ -31,13 +31,13 @@ public class BlessedScionAction extends AbstractGameAction {
             if (this.p.hand.isEmpty()) {
                 this.isDone = true;
             } else if (this.p.hand.size() == 1) {
-                if (this.p.hand.getBottomCard().hasTag(CardTagsEnum.Noble_Phantasm)) {
-                    this.addToTop(new MakeTempCardInDrawPileAction(new SupportCraft(), this.amount, false, true));
-                } else {
-                    this.addToTop(new MakeTempCardInDrawPileAction(this.p.hand.getBottomCard(), this.amount, false, true));
-                }
+
+                AbstractCard card = this.p.hand.getBottomCard();
+                card = card.hasTag(CardTagsEnum.Noble_Phantasm) ? new SupportCraft() : card;
+                this.addToTop(new MakeTempCardInDrawPileAction(card, this.amount, false, true));
+
                 if (this.upgraded) {
-                    this.p.hand.getBottomCard().freeToPlayOnce = true;
+                    card.setCostForTurn(0);
                 }
                 //this.addToTop(new ApplyPowerAction(this.p, this.p, new BlessedScionPower(this.p, this.amount, this.p.hand.getBottomCard())));
                 this.p.hand.moveToExhaustPile(this.p.hand.getBottomCard());
@@ -49,13 +49,11 @@ public class BlessedScionAction extends AbstractGameAction {
         } else {
             if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
                 AbstractCard tmpCard = AbstractDungeon.handCardSelectScreen.selectedCards.getBottomCard();
-                if (tmpCard.hasTag(CardTagsEnum.Noble_Phantasm)) {
-                    this.addToTop(new MakeTempCardInDrawPileAction(new SupportCraft(), this.amount, false, true));
-                } else {
-                    this.addToTop(new MakeTempCardInDrawPileAction(tmpCard, this.amount, false, true));
-                }
-                if (this.upgraded) {
-                    tmpCard.freeToPlayOnce = true;
+                tmpCard = tmpCard.hasTag(CardTagsEnum.Noble_Phantasm) ? new SupportCraft() : tmpCard;
+                this.addToTop(new MakeTempCardInDrawPileAction(tmpCard, this.amount, false, true));
+
+                if (this.upgraded && tmpCard.costForTurn >= 0) {
+                    tmpCard.setCostForTurn(0);
                 }
                 //this.addToTop(new ApplyPowerAction(this.p, this.p, new BlessedScionPower(this.p, this.amount, tmpCard)));
                 AbstractDungeon.player.hand.addToHand(tmpCard);

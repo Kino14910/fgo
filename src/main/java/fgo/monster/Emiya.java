@@ -1,6 +1,8 @@
 package fgo.monster;
 
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.audio.MainMusic;
+import com.megacrit.cardcrawl.audio.Sfx;
 import fgo.action.WaitFgoAction;
 import fgo.action.lor.ChangeSceneEffect;
 import fgo.cards.noblecards.Unlimited;
@@ -94,6 +96,7 @@ public class Emiya extends AbstractMonster {
                 break;
             case 3:
                 this.addToBot(new TalkAction(this, DIALOG[0], 2.5F, 2.5F));
+                this.addToBot(new SFXAction("S011_Skill1"));
                 this.addToBot(new WaitAction(0.25F));
                 this.addToBot(new ApplyPowerAction(this, this, new IntangiblePlayerPower(this, 2), 2));
                 this.addToBot(new ApplyPowerAction(this, this, new StrengthPower(this, this.strengthAmt), this.strengthAmt));
@@ -102,11 +105,13 @@ public class Emiya extends AbstractMonster {
                 break;
             case 4:
                 this.addToBot(new TalkAction(this, DIALOG[1], 2.5F, 2.5F));
+                this.addToBot(new SFXAction("S011_Skill2"));
                 this.addToBot(new WaitAction(0.25F));
                 this.addToBot(new ApplyPowerAction(this, this, new CriticalDamageUpPower(this, 50), 50));
                 break;
             case 5:
                 this.addToBot(new TalkAction(this, DIALOG[2], 2.5F, 2.5F));
+                this.addToBot(new SFXAction("S011_Skill3"));
                 this.addToBot(new WaitAction(0.25F));
                 this.addToBot(new ApplyPowerAction(this, this, new StrengthPower(this, this.strengthAmt), this.strengthAmt));
                 this.addToBot(new ApplyPowerAction(AbstractDungeon.player, this, new FrailPower(AbstractDungeon.player, 99, true), 99));

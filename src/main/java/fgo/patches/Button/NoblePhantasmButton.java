@@ -1,5 +1,6 @@
 package fgo.patches.Button;
 
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import fgo.action.FgoNpAction;
 import fgo.action.NoblePhantasmSelectAction;
 import fgo.characters.Master;
@@ -17,6 +18,9 @@ import com.megacrit.cardcrawl.helpers.input.InputHelper;
 import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import fgo.powers.SealNPPower;
+import fgo.util.GeneralUtils;
+
+import static fgo.util.GeneralUtils.addToBot;
 
 public class NoblePhantasmButton {
     public static NoblePhantasmButton inst;
@@ -40,15 +44,12 @@ public class NoblePhantasmButton {
         if (this.hb.hovered) {
             if (InputHelper.justClickedLeft && Master.fgoNp >= 100 && !AbstractDungeon.player.hasPower(SealNPPower.POWER_ID)) {
                 InputHelper.justClickedLeft = false;
-                AbstractDungeon.actionManager.addToBottom(new FgoNpAction(-300));
+                addToBot(new FgoNpAction(-300));
 
-                if (Master.fgoNp == 300) {
-                    AbstractDungeon.actionManager.addToBottom(new NoblePhantasmSelectAction(true, 2));
-                } else if (Master.fgoNp >= 200) {
-                    AbstractDungeon.actionManager.addToBottom(new NoblePhantasmSelectAction(true, 1));
-                } else {
-                    AbstractDungeon.actionManager.addToBottom(new NoblePhantasmSelectAction(false, 1));
-                }
+                boolean isUpgraded = Master.fgoNp >= 200;
+                int amount = Master.fgoNp == 300 ? 2 : 1;
+
+                addToBot(new NoblePhantasmSelectAction(isUpgraded, amount));
 
                 CardCrawlGame.sound.playA("UI_CLICK_1", -0.1F);
             }
@@ -79,4 +80,6 @@ public class NoblePhantasmButton {
             CardCrawlGame.cursor.render(sb);
         }
     }
+
+
 }

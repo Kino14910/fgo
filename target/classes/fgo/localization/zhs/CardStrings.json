@@ -24,7 +24,7 @@
     "NAME": "悖论构造体",
     "DESCRIPTION": "造成 !D! 点伤害。 NL 增加一名敌人当前格挡的伤害。 NL 消耗 。"
   },
-  "fgo:CommandSpellGuts": {
+  "fgo:RestoreSpiritOrigin": {
     "NAME": "灵基复原",
     "DESCRIPTION": "免死并回复所有生命。 NL 获得 !NP! % fgo:宝具值 。 NL 在你要被杀死时显现，消耗3划令咒发动。"
   },
