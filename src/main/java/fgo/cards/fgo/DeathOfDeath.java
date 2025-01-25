@@ -27,8 +27,6 @@ public class DeathOfDeath extends FGOCard {
         this.tags.add(CardTags.HEALING);
     }
 
-    
-
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new ApplyPowerAction(p, p, new GutsPower(p, this.magicNumber, 1)));

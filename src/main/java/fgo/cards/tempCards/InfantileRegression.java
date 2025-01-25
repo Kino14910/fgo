@@ -9,7 +9,6 @@ import fgo.cards.FGOCard;
 import fgo.powers.InfiniteGrowthPower;
 import fgo.util.CardStats;
 
-@AutoAdd.Ignore
 public class InfantileRegression extends FGOCard {
     public static final String ID = makeID(InfantileRegression.class.getSimpleName());
     private static final CardStats INFO = new CardStats(
@@ -25,8 +24,6 @@ public class InfantileRegression extends FGOCard {
         setSelfRetain();
 //        setExhaust();
     }
-
-    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

@@ -22,8 +22,6 @@ public class GoldenGrail extends FGOCard {
         setExhaust();
     }
 
-    
-
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GoldenGrailAction(p, freeToPlayOnce, energyOnUse, magicNumber));

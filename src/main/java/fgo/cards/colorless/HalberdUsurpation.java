@@ -35,8 +35,6 @@ public class HalberdUsurpation extends FGOCard {
         }
     }
 
-    
-
     @Override
     public void calculateCardDamage(AbstractMonster mo) {
         int StrengthAmount = 0;

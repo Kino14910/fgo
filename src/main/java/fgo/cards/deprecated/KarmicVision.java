@@ -17,7 +17,6 @@ import fgo.cards.FGOCard;
 import fgo.patches.Enum.FGOCardColor;
 import fgo.util.CardStats;
 
-@AutoAdd.Ignore
 public class KarmicVision extends FGOCard {
     public static final String ID = makeID(KarmicVision.class.getSimpleName());
     private static final CardStats INFO = new CardStats(
@@ -35,8 +34,6 @@ public class KarmicVision extends FGOCard {
         FlavorText.AbstractCardFlavorFields.textColor.set(this, Color.CHARTREUSE);
         FlavorText.AbstractCardFlavorFields.flavorBoxType.set(this, FlavorText.boxType.TRADITIONAL);
     }
-
-    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

@@ -12,7 +12,6 @@ import fgo.cards.FGOCard;
 import fgo.powers.StarGainPower;
 import fgo.util.CardStats;
 
-@AutoAdd.Ignore
 public class BrilliantEscort extends FGOCard {
     public static final String ID = makeID(BrilliantEscort.class.getSimpleName());
     private static final CardStats INFO = new CardStats(

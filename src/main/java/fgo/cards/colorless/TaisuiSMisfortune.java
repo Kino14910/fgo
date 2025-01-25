@@ -29,8 +29,6 @@ public class TaisuiSMisfortune extends FGOCard {
         setInnate();
     }
 
-    
-
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (Settings.FAST_MODE) {

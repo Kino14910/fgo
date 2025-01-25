@@ -18,7 +18,7 @@ public class SchwarzwaldFalke extends FGOCard {
     private static final CardStats INFO = new CardStats(
             FGOCardColor.FGO,
             CardType.SKILL,
-            CardRarity.BASIC,
+            CardRarity.COMMON,
             CardTarget.SELF,
             3
     );
@@ -28,8 +28,6 @@ public class SchwarzwaldFalke extends FGOCard {
         setExhaust();
         setCostUpgrade(2);
     }
-
-    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

@@ -2,6 +2,7 @@ package fgo.characters;
 
 import basemod.abstracts.CustomPlayer;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -22,29 +23,29 @@ import fgo.cards.fgo.Strike;
 import fgo.cards.noblecards.BeautifulJourney;
 import fgo.cards.noblecards.EternalMemories;
 import fgo.cards.noblecards.Failnaught;
+import fgo.patches.Button.CommandSpellButton;
 import fgo.patches.Enum.FGOCardColor;
 import fgo.patches.Enum.ThmodClassEnum;
 import fgo.patches.MainMenuUIFgoPatch;
 import fgo.patches.PictureSelectFgoPatch;
 import fgo.relics.Avenger;
-import fgo.relics.CommandSpell;
 import fgo.relics.SuitcaseFgo;
 
 import java.util.ArrayList;
 
 public class Master extends CustomPlayer{
     private static final String[] ORB_TEXTURES = new String[] {
-            "fgo/images/UI_Master/EPanel/layer5.png",
-            "fgo/images/UI_Master/EPanel/layer4.png",
-            "fgo/images/UI_Master/EPanel/layer3.png",
-            "fgo/images/UI_Master/EPanel/layer2.png",
-            "fgo/images/UI_Master/EPanel/layer1.png",
-            "fgo/images/UI_Master/EPanel/layer0.png",
-            "fgo/images/UI_Master/EPanel/layer5d.png",
-            "fgo/images/UI_Master/EPanel/layer4d.png",
-            "fgo/images/UI_Master/EPanel/layer3d.png",
-            "fgo/images/UI_Master/EPanel/layer2d.png",
-            "fgo/images/UI_Master/EPanel/layer1d.png"};
+            "fgo/images/ui/EPanel/layer5.png",
+            "fgo/images/ui/EPanel/layer4.png",
+            "fgo/images/ui/EPanel/layer3.png",
+            "fgo/images/ui/EPanel/layer2.png",
+            "fgo/images/ui/EPanel/layer1.png",
+            "fgo/images/ui/EPanel/layer0.png",
+            "fgo/images/ui/EPanel/layer5d.png",
+            "fgo/images/ui/EPanel/layer4d.png",
+            "fgo/images/ui/EPanel/layer3d.png",
+            "fgo/images/ui/EPanel/layer2d.png",
+            "fgo/images/ui/EPanel/layer1d.png"};
     private static final float[] LAYER_SPEED = new float[] { -40.0F, -32.0F, 20.0F, -20.0F, 0.0F, -10.0F, -8.0F, 5.0F, -5.0F, 0.0F };
     //返回一个颜色
     public static final Color SILVER = CardHelper.getColor(200, 200, 200);
@@ -60,10 +61,10 @@ public class Master extends CustomPlayer{
     private static final String[] NPTEXT = CardCrawlGame.languagePack.getUIString("fgo:NPText").TEXT;
     private float FgoNpWidth;
     public static int fgoNp;
-    public static int commandSpellCount = 3;
+    public static int commandSpellCount;
     public Master(String name) {
         //构造方法，初始化参数
-        super(name, ThmodClassEnum.MASTER_CLASS, ORB_TEXTURES, "fgo/images/UI_Master/energyBlueVFX.png", LAYER_SPEED, null, null);
+        super(name, ThmodClassEnum.MASTER_CLASS, ORB_TEXTURES, "fgo/images/ui/energyBlueVFX.png", LAYER_SPEED, null, null);
         this.dialogX = this.drawX + 0.0F * Settings.scale;
         this.dialogY = this.drawY + 220.0F * Settings.scale;
 
@@ -78,6 +79,9 @@ public class Master extends CustomPlayer{
         );
 
         fgoNp = 0;
+        commandSpellCount = 3;
+        CommandSpellButton.CommandSpell = ImageMaster.loadImage("fgo/images/ui/CommandSpell/CommandSpell3.png");
+
     }
 
 

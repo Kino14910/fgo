@@ -24,8 +24,6 @@ public class NightlessCharisma extends FGOCard {
         setCostUpgrade(0);
     }
 
-    
-
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new NightlessCharismaPower(p, magicNumber)));

@@ -25,8 +25,6 @@ public class SupportCraft extends FateMagineerCard {
     public void upgrade() {
     }
 
-    
-
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new FgoNpAction(np));

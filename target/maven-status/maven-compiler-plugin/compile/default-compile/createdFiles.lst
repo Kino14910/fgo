@@ -27,6 +27,7 @@ fgo\powers\MagicBulletPower.class
 fgo\characters\AlterOptionEffect.class
 fgo\cards\tempCards\BlessedRegenerate.class
 fgo\relics\MechanicalProtector.class
+fgo\patches\Button\OverlayMenuPatch$NoblePhantasmButtonField.class
 fgo\cards\fgo\Swingby.class
 fgo\potions\ExtremelySpicyMapoTofu.class
 fgo\powers\EvasionPower.class
@@ -69,6 +70,7 @@ fgo\cards\noblecards\MahaPralaya.class
 fgo\action\NoblePhantasmSelectAction.class
 fgo\cards\fgo\MaidenOfaFlowerPatio.class
 fgo\patches\PictureSelectFgoPatch$CharacterSelectScreenPatch_Initialize.class
+fgo\patches\Button\OverlayMenuPatch$HideCombatPanelsPatch.class
 fgo\cards\fgo\Defend.class
 fgo\patches\Modifier\DisplayNPModifier.class
 fgo\cards\fgo\Executioner.class
@@ -81,7 +83,6 @@ fgo\powers\EternalSleepPower.class
 fgo\relics\LockChocolateStrawberry.class
 fgo\powers\HugeScalePower.class
 fgo\patches\Enum\LibraryTypeEnum.class
-fgo\relics\CommandSpell.class
 fgo\powers\TheOneWhoRevealsTruthPower.class
 fgo\cards\fgo\CharismaOfConflict.class
 fgo\powers\SquireOfProphecyPower.class
@@ -92,6 +93,7 @@ fgo\cards\noblecards\ExcaliburGalatine.class
 fgo\potions\ElixirofRejuvenation.class
 fgo\powers\HeroicKingPower.class
 fgo\cards\fgo\CurtainoftheNight.class
+fgo\relics\deprecated\CommandSpell.class
 fgo\relics\SaveStone.class
 fgo\cards\fgo\GoddessMetamorphosisBeast.class
 fgo\cards\fgo\WindsweptSlash.class
@@ -215,6 +217,7 @@ fgo\relics\LockChocolate.class
 fgo\patches\Enum\CardTagsEnum.class
 fgo\event\BaseEvent$CUR_SCREEN.class
 fgo\powers\GutsPower.class
+fgo\patches\Button\OverlayMenuPatch$CommandSpellButtonField.class
 fgo\powers\EnergyRegenPower.class
 fgo\patches\NoblePhantasmDeckPatch.class
 fgo\cards\colorless\PutOnFakeFace.class
@@ -237,6 +240,8 @@ fgo\cards\fgo\KnightoftheLake.class
 fgo\powers\DefenseDownPower.class
 fgo\powers\NPRatePower.class
 fgo\cards\fgo\ManaBurstGems.class
+fgo\patches\Button\OverlayMenuPatch$ShowCombatPanelsPatch.class
+fgo\patches\Button\OverlayMenuPatch$RenderPatch.class
 fgo\cards\fgo\BlessingOfKur.class
 fgo\powers\LoseCritDamagePower.class
 fgo\powers\SunlightPower.class
@@ -306,6 +311,7 @@ fgo\cards\fgo\LakeTexcoco.class
 fgo\util\CardStats.class
 fgo\cards\colorless\Shvibzik.class
 fgo\patches\NobleCardTabNamePatch$TabNamePatch.class
+fgo\patches\Button\OverlayMenuPatch$UpdatePatch.class
 fgo\cards\colorless\CrimsonSlash.class
 fgo\cards\fgo\PresenceDetection.class
 fgo\cards\fgo\CrownedWithLife.class
@@ -359,6 +365,7 @@ fgo\cards\AbsNoblePhantasmCard.class
 fgo\cards\noblecards\RoadlessCamelot.class
 fgo\cards\optionCards\TheBlackGrail.class
 fgo\cards\noblecards\Fragarach.class
+fgo\patches\Button\OverlayMenuPatch.class
 fgo\hexui_lib\util\RenderCommandLayer.class
 fgo\action\WaitFgoAction.class
 fgo\hexui_lib\patches\RenderSingleCardTypePatch$Locator.class

@@ -30,8 +30,6 @@ public class MerlinMagic extends FGOCard {
         FlavorText.AbstractCardFlavorFields.flavorBoxType.set(this, FlavorText.boxType.TRADITIONAL);
     }
 
-    
-
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         for (AbstractMonster m2 : AbstractDungeon.getCurrRoom().monsters.monsters) {

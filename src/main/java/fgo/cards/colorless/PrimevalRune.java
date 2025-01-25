@@ -29,8 +29,6 @@ public class PrimevalRune extends FGOCard {
         setMagic(2, 1);
     }
 
-    
-
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (Settings.FAST_MODE) {

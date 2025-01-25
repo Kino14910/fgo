@@ -10,7 +10,7 @@ public class AlterOption extends AbstractCampfireOption {
     public AlterOption() {
         this.label = TEXT[0];
         this.description = TEXT[1];
-        this.img = ImageMaster.loadImage("img/UI_Master/tune.png");
+        this.img = ImageMaster.loadImage("img/ui/tune.png");
     }
 
     public void useOption() {

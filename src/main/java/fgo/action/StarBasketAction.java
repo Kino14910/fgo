@@ -23,100 +23,151 @@ public class StarBasketAction extends AbstractGameAction {
 
     public void update() {
         int roll = MathUtils.random(44);
-        if (roll == 0) {//临时力量
-            this.addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, 2), 2));
-            this.addToBot(new ApplyPowerAction(p, p, new LoseStrengthPower(p, 2), 2));
-        } else if (roll == 1) {//临时敏捷
-            this.addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, 2), 2));
-            this.addToBot(new ApplyPowerAction(p, p, new LoseDexterityPower(p, 2), 2));
-        } else if (roll == 2) {//力量
-            this.addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, 1), 1));
-        } else if (roll == 3) {//敏捷
-            this.addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, 1), 1));
-        } else if (roll == 4) {//多层护甲
-            this.addToBot(new ApplyPowerAction(p, p, new PlatedArmorPower(p, 2), 2));
-        } else if (roll == 5) {//再生
-            this.addToBot(new ApplyPowerAction(p, p, new RegenPower(p, 2), 2));
-        } else if (roll == 6) {//荆棘
-            this.addToBot(new ApplyPowerAction(p, p, new ThornsPower(p, 2), 2));
-        } else if (roll == 7) {//活力
-            this.addToBot(new ApplyPowerAction(p, p, new VigorPower(p, 2), 2));
-        } else if (roll == 8) {//无实体
-            this.addToBot(new ApplyPowerAction(p, p, new IntangiblePlayerPower(p, 1), 1));
-        } else if (roll == 9) {//人工制品
-            this.addToBot(new ApplyPowerAction(p, p, new ArtifactPower(p, 1), 1));
-        } else if (roll == 10) {//余像
-            this.addToBot(new ApplyPowerAction(p, p, new AfterImagePower(p, 1), 1));
-        } else if (roll == 11) {//增幅--下一张能力牌打出2次
-            this.addToBot(new ApplyPowerAction(p, p, new AmplifyPower(p, 1), 1));
-        } else if (roll == 12) {//爆发--下一张技能牌打出2次
-            this.addToBot(new ApplyPowerAction(p, p, new BurstPower(p, 1), 1));
-        } else if (roll == 13) {//双发--下一张攻击牌打出2次
-            this.addToBot(new ApplyPowerAction(p, p, new DoubleTapPower(p, 1), 1));
-        } else if (roll == 14) {//闪避
-            this.addToBot(new ApplyPowerAction(p, p, new EvasionPower(p, 1), 1));
-        } else if (roll == 15) {//复制--下一张牌打出2次
-            this.addToBot(new ApplyPowerAction(p, p, new DuplicationPower(p, 1), 1));
-        } else if (roll == 16) {//狂暴--回合开始获得能量
-            this.addToBot(new ApplyPowerAction(p, p, new BerserkPower(p, 1), 1));
-        } else if (roll == 17) {//残影
-            this.addToBot(new ApplyPowerAction(p, p, new BlurPower(p, 1), 1));
-        } else if (roll == 18) {//残暴--回合开始抽牌
-            this.addToBot(new ApplyPowerAction(p, p, new BrutalityPower(p, 1), 1));
-        } else if (roll == 19) {//缓冲
-            this.addToBot(new ApplyPowerAction(p, p, new BufferPower(p, 1), 1));
-        } else if (roll == 20) {//自燃--回合开始对所有人造成伤害
-            this.addToBot(new ApplyPowerAction(p, p, new CombustPower(p, 1, 4), 4));
-        } else if (roll == 21) {//创造性AI
-            this.addToBot(new ApplyPowerAction(p, p, new CreativeAIPower(p, 1), 1));
-        } else if (roll == 22) {//黑暗之拥
-            this.addToBot(new ApplyPowerAction(p, p, new DarkEmbracePower(p, 1), 1));
-        } else if (roll == 23) {//恶魔形态
-            this.addToBot(new ApplyPowerAction(p, p, new DemonFormPower(p, 2), 2));
-        } else if (roll == 24) {//幻影杀手
-            this.addToBot(new ApplyPowerAction(p, p, new PhantasmalPower(p, 1), 1));
-        } else if (roll == 25) {//双倍伤害
-            this.addToBot(new ApplyPowerAction(p, p, new DoubleDamagePower(p, 1, false), 1));
-        } else if (roll == 26) {//下一回合抽牌
-            this.addToBot(new ApplyPowerAction(p, p, new DrawCardNextTurnPower(p, 1), 1));
-        } else if (roll == 27) {//回响形态
-            this.addToBot(new ApplyPowerAction(p, p, new EchoPower(p, 1), 1));
-        } else if (roll == 28) {//下一回合获得能量B
-            this.addToBot(new ApplyPowerAction(p, p, new EnergizedBluePower(p, 1), 1));
-        } else if (roll == 29) {//下一回合获得能量G
-            this.addToBot(new ApplyPowerAction(p, p, new EnergizedPower(p, 1), 1));
-        } else if (roll == 30) {//涂毒
-            this.addToBot(new ApplyPowerAction(p, p, new EnvenomPower(p, 1), 1));
-        } else if (roll == 31) {//金属化
-            this.addToBot(new ApplyPowerAction(p, p, new MetallicizePower(p, 2), 2));
-        } else if (roll == 32) {//免费攻击
-            this.addToBot(new ApplyPowerAction(p, p, new FreeAttackPower(p, 1), 1));
-        } else if (roll == 33) {//欧米伽
-            this.addToBot(new ApplyPowerAction(p, p, new OmegaPower(p, 3), 3));
-        } else if (roll == 34) {//必备工具
-            this.addToBot(new ApplyPowerAction(p, p, new ToolsOfTheTradePower(p, 1), 1));
-        } else if (roll == 35) {//战歌
-            this.addToBot(new ApplyPowerAction(p, p, new BattleHymnPower(p, 1), 1));
-        } else if (roll == 36) {//毒雾
-            this.addToBot(new ApplyPowerAction(p, p, new NoxiousFumesPower(p, 2), 2));
-        } else if (roll == 37) {//神气制胜
-            this.addToBot(new ApplyPowerAction(p, p, new PanachePower(p, 5), 5));
-        } else if (roll == 38) {//钢笔尖
-            this.addToBot(new ApplyPowerAction(p, p, new PenNibPower(p, 1), 1, true));
-        } else if (roll == 39) {//愤怒--打出攻击牌获得格挡
-            this.addToBot(new ApplyPowerAction(p, p, new RagePower(p, 2), 2));
-        } else if (roll == 40) {//弹回
-            this.addToBot(new ApplyPowerAction(p, p, new ReboundPower(p), 1));
-        } else if (roll == 41) {//保留卡牌
-            this.addToBot(new ApplyPowerAction(p, p, new RetainCardPower(p, 1), 1));
-        } else if (roll == 42) {//残虐
-            this.addToBot(new ApplyPowerAction(p, p, new SadisticPower(p, 3), 3));
-        } else if (roll == 43) {//凌迟
-            this.addToBot(new ApplyPowerAction(p, p, new ThousandCutsPower(p, 1), 1));
-        } else {//乱战
-            this.addToBot(new ApplyPowerAction(p, p, new MayhemPower(p, 1), 1));
+        switch (roll) {
+            case 0: //临时力量
+                applyPower(p, new StrengthPower(p, 2));
+                applyPower(p, new LoseStrengthPower(p, 2));
+                break;
+            case 1: //临时敏捷
+                applyPower(p, new DexterityPower(p, 2));
+                applyPower(p, new LoseDexterityPower(p, 2));
+                break;
+            case 2: //力量
+                applyPower(p, new StrengthPower(p, 1));
+                break;
+            case 3: //敏捷
+                applyPower(p, new DexterityPower(p, 1));
+                break;
+            case 4: //多层护甲
+                applyPower(p, new PlatedArmorPower(p, 2));
+                break;
+            case 5: //再生
+                applyPower(p, new RegenPower(p, 2));
+                break;
+            case 6: //荆棘
+                applyPower(p, new ThornsPower(p, 2));
+                break;
+            case 7: //活力
+                applyPower(p, new VigorPower(p, 2));
+                break;
+            case 8: //无实体
+                applyPower(p, new IntangiblePlayerPower(p, 1));
+                break;
+            case 9: //人工制品
+                applyPower(p, new ArtifactPower(p, 1));
+                break;
+            case 10: //余像
+                applyPower(p, new AfterImagePower(p, 1));
+                break;
+            case 11: //增幅--下一张能力牌打出2次
+                applyPower(p, new AmplifyPower(p, 1));
+                break;
+            case 12: //爆发--下一张技能牌打出2次
+                applyPower(p, new BurstPower(p, 1));
+                break;
+            case 13: //双发--下一张攻击牌打出2次
+                applyPower(p, new DoubleTapPower(p, 1));
+                break;
+            case 14: //闪避
+                applyPower(p, new EvasionPower(p, 1));
+                break;
+            case 15: //复制--下一张牌打出2次
+                applyPower(p, new DuplicationPower(p, 1));
+                break;
+            case 16: //狂暴--回合开始获得能量
+                applyPower(p, new BerserkPower(p, 1));
+                break;
+            case 17: //残影
+                applyPower(p, new BlurPower(p, 1));
+                break;
+            case 18: //残暴--回合开始抽牌
+                applyPower(p, new BrutalityPower(p, 1));
+                break;
+            case 19: //缓冲
+                applyPower(p, new BufferPower(p, 1));
+                break;
+            case 20: //自燃--回合开始对所有人造成伤害
+                applyPower(p, new CombustPower(p, 1, 4));
+                break;
+            case 21: //创造性AI
+                applyPower(p, new CreativeAIPower(p, 1));
+                break;
+            case 22: //黑暗之拥
+                applyPower(p, new DarkEmbracePower(p, 1));
+                break;
+            case 23: //恶魔形态
+                applyPower(p, new DemonFormPower(p, 2));
+                break;
+            case 24: //幻影杀手
+                applyPower(p, new PhantasmalPower(p, 1));
+                break;
+            case 25: //双倍伤害
+                applyPower(p, new DoubleDamagePower(p, 1, false));
+                break;
+            case 26: //下一回合抽牌
+                applyPower(p, new DrawCardNextTurnPower(p, 1));
+                break;
+            case 27: //回响形态
+                applyPower(p, new EchoPower(p, 1));
+                break;
+            case 28: //下一回合获得能量B
+                applyPower(p, new EnergizedBluePower(p, 1));
+                break;
+            case 29: //下一回合获得能量G
+                applyPower(p, new EnergizedPower(p, 1));
+                break;
+            case 30: //涂毒
+                applyPower(p, new EnvenomPower(p, 1));
+                break;
+            case 31: //金属化
+                applyPower(p, new MetallicizePower(p, 2));
+                break;
+            case 32: //免费攻击
+                applyPower(p, new FreeAttackPower(p, 1));
+                break;
+            case 33: //欧米伽
+                applyPower(p, new OmegaPower(p, 3));
+                break;
+            case 34: //必备工具
+                applyPower(p, new ToolsOfTheTradePower(p, 1));
+                break;
+            case 35: //战歌
+                applyPower(p, new BattleHymnPower(p, 1));
+                break;
+            case 36: //毒雾
+                applyPower(p, new NoxiousFumesPower(p, 2));
+                break;
+            case 37: //神气制胜
+                applyPower(p, new PanachePower(p, 5));
+                break;
+            case 38: //钢笔尖
+                applyPower(p, new PenNibPower(p, 1));
+                break;
+            case 39: //愤怒--打出攻击牌获得格挡
+                applyPower(p, new RagePower(p, 2));
+                break;
+            case 40: //弹回
+                applyPower(p, new ReboundPower(p));
+                break;
+            case 41: //保留卡牌
+                applyPower(p, new RetainCardPower(p, 1));
+                break;
+            case 42: //残虐
+                applyPower(p, new SadisticPower(p, 3));
+                break;
+            case 43: //凌迟
+                applyPower(p, new ThousandCutsPower(p, 1));
+                break;
+            default: //乱战
+                applyPower(p, new MayhemPower(p, 1));
+                break;
         }
 
         this.isDone = true;
-    }
+        }
+
+        private void applyPower(AbstractPlayer p, AbstractPower power) {
+            this.addToBot(new ApplyPowerAction(p, p, power, power.amount));
+        }
+
 }

@@ -28,8 +28,6 @@ public class KnightoftheLake extends FGOCard {
         setMagic(50, 50);
     }
 
-    
-
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         float duration = Settings.FAST_MODE ?0.1F :0.5F;

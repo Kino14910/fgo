@@ -11,7 +11,6 @@ import fgo.patches.Enum.FGOCardColor;
 import fgo.powers.MyFairSoldierPower;
 import fgo.util.CardStats;
 
-@AutoAdd.Ignore
 public class QueensCovenant extends FGOCard {
     public static final String ID = makeID(QueensCovenant.class.getSimpleName());
     private static final CardStats INFO = new CardStats(

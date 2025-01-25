@@ -26,8 +26,6 @@ public class EnferChateaudIf extends AbsNoblePhantasmCard {
     public void upgrade() {
     }
 
-    
-
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new EnferChateaudIfAction());

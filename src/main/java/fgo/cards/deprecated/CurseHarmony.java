@@ -9,7 +9,6 @@ import fgo.patches.Enum.FGOCardColor;
 import fgo.powers.CurseHarmonyPower;
 import fgo.util.CardStats;
 
-@AutoAdd.Ignore
 public class CurseHarmony extends FGOCard {
     public static final String ID = makeID(CurseHarmony.class.getSimpleName());
     private static final CardStats INFO = new CardStats(
@@ -23,8 +22,6 @@ public class CurseHarmony extends FGOCard {
         super(ID, INFO);
         setMagic(3, 2);
     }
-
-    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

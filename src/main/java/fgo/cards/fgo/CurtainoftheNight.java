@@ -22,8 +22,6 @@ public class CurtainoftheNight extends FGOCard {
         setMagic(1, 1);
     }
 
-    
-
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new MeditateFateAction(magicNumber, true));

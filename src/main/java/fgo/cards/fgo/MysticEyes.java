@@ -31,8 +31,6 @@ public class MysticEyes extends FGOCard {
         setExhaust();
     }
 
-    
-
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new VFXAction(new ViceCrushEffect(m.hb.cX, m.hb.cY), 0.5F));

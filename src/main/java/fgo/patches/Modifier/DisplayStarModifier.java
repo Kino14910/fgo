@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 
 public class DisplayStarModifier extends AbstractCardModifier {
     public static String MOD_ID = "fgo:DisplayStarModifier";
-    private static final Texture tex = ImageMaster.loadImage("fgo/images/UI_Master/DisplayModifier.png");
+    private static final Texture tex = ImageMaster.loadImage("fgo/images/ui/DisplayModifier.png");
     private final int amount;
     public DisplayStarModifier(int amount) {
         this.amount = amount;

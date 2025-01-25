@@ -8,7 +8,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import fgo.cards.FGOCard;
 import fgo.util.CardStats;
 
-@AutoAdd.Ignore
 public class RepairSpiritOrigin extends FGOCard {
     public static final String ID = makeID(RepairSpiritOrigin.class.getSimpleName());
     private static final CardStats INFO = new CardStats(
@@ -26,8 +25,6 @@ public class RepairSpiritOrigin extends FGOCard {
     @Override
     public void upgrade() {
     }
-
-    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {this.onChoseThisOption();}

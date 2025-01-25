@@ -28,8 +28,6 @@ public class LakeTexcoco extends FGOCard {
         setMagic(5, 5);
     }
 
-    
-
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new FgoNpAction(np));

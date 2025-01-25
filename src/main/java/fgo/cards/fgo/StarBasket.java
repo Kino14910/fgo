@@ -30,8 +30,6 @@ public class StarBasket extends FGOCard {
         setMagic(5);
     }
 
-    
-
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new SFXAction("ATTACK_HEAVY"));

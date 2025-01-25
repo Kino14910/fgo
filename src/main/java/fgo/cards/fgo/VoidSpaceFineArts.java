@@ -42,8 +42,6 @@ public class VoidSpaceFineArts extends FGOCard {
         }
     }
 
-    
-
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new GutsPower(p, 10, 1), 10));

@@ -42,8 +42,6 @@ public class BeyondTheFurthestEnd extends FGOCard {
         return -1.0F;
     }
 
-    
-
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new BeyondTheFurthestEndPower(p, magicNumber)));

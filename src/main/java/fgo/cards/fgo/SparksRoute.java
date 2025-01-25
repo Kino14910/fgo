@@ -35,8 +35,6 @@ public class SparksRoute extends FGOCard {
         FlavorText.AbstractCardFlavorFields.flavorBoxType.set(this, FlavorText.boxType.TRADITIONAL);
     }
 
-    
-
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         int theSize = AbstractDungeon.player.hand.size();

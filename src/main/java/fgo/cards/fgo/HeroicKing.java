@@ -27,8 +27,6 @@ public class HeroicKing extends FGOCard {
         setMagic(2);
     }
 
-    
-
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         for(int i = 0; i < magicNumber; ++i) {

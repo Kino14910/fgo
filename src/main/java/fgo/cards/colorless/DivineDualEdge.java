@@ -29,8 +29,6 @@ public class DivineDualEdge extends FGOCard {
         setExhaust();
     }
 
-    
-
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         for(int i = 0; i < 2; ++i) {

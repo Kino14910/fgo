@@ -27,8 +27,6 @@ public class CharismaofAdversity extends FGOCard {
         setDamage(6, 2);
     }
 
-    
-
 
     int[] healthThresholds = {65, 50, 35, 15};
     @Override

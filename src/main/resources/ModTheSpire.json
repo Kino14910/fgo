@@ -2,7 +2,7 @@
   "modid": "${modID}",
   "name": "${project.name}",
   "author_list": ["${author}"],
-  "description": "!(project.description)",
+  "description": "Adds a new character Master in Fate/Grand Order to Slay the Spire.\n\n添加了Fate/Grand Order中御主到杀戮尖塔。咕哒子今天也要爬塔。",
   "version": "${project.version}",
   "sts_version": "${SlayTheSpire.version}",
   "mts_version": "${ModTheSpire.version}",

@@ -24,8 +24,6 @@ public class DragonCore extends FGOCard {
         setCostUpgrade(1);
     }
 
-    
-
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DragonCoreAction());

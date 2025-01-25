@@ -22,8 +22,6 @@ public class TheBlackGrail extends FGOCard {
         setMagic(60, 20);
     }
 
-    
-
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
     }

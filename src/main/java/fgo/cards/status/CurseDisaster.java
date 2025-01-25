@@ -16,11 +16,10 @@ import fgo.patches.Enum.FGOCardColor;
 import fgo.powers.CursePower;
 import fgo.util.CardStats;
 
-@AutoAdd.Ignore
 public class CurseDisaster extends FGOCard {
     public static final String ID = makeID(CurseDisaster.class.getSimpleName());
     private static final CardStats INFO = new CardStats(
-            FGOCardColor.FGO,
+            CardColor.COLORLESS,
             CardType.STATUS,
             CardRarity.COMMON,
             CardTarget.NONE,
@@ -35,8 +34,6 @@ public class CurseDisaster extends FGOCard {
     @Override
     public void upgrade() {
     }
-
-    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {}

@@ -7,7 +7,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import fgo.cards.FGOCard;
 import fgo.util.CardStats;
 
-@AutoAdd.Ignore
 public class PhasingFluidBladeATTACK extends FGOCard {
     public static final String ID = makeID(PhasingFluidBladeATTACK.class.getSimpleName());
     private static final CardStats INFO = new CardStats(
@@ -21,8 +20,6 @@ public class PhasingFluidBladeATTACK extends FGOCard {
         super(ID, INFO);
         setMagic(2, 1);
     }
-
-    
 
 
     @Override

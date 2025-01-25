@@ -36,7 +36,6 @@ import fgo.cards.BaseCard;
 import fgo.characters.Master;
 import fgo.event.*;
 import fgo.monster.Emiya;
-import fgo.patches.Button.CommandSpellButton;
 import fgo.patches.Button.NoblePhantasmButton;
 import fgo.patches.Enum.FGOCardColor;
 import fgo.potions.BasePotion;
@@ -69,9 +68,9 @@ public class FGOMod implements
         OnCardUseSubscriber,
         OnStartBattleSubscriber,
         OnPlayerDamagedSubscriber,
-        PostBattleSubscriber,
-        PostUpdateSubscriber,
-        PostRenderSubscriber
+        PostBattleSubscriber
+//        PostUpdateSubscriber,
+//        PostRenderSubscriber
         {
     public static ModInfo info;
     public static String modID; //Edit your pom.xml to change this
@@ -91,7 +90,7 @@ public class FGOMod implements
     }
 
     /*----------Create new Color----------*/
-    public static final String CARD_ENERGY_ORB = "fgo/images/UI_Master/energyOrb.png";
+    public static final String CARD_ENERGY_ORB = "fgo/images/ui/energyOrb.png";
     public static final Color SILVER = CardHelper.getColor(200, 200, 200);
     public static final Color NOBLE = CardHelper.getColor(255, 215, 0);
     //攻击、技能、能力牌的背景图片(512)
@@ -129,7 +128,7 @@ public class FGOMod implements
         registerPotions();
         registerEvents();
         //This loads the image used as an icon in the in-game mods menu.
-        Texture badgeTexture = TextureLoader.getTexture(imagePath("UI_Master/badge.png"));
+        Texture badgeTexture = TextureLoader.getTexture(imagePath("ui/badge.png"));
         //Set up the mod information displayed in the in-game mods menu.
         //The information used is taken from your pom.xml file.
 
@@ -137,10 +136,8 @@ public class FGOMod implements
         //The Mod Badges page has a basic example of this, but setting up config is overall a bit complex.
         BaseMod.registerModBadge(badgeTexture, info.Name, GeneralUtils.arrToString(info.Authors), info.Description, null);
 
-        Master.fgoNp = 0;
         //顶部宝具牌预览。
         //BaseMod.addTopPanelItem(new CurrentNobleCards());
-
 
         BaseMod.addMonster(Emiya.ID, Emiya.NAME, () -> new MonsterGroup(new AbstractMonster[]{new Emiya()}));
         BaseMod.addBoss(TheCity.ID, Emiya.ID, "fgo/images/monster/map_emiya.png", "fgo/images/monster/map_emiya_outline.png");
@@ -315,27 +312,30 @@ public class FGOMod implements
     @Override
     public void receiveEditCards() { //somewhere in the class
         new AutoAdd(modID) //Loads files from this mod
-            .packageFilter(BaseCard.class) //In the same package as this class
-            .setDefaultSeen(true) //And marks them as seen in the compendium
-            .cards(); //Adds the cards
+                .packageFilter(BaseCard.class) //In the same package as this class
+                .notPackageFilter("fgo.cards.optionCards")
+                .notPackageFilter("fgo.cards.deprecated")
+                .setDefaultSeen(true) //And marks them as seen in the compendium
+                .cards(); //Adds the cards
         BaseMod.addDynamicVariable(new NoblePhantasmVariable());
     }
 
     @Override
     public void receiveEditRelics() {
         new AutoAdd(modID)
-            .packageFilter(BaseRelic.class)
-            .any(BaseRelic.class, (info, relic) -> { //Run this code for any classes that extend this class
-                if (relic.pool != null)
-                    BaseMod.addRelicToCustomPool(relic, relic.pool); //Register a custom character specific relic
-                else
-                    BaseMod.addRelic(relic, relic.relicType); //Register a shared or base game character specific relic
+                .packageFilter(BaseRelic.class)
+                .notPackageFilter("fgo.relics.deprecated")
+                .any(BaseRelic.class, (info, relic) -> { //Run this code for any classes that extend this class
+                    if (relic.pool != null)
+                        BaseMod.addRelicToCustomPool(relic, relic.pool); //Register a custom character specific relic
+                    else
+                        BaseMod.addRelic(relic, relic.relicType); //Register a shared or base game character specific relic
 
-                //If the class is annotated with @AutoAdd.Seen, it will be marked as seen, making it visible in the relic library.
-                //If you want all your relics to be visible by default, just remove this if statement.
-//                if (info.seen)
-                    UnlockTracker.markRelicAsSeen(relic.relicId);
-            });
+                    //If the class is annotated with @AutoAdd.Seen, it will be marked as seen, making it visible in the relic library.
+                    //If you want all your relics to be visible by default, just remove this if statement.
+    //                if (info.seen)
+                        UnlockTracker.markRelicAsSeen(relic.relicId);
+                });
     }
 
      public static void registerPotions() {
@@ -443,35 +443,27 @@ public class FGOMod implements
         return i;
     }
 
-    @Override
-    public void receivePostRender(SpriteBatch sb) {
-        if (NoblePhantasmButton.inst != null && AbstractDungeon.player != null) {
-            NoblePhantasmButton.inst.render(sb);
-        }
-        if (CommandSpellButton.inst != null && AbstractDungeon.player != null) {
-            CommandSpellButton.inst.render(sb);
-        }
-    }
-
-    @Override
-    public void receivePostUpdate() {
-        if (AbstractDungeon.getCurrMapNode() == null ||
-            AbstractDungeon.getCurrRoom() == null ||
-            (AbstractDungeon.getCurrRoom()).phase != AbstractRoom.RoomPhase.COMBAT){
-            return;
-        }
-
-        if (NoblePhantasmButton.inst == null) {
-            NoblePhantasmButton.inst = new NoblePhantasmButton(AbstractDungeon.player.hb.x - 30.0F * Settings.scale,
-                    AbstractDungeon.player.hb.cY + AbstractDungeon.player.hb.height / 2 + 20.0F * Settings.scale);
-        }
-        NoblePhantasmButton.inst.update();
-
-        if(CommandSpellButton.inst == null) {
-            CommandSpellButton.inst = new CommandSpellButton(Settings.WIDTH - 128.0f * Settings.scale, Settings.HEIGHT - 256.0f * Settings.scale);
-        }
-        CommandSpellButton.inst.update();
-    }
+//    @Override
+//    public void receivePostRender(SpriteBatch sb) {
+//        if (NoblePhantasmButton.inst != null && AbstractDungeon.player != null) {
+//            NoblePhantasmButton.inst.render(sb);
+//        }
+//    }
+//
+//    @Override
+//    public void receivePostUpdate() {
+//        if (AbstractDungeon.getCurrMapNode() == null ||
+//            AbstractDungeon.getCurrRoom() == null ||
+//            (AbstractDungeon.getCurrRoom()).phase != AbstractRoom.RoomPhase.COMBAT){
+//            return;
+//        }
+//
+//        if (NoblePhantasmButton.inst == null) {
+//            NoblePhantasmButton.inst = new NoblePhantasmButton(AbstractDungeon.player.hb.x - 30.0F * Settings.scale,
+//                    AbstractDungeon.player.hb.cY + AbstractDungeon.player.hb.height / 2 + 20.0F * Settings.scale);
+//        }
+//        NoblePhantasmButton.inst.update();
+//    }
 
 
 }

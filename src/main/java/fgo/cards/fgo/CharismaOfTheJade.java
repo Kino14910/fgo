@@ -27,8 +27,6 @@ public class CharismaOfTheJade extends FGOCard {
         setDamage(9, 3);
     }
 
-    
-
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
             addToBot(new VFXAction(new WeightyImpactEffect(m.hb.cX, m.hb.cY)));

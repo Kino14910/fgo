@@ -27,8 +27,6 @@ public class MorningLark extends FGOCard {
         setMagic(10, 10);
     }
 
-    
-
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new FgoNpAction(np));

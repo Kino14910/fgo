@@ -11,7 +11,6 @@ import fgo.cards.FGOCard;
 import fgo.powers.BurnDamagePower;
 import fgo.util.CardStats;
 
-@AutoAdd.Ignore
 public class FlamesofApplause extends FGOCard {
     public static final String ID = makeID(FlamesofApplause.class.getSimpleName());
     private static final CardStats INFO = new CardStats(
@@ -27,8 +26,6 @@ public class FlamesofApplause extends FGOCard {
         setMagic(1);
         setExhaust();
     }
-
-    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

@@ -25,8 +25,6 @@ public class EndOfADream extends FGOCard {
         setSelfRetain(false, true);
     }
 
-    
-
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new PowerUpBoostPower(p, magicNumber)));

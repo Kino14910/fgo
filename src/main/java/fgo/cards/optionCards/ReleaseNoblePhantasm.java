@@ -7,7 +7,6 @@ import fgo.action.FgoNpAction;
 import fgo.cards.FGOCard;
 import fgo.util.CardStats;
 
-@AutoAdd.Ignore
 public class ReleaseNoblePhantasm extends FGOCard {
     public static final String ID = makeID(ReleaseNoblePhantasm.class.getSimpleName());
     private static final CardStats INFO = new CardStats(
@@ -26,8 +25,6 @@ public class ReleaseNoblePhantasm extends FGOCard {
     @Override
     public void upgrade() {
     }
-
-    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {this.onChoseThisOption();}

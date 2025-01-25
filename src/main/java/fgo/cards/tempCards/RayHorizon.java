@@ -11,7 +11,6 @@ import fgo.powers.InvincibilityTurnPower;
 import fgo.powers.NoblePhantasmCardPower;
 import fgo.util.CardStats;
 
-@AutoAdd.Ignore
 public class RayHorizon extends FGOCard {
     public static final String ID = makeID(RayHorizon.class.getSimpleName());
     private static final CardStats INFO = new CardStats(
@@ -27,8 +26,6 @@ public class RayHorizon extends FGOCard {
         this.cardsToPreview = new HollowHeartAlbion();
         setExhaust();
     }
-
-    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

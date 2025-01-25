@@ -26,8 +26,6 @@ public class CrownedWithLife extends FGOCard {
         setExhaust();
     }
 
-    
-
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
     }

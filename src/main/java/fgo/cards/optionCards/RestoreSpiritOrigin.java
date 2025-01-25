@@ -9,7 +9,6 @@ import fgo.action.FgoNpAction;
 import fgo.cards.FGOCard;
 import fgo.util.CardStats;
 
-@AutoAdd.Ignore
 public class RestoreSpiritOrigin extends FGOCard {
     public static final String ID = makeID(RestoreSpiritOrigin.class.getSimpleName());
     private static final CardStats INFO = new CardStats(
@@ -27,8 +26,6 @@ public class RestoreSpiritOrigin extends FGOCard {
     @Override
     public void upgrade() {
     }
-
-    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {this.onChoseThisOption();}

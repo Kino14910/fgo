@@ -17,7 +17,6 @@ import fgo.patches.Enum.CardTagsEnum;
 
 import static fgo.FGOMod.makeID;
 
-@AutoAdd.Ignore
 public class DoppelgangerPower extends BasePower {
     public static final String POWER_ID = makeID(DoppelgangerPower.class.getSimpleName());
     private static final PowerType TYPE = PowerType.BUFF;

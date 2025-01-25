@@ -27,8 +27,6 @@ public class PutOnFakeFace extends FGOCard {
     public void upgrade() {
     }
 
-    
-
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new ApplyPowerAction(p, p, new PutOnFakeFacePower(p)));

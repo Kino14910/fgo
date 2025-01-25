@@ -29,8 +29,6 @@ public class Executioner extends FGOCard {
         setMagic(1);
     }
 
-    
-
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ExpungeVFXAction(m));

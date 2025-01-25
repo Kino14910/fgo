@@ -31,8 +31,6 @@ public class GrandOrder extends FGOCard {
     public void upgrade() {
     }
 
-    
-
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         Iterator<AbstractMonster> var1 = AbstractDungeon.getMonsters().monsters.iterator();

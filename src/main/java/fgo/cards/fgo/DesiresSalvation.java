@@ -24,8 +24,6 @@ public class DesiresSalvation extends FGOCard {
         setInnate(false, true);
     }
 
-    
-
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new EnergyRegenPower(p, np), np));

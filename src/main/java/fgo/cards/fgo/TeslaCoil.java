@@ -30,8 +30,6 @@ public class TeslaCoil extends FGOCard {
         setMagic(3, 1);
     }
 
-    
-
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new SFXAction("THUNDERCLAP", 0.05F));

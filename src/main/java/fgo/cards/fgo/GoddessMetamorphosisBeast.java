@@ -24,8 +24,6 @@ public class GoddessMetamorphosisBeast extends FGOCard {
         setEthereal(true, false);
     }
 
-    
-
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new GoddessMetamorphosisBeastPower(p, magicNumber)));

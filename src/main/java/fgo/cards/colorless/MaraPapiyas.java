@@ -22,8 +22,6 @@ public class MaraPapiyas extends FGOCard {
         setMagic(12, 4);
     }
 
-    
-
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.player.decreaseMaxHealth(2);

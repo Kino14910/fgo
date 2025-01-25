@@ -12,7 +12,6 @@ import fgo.util.CardStats;
 
 import static com.megacrit.cardcrawl.core.Settings.language;
 
-@AutoAdd.Ignore
 public class WallOfSnowflakes extends FGOCard {
     public static final String ID = makeID(WallOfSnowflakes.class.getSimpleName());
     private static final CardStats INFO = new CardStats(

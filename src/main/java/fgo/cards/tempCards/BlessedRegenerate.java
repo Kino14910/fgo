@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import fgo.cards.FGOCard;
 import fgo.util.CardStats;
 
-@AutoAdd.Ignore
 public class BlessedRegenerate extends FGOCard {
     public static final String ID = makeID(BlessedRegenerate.class.getSimpleName());
     private static final CardStats INFO = new CardStats(
@@ -23,8 +22,6 @@ public class BlessedRegenerate extends FGOCard {
         super(ID, INFO);
         setMagic(2, 1);
     }
-
-    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {this.onChoseThisOption();}

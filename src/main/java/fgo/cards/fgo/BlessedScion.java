@@ -37,8 +37,6 @@ public class BlessedScion extends FGOCard {
         }
     }
 
-    
-
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new BlessedScionAction(p, p, magicNumber, true));

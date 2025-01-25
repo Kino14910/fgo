@@ -1,5 +1,6 @@
-package fgo.relics;
+package fgo.relics.deprecated;
 
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -10,11 +11,13 @@ import fgo.cards.optionCards.RestoreSpiritOrigin;
 import fgo.cards.optionCards.ReleaseNoblePhantasm;
 import fgo.cards.optionCards.RepairSpiritOrigin;
 import fgo.patches.Enum.FGOCardColor;
+import fgo.relics.BaseRelic;
 
 import java.util.ArrayList;
 
 import static fgo.FGOMod.makeID;
 
+@Deprecated
 public class CommandSpell extends BaseRelic {
     private static final String NAME = "CommandSpell";
 	public static final String ID = makeID(NAME);

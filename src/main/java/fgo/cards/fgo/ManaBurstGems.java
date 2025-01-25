@@ -29,8 +29,6 @@ public class ManaBurstGems extends FGOCard {
         portraitImg = ImageMaster.loadImage("fgo/images/cards/skill/ManaBurstGems.png");
     }
 
-    
-
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new ApplyPowerAction(p, p, new ManaBurstGemsPower(p, this.magicNumber), this.magicNumber));

@@ -27,8 +27,6 @@ public class OriginBullet extends FGOCard {
         setMagic(3, 3);
     }
 
-    
-
     @Override
     public void calculateCardDamage(AbstractMonster mo) {
         int BulletAmt = 0;

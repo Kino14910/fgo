@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 
 public class DisplayNPModifier extends AbstractCardModifier {
     public static String MOD_ID = "fgo:DisplayNPModifier";
-    private static final Texture tex = ImageMaster.loadImage("fgo/images/UI_Master/DisplayModifier.png");
+    private static final Texture tex = ImageMaster.loadImage("fgo/images/ui/DisplayModifier.png");
     private final int amount;
     public DisplayNPModifier(int amount) {
         this.amount = amount;

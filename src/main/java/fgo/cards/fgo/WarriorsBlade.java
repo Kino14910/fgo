@@ -29,8 +29,6 @@ public class WarriorsBlade extends FGOCard {
         setMagic(6);
     }
 
-    
-
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new SFXAction("ATTACK_HEAVY"));

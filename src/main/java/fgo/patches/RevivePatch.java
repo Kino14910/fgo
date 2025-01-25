@@ -4,7 +4,7 @@ import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import fgo.powers.*;
 import javassist.CtBehavior;
-import fgo.relics.CommandSpell;
+import fgo.relics.deprecated.CommandSpell;
 
 public class RevivePatch {
     @SpirePatch(clz = AbstractPlayer.class, method = "damage")

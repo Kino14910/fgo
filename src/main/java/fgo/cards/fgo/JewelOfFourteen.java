@@ -28,8 +28,6 @@ public class JewelOfFourteen extends FGOCard {
         cardsToPreview.upgrade();
     }
 
-    
-
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new JewelOfFourteenAction(upgraded, 10));

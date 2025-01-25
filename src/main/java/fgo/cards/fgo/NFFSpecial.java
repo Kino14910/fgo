@@ -24,8 +24,6 @@ public class NFFSpecial extends FGOCard {
         cardsToPreview = new PoisonousDagger();
     }
 
-    
-
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DrawCardAction(p, magicNumber));

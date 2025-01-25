@@ -11,7 +11,6 @@ import com.megacrit.cardcrawl.powers.PoisonPower;
 import fgo.cards.FGOCard;
 import fgo.util.CardStats;
 
-@AutoAdd.Ignore
 public class PoisonousDagger extends FGOCard {
     public static final String ID = makeID(PoisonousDagger.class.getSimpleName());
     private static final CardStats INFO = new CardStats(

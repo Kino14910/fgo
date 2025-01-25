@@ -33,8 +33,6 @@ public class PhasingFluidBlade extends FGOCard {
         setMagic(2);
     }
 
-    
-
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new SFXAction("ATTACK_HEAVY"));

@@ -28,8 +28,6 @@ public class Dumuzid extends FGOCard {
     public void upgrade() {
     }
 
-    
-
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (this.dontTriggerOnUseCard) {

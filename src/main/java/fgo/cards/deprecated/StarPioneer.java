@@ -13,7 +13,6 @@ import fgo.cards.FGOCard;
 import fgo.patches.Enum.FGOCardColor;
 import fgo.util.CardStats;
 
-@AutoAdd.Ignore
 public class StarPioneer extends FGOCard {
     public static final String ID = makeID(StarPioneer.class.getSimpleName());
     private static final CardStats INFO = new CardStats(
@@ -27,8 +26,6 @@ public class StarPioneer extends FGOCard {
         super(ID, INFO);
         setMagic(3);
     }
-
-    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

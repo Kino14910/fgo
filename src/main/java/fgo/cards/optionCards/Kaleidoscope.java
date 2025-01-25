@@ -7,7 +7,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import fgo.cards.FGOCard;
 import fgo.util.CardStats;
 
-@AutoAdd.Ignore
 public class Kaleidoscope extends FGOCard {
     public static final String ID = makeID(Kaleidoscope.class.getSimpleName());
     private static final CardStats INFO = new CardStats(
@@ -21,8 +20,6 @@ public class Kaleidoscope extends FGOCard {
         super(ID, INFO);
         setNP(80, 20);
     }
-
-    
 
 
     @Override

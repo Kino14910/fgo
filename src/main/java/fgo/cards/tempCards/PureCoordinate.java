@@ -11,7 +11,6 @@ import fgo.powers.EternalMemoriesPower;
 import fgo.powers.InvincibilityPower;
 import fgo.util.CardStats;
 
-@AutoAdd.Ignore
 public class PureCoordinate extends FGOCard {
     public static final String ID = makeID(PureCoordinate.class.getSimpleName());
     private static final CardStats INFO = new CardStats(
@@ -25,8 +24,6 @@ public class PureCoordinate extends FGOCard {
         super(ID, INFO);
         setMagic(2, 1);
     }
-
-    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {this.onChoseThisOption();}

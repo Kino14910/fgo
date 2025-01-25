@@ -12,7 +12,6 @@ import fgo.cards.FGOCard;
 import fgo.patches.Enum.FGOCardColor;
 import fgo.util.CardStats;
 
-@AutoAdd.Ignore
 public class TeachingsoftheEternal extends FGOCard {
     public static final String ID = makeID(TeachingsoftheEternal.class.getSimpleName());
     private static final CardStats INFO = new CardStats(
@@ -26,8 +25,6 @@ public class TeachingsoftheEternal extends FGOCard {
         super(ID, INFO);
         setDamage(9, 3);
     }
-
-    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

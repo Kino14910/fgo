@@ -37,8 +37,6 @@ public class GraceUnexpectedBirth extends FGOCard {
         return -1.0F;
     }
 
-    
-
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new FgoNpAction(np));

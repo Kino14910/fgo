@@ -28,8 +28,6 @@ public class SpringOfFire extends FGOCard {
         this.tags.add(CardTags.HEALING);
     }
 
-    
-
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (!p.hasPower(GutsPower.POWER_ID)) {

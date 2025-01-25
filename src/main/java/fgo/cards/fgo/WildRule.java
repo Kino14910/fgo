@@ -34,8 +34,6 @@ public class WildRule extends FGOCard {
         setMagic(1, 2);
     }
 
-    
-
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (m != null) {

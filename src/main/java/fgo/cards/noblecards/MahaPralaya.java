@@ -34,8 +34,6 @@ public class MahaPralaya extends AbsNoblePhantasmCard {
         cardArtLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH_P)));
     }
 
-    
-
     @Override
     public void calculateCardDamage(AbstractMonster mo) {
         int MahaAmt = 0;

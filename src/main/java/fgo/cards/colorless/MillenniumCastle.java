@@ -25,8 +25,6 @@ public class MillenniumCastle extends FGOCard {
         this.portraitImg = ImageMaster.loadImage("fgo/images/cards/power/MillenniumCastle.png");
     }
 
-    
-
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new ApplyPowerAction(p, p, new MillenniumCastlePower(p, this.magicNumber), this.magicNumber));

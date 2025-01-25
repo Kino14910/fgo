@@ -35,8 +35,6 @@ public class JourneyGuidance extends FGOCard {
         cardsToPreview = new SoulOfWaterChannels();
     }
 
-    
-
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         int i;

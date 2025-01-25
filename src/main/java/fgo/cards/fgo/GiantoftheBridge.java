@@ -29,8 +29,6 @@ public class GiantoftheBridge extends FGOCard {
         setBlock(3, 2);
     }
 
-    
-
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         int times = ( AbstractDungeon.actNum == 2 || AbstractDungeon.actNum >= 4 ) ? 2 : 1;

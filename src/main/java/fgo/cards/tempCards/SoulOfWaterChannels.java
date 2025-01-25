@@ -13,7 +13,6 @@ import fgo.powers.CursePower;
 import fgo.powers.StarGainPower;
 import fgo.util.CardStats;
 
-@AutoAdd.Ignore
 public class SoulOfWaterChannels extends FGOCard {
     public static final String ID = makeID(SoulOfWaterChannels.class.getSimpleName());
     private static final CardStats INFO = new CardStats(
@@ -30,8 +29,6 @@ public class SoulOfWaterChannels extends FGOCard {
         setSelfRetain();
         this.tags.add(CardTagsEnum.Foreigner);
     }
-
-    
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
