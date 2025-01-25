@@ -9,8 +9,6 @@
 //
 //@Deprecated
 //
-import static fgo.FGOMod.makeID;
-
 //public class HPRegenPower extends BasePower {
 //
 //    public static final String POWER_ID = "HPRegenPower";

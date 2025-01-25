@@ -1,15 +1,14 @@
 package fgo.relics.deprecated;
 
-import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.input.InputHelper;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
-import fgo.cards.optionCards.RestoreSpiritOrigin;
 import fgo.cards.optionCards.ReleaseNoblePhantasm;
 import fgo.cards.optionCards.RepairSpiritOrigin;
+import fgo.cards.optionCards.RestoreSpiritOrigin;
 import fgo.patches.Enum.FGOCardColor;
 import fgo.relics.BaseRelic;
 

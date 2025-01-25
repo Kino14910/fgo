@@ -14,8 +14,6 @@
 //
 //@Deprecated
 //
-import static fgo.FGOMod.makeID;
-
 //public class BusterCardPower extends BasePower {
 //    public static final String POWER_ID = "BusterCardPower";
 //    public static final String NAME = (CardCrawlGame.languagePack.getPowerStrings(POWER_ID)).NAME;

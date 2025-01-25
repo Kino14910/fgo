@@ -1,8 +1,6 @@
 package fgo.potions;
 
 import basemod.BaseMod;
-import fgo.cards.optionCards.Kaleidoscope;
-import fgo.cards.optionCards.TheBlackGrail;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -14,6 +12,8 @@ import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.helpers.input.InputHelper;
 import com.megacrit.cardcrawl.localization.PotionStrings;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
+import fgo.cards.optionCards.Kaleidoscope;
+import fgo.cards.optionCards.TheBlackGrail;
 
 import java.util.ArrayList;
 

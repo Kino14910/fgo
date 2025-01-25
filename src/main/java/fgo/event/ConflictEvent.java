@@ -1,12 +1,10 @@
 package fgo.event;
 
-import basemod.abstracts.events.PhasedEvent;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.dungeons.TheBeyond;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.relics.Circlet;
@@ -17,7 +15,6 @@ import fgo.relics.SkullCandy;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
-
 
 import static fgo.FGOMod.makeID;
 

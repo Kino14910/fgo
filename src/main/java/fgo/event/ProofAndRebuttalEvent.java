@@ -1,9 +1,5 @@
 package fgo.event;
 
-import basemod.abstracts.events.PhasedEvent;
-import com.megacrit.cardcrawl.dungeons.Exordium;
-import com.megacrit.cardcrawl.dungeons.TheBeyond;
-import fgo.cards.colorless.ProofAndRebuttal;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -15,12 +11,12 @@ import com.megacrit.cardcrawl.vfx.UpgradeShineEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
 import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
+import fgo.cards.colorless.ProofAndRebuttal;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
-
 
 import static fgo.FGOMod.makeID;
 

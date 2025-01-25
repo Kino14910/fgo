@@ -1,17 +1,14 @@
 package fgo.event;
 
-import basemod.abstracts.events.PhasedEvent;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.dungeons.TheBeyond;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.relics.Circlet;
 import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
 import fgo.relics.BB;
-
 
 import static fgo.FGOMod.makeID;
 

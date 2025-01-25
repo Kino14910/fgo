@@ -1,6 +1,5 @@
 package fgo.cards.tempCards;
 
-import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.common.BetterDrawPileToHandAction;
 import com.megacrit.cardcrawl.actions.common.DiscardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;

@@ -12,7 +12,6 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import fgo.util.GeneralUtils;
 import fgo.util.TextureLoader;
-import static fgo.FGOMod.*;
 
 import java.util.Objects;
 

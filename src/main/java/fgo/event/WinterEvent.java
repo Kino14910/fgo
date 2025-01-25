@@ -1,15 +1,11 @@
 package fgo.event;
 
-import basemod.abstracts.events.PhasedEvent;
-import com.megacrit.cardcrawl.dungeons.TheBeyond;
-import com.megacrit.cardcrawl.dungeons.TheCity;
-import fgo.cards.colorless.CrystallizationofWinter;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
-
+import fgo.cards.colorless.CrystallizationofWinter;
 
 import static fgo.FGOMod.makeID;
 

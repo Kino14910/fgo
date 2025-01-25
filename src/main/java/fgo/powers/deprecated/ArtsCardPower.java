@@ -12,10 +12,6 @@
 //
 //@Deprecated
 //
-import com.megacrit.cardcrawl.powers.AbstractPower;
-
-import static fgo.FGOMod.makeID;
-
 //public class ArtsCardPower extends BasePower {
 //    public static final String POWER_ID = "ArtsCardPower";
 //    public static final String NAME = (CardCrawlGame.languagePack.getPowerStrings(POWER_ID)).NAME;

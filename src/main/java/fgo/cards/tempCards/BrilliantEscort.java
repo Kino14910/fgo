@@ -1,6 +1,5 @@
 package fgo.cards.tempCards;
 
-import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;

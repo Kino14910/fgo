@@ -9,7 +9,6 @@ import fgo.cards.colorless.mash.BlackBarrel;
 import fgo.cards.colorless.mash.WallOfSnowflakes;
 import fgo.patches.Enum.FGOCardColor;
 
-import static com.megacrit.cardcrawl.helpers.ImageMaster.loadImage;
 import static fgo.FGOMod.makeID;
 
 public class LockChocolateStrawberry extends BaseRelic {

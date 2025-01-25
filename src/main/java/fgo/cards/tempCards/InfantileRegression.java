@@ -1,6 +1,5 @@
 package fgo.cards.tempCards;
 
-import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;

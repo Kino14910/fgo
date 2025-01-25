@@ -1,9 +1,8 @@
 package fgo.cards.optionCards;
 
-import basemod.AutoAdd;
-import fgo.action.FgoNpAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import fgo.action.FgoNpAction;
 import fgo.cards.FGOCard;
 import fgo.util.CardStats;
 

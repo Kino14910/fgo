@@ -1,13 +1,11 @@
 package fgo.patches.Button;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
-import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -24,12 +22,8 @@ import com.megacrit.cardcrawl.vfx.BobEffect;
 import com.megacrit.cardcrawl.vfx.ThoughtBubble;
 import fgo.action.FgoNpAction;
 import fgo.action.NoblePhantasmSelectAction;
-import fgo.cards.optionCards.ReleaseNoblePhantasm;
-import fgo.cards.optionCards.RepairSpiritOrigin;
 import fgo.characters.Master;
 import fgo.powers.SealNPPower;
-
-import java.util.ArrayList;
 
 import static fgo.util.GeneralUtils.addToBot;
 

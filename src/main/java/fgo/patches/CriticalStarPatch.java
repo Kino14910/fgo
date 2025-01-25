@@ -1,12 +1,10 @@
 package fgo.patches;
 
-import com.evacipated.cardcrawl.mod.stslib.patches.tempHp.MonsterDamage;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import fgo.action.FgoNpAction;
 import fgo.characters.Master;
 import fgo.powers.StarGainPower;
 import javassist.CtBehavior;

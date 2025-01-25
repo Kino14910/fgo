@@ -11,10 +11,6 @@
 //
 //@Deprecated
 //
-import com.megacrit.cardcrawl.powers.AbstractPower;
-
-import static fgo.FGOMod.makeID;
-
 //public class BusterPerformancePower extends BasePower {
 //    public static final String POWER_ID = "BusterPerformancePower";
 //    public static final String NAME = (CardCrawlGame.languagePack.getPowerStrings(POWER_ID)).NAME;

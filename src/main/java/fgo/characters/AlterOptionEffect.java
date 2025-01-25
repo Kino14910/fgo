@@ -1,10 +1,5 @@
 package fgo.characters;
 
-import fgo.cards.noblecards.HollowHeartAlbion;
-import fgo.cards.noblecards.Unlimited;
-import fgo.patches.Enum.CardTagsEnum;
-import fgo.cards.noblecards.HollowHeartAlbion;
-import fgo.cards.noblecards.Unlimited;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -24,6 +19,8 @@ import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import com.megacrit.cardcrawl.vfx.UpgradeShineEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
+import fgo.cards.noblecards.HollowHeartAlbion;
+import fgo.cards.noblecards.Unlimited;
 import fgo.patches.Enum.CardTagsEnum;
 
 import java.util.ArrayList;

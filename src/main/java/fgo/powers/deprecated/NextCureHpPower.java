@@ -13,10 +13,6 @@
 //
 //@Deprecated
 //
-import com.megacrit.cardcrawl.powers.AbstractPower;
-
-import static fgo.FGOMod.makeID;
-
 //public class NextCureHpPower extends BasePower {
 //    public static final String POWER_ID = "NextCureHpPower";
 //    public static final String NAME = (CardCrawlGame.languagePack.getPowerStrings(POWER_ID)).NAME;

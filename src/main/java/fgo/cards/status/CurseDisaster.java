@@ -1,18 +1,15 @@
 package fgo.cards.status;
 
-import basemod.AutoAdd;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.AllEnemyApplyPowerAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.ShockWaveEffect;
 import fgo.cards.FGOCard;
-import fgo.patches.Enum.FGOCardColor;
 import fgo.powers.CursePower;
 import fgo.util.CardStats;
 

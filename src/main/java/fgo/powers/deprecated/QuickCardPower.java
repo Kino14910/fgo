@@ -13,8 +13,6 @@
 //
 //@Deprecated
 //
-import static fgo.FGOMod.makeID;
-
 //public class QuickCardPower extends BasePower {
 //    public static final String POWER_ID = "QuickCardPower";
 //    public static final String NAME = (CardCrawlGame.languagePack.getPowerStrings(POWER_ID)).NAME;

@@ -1,12 +1,9 @@
 package fgo.event;
 
-import basemod.abstracts.events.PhasedEvent;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.dungeons.TheBeyond;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.vfx.RainingGoldEffect;
-
 
 import static fgo.FGOMod.makeID;
 

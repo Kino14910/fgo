@@ -18,8 +18,6 @@
 //
 //@Deprecated
 //
-import static fgo.FGOMod.makeID;
-
 //public class StarGainDeprecatedPower extends BasePower {
 //    public static final String POWER_ID = "StarGainPower";
 //    public static final String NAME = (CardCrawlGame.languagePack.getPowerStrings(POWER_ID)).NAME;

@@ -1,16 +1,10 @@
 package fgo.monster;
 
-import com.megacrit.cardcrawl.actions.utility.SFXAction;
-import com.megacrit.cardcrawl.audio.MainMusic;
-import com.megacrit.cardcrawl.audio.Sfx;
-import fgo.action.WaitFgoAction;
-import fgo.action.lor.ChangeSceneEffect;
-import fgo.cards.noblecards.Unlimited;
-import fgo.characters.Master;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.*;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.tempCards.Shiv;
@@ -26,6 +20,10 @@ import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.vfx.FadeWipeParticle;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
+import fgo.action.WaitFgoAction;
+import fgo.action.lor.ChangeSceneEffect;
+import fgo.cards.noblecards.Unlimited;
+import fgo.characters.Master;
 import fgo.powers.CriticalDamageUpPower;
 import fgo.powers.monster.StarGainMonsterPower;
 
@@ -74,6 +72,7 @@ public class Emiya extends AbstractMonster {
         }
         this.damage.add(new DamageInfo(this, dmg1));
         this.damage.add(new DamageInfo(this, dmg2));
+
     }
 
     public void usePreBattleAction() {}

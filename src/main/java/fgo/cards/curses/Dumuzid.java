@@ -1,7 +1,6 @@
 package fgo.cards.curses;
 
 import com.megacrit.cardcrawl.actions.common.SetDontTriggerAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardQueueItem;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;

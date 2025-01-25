@@ -1,6 +1,5 @@
 package fgo.cards.deprecated;
 
-import basemod.AutoAdd;
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.stslib.patches.FlavorText;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;

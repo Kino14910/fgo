@@ -1,6 +1,5 @@
 package fgo.event;
 
-import fgo.cards.colorless.*;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
@@ -10,9 +9,9 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
+import fgo.cards.colorless.*;
 import fgo.cards.fgo.DeathOfDeath;
 import fgo.cards.fgo.SpringOfFire;
-
 
 import static fgo.FGOMod.makeID;
 

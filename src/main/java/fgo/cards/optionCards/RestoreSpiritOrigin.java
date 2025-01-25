@@ -1,6 +1,5 @@
 package fgo.cards.optionCards;
 
-import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;

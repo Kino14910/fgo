@@ -1,11 +1,11 @@
 package fgo.patches;
 
-import fgo.characters.AlterOption;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInstrumentPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.rooms.CampfireUI;
 import com.megacrit.cardcrawl.ui.campfire.AbstractCampfireOption;
+import fgo.characters.AlterOption;
 import fgo.characters.Master;
 import javassist.CannotCompileException;
 import javassist.expr.ExprEditor;

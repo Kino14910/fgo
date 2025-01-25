@@ -1,11 +1,11 @@
 package fgo.relics;
 
-import fgo.cards.curses.Dumuzid;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
+import fgo.cards.curses.Dumuzid;
 import fgo.patches.Enum.FGOCardColor;
 
 import static fgo.FGOMod.makeID;

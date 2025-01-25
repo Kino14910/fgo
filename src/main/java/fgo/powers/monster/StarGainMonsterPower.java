@@ -1,17 +1,13 @@
 package fgo.powers.monster;
 
-import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import fgo.powers.ArchetypeORTPower;
 import fgo.powers.BasePower;
 import fgo.powers.CriticalDamageUpPower;
-
 
 import static fgo.FGOMod.makeID;
 
