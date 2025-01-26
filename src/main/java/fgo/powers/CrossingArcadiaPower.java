@@ -40,7 +40,5 @@ public class CrossingArcadiaPower extends BasePower {
         }
     }
 
-    public AbstractPower makeCopy() {
-        return new CrossingArcadiaPower(this.owner, this.amount);
-    }
+    
 }

@@ -167,5 +167,5 @@
 //        }
 //    }
 //
-//    public AbstractPower makeCopy() {return new StarGainDeprecatedPower(this.owner, this.amount);}
+//    
 //}

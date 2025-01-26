@@ -27,7 +27,5 @@ public class BeastMagicPower extends BasePower {
         }
     }
 
-    public AbstractPower makeCopy() {
-        return new BeastMagicPower(this.owner, this.amount);
-    }
+    
 }

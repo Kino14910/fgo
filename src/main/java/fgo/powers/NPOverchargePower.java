@@ -64,7 +64,5 @@ public class NPOverchargePower extends BasePower {
         }
     }
 
-    public AbstractPower makeCopy() {
-        return new NPOverchargePower(this.owner, this.amount);
-    }
+    
 }

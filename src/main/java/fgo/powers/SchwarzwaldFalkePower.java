@@ -32,7 +32,5 @@ public class SchwarzwaldFalkePower extends BasePower {
         }
     }
 
-    public AbstractPower makeCopy() {
-        return new SchwarzwaldFalkePower(this.owner, this.amount);
-    }
+    
 }

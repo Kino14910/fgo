@@ -34,7 +34,5 @@ public class DeathOfDeathPower extends BasePower {
         description = String.format(DESCRIPTIONS[0], amount);
     }
 
-    public AbstractPower makeCopy() {
-        return new DeathOfDeathPower(owner, amount);
-    }
+    
 }

@@ -239,6 +239,7 @@ fgo\cards\fgo\HugeScale.class
 fgo\cards\fgo\KnightoftheLake.class
 fgo\powers\DefenseDownPower.class
 fgo\powers\NPRatePower.class
+fgo\panel\CommandSpellPanel.class
 fgo\cards\fgo\ManaBurstGems.class
 fgo\patches\Button\OverlayMenuPatch$ShowCombatPanelsPatch.class
 fgo\patches\Button\OverlayMenuPatch$RenderPatch.class
@@ -250,6 +251,7 @@ fgo\powers\InvincibilityTurnPower.class
 fgo\action\ExtraterrestrialAction.class
 fgo\powers\NoblePhantasmCardPower.class
 fgo\cards\fgo\WildRule.class
+fgo\panel\FGOConfig.class
 fgo\powers\CurseEvilFormPower.class
 fgo\patches\Enum\ThmodClassEnum.class
 fgo\relics\BaseRelic.class

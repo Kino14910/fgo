@@ -28,7 +28,5 @@ public class HugeScalePower extends BasePower {
         this.addToBot(new ApplyPowerAction(this.owner, this.owner, new InfiniteGrowthPower(this.owner, this.amount), this.amount));
     }
 
-    public AbstractPower makeCopy() {
-        return new HugeScalePower(this.owner, this.amount);
-    }
+    
 }

@@ -43,7 +43,5 @@ public class BeyondTheFurthestEndPower extends BasePower {
         }
     }
 
-    public AbstractPower makeCopy() {
-        return new BeyondTheFurthestEndPower(this.owner, this.amount);
-    }
+    
 }

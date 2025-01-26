@@ -18,5 +18,5 @@ public class MagicBulletPower extends BasePower {
         this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
     }
 
-    public AbstractPower makeCopy() {return new MagicBulletPower(this.owner, this.amount);}
+    
 }

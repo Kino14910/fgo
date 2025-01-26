@@ -32,12 +32,11 @@ public class BlessedScion extends FGOCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(0);
         }
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new BlessedScionAction(p, p, magicNumber, true));
+        addToBot(new BlessedScionAction(p, p, magicNumber, upgraded));
     }
 }

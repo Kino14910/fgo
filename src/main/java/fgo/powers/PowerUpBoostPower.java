@@ -46,7 +46,5 @@ public class PowerUpBoostPower extends BasePower {
         }
     }
 
-    public AbstractPower makeCopy() {
-        return new PowerUpBoostPower(this.owner, this.amount);
-    }
+    
 }

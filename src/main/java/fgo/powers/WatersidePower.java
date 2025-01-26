@@ -38,7 +38,5 @@ public class WatersidePower extends BasePower {
 
     }
 
-    public AbstractPower makeCopy() {
-        return new WatersidePower(owner, amount);
-    }
+    
 }

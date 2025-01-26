@@ -40,7 +40,5 @@ public class MorningLarkPower extends BasePower {
         addToBot(new FgoNpAction(-20));
     }
 
-    public AbstractPower makeCopy() {
-        return new MorningLarkPower(this.owner, this.amount);
-    }
+    
 }

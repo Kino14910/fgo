@@ -41,7 +41,5 @@ public class SunlightPower extends BasePower {
         this.description = DESCRIPTIONS[0];
     }
 
-    public AbstractPower makeCopy() {
-        return new SunlightPower(this.owner, this.amount);
-    }
+    
 }

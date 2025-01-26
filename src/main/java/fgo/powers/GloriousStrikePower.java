@@ -26,7 +26,5 @@ public class GloriousStrikePower extends BasePower {
         this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
     }
 
-    public AbstractPower makeCopy() {
-        return new GloriousStrikePower(this.owner);
-    }
+    
 }

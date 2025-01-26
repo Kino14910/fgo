@@ -38,7 +38,5 @@ public class ViyViyViyPower extends BasePower {
         this.description = DESCRIPTIONS[0] + this.rName + DESCRIPTIONS[1];
     }
 
-    public AbstractPower makeCopy() {
-        return new ViyViyViyPower(this.owner, this.r);
-    }
+    
 }

@@ -106,7 +106,7 @@
   },
   "fgo:AlterOption": {
     "TEXT": [
-      "？？？",
+      "灵基再临",
       "选择获得一张宝具牌，随机升级你牌组中的一张牌。"
     ]
   },
@@ -118,6 +118,18 @@
   "fgo:NoblePhantasm": {
     "TEXT": [
       "宝具被封印了。"
+    ]
+  },
+  "fgo:FGOConfig": {
+    "TEXT_DICT": {
+      "enableColorlessCards": "启用无色卡",
+      "testInt": "测试",
+      "setSomething": "A Number"
+    }
+  },
+  "fgo:AlterOptionEffect": {
+    "TEXT": [
+      "选择获得一张宝具牌，随机升级你牌组中的一张牌。"
     ]
   }
 }

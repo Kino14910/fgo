@@ -19,7 +19,7 @@ public class GraceUnexpectedBirth extends FGOCard {
             CardType.SKILL,
             CardRarity.UNCOMMON,
             CardTarget.SELF,
-            1
+            2
     );
     public GraceUnexpectedBirth() {
         super(ID, INFO);

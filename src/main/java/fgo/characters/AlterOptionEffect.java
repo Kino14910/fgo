@@ -28,8 +28,10 @@ import java.util.Collections;
 import java.util.Map;
 import java.util.Random;
 
+import static fgo.FGOMod.makeID;
+
 public class AlterOptionEffect extends AbstractGameEffect {
-    private static final String[] TEXT = CardCrawlGame.languagePack.getUIString("fgo:CampfireTokeEffect").TEXT;
+    private static final String[] TEXT = CardCrawlGame.languagePack.getUIString(makeID(AlterOptionEffect.class.getSimpleName())).TEXT;
     private final Color screenColor;
     private boolean openedScreen = false;
     public AlterOptionEffect() {

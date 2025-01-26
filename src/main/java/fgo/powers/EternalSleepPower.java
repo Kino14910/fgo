@@ -38,7 +38,5 @@ public class EternalSleepPower extends BasePower {
         this.description = DESCRIPTIONS[0];
     }
 
-    public AbstractPower makeCopy() {
-        return new EternalSleepPower(this.owner);
-    }
+    
 }

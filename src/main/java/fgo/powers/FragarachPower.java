@@ -43,5 +43,5 @@ public class FragarachPower extends BasePower {
         }
     }
 
-    public AbstractPower makeCopy() {return new FragarachPower(this.owner, this.amount);}
+    
 }

@@ -27,7 +27,6 @@ public class CircuitConnect extends FGOCard {
         super(ID, INFO);
         setDamage(3, 2);
         setBlock(3, 2);
-        setMagic(1);
     }
 
     @Override
@@ -37,6 +36,5 @@ public class CircuitConnect extends FGOCard {
             addToBot(new VFXAction(new ClashEffect(m.hb.cX, m.hb.cY), 0.1F));
         }
         addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
-        addToBot(new ApplyPowerAction(p, p, new StarRatePower(p, magicNumber)));
     }
 }

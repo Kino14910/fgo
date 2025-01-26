@@ -29,7 +29,5 @@ public class NPRatePower extends BasePower {
         this.addToBot(new ReducePowerAction(this.owner, this.owner, this.ID, 1));
     }
 
-    public AbstractPower makeCopy() {
-        return new NPRatePower(this.owner, this.amount);
-    }
+    
 }

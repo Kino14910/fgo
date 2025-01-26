@@ -17,15 +17,15 @@ public class SchwarzwaldFalke extends FGOCard {
     private static final CardStats INFO = new CardStats(
             FGOCardColor.FGO,
             CardType.SKILL,
-            CardRarity.COMMON,
+            CardRarity.UNCOMMON,
             CardTarget.SELF,
             3
     );
     public SchwarzwaldFalke() {
         super(ID, INFO);
-        setMagic(2);
-        setExhaust();
+        setMagic(3);
         setCostUpgrade(2);
+        setExhaust();
     }
 
     @Override
@@ -36,7 +36,7 @@ public class SchwarzwaldFalke extends FGOCard {
             addToBot(new VFXAction(new OfferingEffect(), 0.5F));
         }
 
-        addToBot(new ApplyPowerAction(p, p, new SchwarzwaldFalkePower(p, magicNumber)));
         addToBot(new ApplyPowerAction(p, p, new NPRatePower(p, magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new SchwarzwaldFalkePower(p, magicNumber)));
     }
 }

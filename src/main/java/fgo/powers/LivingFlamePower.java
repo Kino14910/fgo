@@ -33,5 +33,5 @@ public class LivingFlamePower extends BasePower {
         return damageAmount;
     }
 
-    public AbstractPower makeCopy() {return new LivingFlamePower(this.owner, this.amount);}
+    
 }

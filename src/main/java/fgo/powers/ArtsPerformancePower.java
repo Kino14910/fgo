@@ -28,7 +28,5 @@ public class ArtsPerformancePower extends BasePower {
     }
 
 
-    public AbstractPower makeCopy() {
-        return new ArtsPerformancePower(this.owner, this.amount);
-    }
+    
 }

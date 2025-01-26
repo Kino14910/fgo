@@ -27,5 +27,5 @@ public class HeroicKingPower extends BasePower {
         }
     }*/
 
-    public AbstractPower makeCopy() {return new HeroicKingPower(this.owner, this.amount);}
+    
 }

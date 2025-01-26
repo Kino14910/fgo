@@ -25,7 +25,5 @@ public class NoPrayerForRainPower extends BasePower {
         this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
     }
 
-    public AbstractPower makeCopy() {
-        return new NoPrayerForRainPower(this.owner);
-    }
+    
 }

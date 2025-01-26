@@ -30,7 +30,5 @@ public class MaxHPPower extends BasePower {
         AbstractDungeon.player.decreaseMaxHealth(this.amount);
     }
 
-    public AbstractPower makeCopy() {
-        return new MaxHPPower(this.owner, this.amount);
-    }
+    
 }

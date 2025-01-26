@@ -28,7 +28,5 @@ public class CursePower extends BasePower {
         }
     }
 
-    public AbstractPower makeCopy() {
-        return new CursePower(this.owner, this.amount);
-    }
+    
 }

@@ -209,7 +209,7 @@
   },
   "fgo:SchwarzwaldFalke": {
     "NAME": "黑森之鹰",
-    "DESCRIPTION": "在你的下 !M! 个回合结束时，获得1次 fgo:回避 。 NL 获得 !M! 层 fgo:黄金律 。 NL 消耗 。"
+    "DESCRIPTION": "获得 !M! 层 fgo:黄金律 。 NL 在你之后 !M! 个回合结束时，获得1次 fgo:回避 。 NL 消耗 。"
   },
   "fgo:ManaBurstGems": {
     "NAME": "魔力放出（宝石）",
@@ -322,7 +322,7 @@
   },
   "fgo:LuckySpinning": {
     "NAME": "幸运的纺线",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 打出此牌后，在本回合每打出一张非攻击牌，获得 !M! 颗 fgo:暴击星 。"
+    "DESCRIPTION": "打出此牌后，在本回合每造成一次伤害，额外获得 !M! 颗 fgo:暴击星 。"
   },
   "fgo:KnightStance": {
     "NAME": "骑士的架势",
@@ -425,7 +425,7 @@
   },
   "fgo:CircuitConnect": {
     "NAME": "回路连接",
-    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 造成 !D! 点伤害。 NL 打出此牌后，在本回合每打出一张非攻击牌，获得 !M! 颗 fgo:暴击星 。"
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 造成 !D! 点伤害。"
   },
   "fgo:GiantoftheBridge": {
     "NAME": "桥之巨人",

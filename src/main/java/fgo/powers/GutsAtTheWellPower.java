@@ -28,7 +28,5 @@ public class GutsAtTheWellPower extends BasePower {
         this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1] + this.amount + DESCRIPTIONS[2];
     }
 
-    public AbstractPower makeCopy() {
-        return new GutsAtTheWellPower(this.owner, this.amount);
-    }
+    
 }

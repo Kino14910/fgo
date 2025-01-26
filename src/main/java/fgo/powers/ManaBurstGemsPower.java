@@ -29,7 +29,5 @@ public class ManaBurstGemsPower extends BasePower {
         this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
     }
 
-    public AbstractPower makeCopy() {
-        return new ManaBurstGemsPower(this.owner, this.amount);
-    }
+    
 }

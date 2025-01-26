@@ -17,7 +17,7 @@ public class MorningLark extends FGOCard {
             CardType.SKILL,
             CardRarity.RARE,
             CardTarget.SELF,
-            3
+            2
     );
     public MorningLark() {
         super(ID, INFO);

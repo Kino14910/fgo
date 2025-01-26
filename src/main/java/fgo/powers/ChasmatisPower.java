@@ -40,5 +40,5 @@ public class ChasmatisPower extends BasePower {
         }
     }
 
-    public AbstractPower makeCopy() {return new ChasmatisPower(this.owner, this.amount);}
+    
 }

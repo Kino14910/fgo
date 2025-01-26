@@ -22,7 +22,6 @@ import fgo.cards.fgo.Strike;
 import fgo.cards.noblecards.BeautifulJourney;
 import fgo.cards.noblecards.EternalMemories;
 import fgo.cards.noblecards.Failnaught;
-import fgo.patches.Button.CommandSpellButton;
 import fgo.patches.Enum.FGOCardColor;
 import fgo.patches.Enum.ThmodClassEnum;
 import fgo.patches.MainMenuUIFgoPatch;
@@ -49,7 +48,7 @@ public class Master extends CustomPlayer{
     //返回一个颜色
     public static final Color SILVER = CardHelper.getColor(200, 200, 200);
     public static float FgoNp_BAR_HEIGHT = 20.0F * Settings.scale;
-    private Hitbox FgoNp;
+    private Hitbox FgoNPhb;
     public Color FgoNpBarColor1 = CardHelper.getColor(204, 128, 28);
     public Color FgoNpBarColor2 = CardHelper.getColor(238, 175, 10);
     public Color FgoNpBarColor3 = CardHelper.getColor(242, 236, 103);
@@ -60,7 +59,6 @@ public class Master extends CustomPlayer{
     private static final String[] NPTEXT = CardCrawlGame.languagePack.getUIString("fgo:NPText").TEXT;
     private float FgoNpWidth;
     public static int fgoNp;
-    public static int commandSpellCount;
     public Master(String name) {
         //构造方法，初始化参数
         super(name, ThmodClassEnum.MASTER_CLASS, ORB_TEXTURES, "fgo/images/ui/energyBlueVFX.png", LAYER_SPEED, null, null);
@@ -78,9 +76,6 @@ public class Master extends CustomPlayer{
         );
 
         fgoNp = 0;
-        commandSpellCount = 3;
-        CommandSpellButton.CommandSpell = ImageMaster.loadImage("fgo/images/ui/CommandSpell/CommandSpell3.png");
-
     }
 
 
@@ -235,14 +230,14 @@ public class Master extends CustomPlayer{
         super.renderHealth(sb);
         float x = this.hb.cX - this.hb.width / 2.0F;
         float y = this.hb.cY + this.hb.height / 2.0F;
-        this.FgoNp = new Hitbox(x, y, this.hb_w, FgoNp_BAR_HEIGHT);
-        this.FgoNp.render(sb);
+        this.FgoNPhb = new Hitbox(x, y, this.hb_w, FgoNp_BAR_HEIGHT);
+        this.FgoNPhb.render(sb);
         TruthValueBgRender(sb, x, y);
         renderTruthValueBar(sb, x);
         TruthValueText(sb);
 
-        this.FgoNp.update();
-        if (this.FgoNp.hovered) {
+        this.FgoNPhb.update();
+        if (this.FgoNPhb.hovered) {
             if (AbstractDungeon.player.hasRelic(Avenger.ID)) {
                 TipHelper.renderGenericTip(0, y, NPTEXT[0], NPTEXT[4]);
             } else {
@@ -255,14 +250,14 @@ public class Master extends CustomPlayer{
         Color color = fgoNp > 200 ? FgoNpBarColor3 : (fgoNp > 100 ? FgoNpBarColor2 : FgoNpBarColor1);
         sb.setColor(color);
 
-        sb.draw(ImageMaster.HEALTH_BAR_L, x - FgoNp_BAR_HEIGHT, this.FgoNp.cY - FgoNp_BAR_HEIGHT / 2.0F, 20.0F * Settings.scale, FgoNp_BAR_HEIGHT);
-        sb.draw(ImageMaster.HEALTH_BAR_B, x, this.FgoNp.cY - FgoNp_BAR_HEIGHT / 2.0F, this.FgoNpWidth, FgoNp_BAR_HEIGHT);
-        sb.draw(ImageMaster.HEALTH_BAR_R, x + this.FgoNpWidth, this.FgoNp.cY - FgoNp_BAR_HEIGHT / 2.0F, 20.0F * Settings.scale, FgoNp_BAR_HEIGHT);
+        sb.draw(ImageMaster.HEALTH_BAR_L, x - FgoNp_BAR_HEIGHT, this.FgoNPhb.cY - FgoNp_BAR_HEIGHT / 2.0F, 20.0F * Settings.scale, FgoNp_BAR_HEIGHT);
+        sb.draw(ImageMaster.HEALTH_BAR_B, x, this.FgoNPhb.cY - FgoNp_BAR_HEIGHT / 2.0F, this.FgoNpWidth, FgoNp_BAR_HEIGHT);
+        sb.draw(ImageMaster.HEALTH_BAR_R, x + this.FgoNpWidth, this.FgoNPhb.cY - FgoNp_BAR_HEIGHT / 2.0F, 20.0F * Settings.scale, FgoNp_BAR_HEIGHT);
     }
 
     private void TruthValueText(SpriteBatch sb) {
         float tmp = this.FgoNptextColor.a;
-        FontHelper.renderFontCentered(sb, FontHelper.healthInfoFont, Master.fgoNp + "%", this.hb.cX, this.FgoNp.cY, this.FgoNptextColor);
+        FontHelper.renderFontCentered(sb, FontHelper.healthInfoFont, Master.fgoNp + "%", this.hb.cX, this.FgoNPhb.cY, this.FgoNptextColor);
         this.FgoNptextColor.a = tmp;
     }
 
@@ -271,9 +266,9 @@ public class Master extends CustomPlayer{
         sb.setColor(color);
 
         //宝具值外框颜色。
-        sb.draw(ImageMaster.HB_SHADOW_L, x - FgoNp_BAR_HEIGHT, this.FgoNp.cY - FgoNp_BAR_HEIGHT / 2.0F, 20.0F * Settings.scale, FgoNp_BAR_HEIGHT);
-        sb.draw(ImageMaster.HB_SHADOW_B, x, this.FgoNp.cY - FgoNp_BAR_HEIGHT / 2.0F, this.hb.width, FgoNp_BAR_HEIGHT);
-        sb.draw(ImageMaster.HB_SHADOW_R, x + this.hb.width, this.FgoNp.cY - FgoNp_BAR_HEIGHT / 2.0F, 20.0F * Settings.scale, FgoNp_BAR_HEIGHT);
+        sb.draw(ImageMaster.HB_SHADOW_L, x - FgoNp_BAR_HEIGHT, this.FgoNPhb.cY - FgoNp_BAR_HEIGHT / 2.0F, 20.0F * Settings.scale, FgoNp_BAR_HEIGHT);
+        sb.draw(ImageMaster.HB_SHADOW_B, x, this.FgoNPhb.cY - FgoNp_BAR_HEIGHT / 2.0F, this.hb.width, FgoNp_BAR_HEIGHT);
+        sb.draw(ImageMaster.HB_SHADOW_R, x + this.hb.width, this.FgoNPhb.cY - FgoNp_BAR_HEIGHT / 2.0F, 20.0F * Settings.scale, FgoNp_BAR_HEIGHT);
         sb.setColor(this.FgoNpBgColor);
         //宝具值内框灰色。
         sb.draw(ImageMaster.HEALTH_BAR_L, x - FgoNp_BAR_HEIGHT, y, 20.0F * Settings.scale, FgoNp_BAR_HEIGHT);

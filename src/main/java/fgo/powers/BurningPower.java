@@ -33,7 +33,5 @@ public class BurningPower extends BasePower {
         this.addToBot(new ReducePowerAction(this.owner, this.owner, this.ID, 1));
     }
 
-    public AbstractPower makeCopy() {
-        return new BurningPower(this.owner, this.amount);
-    }
+    
 }

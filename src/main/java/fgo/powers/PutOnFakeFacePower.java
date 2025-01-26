@@ -36,5 +36,5 @@ public class PutOnFakeFacePower extends BasePower {
         }
     }
 
-    public AbstractPower makeCopy() {return new PutOnFakeFacePower(this.owner);}
+    
 }

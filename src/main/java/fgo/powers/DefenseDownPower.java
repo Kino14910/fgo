@@ -31,7 +31,5 @@ public class DefenseDownPower extends BasePower {
         return type == DamageInfo.DamageType.NORMAL ? damage + this.amount : damage;
     }
 
-    public AbstractPower makeCopy() {
-        return new DefenseDownPower(this.owner, this.amount);
-    }
+    
 }

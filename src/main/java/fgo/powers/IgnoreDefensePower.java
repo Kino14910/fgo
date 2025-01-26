@@ -38,7 +38,5 @@ public class IgnoreDefensePower extends BasePower {
         }
     }
 
-    public AbstractPower makeCopy() {
-        return new IgnoreDefensePower(this.owner, this.amount);
-    }
+    
 }

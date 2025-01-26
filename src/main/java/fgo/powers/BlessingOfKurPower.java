@@ -34,7 +34,5 @@ public class BlessingOfKurPower extends BasePower {
         }
     }
 
-    public AbstractPower makeCopy() {
-        return new BlessingOfKurPower(this.owner);
-    }
+    
 }

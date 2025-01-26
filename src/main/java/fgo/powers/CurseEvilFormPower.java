@@ -25,5 +25,5 @@ public class CurseEvilFormPower extends BasePower {
         this.addToBot(new ApplyPowerAction(this.owner, this.owner, new CursePower(this.owner, this.amount), this.amount));
     }
 
-    public AbstractPower makeCopy() {return new CurseEvilFormPower(this.owner, this.amount);}
+    
 }

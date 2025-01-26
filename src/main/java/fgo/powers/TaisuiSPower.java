@@ -29,7 +29,5 @@ public class TaisuiSPower extends BasePower {
         }
     }
 
-    public AbstractPower makeCopy() {
-        return new TaisuiSPower(this.owner, this.amount);
-    }
+    
 }

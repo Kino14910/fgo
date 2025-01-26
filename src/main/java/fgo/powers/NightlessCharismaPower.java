@@ -27,7 +27,5 @@ public class NightlessCharismaPower extends BasePower {
         this.description = String.format(DESCRIPTIONS[0], this.amount);
     }
 
-    public AbstractPower makeCopy() {
-        return new NightlessCharismaPower(this.owner, this.amount);
-    }
+    
 }

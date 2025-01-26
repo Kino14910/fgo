@@ -19,7 +19,5 @@ public class BriefStrengthPower extends BasePower {
         this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
     }
 
-    public AbstractPower makeCopy() {
-        return new BriefStrengthPower(this.owner, this.amount);
-    }
+    
 }

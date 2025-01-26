@@ -33,7 +33,5 @@ public class CurseHarmonyPower extends BasePower {
         }
     }
 
-    public AbstractPower makeCopy() {
-        return new CurseHarmonyPower(this.owner, this.amount);
-    }
+    
 }

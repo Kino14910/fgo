@@ -50,7 +50,5 @@ public class SevenBeastCrownsPower extends BasePower {
         }
     }
 
-    public AbstractPower makeCopy() {
-        return new SevenBeastCrownsPower(owner, amount);
-    }
+    
 }

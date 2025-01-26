@@ -45,7 +45,5 @@ public class MillenniumCastlePower extends BasePower {
         }
     }
 
-    public AbstractPower makeCopy() {
-        return new MillenniumCastlePower(this.owner, this.amount);
-    }
+    
 }

@@ -45,7 +45,7 @@ public class NoblePhantasmButton extends AbstractPanel {
     private static Texture CommandSpell = ImageMaster.loadImage("fgo/images/ui/np max.png");
 
     public NoblePhantasmButton() {
-        super(256.0f * Settings.scale, 0.0f, -Settings.WIDTH, 0, 8.0f * Settings.xScale, 0.0f, null, true);
+        super(AbstractDungeon.player.hb.x - 64.0F * Settings.scale, AbstractDungeon.player.hb.y + AbstractDungeon.player.hb.height - 12.0F * Settings.scale, -Settings.WIDTH, AbstractDungeon.player.hb.y + AbstractDungeon.player.hb.height - 12.0F * Settings.scale, 8.0f * Settings.xScale, 0.0f, null, true);
 
     }
 
@@ -129,7 +129,7 @@ public class NoblePhantasmButton extends AbstractPanel {
             this.scale = 1.2f * Settings.scale;
         }
         sb.setColor(this.renderColor);
-        sb.draw(CommandSpell, hb.x, hb.y, 32.0F, 32.0F, 64.0F, 64.0F, this.scale, this.scale, 0.0F, 0, 0, 64, 64, false, false);
+        sb.draw(CommandSpell, current_x, current_y, 32.0F, 32.0F, 64.0F, 64.0F, this.scale, this.scale, 0.0F, 0, 0, 64, 64, false, false);
 
         if (this.hb.hovered) {
             CardCrawlGame.cursor.render(sb);

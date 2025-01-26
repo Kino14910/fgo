@@ -35,7 +35,5 @@ public class InsanityPower extends BasePower {
         }
     }
 
-    public AbstractPower makeCopy() {
-        return new InsanityPower(this.owner, this.amount);
-    }
+    
 }

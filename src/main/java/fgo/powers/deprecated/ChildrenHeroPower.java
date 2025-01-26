@@ -69,5 +69,5 @@
 //        this.addToBot(new DrawCardAction(this.owner, 5));
 //    }
 //
-//    public AbstractPower makeCopy() {return new ChildrenHeroPower(this.owner, this.amount);}
+//    
 //}

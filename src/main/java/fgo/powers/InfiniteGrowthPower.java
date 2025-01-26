@@ -29,7 +29,5 @@ public class InfiniteGrowthPower extends BasePower {
         return damageAmount;
     }
 
-    public AbstractPower makeCopy() {
-        return new InfiniteGrowthPower(this.owner, this.amount);
-    }
+    
 }

@@ -26,7 +26,5 @@ public class TheOneWhoRevealsTruthPower extends BasePower {
         this.description = DESCRIPTIONS[0];
     }
 
-    public AbstractPower makeCopy() {
-        return new TheOneWhoRevealsTruthPower(this.owner);
-    }
+    
 }

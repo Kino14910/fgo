@@ -2,6 +2,7 @@ package fgo;
 
 import basemod.AutoAdd;
 import basemod.BaseMod;
+import basemod.abstracts.CustomSavable;
 import basemod.eventUtil.AddEventParams;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Files;
@@ -24,6 +25,7 @@ import com.megacrit.cardcrawl.dungeons.Exordium;
 import com.megacrit.cardcrawl.dungeons.TheBeyond;
 import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.helpers.CardHelper;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
@@ -35,6 +37,8 @@ import fgo.cards.BaseCard;
 import fgo.characters.Master;
 import fgo.event.*;
 import fgo.monster.Emiya;
+import fgo.panel.CommandSpellPanel;
+import fgo.panel.FGOConfig;
 import fgo.patches.Enum.FGOCardColor;
 import fgo.potions.BasePotion;
 import fgo.powers.NPRatePower;
@@ -68,7 +72,7 @@ public class FGOMod implements
         OnPlayerDamagedSubscriber,
         PostBattleSubscriber
 //        PostUpdateSubscriber,
-//        PostRenderSubscriber
+//        PostRenderSubscriber,
         {
     public static ModInfo info;
     public static String modID; //Edit your pom.xml to change this
@@ -118,6 +122,7 @@ public class FGOMod implements
         BaseMod.subscribe(this); //This will make BaseMod trigger all the subscribers at their appropriate times.
         BaseMod.addColor(FGOCardColor.FGO, SILVER, SILVER, SILVER, SILVER, SILVER, SILVER, SILVER, ATTACK_CC, SKILL_CC, POWER_CC, ENERGY_ORB_CC, ATTACK_CC_PORTRAIT, SKILL_CC_PORTRAIT, POWER_CC_PORTRAIT, ENERGY_ORB_CC_PORTRAIT, CARD_ENERGY_ORB);
         BaseMod.addColor(FGOCardColor.Noble_Phantasm, NOBLE, NOBLE, NOBLE, NOBLE, NOBLE, NOBLE, NOBLE, ATTACK_Noble, SKILL_Noble, POWER_Noble, ENERGY_ORB_CC, ATTACK_Noble_PORTRAIT, SKILL_Noble_PORTRAIT, POWER_Noble_PORTRAIT, ENERGY_ORB_CC_PORTRAIT, CARD_ENERGY_ORB);
+        BaseMod.addSaveField("commandSpellCount", new CommandSpellPanel());
         logger.info(modID + " subscribed to BaseMod.");
     }
 
@@ -132,7 +137,8 @@ public class FGOMod implements
 
         //If you want to set up a config panel, that will be done here.
         //The Mod Badges page has a basic example of this, but setting up config is overall a bit complex.
-        BaseMod.registerModBadge(badgeTexture, info.Name, GeneralUtils.arrToString(info.Authors), info.Description, null);
+
+        BaseMod.registerModBadge(badgeTexture, info.Name, GeneralUtils.arrToString(info.Authors), info.Description, new FGOConfig());
 
         //顶部宝具牌预览。
         //BaseMod.addTopPanelItem(new CurrentNobleCards());
@@ -140,9 +146,15 @@ public class FGOMod implements
         BaseMod.addMonster(Emiya.ID, Emiya.NAME, () -> new MonsterGroup(new AbstractMonster[]{new Emiya()}));
         BaseMod.addBoss(TheCity.ID, Emiya.ID, "fgo/images/monster/map_emiya.png", "fgo/images/monster/map_emiya_outline.png");
 
+
+        initializeCommandSpell();
     }
 
-    /*----------Localization----------*/
+    private void initializeCommandSpell() {
+        CommandSpellPanel.CommandSpell = ImageMaster.loadImage("fgo/images/ui/CommandSpell/CommandSpell"+ CommandSpellPanel.commandSpellCount +".png");
+    }
+
+            /*----------Localization----------*/
 
     //This is used to load the appropriate localization files based on language.
     private static String getLangString()
@@ -410,10 +422,6 @@ public class FGOMod implements
         if (AbstractDungeon.player instanceof Master) {
             //在每场战斗开始时宝具值变为0。
             addToBot(new FgoNpAction(-300));
-            //第一幕boss战获得玛修的两张牌。
-//            if (AbstractDungeon.floorNum == 16) {
-//                AbstractDungeon.getCurrRoom().addRelicToRewards(new LockChocolateStrawberry());
-//            }
         }
     }
 
@@ -440,28 +448,5 @@ public class FGOMod implements
         }
         return i;
     }
-
-//    @Override
-//    public void receivePostRender(SpriteBatch sb) {
-//        if (NoblePhantasmButton.inst != null && AbstractDungeon.player != null) {
-//            NoblePhantasmButton.inst.render(sb);
-//        }
-//    }
-//
-//    @Override
-//    public void receivePostUpdate() {
-//        if (AbstractDungeon.getCurrMapNode() == null ||
-//            AbstractDungeon.getCurrRoom() == null ||
-//            (AbstractDungeon.getCurrRoom()).phase != AbstractRoom.RoomPhase.COMBAT){
-//            return;
-//        }
-//
-//        if (NoblePhantasmButton.inst == null) {
-//            NoblePhantasmButton.inst = new NoblePhantasmButton(AbstractDungeon.player.hb.x - 30.0F * Settings.scale,
-//                    AbstractDungeon.player.hb.cY + AbstractDungeon.player.hb.height / 2 + 20.0F * Settings.scale);
-//        }
-//        NoblePhantasmButton.inst.update();
-//    }
-
 
 }

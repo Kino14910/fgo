@@ -27,7 +27,5 @@ public class SpringOfFirePower extends BasePower {
         description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
     }
 
-    public AbstractPower makeCopy() {
-        return new SpringOfFirePower(owner, amount);
-    }
+    
 }

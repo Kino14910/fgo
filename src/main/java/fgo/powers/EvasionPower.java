@@ -41,7 +41,5 @@ public class EvasionPower extends BasePower {
         return damageAmount;
     }
 
-    public AbstractPower makeCopy() {
-        return new EvasionPower(this.owner, this.amount);
-    }
+    
 }

@@ -49,7 +49,5 @@ public class ItsInevitablePower extends BasePower {
         //updateDescription();
     }
 
-    public AbstractPower makeCopy() {
-        return new ItsInevitablePower(this.owner, this.amount, this.damage, this.raise);
-    }
+    
 }

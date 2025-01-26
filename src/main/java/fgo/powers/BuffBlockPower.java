@@ -31,7 +31,5 @@ public class BuffBlockPower extends BasePower {
         }
     }
 
-    public AbstractPower makeCopy() {
-        return new BuffBlockPower(this.owner, this.amount);
-    }
+    
 }

@@ -23,7 +23,7 @@ import com.megacrit.cardcrawl.vfx.BobEffect;
 import com.megacrit.cardcrawl.vfx.ThoughtBubble;
 import fgo.cards.optionCards.ReleaseNoblePhantasm;
 import fgo.cards.optionCards.RepairSpiritOrigin;
-import fgo.characters.Master;
+import fgo.panel.CommandSpellPanel;
 
 import java.util.ArrayList;
 
@@ -50,10 +50,9 @@ public class CommandSpellButton extends AbstractPanel {
         basePath + "CommandSpell2.png",
         basePath + "CommandSpell3.png"
     };
-    public static Texture CommandSpell = ImageMaster.loadImage("fgo/images/ui/CommandSpell/CommandSpell3.png");
 
     public CommandSpellButton() {
-        super(256.0f * Settings.scale, 0.0f, Settings.WIDTH, -300.0f * Settings.scale, 8.0f * Settings.xScale, 0.0f, null, true);
+        super(Settings.WIDTH - 128.0f * Settings.scale, Settings.HEIGHT - 320.0F * Settings.scale, Settings.WIDTH, Settings.HEIGHT - 320.0F * Settings.scale, 8.0f * Settings.xScale, 0.0f, null, true);
 
     }
 
@@ -98,13 +97,13 @@ public class CommandSpellButton extends AbstractPanel {
 
     public void chooseCommandSpell() {
         AbstractPlayer p = AbstractDungeon.player;
-        if (Master.commandSpellCount > 0) {
+        if (CommandSpellPanel.commandSpellCount > 0) {
             ArrayList<AbstractCard> stanceChoices = new ArrayList<>();
             stanceChoices.add(new RepairSpiritOrigin());
             stanceChoices.add(new ReleaseNoblePhantasm());
             addToBot(new ChooseOneAction(stanceChoices));
-            Master.commandSpellCount--;
-            CommandSpell = ImageMaster.loadImage(CommandSpells[Master.commandSpellCount]);
+            CommandSpellPanel.commandSpellCount--;
+            CommandSpellPanel.CommandSpell = ImageMaster.loadImage(CommandSpells[CommandSpellPanel.commandSpellCount]);
 //            CardCrawlGame.sound.playA("UI_CLICK_1", -0.1F);
         } else {
             AbstractDungeon.effectList.add(new ThoughtBubble(p.dialogX, p.dialogY, 3.0f, TEXT[0], true));
@@ -134,7 +133,7 @@ public class CommandSpellButton extends AbstractPanel {
             this.scale = 1.2f * Settings.scale;
         }
         sb.setColor(this.renderColor);
-        sb.draw(CommandSpell, hb.x, hb.y, 64.0F, 64.0F, 128.0F, 128.0F, this.scale, this.scale, 0.0F, 0, 0, 128, 128, false, false);
+        sb.draw(CommandSpellPanel.CommandSpell, current_x, current_y, 64.0F, 64.0F, 128.0F, 128.0F, this.scale, this.scale, 0.0F, 0, 0, 128, 128, false, false);
 
         if (this.hb.hovered) {
             CardCrawlGame.cursor.render(sb);

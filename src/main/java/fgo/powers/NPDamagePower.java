@@ -42,5 +42,5 @@ public class NPDamagePower extends BasePower {
         return type == DamageInfo.DamageType.NORMAL ? damage * (100 + this.amount) / 100 : damage;
     }
 
-    public AbstractPower makeCopy() {return new NPDamagePower(this.owner, this.amount);}
+    
 }

@@ -42,7 +42,5 @@ public class GutsPower extends BasePower {
         }
     }
 
-    public AbstractPower makeCopy() {
-        return new GutsPower(this.owner, this.amount, time);
-    }
+    
 }

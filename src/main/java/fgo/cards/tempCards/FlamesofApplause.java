@@ -28,7 +28,7 @@ public class FlamesofApplause extends FGOCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
-        addToBot(new ApplyPowerAction(m, p, new BurnDamagePower(m, magicNumber), magicNumber, AbstractGameAction.AttackEffect.NONE));
+        addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), true));
+        addToBot(new ApplyPowerAction(m, p, new BurnDamagePower(m, magicNumber), magicNumber, true, AbstractGameAction.AttackEffect.FIRE));
     }
 }

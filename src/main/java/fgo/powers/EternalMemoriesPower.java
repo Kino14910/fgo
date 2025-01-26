@@ -36,7 +36,5 @@ public class EternalMemoriesPower extends BasePower {
         return 0;
     }
 
-    public AbstractPower makeCopy() {
-        return new EternalMemoriesPower(this.owner, this.amount);
-    }
+    
 }

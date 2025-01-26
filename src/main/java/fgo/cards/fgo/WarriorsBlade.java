@@ -24,7 +24,7 @@ public class WarriorsBlade extends FGOCard {
     );
     public WarriorsBlade() {
         super(ID, INFO);
-        setDamage(7, 3, true);
+        setDamage(7, 3);
         setMagic(6);
     }
 
@@ -32,7 +32,7 @@ public class WarriorsBlade extends FGOCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new SFXAction("ATTACK_HEAVY"));
         addToBot(new VFXAction(p, new CleaveEffect(), 0.1F));
-        addToBot(new DamageAllEnemiesAction(p, multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
+        addToBot(new DamageAllEnemiesAction(p, damage, damageTypeForTurn, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         addToBot(new ApplyPowerAction(p, p, new StarGainPower(p, magicNumber)));
     }
 }

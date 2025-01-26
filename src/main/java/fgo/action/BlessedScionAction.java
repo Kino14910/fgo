@@ -30,39 +30,45 @@ public class BlessedScionAction extends AbstractGameAction {
         if (this.duration == DURATION) {
             if (this.p.hand.isEmpty()) {
                 this.isDone = true;
-            } else if (this.p.hand.size() == 1) {
+                return;
+            }
 
-                AbstractCard card = this.p.hand.getBottomCard();
-                card = card.hasTag(CardTagsEnum.Noble_Phantasm) ? new SupportCraft() : card;
+            if (this.p.hand.size() == 1) {
+                AbstractCard card = processCard(this.p.hand.getBottomCard());
                 this.addToTop(new MakeTempCardInDrawPileAction(card, this.amount, false, true));
-
-                if (this.upgraded) {
-                    card.setCostForTurn(0);
-                }
-                //this.addToTop(new ApplyPowerAction(this.p, this.p, new BlessedScionPower(this.p, this.amount, this.p.hand.getBottomCard())));
-                this.p.hand.moveToExhaustPile(this.p.hand.getBottomCard());
+                this.p.hand.moveToExhaustPile(card);
                 this.isDone = true;
-            } else {
-                AbstractDungeon.handCardSelectScreen.open(TEXT[0], 1, false, false);
-                this.tickDuration();
-            }
-        } else {
-            if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
-                AbstractCard tmpCard = AbstractDungeon.handCardSelectScreen.selectedCards.getBottomCard();
-                tmpCard = tmpCard.hasTag(CardTagsEnum.Noble_Phantasm) ? new SupportCraft() : tmpCard;
-                this.addToTop(new MakeTempCardInDrawPileAction(tmpCard, this.amount, false, true));
-
-                if (this.upgraded && tmpCard.costForTurn >= 0) {
-                    tmpCard.setCostForTurn(0);
-                }
-                //this.addToTop(new ApplyPowerAction(this.p, this.p, new BlessedScionPower(this.p, this.amount, tmpCard)));
-                AbstractDungeon.player.hand.addToHand(tmpCard);
-                this.p.hand.moveToExhaustPile(tmpCard);
-                AbstractDungeon.handCardSelectScreen.selectedCards.clear();
-                AbstractDungeon.handCardSelectScreen.wereCardsRetrieved = true;
+                return;
             }
 
+            // 处理手牌数量大于1的情况
+            AbstractDungeon.handCardSelectScreen.open(TEXT[0], 1, false, false);
             this.tickDuration();
+            return;
         }
+
+
+        if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
+            AbstractCard selectedCard = AbstractDungeon.handCardSelectScreen.selectedCards.getBottomCard();
+            AbstractCard processedCard = processCard(selectedCard);
+            this.addToTop(new MakeTempCardInDrawPileAction(processedCard, this.amount, false, true));
+            AbstractDungeon.player.hand.addToHand(processedCard);
+            this.p.hand.moveToExhaustPile(selectedCard);
+            AbstractDungeon.handCardSelectScreen.selectedCards.clear();
+            AbstractDungeon.handCardSelectScreen.wereCardsRetrieved = true;
+        }
+
+        this.tickDuration();
+    }
+
+    private AbstractCard processCard(AbstractCard card) {
+        if (card.hasTag(CardTagsEnum.Noble_Phantasm)) {
+            card = new SupportCraft();
+        }
+        if (this.upgraded && card.costForTurn >= 0) {
+            card.freeToPlayOnce = true;
+
+        }
+        return card;
     }
 }

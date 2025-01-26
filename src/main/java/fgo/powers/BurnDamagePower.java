@@ -28,7 +28,5 @@ public class BurnDamagePower extends BasePower {
         this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
     }
 
-    public AbstractPower makeCopy() {
-        return new BurnDamagePower(this.owner, this.amount);
-    }
+    
 }

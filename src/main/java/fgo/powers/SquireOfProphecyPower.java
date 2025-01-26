@@ -43,7 +43,5 @@ public class SquireOfProphecyPower extends BasePower {
         }
     }
 
-    public AbstractPower makeCopy() {
-        return new SquireOfProphecyPower(this.owner, this.amount);
-    }
+    
 }

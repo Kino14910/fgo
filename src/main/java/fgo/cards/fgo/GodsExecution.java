@@ -30,7 +30,7 @@ public class GodsExecution extends FGOCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAllEnemiesAction(p, damage, damageTypeForTurn, AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+        addToBot(new DamageAllEnemiesAction(p, damage, damageTypeForTurn, AbstractGameAction.AttackEffect.SMASH));
 
         for (AbstractPower power : p.powers) {
             if (power.type == AbstractPower.PowerType.DEBUFF) {

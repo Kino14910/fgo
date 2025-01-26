@@ -26,7 +26,5 @@ public class StarRegenPower extends BasePower {
         this.addToBot(new ApplyPowerAction(this.owner, this.owner, new StarGainPower(this.owner, this.amount), this.amount));
     }
 
-    public AbstractPower makeCopy() {
-        return new StarRegenPower(this.owner, this.amount);
-    }
+    
 }

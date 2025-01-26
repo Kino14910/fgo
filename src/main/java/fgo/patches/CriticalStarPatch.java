@@ -3,11 +3,15 @@ package fgo.patches;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import fgo.characters.Master;
 import fgo.powers.StarGainPower;
+import fgo.powers.StarRatePower;
 import javassist.CtBehavior;
+
+import static fgo.util.GeneralUtils.addToBot;
 
 @SpirePatch(
     clz = AbstractMonster.class,
@@ -16,19 +20,11 @@ import javassist.CtBehavior;
 public class CriticalStarPatch {
     @SpirePostfixPatch
     public static void Postfix(AbstractMonster __instance, DamageInfo info) {
-        if(AbstractDungeon.player instanceof Master){
-            if(info.type == DamageInfo.DamageType.NORMAL){
-                AbstractDungeon.actionManager.addToBottom(
-                    new ApplyPowerAction(
-                            AbstractDungeon.player,
-                            AbstractDungeon.player,
-                            new StarGainPower(AbstractDungeon.player, 1), 1)
-                );
-            }
+        AbstractPlayer p = AbstractDungeon.player;
+        if (p instanceof Master && info.type == DamageInfo.DamageType.NORMAL) {
+            addToBot(new ApplyPowerAction(p, p, new StarGainPower(p, 1 + ( p.hasPower(StarRatePower.POWER_ID) ? p.getPower(StarRatePower.POWER_ID).amount : 0 ) )));
         }
-
     }
-
 
     private static class Locator extends SpireInsertLocator {
         private Locator() {

@@ -85,7 +85,5 @@ public class FifthFormPower extends BasePower {
         this.addToBot(new ReducePowerAction(this.owner, this.owner, this.ID, 1));
     }
 
-    public AbstractPower makeCopy() {
-        return new FifthFormPower(this.owner, this.amount, true);
-    }
+    
 }

@@ -28,5 +28,5 @@ public class ArchetypeORTPower extends BasePower {
         addToBot(new FgoNpAction(3));
     }
 
-    public AbstractPower makeCopy() {return new ArchetypeORTPower(owner);}
+    
 }

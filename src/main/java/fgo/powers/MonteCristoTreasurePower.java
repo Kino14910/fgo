@@ -33,7 +33,5 @@ public class MonteCristoTreasurePower extends BasePower {
         }
     }
 
-    public AbstractPower makeCopy() {
-        return new MonteCristoTreasurePower(this.owner, this.amount);
-    }
+    
 }

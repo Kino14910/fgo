@@ -45,5 +45,5 @@ public class StarGainMonsterPower extends BasePower {
        this.addToTop(new ReducePowerAction(this.owner, this.owner, this.ID, 10));
     }
 
-    public AbstractPower makeCopy() {return new StarGainMonsterPower(this.owner, this.amount);}
+    
 }

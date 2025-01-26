@@ -27,7 +27,5 @@ public class LoseCritDamagePower extends BasePower {
         this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, CriticalDamageUpPower.POWER_ID));
     }
 
-    public AbstractPower makeCopy() {
-        return new LoseCritDamagePower(this.owner, this.amount);
-    }
+    
 }

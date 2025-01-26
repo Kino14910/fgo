@@ -30,7 +30,5 @@ public class EndOfADreamPower extends BasePower {
         this.description = DESCRIPTIONS[0];
     }
 
-    public AbstractPower makeCopy() {
-        return new EndOfADreamPower(this.owner);
-    }
+    
 }

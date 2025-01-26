@@ -39,7 +39,5 @@ public class InvincibilityTurnPower extends BasePower {
         this.addToBot(new ReducePowerAction(this.owner, this.owner, this.ID, 1));
     }
 
-    public AbstractPower makeCopy() {
-        return new InvincibilityTurnPower(this.owner, this.amount);
-    }
+    
 }

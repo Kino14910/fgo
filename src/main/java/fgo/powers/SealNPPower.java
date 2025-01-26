@@ -33,5 +33,5 @@ public class SealNPPower extends BasePower {
         return !card.hasTag(CardTagsEnum.Noble_Phantasm);
     }*/
 
-    public AbstractPower makeCopy() {return new SealNPPower(this.owner, this.amount);}
+    
 }

@@ -38,7 +38,5 @@ public class MyFairSoldierPower extends BasePower {
         this.description = String.format(DESCRIPTIONS[0], this.amount);
     }
 
-    public AbstractPower makeCopy() {
-        return new MyFairSoldierPower(this.owner, this.amount);
-    }
+    
 }

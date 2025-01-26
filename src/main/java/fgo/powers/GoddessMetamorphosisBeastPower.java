@@ -32,7 +32,5 @@ public class GoddessMetamorphosisBeastPower extends BasePower {
         }
     }
 
-    public AbstractPower makeCopy() {
-        return new GoddessMetamorphosisBeastPower(this.owner, this.amount);
-    }
+    
 }

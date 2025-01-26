@@ -35,7 +35,5 @@ public class DesterrennachtPower extends BasePower {
         }
     }
 
-    public AbstractPower makeCopy() {
-        return new DesterrennachtPower(this.owner, this.amount);
-    }
+    
 }

@@ -38,7 +38,5 @@ public class WallOfSnowflakesPower extends BasePower {
         }
     }
 
-    public AbstractPower makeCopy() {
-        return new WallOfSnowflakesPower(this.owner, this.amount);
-    }
+    
 }

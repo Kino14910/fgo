@@ -16,21 +16,19 @@ public class LuckySpinning extends FGOCard {
     private static final CardStats INFO = new CardStats(
             FGOCardColor.FGO,
             CardType.ATTACK,
-            CardRarity.COMMON,
-            CardTarget.ENEMY,
+            CardRarity.UNCOMMON,
+            CardTarget.SELF,
             0
     );
     public LuckySpinning() {
         super(ID, INFO);
-        setDamage(3, 1);
-        setMagic(3, 1);
+        setMagic(1, 1);
     }
 
 
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
         addToBot(new ApplyPowerAction(p, p, new StarRatePower(p, magicNumber)));
     }
 }

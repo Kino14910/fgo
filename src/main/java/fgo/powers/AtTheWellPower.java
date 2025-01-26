@@ -36,7 +36,5 @@ public class AtTheWellPower extends BasePower {
         this.description = String.format(DESCRIPTIONS[0], this.amount);
     }
 
-    public AbstractPower makeCopy() {
-        return new AtTheWellPower(this.owner, this.amount);
-    }
+    
 }

@@ -19,7 +19,5 @@ public class CriticalDamageUpPower extends BasePower {
         this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
     }
 
-    public AbstractPower makeCopy() {
-        return new CriticalDamageUpPower(this.owner, this.amount);
-    }
+    
 }

@@ -24,19 +24,9 @@ public class StarRatePower extends BasePower {
     }
 
     @Override
-    public void onUseCard(AbstractCard card, UseCardAction action) {
-        if (card.type != AbstractCard.CardType.ATTACK) {
-            this.flash();
-            this.addToBot(new ApplyPowerAction(this.owner, this.owner, new StarGainPower(this.owner, this.amount), this.amount));
-        }
-    }
-
-    @Override
     public void atEndOfTurn(boolean isPlayer) {
         this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
     }
 
-    public AbstractPower makeCopy() {
-        return new StarRatePower(this.owner, this.amount);
-    }
+
 }
