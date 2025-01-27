@@ -20,7 +20,6 @@ public class BlackdogGalatine extends AbsNoblePhantasmCard {
 
     public BlackdogGalatine() {
         super(ID,CardType.ATTACK, CardTarget.ALL_ENEMY);setDamage(5, 2);
-        this.isMultiDamage = true;
         setMagic(6);
         setExhaust();
 

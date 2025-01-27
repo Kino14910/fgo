@@ -22,14 +22,14 @@ public class RayHorizon extends FGOCard {
     public RayHorizon() {
         super(ID, INFO);
         setNP(50, 50);
-        this.cardsToPreview = new HollowHeartAlbion();
+        cardsToPreview = new HollowHeartAlbion();
         setExhaust();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new FgoNpAction(this.magicNumber));
-        this.addToBot(new ApplyPowerAction(p, p, new NoblePhantasmCardPower(p, this.cardsToPreview)));
-        this.addToBot(new ApplyPowerAction(p, p, new InvincibilityTurnPower(p, np), np));
+        addToBot(new FgoNpAction(np));
+        addToBot(new ApplyPowerAction(p, p, new NoblePhantasmCardPower(p, cardsToPreview)));
+        addToBot(new ApplyPowerAction(p, p, new InvincibilityTurnPower(p, magicNumber)));
     }
 }

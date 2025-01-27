@@ -18,7 +18,6 @@ public class BeautifulJourney extends AbsNoblePhantasmCard {
     public BeautifulJourney() {
         super(ID, CardType.ATTACK, CardTarget.ALL_ENEMY);
         setDamage(24, 6);
-        this.isMultiDamage = true;
         setNP(20);
         setExhaust();
 

@@ -27,7 +27,6 @@ public class TsumukariMuramasa extends AbsNoblePhantasmCard {
     public TsumukariMuramasa() {
         super(ID,CardType.ATTACK, CardTarget.ALL_ENEMY);
         setDamage(4, 1);
-        this.isMultiDamage = true;
         setExhaust();
 
         cardArtLayers512.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH)));

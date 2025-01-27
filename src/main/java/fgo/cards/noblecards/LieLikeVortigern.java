@@ -20,7 +20,6 @@ public class LieLikeVortigern extends AbsNoblePhantasmCard {
     public LieLikeVortigern() {
         super(ID,CardType.ATTACK, CardTarget.ALL_ENEMY);
         setDamage(25, 7);
-        this.isMultiDamage = true;
         setMagic(1);
         setExhaust();
 

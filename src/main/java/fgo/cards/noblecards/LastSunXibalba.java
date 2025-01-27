@@ -24,7 +24,6 @@ public class LastSunXibalba extends AbsNoblePhantasmCard {
     public LastSunXibalba() {
         super(ID,CardType.ATTACK, CardTarget.ALL_ENEMY);
         setDamage(6, 2);
-        this.isMultiDamage = true;
         setMagic(30);
         setExhaust();
 

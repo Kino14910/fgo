@@ -43,17 +43,9 @@ public class CommandSpellButton extends AbstractPanel {
     private Color glowColor = Color.WHITE.cpy();
     private float glowAlpha = 0.0f;
     private BobEffect bob = new BobEffect(1.0f);
-    String basePath = "fgo/images/ui/CommandSpell/";
-    String[] CommandSpells = {
-        basePath + "CommandSpell0.png",
-        basePath + "CommandSpell1.png",
-        basePath + "CommandSpell2.png",
-        basePath + "CommandSpell3.png"
-    };
 
     public CommandSpellButton() {
         super(Settings.WIDTH - 128.0f * Settings.scale, Settings.HEIGHT - 320.0F * Settings.scale, Settings.WIDTH, Settings.HEIGHT - 320.0F * Settings.scale, 8.0f * Settings.xScale, 0.0f, null, true);
-
     }
 
     @Override
@@ -92,7 +84,6 @@ public class CommandSpellButton extends AbstractPanel {
             }
             this.chooseCommandSpell();
         }
-
     }
 
     public void chooseCommandSpell() {
@@ -103,7 +94,7 @@ public class CommandSpellButton extends AbstractPanel {
             stanceChoices.add(new ReleaseNoblePhantasm());
             addToBot(new ChooseOneAction(stanceChoices));
             CommandSpellPanel.commandSpellCount--;
-            CommandSpellPanel.CommandSpell = ImageMaster.loadImage(CommandSpells[CommandSpellPanel.commandSpellCount]);
+            CommandSpellPanel.CommandSpell = ImageMaster.loadImage("fgo/images/ui/CommandSpell/CommandSpell" + CommandSpellPanel.commandSpellCount + ".png");
 //            CardCrawlGame.sound.playA("UI_CLICK_1", -0.1F);
         } else {
             AbstractDungeon.effectList.add(new ThoughtBubble(p.dialogX, p.dialogY, 3.0f, TEXT[0], true));
@@ -133,6 +124,7 @@ public class CommandSpellButton extends AbstractPanel {
             this.scale = 1.2f * Settings.scale;
         }
         sb.setColor(this.renderColor);
+        CommandSpellPanel.CommandSpell = ImageMaster.loadImage("fgo/images/ui/CommandSpell/CommandSpell" + CommandSpellPanel.commandSpellCount + ".png");
         sb.draw(CommandSpellPanel.CommandSpell, current_x, current_y, 64.0F, 64.0F, 128.0F, 128.0F, this.scale, this.scale, 0.0F, 0, 0, 128, 128, false, false);
 
         if (this.hb.hovered) {

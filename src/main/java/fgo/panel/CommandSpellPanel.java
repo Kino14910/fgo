@@ -2,6 +2,8 @@ package fgo.panel;
 
 import basemod.abstracts.CustomSavable;
 import com.badlogic.gdx.graphics.Texture;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 
 import java.awt.*;
 
@@ -17,10 +19,15 @@ public class CommandSpellPanel implements CustomSavable<Integer> {
     }
 
     @Override
-    public void onLoad(Integer commandSpellCount) {
-         if (commandSpellCount == null) {
+    public void onLoad(Integer count) {
+         if (count == null) {
             return;
         }
-        CommandSpellPanel.commandSpellCount = commandSpellCount;
+        commandSpellCount = count;
+    }
+
+    public static void reset(){
+        commandSpellCount = 3;
+        CommandSpell = ImageMaster.loadImage("fgo/images/ui/CommandSpell/CommandSpell3.png");
     }
 }

@@ -21,7 +21,6 @@ public class WickerMan extends AbsNoblePhantasmCard {
     public WickerMan() {
         super(ID,CardType.ATTACK, CardTarget.ALL_ENEMY);
         setDamage(26, 8);
-        this.isMultiDamage = true;
         setMagic(3);
         setExhaust();
 

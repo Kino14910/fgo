@@ -21,7 +21,6 @@ public class LostLonginus extends AbsNoblePhantasmCard {
     public LostLonginus() {
         super(ID,CardType.ATTACK, CardTarget.ALL_ENEMY);
         setDamage(24, 6);
-        this.isMultiDamage = true;
         setMagic(3);
         setExhaust();
 

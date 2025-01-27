@@ -23,7 +23,6 @@ public class Sevendrive extends AbsNoblePhantasmCard {
     public Sevendrive() {
         super(ID,CardType.ATTACK, CardTarget.ALL_ENEMY);
         setDamage(3, 1);
-        this.isMultiDamage = true;
         setNP(10);
         setExhaust();
 

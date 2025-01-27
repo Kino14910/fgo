@@ -22,7 +22,6 @@ public class ImitationGodForce extends AbsNoblePhantasmCard {
     public ImitationGodForce() {
         super(ID,CardType.ATTACK, CardTarget.ALL_ENEMY);
         setDamage(7, 1);
-        this.isMultiDamage = true;
         setMagic(4);
         setExhaust();
 

@@ -15,10 +15,13 @@ import com.badlogic.gdx.utils.GdxRuntimeException;
 import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.ModInfo;
 import com.evacipated.cardcrawl.modthespire.Patcher;
+import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.dungeons.Exordium;
@@ -70,7 +73,8 @@ public class FGOMod implements
         OnCardUseSubscriber,
         OnStartBattleSubscriber,
         OnPlayerDamagedSubscriber,
-        PostBattleSubscriber
+        PostBattleSubscriber,
+        PostCreateStartingDeckSubscriber
 //        PostUpdateSubscriber,
 //        PostRenderSubscriber,
         {
@@ -117,6 +121,15 @@ public class FGOMod implements
     private static final String MY_CHARACTER_BUTTON = "fgo/images/charSelect/MasterButton.png";
     //默认背景图片。
     private static final String MASTER_PORTRAIT = "fgo/images/charSelect/MasterPortrait1.png";
+    public static SpireConfig config;
+
+    static {
+        try {
+            config = new SpireConfig(modID, "config");
+        } catch (Exception e) {
+            logger.error("Failed to initialize config file for FGO Mod", e);
+        }
+    }
 
     public FGOMod() {
         BaseMod.subscribe(this); //This will make BaseMod trigger all the subscribers at their appropriate times.
@@ -143,15 +156,10 @@ public class FGOMod implements
         //顶部宝具牌预览。
         //BaseMod.addTopPanelItem(new CurrentNobleCards());
 
-        BaseMod.addMonster(Emiya.ID, Emiya.NAME, () -> new MonsterGroup(new AbstractMonster[]{new Emiya()}));
-        BaseMod.addBoss(TheCity.ID, Emiya.ID, "fgo/images/monster/map_emiya.png", "fgo/images/monster/map_emiya_outline.png");
-
-
-        initializeCommandSpell();
-    }
-
-    private void initializeCommandSpell() {
-        CommandSpellPanel.CommandSpell = ImageMaster.loadImage("fgo/images/ui/CommandSpell/CommandSpell"+ CommandSpellPanel.commandSpellCount +".png");
+        if(config.getBool("enableEmiya")){
+            BaseMod.addMonster(Emiya.ID, Emiya.NAME, () -> new MonsterGroup(new AbstractMonster[]{new Emiya()}));
+            BaseMod.addBoss(TheCity.ID, Emiya.ID, "fgo/images/monster/map_emiya.png", "fgo/images/monster/map_emiya_outline.png");
+        }
     }
 
             /*----------Localization----------*/
@@ -321,11 +329,17 @@ public class FGOMod implements
 
     @Override
     public void receiveEditCards() { //somewhere in the class
-        new AutoAdd(modID) //Loads files from this mod
-                .packageFilter(BaseCard.class) //In the same package as this class
+        AutoAdd autoAdd = new AutoAdd(modID);
+        //Loads files from this mod
+        autoAdd.packageFilter(BaseCard.class) //In the same package as this class
                 .notPackageFilter("fgo.cards.optionCards")
-                .notPackageFilter("fgo.cards.deprecated")
-                .setDefaultSeen(true) //And marks them as seen in the compendium
+                .notPackageFilter("fgo.cards.deprecated");
+
+//        System.out.println("enableColorlessCards: " + config.getBool("enableColorlessCards"));
+        if (!config.getBool("enableColorlessCards")) {
+            autoAdd = autoAdd.notPackageFilter("fgo.cards.colorless");
+        }
+        autoAdd.setDefaultSeen(true) //And marks them as seen in the compendium
                 .cards(); //Adds the cards
         BaseMod.addDynamicVariable(new NoblePhantasmVariable());
     }
@@ -375,10 +389,10 @@ public class FGOMod implements
         BaseMod.addEvent(Beyondthe.ID, Beyondthe.class, TheBeyond.ID);
         BaseMod.addEvent(DailyLifeattheBeyond.ID, DailyLifeattheBeyond.class, TheCity.ID);
         BaseMod.addEvent(DevilSlot.ID, DevilSlot.class, TheBeyond.ID);
-        BaseMod.addEvent((new AddEventParams.Builder(FGOLibrary.ID, FGOLibrary.class))
-                .dungeonID(TheCity.ID)
-                .playerClass(MASTER_CLASS)
-                .create());
+//        BaseMod.addEvent((new AddEventParams.Builder(FGOLibrary.ID, FGOLibrary.class))
+//                .dungeonID(TheCity.ID)
+//                .playerClass(MASTER_CLASS)
+//                .create());
     }
 
     @Override
@@ -449,4 +463,8 @@ public class FGOMod implements
         return i;
     }
 
+    @Override
+    public void receivePostCreateStartingDeck(AbstractPlayer.PlayerClass playerClass, CardGroup cardGroup) {
+        CommandSpellPanel.reset();
+    }
 }

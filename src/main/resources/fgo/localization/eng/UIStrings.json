@@ -109,5 +109,15 @@
       "???",
       "Choose obtain a Noble Phantasm card, Upgrade a random card."
     ]
+  },
+  "${modID}:AlterOptionEffect": {
+    "TEXT": [
+      "Choose obtain a Noble Phantasm card, Upgrade a random card."
+    ]
+  },
+  "${modID}:FGOConfig": {
+    "TEXT_DICT": {
+      "enableColorlessCards": "启用无色卡"
+    }
   }
 }

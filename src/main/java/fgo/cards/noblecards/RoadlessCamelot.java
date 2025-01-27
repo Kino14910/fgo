@@ -20,7 +20,6 @@ public class RoadlessCamelot extends AbsNoblePhantasmCard {
     public RoadlessCamelot() {
         super(ID,CardType.ATTACK, CardTarget.ALL_ENEMY);
         setDamage(8, 2);
-        this.isMultiDamage = true;
         setMagic(1, 1);
         setExhaust();
 

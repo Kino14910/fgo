@@ -6,8 +6,11 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import fgo.FGOMod;
+import fgo.cards.FGOCard;
 
 import static fgo.FGOMod.makeID;
+import static fgo.util.GeneralUtils.removePrefix;
 
 public class NoblePhantasmCardPower extends BasePower {
     public static final String POWER_ID = makeID(NoblePhantasmCardPower.class.getSimpleName());
@@ -16,21 +19,22 @@ public class NoblePhantasmCardPower extends BasePower {
     private final AbstractCard card;
  
     public NoblePhantasmCardPower(AbstractCreature owner, AbstractCard copyMe) {
-        super(POWER_ID, TYPE, TURN_BASED, owner, "PutOnFakeFacePower");
-        this.card = copyMe.makeStatEquivalentCopy();
-        this.card.resetAttributes();
+        super(POWER_ID, TYPE, TURN_BASED, owner, owner, -1, "PutOnFakeFacePower", false);
+        card = copyMe.makeStatEquivalentCopy();
+        card.resetAttributes();
+        updateDescription();
     }
 
     @Override
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0] + FontHelper.colorString(this.card.name, "y") + DESCRIPTIONS[1];
+        description = DESCRIPTIONS[0] + FontHelper.colorString(this.card.name, "y") + DESCRIPTIONS[1];
     }
 
     @Override
     public void onSpecificTrigger() {
-        this.addToBot(new MakeTempCardInHandAction(this.card.makeStatEquivalentCopy(), 1));
-        this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
+        addToBot(new MakeTempCardInHandAction(card.makeStatEquivalentCopy(), 1));
+        addToBot(new RemoveSpecificPowerAction(owner, owner, ID));
     }
 
-    
+
 }

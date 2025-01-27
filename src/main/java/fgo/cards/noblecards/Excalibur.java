@@ -20,7 +20,6 @@ public class Excalibur extends AbsNoblePhantasmCard {
     public Excalibur() {
         super(ID,CardType.ATTACK, CardTarget.ALL_ENEMY);
         setDamage(25, 7);
-        this.isMultiDamage = true;
         setNP(20, 30);
         setExhaust();
 

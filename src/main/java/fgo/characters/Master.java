@@ -22,6 +22,7 @@ import fgo.cards.fgo.Strike;
 import fgo.cards.noblecards.BeautifulJourney;
 import fgo.cards.noblecards.EternalMemories;
 import fgo.cards.noblecards.Failnaught;
+import fgo.panel.CommandSpellPanel;
 import fgo.patches.Enum.FGOCardColor;
 import fgo.patches.Enum.ThmodClassEnum;
 import fgo.patches.MainMenuUIFgoPatch;
@@ -76,6 +77,7 @@ public class Master extends CustomPlayer{
         );
 
         fgoNp = 0;
+
     }
 
 
