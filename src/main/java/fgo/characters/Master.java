@@ -77,9 +77,6 @@ public class Master extends CustomPlayer{
                 240.0F, 300.0F,
                 new EnergyManager(3)
         );
-
-        fgoNp = 0;
-
     }
 
 

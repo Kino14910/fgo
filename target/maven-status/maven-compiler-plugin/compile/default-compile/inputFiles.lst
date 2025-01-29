@@ -202,6 +202,7 @@ C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\patches\Button\NoblePhantas
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\tempCards\FlamesofApplause.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\action\FacelessMoonAction.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\powers\ComeOnPower.java
+C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\powers\deprecated\EternalSleepPower.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\powers\GutsPower.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\action\BlessedScionAction.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\tempCards\FgoInsight.java
@@ -284,7 +285,6 @@ C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\fgo\SpringOfFire.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\powers\BlessingOfKurPower.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\powers\ItsInevitablePower.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\action\HeroicKingAction.java
-C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\powers\EternalSleepPower.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\noblecards\RoadlessCamelot.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\relics\BlessRockChoco.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\fgo\GodsExecution.java

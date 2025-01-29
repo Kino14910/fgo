@@ -43,7 +43,7 @@ public class PictureSelectFgoPatch {
         @SpirePostfixPatch
         public static void Postfix(CharacterSelectScreen __instance, SpriteBatch sb) {
             // Render your buttons/images by passing SpriteBatch
-            if (!(TalentCount == 0 || TalentCount == 1)) {
+            if (TalentCount != 0 && TalentCount != 1) {
                 TalentCount = 0;
             }
 
@@ -83,44 +83,41 @@ public class PictureSelectFgoPatch {
             // Update your buttons position, check if the player clicked them, and do something if they did
             for (CharacterOption o : __instance.options) {
                 if (o.selected && o.c.chosenClass == ThmodClassEnum.MASTER_CLASS) {
-                    if (InputHelper.justClickedLeft && TalentLeft.hovered) {
-                        TalentLeft.clickStarted = true;
-                        CardCrawlGame.sound.play("UI_CLICK_1");
-                    }
-                    if (InputHelper.justClickedLeft && TalentRight.hovered) {
-                        TalentRight.clickStarted = true;
-                        CardCrawlGame.sound.play("UI_CLICK_1");
-                    }
-
-                    if (TalentLeft.justHovered || TalentRight.justHovered) {
-                        CardCrawlGame.sound.playV("UI_HOVER", 0.75f);
-                    }
-
-                    if (!(TalentCount == 0 || TalentCount == 1)) {
-                        TalentCount = 0;
-                    }
-
-                    if (TalentRight.clicked || CInputActionSet.pageRightViewExhaust.isJustPressed()) {
-                        TalentRight.clicked = false;
-                        if (TalentCount < 1) {
-                            TalentCount += 1;
-                        } else {
-                            TalentCount = 0;
-                        }
-                        __instance.bgCharImg = updateBgImg();
-                    }
-                    if (TalentLeft.clicked || CInputActionSet.pageLeftViewDeck.isJustPressed()) {
-                        TalentLeft.clicked = false;
-                        if (TalentCount > 0) {
-                            TalentCount -= 1;
-                        } else {
-                            TalentCount = 1;
-                        }
-                        __instance.bgCharImg = updateBgImg();
-                    }
-                    TalentLeft.update();
-                    TalentRight.update();
+                    return;
                 }
+
+                if (InputHelper.justClickedLeft && TalentLeft.hovered) {
+                    TalentLeft.clickStarted = true;
+                    CardCrawlGame.sound.play("UI_CLICK_1");
+                }
+
+                if (InputHelper.justClickedLeft && TalentRight.hovered) {
+                    TalentRight.clickStarted = true;
+                    CardCrawlGame.sound.play("UI_CLICK_1");
+                }
+
+                if (TalentLeft.justHovered || TalentRight.justHovered) {
+                    CardCrawlGame.sound.playV("UI_HOVER", 0.75f);
+                }
+
+                if (TalentCount != 0 && TalentCount != 1) {
+                    TalentCount = 0;
+                }
+
+                if (TalentRight.clicked || CInputActionSet.pageRightViewExhaust.isJustPressed()) {
+                    TalentRight.clicked = false;
+                    TalentCount = (TalentCount < 1) ? TalentCount + 1 : 0;
+                    __instance.bgCharImg = updateBgImg();
+                }
+
+                if (TalentLeft.clicked || CInputActionSet.pageLeftViewDeck.isJustPressed()) {
+                    TalentLeft.clicked = false;
+                    TalentCount = (TalentCount > 0) ? TalentCount - 1 : 1;
+                    __instance.bgCharImg = updateBgImg();
+                }
+
+                TalentLeft.update();
+                TalentRight.update();
             }
 
         }

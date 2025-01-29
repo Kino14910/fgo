@@ -71,7 +71,6 @@ fgo\event\DailyLifeattheBeyond.class
 fgo\cards\noblecards\LieLikeVortigern.class
 fgo\cards\deprecated\TeachingsoftheEternal.class
 fgo\cards\fgo\AtTheWell.class
-fgo\powers\EternalSleepPower.class
 fgo\powers\HugeScalePower.class
 fgo\patches\Enum\LibraryTypeEnum.class
 fgo\powers\TheOneWhoRevealsTruthPower.class
@@ -271,6 +270,7 @@ fgo\powers\ArchetypeORTPower.class
 fgo\patches\RevivePatch$hasEnoughEnergyPatcher$Locator.class
 fgo\cards\colorless\UndeadBird.class
 fgo\powers\SealNPPower.class
+fgo\powers\deprecated\EternalSleepPower.class
 fgo\cards\noblecards\LostLonginus.class
 fgo\cards\colorless\MaraPapiyas.class
 fgo\cards\fgo\LuckySpinning.class

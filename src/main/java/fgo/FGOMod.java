@@ -48,10 +48,7 @@ import fgo.powers.NPRatePower;
 import fgo.relics.Avenger;
 import fgo.relics.BaseRelic;
 import fgo.relics.SuitcaseFgo;
-import fgo.util.GeneralUtils;
-import fgo.util.KeywordInfo;
-import fgo.util.NoblePhantasmVariable;
-import fgo.util.TextureLoader;
+import fgo.util.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.scannotation.AnnotationDB;
@@ -59,6 +56,7 @@ import org.scannotation.AnnotationDB;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 
+import static fgo.characters.Master.fgoNp;
 import static fgo.patches.Enum.ThmodClassEnum.MASTER_CLASS;
 import static fgo.util.GeneralUtils.addToBot;
 
@@ -342,6 +340,7 @@ public class FGOMod implements
         autoAdd.setDefaultSeen(true) //And marks them as seen in the compendium
                 .cards(); //Adds the cards
         BaseMod.addDynamicVariable(new NoblePhantasmVariable());
+        BaseMod.addDynamicVariable(new CriticalStarVariable());
     }
 
     @Override
@@ -425,8 +424,9 @@ public class FGOMod implements
     @Override
     public void receiveOnBattleStart(AbstractRoom abstractRoom) {
         if (AbstractDungeon.player instanceof Master) {
+            fgoNp = 0;
             if (AbstractDungeon.player.hasRelic(SuitcaseFgo.ID)) {
-                addToBot(new FgoNpAction(20, true));
+                fgoNp = 20;
             }
         }
     }
@@ -467,4 +467,6 @@ public class FGOMod implements
     public void receivePostCreateStartingDeck(AbstractPlayer.PlayerClass playerClass, CardGroup cardGroup) {
         CommandSpellPanel.reset();
     }
+
+
 }
