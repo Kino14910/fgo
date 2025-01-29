@@ -23,15 +23,13 @@ public class CharismaOfTheJade extends FGOCard {
     );
     public CharismaOfTheJade() {
         super(ID, INFO);
-        setDamage(9, 3);
+        setDamage(27, 8);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
             addToBot(new VFXAction(new WeightyImpactEffect(m.hb.cX, m.hb.cY)));
             addToBot(new WaitAction(0.8F));
-            for (int i = 0; i < 3; i++) {
-                addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-            }
+            addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
     }
 }

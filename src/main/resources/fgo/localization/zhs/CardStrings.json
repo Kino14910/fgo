@@ -148,7 +148,7 @@
   },
   "${modID}:WarriorsBlade": {
     "NAME": "击剑矫捷如鹰隼",
-    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 获得 !M! 颗 fgo:暴击星 。"
+    "DESCRIPTION": "造成 !D! 点伤害 4 次。 NL 获得 !M! 颗 fgo:暴击星 。"
   },
   "${modID}:StarHunter": {
     "NAME": "星之猎人",
@@ -356,7 +356,7 @@
   },
   "${modID}:CharismaOfTheJade": {
     "NAME": "翡翠的魅力",
-    "DESCRIPTION": "造成 !D! 点伤害3次。 NL 可以使用20颗 fgo:暴击星 NL 使伤害提高200%。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 可以使用20颗 fgo:暴击星 NL 使伤害提高200%。"
   },
   "${modID}:GoldenGrail": {
     "NAME": "黄金之杯",

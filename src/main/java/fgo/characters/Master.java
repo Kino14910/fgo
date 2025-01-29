@@ -15,6 +15,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.city.Vampires;
 import com.megacrit.cardcrawl.helpers.*;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
+import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import fgo.cards.fgo.CharismaOfHope;
 import fgo.cards.fgo.Defend;
 import fgo.cards.fgo.DreamUponTheStars;
@@ -22,6 +23,7 @@ import fgo.cards.fgo.Strike;
 import fgo.cards.noblecards.BeautifulJourney;
 import fgo.cards.noblecards.EternalMemories;
 import fgo.cards.noblecards.Failnaught;
+import fgo.cards.noblecards.IraLupus;
 import fgo.panel.CommandSpellPanel;
 import fgo.patches.Enum.FGOCardColor;
 import fgo.patches.Enum.ThmodClassEnum;
@@ -99,7 +101,7 @@ public class Master extends CustomPlayer{
         //宝具卡
         retVal.add(EternalMemories.ID);
         retVal.add(BeautifulJourney.ID);
-        retVal.add(Failnaught.ID);
+        retVal.add(IraLupus.ID);
         return retVal;
     }
 
