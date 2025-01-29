@@ -18,7 +18,7 @@ public class AbyssLight extends FGOCard {
     public static final String ID = makeID(AbyssLight.class.getSimpleName());
     private static final CardStats INFO = new CardStats(
             FGOCardColor.FGO,
-            CardType.ATTACK,
+            CardType.SKILL,
             CardRarity.RARE,
             CardTarget.ENEMY,
             2

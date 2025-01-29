@@ -17,7 +17,7 @@ public class DreamUponTheStars extends FGOCard {
             CardType.SKILL,
             CardRarity.BASIC,
             CardTarget.SELF,
-            1
+            2
     );
 
     public DreamUponTheStars() {

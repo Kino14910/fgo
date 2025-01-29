@@ -451,7 +451,6 @@ public class FGOMod implements
                 || AbstractDungeon.currMapNode == null
                 || AbstractDungeon.getCurrRoom().phase != AbstractRoom.RoomPhase.COMBAT
                 || i == 99999) {
-            addToBot(new FgoNpAction(100));
             return i;
         }
 
