@@ -24,7 +24,7 @@ public class CharismaOfConflict extends FGOCard {
     );
     public CharismaOfConflict() {
         super(ID, INFO);
-        setDamage(10, 3);
+        setDamage(10, 2);
         setMagic(20, 10);
         setExhaust();
     }

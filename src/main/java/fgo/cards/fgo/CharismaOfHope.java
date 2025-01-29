@@ -23,7 +23,7 @@ public class CharismaOfHope extends FGOCard {
     );
     public CharismaOfHope() {
         super(ID, INFO);
-        setDamage(9, 3);
+        setDamage(6, 3);
         setNP(20, 10);
         setCasterBackground();
 
