@@ -16,14 +16,14 @@ public class GloriousStrike extends FGOCard {
     private static final CardStats INFO = new CardStats(
             FGOCardColor.FGO,
             CardType.ATTACK,
-            CardRarity.UNCOMMON,
+            CardRarity.RARE,
             CardTarget.ENEMY,
             1
     );
     public GloriousStrike() {
         super(ID, INFO);
-        setDamage(6);
-        setMagic(2, 1);
+        setDamage(6, 9);
+        setMagic(2);
         setExhaust();
         tags.add(CardTags.STRIKE);
     }

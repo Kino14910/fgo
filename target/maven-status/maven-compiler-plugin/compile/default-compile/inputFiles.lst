@@ -64,6 +64,7 @@ C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\patches\TempMusicPatch.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\powers\HugeScalePower.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\noblecards\ImitationGodForce.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\noblecards\ParadisChateaudIf.java
+C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\util\CriticalStarVariable.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\action\JewelOfFourteenAction.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\powers\deprecated\ChildrenHeroPower.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\patches\CriticalStarPatch.java
@@ -79,6 +80,7 @@ C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\powers\TheOneWhoRevealsTrut
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\fgo\NightlessCharisma.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\noblecards\Unlimited.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\noblecards\Fragarach.java
+C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\deprecated\EndOfADream.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\powers\deprecated\HPRegenPower.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\colorless\EightKindness.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\relics\MechanicalProtector.java
@@ -123,6 +125,7 @@ C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\relics\FanNight.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\patches\RevivePatch.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\fgo\Canopus.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\optionCards\RepairSpiritOrigin.java
+C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\fgo\Revelation.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\fgo\FacelessMoon.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\powers\FragarachPower.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\patches\SoundPatch.java
@@ -152,7 +155,6 @@ C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\powers\deprecated\QuickPerf
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\powers\CursePower.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\FGOCard.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\tempCards\BlessedRegenerate.java
-C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\colorless\Revelation.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\powers\StarRatePower.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\vfx\HKAnimatedSlashEffect.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\patches\NoblePhantasmDeckPatch.java
@@ -295,7 +297,6 @@ C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\AbsNoblePhantasmCard.
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\tempCards\SupportCraft.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\powers\BuffBlockPower.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\hexui_lib\patches\RenderCardPortraitFramePatch.java
-C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\fgo\EndOfADream.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\fgo\BlessedScion.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\characters\Master.java
 C:\Users\kino\Desktop\projects\fgo\src\main\java\fgo\cards\colorless\UndeadBird.java

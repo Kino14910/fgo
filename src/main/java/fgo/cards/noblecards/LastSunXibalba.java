@@ -24,7 +24,7 @@ public class LastSunXibalba extends AbsNoblePhantasmCard {
     public LastSunXibalba() {
         super(ID,CardType.ATTACK, CardTarget.ALL_ENEMY);
         setDamage(6, 2);
-        setMagic(30);
+        setStar(30);
         setExhaust();
 
         cardArtLayers512.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH)));
@@ -54,6 +54,6 @@ public class LastSunXibalba extends AbsNoblePhantasmCard {
             this.addToBot(new VFXAction(p, new FlameBarrierEffect(p.hb.cX, p.hb.cY), 0.5F));
         }
 
-        this.addToBot(new ApplyPowerAction(p, p, new StarGainPower(p, this.magicNumber), this.magicNumber));
+        this.addToBot(new ApplyPowerAction(p, p, new StarGainPower(p, star)));
     }
 }

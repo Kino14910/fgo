@@ -1,4 +1,4 @@
-package fgo.cards.colorless;
+package fgo.cards.fgo;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -8,13 +8,14 @@ import com.megacrit.cardcrawl.powers.GainStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import fgo.cards.FGOCard;
+import fgo.patches.Enum.FGOCardColor;
 import fgo.powers.DefenseDownPower;
 import fgo.util.CardStats;
 
 public class Revelation extends FGOCard {
     public static final String ID = makeID(Revelation.class.getSimpleName());
     private static final CardStats INFO = new CardStats(
-            CardColor.COLORLESS,
+            FGOCardColor.FGO,
             CardType.SKILL,
             CardRarity.UNCOMMON,
             CardTarget.ENEMY,

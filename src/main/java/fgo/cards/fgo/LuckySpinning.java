@@ -22,13 +22,13 @@ public class LuckySpinning extends FGOCard {
     );
     public LuckySpinning() {
         super(ID, INFO);
-        setMagic(1, 1);
+        setStar(1, 1);
     }
 
 
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new StarRatePower(p, magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new StarRatePower(p, star)));
     }
 }

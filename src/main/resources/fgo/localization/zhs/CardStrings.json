@@ -38,7 +38,7 @@
   },
   "${modID}:BrilliantEscort": {
     "NAME": "闪耀的陪同",
-    "DESCRIPTION": "获得 !M! 颗 fgo:暴击星 。 NL 获得 !NP! % fgo:宝具值 。"
+    "DESCRIPTION": "获得 !S! 颗 fgo:暴击星 。 NL 获得 !NP! % fgo:宝具值 。"
   },
   "${modID}:PureCoordinate": {
     "NAME": "纯洁的搭配",
@@ -107,7 +107,7 @@
   },
   "${modID}:SoulOfWaterChannels": {
     "NAME": "花之邪神",
-    "DESCRIPTION": "保留 。 NL 获得1层 fgo:诅呪 。 NL 获得 !M! 颗 fgo:暴击星 。 NL 消耗 。"
+    "DESCRIPTION": "保留 。 NL 获得1层 fgo:诅呪 。 NL 获得 !S! 颗 fgo:暴击星 。 NL 消耗 。"
   },
   "${modID}:BackAgain": {
     "NAME": "雅号·异星蛸",
@@ -148,11 +148,11 @@
   },
   "${modID}:WarriorsBlade": {
     "NAME": "击剑矫捷如鹰隼",
-    "DESCRIPTION": "造成 !D! 点伤害 4 次。 NL 获得 !M! 颗 fgo:暴击星 。"
+    "DESCRIPTION": "造成 !D! 点伤害 !M! 次。 NL 获得 !S! 颗 fgo:暴击星 。"
   },
   "${modID}:StarHunter": {
     "NAME": "星之猎人",
-    "DESCRIPTION": "抽 !M! 张牌。 NL 获得10颗 fgo:暴击星 。 NL 获得2层 中毒 。 NL 消耗 。"
+    "DESCRIPTION": "抽 !M! 张牌。 NL 获得 !S! 颗 fgo:暴击星 。 NL 获得2层 中毒 。 NL 消耗 。"
   },
   "${modID}:BlessingOfKur": {
     "NAME": "冥界佑护",
@@ -322,7 +322,7 @@
   },
   "${modID}:LuckySpinning": {
     "NAME": "幸运的纺线",
-    "DESCRIPTION": "打出此牌后，在本回合每造成一次伤害，额外获得 !M! 颗 fgo:暴击星 。"
+    "DESCRIPTION": "打出此牌后，在本回合每造成一次伤害，额外获得 !S! 颗 fgo:暴击星 。"
   },
   "${modID}:KnightStance": {
     "NAME": "骑士的架势",
@@ -344,7 +344,7 @@
   },
   "${modID}:MorningLark": {
     "NAME": "晨之云雀",
-    "DESCRIPTION": "获得 !NP! % fgo:宝具值 。 NL 获得 !M! 颗 fgo:暴击星 。 NL 在你的回合结束时，失去 20% fgo:宝具值 NL 消耗 。"
+    "DESCRIPTION": "获得 !NP! % fgo:宝具值 。 NL 获得 !S! 颗 fgo:暴击星 。 NL 在你的回合结束时，失去 20% fgo:宝具值 NL 消耗 。"
   },
   "${modID}:GraceUnexpectedBirth": {
     "NAME": "不被祝福的诞生",
@@ -421,7 +421,7 @@
   },
   "${modID}:KnightoftheLake": {
     "NAME": "湖上骑士",
-    "DESCRIPTION": "在你没有 fgo:暴击威力 时， NL 获得 !M! % fgo:暴击威力 。 NL 否则，获得10颗 fgo:暴击星 。"
+    "DESCRIPTION": "在你没有 fgo:暴击威力 时， NL 获得 !M! % fgo:暴击威力 。 NL 否则，获得 !S! 颗 fgo:暴击星 。 消耗 "
   },
   "${modID}:CircuitConnect": {
     "NAME": "回路连接",
@@ -488,7 +488,7 @@
   },
   "${modID}:BridalSpinWheel": {
     "NAME": "赠予新娘的纺车",
-    "DESCRIPTION": "fgo:宝具牌 。 NL 获得 [E] [E] [E] [E] 。 NL 获得 !M! 颗 fgo:暴击星 。"
+    "DESCRIPTION": "fgo:宝具牌 。 NL 获得 [E] [E] [E] [E] 。 NL 获得 !S! 颗 fgo:暴击星 。"
   },
   "${modID}:IraLupus": {
     "NAME": "狂暴少女狼",
@@ -549,7 +549,7 @@
   },
   "${modID}:HollowHeartAlbion": {
     "NAME": "无人知晓的无垢搏动",
-    "DESCRIPTION": "fgo:宝具牌 。 NL 所有敌人失去 !D! 点生命。 NL 获得10颗 fgo:暴击星 。"
+    "DESCRIPTION": "fgo:宝具牌 。 NL 所有敌人失去 !D! 点生命。 NL 获得 !S! 颗 fgo:暴击星 。"
   },
   "${modID}:Sevendrive": {
     "NAME": "79式掷祸大社",
@@ -586,7 +586,7 @@
   },
   "${modID}:LastSunXibalba": {
     "NAME": "星，自宇宙降临",
-    "DESCRIPTION": "fgo:宝具牌 。 NL 对所有敌人造成 !D! 点伤害5次。 NL 获得 !M! 颗 fgo:暴击星 。",
+    "DESCRIPTION": "fgo:宝具牌 。 NL 对所有敌人造成 !D! 点伤害5次。 NL 获得 !S! 颗 fgo:暴击星 。",
     "FLAVOR": "在你有boss遗物“Archetype ORT”时才会出现在宝具选择界面。"
   },
   "${modID}:MahaPralaya": {

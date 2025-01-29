@@ -22,13 +22,13 @@ public class MorningLark extends FGOCard {
     public MorningLark() {
         super(ID, INFO);
         setNP(30, 20);
-        setMagic(10, 10);
+        setStar(10, 10);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new FgoNpAction(np));
-        addToBot(new ApplyPowerAction(p, p, new StarGainPower(p, magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new StarGainPower(p, star)));
         addToBot(new ApplyPowerAction(p, p, new MorningLarkPower(p, 1), 1));
 //        addToBot(new ApplyPowerAction(p, p, new DrawReductionPower(p, 1), 1));
     }

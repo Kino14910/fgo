@@ -5,7 +5,6 @@ fgo\powers\CrossingArcadiaPower.class
 fgo\patches\MainMenuUIFgoPatch.class
 fgo\patches\Enum\FGOCardColor.class
 fgo\hexui_lib\util\RenderLayer.class
-fgo\cards\fgo\EndOfADream.class
 fgo\hexui_lib\patches\GetCardBgPatch.class
 fgo\relics\BaseRelic$1.class
 fgo\powers\BuffBlockPower.class
@@ -162,7 +161,6 @@ fgo\characters\Master.class
 fgo\characters\AlterOption.class
 fgo\event\Beyondthe.class
 fgo\powers\UnlimitedPower.class
-fgo\cards\colorless\Revelation.class
 fgo\relics\SelfReplenishmentMagic.class
 fgo\powers\CriticalDamageUpPower.class
 fgo\action\CurtainoftheNightAction.class
@@ -250,6 +248,7 @@ fgo\cards\fgo\GoldenGrail.class
 fgo\cards\fgo\OriginBullet.class
 fgo\powers\WatersidePower.class
 fgo\event\BaseEvent.class
+fgo\cards\deprecated\EndOfADream.class
 fgo\cards\noblecards\Excalibur.class
 fgo\cards\noblecards\Failnaught.class
 fgo\action\MagicBulletChargingAction.class

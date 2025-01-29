@@ -3,9 +3,7 @@ package fgo.powers.deprecated;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 import fgo.powers.BasePower;
-import fgo.powers.EternalSleepPower;
 
 import static fgo.FGOMod.makeID;
 

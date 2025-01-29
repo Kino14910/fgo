@@ -20,6 +20,7 @@ public class HollowHeartAlbion extends AbsNoblePhantasmCard {
     public HollowHeartAlbion() {
         super(ID,AbstractCard.CardType.ATTACK, AbstractCard.CardTarget.ALL_ENEMY);
         setDamage(27, 8);
+        setStar(10);
         setExhaust();
 
         cardArtLayers512.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH)));
@@ -31,7 +32,7 @@ public class HollowHeartAlbion extends AbsNoblePhantasmCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new DamageAllEnemiesAction(p, this.multiDamage, DamageInfo.DamageType.HP_LOSS, AbstractGameAction.AttackEffect.FIRE));
-        this.addToBot(new ApplyPowerAction(p, p, new StarGainPower(p, 10), 10));
+        this.addToBot(new ApplyPowerAction(p, p, new StarGainPower(p, star)));
     }
 
 

@@ -1,4 +1,4 @@
-package fgo.cards.fgo;
+package fgo.cards.deprecated;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;

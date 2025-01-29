@@ -38,7 +38,7 @@
   },
   "fgo:BrilliantEscort": {
     "NAME": "闪耀的陪同",
-    "DESCRIPTION": "获得 !M! 颗 fgo:暴击星 。 NL 获得 !NP! % fgo:宝具值 。"
+    "DESCRIPTION": "获得 !S! 颗 fgo:暴击星 。 NL 获得 !NP! % fgo:宝具值 。"
   },
   "fgo:PureCoordinate": {
     "NAME": "纯洁的搭配",
@@ -107,7 +107,7 @@
   },
   "fgo:SoulOfWaterChannels": {
     "NAME": "花之邪神",
-    "DESCRIPTION": "保留 。 NL 获得1层 fgo:诅呪 。 NL 获得 !M! 颗 fgo:暴击星 。 NL 消耗 。"
+    "DESCRIPTION": "保留 。 NL 获得1层 fgo:诅呪 。 NL 获得 !S! 颗 fgo:暴击星 。 NL 消耗 。"
   },
   "fgo:BackAgain": {
     "NAME": "雅号·异星蛸",
@@ -148,11 +148,11 @@
   },
   "fgo:WarriorsBlade": {
     "NAME": "击剑矫捷如鹰隼",
-    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 获得 !M! 颗 fgo:暴击星 。"
+    "DESCRIPTION": "造成 !D! 点伤害 !M! 次。 NL 获得 !S! 颗 fgo:暴击星 。"
   },
   "fgo:StarHunter": {
     "NAME": "星之猎人",
-    "DESCRIPTION": "抽 !M! 张牌。 NL 获得10颗 fgo:暴击星 。 NL 获得2层 中毒 。 NL 消耗 。"
+    "DESCRIPTION": "抽 !M! 张牌。 NL 获得 !S! 颗 fgo:暴击星 。 NL 获得2层 中毒 。 NL 消耗 。"
   },
   "fgo:BlessingOfKur": {
     "NAME": "冥界佑护",
@@ -322,7 +322,7 @@
   },
   "fgo:LuckySpinning": {
     "NAME": "幸运的纺线",
-    "DESCRIPTION": "打出此牌后，在本回合每造成一次伤害，额外获得 !M! 颗 fgo:暴击星 。"
+    "DESCRIPTION": "打出此牌后，在本回合每造成一次伤害，额外获得 !S! 颗 fgo:暴击星 。"
   },
   "fgo:KnightStance": {
     "NAME": "骑士的架势",
@@ -344,7 +344,7 @@
   },
   "fgo:MorningLark": {
     "NAME": "晨之云雀",
-    "DESCRIPTION": "获得 !NP! % fgo:宝具值 。 NL 获得 !M! 颗 fgo:暴击星 。 NL 在你的回合结束时，失去 20% fgo:宝具值 NL 消耗 。"
+    "DESCRIPTION": "获得 !NP! % fgo:宝具值 。 NL 获得 !S! 颗 fgo:暴击星 。 NL 在你的回合结束时，失去 20% fgo:宝具值 NL 消耗 。"
   },
   "fgo:GraceUnexpectedBirth": {
     "NAME": "不被祝福的诞生",
@@ -356,7 +356,7 @@
   },
   "fgo:CharismaOfTheJade": {
     "NAME": "翡翠的魅力",
-    "DESCRIPTION": "造成 !D! 点伤害3次。 NL 可以使用20颗 fgo:暴击星 NL 使伤害提高200%。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 可以使用20颗 fgo:暴击星 NL 使伤害提高200%。"
   },
   "fgo:GoldenGrail": {
     "NAME": "黄金之杯",
@@ -421,7 +421,7 @@
   },
   "fgo:KnightoftheLake": {
     "NAME": "湖上骑士",
-    "DESCRIPTION": "在你没有 fgo:暴击威力 时， NL 获得 !M! % fgo:暴击威力 。 NL 否则，获得10颗 fgo:暴击星 。"
+    "DESCRIPTION": "在你没有 fgo:暴击威力 时， NL 获得 !M! % fgo:暴击威力 。 NL 否则，获得 !S! 颗 fgo:暴击星 。 消耗 "
   },
   "fgo:CircuitConnect": {
     "NAME": "回路连接",
@@ -488,7 +488,7 @@
   },
   "fgo:BridalSpinWheel": {
     "NAME": "赠予新娘的纺车",
-    "DESCRIPTION": "fgo:宝具牌 。 NL 获得 [E] [E] [E] [E] 。 NL 获得 !M! 颗 fgo:暴击星 。"
+    "DESCRIPTION": "fgo:宝具牌 。 NL 获得 [E] [E] [E] [E] 。 NL 获得 !S! 颗 fgo:暴击星 。"
   },
   "fgo:IraLupus": {
     "NAME": "狂暴少女狼",
@@ -549,7 +549,7 @@
   },
   "fgo:HollowHeartAlbion": {
     "NAME": "无人知晓的无垢搏动",
-    "DESCRIPTION": "fgo:宝具牌 。 NL 所有敌人失去 !D! 点生命。 NL 获得10颗 fgo:暴击星 。"
+    "DESCRIPTION": "fgo:宝具牌 。 NL 所有敌人失去 !D! 点生命。 NL 获得 !S! 颗 fgo:暴击星 。"
   },
   "fgo:Sevendrive": {
     "NAME": "79式掷祸大社",
@@ -586,7 +586,7 @@
   },
   "fgo:LastSunXibalba": {
     "NAME": "星，自宇宙降临",
-    "DESCRIPTION": "fgo:宝具牌 。 NL 对所有敌人造成 !D! 点伤害5次。 NL 获得 !M! 颗 fgo:暴击星 。",
+    "DESCRIPTION": "fgo:宝具牌 。 NL 对所有敌人造成 !D! 点伤害5次。 NL 获得 !S! 颗 fgo:暴击星 。",
     "FLAVOR": "在你有boss遗物“Archetype ORT”时才会出现在宝具选择界面。"
   },
   "fgo:MahaPralaya": {

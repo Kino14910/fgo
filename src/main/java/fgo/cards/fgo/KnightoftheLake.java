@@ -26,6 +26,8 @@ public class KnightoftheLake extends FGOCard {
     public KnightoftheLake() {
         super(ID, INFO);
         setMagic(50, 50);
+        setStar(10);
+        setExhaust();
     }
 
     @Override
@@ -36,7 +38,7 @@ public class KnightoftheLake extends FGOCard {
         if (!p.hasPower(CriticalDamageUpPower.POWER_ID)) {
             addToBot(new ApplyPowerAction(p, p, new CriticalDamageUpPower(p, magicNumber)));
         } else {
-            addToBot(new ApplyPowerAction(p, p, new StarGainPower(p, 10), 10));
+            addToBot(new ApplyPowerAction(p, p, new StarGainPower(p, star)));
         }
     }
 

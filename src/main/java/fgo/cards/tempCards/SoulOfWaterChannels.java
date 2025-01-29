@@ -23,7 +23,7 @@ public class SoulOfWaterChannels extends FGOCard {
     );
     public SoulOfWaterChannels() {
         super(ID, INFO);
-        setMagic(10, 5);
+        setStar(10, 5);
         setExhaust();
         setSelfRetain();
         this.tags.add(CardTagsEnum.Foreigner);
@@ -39,6 +39,6 @@ public class SoulOfWaterChannels extends FGOCard {
             this.addToBot(new VFXAction(p, new FlameBarrierEffect(p.hb.cX, p.hb.cY), 0.5F));
         }
 
-        this.addToBot(new ApplyPowerAction(p, p, new StarGainPower(p, this.magicNumber), this.magicNumber));
+        this.addToBot(new ApplyPowerAction(p, p, new StarGainPower(p, this.star)));
     }
 }

@@ -26,6 +26,7 @@ public class StarHunter extends FGOCard {
     public StarHunter() {
         super(ID, INFO);
         setMagic(2, 1);
+        setStar(10);
         setExhaust();
     }
 
@@ -37,7 +38,7 @@ public class StarHunter extends FGOCard {
             addToBot(new VFXAction(p, new FlameBarrierEffect(p.hb.cX, p.hb.cY), 0.5F));
         }
         addToBot(new DrawCardAction(p, magicNumber));
-        addToBot(new ApplyPowerAction(p, p, new StarGainPower(p, 10), 10));
+        addToBot(new ApplyPowerAction(p, p, new StarGainPower(p, star)));
         addToBot(new ApplyPowerAction(p, p, new PoisonPower(p, p, 2), 2, AbstractGameAction.AttackEffect.POISON));
     }
 }
