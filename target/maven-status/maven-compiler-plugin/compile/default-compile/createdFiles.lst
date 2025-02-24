@@ -311,7 +311,6 @@ fgo\relics\MidsummerNightDream.class
 fgo\action\StarBasketAction.class
 fgo\action\SongOfThePoetAction.class
 fgo\cards\noblecards\ParadisChateaudIf.class
-fgo\cards\fgo\CrystallizationofWinter.class
 fgo\cards\fgo\ComeOn.class
 fgo\action\TheOneWhoSawItAllAction.class
 fgo\util\TextureLoader.class
