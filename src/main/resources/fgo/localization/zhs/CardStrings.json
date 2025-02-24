@@ -134,7 +134,8 @@
   },
   "${modID}:BlessedScion": {
     "NAME": "后继者",
-    "DESCRIPTION": "选择一张手牌 消耗 ， NL 在抽牌堆顶部加入 !M! 张这张牌的复制品，它们在被打出之前耗能变为0。",
+    "DESCRIPTION": "选择一张手牌 消耗 ， NL 在抽牌堆顶部加入 !M! 张这张牌的复制品。",
+    "UPGRADE_DESCRIPTION": "选择一张手牌 消耗 ， NL 在抽牌堆顶部加入 !M! 张这张牌的复制品，它们在被打出之前耗能变为0。",
     "FLAVOR": "测试画风可以更改。"
   },
   "${modID}:BeastMagic": {

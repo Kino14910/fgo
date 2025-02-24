@@ -19,7 +19,7 @@ public class Borrowingfrom extends FGOCard {
     );
     public Borrowingfrom() {
         super(ID, INFO);
-        setMagic(2, 1);
+        setMagic(2, -1);
     }
 
     @Override
