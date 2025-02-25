@@ -11,7 +11,7 @@ public class TheOneWhoSawItAll extends FGOCard {
     private static final CardStats INFO = new CardStats(
             CardColor.COLORLESS,
             CardType.SKILL,
-            CardRarity.RARE,
+            CardRarity.UNCOMMON,
             CardTarget.SELF,
             0
     );

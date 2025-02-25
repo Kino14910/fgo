@@ -31,21 +31,15 @@ public class WildRule extends FGOCard {
     public WildRule() {
         super(ID, INFO);
         setDamage(12);
-        setMagic(1, 2);
+        setMagic(2, 1);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (m != null) {
-            if (Settings.FAST_MODE) {
-                addToBot(new VFXAction(new BiteEffect(m.hb.cX, m.hb.cY - 40.0F * Settings.scale, Settings.GOLD_COLOR.cpy()), 0.1F));
-            } else {
-                addToBot(new VFXAction(new BiteEffect(m.hb.cX, m.hb.cY - 40.0F * Settings.scale, Settings.GOLD_COLOR.cpy()), 0.3F));
-            }
-        }
+        addToBot(new VFXAction(new BiteEffect(m.hb.cX, m.hb.cY - 40.0F * Settings.scale, Settings.GOLD_COLOR.cpy()), Settings.FAST_MODE ?0.1F :0.3F));
 
         addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
-        addToBot(new HealAction(p, p, 2));
+        addToBot(new HealAction(p, p, 3));
         addToBot(new ApplyPowerAction(m, p, new StrengthPower(m, -1), -1));
         if(hasVulnerable)
             addToBot(new ApplyPowerAction(m, p, new VulnerablePower(m, magicNumber, false), magicNumber));

@@ -307,7 +307,7 @@
   },
   "${modID}:WildRule": {
     "NAME": "野性法则/强食",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 回复2点生命。 NL 使敌人失去1点 力量 ， NL 如果成功，给予 !M! 层 易伤 。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 回复3点生命。 NL 使敌人失去1点 力量 ， NL 如果成功，给予 !M! 层 易伤 。"
   },
   "${modID}:TeslaCoil": {
     "NAME": "特斯拉线圈",
@@ -629,7 +629,7 @@
   },
   "${modID}:StarBasket": {
     "NAME": "星之笼",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 给予目标 !M! 点 格挡 。 NL 获得1次随机正面状态。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 给予目标 !D! 点 格挡 。 NL 获得 !M! 次随机正面状态。"
   },
   "${modID}:PrimevalRune": {
     "NAME": "冰冻暴风雪",
@@ -637,7 +637,7 @@
   },
   "${modID}:EightKindness": {
     "NAME": "仁义八行",
-    "DESCRIPTION": "获得1点 力量 和 敏捷 。 NL 获得2层 *多层护甲 和 再生 。 NL 获得2点 荆棘 和 活力 。 NL 获得1层 无实体 和 人工制品 。 NL 消耗 。"
+    "DESCRIPTION": "获得 !M! 点 力量 、 敏捷 、 *多层护甲 、 再生 、 荆棘 、 活力 、 无实体 和 人工制品 。 NL 消耗 。"
   },
   "${modID}:MaraPapiyas": {
     "NAME": "女神恩惠",

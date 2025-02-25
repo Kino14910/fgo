@@ -3,6 +3,7 @@ d:\projects\fgo\src\main\java\fgo\action\BlessingOfKurAction.java
 d:\projects\fgo\src\main\java\fgo\action\BloomInSpringAction.java
 d:\projects\fgo\src\main\java\fgo\action\ComeOnAction.java
 d:\projects\fgo\src\main\java\fgo\action\CurtainoftheNightAction.java
+d:\projects\fgo\src\main\java\fgo\action\deprecated\StarBasketAction.java
 d:\projects\fgo\src\main\java\fgo\action\DoppelgangerMaster.java
 d:\projects\fgo\src\main\java\fgo\action\DragonCoreAction.java
 d:\projects\fgo\src\main\java\fgo\action\EnferChateaudIfAction.java
@@ -28,7 +29,6 @@ d:\projects\fgo\src\main\java\fgo\action\ReturnRandomNumberAction2.java
 d:\projects\fgo\src\main\java\fgo\action\SarasvatiMeltoutAction.java
 d:\projects\fgo\src\main\java\fgo\action\SongOfThePoetAction.java
 d:\projects\fgo\src\main\java\fgo\action\SparksRouteAction.java
-d:\projects\fgo\src\main\java\fgo\action\StarBasketAction.java
 d:\projects\fgo\src\main\java\fgo\action\SunlightAction.java
 d:\projects\fgo\src\main\java\fgo\action\TameshiMonoAction.java
 d:\projects\fgo\src\main\java\fgo\action\TheOneWhoSawItAllAction.java
@@ -45,7 +45,6 @@ d:\projects\fgo\src\main\java\fgo\cards\colorless\DivineDualEdge.java
 d:\projects\fgo\src\main\java\fgo\cards\colorless\EightKindness.java
 d:\projects\fgo\src\main\java\fgo\cards\colorless\FifthForm.java
 d:\projects\fgo\src\main\java\fgo\cards\colorless\GrandOrder.java
-d:\projects\fgo\src\main\java\fgo\cards\colorless\HalberdUsurpation.java
 d:\projects\fgo\src\main\java\fgo\cards\colorless\LevelSlash.java
 d:\projects\fgo\src\main\java\fgo\cards\colorless\MaraPapiyas.java
 d:\projects\fgo\src\main\java\fgo\cards\colorless\mash\BlackBarrel.java
@@ -67,6 +66,7 @@ d:\projects\fgo\src\main\java\fgo\cards\deprecated\EndOfADream.java
 d:\projects\fgo\src\main\java\fgo\cards\deprecated\HolyShroud.java
 d:\projects\fgo\src\main\java\fgo\cards\deprecated\KarmicVision.java
 d:\projects\fgo\src\main\java\fgo\cards\deprecated\QueensCovenant.java
+d:\projects\fgo\src\main\java\fgo\cards\deprecated\StarBasket.java
 d:\projects\fgo\src\main\java\fgo\cards\deprecated\StarPioneer.java
 d:\projects\fgo\src\main\java\fgo\cards\deprecated\TameshiMono.java
 d:\projects\fgo\src\main\java\fgo\cards\deprecated\TeachingsoftheEternal.java
@@ -90,7 +90,6 @@ d:\projects\fgo\src\main\java\fgo\cards\fgo\ChildrenSHero.java
 d:\projects\fgo\src\main\java\fgo\cards\fgo\CircuitConnect.java
 d:\projects\fgo\src\main\java\fgo\cards\fgo\ComeOn.java
 d:\projects\fgo\src\main\java\fgo\cards\fgo\CrownedWithLife.java
-d:\projects\fgo\src\main\java\fgo\cards\fgo\CrystallizationofWinter.java
 d:\projects\fgo\src\main\java\fgo\cards\fgo\CurtainoftheNight.java
 d:\projects\fgo\src\main\java\fgo\cards\fgo\DeathOfDeath.java
 d:\projects\fgo\src\main\java\fgo\cards\fgo\Defend.java
@@ -105,6 +104,7 @@ d:\projects\fgo\src\main\java\fgo\cards\fgo\GoddessMetamorphosisBeast.java
 d:\projects\fgo\src\main\java\fgo\cards\fgo\GodsExecution.java
 d:\projects\fgo\src\main\java\fgo\cards\fgo\GoldenGrail.java
 d:\projects\fgo\src\main\java\fgo\cards\fgo\GraceUnexpectedBirth.java
+d:\projects\fgo\src\main\java\fgo\cards\fgo\HalberdUsurpation.java
 d:\projects\fgo\src\main\java\fgo\cards\fgo\HeroicKing.java
 d:\projects\fgo\src\main\java\fgo\cards\fgo\HugeScale.java
 d:\projects\fgo\src\main\java\fgo\cards\fgo\Insanity.java
@@ -134,7 +134,6 @@ d:\projects\fgo\src\main\java\fgo\cards\fgo\SchwarzwaldFalke.java
 d:\projects\fgo\src\main\java\fgo\cards\fgo\SongOfThePoet.java
 d:\projects\fgo\src\main\java\fgo\cards\fgo\SparksRoute.java
 d:\projects\fgo\src\main\java\fgo\cards\fgo\SpringOfFire.java
-d:\projects\fgo\src\main\java\fgo\cards\fgo\StarBasket.java
 d:\projects\fgo\src\main\java\fgo\cards\fgo\StarHunter.java
 d:\projects\fgo\src\main\java\fgo\cards\fgo\Strike.java
 d:\projects\fgo\src\main\java\fgo\cards\fgo\SwanLake.java
@@ -359,6 +358,7 @@ d:\projects\fgo\src\main\java\fgo\relics\BowInsignia.java
 d:\projects\fgo\src\main\java\fgo\relics\BurgerKing.java
 d:\projects\fgo\src\main\java\fgo\relics\CosmicMedallion.java
 d:\projects\fgo\src\main\java\fgo\relics\deprecated\CommandSpell.java
+d:\projects\fgo\src\main\java\fgo\relics\deprecated\SurpriseChocolate.java
 d:\projects\fgo\src\main\java\fgo\relics\DreamChip.java
 d:\projects\fgo\src\main\java\fgo\relics\FanNight.java
 d:\projects\fgo\src\main\java\fgo\relics\HalloweenRoyalty.java
@@ -374,7 +374,6 @@ d:\projects\fgo\src\main\java\fgo\relics\SaveStone.java
 d:\projects\fgo\src\main\java\fgo\relics\SelfReplenishmentMagic.java
 d:\projects\fgo\src\main\java\fgo\relics\SkullCandy.java
 d:\projects\fgo\src\main\java\fgo\relics\SuitcaseFgo.java
-d:\projects\fgo\src\main\java\fgo\relics\SurpriseChocolate.java
 d:\projects\fgo\src\main\java\fgo\util\CardStats.java
 d:\projects\fgo\src\main\java\fgo\util\CriticalStarVariable.java
 d:\projects\fgo\src\main\java\fgo\util\GeneralUtils.java

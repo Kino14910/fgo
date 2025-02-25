@@ -34,7 +34,6 @@ fgo\patches\Button\OverlayMenuPatch$NoblePhantasmButtonField.class
 fgo\cards\fgo\Swingby.class
 fgo\potions\ExtremelySpicyMapoTofu.class
 fgo\powers\EvasionPower.class
-fgo\relics\SurpriseChocolate.class
 fgo\cards\noblecards\Overload.class
 fgo\action\ModifyMagicNumAction.class
 fgo\cards\BaseCard$LocalVarInfo.class
@@ -64,7 +63,6 @@ fgo\cards\fgo\NFFSpecial.class
 fgo\cards\noblecards\KurKigalIrkalla.class
 fgo\cards\fgo\SchwarzwaldFalke.class
 fgo\cards\curses\Dumuzid.class
-fgo\cards\fgo\StarBasket.class
 fgo\patches\RevivePatch$hasEnoughEnergyPatcher.class
 fgo\relics\BurgerKing.class
 fgo\hexui_lib\patches\RenderCardTypePatch$Locator.class
@@ -184,7 +182,6 @@ fgo\characters\AlterOption.class
 fgo\event\Beyondthe.class
 fgo\powers\NightlessCharismaPower.class
 fgo\powers\UnlimitedPower.class
-fgo\cards\colorless\HalberdUsurpation.class
 fgo\relics\SelfReplenishmentMagic.class
 fgo\powers\CriticalDamageUpPower.class
 fgo\action\CurtainoftheNightAction.class
@@ -203,7 +200,6 @@ fgo\event\DailyLifeattheBeyond$DAILY_SCREEN.class
 fgo\cards\fgo\JewelOfFourteen.class
 fgo\cards\colorless\CrystallizationofWinter.class
 fgo\powers\BeyondTheFurthestEndPower.class
-fgo\event\FGOLibrary.class
 fgo\patches\NobleCardTabNamePatch.class
 fgo\hexui_lib\patches\RenderCardPortraitFramePatch.class
 fgo\powers\MyFairSoldierPower.class
@@ -308,10 +304,8 @@ fgo\powers\FacelessMoonPower.class
 fgo\powers\MillenniumCastlePower.class
 fgo\action\KingToHandAction.class
 fgo\relics\MidsummerNightDream.class
-fgo\action\StarBasketAction.class
 fgo\action\SongOfThePoetAction.class
 fgo\cards\noblecards\ParadisChateaudIf.class
-fgo\cards\fgo\CrystallizationofWinter.class
 fgo\cards\fgo\ComeOn.class
 fgo\action\TheOneWhoSawItAllAction.class
 fgo\util\TextureLoader.class

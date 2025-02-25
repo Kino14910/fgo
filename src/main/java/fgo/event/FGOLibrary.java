@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import fgo.cards.colorless.*;
 import fgo.cards.fgo.DeathOfDeath;
+import fgo.cards.fgo.HalberdUsurpation;
 import fgo.cards.fgo.SpringOfFire;
 
 import static fgo.FGOMod.makeID;
@@ -64,7 +65,6 @@ public class FGOLibrary extends BaseEvent {
                 group.addToBottom(new DeathOfDeath());
                 group.addToBottom(new EightKindness());
                 group.addToBottom(new PeerlessStrike());
-                group.addToBottom(new HalberdUsurpation());
                 group.addToBottom(new ReplicaAgateram());
                 group.addToBottom(new UndeadBird());
                 group.addToBottom(new MaraPapiyas());

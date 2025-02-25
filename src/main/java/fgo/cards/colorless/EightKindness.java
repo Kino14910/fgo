@@ -19,9 +19,8 @@ public class EightKindness extends FGOCard {
     );
     public EightKindness() {
         super(ID, INFO);
-        this.baseMagicNumber = 1;
-        this.magicNumber = this.baseMagicNumber;
-        this.exhaust = true;
+        setMagic(2);
+        setExhaust();
     }
     //调用父类的构造方法，传参为super(卡牌ID,卡牌名称，能量花费，卡牌描述，卡牌类型，卡牌颜色，卡牌稀有度，卡牌目标)
 
@@ -33,18 +32,21 @@ public class EightKindness extends FGOCard {
         }
     }
 
+    public void gainPower(AbstractPlayer p, AbstractPower powerToApply){
+        this.addToBot(new ApplyPowerAction(p, p,  powerToApply));
 
+    }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, this.magicNumber), this.magicNumber));
-        this.addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, this.magicNumber), this.magicNumber));
-        this.addToBot(new ApplyPowerAction(p, p, new PlatedArmorPower(p, 2), 2));
-        this.addToBot(new ApplyPowerAction(p, p, new RegenPower(p, 2), 2));
-        this.addToBot(new ApplyPowerAction(p, p, new ThornsPower(p, 2), 2));
-        this.addToBot(new ApplyPowerAction(p, p, new VigorPower(p, 2), 2));
-        this.addToBot(new ApplyPowerAction(p, p, new IntangiblePlayerPower(p, this.magicNumber), this.magicNumber));
-        this.addToBot(new ApplyPowerAction(p, p, new ArtifactPower(p, this.magicNumber), this.magicNumber));
+        gainPower(p, new StrengthPower(p, this.magicNumber));
+        gainPower(p, new DexterityPower(p, this.magicNumber));
+        gainPower(p, new PlatedArmorPower(p, this.magicNumber));
+        gainPower(p, new RegenPower(p, this.magicNumber));
+        gainPower(p, new ThornsPower(p, this.magicNumber));
+        gainPower(p, new VigorPower(p, this.magicNumber));
+        gainPower(p, new IntangiblePlayerPower(p, this.magicNumber));
+        gainPower(p, new ArtifactPower(p, this.magicNumber));
     }
 
 }

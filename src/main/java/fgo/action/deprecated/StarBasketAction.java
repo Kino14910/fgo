@@ -1,4 +1,4 @@
-package fgo.action;
+package fgo.action.deprecated;
 
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -24,13 +24,11 @@ public class StarBasketAction extends AbstractGameAction {
     public void update() {
         int roll = MathUtils.random(44);
         switch (roll) {
-            case 0: //临时力量
-                applyPower(p, new StrengthPower(p, 2));
-                applyPower(p, new LoseStrengthPower(p, 2));
+            case 0: //凌迟
+                applyPower(p, new ThousandCutsPower(p, 1));
                 break;
-            case 1: //临时敏捷
-                applyPower(p, new DexterityPower(p, 2));
-                applyPower(p, new LoseDexterityPower(p, 2));
+            case 1: //残虐
+                applyPower(p, new SadisticPower(p, 3));
                 break;
             case 2: //力量
                 applyPower(p, new StrengthPower(p, 1));
@@ -151,12 +149,6 @@ public class StarBasketAction extends AbstractGameAction {
                 break;
             case 41: //保留卡牌
                 applyPower(p, new RetainCardPower(p, 1));
-                break;
-            case 42: //残虐
-                applyPower(p, new SadisticPower(p, 3));
-                break;
-            case 43: //凌迟
-                applyPower(p, new ThousandCutsPower(p, 1));
                 break;
             default: //乱战
                 applyPower(p, new MayhemPower(p, 1));
