@@ -2,52 +2,82 @@ package fgo.action;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.localization.UIStrings;
 
-import java.util.Iterator;
+import java.util.ArrayList;
 
 public class CurtainoftheNightAction extends AbstractGameAction {
-    private final AbstractPlayer p;
-    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("fgo:CurtainoftheNightAction");
-    public static final String[] TEXT = uiStrings.TEXT;
-    public CurtainoftheNightAction() {
-        this.p = AbstractDungeon.player;
-        this.duration = Settings.ACTION_DUR_FAST;
+    public static final String[] TEXT = (CardCrawlGame.languagePack.getUIString("BetterToHandAction")).TEXT;
+    private final AbstractPlayer player;
+    private final int numberOfCards;
+    private final boolean upgraded;
+    public CurtainoftheNightAction(int numberOfCards, boolean upgraded) {
         this.actionType = ActionType.CARD_MANIPULATION;
+        this.duration = this.startDuration = Settings.ACTION_DUR_FAST;
+        this.player = AbstractDungeon.player;
+        this.numberOfCards = numberOfCards;
+        this.upgraded = upgraded;
     }
 
     public void update() {
-        if (this.duration == Settings.ACTION_DUR_FAST) {
-            if (this.p.hand.isEmpty()) {
+        if (this.duration == this.startDuration) {
+            if (this.player.discardPile.isEmpty() || this.numberOfCards <= 0) {
                 this.isDone = true;
-            } else if (this.p.hand.size() == 1) {
-                AbstractCard c = this.p.hand.getTopCard();
-                this.p.hand.moveToDeck(c, false);
-                AbstractDungeon.player.hand.refreshHandLayout();
-                this.isDone = true;
-            } else {
-                AbstractDungeon.handCardSelectScreen.open(TEXT[0], 99, true, true);
-                this.tickDuration();
+                return;
             }
-        } else {
-            if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
-                AbstractCard c;
-                for(Iterator<AbstractCard> var1 = AbstractDungeon.handCardSelectScreen.selectedCards.group.iterator();
-                    var1.hasNext();
-                    this.p.hand.moveToDeck(c, false)) {
-                    c = var1.next();
+            boolean optional = false;
+            if (this.player.discardPile.size() <= this.numberOfCards && !optional) {
+                ArrayList<AbstractCard> cardsToMove = new ArrayList<>();
+                for (AbstractCard c : this.player.discardPile.group) {
+                    cardsToMove.add(c);
+                    if (this.upgraded) {
+                        c.upgrade();
+                    }
                 }
-
-                AbstractDungeon.player.hand.refreshHandLayout();
-                AbstractDungeon.handCardSelectScreen.wereCardsRetrieved = true;
+                for (AbstractCard c : cardsToMove) {
+                    if (this.player.hand.size() < 10) {
+                        this.player.hand.addToHand(c);
+                        this.player.discardPile.removeCard(c);
+                    }
+                    c.lighten(false);
+                }
+                this.isDone = true;
+                return;
+            }
+            if (this.numberOfCards == 1) {
+                AbstractDungeon.gridSelectScreen.open(this.player.discardPile, this.numberOfCards, TEXT[0], false);
+            } else {
+                AbstractDungeon.gridSelectScreen.open(this.player.discardPile, this.numberOfCards, TEXT[1] + this.numberOfCards + TEXT[2], false);
             }
 
-            this.tickDuration();
+            tickDuration();
+            return;
         }
+        if (!AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
+            for (AbstractCard c : AbstractDungeon.gridSelectScreen.selectedCards) {
+                if (this.player.hand.size() < 10) {
+                    this.player.hand.addToHand(c);
+                    if (this.upgraded) {
+                        c.upgrade();
+                    }
+                    this.player.discardPile.removeCard(c);
+                }
+                c.lighten(false);
+                c.unhover();
+            }
+            for (AbstractCard c : this.player.discardPile.group) {
+                c.unhover();
+                c.target_x = CardGroup.DISCARD_PILE_X;
+                c.target_y = 0.0F;
+            }
+            AbstractDungeon.gridSelectScreen.selectedCards.clear();
+            AbstractDungeon.player.hand.refreshHandLayout();
+        }
+        tickDuration();
     }
 
 }

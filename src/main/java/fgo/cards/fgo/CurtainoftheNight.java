@@ -2,7 +2,8 @@ package fgo.cards.fgo;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import fgo.action.MeditateFateAction;
+
+import fgo.action.CurtainoftheNightAction;
 import fgo.cards.FGOCard;
 import fgo.patches.Enum.FGOCardColor;
 import fgo.util.CardStats;
@@ -23,6 +24,6 @@ public class CurtainoftheNight extends FGOCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new MeditateFateAction(magicNumber, true));
+        addToBot(new CurtainoftheNightAction(magicNumber, true));
     }
 }

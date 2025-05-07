@@ -1,5 +1,7 @@
 package fgo.action;
 
+import java.util.ArrayList;
+
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -32,36 +34,34 @@ public class NoblePhantasmSelectAction extends AbstractGameAction {
                     if (card.hasTag(CardTagsEnum.Noble_Phantasm)) {
                         if (card.upgraded) {
                             card.upgrade();
-                            group.addToTop(card);
-                        } else {
-                            group.addToTop(card);
-                        }
+                        } 
+                        group.addToTop(card);
                     }
                 }
             }
 
-            for (AbstractCard c : group.group) {
-                UnlockTracker.markCardAsSeen(c.cardID);
-            }
+            
+            group.group.forEach(c -> UnlockTracker.markCardAsSeen(c.cardID));
 
             if (this.upgraded) {
-                for (AbstractCard c : group.group) {
-                    c.upgrade();
-                }
+                group.group.forEach(AbstractCard::upgrade);
             }
 
             AbstractDungeon.gridSelectScreen.open(group, 1, NPTEXT[2], false, false, true, false);
             this.tickDuration();
-        } else {
-            if (!AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
-                AbstractCard cStudy = AbstractDungeon.gridSelectScreen.selectedCards.get(0).makeCopy();
-                if (AbstractDungeon.gridSelectScreen.selectedCards.get(0).upgraded || this.upgraded) {
-                    cStudy.upgrade();
-                }
-                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(cStudy, this.amount));
-                AbstractDungeon.gridSelectScreen.selectedCards.clear();
-            }
-            this.tickDuration();
+            return;
         }
+
+        ArrayList<AbstractCard> selectedCards = AbstractDungeon.gridSelectScreen.selectedCards;
+        if (!selectedCards.isEmpty()) {
+            AbstractCard selectedCard = selectedCards.get(0);
+            AbstractCard cStudy = selectedCard.makeCopy();
+            if (selectedCard.upgraded || this.upgraded) {
+                cStudy.upgrade();
+            }
+            AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(cStudy, this.amount));
+            selectedCards.clear();
+        }
+        this.tickDuration();
     }
 }

@@ -107,7 +107,6 @@ fgo\relics\SkullCandy.class
 fgo\action\SunlightAction.class
 fgo\powers\MonteCristoTreasurePower.class
 fgo\cards\noblecards\BlackdogGalatine.class
-fgo\action\MeditateFateAction.class
 fgo\cards\fgo\PhasingFluidBlade.class
 fgo\cards\fgo\StarHunter.class
 fgo\powers\GoddessMetamorphosisBeastPower.class
@@ -178,6 +177,7 @@ fgo\cards\BaseCard$VariableType.class
 fgo\hexui_lib\util\RenderImageLayer.class
 fgo\characters\Master.class
 fgo\cards\colorless\TaisuiSMisfortune.class
+fgo\relics\deprecated\SurpriseChocolate.class
 fgo\characters\AlterOption.class
 fgo\event\Beyondthe.class
 fgo\powers\NightlessCharismaPower.class
@@ -200,6 +200,7 @@ fgo\event\DailyLifeattheBeyond$DAILY_SCREEN.class
 fgo\cards\fgo\JewelOfFourteen.class
 fgo\cards\colorless\CrystallizationofWinter.class
 fgo\powers\BeyondTheFurthestEndPower.class
+fgo\event\FGOLibrary.class
 fgo\patches\NobleCardTabNamePatch.class
 fgo\hexui_lib\patches\RenderCardPortraitFramePatch.class
 fgo\powers\MyFairSoldierPower.class
@@ -229,6 +230,7 @@ fgo\powers\EnergyRegenPower.class
 fgo\patches\NoblePhantasmDeckPatch.class
 fgo\cards\colorless\PutOnFakeFace.class
 fgo\relics\BB.class
+fgo\cards\fgo\HalberdUsurpation.class
 fgo\cards\fgo\JourneyGuidance.class
 fgo\vfx\HKExpungeVFXAction.class
 fgo\action\ViyViyViyAction.class
@@ -330,6 +332,7 @@ fgo\cards\deprecated\StarPioneer.class
 fgo\cards\colorless\CrimsonSlash.class
 fgo\cards\fgo\PresenceDetection.class
 fgo\cards\fgo\CrownedWithLife.class
+fgo\cards\deprecated\StarBasket.class
 fgo\cards\tempCards\InfantileRegression.class
 fgo\powers\SevenBeastCrownsPower.class
 fgo\cards\noblecards\Sevendrive.class
@@ -338,6 +341,7 @@ fgo\cards\colorless\mash\BlackBarrel.class
 fgo\powers\SchwarzwaldFalkePower.class
 fgo\relics\OblivionCorrection.class
 fgo\powers\MorningLarkPower.class
+fgo\action\deprecated\StarBasketAction.class
 fgo\event\ManofChaldea$1.class
 fgo\patches\Button\NoblePhantasmButton.class
 fgo\powers\DeathOfDeathPower.class
