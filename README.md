@@ -1,6 +1,7 @@
 # The Master Mod - Fate/Grand Order x 杀戮尖塔
 
 ![Mod封面](https://s2.loli.net/2025/01/19/rvBtxkDLKnhzsS8.png)
+
 ![支持语言](https://img.shields.io/badge/语言-中英文-9cf)
 
 基于《杀戮尖塔》的Fate/Grand Order主题Mod，新增御主（The Master）作为可玩角色，融合圣晶石召唤、宝具解放等FGO经典机制。
