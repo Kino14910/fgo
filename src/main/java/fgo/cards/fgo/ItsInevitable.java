@@ -11,9 +11,7 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import fgo.cards.FGOCard;
 import fgo.patches.Enum.FGOCardColor;
-import fgo.powers.BurnDamagePower;
 import fgo.powers.ItsInevitablePower;
-import fgo.relics.MisoPotato;
 import fgo.util.CardStats;
 
 public class ItsInevitable extends FGOCard {
@@ -38,11 +36,6 @@ public class ItsInevitable extends FGOCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAllEnemiesAction(p, multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.FIRE));
-        if (p.hasRelic(MisoPotato.ID)) {
-            for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-                addToBot(new ApplyPowerAction(mo, p, new BurnDamagePower(mo, 2), 2, true, AbstractGameAction.AttackEffect.NONE));
-            }
-        }
         addToBot(new ApplyPowerAction(p, p, new ItsInevitablePower(p, 2, damage + magicNumber, magicNumber), magicNumber));
         //addToBot(new ApplyPowerAction(p, p, new BurnDamagePower(p, magicNumber)));
     }

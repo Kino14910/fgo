@@ -17,11 +17,11 @@ public class DeathOfDeath extends FGOCard {
             CardType.SKILL,
             CardRarity.RARE,
             CardTarget.SELF,
-            2
+            3
     );
     public DeathOfDeath() {
         super(ID, INFO);
-        setMagic(25, 15);
+        setMagic(30, 20);
         setExhaust();
         this.tags.add(CardTags.HEALING);
     }
@@ -29,8 +29,8 @@ public class DeathOfDeath extends FGOCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new ApplyPowerAction(p, p, new GutsPower(p, this.magicNumber, 1)));
-        this.addToBot(new ApplyPowerAction(p, p, new DeathOfDeathPower(p, 2)));
-        this.addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, 2)));
+        this.addToBot(new ApplyPowerAction(p, p, new DeathOfDeathPower(p, 3)));
+        this.addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, 3)));
         //this.addToBot(new ApplyPowerAction(p, p, new BriefStrengthPower(p, 1), 1));
     }
 }

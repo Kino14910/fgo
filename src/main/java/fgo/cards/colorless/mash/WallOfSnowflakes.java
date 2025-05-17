@@ -6,7 +6,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import fgo.cards.FGOCard;
-import fgo.powers.WallOfSnowflakesPower;
+import fgo.powers.ReducePercentDamagePower;
 import fgo.util.CardStats;
 
 import static com.megacrit.cardcrawl.core.Settings.language;
@@ -17,14 +17,13 @@ public class WallOfSnowflakes extends FGOCard {
             CardColor.COLORLESS,
             CardType.SKILL,
             CardRarity.SPECIAL,
-            CardTarget.ENEMY,
+            CardTarget.SELF,
             1
     );
     public WallOfSnowflakes() {
         super(ID, INFO);
-        setBlock(20);
-        setMagic(15, 5);
-        setCostUpgrade(2);
+        setBlock(15, 5);
+        setMagic(20);
     }
 
     @Override
@@ -38,7 +37,7 @@ public class WallOfSnowflakes extends FGOCard {
 
     @Override
     protected void upgradeName() {
-        ++timesUpgraded;
+        timesUpgraded++;
         upgraded = true;
         name = "荣光坚毅的雪花之壁";
     }
@@ -47,9 +46,9 @@ public class WallOfSnowflakes extends FGOCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if(this.upgraded) {
-            this.addToBot(new GainBlockAction(p, p, block));
+        addToBot(new GainBlockAction(p, p, block));
+        if(upgraded) {
+            addToBot(new ApplyPowerAction(p, p, new ReducePercentDamagePower(p, magicNumber), magicNumber));
         }
-        this.addToBot(new ApplyPowerAction(p, p, new WallOfSnowflakesPower(p, this.magicNumber), this.magicNumber));
     }
 }

@@ -20,7 +20,7 @@ public class SwordOfSelection extends FGOCard {
     );
     public SwordOfSelection() {
         super(ID, INFO);
-        setMagic(2, 1);
+        setMagic(3, 1);
         setCasterBackground();
     }
 

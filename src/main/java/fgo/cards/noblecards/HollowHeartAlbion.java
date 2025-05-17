@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import fgo.cards.AbsNoblePhantasmCard;
 import fgo.hexui_lib.util.RenderImageLayer;
 import fgo.hexui_lib.util.TextureLoader;
-import fgo.powers.StarGainPower;
+import fgo.powers.StarPower;
 
 public class HollowHeartAlbion extends AbsNoblePhantasmCard {
     public static final String ID = makeID(HollowHeartAlbion.class.getSimpleName());
@@ -32,7 +32,7 @@ public class HollowHeartAlbion extends AbsNoblePhantasmCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new DamageAllEnemiesAction(p, this.multiDamage, DamageInfo.DamageType.HP_LOSS, AbstractGameAction.AttackEffect.FIRE));
-        this.addToBot(new ApplyPowerAction(p, p, new StarGainPower(p, star)));
+        this.addToBot(new ApplyPowerAction(p, p, new StarPower(p, star)));
     }
 
 

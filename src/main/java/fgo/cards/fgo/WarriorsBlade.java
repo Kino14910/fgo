@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
 import fgo.cards.FGOCard;
 import fgo.patches.Enum.FGOCardColor;
-import fgo.powers.StarGainPower;
+import fgo.powers.StarPower;
 import fgo.util.CardStats;
 
 public class WarriorsBlade extends FGOCard {
@@ -38,6 +38,6 @@ public class WarriorsBlade extends FGOCard {
         for (int i = 0; i < magicNumber; i++) {
             addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
         }
-        addToBot(new ApplyPowerAction(p, p, new StarGainPower(p, star)));
+        addToBot(new ApplyPowerAction(p, p, new StarPower(p, star)));
     }
 }

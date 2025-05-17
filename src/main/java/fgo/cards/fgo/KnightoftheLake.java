@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.vfx.combat.FlameBarrierEffect;
 import fgo.cards.FGOCard;
 import fgo.patches.Enum.FGOCardColor;
 import fgo.powers.CriticalDamageUpPower;
-import fgo.powers.StarGainPower;
+import fgo.powers.StarPower;
 import fgo.util.CardStats;
 
 public class KnightoftheLake extends FGOCard {
@@ -38,7 +38,7 @@ public class KnightoftheLake extends FGOCard {
         if (!p.hasPower(CriticalDamageUpPower.POWER_ID)) {
             addToBot(new ApplyPowerAction(p, p, new CriticalDamageUpPower(p, magicNumber)));
         } else {
-            addToBot(new ApplyPowerAction(p, p, new StarGainPower(p, star)));
+            addToBot(new ApplyPowerAction(p, p, new StarPower(p, star)));
         }
     }
 

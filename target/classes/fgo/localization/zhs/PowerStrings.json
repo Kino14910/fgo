@@ -101,7 +101,7 @@
   "fgo:BeastMagicPower": {
     "NAME": "对兽魔术",
     "DESCRIPTIONS": [
-      "每当你获得状态时，就获得 #b",
+      "每当你获得负面效果时，就获得 #b",
       " 点 #y格挡 。"
     ]
   },
@@ -109,7 +109,7 @@
     "NAME": "阿瓦隆",
     "DESCRIPTIONS": [
       "在你的回合结束时，移除你的 #b",
-      " 个负面状态。"
+      " 个负面效果。"
     ]
   },
   "fgo:ChasmatisPower": {
@@ -448,7 +448,7 @@
       " 回合。"
     ]
   },
-  "fgo:WallOfSnowflakesPower": {
+  "fgo:ReducePercentDamagePower": {
     "NAME": "防御中",
     "DESCRIPTIONS": [
       "在这个回合降低 #b",
@@ -551,7 +551,7 @@
       " 颗 #y暴击星 。"
     ]
   },
-  "fgo:StarGainPower": {
+  "fgo:StarPower": {
     "NAME": "暴击星/暴击",
     "DESCRIPTIONS": [
       "在你有至少 #b10 颗时，非 #y宝具 攻击牌伤害提高 #b100% ，并且打出时减少 #b10 颗。",
@@ -605,7 +605,7 @@
     "NAME": "女神变生（兽）",
     "DESCRIPTIONS": [
       "每当你造成一次攻击伤害时，就给予 #b",
-      " 层 #y中毒 、 #y诅呪 和 #y灼烧 。"
+      " 层 #y中毒 、 #y诅呪。"
     ]
   },
   "fgo:MorningLarkPower": {

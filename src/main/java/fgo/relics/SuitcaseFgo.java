@@ -12,7 +12,7 @@ public class SuitcaseFgo extends BaseRelic implements OnStartBattleSubscriber {
     private static final String NAME = "SuitcaseFgo";
     public static final String ID = makeID(NAME);
     public SuitcaseFgo() {
-        super(ID, NAME, FGOCardColor.FGO, RelicTier.RARE, LandingSound.MAGICAL);
+        super(ID, NAME, FGOCardColor.FGO, RelicTier.STARTER, LandingSound.MAGICAL);
     }
 
     @Override

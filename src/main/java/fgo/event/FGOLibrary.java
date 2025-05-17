@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import fgo.cards.colorless.*;
 import fgo.cards.fgo.DeathOfDeath;
 import fgo.cards.fgo.HalberdUsurpation;
+import fgo.cards.fgo.PeerlessStrike;
 import fgo.cards.fgo.SpringOfFire;
 
 import static fgo.FGOMod.makeID;

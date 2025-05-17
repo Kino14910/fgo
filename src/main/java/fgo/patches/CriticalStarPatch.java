@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import fgo.characters.Master;
-import fgo.powers.StarGainPower;
+import fgo.powers.StarPower;
 import fgo.powers.StarRatePower;
 import javassist.CtBehavior;
 
@@ -22,7 +22,7 @@ public class CriticalStarPatch {
     public static void Postfix(AbstractMonster __instance, DamageInfo info) {
         AbstractPlayer p = AbstractDungeon.player;
         if (p instanceof Master && info.type == DamageInfo.DamageType.NORMAL) {
-            addToBot(new ApplyPowerAction(p, p, new StarGainPower(p, 1 + ( p.hasPower(StarRatePower.POWER_ID) ? p.getPower(StarRatePower.POWER_ID).amount : 0 ) )));
+            addToBot(new ApplyPowerAction(p, p, new StarPower(p, 1 + ( p.hasPower(StarRatePower.POWER_ID) ? p.getPower(StarRatePower.POWER_ID).amount : 0 ) )));
         }
     }
 

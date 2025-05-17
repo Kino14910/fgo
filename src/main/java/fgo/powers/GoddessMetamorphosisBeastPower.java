@@ -28,7 +28,6 @@ public class GoddessMetamorphosisBeastPower extends BasePower {
             this.flash();
             this.addToBot(new ApplyPowerAction(target, this.owner, new PoisonPower(target, this.owner, this.amount), this.amount, true));
             this.addToBot(new ApplyPowerAction(target, this.owner, new CursePower(target, 1), 1, true));
-            this.addToBot(new ApplyPowerAction(target, this.owner, new BurnDamagePower(target, 1), 1, true));
         }
     }
 

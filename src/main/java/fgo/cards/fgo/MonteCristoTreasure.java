@@ -15,7 +15,7 @@ public class MonteCristoTreasure extends FGOCard {
             CardType.POWER,
             CardRarity.RARE,
             CardTarget.SELF,
-            3
+            2
     );
     public MonteCristoTreasure() {
         super(ID, INFO);

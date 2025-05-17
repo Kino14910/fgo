@@ -1,4 +1,4 @@
-package fgo.relics;
+package fgo.relics.deprecated;
 
 import com.evacipated.cardcrawl.mod.stslib.powers.StunMonsterPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import fgo.patches.Enum.FGOCardColor;
+import fgo.relics.BaseRelic;
 
 import static fgo.FGOMod.makeID;
 

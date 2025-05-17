@@ -4,7 +4,6 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import fgo.cards.FGOCard;
-import fgo.powers.ComeOnPower;
 import fgo.powers.GutsPower;
 import fgo.util.CardStats;
 
@@ -28,7 +27,5 @@ public class CrystallizationofWinter extends FGOCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new ApplyPowerAction(p, p, new GutsPower(p, 10, 1), 10));
-        //this.addToBot(new ApplyPowerAction(p, p, new TheOneWhoRevealsTruthPower(p)));
-        this.addToBot(new ApplyPowerAction(p, p, new ComeOnPower(p, this.magicNumber), this.magicNumber));
     }
 }

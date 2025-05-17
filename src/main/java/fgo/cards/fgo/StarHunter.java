@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.powers.PoisonPower;
 import com.megacrit.cardcrawl.vfx.combat.FlameBarrierEffect;
 import fgo.cards.FGOCard;
 import fgo.patches.Enum.FGOCardColor;
-import fgo.powers.StarGainPower;
+import fgo.powers.StarPower;
 import fgo.util.CardStats;
 
 public class StarHunter extends FGOCard {
@@ -32,13 +32,7 @@ public class StarHunter extends FGOCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (Settings.FAST_MODE) {
-            addToBot(new VFXAction(p, new FlameBarrierEffect(p.hb.cX, p.hb.cY), 0.1F));
-        } else {
-            addToBot(new VFXAction(p, new FlameBarrierEffect(p.hb.cX, p.hb.cY), 0.5F));
-        }
         addToBot(new DrawCardAction(p, magicNumber));
-        addToBot(new ApplyPowerAction(p, p, new StarGainPower(p, star)));
-        addToBot(new ApplyPowerAction(p, p, new PoisonPower(p, p, 2), 2, AbstractGameAction.AttackEffect.POISON));
+        addToBot(new ApplyPowerAction(p, p, new StarPower(p, star)));
     }
 }

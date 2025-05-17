@@ -9,7 +9,7 @@ public class MidsummerNightDream extends BaseRelic {
     private static final String NAME = "MidsummerNightDream";
 	public static final String ID = makeID(NAME);
     public MidsummerNightDream() {
-        super(ID, NAME, FGOCardColor.FGO, RelicTier.BOSS, LandingSound.FLAT);
+        super(ID, NAME, FGOCardColor.FGO, RelicTier.UNCOMMON, LandingSound.FLAT);
     }
 
     @Override

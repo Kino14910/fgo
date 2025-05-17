@@ -21,7 +21,7 @@ public class BeastMagicPower extends BasePower {
 
     @Override
     public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
-        if (source == this.owner && target == this.owner) {
+        if (source == this.owner && target == this.owner && power.type == AbstractPower.PowerType.DEBUFF) {
             this.flash();
             this.addToBot(new GainBlockAction(this.owner, this.owner, this.amount));
         }

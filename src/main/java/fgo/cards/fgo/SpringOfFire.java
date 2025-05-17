@@ -24,17 +24,13 @@ public class SpringOfFire extends FGOCard {
         setMagic(3, 3);
         setEthereal(true, false);
         setExhaust();
-        this.tags.add(CardTags.HEALING);
+        tags.add(CardTags.HEALING);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (!p.hasPower(GutsPower.POWER_ID)) {
-            this.addToBot(new ApplyPowerAction(p, p, new GutsPower(p, this.magicNumber, 3), this.magicNumber));
-        }
-        if (!p.hasPower(SpringOfFirePower.POWER_ID)) {
-            this.addToBot(new ApplyPowerAction(p, p, new SpringOfFirePower(p, magicNumber)));
-        }
-        this.addToBot(new ApplyPowerAction(p, p, new NPRatePower(p, this.magicNumber), this.magicNumber));
+        addToBot(new ApplyPowerAction(p, p, new GutsPower(p, magicNumber, 3)));
+        addToBot(new ApplyPowerAction(p, p, new SpringOfFirePower(p, magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new NPRatePower(p, magicNumber), magicNumber));
     }
 }

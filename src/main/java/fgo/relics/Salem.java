@@ -16,7 +16,7 @@ public class Salem extends BaseRelic {
     private static final String NAME = "Salem";
 	public static final String ID = makeID(NAME);
     public Salem() {
-        super(ID, NAME, FGOCardColor.FGO, RelicTier.UNCOMMON, LandingSound.FLAT);
+        super(ID, NAME, FGOCardColor.FGO, RelicTier.COMMON, LandingSound.FLAT);
     }
 
     @Override

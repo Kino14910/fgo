@@ -19,7 +19,7 @@ public class BeastMagic extends FGOCard {
     );
     public BeastMagic() {
         super(ID, INFO);
-        setMagic(2, 1);
+        setMagic(3, 1);
     }
     
     

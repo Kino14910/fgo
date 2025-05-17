@@ -2,7 +2,6 @@ package fgo.powers;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 import fgo.action.FgoNpAction;
 
 import static fgo.FGOMod.makeID;
@@ -24,7 +23,7 @@ public class ArchetypeORTPower extends BasePower {
     @Override
     public void atStartOfTurn() {
         flash();
-        addToBot(new ApplyPowerAction(owner, owner, new StarGainPower(owner, 10), 10));
+        addToBot(new ApplyPowerAction(owner, owner, new StarPower(owner, 10), 10));
         addToBot(new FgoNpAction(3));
     }
 

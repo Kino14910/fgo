@@ -27,11 +27,5 @@ public class SealNPPower extends BasePower {
             this.addToBot(new ReducePowerAction(this.owner, this.owner, this.ID, 1));
         }
     }
-
-    /*@Override
-    public boolean canPlayCard(AbstractCard card) {
-        return !card.hasTag(CardTagsEnum.Noble_Phantasm);
-    }*/
-
     
 }

@@ -24,7 +24,7 @@ public class GodsExecution extends FGOCard {
     );
     public GodsExecution() {
         super(ID, INFO);
-        setDamage(6);
+        setDamage(9);
         setMagic(1, 1);
     }
 

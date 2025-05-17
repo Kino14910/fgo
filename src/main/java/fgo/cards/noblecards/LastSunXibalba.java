@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.vfx.combat.WeightyImpactEffect;
 import fgo.cards.AbsNoblePhantasmCard;
 import fgo.hexui_lib.util.RenderImageLayer;
 import fgo.hexui_lib.util.TextureLoader;
-import fgo.powers.StarGainPower;
+import fgo.powers.StarPower;
 
 public class LastSunXibalba extends AbsNoblePhantasmCard {
     public static final String ID = makeID(LastSunXibalba.class.getSimpleName());
@@ -54,6 +54,6 @@ public class LastSunXibalba extends AbsNoblePhantasmCard {
             this.addToBot(new VFXAction(p, new FlameBarrierEffect(p.hb.cX, p.hb.cY), 0.5F));
         }
 
-        this.addToBot(new ApplyPowerAction(p, p, new StarGainPower(p, star)));
+        this.addToBot(new ApplyPowerAction(p, p, new StarPower(p, star)));
     }
 }

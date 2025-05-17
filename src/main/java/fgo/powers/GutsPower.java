@@ -20,25 +20,26 @@ public class GutsPower extends BasePower {
 
     @Override
     public void onSpecificTrigger() {
-        this.addToBot(new HealAction(this.owner, this.owner, this.amount));
-        --this.time;
-        if (this.time == 0) {
-            this.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
+        addToBot(new HealAction(owner, owner, amount));
+        --time;
+        if (time == 0) {
+            addToTop(new RemoveSpecificPowerAction(owner, owner, ID));
         }
-        this.updateDescription();
+        updateDescription();
     }
 
     @Override
     public void onRemove() {
-        this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, BriefStrengthPower.POWER_ID));
+        addToBot(new RemoveSpecificPowerAction(owner, owner, BriefStrengthPower.POWER_ID));
     }
 
     @Override
     public void updateDescription() {
-        if (this.time == 1) {
-            this.description = String.format(DESCRIPTIONS[0], this.amount);
+        System.out.println(time);
+        if (time == 1) {
+            description = String.format(DESCRIPTIONS[0], amount);
         } else {
-            this.description = String.format(DESCRIPTIONS[1], this.amount, this.time);
+            description = String.format(DESCRIPTIONS[1], amount, time);
         }
     }
 

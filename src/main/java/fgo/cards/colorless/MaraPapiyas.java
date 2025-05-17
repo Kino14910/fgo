@@ -19,6 +19,7 @@ public class MaraPapiyas extends FGOCard {
     public MaraPapiyas() {
         super(ID, INFO);
         setMagic(12, 4);
+        tags.add(CardTags.HEALING);
     }
 
     @Override

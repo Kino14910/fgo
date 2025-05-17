@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import fgo.relics.MisoPotato;
 
 import static fgo.FGOMod.makeID;
 
@@ -39,11 +38,6 @@ public class ItsInevitablePower extends BasePower {
     public void atStartOfTurn() {
         this.flash();
         this.addToBot(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(this.damage, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
-        if (AbstractDungeon.player.hasRelic(MisoPotato.ID)) {
-            for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-                this.addToBot(new ApplyPowerAction(mo, this.owner, new BurnDamagePower(mo, 2), 2, true, AbstractGameAction.AttackEffect.NONE));
-            }
-        }
         this.damage += this.raise;
         this.addToBot(new ReducePowerAction(this.owner, this.owner, this.ID, 1));
         //updateDescription();

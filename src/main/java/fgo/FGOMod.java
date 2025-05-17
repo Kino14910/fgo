@@ -374,11 +374,6 @@ public class FGOMod implements
     }
 
     public static void registerEvents() {
-//        new AutoAdd(modID)
-//                .packageFilter(BaseEvent.class)
-//                .any(BaseEvent.class, (info, event) -> {
-//                    BaseMod.addEvent(event.id, event.getClass(), event.dungeonID);
-//                });
         //事件。
         BaseMod.addEvent(WinterEvent.ID, WinterEvent.class, TheCity.ID);
         //BaseMod.addEvent("FGOLibrary", FGOLibrary.class, "TheCity");

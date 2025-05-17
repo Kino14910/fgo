@@ -23,7 +23,7 @@ public class StarRegenPower extends BasePower {
     @Override
     public void atStartOfTurn() {
         this.flash();
-        this.addToBot(new ApplyPowerAction(this.owner, this.owner, new StarGainPower(this.owner, this.amount), this.amount));
+        this.addToBot(new ApplyPowerAction(this.owner, this.owner, new StarPower(this.owner, this.amount), this.amount));
     }
 
     

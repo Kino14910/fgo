@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.vfx.combat.FlameBarrierEffect;
 import fgo.cards.FGOCard;
 import fgo.patches.Enum.CardTagsEnum;
 import fgo.powers.CursePower;
-import fgo.powers.StarGainPower;
+import fgo.powers.StarPower;
 import fgo.util.CardStats;
 
 public class SoulOfWaterChannels extends FGOCard {
@@ -39,6 +39,6 @@ public class SoulOfWaterChannels extends FGOCard {
             this.addToBot(new VFXAction(p, new FlameBarrierEffect(p.hb.cX, p.hb.cY), 0.5F));
         }
 
-        this.addToBot(new ApplyPowerAction(p, p, new StarGainPower(p, this.star)));
+        this.addToBot(new ApplyPowerAction(p, p, new StarPower(p, this.star)));
     }
 }

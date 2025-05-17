@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import fgo.cards.AbsNoblePhantasmCard;
 import fgo.hexui_lib.util.RenderImageLayer;
 import fgo.hexui_lib.util.TextureLoader;
-import fgo.powers.StarGainPower;
+import fgo.powers.StarPower;
 
 public class BridalSpinWheel extends AbsNoblePhantasmCard {
     public static final String ID = makeID(BridalSpinWheel.class.getSimpleName());
@@ -28,6 +28,6 @@ public class BridalSpinWheel extends AbsNoblePhantasmCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new GainEnergyAction(4));
-        this.addToBot(new ApplyPowerAction(p, p, new StarGainPower(p, star)));
+        this.addToBot(new ApplyPowerAction(p, p, new StarPower(p, star)));
     }
 }

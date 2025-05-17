@@ -8,7 +8,6 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import fgo.action.FgoNpAction;
 import fgo.panel.CommandSpellPanel;
 import fgo.powers.*;
-import fgo.relics.deprecated.CommandSpell;
 import javassist.CtBehavior;
 
 import static fgo.util.GeneralUtils.addToBot;
@@ -21,7 +20,6 @@ public class RevivePatch {
             String[] powerIds = {
                 GutsPower.POWER_ID,
                 GutsAtTheWellPower.POWER_ID,
-                ComeOnPower.POWER_ID,
                 SpringOfFirePower.POWER_ID,
                 DeathOfDeathPower.POWER_ID
             };

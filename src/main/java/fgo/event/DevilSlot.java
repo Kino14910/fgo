@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.relics.Circlet;
 import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
+
 import fgo.relics.BB;
 
 import static fgo.FGOMod.makeID;

@@ -135,11 +135,6 @@ We require expert assistance in the following critical areas to enhance our FGO 
 	|- 格挡相关卡牌
 	|- 专属遗物「水天日光」
 
-🔧 灼伤体系
-	|- 火焰伤害持续叠加
-	|- 「炎门」状态免疫灼伤
-	|- 宝具「燃烧殆尽的炎笼」
-
 ❌ 魔术礼装
 	|- 不同的魔术礼装实现对应效果
 	|- 角色选择界面选择对应礼装

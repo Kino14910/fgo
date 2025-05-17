@@ -46,7 +46,7 @@ public class SwanLake extends FGOCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        for(int i = 0; i < magicNumber; ++i) {
+        for(int i = 0; i < magicNumber; i++) {
             addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         }
         addToBot(new ApplyPowerAction(p, p, new WatersidePower(p, magicNumber)));

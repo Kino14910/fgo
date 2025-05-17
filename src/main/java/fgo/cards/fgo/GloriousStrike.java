@@ -22,7 +22,7 @@ public class GloriousStrike extends FGOCard {
     );
     public GloriousStrike() {
         super(ID, INFO);
-        setDamage(6, 9);
+        setDamage(8, 4);
         setMagic(2);
         setExhaust();
         tags.add(CardTags.STRIKE);

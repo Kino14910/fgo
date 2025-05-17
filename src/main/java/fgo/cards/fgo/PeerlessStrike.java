@@ -1,4 +1,4 @@
-package fgo.cards.colorless;
+package fgo.cards.fgo;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -11,12 +11,13 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.GrandFinalEffect;
 import fgo.cards.FGOCard;
+import fgo.patches.Enum.FGOCardColor;
 import fgo.util.CardStats;
 
 public class PeerlessStrike extends FGOCard {
     public static final String ID = makeID(PeerlessStrike.class.getSimpleName());
     private static final CardStats INFO = new CardStats(
-            CardColor.COLORLESS,
+            FGOCardColor.FGO,
             CardType.ATTACK,
             CardRarity.RARE,
             CardTarget.ENEMY,
@@ -24,19 +25,13 @@ public class PeerlessStrike extends FGOCard {
     );
     public PeerlessStrike() {
         super(ID, INFO);
-        setDamage(30, 10);
-        this.tags.add(CardTags.STRIKE);
-        setExhaust();
+        setDamage(32, 10);
+        tags.add(CardTags.STRIKE);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (Settings.FAST_MODE) {
-            this.addToBot(new VFXAction(new GrandFinalEffect(), 0.7F));
-        } else {
-            this.addToBot(new VFXAction(new GrandFinalEffect(), 1.0F));
-        }
-        this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.HP_LOSS), AbstractGameAction.AttackEffect.SLASH_HEAVY));
+        addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HEAVY));
     }
 
     @Override
@@ -47,7 +42,7 @@ public class PeerlessStrike extends FGOCard {
         } else {
             if ((float)p.currentHealth > (float)p.maxHealth / 2.0F) {
                 canUse = false;
-                this.cantUseMessage = cardStrings.EXTENDED_DESCRIPTION[0];
+                cantUseMessage = cardStrings.EXTENDED_DESCRIPTION[0];
             }
         }
 
@@ -58,7 +53,7 @@ public class PeerlessStrike extends FGOCard {
     public void triggerOnGlowCheck() {
         AbstractPlayer p = AbstractDungeon.player;
         if ((float)p.currentHealth <= (float)p.maxHealth / 2.0F && p.currentHealth > 0) {
-            this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
+            glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
         }
     }
 }

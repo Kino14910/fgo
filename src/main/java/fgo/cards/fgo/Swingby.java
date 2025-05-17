@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import fgo.cards.FGOCard;
 import fgo.patches.Enum.CardTagsEnum;
 import fgo.patches.Enum.FGOCardColor;
-import fgo.powers.StarGainPower;
+import fgo.powers.StarPower;
 import fgo.util.CardStats;
 
 public class Swingby extends FGOCard {
@@ -39,7 +39,7 @@ public class Swingby extends FGOCard {
         addToTop(new DiscardAction(p, p, theSize, false));
         if (theSize >= 2) {
             addToBot(new GainBlockAction(p, p, magicNumber*(theSize-1)));
-            addToBot(new ApplyPowerAction(p, p, new StarGainPower(p, magicNumber*(theSize-1)), magicNumber*(theSize-1)));
+            addToBot(new ApplyPowerAction(p, p, new StarPower(p, magicNumber*(theSize-1)), magicNumber*(theSize-1)));
         }
     }
 }

@@ -27,14 +27,7 @@ public class BlessedScion extends FGOCard {
         FlavorText.AbstractCardFlavorFields.textColor.set(this, Color.CHARTREUSE);
         FlavorText.AbstractCardFlavorFields.flavorBoxType.set(this, FlavorText.boxType.TRADITIONAL);
     }
-
-    @Override
-    public void upgrade() {
-        if (!upgraded) {
-            upgradeName();
-        }
-    }
-
+    
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new BlessedScionAction(p, p, magicNumber, upgraded));

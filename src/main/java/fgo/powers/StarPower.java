@@ -11,12 +11,12 @@ import fgo.patches.Enum.CardTagsEnum;
 
 import static fgo.FGOMod.makeID;
 
-public class StarGainPower extends BasePower {
-    public static final String POWER_ID = makeID(StarGainPower.class.getSimpleName());
+public class StarPower extends BasePower {
+    public static final String POWER_ID = makeID(StarPower.class.getSimpleName());
     private static final PowerType TYPE = PowerType.BUFF;
     private static final boolean TURN_BASED = false;
 
-    public StarGainPower(AbstractCreature owner, int amount) {
+    public StarPower(AbstractCreature owner, int amount) {
         super(POWER_ID, TYPE, TURN_BASED, owner, amount);
     }
 
@@ -31,11 +31,6 @@ public class StarGainPower extends BasePower {
 
     @Override
     public float atDamageGive(float damage, DamageInfo.DamageType type, AbstractCard card) {
-        //特例：翡翠的魅力、20暴击星
-        if (card.cardID.equals("CharismaOfTheJade") && amount >= 20) {
-            return finalDamage(damage, type, 1.5F);
-        }
-
         //你有10颗暴击星时才能暴击。
         if (!card.hasTag(CardTagsEnum.Noble_Phantasm) && amount >= 10) {
             return finalDamage(damage, type, 1.0F);

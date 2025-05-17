@@ -1,4 +1,4 @@
-package fgo.relics;
+package fgo.relics.deprecated;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import fgo.patches.Enum.FGOCardColor;
 import fgo.powers.ArchetypeORTPower;
+import fgo.relics.BaseRelic;
 
 import static fgo.FGOMod.makeID;
 

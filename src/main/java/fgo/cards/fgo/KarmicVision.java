@@ -1,4 +1,4 @@
-package fgo.cards.deprecated;
+package fgo.cards.fgo;
 
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.stslib.patches.FlavorText;
@@ -28,7 +28,7 @@ public class KarmicVision extends FGOCard {
     public KarmicVision() {
         super(ID, INFO);
         setDamage(9, 3);
-        this.portraitImg = ImageMaster.loadImage("fgo/images/cards/attack/KarmicVision.png");
+        this.portraitImg = ImageMaster.loadImage("fgo/images/cards/attack/KarmicVision_b.png");
 
         FlavorText.AbstractCardFlavorFields.textColor.set(this, Color.CHARTREUSE);
         FlavorText.AbstractCardFlavorFields.flavorBoxType.set(this, FlavorText.boxType.TRADITIONAL);
