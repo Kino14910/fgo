@@ -6,13 +6,9 @@
 
 基于《杀戮尖塔》的Fate/Grand Order主题Mod，新增御主（The Master）作为可玩角色，融合圣晶石召唤、宝具解放等FGO经典机制。
 
-**当前版本**: v0.0.2
+**当前版本**: v0.1.0
 
 ## 特色内容
-
-### 角色系统
-- **全新角色**: 御主（The Master）拥有独特机制
-- **职阶系统**: 通过遗物切换Saber/Archer/Lancer等职阶（开发中）
 
 ### 卡牌系统
 - **75+专属卡牌**: 包含令咒、魔术礼装等特色卡牌
@@ -90,6 +86,7 @@
 3. 技能说明的符合英语习惯表达
 
 **贡献指引**：
+
 - 在`/localization/en/`提交翻译文件
 - 使用术语对照表保持一致性
 - 通过Pull Request或Steam工坊留言提交
@@ -140,6 +137,5 @@ We require expert assistance in the following critical areas to enhance our FGO 
 	|- 角色选择界面选择对应礼装
 
 ❌ 红卡体系
-	|- 通过受伤叠加狂化层数
 	|- 血越少攻击力越高
 	|- 特殊遗物「十二试炼」
