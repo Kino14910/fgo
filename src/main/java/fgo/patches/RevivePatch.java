@@ -35,8 +35,8 @@ public class RevivePatch {
             }
 
             if (CommandSpellPanel.commandSpellCount == 3
-                && AbstractDungeon.currMapNode != null
-                && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
+                    && AbstractDungeon.currMapNode != null
+                    && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
                 CommandSpellPanel.commandSpellCount = 0;
                 addToBot(new FgoNpAction(300));
                 addToBot(new HealAction(p, p, p.maxHealth));

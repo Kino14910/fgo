@@ -1,3 +1,4 @@
+
 package fgo.event;
 
 import com.badlogic.gdx.math.MathUtils;
@@ -11,7 +12,6 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import fgo.cards.colorless.*;
 import fgo.cards.fgo.DeathOfDeath;
-import fgo.cards.fgo.HalberdUsurpation;
 import fgo.cards.fgo.PeerlessStrike;
 import fgo.cards.fgo.SpringOfFire;
 

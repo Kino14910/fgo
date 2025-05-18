@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+
 import fgo.cards.FGOCard;
 import fgo.patches.Enum.FGOCardColor;
 import fgo.util.CardStats;
@@ -28,7 +29,7 @@ public class OriginBullet extends FGOCard {
     @Override
     public void calculateCardDamage(AbstractMonster mo) {
         int BulletAmt = 0;
-        for (AbstractPower ignored : mo.powers) {
+        for (@SuppressWarnings("unused") AbstractPower ignored : mo.powers) {
             ++BulletAmt;
         }
 

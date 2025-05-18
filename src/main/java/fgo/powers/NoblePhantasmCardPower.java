@@ -5,12 +5,7 @@ import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.helpers.FontHelper;
-import com.megacrit.cardcrawl.powers.AbstractPower;
-import fgo.FGOMod;
-import fgo.cards.FGOCard;
-
 import static fgo.FGOMod.makeID;
-import static fgo.util.GeneralUtils.removePrefix;
 
 public class NoblePhantasmCardPower extends BasePower {
     public static final String POWER_ID = makeID(NoblePhantasmCardPower.class.getSimpleName());

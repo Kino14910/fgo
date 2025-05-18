@@ -3,8 +3,6 @@ package fgo.powers;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.unique.RemoveDebuffsAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.powers.AbstractPower;
-
 import static fgo.FGOMod.makeID;
 
 public class GloriousStrikePower extends BasePower {

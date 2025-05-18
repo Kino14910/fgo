@@ -1,16 +1,12 @@
 package fgo.patches;
 
 import basemod.ReflectionHacks;
-import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePostfixPatch;
-import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
 import com.megacrit.cardcrawl.audio.Sfx;
 import com.megacrit.cardcrawl.audio.SoundMaster;
-import com.megacrit.cardcrawl.core.Settings;
 
 import java.util.HashMap;
-import java.util.Objects;
 //
 //@SpirePatch(
 //        clz = SoundMaster.class,

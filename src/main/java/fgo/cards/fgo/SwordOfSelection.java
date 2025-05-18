@@ -2,7 +2,6 @@ package fgo.cards.fgo;
 
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import fgo.action.FgoNpAction;
 import fgo.cards.FGOCard;
@@ -36,7 +35,6 @@ public class SwordOfSelection extends FGOCard {
 
     @Override
     public void applyPowers() {
-        int theSize = AbstractDungeon.player.hand.size();
         rawDescription = cardStrings.DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0];
         super.applyPowers();
         initializeDescription();

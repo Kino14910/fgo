@@ -1,7 +1,6 @@
 package fgo.powers;
 
 import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 import fgo.action.FgoNpAction;
 
 import static fgo.FGOMod.makeID;

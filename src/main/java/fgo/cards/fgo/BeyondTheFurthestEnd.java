@@ -7,14 +7,11 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.StrengthPower;
-
 import fgo.cards.FGOCard;
 import fgo.patches.Enum.FGOCardColor;
 import fgo.powers.CriticalDamageUpPower;
 import fgo.powers.GutsPower;
 import fgo.powers.StarPower;
-import fgo.powers.StarRatePower;
 import fgo.util.CardStats;
 
 import static com.megacrit.cardcrawl.core.Settings.language;

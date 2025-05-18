@@ -2,8 +2,6 @@ package fgo.powers;
 
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.powers.AbstractPower;
-
 import static fgo.FGOMod.makeID;
 
 public class MaxHPPower extends BasePower {

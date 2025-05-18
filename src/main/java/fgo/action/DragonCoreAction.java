@@ -22,7 +22,7 @@ public class DragonCoreAction extends AbstractGameAction {
             }
         }
 
-        for (AbstractCard ignored : cardsToExhaust) {
+        for (@SuppressWarnings("unused") AbstractCard ignored : cardsToExhaust) {
             AbstractCard cm = AbstractDungeon.returnTrulyRandomCardInCombat(AbstractCard.CardType.ATTACK).makeCopy();
             cm.setCostForTurn(0);
             this.addToBot(new MakeTempCardInHandAction(cm, true));

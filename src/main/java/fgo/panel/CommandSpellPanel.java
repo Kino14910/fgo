@@ -2,10 +2,7 @@ package fgo.panel;
 
 import basemod.abstracts.CustomSavable;
 import com.badlogic.gdx.graphics.Texture;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
-
-import java.awt.*;
 
 public class CommandSpellPanel implements CustomSavable<Integer> {
     // The field value you wish to save.

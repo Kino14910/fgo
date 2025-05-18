@@ -4,15 +4,10 @@ import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.powers.AbstractPower;
-
 import static fgo.FGOMod.makeID;
 
 public class ReducePercentDamagePower extends BasePower {
     public static final String POWER_ID = makeID(ReducePercentDamagePower.class.getSimpleName());
-    private static final PowerType TYPE = PowerType.BUFF;
-    private static final boolean TURN_BASED = false;
-
     public ReducePercentDamagePower(AbstractCreature owner, int amount) {
         super(POWER_ID, PowerType.BUFF, false, owner, Math.min(amount, 100), "DefenseUpPower");
 }

@@ -2,8 +2,6 @@ package fgo;
 
 import basemod.AutoAdd;
 import basemod.BaseMod;
-import basemod.abstracts.CustomSavable;
-import basemod.eventUtil.AddEventParams;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Files;
 import com.badlogic.gdx.Gdx;
@@ -28,7 +26,6 @@ import com.megacrit.cardcrawl.dungeons.Exordium;
 import com.megacrit.cardcrawl.dungeons.TheBeyond;
 import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.helpers.CardHelper;
-import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;

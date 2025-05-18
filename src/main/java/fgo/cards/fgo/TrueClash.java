@@ -1,6 +1,5 @@
 package fgo.cards.fgo;
 
-import basemod.abstracts.CustomCard;
 import fgo.cards.FGOCard;
 import fgo.patches.Enum.FGOCardColor;
 import fgo.util.CardStats;

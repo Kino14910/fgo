@@ -167,6 +167,8 @@ public abstract class BaseCard extends CustomCard {
             case BLOCK:
                 calculateVarAsBlock(key);
                 break;
+            default:
+                break;
         }
 
         if (!customVars.containsKey(key)) {

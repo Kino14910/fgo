@@ -135,7 +135,3 @@ We require expert assistance in the following critical areas to enhance our FGO 
 ❌ 魔术礼装
 	|- 不同的魔术礼装实现对应效果
 	|- 角色选择界面选择对应礼装
-
-❌ 红卡体系
-	|- 血越少攻击力越高
-	|- 特殊遗物「十二试炼」

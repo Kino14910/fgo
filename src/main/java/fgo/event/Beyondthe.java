@@ -60,6 +60,8 @@ public class Beyondthe extends BaseEvent {
                 break;
             case CONTINUE2:
                 this.openMap();
+            default:
+                break;
         }
     }
 }

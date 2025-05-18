@@ -1,13 +1,9 @@
 package fgo.cards.fgo;
 
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.actions.unique.RemoveDebuffsAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.DrawCardNextTurnPower;
-
 import fgo.action.FgoNpAction;
 import fgo.cards.FGOCard;
 import fgo.patches.Enum.FGOCardColor;
