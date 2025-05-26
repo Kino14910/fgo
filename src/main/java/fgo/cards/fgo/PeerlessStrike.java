@@ -1,14 +1,19 @@
 package fgo.cards.fgo;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.powers.watcher.EndTurnDeathPower;
+
 import fgo.cards.FGOCard;
 import fgo.patches.Enum.FGOCardColor;
+import fgo.powers.CriticalDamageUpPower;
 import fgo.util.CardStats;
 
 public class PeerlessStrike extends FGOCard {
@@ -18,17 +23,21 @@ public class PeerlessStrike extends FGOCard {
             CardType.ATTACK,
             CardRarity.RARE,
             CardTarget.ENEMY,
-            0
+            1
     );
     public PeerlessStrike() {
         super(ID, INFO);
-        setDamage(32, 10);
+        setDamage(5);
+        setMagic(100);
+        setCostUpgrade(0);
         tags.add(CardTags.STRIKE);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HEAVY));
+        addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, damage)));
+        addToBot(new ApplyPowerAction(p, p, new CriticalDamageUpPower(p, magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new EndTurnDeathPower(p)));
     }
 
     @Override
