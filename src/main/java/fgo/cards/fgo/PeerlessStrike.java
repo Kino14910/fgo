@@ -27,16 +27,14 @@ public class PeerlessStrike extends FGOCard {
     );
     public PeerlessStrike() {
         super(ID, INFO);
-        setDamage(5);
-        setMagic(100);
         setCostUpgrade(0);
         tags.add(CardTags.STRIKE);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, damage)));
-        addToBot(new ApplyPowerAction(p, p, new CriticalDamageUpPower(p, magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, 5)));
+        addToBot(new ApplyPowerAction(p, p, new CriticalDamageUpPower(p, 100)));
         addToBot(new ApplyPowerAction(p, p, new EndTurnDeathPower(p)));
     }
 

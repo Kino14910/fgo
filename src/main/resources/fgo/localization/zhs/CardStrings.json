@@ -656,7 +656,7 @@
   },
   "${modID}:PeerlessStrike": {
     "NAME": "顷刻一击",
-    "DESCRIPTION": "只有当自己生命值为一半以下时才能打出。 NL 获得 !D! 点 力量 和 !M! % fgo:暴击威力 。 NL 回合结束时死亡。",
+    "DESCRIPTION": "只有当自己生命值为一半以下时才能打出。 NL 获得5点 力量 和100% fgo:暴击威力 。 NL 回合结束时死亡。",
     "EXTENDED_DESCRIPTION": [
       "我的生命不够低。"
     ]
