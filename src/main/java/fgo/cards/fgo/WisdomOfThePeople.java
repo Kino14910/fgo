@@ -13,14 +13,14 @@ public class WisdomOfThePeople extends FGOCard {
     public static final String ID = makeID(WisdomOfThePeople.class.getSimpleName());
     private static final CardStats INFO = new CardStats(
             FGOCardColor.FGO,
-            CardType.SKILL,
+            CardType.POWER,
             CardRarity.RARE,
             CardTarget.SELF,
-            3
+            1
     );
     public WisdomOfThePeople() {
         super(ID, INFO);
-        setMagic(50);
+        setMagic(10);
         setNP(30);
         tags.add(CardTags.HEALING);
     }

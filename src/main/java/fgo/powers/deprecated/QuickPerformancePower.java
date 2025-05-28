@@ -10,7 +10,7 @@
 //import com.megacrit.cardcrawl.helpers.CardHelper;
 //import com.megacrit.cardcrawl.helpers.ImageMaster;
 //import com.megacrit.cardcrawl.powers.AbstractPower;
-//import fgo.powers.StarGainPower;
+//import fgo.powers.StarPower;
 //
 //import java.util.Objects;
 //
@@ -44,9 +44,9 @@
 //        if (Objects.equals(card.glowColor, CardHelper.getColor(22, 88, 11)) || CardModifierManager.hasModifier(card, "InfestQuick")) {
 //            this.flash();
 //            if (this.owner.hasPower("StarRatePower")) {
-//                this.addToBot(new ApplyPowerAction(this.owner, this.owner, new StarGainPower(this.owner, this.amount * 2), this.amount * 2));
+//                this.addToBot(new ApplyPowerAction(this.owner, this.owner, new StarPower(this.owner, this.amount * 2), this.amount * 2));
 //            } else {
-//                this.addToBot(new ApplyPowerAction(this.owner, this.owner, new StarGainPower(this.owner, this.amount), this.amount));
+//                this.addToBot(new ApplyPowerAction(this.owner, this.owner, new StarPower(this.owner, this.amount), this.amount));
 //            }
 //        }
 //    }

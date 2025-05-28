@@ -19,7 +19,7 @@
 //@Deprecated
 //
 //public class StarGainDeprecatedPower extends BasePower {
-//    public static final String POWER_ID = "StarGainPower";
+//    public static final String POWER_ID = "StarPower";
 //    public static final String NAME = (CardCrawlGame.languagePack.getPowerStrings(POWER_ID)).NAME;
 //    public static final String[] DESCRIPTIONS = (CardCrawlGame.languagePack.getPowerStrings(POWER_ID)).DESCRIPTIONS;
 //    public StarGainDeprecatedPower(AbstractCreature owner, int amount) {
@@ -28,8 +28,8 @@
 //        this.amount = amount;
 //        this.type = PowerType.BUFF;
 //
-//        String path128 = "fgo/images/powers/large/StarGainPower.png";
-//        String path48 = "fgo/images/powers/StarGainPower.png";
+//        String path128 = "fgo/images/powers/large/StarPower.png";
+//        String path48 = "fgo/images/powers/StarPower.png";
 //        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(path128), 0, 0, 84, 84);
 //        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(path48), 0, 0, 32, 32);
 //        this.name = NAME;

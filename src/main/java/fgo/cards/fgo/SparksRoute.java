@@ -42,7 +42,7 @@ public class SparksRoute extends FGOCard {
         addToBot(new SparksRouteAction());
         addToBot(new ShuffleAction(AbstractDungeon.player.drawPile, false));
         addToBot(new DrawCardAction(p, theSize - 1));
-        //addToBot(new ApplyPowerAction(p, p, new StarGainPower(p, magicNumber)));
+        //addToBot(new ApplyPowerAction(p, p, new StarPower(p, magicNumber)));
     }
 
     @Override

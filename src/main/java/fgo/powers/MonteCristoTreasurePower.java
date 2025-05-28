@@ -25,7 +25,7 @@ public class MonteCristoTreasurePower extends BasePower {
 
     @Override
     public void onAttack(DamageInfo info, int damageAmount, AbstractCreature target) {
-        if (damageAmount > 0 && target != this.owner && info.type == DamageInfo.DamageType.NORMAL && this.owner.hasPower("StarGainPower") && this.owner.getPower("StarGainPower").amount >= 10) {
+        if (damageAmount > 0 && target != this.owner && info.type == DamageInfo.DamageType.NORMAL && this.owner.hasPower("StarPower") && this.owner.getPower("StarPower").amount >= 10) {
             this.flash();
             this.addToBot(new GainBlockAction(this.owner, this.owner, damageAmount * this.amount));
         }

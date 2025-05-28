@@ -552,7 +552,7 @@
       " #yStar."
     ]
   },
-  "${modID}:StarGainPower": {
+  "${modID}:StarPower": {
     "NAME": "Star (Critical Damage)",
     "DESCRIPTIONS": [
       "When you obtain #b10 #yStars, deal #b100% additional #ynon-Noble #yPhantasm Attack damage and reduce #b10.",

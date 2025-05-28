@@ -33,7 +33,7 @@ public class StarPower extends BasePower {
     public float atDamageGive(float damage, DamageInfo.DamageType type, AbstractCard card) {
         //你有10颗暴击星时才能暴击。
         if (!card.hasTag(CardTagsEnum.Noble_Phantasm) && amount >= 10) {
-            return finalDamage(damage, type, 1.0F);
+            return finalDamage(damage, type, 2.0F);
         }
 
         return damage;
@@ -44,7 +44,7 @@ public class StarPower extends BasePower {
         //暴击威力提高。
         if (owner.hasPower(CriticalDamageUpPower.POWER_ID)) {
             int CrAmt = (owner.getPower(CriticalDamageUpPower.POWER_ID)).amount;
-            return type == DamageInfo.DamageType.NORMAL ? damage * (200.0F + CrAmt) / 100.0F * multiplier : damage;
+            return type == DamageInfo.DamageType.NORMAL ? damage * (multiplier + CrAmt / 100.0F) : damage;
         }
         return type == DamageInfo.DamageType.NORMAL ? damage * multiplier : damage;
     }
