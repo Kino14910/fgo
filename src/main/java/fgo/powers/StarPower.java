@@ -44,7 +44,7 @@ public class StarPower extends BasePower {
         //暴击威力提高。
         if (owner.hasPower(CriticalDamageUpPower.POWER_ID)) {
             int CrAmt = (owner.getPower(CriticalDamageUpPower.POWER_ID)).amount;
-            return type == DamageInfo.DamageType.NORMAL ? damage * (multiplier + CrAmt / 100.0F) : damage;
+            return type == DamageInfo.DamageType.NORMAL ? damage * multiplier * (1.0F + CrAmt / 100.0F) : damage;
         }
         return type == DamageInfo.DamageType.NORMAL ? damage * multiplier : damage;
     }
