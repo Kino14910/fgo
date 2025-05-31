@@ -19,7 +19,7 @@ public class GreatRamNautilus extends AbsNoblePhantasmCard {
 
     public GreatRamNautilus() {
         super(ID,CardType.ATTACK, CardTarget.ENEMY);
-        setDamage(34, 8);
+        setDamage(45, 8);
 
         cardArtLayers512.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH)));
         cardArtLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH_P)));

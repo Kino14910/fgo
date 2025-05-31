@@ -24,13 +24,11 @@ public class SwordOfSelection extends FGOCard {
     }
 
 
-
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DrawCardAction(p, magicNumber));
         setNP(p.hand.size());
-        addToBot(new FgoNpAction(np, true));
-        //addToBot(new ApplyPowerAction(p, p, new ArtsPerformancePower(p, 2), 2));
+        addToBot(new FgoNpAction(np * 2, true));
     }
 
     @Override

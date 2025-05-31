@@ -9,7 +9,7 @@
   },
   "${modID}:DreamUponTheStars": {
     "NAME": "予星以梦",
-    "DESCRIPTION": "获得 !M! % fgo:宝具威力 。 NL 获得 !NP! % fgo:宝具值 。 NL 获得 !B! 点 格挡 。"
+    "DESCRIPTION": "获得 !NP! % fgo:宝具值 。 NL 获得 !M! % fgo:宝具威力 。 NL 获得 !B! 点 格挡 。"
   },
   "${modID}:CharismaOfHope": {
     "NAME": "2019年的格洛斯特",
@@ -85,7 +85,8 @@
   },
   "${modID}:WisdomOfThePeople": {
     "NAME": "民之睿智",
-    "DESCRIPTION": "恢复 !M! 点生命。 NL 获得 !NP! % fgo:宝具值 。 NL  fgo:解除弱化 。"
+    "DESCRIPTION": "恢复 !M! 点生命。 NL 移除你身上的所有负面 状态 。",
+    "UPGRADE_DESCRIPTION": "恢复 !M! 点生命。 NL 获得 !NP! % fgo:宝具值 。 NL 移除你身上的所有负面 状态 。"
   },
   "${modID}:ComeOn": {
     "NAME": "热情",
@@ -111,7 +112,7 @@
   },
   "${modID}:BackAgain": {
     "NAME": "雅号·异星蛸",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 如果本场战斗中打出的上一张牌是攻击牌，给予 !M! 层 fgo:防御破坏 。",
+    "DESCRIPTION": "给予2层 fgo:防御破坏 。获得 !S! 颗 fgo:暴击星 。",
     "FLAVOR": "领域外生命。"
   },
   "${modID}:MonteCristoTreasure": {
@@ -157,11 +158,11 @@
   },
   "${modID}:BlessingOfKur": {
     "NAME": "冥界佑护",
-    "DESCRIPTION": "获得 !B! 点 格挡 X次。 NL 获得X层 fgo:黄金律 。 NL 获得 fgo:冥界佑护 。 NL 消耗 。"
+    "DESCRIPTION": "你打出下一张 fgo:宝具牌 时，额外获得 !M! 点 fgo:最大生命 。 NL 消耗 。"
   },
   "${modID}:OriginBullet": {
     "NAME": "起源弹",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 额外造成敌人状态数量 !M! 倍的伤害。"
+    "DESCRIPTION": " fgo:无敌贯通 。 NL 每去除一种状态，就造成 !D! 点伤害。 NL 额外造成敌人状态种类数量 !M! 倍的伤害。"
   },
   "${modID}:StarPioneer": {
     "NAME": "星之开拓者",
@@ -175,7 +176,7 @@
   },
   "${modID}:GodsExecution": {
     "NAME": "封神执行",
-    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 如果你有负面 状态 ， NL 则给予 !M! 层 虚弱 。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 如果你有负面状态 ， NL 获得 [E] 并且 NL 抽1张牌。"
   },
   "${modID}:CrownedWithLife": {
     "NAME": "疯狂的晚宴",
@@ -187,7 +188,7 @@
   },
   "${modID}:AtTheWell": {
     "NAME": "于泉之处",
-    "DESCRIPTION": "fgo:解除弱化 。 NL 回复 !M! 点生命。 NL  fgo:献给世界树的活祭 。 NL 消耗 。"
+    "DESCRIPTION": "移除所有负面 状态 。 NL 获得 !M! 层 fgo:毅力 。 NL 在下回合死亡，获得 [E] [E] [E] 并且抽3张牌。 NL 消耗 。"
   },
   "${modID}:SquireOfProphecy": {
     "NAME": "祈雨",
@@ -195,13 +196,13 @@
   },
   "${modID}:BeyondTheFurthestEnd": {
     "NAME": "来自止境",
-    "DESCRIPTION": "获得 !M! 层 fgo:毅力 。 NL 获得 !M! % fgo:暴击威力 。 NL 获得 !S! 颗 fgo:暴击星 。",
+    "DESCRIPTION": "在接下来 !M! 回合结束时，给予所有敌人等于此状态回合数的 中毒 和1层 虚弱 。",
     "FLAVOR": "测试画风可以更改。"
   },
   "${modID}:EndOfADream": {
     "NAME": "梦之终结",
-    "DESCRIPTION": "fgo:宝具牌 攻击伤害翻倍。 NL 在你的回合结束时， NL 获得 fgo:永久睡眠 。",
-    "UPGRADE_DESCRIPTION": "保留 。 NL fgo:宝具牌 攻击伤害翻倍。 NL 在你的回合结束时， NL 获得 fgo:永久睡眠 。"
+    "DESCRIPTION": "在你的回合结束时， 消耗 一张随机手牌。 NL fgo:宝具牌 攻击伤害翻倍。",
+    "UPGRADE_DESCRIPTION": "固有 。 NL 在你的回合结束时， 消耗 一张随机手牌。 NL fgo:宝具牌 攻击伤害翻倍。"
   },
   "${modID}:AbyssLight": {
     "NAME": "于深渊化作光",
@@ -278,7 +279,7 @@
   },
   "${modID}:Revelation": {
     "NAME": "灿然圣光之复权",
-    "DESCRIPTION": "让一名敌人在本回合内失去 !M! 点 力量 。 NL 给予1层 易伤 。 NL 给予 !M! 层 fgo:防御破坏 。 NL 消耗 。"
+    "DESCRIPTION": "给予 !M! 层 虚弱 和 易伤 。 NL 消耗 。"
   },
   "${modID}:JewelOfFourteen": {
     "NAME": "岩窟王",
@@ -291,7 +292,7 @@
   },
   "${modID}:SwordOfSelection": {
     "NAME": "圣剑锻造",
-    "DESCRIPTION": "抽 !M! 张牌。 NL 获得等于你手牌数的 fgo:宝具值 。",
+    "DESCRIPTION": "抽 !M! 张牌。 NL 获得等于你手牌数2倍的 fgo:宝具值 。",
     "EXTENDED_DESCRIPTION": [
       " NL （获得 !M! % 宝具值。）"
     ]
@@ -319,7 +320,7 @@
   },
   "${modID}:SwanLake": {
     "NAME": "天鹅湖",
-    "DESCRIPTION": "造成 !D! 点伤害 !M! 次。 NL 获得 fgo:水边 !M! 回合。 NL 能被多次 升级 。 NL 消耗 。"
+    "DESCRIPTION": "造成 !D! 点伤害 !M! 次。 NL 获得 fgo:水边 。 NL 能被多次 升级 。 NL 消耗 。"
   },
   "${modID}:LuckySpinning": {
     "NAME": "幸运的纺线",
@@ -331,7 +332,7 @@
   },
   "${modID}:KarmicVision": {
     "NAME": "业之瞳",
-    "DESCRIPTION": "fgo:无敌贯通  NL 每去除一种状态，就造成 !D! 点伤害。",
+    "DESCRIPTION": " fgo:无敌贯通 。 NL 每去除一种状态，就造成 !D! 点伤害。",
     "FLAVOR": "测试画风可以更改。"
   },
   "${modID}:CurtainoftheNight": {
@@ -341,7 +342,7 @@
   },
   "${modID}:TeachingsoftheEternal": {
     "NAME": "无穷的教诲",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 你的下一回合开始时 格挡 不会消失。"
+    "DESCRIPTION": "获得 !NP! % fgo:宝具值 。 NL 获得 !M! % fgo:宝具威力 。"
   },
   "${modID}:MorningLark": {
     "NAME": "晨之云雀",
@@ -353,11 +354,11 @@
   },
   "${modID}:SongOfThePoet": {
     "NAME": "歌仙的诗歌",
-    "DESCRIPTION": "造成 !D! 点伤害3次。 NL 获得造成的未被 格挡 伤害的 fgo:宝具值 。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 获得造成的未被 格挡 伤害的 fgo:宝具值 。"
   },
   "${modID}:CharismaOfTheJade": {
     "NAME": "翡翠的魅力",
-    "DESCRIPTION": "消耗10颗 fgo:暴击星 。 NL 获得 !M! 点 力量 。",
+    "DESCRIPTION": "造成 !D! 点伤害 !M! 次。 NL 可消耗20颗 fgo:暴击星 ，使伤害变为3倍。",
     "EXTENDED_DESCRIPTION": [
       "暴击星数量不足。"
     ]
@@ -381,8 +382,7 @@
   },
   "${modID}:Chasmatis": {
     "NAME": "天之裂谷",
-    "DESCRIPTION": "每当你获得 fgo:诅呪 时， NL 抽 !M! 张牌。",
-    "UPGRADE_DESCRIPTION": "每当你获得 fgo:诅呪 时， NL 抽 !M! 张牌。 NL 获得1层 fgo:诅呪 。"
+    "DESCRIPTION": "每当你从卡牌或负面 状态 失去生命时， NL 抽 !M! 张牌。"
   },
   "${modID}:WindsweptSlash": {
     "NAME": "势如破竹",
@@ -397,7 +397,8 @@
   },
   "${modID}:FacelessMoon": {
     "NAME": "无貌之月",
-    "DESCRIPTION": "在本回合 保留 你的手牌，每 保留 一张牌，就获得 !M! 点 格挡 。",
+    "DESCRIPTION": "在本回合 保留 你的手牌，每 保留 一张牌，就获得 !M! 点 fgo:暴击星 。 NL  消耗 。",
+    "UPGRADE_DESCRIPTION": "在本回合 保留 你的手牌，每 保留 一张牌，就获得 !M! 点 fgo:暴击星 。",
     "FLAVOR": "领域外生命。"
   },
   "${modID}:RepayForLife": {
@@ -413,9 +414,10 @@
   },
   "${modID}:CharismaofAdversity": {
     "NAME": "逆境的魅力",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 如果你的生命等于或低于65、50、35或15时，则分别造成 !D! 点伤害。",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 如你已失去生命，每12点则再造成 !D! 点伤害。",
     "EXTENDED_DESCRIPTION": [
-      " NL （造成 !D! 点伤害 !M! 次。）"
+      " NL （再造成 !D! 点伤害",
+      "次。）"
     ]
   },
   "${modID}:Swingby": {
@@ -437,8 +439,7 @@
   },
   "${modID}:Borrowingfrom": {
     "NAME": "借转轮自在趺坐",
-    "DESCRIPTION": "将你的 fgo:宝具值 变为1.5倍。",
-    "UPGRADE_DESCRIPTION": "将你的 fgo:宝具值 翻倍。"
+    "DESCRIPTION": "将你的 fgo:宝具值 翻倍。"
   },
   "${modID}:MagicBulletCharging": {
     "NAME": "魔弹装填",
@@ -446,18 +447,6 @@
     "EXTENDED_DESCRIPTION": [
       "对所有敌人造成 !D! 点伤害 !M! 次。"
     ]
-  },
-  "${modID}:PhasingFluidBlade": {
-    "NAME": "相位滑剑",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 选择随机将你抽牌堆中 !M! 张攻击牌或技能牌加入你的手牌。"
-  },
-  "${modID}:PhasingFluidBladeATTACK": {
-    "NAME": "相位滑剑",
-    "DESCRIPTION": "随机将你抽牌堆中 !M! 张 *攻击牌 加入你的手牌。"
-  },
-  "${modID}:PhasingFluidBladeSKILL": {
-    "NAME": "相位滑剑",
-    "DESCRIPTION": "随机将你抽牌堆中 !M! 张 *技能牌 加入你的手牌。"
   },
   "${modID}:Canopus": {
     "NAME": "卡诺波",
@@ -469,7 +458,7 @@
   },
   "${modID}:EternalMemories": {
     "NAME": "希望之星",
-    "DESCRIPTION": "fgo:宝具牌 。 NL 获得2点 力量 。 NL fgo:解除弱化 。 NL 获得 !M! 次 fgo:肃正防御 。"
+    "DESCRIPTION": "fgo:宝具牌 。 NL 获得2点 力量 。 NL 移除所有负面 状态 。 NL 获得 !M! 次 fgomaster:肃正防御 。 "
   },
   "${modID}:BeautifulJourney": {
     "NAME": "超越边界的存在",
@@ -646,13 +635,9 @@
     "NAME": "女神恩惠",
     "DESCRIPTION": "失去2点最大生命值。 NL 回复 !M! 点 生命 。"
   },
-  "${modID}:AthnGabla": {
-    "NAME": "四枝之浅滩",
-    "DESCRIPTION": "获得 !M! 层 fgo:毅力 。 NL 每当你失去生命时，获得失去生命的 活力 。 NL 消耗 。"
-  },
   "${modID}:DeathOfDeath": {
     "NAME": "死之渊",
-    "DESCRIPTION": "获得 !M! 层 fgo:毅力 。 NL 获得 fgo:死之渊 。 NL 消耗 。"
+    "DESCRIPTION": "获得 !M! 层 fgo:毅力 。 毅力发动后，下一回合造成双倍伤害。"
   },
   "${modID}:PeerlessStrike": {
     "NAME": "顷刻一击",
@@ -663,7 +648,7 @@
   },
   "${modID}:GloriousStrike": {
     "NAME": "栗蓉馅打击",
-    "DESCRIPTION": "造成 !D! 点伤害 !M! 次。 NL 下一回合开始时， fgo:解除弱化 。 NL 消耗 。"
+    "DESCRIPTION": "造成 !D! 点伤害 !M! 次。 NL 在你的回合结束时，移除所有负面状态。 NL 消耗 。"
   },
   "${modID}:OneTimeOneMeeting": {
     "NAME": "一期一会",
@@ -671,10 +656,7 @@
   },
   "${modID}:SpringOfFire": {
     "NAME": "纵使三度迎来落日",
-    "DESCRIPTION": "获得 !M! 层 fgo:毅力 （3次）。 NL 发动 fgo:毅力 时获得20% fgo:宝具威力 和 fgo:解除弱化 。 NL 获得 !M! 层 fgo:黄金律 。 NL 消耗 。",
-    "EXTENDED_DESCRIPTION": [
-      "@火焰之泉！@"
-    ]
+    "DESCRIPTION": "之后3次要被杀死时，阻止并回复 !M! 点生命，获得20% fgo:宝具威力 ，且移除所有负面状态。"
   },
   "${modID}:MillenniumCastle": {
     "NAME": "光辉之月",
@@ -697,7 +679,7 @@
   },
   "${modID}:LakeTexcoco": {
     "NAME": "第三太阳",
-    "DESCRIPTION": "获得 !NP! % fgo:宝具值 。 NL 在接下来3回合，获得 !M! % fgo:宝具值 。 NL 获得 fgo:水边 3回合。 NL 消耗 "
+    "DESCRIPTION": "获得 !NP! % fgo:宝具值 。 NL 在接下来3回合，获得 !M! % fgo:宝具值 。 NL 获得 fgo:水边 。 NL 消耗 "
   },
   "${modID}:BlueStarSea": {
     "NAME": "苍之星海",
@@ -738,11 +720,11 @@
   },
   "${modID}:CrystallizationofWinter": {
     "NAME": "冬之结晶",
-    "DESCRIPTION": "获得10层 fgo:毅力 。 NL 下一次发动 fgo:毅力 时额外获得 !M! 层 再生 。"
+    "DESCRIPTION": "攻击牌造成的伤害和获得的 格挡 增加 !M! 点，在每回合开始时失去1点。"
   },
   "${modID}:CharismaOfConflict": {
     "NAME": "斗争的魅力",
-    "DESCRIPTION": "对所有敌人造成 !D! 点伤害2次。 NL 获得 !M! 层 fgo:毅力 。 NL 消耗 。"
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 如果你有 fgo:毅力 状态 ，则再次造成 !D! 点伤害。"
   },
   "${modID}:ProofAndRebuttal": {
     "NAME": "证明与反证",
@@ -776,13 +758,20 @@
     "NAME": "黑之圣杯",
     "DESCRIPTION": "获得 !M! % fgo:宝具威力 。"
   },
-  "${modID}:SarasvatiMeltout": {
-    "NAME": "弁财天五弦琵琶",
-    "DESCRIPTION": "fgo:宝具牌 。 NL 移除敌人的部分正面状态。 NL 造成 !D! 点伤害。",
-    "FLAVOR": "包括：多层护甲、人工制品、金属化和柔韧。"
+  "${modID}:Summer": {
+    "NAME": "夏日",
+    "DESCRIPTION": "fgo:宝具牌 。 获得 fgo:水边 。 NL 获得 !NP! % fgo:宝具值 。"
   },
   "${modID}:SupportCraft": {
     "NAME": "支援牌",
     "DESCRIPTION": "获得 !NP! % fgo:宝具值 。 NL 升级 没有效果。"
+  },
+  "${modID}:HeroCreation": {
+    "NAME": "英雄塑造",
+    "DESCRIPTION": "获得100% fgo:暴击威力 。 NL 你的回合结束时，失去100% fgo:暴击威力 。"
+  },
+  "${modID}:Coaching": {
+    "NAME": "指导",
+    "DESCRIPTION": "获得 [E] [E] 。 消耗 。"
   }
 }

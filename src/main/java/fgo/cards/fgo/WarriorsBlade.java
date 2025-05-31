@@ -19,7 +19,7 @@ public class WarriorsBlade extends FGOCard {
     private static final CardStats INFO = new CardStats(
             FGOCardColor.FGO,
             CardType.ATTACK,
-            CardRarity.COMMON,
+            CardRarity.UNCOMMON,
             CardTarget.ENEMY,
             1
     );

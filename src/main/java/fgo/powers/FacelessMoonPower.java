@@ -1,6 +1,6 @@
 package fgo.powers;
 
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -27,20 +27,20 @@ public class FacelessMoonPower extends BasePower {
                 }
             }
             if (handAmt > 0) {
-                this.flash();
-                this.addToBot(new GainBlockAction(this.owner, this.owner, handAmt * this.amount));
+                flash();
+                addToBot(new ApplyPowerAction(owner, owner, new StarPower(owner, handAmt * amount)));
             }
         }
     }
 
     @Override
     public void atEndOfRound() {
-        this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
+        addToBot(new RemoveSpecificPowerAction(owner, owner, ID));
     }
 
     @Override
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
+        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
     }
 
     

@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.StarBounceEffect;
 import com.megacrit.cardcrawl.vfx.combat.ViolentAttackEffect;
-import fgo.action.KarmicVisionAction;
+import fgo.action.IgnoresInvincibilityAction;
 import fgo.cards.FGOCard;
 import fgo.patches.Enum.FGOCardColor;
 import fgo.util.CardStats;
@@ -27,8 +27,8 @@ public class KarmicVision extends FGOCard {
     );
     public KarmicVision() {
         super(ID, INFO);
-        setDamage(9, 3);
-        this.portraitImg = ImageMaster.loadImage("fgo/images/cards/attack/KarmicVision_b.png");
+        setDamage(12, 4);
+        portraitImg = ImageMaster.loadImage("fgo/images/cards/attack/KarmicVision_b.png");
 
         FlavorText.AbstractCardFlavorFields.textColor.set(this, Color.CHARTREUSE);
         FlavorText.AbstractCardFlavorFields.flavorBoxType.set(this, FlavorText.boxType.TRADITIONAL);
@@ -38,14 +38,14 @@ public class KarmicVision extends FGOCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         int i;
         if (Settings.FAST_MODE) {
-            this.addToBot(new VFXAction(new ViolentAttackEffect(m.hb.cX, m.hb.cY, Color.RED)));
+            addToBot(new VFXAction(new ViolentAttackEffect(m.hb.cX, m.hb.cY, Color.RED)));
         } else {
-            this.addToBot(new VFXAction(new ViolentAttackEffect(m.hb.cX, m.hb.cY, Color.RED), 0.4F));
+            addToBot(new VFXAction(new ViolentAttackEffect(m.hb.cX, m.hb.cY, Color.RED), 0.4F));
         }
         for(i = 0; i < 5; ++i) {
-            this.addToBot(new VFXAction(new StarBounceEffect(m.hb.cX, m.hb.cY)));
+            addToBot(new VFXAction(new StarBounceEffect(m.hb.cX, m.hb.cY)));
         }
 
-        this.addToBot(new KarmicVisionAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+        addToBot(new IgnoresInvincibilityAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
     }
 }

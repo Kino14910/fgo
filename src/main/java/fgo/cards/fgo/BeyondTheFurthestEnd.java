@@ -9,9 +9,7 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import fgo.cards.FGOCard;
 import fgo.patches.Enum.FGOCardColor;
-import fgo.powers.CriticalDamageUpPower;
-import fgo.powers.GutsPower;
-import fgo.powers.StarPower;
+import fgo.powers.BeyondTheFurthestEndPower;
 import fgo.util.CardStats;
 
 import static com.megacrit.cardcrawl.core.Settings.language;
@@ -22,13 +20,12 @@ public class BeyondTheFurthestEnd extends FGOCard {
             FGOCardColor.FGO,
             CardType.POWER,
             CardRarity.UNCOMMON,
-            CardTarget.SELF,
+            CardTarget.ALL_ENEMY,
             1
     );
     public BeyondTheFurthestEnd() {
         super(ID, INFO);
-        setMagic(20, 10);
-        setStar(10, 5);
+        setMagic(3, 1);
         portraitImg = ImageMaster.loadImage("fgo/images/cards/power/BeyondTheFurthestEnd.png");
 
         FlavorText.AbstractCardFlavorFields.textColor.set(this, Color.CHARTREUSE);
@@ -46,8 +43,6 @@ public class BeyondTheFurthestEnd extends FGOCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new GutsPower(p, magicNumber, 1)));
-        addToBot(new ApplyPowerAction(p, p, new CriticalDamageUpPower(p, magicNumber)));
-        addToBot(new ApplyPowerAction(p, p, new StarPower(p, star)));
+        addToBot(new ApplyPowerAction(p, p, new BeyondTheFurthestEndPower(p, magicNumber)));
     }
 }

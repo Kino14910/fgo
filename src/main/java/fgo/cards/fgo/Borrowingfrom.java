@@ -15,11 +15,11 @@ public class Borrowingfrom extends FGOCard {
             CardType.SKILL,
             CardRarity.RARE,
             CardTarget.NONE,
-            1
+            2
     );
     public Borrowingfrom() {
         super(ID, INFO);
-        setMagic(2, -1);
+        setCostUpgrade(1);
     }
 
     @Override

@@ -6,11 +6,11 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
-public class KarmicVisionAction extends AbstractGameAction {
+public class IgnoresInvincibilityAction extends AbstractGameAction {
     private int timesAmount;
     private final DamageInfo info;
 
-    public KarmicVisionAction(AbstractCreature target, DamageInfo info, AttackEffect effect) {
+    public IgnoresInvincibilityAction(AbstractCreature target, DamageInfo info, AttackEffect effect) {
         this.info = info;
         this.setValues(target, info);
         this.actionType = ActionType.DAMAGE;

@@ -34,6 +34,7 @@ public class AlterOptionEffect extends AbstractGameEffect {
     private static final String[] TEXT = CardCrawlGame.languagePack.getUIString(makeID(AlterOptionEffect.class.getSimpleName())).TEXT;
     private final Color screenColor;
     private boolean openedScreen = false;
+    
     public AlterOptionEffect() {
         this.screenColor = AbstractDungeon.fadeColor.cpy();
         this.duration = 1.5F;
@@ -50,21 +51,7 @@ public class AlterOptionEffect extends AbstractGameEffect {
         if (!AbstractDungeon.isScreenUp && !AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
             AbstractCard c = AbstractDungeon.gridSelectScreen.selectedCards.get(0);
             AbstractDungeon.topLevelEffects.add(new ShowCardAndObtainEffect(c, (float)Settings.WIDTH / 2.0F + 190.0F * Settings.scale, (float)Settings.HEIGHT / 2.0F));
-
-            AbstractDungeon.topLevelEffects.add(new UpgradeShineEffect((float)Settings.WIDTH / 2.0F - 190.0F * Settings.scale, (float)Settings.HEIGHT / 2.0F));
-            ArrayList<AbstractCard> upgradableCards = new ArrayList<>();
-            for (AbstractCard card : AbstractDungeon.player.masterDeck.group) {
-                if (card.canUpgrade()) {
-                    upgradableCards.add(card);
-                }
-            }
-            Collections.shuffle(upgradableCards, new Random(AbstractDungeon.miscRng.randomLong()));
-            if (!upgradableCards.isEmpty()) {
-                upgradableCards.get(0).upgrade();
-                AbstractDungeon.player.bottledCardUpgradeCheck(upgradableCards.get(0));
-                AbstractDungeon.topLevelEffects.add(new ShowCardBrieflyEffect(upgradableCards.get(0).makeStatEquivalentCopy(), (float)Settings.WIDTH / 2.0F - 190.0F * Settings.scale, (float)Settings.HEIGHT / 2.0F));
-            }
-
+            AlterOption.usedIdentify = true;
             AbstractDungeon.gridSelectScreen.selectedCards.clear();
             ((RestRoom)AbstractDungeon.getCurrRoom()).fadeIn();
         }
@@ -95,7 +82,8 @@ public class AlterOptionEffect extends AbstractGameEffect {
             this.isDone = true;
             if (CampfireUI.hidden) {
                 AbstractRoom.waitTimer = 0.0F;
-                AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;
+                AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.INCOMPLETE;
+                ((RestRoom)AbstractDungeon.getCurrRoom()).campfireUI.reopen();
                 ((RestRoom) AbstractDungeon.getCurrRoom()).cutFireSound();
             }
         }

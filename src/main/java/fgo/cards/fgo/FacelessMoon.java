@@ -22,11 +22,17 @@ public class FacelessMoon extends FGOCard {
     );
     public FacelessMoon() {
         super(ID, INFO);
-        setMagic(3, 1);
+        setMagic(1);
+        setExhaust();
         tags.add(CardTagsEnum.Foreigner);
 
         FlavorText.AbstractCardFlavorFields.textColor.set(this, Color.CHARTREUSE);
         FlavorText.AbstractCardFlavorFields.flavorBoxType.set(this, FlavorText.boxType.TRADITIONAL);
+    }
+
+    @Override
+    public void upgrade() {
+        setExhaust(false);
     }
 
     @Override

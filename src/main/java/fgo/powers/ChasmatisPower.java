@@ -1,9 +1,8 @@
 package fgo.powers;
 
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.powers.AbstractPower;
-
 import static fgo.FGOMod.makeID;
 
 public class ChasmatisPower extends BasePower {
@@ -16,29 +15,15 @@ public class ChasmatisPower extends BasePower {
 
     @Override
     public void updateDescription() {
-        if (this.amount == 1) {
-            this.description = DESCRIPTIONS[0];
-        } else {
-            this.description = DESCRIPTIONS[1] + this.amount + DESCRIPTIONS[2];
-        }
+        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
     }
-
-    /*@Override
-    public void atStartOfTurnPostDraw() {
-        if (this.owner.hasPower(CursePower.POWER_ID)) {
-            int BulletAmt = 0;
-            BulletAmt += (this.owner.getPower(CursePower.POWER_ID)).amount * this.amount;
-            this.addToBot(new ApplyPowerAction(this.owner, this.owner, new StrengthPower(this.owner, BulletAmt), BulletAmt));
-        }
-    }*/
 
     @Override
-    public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
-        if (source == this.owner && target == this.owner && power.ID.equals(CursePower.POWER_ID)) {
-            this.flash();
-            this.addToBot(new DrawCardAction(this.owner, this.amount));
+    public void wasHPLost(DamageInfo info, int damageAmount) {
+        if (info.owner != null && info.owner == owner && damageAmount > 0) {
+            flash();
+            addToBot(new DrawCardAction(amount));
         }
     }
-
     
 }

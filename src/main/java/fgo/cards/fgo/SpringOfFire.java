@@ -6,7 +6,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import fgo.cards.FGOCard;
 import fgo.patches.Enum.FGOCardColor;
 import fgo.powers.GutsPower;
-import fgo.powers.NPRatePower;
 import fgo.powers.SpringOfFirePower;
 import fgo.util.CardStats;
 
@@ -14,7 +13,7 @@ public class SpringOfFire extends FGOCard {
     public static final String ID = makeID(SpringOfFire.class.getSimpleName());
     private static final CardStats INFO = new CardStats(
             FGOCardColor.FGO,
-            CardType.SKILL,
+            CardType.POWER,
             CardRarity.RARE,
             CardTarget.SELF,
             3
@@ -23,7 +22,6 @@ public class SpringOfFire extends FGOCard {
         super(ID, INFO);
         setMagic(3, 3);
         setEthereal(true, false);
-        setExhaust();
         tags.add(CardTags.HEALING);
     }
 
@@ -31,6 +29,5 @@ public class SpringOfFire extends FGOCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new GutsPower(p, magicNumber, 3)));
         addToBot(new ApplyPowerAction(p, p, new SpringOfFirePower(p, magicNumber)));
-        addToBot(new ApplyPowerAction(p, p, new NPRatePower(p, magicNumber), magicNumber));
     }
 }

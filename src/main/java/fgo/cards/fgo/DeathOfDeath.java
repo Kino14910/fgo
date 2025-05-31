@@ -14,7 +14,7 @@ public class DeathOfDeath extends FGOCard {
     public static final String ID = makeID(DeathOfDeath.class.getSimpleName());
     private static final CardStats INFO = new CardStats(
             FGOCardColor.FGO,
-            CardType.SKILL,
+            CardType.POWER,
             CardRarity.RARE,
             CardTarget.SELF,
             3

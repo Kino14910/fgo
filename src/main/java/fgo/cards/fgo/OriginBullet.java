@@ -1,12 +1,12 @@
 package fgo.cards.fgo;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
+import fgo.action.IgnoresInvincibilityAction;
 import fgo.cards.FGOCard;
 import fgo.patches.Enum.FGOCardColor;
 import fgo.util.CardStats;
@@ -22,28 +22,26 @@ public class OriginBullet extends FGOCard {
     );
     public OriginBullet() {
         super(ID, INFO);
-        setDamage(8);
+        setDamage(8, 4);
         setMagic(3, 3);
     }
 
     @Override
-    public void calculateCardDamage(AbstractMonster mo) {
+    public void calculateCardDamage(AbstractMonster m) {
         int BulletAmt = 0;
-        for (@SuppressWarnings("unused") AbstractPower ignored : mo.powers) {
+        for (AbstractPower ignored : m.powers) {
             ++BulletAmt;
         }
 
         int realBaseDamage = baseDamage;
         baseDamage += BulletAmt * magicNumber;
-        super.calculateCardDamage(mo);
+        super.calculateCardDamage(m);
         baseDamage = realBaseDamage;
         isDamageModified = damage != baseDamage;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
-//        int theSize = AbstractDungeon.player.hand.size();
-//        addToTop(new DiscardAction(p, p, theSize, false));
+        addToBot(new IgnoresInvincibilityAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
     }
 }

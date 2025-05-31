@@ -13,7 +13,7 @@ public class WisdomOfThePeople extends FGOCard {
     public static final String ID = makeID(WisdomOfThePeople.class.getSimpleName());
     private static final CardStats INFO = new CardStats(
             FGOCardColor.FGO,
-            CardType.POWER,
+            CardType.SKILL,
             CardRarity.RARE,
             CardTarget.SELF,
             1

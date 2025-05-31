@@ -20,8 +20,7 @@ public class TheOneWhoSawItAll extends FGOCard {
         setMagic(4, 2);
     }
 
-
-
+    
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new TheOneWhoSawItAllAction(1, CardType.ATTACK, this.magicNumber));

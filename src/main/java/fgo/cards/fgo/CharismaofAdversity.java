@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.VerticalImpactEffect;
@@ -27,38 +28,28 @@ public class CharismaofAdversity extends FGOCard {
         setDamage(6, 2);
     }
 
-
-    int[] healthThresholds = {65, 50, 35, 15};
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (m != null) {
             addToBot(new VFXAction(new VerticalImpactEffect(m.hb.cX + m.hb.width / 4.0F, m.hb.cY - m.hb.height / 4.0F)));
         }
 
-        addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-
-        for (int threshold : healthThresholds) {
-            if (p.currentHealth <= threshold) {
-                addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-            } else {
-                break;
+        int lostHealthPercentage = p.maxHealth - p.currentHealth;
+        int extraHits = lostHealthPercentage / 12;
+        addToBot((AbstractGameAction)new DamageAction((AbstractCreature)m, new DamageInfo((AbstractCreature)p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+        if (extraHits >= 1) {
+            for (int i = 0; i < extraHits; ++i) {
+                addToBot((AbstractGameAction)new DamageAction((AbstractCreature)m, new DamageInfo((AbstractCreature)p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
             }
         }
     }
 
     @Override
     public void applyPowers() {
-        int CharismaAmt = 1;
-        for (int threshold : healthThresholds) {
-            if (AbstractDungeon.player.currentHealth <= threshold) {
-                CharismaAmt++;
-            } else {
-                break;
-            }
-        }
-        setMagic(CharismaAmt);
-        if (AbstractDungeon.player.currentHealth <= healthThresholds[0]) {
-            rawDescription = cardStrings.DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0];
+        int lostHealthPercentage = AbstractDungeon.player.maxHealth - AbstractDungeon.player.currentHealth;
+        int extraHits = lostHealthPercentage / 12;
+        if (extraHits >= 1) {
+            rawDescription = cardStrings.DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0] + extraHits + cardStrings.EXTENDED_DESCRIPTION[1];
         }
         super.applyPowers();
         initializeDescription();
@@ -66,10 +57,6 @@ public class CharismaofAdversity extends FGOCard {
 
     @Override
     public void triggerOnGlowCheck() {
-        if (AbstractDungeon.player.currentHealth <= 65) {
-            glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
-        } else {
-            glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
-        }
+        glowColor = AbstractDungeon.player.maxHealth - AbstractDungeon.player.currentHealth >= 12 ? AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy() : AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
     }
 }

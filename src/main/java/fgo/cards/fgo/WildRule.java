@@ -30,7 +30,7 @@ public class WildRule extends FGOCard {
     );
     public WildRule() {
         super(ID, INFO);
-        setDamage(12);
+        setDamage(12, 4);
         setMagic(2, 1);
     }
 

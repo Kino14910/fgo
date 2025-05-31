@@ -17,7 +17,7 @@ public class SchwarzwaldFalke extends FGOCard {
     private static final CardStats INFO = new CardStats(
             FGOCardColor.FGO,
             CardType.SKILL,
-            CardRarity.UNCOMMON,
+            CardRarity.RARE,
             CardTarget.SELF,
             3
     );

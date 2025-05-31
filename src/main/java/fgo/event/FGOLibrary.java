@@ -60,7 +60,6 @@ public class FGOLibrary extends BaseEvent {
                 this.pickCard = true;
                 CardGroup group = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
                 group.addToBottom(new PrimevalRune());
-                group.addToBottom(new LevelSlash());
                 group.addToBottom(new SpringOfFire());
                 group.addToBottom(new MillenniumCastle());
                 group.addToBottom(new DeathOfDeath());

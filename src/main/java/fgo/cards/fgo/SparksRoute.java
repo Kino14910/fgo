@@ -21,7 +21,7 @@ public class SparksRoute extends FGOCard {
     private static final CardStats INFO = new CardStats(
             FGOCardColor.FGO,
             CardType.SKILL,
-            CardRarity.UNCOMMON,
+            CardRarity.COMMON,
             CardTarget.SELF,
             0
     );

@@ -1,5 +1,6 @@
 package fgo.powers;
 
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import static fgo.FGOMod.makeID;
@@ -19,11 +20,9 @@ public class LoseCritDamagePower extends BasePower {
     }
 
     @Override
-    public void onRemove() {
+    public void atEndOfTurn(boolean isPlayer) {
         this.flash();
-        //this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
-        this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, CriticalDamageUpPower.POWER_ID));
+        this.addToBot(new ApplyPowerAction(this.owner, this.owner, new CriticalDamageUpPower(this.owner, -this.amount), -this.amount));
+        this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
     }
-
-    
 }

@@ -122,7 +122,7 @@
   },
   "${modID}:AlterOptionEffect": {
     "TEXT": [
-      "选择获得一张宝具牌，随机升级你牌组中的一张牌。"
+      "选择获得一张宝具牌，此选项不占用火堆次数。"
     ]
   },
   "${modID}:FGOConfig": {

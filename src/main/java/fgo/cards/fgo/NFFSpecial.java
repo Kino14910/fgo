@@ -20,7 +20,7 @@ public class NFFSpecial extends FGOCard {
     );
     public NFFSpecial() {
         super(ID, INFO);
-        setMagic(2, 1);
+        setMagic(3, 1);
         cardsToPreview = new PoisonousDagger();
     }
 

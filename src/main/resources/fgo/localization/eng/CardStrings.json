@@ -736,7 +736,7 @@
     "NAME": "The Black Grail",
     "DESCRIPTION": "Gain !M!% fgo:NP_Damage."
   },
-  "${modID}:SarasvatiMeltout": {
+  "${modID}:Summer": {
     "NAME": "Sarasvati Meltout",
     "DESCRIPTION": "fgo:Noble_Phantasm. NL Remove all buff from the enemy. NL Deal !D! damage."
   },

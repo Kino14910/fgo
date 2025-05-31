@@ -1,15 +1,13 @@
 package fgo.cards.fgo;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.GainStrengthPower;
-import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
+import com.megacrit.cardcrawl.powers.WeakPower;
+
 import fgo.cards.FGOCard;
 import fgo.patches.Enum.FGOCardColor;
-import fgo.powers.DefenseDownPower;
 import fgo.util.CardStats;
 
 public class Revelation extends FGOCard {
@@ -23,19 +21,15 @@ public class Revelation extends FGOCard {
     );
     public Revelation() {
         super(ID, INFO);
-        setMagic(4, 1);
+        setMagic(1);
+        setCostUpgrade(0);
         setExhaust();
     }
 
-
-
+    
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ApplyPowerAction(m, p, new StrengthPower(m, -this.magicNumber), -this.magicNumber));
-        if (!m.hasPower("Artifact")) {
-            this.addToBot(new ApplyPowerAction(m, p, new GainStrengthPower(m, this.magicNumber), this.magicNumber));
-        }
-        this.addToBot(new ApplyPowerAction(m, p, new VulnerablePower(m, 1, false), 1, AbstractGameAction.AttackEffect.FIRE));
-        this.addToBot(new ApplyPowerAction(m, p, new DefenseDownPower(m, this.magicNumber), this.magicNumber));
+        addToBot(new ApplyPowerAction(m, p, new WeakPower(m, magicNumber, false)));
+        addToBot(new ApplyPowerAction(m, p, new VulnerablePower(m, magicNumber, false)));
     }
 }

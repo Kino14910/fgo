@@ -26,7 +26,7 @@ public class JourneyGuidance extends FGOCard {
             FGOCardColor.FGO,
             CardType.ATTACK,
             CardRarity.COMMON,
-            CardTarget.SELF,
+            CardTarget.ENEMY,
             2
     );
     public JourneyGuidance() {

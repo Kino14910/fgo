@@ -2,17 +2,17 @@ package fgo.cards.fgo;
 
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.stslib.patches.FlavorText;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import fgo.action.ExtraterrestrialAction;
+
 import fgo.cards.FGOCard;
 import fgo.patches.Enum.CardTagsEnum;
 import fgo.patches.Enum.FGOCardColor;
+import fgo.powers.DefenseDownPower;
+import fgo.powers.StarPower;
 import fgo.util.CardStats;
 
 public class BackAgain extends FGOCard {
@@ -26,8 +26,7 @@ public class BackAgain extends FGOCard {
     );
     public BackAgain() {
         super(ID, INFO);
-        setDamage(8, 1);
-        setMagic(3, 1);
+        setStar(5, 10);
         tags.add(CardTagsEnum.Foreigner);
 
         FlavorText.AbstractCardFlavorFields.textColor.set(this, Color.CHARTREUSE);
@@ -36,8 +35,8 @@ public class BackAgain extends FGOCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-        addToBot(new ExtraterrestrialAction(m, magicNumber));
+        addToBot(new ApplyPowerAction(p, m, new DefenseDownPower(m, 3)));
+        addToBot(new ApplyPowerAction(p, p, new StarPower(p, star)));
     }
 
     @Override

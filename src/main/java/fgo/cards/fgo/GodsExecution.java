@@ -1,14 +1,12 @@
 package fgo.cards.fgo;
 
-import com.evacipated.cardcrawl.mod.stslib.actions.common.AllEnemyApplyPowerAction;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.WeakPower;
+import fgo.action.unique.GodsExecutionAction;
 import fgo.cards.FGOCard;
 import fgo.patches.Enum.FGOCardColor;
 import fgo.util.CardStats;
@@ -18,27 +16,18 @@ public class GodsExecution extends FGOCard {
     private static final CardStats INFO = new CardStats(
             FGOCardColor.FGO,
             CardType.ATTACK,
-            CardRarity.COMMON,
-            CardTarget.ALL_ENEMY,
+            CardRarity.UNCOMMON,
+            CardTarget.ENEMY,
             1
     );
     public GodsExecution() {
         super(ID, INFO);
-        setDamage(9);
-        setMagic(1, 1);
+        setDamage(5, 3);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAllEnemiesAction(p, damage, damageTypeForTurn, AbstractGameAction.AttackEffect.SMASH));
-
-        for (AbstractPower power : p.powers) {
-            if (power.type == AbstractPower.PowerType.DEBUFF) {
-                addToBot(new AllEnemyApplyPowerAction(p, magicNumber,
-                        monster -> new WeakPower(monster, magicNumber, false)));
-                break;
-            }
-        }
+        addToBot(new GodsExecutionAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn)));
     }
 
     @Override

@@ -372,8 +372,8 @@ public class FGOMod implements
 
     public static void registerEvents() {
         //事件。
-        BaseMod.addEvent(WinterEvent.ID, WinterEvent.class, TheCity.ID);
-        //BaseMod.addEvent("FGOLibrary", FGOLibrary.class, "TheCity");
+        // BaseMod.addEvent(WinterEvent.ID, WinterEvent.class, TheCity.ID);
+        // BaseMod.addEvent("FGOLibrary", FGOLibrary.class, "TheCity");
         BaseMod.addEvent(ConflictEvent.ID, ConflictEvent.class, TheBeyond.ID);
         BaseMod.addEvent(ProofAndRebuttalEvent.ID, ProofAndRebuttalEvent.class, Exordium.ID);
         BaseMod.addEvent(ManofChaldea.ID, ManofChaldea.class, TheBeyond.ID);
@@ -392,20 +392,19 @@ public class FGOMod implements
             return;
         }
 
-        int baseMultiplier = 3;
+        int npMultiplier = 5;
         int npGain = 0;
 
-        // 如果你有黄金律，将倍数增加到6
         if (AbstractDungeon.player.hasPower(NPRatePower.POWER_ID)) {
-            baseMultiplier = 6;
+            npMultiplier *= 2;
         }
 
         int costForTurn = abstractCard.costForTurn;
 
         if (costForTurn == -1) {
-            npGain = EnergyPanel.totalCount * baseMultiplier; //X费用牌
+            npGain = EnergyPanel.totalCount * npMultiplier; //X费用牌
         } else if (costForTurn > 0) {
-            npGain = costForTurn * baseMultiplier;
+            npGain = costForTurn * npMultiplier;
         }
 
         if (npGain > 0) {
@@ -446,7 +445,7 @@ public class FGOMod implements
             return i;
         }
 
-        addToBot(new FgoNpAction(AbstractDungeon.player.hasPower(NPRatePower.POWER_ID) ? i : i/2));
+        addToBot(new FgoNpAction(AbstractDungeon.player.hasPower(NPRatePower.POWER_ID) ? 2 * i : i));
 
         if (AbstractDungeon.player.hasRelic(Avenger.ID)) {
             addToBot(new FgoNpAction(i / 10 * 3));

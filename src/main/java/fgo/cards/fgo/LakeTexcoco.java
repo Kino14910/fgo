@@ -29,6 +29,6 @@ public class LakeTexcoco extends FGOCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new FgoNpAction(np));
         this.addToBot(new ApplyPowerAction(p, p, new EnergyRegenPower(p, magicNumber, 3)));
-        this.addToBot(new ApplyPowerAction(p, p, new WatersidePower(p, 3)));
+        this.addToBot(new ApplyPowerAction(p, p, new WatersidePower(p)));
     }
 }

@@ -1,4 +1,4 @@
-package fgo.cards.deprecated;
+package fgo.cards.fgo;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -20,8 +20,7 @@ public class EndOfADream extends FGOCard {
     );
     public EndOfADream() {
         super(ID, INFO);
-        setMagic(1);
-        setSelfRetain(false, true);
+        setInnate(false, true);
     }
 
     @Override

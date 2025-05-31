@@ -19,8 +19,7 @@ public class SongOfThePoet extends FGOCard {
     );
     public SongOfThePoet() {
         super(ID, INFO);
-        setDamage(3, 1);
-        setMagic(3);
+        setDamage(9, 3);
     }
 
 

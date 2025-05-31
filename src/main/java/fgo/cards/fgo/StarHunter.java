@@ -14,13 +14,13 @@ public class StarHunter extends FGOCard {
     private static final CardStats INFO = new CardStats(
             FGOCardColor.FGO,
             CardType.SKILL,
-            CardRarity.UNCOMMON,
+            CardRarity.RARE,
             CardTarget.SELF,
             0
     );
     public StarHunter() {
         super(ID, INFO);
-        setMagic(2, 1);
+        setMagic(3, 1);
         setStar(10);
         setExhaust();
     }

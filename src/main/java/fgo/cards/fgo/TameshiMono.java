@@ -20,7 +20,7 @@ public class TameshiMono extends FGOCard {
     );
     public TameshiMono() {
         super(ID, INFO);
-        setMagic(5, 10);
+        setMagic(10, 5);
     }
 
 

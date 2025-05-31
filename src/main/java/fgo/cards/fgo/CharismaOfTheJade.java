@@ -1,11 +1,13 @@
 package fgo.cards.fgo;
 
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.StrengthPower;
 import fgo.cards.FGOCard;
 import fgo.patches.Enum.FGOCardColor;
 import fgo.powers.StarPower;
@@ -16,20 +18,28 @@ public class CharismaOfTheJade extends FGOCard {
     private static final CardStats INFO = new CardStats(
             FGOCardColor.FGO,
             CardType.ATTACK,
-            CardRarity.UNCOMMON,
+            CardRarity.RARE,
             CardTarget.SELF,
-            0
+            3
     );
 
     public CharismaOfTheJade() {
         super(ID, INFO);
-        setMagic(2, 1);
+        setDamage(8);
+        setMagic(3, 1);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new StarPower(p, -10)));
-        addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, magicNumber)));
+        if (p.hasPower(StarPower.POWER_ID) && p.getPower(StarPower.POWER_ID).amount > 20) {
+            addToBot(new ApplyPowerAction(p, p, new StarPower(p, -10)));
+            damage *= 1.5f;
+        }
+
+        for (int i = 0; i < magicNumber; ++i) {
+            addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+        }
+        
     }
     
     @Override

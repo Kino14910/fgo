@@ -13,16 +13,15 @@ public class GloriousStrikePower extends BasePower {
     public GloriousStrikePower(AbstractCreature owner) {
         super(POWER_ID, TYPE, TURN_BASED, owner);
     }
-
-    @Override
-    public void updateDescription() {this.description = DESCRIPTIONS[0];}
-
-    @Override
-    public void atStartOfTurn() {
-        this.flash();
-        this.addToTop(new RemoveDebuffsAction(this.owner));
-        this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
+    
+    public void updateDescription() {
+        this.description = this.amount <= 1 ? DESCRIPTIONS[0] : DESCRIPTIONS[1] + this.amount + DESCRIPTIONS[2];
     }
 
-    
+    @Override
+    public void atEndOfTurn(boolean isPlayer) {
+        flash();
+        addToTop(new RemoveDebuffsAction(owner));
+        addToBot(new RemoveSpecificPowerAction(owner, owner, ID));
+    }
 }

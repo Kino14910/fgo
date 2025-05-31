@@ -1,7 +1,6 @@
 package fgo.cards.fgo;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.actions.unique.RemoveAllPowersAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -21,7 +20,7 @@ public class AtTheWell extends FGOCard {
     );
     public AtTheWell() {
         super(ID, INFO);
-        setMagic(10, 5);
+        setMagic(10, 10);
         setExhaust();
         tags.add(CardTags.HEALING);
     }
@@ -29,7 +28,6 @@ public class AtTheWell extends FGOCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new RemoveAllPowersAction(p, true));
-        addToBot(new HealAction(p, p, magicNumber));
         addToBot(new ApplyPowerAction(p, p, new AtTheWellPower(p, magicNumber)));
     }
 }
