@@ -294,7 +294,7 @@
     "NAME": "圣剑锻造",
     "DESCRIPTION": "抽 !M! 张牌。 NL 获得等于你手牌数2倍的 fgo:宝具值 。",
     "EXTENDED_DESCRIPTION": [
-      " NL （获得 !M! % 宝具值。）"
+      " NL （获得 !NP! % 宝具值。）"
     ]
   },
   "${modID}:SparksRoute": {

@@ -247,7 +247,7 @@
     ]
   },
   "${modID}:DefenseDownPower": {
-    "NAME": "防御下降",
+    "NAME": "防御破坏",
     "DESCRIPTIONS": [
       "受到攻击时，增加受到 #b",
       " 点伤害。在其回合结束时，减少 #b1 层。"

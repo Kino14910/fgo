@@ -1,4 +1,4 @@
-package fgo.cards.deprecated;
+package fgo.cards.fgo;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -17,7 +17,7 @@ public class QueensCovenant extends FGOCard {
             CardType.POWER,
             CardRarity.UNCOMMON,
             CardTarget.SELF,
-            2
+            1
     );
     public QueensCovenant() {
         super(ID, INFO);

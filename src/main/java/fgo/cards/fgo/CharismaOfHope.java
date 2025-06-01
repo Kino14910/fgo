@@ -25,7 +25,6 @@ public class CharismaOfHope extends FGOCard {
         super(ID, INFO);
         setDamage(6, 3);
         setNP(20, 10);
-        setCasterBackground();
 
         FlavorText.AbstractCardFlavorFields.textColor.set(this, Color.CHARTREUSE);
         FlavorText.AbstractCardFlavorFields.flavorBoxType.set(this, FlavorText.boxType.TRADITIONAL);

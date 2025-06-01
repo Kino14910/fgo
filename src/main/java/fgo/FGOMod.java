@@ -96,14 +96,16 @@ public class FGOMod implements
     public static final Color SILVER = CardHelper.getColor(200, 200, 200);
     public static final Color NOBLE = CardHelper.getColor(255, 215, 0);
     //攻击、技能、能力牌的背景图片(512)
-    private static final String ATTACK_CC = "fgo/images/512/bg_attack_MASTER_s.png";
-    private static final String SKILL_CC = "fgo/images/512/bg_skill_MASTER_s.png";
-    private static final String POWER_CC = "fgo/images/512/bg_power_MASTER_s.png";
+    // private static final String ATTACK_CC = "fgo/images/512/bg_attack_MASTER_s.png";
+    // private static final String SKILL_CC = "fgo/images/512/bg_skill_MASTER_s.png";
+    // private static final String POWER_CC = "fgo/images/512/bg_power_MASTER_s.png";
+    private static final String DEFAULT_CC = "fgo/images/512/bg_master_s.png";
     private static final String ENERGY_ORB_CC = "fgo/images/512/MASTEROrb.png";
     //攻击、技能、能力牌的背景图片(1024)
-    private static final String ATTACK_CC_PORTRAIT = "fgo/images/1024/bg_attack_MASTER.png";
-    private static final String SKILL_CC_PORTRAIT = "fgo/images/1024/bg_skill_MASTER.png";
-    private static final String POWER_CC_PORTRAIT = "fgo/images/1024/bg_power_MASTER.png";
+    // private static final String ATTACK_CC_PORTRAIT = "fgo/images/1024/bg_attack_MASTER.png";
+    // private static final String SKILL_CC_PORTRAIT = "fgo/images/1024/bg_skill_MASTER.png";
+    // private static final String POWER_CC_PORTRAIT = "fgo/images/1024/bg_power_MASTER.png";
+    private static final String DEFAULT_CC_PORTRAIT = "fgo/images/1024/bg_master.png";
     private static final String ENERGY_ORB_CC_PORTRAIT = "fgo/images/1024/MASTEROrb.png";
     //宝具牌
     private static final String ATTACK_Noble = "fgo/images/512/bg_attack_Noble_s.png";
@@ -129,7 +131,7 @@ public class FGOMod implements
 
     public FGOMod() {
         BaseMod.subscribe(this); //This will make BaseMod trigger all the subscribers at their appropriate times.
-        BaseMod.addColor(FGOCardColor.FGO, SILVER, SILVER, SILVER, SILVER, SILVER, SILVER, SILVER, ATTACK_CC, SKILL_CC, POWER_CC, ENERGY_ORB_CC, ATTACK_CC_PORTRAIT, SKILL_CC_PORTRAIT, POWER_CC_PORTRAIT, ENERGY_ORB_CC_PORTRAIT, CARD_ENERGY_ORB);
+        BaseMod.addColor(FGOCardColor.FGO, SILVER, SILVER, SILVER, SILVER, SILVER, SILVER, SILVER, DEFAULT_CC, DEFAULT_CC, DEFAULT_CC, ENERGY_ORB_CC, DEFAULT_CC_PORTRAIT, DEFAULT_CC_PORTRAIT, DEFAULT_CC_PORTRAIT, ENERGY_ORB_CC_PORTRAIT, CARD_ENERGY_ORB);
         BaseMod.addColor(FGOCardColor.Noble_Phantasm, NOBLE, NOBLE, NOBLE, NOBLE, NOBLE, NOBLE, NOBLE, ATTACK_Noble, SKILL_Noble, POWER_Noble, ENERGY_ORB_CC, ATTACK_Noble_PORTRAIT, SKILL_Noble_PORTRAIT, POWER_Noble_PORTRAIT, ENERGY_ORB_CC_PORTRAIT, CARD_ENERGY_ORB);
         BaseMod.addSaveField("commandSpellCount", new CommandSpellPanel());
         logger.info(modID + " subscribed to BaseMod.");

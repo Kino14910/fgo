@@ -124,8 +124,8 @@ public class Master extends CustomPlayer{
         return new CharSelectInfo(
                 TEXT[1],
                 TEXT[2],
-                72,
-                72,
+                66,
+                66,
                 0,
                 99,
                 5,
@@ -235,8 +235,8 @@ public class Master extends CustomPlayer{
 
     public void renderHealth(SpriteBatch sb) {
         super.renderHealth(sb);
-        float x = this.hb.cX - this.hb.width / 2.0F;
-        float y = this.hb.cY + this.hb.height / 2.0F;
+        float x = this.hb.x;
+        float y = this.hb.y + this.hb.height;
         this.FgoNPhb = new Hitbox(x, y, this.hb_w, FgoNp_BAR_HEIGHT);
         this.FgoNPhb.render(sb);
         TruthValueBgRender(sb, x, y);
@@ -244,6 +244,7 @@ public class Master extends CustomPlayer{
         TruthValueText(sb);
 
         this.FgoNPhb.update();
+        
         if (this.FgoNPhb.hovered) {
             if (AbstractDungeon.player.hasRelic(Avenger.ID)) {
                 TipHelper.renderGenericTip(0, y, NPTEXT[0], NPTEXT[4]);
