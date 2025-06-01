@@ -13,16 +13,16 @@ public abstract class AbsNoblePhantasmCard extends FateMagineerCard {
     public AbsNoblePhantasmCard(String id, AbstractCard.CardType type, AbstractCard.CardTarget target) {
         super(id, -2, type, target, AbstractCard.CardRarity.SPECIAL, FGOCardColor.Noble_Phantasm);
         setSelfRetain();
-        this.tags.add(CardTagsEnum.Noble_Phantasm);
+        tags.add(CardTagsEnum.Noble_Phantasm);
         FlavorText.AbstractCardFlavorFields.textColor.set(this, Color.CHARTREUSE);
         FlavorText.AbstractCardFlavorFields.flavorBoxType.set(this, FlavorText.boxType.TRADITIONAL);
     }
 
     @Override
     public void triggerWhenDrawn() {
-        if (this.inBottleFlame || this.inBottleLightning || this.inBottleTornado) {
-            this.addToTop(new DrawCardAction(AbstractDungeon.player, 2));
-            this.addToTop(new ExhaustSpecificCardAction(this, AbstractDungeon.player.hand));
+        if (inBottleFlame || inBottleLightning || inBottleTornado) {
+            addToTop(new DrawCardAction(AbstractDungeon.player, 2));
+            addToTop(new ExhaustSpecificCardAction(this, AbstractDungeon.player.hand));
         }
     }
 }

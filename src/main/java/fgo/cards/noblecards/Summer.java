@@ -20,7 +20,7 @@ public class Summer extends AbsNoblePhantasmCard {
         super(ID,CardType.POWER, CardTarget.SELF);
         setNP(60, 20);
         setExhaust();
-        this.tags.add(CardTagsEnum.Noble_Phantasm);
+        tags.add(CardTagsEnum.Noble_Phantasm);
 
         cardArtLayers512.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH)));
         cardArtLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH_P)));

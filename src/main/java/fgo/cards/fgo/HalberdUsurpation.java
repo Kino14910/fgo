@@ -1,6 +1,5 @@
 package fgo.cards.fgo;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.watcher.ExpungeVFXAction;
@@ -35,24 +34,24 @@ public class HalberdUsurpation extends FGOCard {
             StrengthAmount += (mo.getPower(StrengthPower.POWER_ID)).amount;
         }
 
-        int realBaseDamage = this.baseDamage;
-        this.baseDamage += StrengthAmount;
+        int realBaseDamage = baseDamage;
+        baseDamage += StrengthAmount;
         super.calculateCardDamage(mo);
-        this.baseDamage = realBaseDamage;
-        this.isDamageModified = this.damage != this.baseDamage;
+        baseDamage = realBaseDamage;
+        isDamageModified = damage != baseDamage;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ExpungeVFXAction(m));
-        this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
-        if (m.isDeadOrEscaped() & m.hasPower(StrengthPower.POWER_ID)) {
+        addToBot(new ExpungeVFXAction(m));
+        addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn)));
+        if (m == null || m.isDeadOrEscaped() || !m.hasPower(StrengthPower.POWER_ID)) {
             return;
         }
         int HuAmt = (m.getPower(StrengthPower.POWER_ID)).amount * 2;
-        this.addToBot(new ApplyPowerAction(m, p, new StrengthPower(m, -HuAmt), -HuAmt, true, AbstractGameAction.AttackEffect.NONE));
+        addToBot(new ApplyPowerAction(m, p, new StrengthPower(m, -HuAmt), -HuAmt));
         if (!m.hasPower("Artifact")) {
-            this.addToBot(new ApplyPowerAction(m, p, new GainStrengthPower(m, HuAmt), HuAmt, true, AbstractGameAction.AttackEffect.NONE));
+            addToBot(new ApplyPowerAction(m, p, new GainStrengthPower(m, HuAmt), HuAmt));
         }
     }
 }

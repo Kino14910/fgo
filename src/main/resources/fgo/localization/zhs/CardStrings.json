@@ -458,7 +458,7 @@
   },
   "${modID}:EternalMemories": {
     "NAME": "希望之星",
-    "DESCRIPTION": "fgo:宝具牌 。 NL 获得2点 力量 。 NL 移除所有负面 状态 。 NL 获得 !M! 次 fgomaster:肃正防御 。 "
+    "DESCRIPTION": "fgo:宝具牌 。 NL 获得2点 力量 。 NL 移除所有负面 状态 。 NL 获得 !M! 次 fgo:肃正防御 。 "
   },
   "${modID}:BeautifulJourney": {
     "NAME": "超越边界的存在",
@@ -509,7 +509,7 @@
   },
   "${modID}:ElementaryMyDear": {
     "NAME": "这是常识",
-    "DESCRIPTION": "fgo:宝具牌 。 NL 在你的回合开始时，有 格挡 的敌人失去等于其 格挡 的生命并且给予其 !M! 层 易伤 ，然后去除所有敌人的 格挡 。"
+    "DESCRIPTION": "fgo:宝具牌 。 NL 在你的回合开始时，有 格挡 的敌人失去等于其 格挡 的生命并且给予其 !M! 层 易伤 。"
   },
   "${modID}:GreatRamNautilus": {
     "NAME": "吾将远征，鹦鹉螺的大冲角",
@@ -772,6 +772,6 @@
   },
   "${modID}:Coaching": {
     "NAME": "指导",
-    "DESCRIPTION": "获得 [E] [E] 。 消耗 。"
+    "DESCRIPTION": "获得 [E] [E] 。 NL  消耗 。"
   }
 }

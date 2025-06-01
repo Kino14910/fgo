@@ -39,6 +39,7 @@ import fgo.event.*;
 import fgo.monster.Emiya;
 import fgo.panel.CommandSpellPanel;
 import fgo.panel.FGOConfig;
+import fgo.panel.NobleDeck;
 import fgo.patches.Enum.FGOCardColor;
 import fgo.potions.BasePotion;
 import fgo.powers.NPRatePower;
@@ -149,7 +150,7 @@ public class FGOMod implements
         BaseMod.registerModBadge(badgeTexture, info.Name, GeneralUtils.arrToString(info.Authors), info.Description, new FGOConfig());
 
         //顶部宝具牌预览。
-        //BaseMod.addTopPanelItem(new CurrentNobleCards());
+        BaseMod.addTopPanelItem(new NobleDeck());
 
         if(config.getBool("enableEmiya")){
             BaseMod.addMonster(Emiya.ID, Emiya.NAME, () -> new MonsterGroup(new AbstractMonster[]{new Emiya()}));

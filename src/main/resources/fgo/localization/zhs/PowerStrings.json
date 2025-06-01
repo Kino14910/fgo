@@ -188,8 +188,7 @@
   "${modID}:PowerUpBoostPower": {
     "NAME": "宝具获得促进",
     "DESCRIPTIONS": [
-      "#y宝具牌 攻击伤害翻倍。",
-      "#y宝具牌 攻击伤害翻 #b",
+      "#y宝具牌 攻击伤害提高 #b",
       " 倍。"
     ]
   },
@@ -291,7 +290,7 @@
     "NAME": "无视格挡",
     "DESCRIPTIONS": [
       "在你的回合开始时，有 #y格挡 的敌人失去等于其 #y格挡 的生命并且给予其 #b",
-      " 层 #y易伤 ，然后去除所有敌人的 #y格挡 。"
+      " 层 #y易伤 。"
     ]
   },
   "${modID}:InvincibilityPower": {

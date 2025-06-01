@@ -24,6 +24,6 @@ public class Borrowingfrom extends FGOCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new FgoNpAction(Master.fgoNp / magicNumber));
+        addToBot(new FgoNpAction(Master.fgoNp));
     }
 }

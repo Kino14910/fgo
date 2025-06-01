@@ -32,11 +32,17 @@ public class NoblePhantasmSelectAction extends AbstractGameAction {
             } else {
                 for (AbstractCard card : AbstractDungeon.player.masterDeck.group) {
                     if (card.hasTag(CardTagsEnum.Noble_Phantasm)) {
+                        AbstractCard copy = card.makeCopy();
                         if (card.upgraded) {
-                            card.upgrade();
+                            copy.upgrade();
                         } 
-                        group.addToTop(card);
+                        group.addToTop(copy);
                     }
+                }
+                
+                if (group.isEmpty()) {
+                    this.isDone = true;
+                    return;
                 }
             }
 
@@ -55,11 +61,11 @@ public class NoblePhantasmSelectAction extends AbstractGameAction {
         ArrayList<AbstractCard> selectedCards = AbstractDungeon.gridSelectScreen.selectedCards;
         if (!selectedCards.isEmpty()) {
             AbstractCard selectedCard = selectedCards.get(0);
-            AbstractCard cStudy = selectedCard.makeCopy();
+            AbstractCard copy = selectedCard.makeCopy();
             if (selectedCard.upgraded || this.upgraded) {
-                cStudy.upgrade();
+                copy.upgrade();
             }
-            AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(cStudy, this.amount));
+            AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(copy, this.amount));
             selectedCards.clear();
         }
         this.tickDuration();

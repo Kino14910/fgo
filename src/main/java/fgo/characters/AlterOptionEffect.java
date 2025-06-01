@@ -16,18 +16,13 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.CampfireUI;
 import com.megacrit.cardcrawl.rooms.RestRoom;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
-import com.megacrit.cardcrawl.vfx.UpgradeShineEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
-import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
 import fgo.cards.noblecards.HollowHeartAlbion;
 import fgo.cards.noblecards.Unlimited;
 import fgo.patches.Enum.CardTagsEnum;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Map;
-import java.util.Random;
-
 import static fgo.FGOMod.makeID;
 
 public class AlterOptionEffect extends AbstractGameEffect {

@@ -5,8 +5,8 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import fgo.cards.FGOCard;
 import fgo.patches.Enum.FGOCardColor;
+import fgo.powers.EndOfADreamPower;
 import fgo.powers.PowerUpBoostPower;
-import fgo.powers.deprecated.EndOfADreamPower;
 import fgo.util.CardStats;
 
 public class EndOfADream extends FGOCard {
@@ -20,6 +20,7 @@ public class EndOfADream extends FGOCard {
     );
     public EndOfADream() {
         super(ID, INFO);
+        setMagic(1);
         setInnate(false, true);
     }
 

@@ -51,25 +51,25 @@ public class CommandSpellButton extends AbstractPanel {
     public void updatePositions() {
         float tmp;
         super.updatePositions();
-        this.bob.update();
-        if (!this.isHidden) {
-            this.hb.update();
-            this.updatePop();
+        bob.update();
+        if (!isHidden) {
+            hb.update();
+            updatePop();
         }
-        if (this.hb.hovered && (!AbstractDungeon.isScreenUp || AbstractDungeon.screen == AbstractDungeon.CurrentScreen.DISCARD_VIEW || AbstractDungeon.screen == AbstractDungeon.CurrentScreen.HAND_SELECT || AbstractDungeon.screen == AbstractDungeon.CurrentScreen.CARD_REWARD && AbstractDungeon.overlayMenu.combatPanelsShown)) {
+        if (hb.hovered && (!AbstractDungeon.isScreenUp || AbstractDungeon.screen == AbstractDungeon.CurrentScreen.DISCARD_VIEW || AbstractDungeon.screen == AbstractDungeon.CurrentScreen.HAND_SELECT || AbstractDungeon.screen == AbstractDungeon.CurrentScreen.CARD_REWARD && AbstractDungeon.overlayMenu.combatPanelsShown)) {
             AbstractDungeon.overlayMenu.hoveredTip = true;
             if (InputHelper.justClickedLeft) {
-                this.hb.clickStarted = true;
+                hb.clickStarted = true;
             }
         }
-        this.glowAlpha += Gdx.graphics.getDeltaTime() * 3.0f;
-        if (this.glowAlpha < 0.0f) {
-            this.glowAlpha *= -1.0f;
+        glowAlpha += Gdx.graphics.getDeltaTime() * 3.0f;
+        if (glowAlpha < 0.0f) {
+            glowAlpha *= -1.0f;
         }
-        this.glowColor.a = (tmp = MathUtils.cos(this.glowAlpha)) < 0.0f ? -tmp / 2.0f : tmp / 2.0f;
-        if (this.hb.clicked && AbstractDungeon.overlayMenu.combatPanelsShown && AbstractDungeon.getMonsters() != null && !AbstractDungeon.getMonsters().areMonstersDead() && !AbstractDungeon.player.isDead) {
-            this.hb.clicked = false;
-            this.hb.hovered = false;
+        glowColor.a = (tmp = MathUtils.cos(glowAlpha)) < 0.0f ? -tmp / 2.0f : tmp / 2.0f;
+        if (hb.clicked && AbstractDungeon.overlayMenu.combatPanelsShown && AbstractDungeon.getMonsters() != null && !AbstractDungeon.getMonsters().areMonstersDead() && !AbstractDungeon.player.isDead) {
+            hb.clicked = false;
+            hb.hovered = false;
             AbstractDungeon.dynamicBanner.hide();
             if (AbstractDungeon.player.hoveredCard != null) {
                 AbstractDungeon.player.releaseCard();
@@ -81,7 +81,7 @@ public class CommandSpellButton extends AbstractPanel {
             } else {
                 AbstractDungeon.previousScreen = null;
             }
-            this.chooseCommandSpell();
+            chooseCommandSpell();
         }
     }
 
@@ -98,45 +98,46 @@ public class CommandSpellButton extends AbstractPanel {
         } else {
             AbstractDungeon.effectList.add(new ThoughtBubble(p.dialogX, p.dialogY, 3.0f, TEXT[0], true));
         }
-//        if (this.hb.justHovered) {
+//        if (hb.justHovered) {
 //            CardCrawlGame.sound.playA("UI_HOVER", -0.4F);
 //        }
 //        if ((AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT) {
 //            TipHelper.renderGenericTip(1400.0f * Settings.xScale, Settings.HEIGHT - 256.0f * Settings.scale, orbString.NAME, orbString.DESCRIPTION[0] + orbString.DESCRIPTION[1] + orbString.DESCRIPTION[2]);
 //        }
-        this.hb.hovered = false;
+        hb.hovered = false;
         InputHelper.justClickedLeft = false;
     }
 
 
     private void updatePop() {
-        this.scale = MathHelper.scaleLerpSnap(this.scale, Settings.scale);
+        scale = MathHelper.scaleLerpSnap(scale, Settings.scale);
     }
 
     public void pop() {
-        this.scale = 1.75f * Settings.scale;
+        scale = 1.75f * Settings.scale;
     }
 
     @Override
     public void render(SpriteBatch sb) {
-        if (this.hb.hovered) {
-            this.scale = 1.2f * Settings.scale;
+        if (hb.hovered) {
+            scale = 1.2f * Settings.scale;
         }
-        sb.setColor(this.renderColor);
+        sb.setColor(renderColor);
         CommandSpellPanel.CommandSpell = ImageMaster.loadImage("fgo/images/ui/CommandSpell/CommandSpell" + CommandSpellPanel.commandSpellCount + ".png");
-        sb.draw(CommandSpellPanel.CommandSpell, current_x, current_y, 64.0F, 64.0F, 128.0F, 128.0F, this.scale, this.scale, 0.0F, 0, 0, 128, 128, false, false);
+        sb.draw(CommandSpellPanel.CommandSpell, current_x, current_y, 64.0F, 64.0F, 128.0F, 128.0F, scale, scale, 0.0F, 0, 0, 128, 128, false, false);
 
-        if (this.hb.hovered) {
+        if (hb.hovered) {
             CardCrawlGame.cursor.render(sb);
         }
 
-        if (!this.isHidden) {
-            this.hb.render(sb);
+        if (!isHidden) {
+            hb.render(sb);
         }
-        if (!this.isHidden && this.hb != null && this.hb.hovered && !AbstractDungeon.isScreenUp && AbstractDungeon.getMonsters() != null && !AbstractDungeon.getMonsters().areMonstersDead()) {
+        
+        if (!isHidden && hb != null && hb.hovered && !AbstractDungeon.isScreenUp && AbstractDungeon.getMonsters() != null && !AbstractDungeon.getMonsters().areMonstersDead()) {
             TipHelper.renderGenericTip(1400.0f * Settings.xScale, Settings.HEIGHT - 256.0f * Settings.scale, LABEL[0], MSG[0] + MSG[1] + MSG[2]);
         } else {
-            this.hb.hovered = false;
+            hb.hovered = false;
         }
     }
 

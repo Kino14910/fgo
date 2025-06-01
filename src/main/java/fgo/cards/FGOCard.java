@@ -14,67 +14,36 @@ public abstract class FGOCard extends BaseCard {
     public int star;
     public boolean isModified;
 
-    public FGOCard(String ID, CardStats INFO) {
-        super(ID, INFO);
-        this.baseNP = 0;
-        this.np = this.baseNP;
-        this.upgradedNP = false;
-        this.npUpgrade = 0;
-        this.baseStar = 0;
-        this.star = this.baseStar;
-        this.upgradedStar = false;
-        this.starUpgrade = 0;
+    private void initValues() {
+        np = baseNP = npUpgrade = 0;
+        upgradedNP = false;
+        star = baseStar = starUpgrade = 0; 
+        upgradedStar = false;
 
         setCustomVar("NP", baseNP, npUpgrade);
         setCustomVar("S", baseStar, starUpgrade);
+    }
+
+    public FGOCard(String ID, CardStats INFO) {
+        super(ID, INFO);
+        initValues();
     }
 
     public FGOCard(String ID, CardStats INFO, String img) {
         super(ID, INFO, img);
-        this.baseNP = 0;
-        this.np = this.baseNP;
-        this.upgradedNP = false;
-        this.npUpgrade = 0;
-        this.baseStar = 0;
-        this.star = this.baseStar;
-        this.upgradedStar = false;
-        this.starUpgrade = 0;
-
-        setCustomVar("NP", baseNP, npUpgrade);
-        setCustomVar("S", baseStar, starUpgrade);
+        initValues();
     }
 
     public FGOCard(String ID, int cost, AbstractCard.CardType cardType, AbstractCard.CardTarget target, AbstractCard.CardRarity rarity, AbstractCard.CardColor color) {
         super(ID, cost, cardType, target, rarity, color);
-        this.baseNP = 0;
-        this.np = this.baseNP;
-        this.upgradedNP = false;
-        this.npUpgrade = 0;
-        this.baseStar = 0;
-        this.star = this.baseStar;
-        this.upgradedStar = false;
-        this.starUpgrade = 0;
-
-        setCustomVar("NP", baseNP, npUpgrade);
-        setCustomVar("S", baseStar, starUpgrade);
+        initValues();
     }
 
     public FGOCard(String ID, int cost, AbstractCard.CardType cardType, AbstractCard.CardTarget target, AbstractCard.CardRarity rarity, AbstractCard.CardColor color, String img) {
         super(ID, cost, cardType, target, rarity, color, img);
-        this.baseNP = 0;
-        this.np = this.baseNP;
-        this.upgradedNP = false;
-        this.npUpgrade = 0;
-        this.baseStar = 0;
-        this.star = this.baseStar;
-        this.upgradedStar = false;
-        this.starUpgrade = 0;
-
-        setCustomVar("NP", baseNP, npUpgrade);
-        setCustomVar("S", baseStar, starUpgrade);
+        initValues();
     }
 
-    // 设置 NP 值
     protected final void setNP(int np) { setNP(np, npUpgrade); }
 
     protected final void setNP(int np, int npUpgrade) {
@@ -85,13 +54,11 @@ public abstract class FGOCard extends BaseCard {
         }
     }
 
-    // 设置 NP 升级
     protected final void setNPUpgrade(int npUpgrade) {
         this.npUpgrade = npUpgrade;
         this.upgradedNP = true;
     }
 
-    // 设置 star 值
     protected final void setStar(int star) { setStar(star, starUpgrade); }
 
     protected final void setStar(int star, int starUpgrade) {
@@ -102,7 +69,6 @@ public abstract class FGOCard extends BaseCard {
         }
     }
 
-    // 设置 star 升级
     protected final void setStarUpgrade(int starUpgrade) {
         this.starUpgrade = starUpgrade;
         this.upgradedStar = true;

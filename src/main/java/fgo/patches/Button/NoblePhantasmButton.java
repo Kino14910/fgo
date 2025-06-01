@@ -89,15 +89,15 @@ public class NoblePhantasmButton extends AbstractPanel {
     }
     public void chooseNobleCard() {
         AbstractPlayer p = AbstractDungeon.player;
-        if (Master.fgoNp >= 100 && !AbstractDungeon.player.hasPower(SealNPPower.POWER_ID)) {
+        if(p.hasPower(SealNPPower.POWER_ID)){
+            AbstractDungeon.effectList.add(new ThoughtBubble(p.dialogX, p.dialogY, 3.0f, TEXT[0], true));
+        } else if (Master.fgoNp >= 100) {
             addToBot(new FgoNpAction(-300));
             boolean isUpgraded = Master.fgoNp >= 200;
             int amount = Master.fgoNp == 300 ? 2 : 1;
             addToBot(new NoblePhantasmSelectAction(isUpgraded, amount));
 
             CardCrawlGame.sound.playA("UI_CLICK_1", -0.1F);
-        } else if(AbstractDungeon.player.hasPower(SealNPPower.POWER_ID)){
-            AbstractDungeon.effectList.add(new ThoughtBubble(p.dialogX, p.dialogY, 3.0f, TEXT[0], true));
         }
 //        if (hb.justHovered) {
 //            CardCrawlGame.sound.playA("UI_HOVER", -0.4F);

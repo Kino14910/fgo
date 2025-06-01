@@ -25,7 +25,7 @@ public class PowerUpBoostPower extends BasePower {
     @Override
     public float atDamageGive(float damage, DamageInfo.DamageType type, AbstractCard card) {
         if (card.hasTag(CardTagsEnum.Noble_Phantasm)) {
-            return this.atDamageGive(damage, type);
+            return atDamageGive(damage, type);
         }
 
         return damage;
@@ -33,16 +33,13 @@ public class PowerUpBoostPower extends BasePower {
 
     @Override
     public float atDamageGive(float damage, DamageInfo.DamageType type) {
-        return type == DamageInfo.DamageType.NORMAL ? damage * (1.0F + this.amount) : damage;
+        // return type == DamageInfo.DamageType.NORMAL ? damage * (1.0F + amount) : damage;
+        return damage * (1.0F + amount);
     }
 
     @Override
     public void updateDescription() {
-        if (this.amount <= 1) {
-            this.description = DESCRIPTIONS[0];
-        } else {
-            this.description = DESCRIPTIONS[1] + this.amount + DESCRIPTIONS[2];
-        }
+        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
     }
 
     

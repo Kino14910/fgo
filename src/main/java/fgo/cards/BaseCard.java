@@ -71,21 +71,21 @@ public abstract class BaseCard extends CustomCard {
     public BaseCard(String ID, int cost, CardType cardType, CardTarget target, CardRarity rarity, CardColor color,
             String cardImage) {
         super(ID, getName(ID), cardImage, cost, getInitialDescription(ID), cardType, color, rarity, target);
-        this.cardStrings = CardCrawlGame.languagePack.getCardStrings(cardID);
-        this.originalName = cardStrings.NAME;
+        cardStrings = CardCrawlGame.languagePack.getCardStrings(cardID);
+        originalName = cardStrings.NAME;
 
-        this.baseCost = cost;
+        baseCost = cost;
 
-        this.upgradesDescription = cardStrings.UPGRADE_DESCRIPTION != null;
-        this.upgradeCost = false;
-        this.upgradeDamage = false;
-        this.upgradeBlock = false;
-        this.upgradeMagic = false;
+        upgradesDescription = cardStrings.UPGRADE_DESCRIPTION != null;
+        upgradeCost = false;
+        upgradeDamage = false;
+        upgradeBlock = false;
+        upgradeMagic = false;
 
-        this.costUpgrade = cost;
-        this.damageUpgrade = 0;
-        this.blockUpgrade = 0;
-        this.magicUpgrade = 0;
+        costUpgrade = cost;
+        damageUpgrade = 0;
+        blockUpgrade = 0;
+        magicUpgrade = 0;
     }
 
     private static String getName(String ID) {
@@ -526,11 +526,7 @@ public abstract class BaseCard extends CustomCard {
                 this.upgradeMagicNumber(magicUpgrade);
 
             for (LocalVarInfo var : cardVariables.values()) {
-                if (var.upgrade != 0) {
-                    var.base += var.upgrade;
-                    var.value = var.base;
-                    var.upgraded = true;
-                }
+                upgradeCustomVar(var);
             }
 
             if (baseExhaust ^ upgExhaust)
@@ -546,6 +542,35 @@ public abstract class BaseCard extends CustomCard {
                 this.selfRetain = upgRetain;
 
             this.initializeDescription();
+        }
+    }
+
+    
+    protected void upgradeCustomVar(String key) {
+        LocalVarInfo var = cardVariables.get(key);
+        if (var == null) {
+            throw new NullPointerException("Custom variable with key " + key + " does not exist in " + getClass().getName());
+        }
+        upgradeCustomVar(var, var.upgrade);
+    }
+
+    protected void upgradeCustomVar(String key, int amount) {
+        LocalVarInfo var = cardVariables.get(key);
+        if (var == null) {
+            throw new NullPointerException("Custom variable with key " + key + " does not exist in " + getClass().getName());
+        }
+        upgradeCustomVar(var, amount);
+    }
+
+    protected void upgradeCustomVar(LocalVarInfo var) {
+        upgradeCustomVar(var, var.upgrade);
+    }
+
+    protected void upgradeCustomVar(LocalVarInfo var, int amt) {
+        if (amt != 0) {
+            var.base += amt;
+            var.value = var.base;
+            var.upgraded = true;
         }
     }
 

@@ -4,6 +4,7 @@ import basemod.abstracts.CustomPlayer;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -75,6 +76,14 @@ public class Master extends CustomPlayer{
                 new EnergyManager(3)
         );
     }
+
+    // public void setNP(int value) {
+    //     fgoNp = MathUtils.clamp(value, 0, 300);
+    // }
+
+    // public int getNP() {
+    //     return fgoNp;
+    // }
 
 
     @Override

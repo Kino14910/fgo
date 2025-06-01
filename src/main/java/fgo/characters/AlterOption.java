@@ -6,7 +6,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.MathHelper;
 import com.megacrit.cardcrawl.ui.campfire.AbstractCampfireOption;
-import fgo.characters.AlterOptionEffect;
 import basemod.ReflectionHacks;
 
 import static fgo.FGOMod.makeID;

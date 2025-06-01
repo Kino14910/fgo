@@ -60,7 +60,7 @@ public abstract class FateMagineerCard extends FGOCard implements CustomCardPort
         portraitLayers512.add(new RenderImageLayer(TextureLoader.getTexture("fgo/images/NobleResources/512/bg_fullportrait_inner_shadow.png")));
         portraitLayers512.add(improvementSlotsPanel512);
 
-        switch (this.type) {
+        switch (type) {
             case ATTACK:
                 portraitLayers512.add(new RenderImageLayer(TextureLoader.getTexture("fgo/images/NobleResources/512/bg_attack_fullportait_gray.png")));
                 break;
@@ -83,7 +83,7 @@ public abstract class FateMagineerCard extends FGOCard implements CustomCardPort
         portraitLayers1024.add(new RenderImageLayer(TextureLoader.getTexture("fgo/images/NobleResources/1024/bg_fullportrait_inner_shadow.png")));
         portraitLayers1024.add(improvementSlotsPanel1024);
 
-        switch (this.type) {
+        switch (type) {
             case ATTACK:
                 portraitLayers1024.add(new RenderImageLayer(TextureLoader.getTexture("fgo/images/NobleResources/1024/bg_attack_fullportait_gray.png")));
                 break;
@@ -108,9 +108,9 @@ public abstract class FateMagineerCard extends FGOCard implements CustomCardPort
     }
 
     protected void generateBetaArt() {
-        //logger.info(this.cardID+".generateBetaArt()");
-        cardArtLayers512 = BetaPortraitGenerator.generate(this.cardID, false);
-        cardArtLayers1024 = BetaPortraitGenerator.generate(this.cardID, true);
+        //logger.info(cardID+".generateBetaArt()");
+        cardArtLayers512 = BetaPortraitGenerator.generate(cardID, false);
+        cardArtLayers1024 = BetaPortraitGenerator.generate(cardID, true);
     }
 
     public void addCardArtLayers512(ArrayList<RenderLayer> portraitLayers) {
