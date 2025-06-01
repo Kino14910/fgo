@@ -152,7 +152,7 @@ public class FGOMod implements
         BaseMod.registerModBadge(badgeTexture, info.Name, GeneralUtils.arrToString(info.Authors), info.Description, new FGOConfig());
 
         //顶部宝具牌预览。
-        BaseMod.addTopPanelItem(new NobleDeck());
+        // BaseMod.addTopPanelItem(new NobleDeck());
 
         if(config.getBool("enableEmiya")){
             BaseMod.addMonster(Emiya.ID, Emiya.NAME, () -> new MonsterGroup(new AbstractMonster[]{new Emiya()}));

@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import fgo.action.FgoNpAction;
 import fgo.panel.CommandSpellPanel;
+import fgo.patches.Enum.ThmodClassEnum;
 import fgo.powers.*;
 import javassist.CtBehavior;
 
@@ -36,7 +37,8 @@ public class RevivePatch {
 
             if (CommandSpellPanel.commandSpellCount == 3
                     && AbstractDungeon.currMapNode != null
-                    && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
+                    && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT
+                    && AbstractDungeon.player.chosenClass == ThmodClassEnum.MASTER_CLASS) {
                 CommandSpellPanel.commandSpellCount = 0;
                 addToBot(new FgoNpAction(300));
                 addToBot(new HealAction(p, p, p.maxHealth));
