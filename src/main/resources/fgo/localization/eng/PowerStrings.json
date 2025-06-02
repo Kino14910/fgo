@@ -580,13 +580,6 @@
       " damage back and you gain #b10 Stars."
     ]
   },
-  "${modID}:HugeScalePower": {
-    "NAME": "Infinite Growth",
-    "DESCRIPTIONS": [
-      "At the start of each turn, gain #b",
-      " #yBlock and #yGrowth."
-    ]
-  },
   "${modID}:InfiniteGrowthPower": {
     "NAME": "Growth",
     "DESCRIPTIONS": [

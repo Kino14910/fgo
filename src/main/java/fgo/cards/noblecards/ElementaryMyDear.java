@@ -22,9 +22,8 @@ public class ElementaryMyDear extends AbsNoblePhantasmCard {
     }
 
 
-
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ApplyPowerAction(p, p, new IgnoreDefensePower(p, this.magicNumber), this.magicNumber));
+        addToBot(new ApplyPowerAction(p, p, new IgnoreDefensePower(p, magicNumber)));
     }
 }

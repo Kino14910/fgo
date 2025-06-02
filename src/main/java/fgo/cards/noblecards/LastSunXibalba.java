@@ -35,25 +35,25 @@ public class LastSunXibalba extends AbsNoblePhantasmCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
             if (mo != null) {
-                this.addToBot(new VFXAction(new WeightyImpactEffect(mo.hb.cX, mo.hb.cY)));
+                addToBot(new VFXAction(new WeightyImpactEffect(mo.hb.cX, mo.hb.cY)));
             }
-            this.addToBot(new WaitAction(0.8F));
+            addToBot(new WaitAction(0.8F));
         }
 
         for(int i = 0; i < 5; ++i) {
-            this.addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+            addToBot(new DamageAllEnemiesAction(p, multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.BLUNT_HEAVY));
         }
 
         /*for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-            this.addToBot(new ApplyPowerAction(mo, p, new BuffBlockPower(mo, 1), 1));
+            addToBot(new ApplyPowerAction(mo, p, new BuffBlockPower(mo, 1), 1));
         }*/
 
         if (Settings.FAST_MODE) {
-            this.addToBot(new VFXAction(p, new FlameBarrierEffect(p.hb.cX, p.hb.cY), 0.1F));
+            addToBot(new VFXAction(p, new FlameBarrierEffect(p.hb.cX, p.hb.cY), 0.1F));
         } else {
-            this.addToBot(new VFXAction(p, new FlameBarrierEffect(p.hb.cX, p.hb.cY), 0.5F));
+            addToBot(new VFXAction(p, new FlameBarrierEffect(p.hb.cX, p.hb.cY), 0.5F));
         }
 
-        this.addToBot(new ApplyPowerAction(p, p, new StarPower(p, star)));
+        addToBot(new ApplyPowerAction(p, p, new StarPower(p, star)));
     }
 }

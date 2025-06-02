@@ -16,6 +16,7 @@ public class BridalSpinWheel extends AbsNoblePhantasmCard {
 
     public BridalSpinWheel() {
         super(ID,CardType.POWER, CardTarget.SELF);
+        setMagic(3, 1);
         setStar(10, 10);
         setExhaust();
 
@@ -24,10 +25,9 @@ public class BridalSpinWheel extends AbsNoblePhantasmCard {
     }
 
 
-
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new GainEnergyAction(4));
-        this.addToBot(new ApplyPowerAction(p, p, new StarPower(p, star)));
+        addToBot(new GainEnergyAction(magicNumber));
+        addToBot(new ApplyPowerAction(p, p, new StarPower(p, star)));
     }
 }

@@ -31,8 +31,8 @@ public class HollowHeartAlbion extends AbsNoblePhantasmCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new DamageAllEnemiesAction(p, this.multiDamage, DamageInfo.DamageType.HP_LOSS, AbstractGameAction.AttackEffect.FIRE));
-        this.addToBot(new ApplyPowerAction(p, p, new StarPower(p, star)));
+        addToBot(new DamageAllEnemiesAction(p, multiDamage, DamageInfo.DamageType.HP_LOSS, AbstractGameAction.AttackEffect.FIRE));
+        addToBot(new ApplyPowerAction(p, p, new StarPower(p, star)));
     }
 
 

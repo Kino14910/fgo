@@ -25,12 +25,13 @@ public class BeautifulJourney extends AbsNoblePhantasmCard {
         cardArtLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH_P)));
     }
 
+
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-        for (AbstractMonster m2 : AbstractDungeon.getCurrRoom().monsters.monsters) {
-            if (!m2.isDeadOrEscaped()) {
-                this.addToBot(new FgoNpAction(np));
+        addToBot(new DamageAllEnemiesAction(p, multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+        for (AbstractMonster monster : AbstractDungeon.getCurrRoom().monsters.monsters) {
+            if (!monster.isDeadOrEscaped()) {
+                addToBot(new FgoNpAction(np));
             }
         }
     }

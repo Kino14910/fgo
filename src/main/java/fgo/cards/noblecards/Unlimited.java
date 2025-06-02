@@ -30,20 +30,14 @@ public class Unlimited extends AbsNoblePhantasmCard {
     }
 
 
-
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.topLevelEffects.add(new FadeWipeParticle());
-        this.addToBot(new WaitFgoAction(1.0F));
-        this.addToBot(new VFXAction(new ChangeSceneEffect(ImageMaster.loadImage("fgo/images/vfx_master/UnlimitedBg.png"))));
+        addToBot(new WaitFgoAction(1.0F));
+        addToBot(new VFXAction(new ChangeSceneEffect(ImageMaster.loadImage("fgo/images/vfx_master/UnlimitedBg.png"))));
         CardCrawlGame.music.silenceTempBgmInstantly();
         CardCrawlGame.music.silenceBGMInstantly();
         AbstractDungeon.getCurrRoom().playBgmInstantly("UBW_Extended.mp3");
-        for(int i = 0; i < this.magicNumber; ++i) {
-            AbstractCard c = AbstractDungeon.returnTrulyRandomCardInCombat(AbstractCard.CardType.ATTACK).makeCopy();
-            c.setCostForTurn(0);
-            this.addToBot(new MakeTempCardInHandAction(c, 1, true));
-        }
-        this.addToBot(new ApplyPowerAction(p, p, new UnlimitedPower(p, this.magicNumber), this.magicNumber));
+        addToBot(new ApplyPowerAction(p, p, new UnlimitedPower(p, magicNumber)));
     }
 }

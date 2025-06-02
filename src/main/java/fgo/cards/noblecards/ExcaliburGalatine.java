@@ -24,8 +24,8 @@ public class ExcaliburGalatine extends AbsNoblePhantasmCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ApplyPowerAction(p, p, new SunlightPower(p, 3), 3));
-        this.addToBot(new ApplyPowerAction(p, p, new VigorPower(p, this.magicNumber), this.magicNumber));
-        //this.addToBot(new ApplyPowerAction(p, p, new CriticalDamageUpPower(p, 50), 50));
+        addToBot(new ApplyPowerAction(p, p, new SunlightPower(p, 3)));
+        addToBot(new ApplyPowerAction(p, p, new VigorPower(p, magicNumber)));
+        //addToBot(new ApplyPowerAction(p, p, new CriticalDamageUpPower(p, 50)));
     }
 }

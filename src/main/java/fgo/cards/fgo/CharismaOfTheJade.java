@@ -18,14 +18,14 @@ public class CharismaOfTheJade extends FGOCard {
     private static final CardStats INFO = new CardStats(
             FGOCardColor.FGO,
             CardType.ATTACK,
-            CardRarity.RARE,
+            CardRarity.UNCOMMON,
             CardTarget.SELF,
-            3
+            2
     );
 
     public CharismaOfTheJade() {
         super(ID, INFO);
-        setDamage(8);
+        setDamage(7);
         setMagic(3, 1);
     }
 
@@ -40,21 +40,6 @@ public class CharismaOfTheJade extends FGOCard {
             addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
         }
         
-    }
-    
-    @Override
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        boolean canUse = super.canUse(p, m);
-        if (!canUse) {
-            return false;
-        } 
-        
-        if (!p.hasPower(StarPower.POWER_ID) || p.getPower(StarPower.POWER_ID).amount < 10) {
-            cantUseMessage = cardStrings.EXTENDED_DESCRIPTION[0];
-            return false;
-        }
-        
-        return canUse;
     }
 
     @Override

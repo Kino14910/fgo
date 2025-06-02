@@ -46,8 +46,7 @@
   },
   "${modID}:BlessedRegenerate": {
     "NAME": "幸福的再生",
-    "DESCRIPTION": "获得 [E] 。 NL 抽 !M! 张牌。",
-    "UPGRADE_DESCRIPTION": "获得 [E] 。 NL 抽 !M! 张牌。"
+    "DESCRIPTION": "获得 [E] 。 NL 抽 !M! 张牌。"
   },
   "${modID}:SionSkill": {
     "NAME": "预测演算",
@@ -56,11 +55,6 @@
   "${modID}:HolyShroud": {
     "NAME": "圣骸布",
     "DESCRIPTION": "抽1张牌。 NL 下一回合获得 !B! 点 格挡 。"
-  },
-  "${modID}:IntoxicatedMeal": {
-    "NAME": "毒之食馔",
-    "DESCRIPTION": "给予 !M! 层 中毒 。 NL 给予 !M! 层 fgo:防御破坏 。",
-    "UPGRADE_DESCRIPTION": "给予所有敌人 !M! 层 中毒 和 !M! 层 fgo:防御破坏 。"
   },
   "${modID}:QueensCovenant": {
     "NAME": "女王的契约",
@@ -87,12 +81,6 @@
     "NAME": "民之睿智",
     "DESCRIPTION": "恢复 !M! 点生命。 NL 移除你身上的所有负面 状态 。",
     "UPGRADE_DESCRIPTION": "恢复 !M! 点生命。 NL 获得 !NP! % fgo:宝具值 。 NL 移除你身上的所有负面 状态 。"
-  },
-  "${modID}:ComeOn": {
-    "NAME": "热情",
-    "DESCRIPTION": "将一名敌人的 fgo:灼烧 层数翻倍。",
-    "UPGRADE_DESCRIPTION": "将一名敌人的 fgo:灼烧 层数变为三倍。",
-    "FLAVOR": "测试画风可以更改。"
   },
   "${modID}:NFFSpecial": {
     "NAME": "NFF尖塔特别服务",
@@ -169,11 +157,6 @@
     "DESCRIPTION": "获得 !M! 点 活力 。 NL 在本场战斗中 升级 手牌中的一张牌。",
     "UPGRADE_DESCRIPTION": "获得 !M! 点 活力 。 NL 在本场战斗中 升级 手牌中的所有牌。"
   },
-  "${modID}:CurseHarmony": {
-    "NAME": "兔人的诅咒",
-    "DESCRIPTION": "在每回合结束时，随机给予敌人你 fgo:诅呪 层数 !M! 倍的 中毒 。",
-    "UPGRADE_DESCRIPTION": "在每回合结束时，随机给予敌人你 fgo:诅呪 层数 !M! 倍的 中毒 。"
-  },
   "${modID}:GodsExecution": {
     "NAME": "封神执行",
     "DESCRIPTION": "造成 !D! 点伤害。 NL 如果你有负面状态 ， NL 获得 [E] 并且 NL 抽1张牌。"
@@ -235,8 +218,7 @@
   },
   "${modID}:TaisuiSMisfortune": {
     "NAME": "血染的皇子",
-    "DESCRIPTION": "固有 。获得 [E] 。 NL 给予所有敌人在死亡时你获得 [E] [E] 的状态。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "固有 。获得 [E] 。 NL 给予所有敌人在死亡时你获得 [E] [E] [E] 的状态。 NL 消耗 。"
+    "DESCRIPTION": "{@@}固有 。获得 [E] 。 NL 给予所有敌人在死亡时你获得 {!M!|repeat= [E]} 的状态。 NL 消耗 。"
   },
   "${modID}:Executioner": {
     "NAME": "刽子手",
@@ -261,14 +243,6 @@
     "NAME": "魔眼",
     "DESCRIPTION": "造成 !D! 点伤害。 NL 给予 !M! 层 fgo:诅呪 。 NL 敌人 fgo:无法行动 一回合。 NL 消耗 。"
   },
-  "${modID}:HugeScale": {
-    "NAME": "巨型规模",
-    "DESCRIPTION": "在你的回合开始时， NL 获得 !M! 点 格挡 和 fgo:增殖 。将一张 *幼儿退化 加入你的手牌。"
-  },
-  "${modID}:InfantileRegression": {
-    "NAME": "幼儿退化",
-    "DESCRIPTION": "保留 。 NL 移除 fgo:增殖 ，每移除 !M! 点就获得1点能量。"
-  },
   "${modID}:ChildrenSHero": {
     "NAME": "孩子们的英雄",
     "DESCRIPTION": "将你本回合打出的上一张牌的 !M! 张复制品放入你的手牌中。 NL 消耗 。",
@@ -283,8 +257,7 @@
   },
   "${modID}:JewelOfFourteen": {
     "NAME": "岩窟王",
-    "DESCRIPTION": "增加 *喝彩之焰 直到你的手牌满。",
-    "UPGRADE_DESCRIPTION": "增加 *喝彩之焰+ 直到你的手牌满。"
+    "DESCRIPTION": "{@@}增加 *喝彩之焰{!Upgrades!|1=+} 直到你的手牌满。"
   },
   "${modID}:FlamesofApplause": {
     "NAME": "喝彩之焰",
@@ -337,7 +310,7 @@
   },
   "${modID}:CurtainoftheNight": {
     "NAME": "夜之帷幕",
-    "DESCRIPTION": "将弃牌堆中的一张牌放入你的手牌，并将这张牌 升级 。",
+    "DESCRIPTION": "{@@}将弃牌堆中的{!M!|1=一|@= !M! }张牌放入你的手牌，并将这张牌 升级 。",
     "UPGRADE_DESCRIPTION": "将弃牌堆中的 !M! 张牌放入你的手牌，并将这些牌 升级 。"
   },
   "${modID}:TeachingsoftheEternal": {
@@ -350,7 +323,7 @@
   },
   "${modID}:GraceUnexpectedBirth": {
     "NAME": "不被祝福的诞生",
-    "DESCRIPTION": "获得 !NP! % fgo:宝具值 。 NL 你在这个回合内 NL 无法获得 fgo:宝具牌 。 NL 消耗 。"
+    "DESCRIPTION": "获得 !NP! % fgo:宝具值 。 NL 你在这个回合内 NL 无法获得 fgo:宝具 。 NL  消耗 。"
   },
   "${modID}:SongOfThePoet": {
     "NAME": "歌仙的诗歌",
@@ -373,8 +346,7 @@
   },
   "${modID}:GoddessMetamorphosisBeast": {
     "NAME": "女神变生（兽）",
-    "DESCRIPTION": "虚无 。 NL 每当你造成一次攻击伤害时，就给予1层 中毒 、 fgo:诅呪 。",
-    "UPGRADE_DESCRIPTION": "每当你造成一次攻击伤害时，就给予1层 中毒 、 fgo:诅呪 。"
+    "DESCRIPTION": "{@@}{!Upgrades!|0=虚无 。 NL }每当你造成一次攻击伤害时，就给予1层 中毒 、 fgo:诅呪 。"
   },
   "${modID}:AnimalDialogue": {
     "NAME": "动物会话",
@@ -392,8 +364,7 @@
   },
   "${modID}:DesiresSalvation": {
     "NAME": "祈祷救济之人",
-    "DESCRIPTION": "在你的回合开始时，获得 !NP! % fgo:宝具值 。",
-    "UPGRADE_DESCRIPTION": "固有 。 NL 在你的回合开始时，获得 !NP! % fgo:宝具值 。"
+    "DESCRIPTION": "{@@}{!Upgrades!|1=固有 。 NL }在你的回合开始时，获得 !NP! % fgo:宝具值 。"
   },
   "${modID}:FacelessMoon": {
     "NAME": "无貌之月",
@@ -456,164 +427,6 @@
     "NAME": "呪灾",
     "DESCRIPTION": "不能被打出 。 NL 抽到这张牌时给予你和所有敌人 !M! 层 fgo:诅呪 。 NL 虚无 。"
   },
-  "${modID}:EternalMemories": {
-    "NAME": "希望之星",
-    "DESCRIPTION": "fgo:宝具牌 。 NL 获得2点 力量 。 NL 移除所有负面 状态 。 NL 获得 !M! 次 fgo:肃正防御 。 "
-  },
-  "${modID}:BeautifulJourney": {
-    "NAME": "超越边界的存在",
-    "DESCRIPTION": "fgo:宝具牌 。 NL 对所有敌人造成 !D! 点伤害。每有一名敌人，就获得 !NP! % fgo:宝具值 。"
-  },
-  "${modID}:Failnaught": {
-    "NAME": "痛哭幻奏",
-    "DESCRIPTION": "fgo:宝具牌 。 NL 去除敌人的 格挡 和 人工制品 。 NL 造成 !D! 点伤害。"
-  },
-  "${modID}:TsumukariMuramasa": {
-    "NAME": "无元剑制",
-    "DESCRIPTION": "fgo:宝具牌 。 NL 对所有敌人造成 !D! 点伤害6次，失去所有 力量 。"
-  },
-  "${modID}:ImitationGodForce": {
-    "NAME": "伪·军神五兵",
-    "DESCRIPTION": "fgo:宝具牌 。 NL 对所有敌人造成 !D! 点伤害 !M! 次，给予 !M! 层 虚弱 。",
-    "EXTENDED_DESCRIPTION": [
-      "咴咴！"
-    ]
-  },
-  "${modID}:BridalSpinWheel": {
-    "NAME": "赠予新娘的纺车",
-    "DESCRIPTION": "fgo:宝具牌 。 NL 获得 [E] [E] [E] [E] 。 NL 获得 !S! 颗 fgo:暴击星 。"
-  },
-  "${modID}:IraLupus": {
-    "NAME": "狂暴少女狼",
-    "DESCRIPTION": "fgo:宝具牌 。 NL 使敌人失去 !D! 点生命。 NL 给予 !M! 层 易伤 。"
-  },
-  "${modID}:LostLonginus": {
-    "NAME": "选定之枪",
-    "DESCRIPTION": "fgo:宝具牌 。 NL 对所有敌人造成 !D! 点伤害，移除 *坚不可摧 。"
-  },
-  "${modID}:WickerMan": {
-    "NAME": "灼烧殆尽的炎笼",
-    "DESCRIPTION": "fgo:宝具牌 。 NL 对所有敌人造成 !D! 点伤害，给予 !M! 层 fgo:灼烧 和 易伤 。"
-  },
-  "${modID}:ExcaliburGalatine": {
-    "NAME": "轮转胜利之剑",
-    "DESCRIPTION": "fgo:宝具牌 。 NL 获得 fgo:阳光照射 3回合。 NL 获得 !M! 点 活力 。"
-  },
-  "${modID}:Overload": {
-    "NAME": "过重湖光",
-    "DESCRIPTION": "fgo:宝具牌 。 NL 去除敌人的 格挡 值。 NL 造成 !D! 点伤害。 NL 给予 !M! 层 fgo:防御破坏 。"
-  },
-  "${modID}:GardenOfAvalon": {
-    "NAME": "永世隔绝的理想乡",
-    "DESCRIPTION": "fgo:宝具牌 。 NL 在你的回合开始时 NL 获得 !M! 点 格挡 ， NL 获得 !M! % fgo:宝具值 ， NL 获得 !M! 颗 fgo:暴击星 。"
-  },
-  "${modID}:ElementaryMyDear": {
-    "NAME": "这是常识",
-    "DESCRIPTION": "fgo:宝具牌 。 NL 在你的回合开始时，有 格挡 的敌人失去等于其 格挡 的生命并且给予其 !M! 层 易伤 。"
-  },
-  "${modID}:GreatRamNautilus": {
-    "NAME": "吾将远征，鹦鹉螺的大冲角",
-    "DESCRIPTION": "fgo:宝具牌 。 NL 造成 !D! 点伤害。 NL fgo:水边 ：伤害提高50%。 NL fgo:水边 ：获得 [E] 。"
-  },
-  "${modID}:LieLikeVortigern": {
-    "NAME": "与彼方同坠的梦之瞳眸",
-    "DESCRIPTION": "fgo:宝具牌 。 NL 对所有敌人造成 !D! 点伤害，失去2点 力量 ， NL 给予 !M! 层 无实体 。 NL 获得 !M! 层 无实体 。"
-  },
-  "${modID}:RoadlessCamelot": {
-    "NAME": "业已无法抵达的理想乡",
-    "DESCRIPTION": "fgo:宝具牌 。 NL 对所有敌人造成 !D! 点伤害3次。 NL 你打出的下一张 fgo:宝具牌 将被打出两次。",
-    "UPGRADE_DESCRIPTION": "fgo:宝具牌 。 NL 对所有敌人造成 !D! 点伤害3次。 NL 你打出的下 !M! 张 fgo:宝具牌 将被打出两次。"
-  },
-  "${modID}:BlackdogGalatine": {
-    "NAME": "捕食日轮之角",
-    "DESCRIPTION": "fgo:宝具牌 。 NL 对所有敌人造成 !D! 点伤害5次。 NL 获得 !M! 层 *多层护甲 。"
-  },
-  "${modID}:FetchFailnaught": {
-    "NAME": "痛幻哭奏",
-    "DESCRIPTION": "fgo:宝具牌 。 NL 造成 !D! 点伤害。 NL 敌人每有一层 fgo:诅呪 伤害就提高10%。 NL 给予 !M! 层 fgo:诅呪 。 NL 将敌人的 fgo:诅呪 层数翻倍。"
-  },
-  "${modID}:InnocenceAroundight": {
-    "NAME": "尚未知晓的无垢湖光",
-    "DESCRIPTION": "fgo:宝具牌 。 NL 造成 !D! 点伤害。 NL 获得 !M! 层 fgo:黄金律 。 NL 将一张 *光之地平线+ 放入你的抽牌堆。"
-  },
-  "${modID}:RayHorizon": {
-    "NAME": "光之地平线",
-    "DESCRIPTION": "获得 !NP! % fgo:宝具值 。 NL 阻止本回合你受到的所有攻击。 NL 下一张 fgo:宝具牌 固定为 *无人知晓的无垢搏动 。"
-  },
-  "${modID}:HollowHeartAlbion": {
-    "NAME": "无人知晓的无垢搏动",
-    "DESCRIPTION": "fgo:宝具牌 。 NL 所有敌人失去 !D! 点生命。 NL 获得 !S! 颗 fgo:暴击星 。"
-  },
-  "${modID}:Sevendrive": {
-    "NAME": "79式掷祸大社",
-    "DESCRIPTION": "fgo:宝具牌 。 NL 对所有敌人造成 !D! 点伤害8次。 NL 获得 !NP! % fgo:宝具值 。"
-  },
-  "${modID}:Excalibur": {
-    "NAME": "誓约胜利之剑",
-    "DESCRIPTION": "fgo:宝具牌 。 NL 对所有敌人造成 !D! 点伤害。 NL 获得 !NP! % fgo:宝具值 。"
-  },
-  "${modID}:Camelot": {
-    "NAME": "理想之城",
-    "DESCRIPTION": "fgo:宝具牌 。 NL 获得 !B! 点 格挡 。 NL 获得2点 力量 。 NL 在你的回合结束时，获得 !M! 点 格挡 。"
-  },
-  "${modID}:EnferChateaudIf": {
-    "NAME": "虎啊，煌煌燎燃",
-    "DESCRIPTION": "fgo:宝具牌 。 NL 在你没有 *羽翼之靴 时，获得 *羽翼之靴 。",
-    "FLAVOR": "这张牌升级没有效果。 NL 在你有羽翼之靴时，这张牌不会出现在宝具选择界面。"
-  },
-  "${modID}:Desterrennacht": {
-    "NAME": "星月夜",
-    "DESCRIPTION": "fgo:宝具牌 。 NL 给予所有敌人 !M! 层 fgo:恐怖 。 NL 获得2点 力量 和50% fgo:暴击威力 。 NL 每回合获得10颗 fgo:暴击星 。"
-  },
-  "${modID}:LaPucelle": {
-    "NAME": "红莲圣女",
-    "DESCRIPTION": "fgo:宝具牌 。 NL 造成 !D! 点伤害。 NL 给予伤害一半的 fgo:灼烧 。 NL 在你的抽牌堆中加入一张 *灼伤+ 。"
-  },
-  "${modID}:Shishifunjin": {
-    "NAME": "机关外法·狮子奋迅",
-    "DESCRIPTION": "fgo:宝具牌 。 NL 使 fgo:无法行动 的敌人失去最大生命的 !M! %。"
-  },
-  "${modID}:Fragarach": {
-    "NAME": "斩剜战神之剑",
-    "DESCRIPTION": "fgo:宝具牌 。 NL 在本回合，每当你被攻击时，对攻击者造成 !D! 点伤害，并且你获得10颗 fgo:暴击星 。"
-  },
-  "${modID}:LastSunXibalba": {
-    "NAME": "星，自宇宙降临",
-    "DESCRIPTION": "fgo:宝具牌 。 NL 对所有敌人造成 !D! 点伤害5次。 NL 获得 !S! 颗 fgo:暴击星 。",
-    "FLAVOR": "在你有boss遗物“Archetype ORT”时才会出现在宝具选择界面。"
-  },
-  "${modID}:MahaPralaya": {
-    "NAME": "裁定归灭之回剑",
-    "DESCRIPTION": "fgo:宝具牌 。 NL 对所有敌人造成 !D! 点伤害5次。 NL 额外造成所有敌人总负面 状态 种类的伤害。"
-  },
-  "${modID}:KurKigalIrkalla": {
-    "NAME": "灵峰踏抱冥府之鞴",
-    "DESCRIPTION": "fgo:宝具牌 。 NL 对所有敌人造成 !D! 点伤害，没有 *飞行 状态的敌人额外失去10%最大生命。",
-    "EXTENDED_DESCRIPTION": [
-      " NL 获得3点 力量 。 NL 获得3层 人工制品 。"
-    ]
-  },
-  "${modID}:ParadisChateaudIf": {
-    "NAME": "星啊，往赴辉途",
-    "DESCRIPTION": "fgo:宝具牌 。 NL 造成等于敌人 fgo:灼烧 层数的伤害 !M! 次。 NL 敌人 fgo:无法行动 一回合。",
-    "UPGRADE_DESCRIPTION": "fgo:宝具牌 。 NL 造成等于敌人 fgo:灼烧 层数+1的伤害 !M! 次。 NL 敌人 fgo:无法行动 一回合。",
-    "EXTENDED_DESCRIPTION": [
-      " NL （造成 !D! 点伤害 !M! 次。）"
-    ]
-  },
-  "${modID}:SecondLife": {
-    "NAME": "冥镜宝典",
-    "DESCRIPTION": "fgo:宝具牌 。 NL 选择一张已 消耗 的牌，将其 升级 并且放入你的手牌。",
-    "FLAVOR": "这张牌升级没有效果。"
-  },
-  "${modID}:YewBow": {
-    "NAME": "祈祷之弓",
-    "DESCRIPTION": "fgo:宝具牌 。 NL 造成 !D! 点伤害。 NL 如果敌人有 中毒 状态 ，则再次造成 !D! 点伤害。"
-  },
-  "${modID}:Unlimited": {
-    "NAME": "无限剑制",
-    "DESCRIPTION": "fgo:宝具牌 。 NL 立刻和每回合开始时，增加 !M! 张随机攻击牌到你的手牌。它们在本回合耗能变为0。"
-  },
   "${modID}:FgoInsight": {
     "NAME": "洞见",
     "DESCRIPTION": "保留 。 NL 抽 !M! 张牌。 NL 消耗 。",
@@ -668,10 +481,6 @@
     "DESCRIPTION": "造成 !D! 点伤害。 NL 在本场战斗中你获得 *冻结之眼 。 NL 消耗 。",
     "FLAVOR": "测试画风可以更改。"
   },
-  "${modID}:PutOnFakeFace": {
-    "NAME": "大神祭坛",
-    "DESCRIPTION": "在每回合开始时随机： NL 获得 !NP! % fgo:宝具值 。 NL 回复 !M! 点生命。 NL 获得1层 人工制品 。"
-  },
   "${modID}:Trifas": {
     "NAME": "身在图利法斯",
     "DESCRIPTION": "获得 !B! 点 格挡 。 NL 移除你的所有 虚弱 。",
@@ -705,10 +514,6 @@
   "${modID}:DivineDualEdge": {
     "NAME": "叁之突",
     "DESCRIPTION": "对所有敌人造成 !D! 点伤害2次。在每回合开始时额外抽1张牌。 NL 进入 神格 。 NL 消耗 。"
-  },
-  "${modID}:TheGoldenFleece": {
-    "NAME": "金羊毛",
-    "DESCRIPTION": "回复 !M! 点生命。 NL 移除你身上的所有负面状态。 NL 消耗 。"
   },
   "${modID}:UndeadBird": {
     "NAME": "不死鸟落于大地",
@@ -758,10 +563,6 @@
     "NAME": "黑之圣杯",
     "DESCRIPTION": "获得 !M! % fgo:宝具威力 。"
   },
-  "${modID}:Summer": {
-    "NAME": "夏日",
-    "DESCRIPTION": "fgo:宝具牌 。 获得 fgo:水边 。 NL 获得 !NP! % fgo:宝具值 。"
-  },
   "${modID}:SupportCraft": {
     "NAME": "支援牌",
     "DESCRIPTION": "获得 !NP! % fgo:宝具值 。 NL 升级 没有效果。"
@@ -773,5 +574,178 @@
   "${modID}:Coaching": {
     "NAME": "指导",
     "DESCRIPTION": "获得 [E] [E] 。 NL  消耗 。"
+  },
+
+
+
+
+  "${modID}:EternalMemories": {
+    "NAME": "希望之星",
+    "DESCRIPTION": "获得2点 力量 。 NL 移除所有负面 状态 。 NL 获得 !M! 次 fgo:肃正防御 。 "
+  },
+  "${modID}:BeautifulJourney": {
+    "NAME": "超越边界的存在",
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。每有一名敌人，就获得 !NP! % fgo:宝具值 。"
+  },
+  "${modID}:Failnaught": {
+    "NAME": "痛哭幻奏",
+    "DESCRIPTION": "去除敌人的 格挡 和 人工制品 。 NL 造成 !D! 点伤害。"
+  },
+  "${modID}:TsumukariMuramasa": {
+    "NAME": "无元剑制",
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害6次，失去所有 力量 。"
+  },
+  "${modID}:ImitationGodForce": {
+    "NAME": "伪·军神五兵",
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害 !M! 次，给予 !M! 层 虚弱 。",
+    "EXTENDED_DESCRIPTION": [
+      "咴咴！"
+    ]
+  },
+  "${modID}:BridalSpinWheel": {
+    "NAME": "赠予新娘的纺车",
+    "DESCRIPTION": "{@@}获得 {!M!|repeat= [E]} 。 NL 获得 !S! 颗 fgo:暴击星 。"
+  },
+  "${modID}:IraLupus": {
+    "NAME": "狂暴少女狼",
+    "DESCRIPTION": "使敌人失去 !D! 点生命。 NL 给予 !M! 层 易伤 。"
+  },
+  "${modID}:LostLonginus": {
+    "NAME": "选定之枪",
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害，移除 *坚不可摧 。"
+  },
+  "${modID}:WickerMan": {
+    "NAME": "灼烧殆尽的炎笼",
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害，给予 !M! 层 fgo:灼烧 和 易伤 。"
+  },
+  "${modID}:ExcaliburGalatine": {
+    "NAME": "轮转胜利之剑",
+    "DESCRIPTION": "获得 fgo:阳光照射 3回合。 NL 获得 !M! 点 活力 。"
+  },
+  "${modID}:Overload": {
+    "NAME": "过重湖光",
+    "DESCRIPTION": "去除敌人的 格挡 值。 NL 造成 !D! 点伤害。 NL 给予 !M! 层 fgo:防御破坏 。"
+  },
+  "${modID}:GardenOfAvalon": {
+    "NAME": "永世隔绝的理想乡",
+    "DESCRIPTION": "在你的回合开始时 NL 获得 !M! 点 格挡 ， NL 获得 !M! % fgo:宝具值 ， NL 获得 !M! 颗 fgo:暴击星 。"
+  },
+  "${modID}:ElementaryMyDear": {
+    "NAME": "这是常识",
+    "DESCRIPTION": "在你的回合开始时，有 格挡 的敌人失去等于其 格挡 的生命并且给予其 !M! 层 易伤 。"
+  },
+  "${modID}:GreatRamNautilus": {
+    "NAME": "吾将远征，鹦鹉螺的大冲角",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL fgo:水边 ：伤害提高50%。 NL fgo:水边 ：获得 [E] 。"
+  },
+  "${modID}:LieLikeVortigern": {
+    "NAME": "与彼方同坠的梦之瞳眸",
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害，失去2点 力量 ， NL 给予 !M! 层 无实体 。 NL 获得 !M! 层 无实体 。"
+  },
+  "${modID}:RoadlessCamelot": {
+    "NAME": "业已无法抵达的理想乡",
+    "DESCRIPTION": "{@@}对所有敌人造成 !D! 点伤害3次。 NL 你打出的下{!M!|1=一|@= !M! }张 fgo:宝具牌 将被打出两次。"
+  },
+  "${modID}:BlackdogGalatine": {
+    "NAME": "捕食日轮之角",
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害5次。 NL 获得 !M! 层 *多层护甲 。"
+  },
+  "${modID}:FetchFailnaught": {
+    "NAME": "痛幻哭奏",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 敌人每有一层 fgo:诅呪 伤害就提高10%。 NL 给予 !M! 层 fgo:诅呪 。 NL 将敌人的 fgo:诅呪 层数翻倍。"
+  },
+  "${modID}:InnocenceAroundight": {
+    "NAME": "尚未知晓的无垢湖光",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !M! 层 fgo:黄金律 。 NL 将一张 *光之地平线+ 放入你的抽牌堆。"
+  },
+  "${modID}:RayHorizon": {
+    "NAME": "光之地平线",
+    "DESCRIPTION": "获得 !NP! % fgo:宝具值 。 NL 阻止本回合你受到的所有攻击。 NL 下一张 fgo:宝具牌 固定为 *无人知晓的无垢搏动 。"
+  },
+  "${modID}:HollowHeartAlbion": {
+    "NAME": "无人知晓的无垢搏动",
+    "DESCRIPTION": "所有敌人失去 !D! 点生命。 NL 获得 !S! 颗 fgo:暴击星 。"
+  },
+  "${modID}:Sevendrive": {
+    "NAME": "79式掷祸大社",
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害8次。 NL 获得 !NP! % fgo:宝具值 。"
+  },
+  "${modID}:Excalibur": {
+    "NAME": "誓约胜利之剑",
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 获得 !NP! % fgo:宝具值 。"
+  },
+  "${modID}:Camelot": {
+    "NAME": "理想之城",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 获得2点 力量 。 NL 在你的回合结束时，获得 !M! 点 格挡 。"
+  },
+  "${modID}:EnferChateaudIf": {
+    "NAME": "虎啊，煌煌燎燃",
+    "DESCRIPTION": "在你没有 *羽翼之靴 时，获得 *羽翼之靴 。",
+    "FLAVOR": "这张牌升级没有效果。 NL 在你有羽翼之靴时，这张牌不会出现在宝具选择界面。"
+  },
+  "${modID}:Desterrennacht": {
+    "NAME": "星月夜",
+    "DESCRIPTION": "给予所有敌人 !M! 层 fgo:恐怖 。 NL 获得2点 力量 和50% fgo:暴击威力 。 NL 每回合获得10颗 fgo:暴击星 。"
+  },
+  "${modID}:LaPucelle": {
+    "NAME": "红莲圣女",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 给予伤害一半的 fgo:灼烧 。 NL 在你的抽牌堆中加入一张 *灼伤+ 。"
+  },
+  "${modID}:Shishifunjin": {
+    "NAME": "机关外法·狮子奋迅",
+    "DESCRIPTION": "使 fgo:无法行动 的敌人失去最大生命的 !M! %。"
+  },
+  "${modID}:Fragarach": {
+    "NAME": "斩剜战神之剑",
+    "DESCRIPTION": "在本回合，每当你被攻击时，对攻击者造成 !D! 点伤害，并且你获得10颗 fgo:暴击星 。"
+  },
+  "${modID}:LastSunXibalba": {
+    "NAME": "星，自宇宙降临",
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害5次。 NL 获得 !S! 颗 fgo:暴击星 。",
+    "FLAVOR": "在你有boss遗物“Archetype ORT”时才会出现在宝具选择界面。"
+  },
+  "${modID}:MahaPralaya": {
+    "NAME": "裁定归灭之回剑",
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害5次。 NL 额外造成所有敌人总负面 状态 种类的伤害。"
+  },
+  "${modID}:KurKigalIrkalla": {
+    "NAME": "灵峰踏抱冥府之鞴",
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害，没有 *飞行 状态的敌人额外失去10%最大生命。",
+    "EXTENDED_DESCRIPTION": [
+      " NL 获得3点 力量 。 NL 获得3层 人工制品 。"
+    ]
+  },
+  "${modID}:ParadisChateaudIf": {
+    "NAME": "星啊，往赴辉途",
+    "DESCRIPTION": "造成等于敌人 fgo:灼烧 层数的伤害 !M! 次。 NL 敌人 fgo:无法行动 一回合。",
+    "UPGRADE_DESCRIPTION": "造成等于敌人 fgo:灼烧 层数+1的伤害 !M! 次。 NL 敌人 fgo:无法行动 一回合。",
+    "EXTENDED_DESCRIPTION": [
+      " NL （造成 !D! 点伤害 !M! 次。）"
+    ]
+  },
+  "${modID}:SecondLife": {
+    "NAME": "冥镜宝典",
+    "DESCRIPTION": "选择一张已 消耗 的牌，将其 升级 并且放入你的手牌。 NL 所有 *爪牙 敌人死亡，每只获得 !NP! % fgo:宝具值 。",
+    "FLAVOR": "这张牌升级没有效果。"
+  },
+  "${modID}:YewBow": {
+    "NAME": "祈祷之弓",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 如果敌人有 中毒 状态 ，则再次造成 !D! 点伤害。"
+  },
+  "${modID}:Unlimited": {
+    "NAME": "无限剑制",
+    "DESCRIPTION": "{@@}在你的回合开始时，增加{!M!|1=一|@= !M! }张随机攻击牌到你的手牌。它{!M!|1=|@=们}在本回合耗能变为0。"
+  },
+  "${modID}:Summer": {
+    "NAME": "夏日",
+    "DESCRIPTION": "获得 fgo:水边 。 NL 获得 !NP! % fgo:宝具值 。"
+  },
+  "${modID}:EnumaElish": {
+    "NAME": "天地乖离开辟之星",
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。"
+  },
+  "${modID}:SuitenNikko": {
+    "NAME": "水天日光天照八野镇石",
+    "DESCRIPTION": "你手牌中的所有牌在本回合的耗能减少1点。 NL 获得 !M! % fgo:宝具值 。"
   }
 }

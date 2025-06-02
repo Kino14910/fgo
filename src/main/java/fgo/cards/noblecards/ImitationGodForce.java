@@ -31,14 +31,14 @@ public class ImitationGodForce extends AbsNoblePhantasmCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        for (int i = 0; i < this.magicNumber; ++i) {
-            this.addToBot(new SFXAction("ATTACK_HEAVY"));
-            this.addToBot(new VFXAction(p, new CleaveEffect(), 0.1F));
-            this.addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE, true));
+        for (int i = 0; i < magicNumber; ++i) {
+            addToBot(new SFXAction("ATTACK_HEAVY"));
+            addToBot(new VFXAction(p, new CleaveEffect(), 0.1F));
+            addToBot(new DamageAllEnemiesAction(p, multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.NONE, true));
         }
 
         for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-            this.addToBot(new ApplyPowerAction(mo, p, new WeakPower(mo, this.magicNumber, false), this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
+            addToBot(new ApplyPowerAction(mo, p, new WeakPower(mo, magicNumber, false), magicNumber, true, AbstractGameAction.AttackEffect.NONE));
         }
     }
 }

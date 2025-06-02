@@ -24,6 +24,6 @@ public class Fragarach extends AbsNoblePhantasmCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ApplyPowerAction(p, p, new FragarachPower(p, this.damage), this.damage));
+        addToBot(new ApplyPowerAction(p, p, new FragarachPower(p, damage)));
     }
 }

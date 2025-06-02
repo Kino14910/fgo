@@ -19,9 +19,9 @@ public class Swingby extends FGOCard {
     private static final CardStats INFO = new CardStats(
             FGOCardColor.FGO,
             CardType.SKILL,
-            CardRarity.COMMON,
+            CardRarity.RARE,
             CardTarget.SELF,
-            1
+            2
     );
     public Swingby() {
         super(ID, INFO);

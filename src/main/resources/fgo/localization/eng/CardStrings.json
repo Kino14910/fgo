@@ -9,21 +9,20 @@
   },
   "${modID}:DreamUponTheStars": {
     "NAME": "Dream Upon Stars",
-    "DESCRIPTION": "Deal !D! damage. NL Next turn, gain [E].",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Next turn, gain [E] [E]."
+    "DESCRIPTION": "Gain !NP!% fgo:NP. NL Gain !M!% fgo:NP_Damage. NL Gain !B! Block."
   },
   "${modID}:CharismaOfHope": {
     "NAME": "Charisma of Hope",
-    "DESCRIPTION": "Gain !B! Block. NL Gain !NP!% fgo:NP."
+    "DESCRIPTION": "Gain !NP!% fgo:NP. NL Deal !D! damage."
   },
   "${modID}:WallOfSnowflakes": {
     "NAME": "Wall of Snow Flakes",
     "DESCRIPTION": "Reduce !M!% damage taken this turn. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Reduce !M!% damage taken this turn. NL Exhaust."
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Reduce !M!% damage taken this turn."
   },
   "${modID}:BlackBarrel": {
     "NAME": "Black Barrel",
-    "DESCRIPTION": "Deal !D! damage. NL Deal additional damage for Block from enemy. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage. NL Deal additional damage equal to the enemy's current Block. NL Exhaust."
   },
   "${modID}:CommandSpellGuts": {
     "NAME": "Restore Spirit Origin",
@@ -81,7 +80,7 @@
   },
   "${modID}:QueensCovenant": {
     "NAME": "Queen's Covenant",
-    "DESCRIPTION": "Until the next Power card is played NL Gain !M! Strength. NL Gain !M! Dexterity."
+    "DESCRIPTION": "Until the next Power card is played, NL Gain !M! Strength. NL Gain !M! Dexterity."
   },
   "${modID}:TrueClash": {
     "NAME": "True Clash",
@@ -193,7 +192,7 @@
   },
   "${modID}:BeastMagic": {
     "NAME": "Beast Magic",
-    "DESCRIPTION": "Whenever you gain a buff or debuff, gain !M! Block."
+    "DESCRIPTION": "Whenever you gain a debuff, gain !M! Block."
   },
   "${modID}:BlueStarSea": {
     "NAME": "Blue Star Sea",
@@ -231,7 +230,7 @@
   },
   "${modID}:BlessingOfKur": {
     "NAME": "Blessing of Kur",
-    "DESCRIPTION": "Gain !B! Block X times. NL Gain X fgo:Np_Rate. NL Gain fgo:Blessing_of_Kur. NL Exhaust."
+    "DESCRIPTION": "The next time you play a Noble Phantasm card, gain !M! Max HP. NL Exhaust."
   },
   "${modID}:GoddessMetamorphosisBeast": {
     "NAME": "Goddess Metamorphosis",
@@ -248,7 +247,7 @@
   },
   "${modID}:OriginBullet": {
     "NAME": "Origin Bullet",
-    "DESCRIPTION": "Deal !D! damage. NL Deals additional damage equal to !M! times each buff or debuff from the enemy."
+    "DESCRIPTION": "Pierce Invincibility. NL Deal !D! damage for each debuff removed. NL Deal additional damage equal to the number of debuffs times !M!."
   },
   "${modID}:StarPioneer": {
     "NAME": "Star Pioneer",
@@ -262,15 +261,15 @@
   },
   "${modID}:GodsExecution": {
     "NAME": "God's Execution",
-    "DESCRIPTION": "Deal !D! damage. NL If you have debuff, apply !M! Weak."
+    "DESCRIPTION": "Deal !D! damage. NL If you have a debuff, gain [E] and draw 1 card."
   },
   "${modID}:CrownedWithLife": {
     "NAME": "Crazy Dinner",
-    "DESCRIPTION": "Unplayable. NL When you draw this card, add !M! *Water *Channels to your hand and Exhaust."
+    "DESCRIPTION": "Unplayable. NL When drawn, add !M! *Flower of Evil God to your hand and Exhaust."
   },
   "${modID}:DragonCore": {
     "NAME": "Dragon Core",
-    "DESCRIPTION": "Exhaust all non-Attack cards in your hand. Add a random Attack into your hand for each card Exhausted. They cost 0 this turn. NL Exhaust."
+    "DESCRIPTION": "Exhaust all non-Attack cards in your hand. NL Add an equal number of random Attack cards to your hand. NL They cost 0 this turn. NL Exhaust."
   },
   "${modID}:DeathOfDeath": {
     "NAME": "Abyss of Death",
@@ -278,7 +277,7 @@
   },
   "${modID}:AtTheWell": {
     "NAME": "At The Well",
-    "DESCRIPTION": "Next turn, gain !M! fgo:Guts, the next time you trigger fgo:Guts draw 3 cards and gain [E] [E] [E]. NL Die next turn. NL Exhaust."
+    "DESCRIPTION": "Remove all debuffs. NL Gain !M! Perseverance. NL Die next turn. NL Gain [E] [E] [E] and draw 3 cards. NL Exhaust."
   },
   "${modID}:SquireOfProphecy": {
     "NAME": "Prayer for Rain",
@@ -381,14 +380,6 @@
     "NAME": "Mystic Eyes",
     "DESCRIPTION": "Deal !D! damage. NL Apply !M! fgo:Evil_Curse. NL The enemy fgo:Stunned this turn. NL Exhaust."
   },
-  "${modID}:HugeScale": {
-    "NAME": "Huge Scale",
-    "DESCRIPTION": "At the start of each turn, gain !M! Block and fgo:Growth. NL Add a *Infantile *Regression into your hand."
-  },
-  "${modID}:InfantileRegression": {
-    "NAME": "Infantile Regression",
-    "DESCRIPTION": "Retain. NL Remove all of your fgo:Growth, gain [E] for each !M! fgo:Growth."
-  },
   "${modID}:ChildrenSHero": {
     "NAME": "Children's Hero",
     "DESCRIPTION": "Add !M! copy of the last card played this turn into your hand. NL fgo:Noble_Phantasm cannot be copied. NL Exhaust.",
@@ -415,7 +406,7 @@
   },
   "${modID}:SwordOfSelection": {
     "NAME": "Sword of Selection",
-    "DESCRIPTION": "Draw !M! card. NL Gain additional fgo:NP equal to hand number.",
+    "DESCRIPTION": "Draw !M! card. NL Gain double additional fgo:NP equal to hand number.",
     "EXTENDED_DESCRIPTION": [
       " NL (Gain !NP! % NP.)"
     ]
@@ -473,10 +464,6 @@
   "${modID}:KarmicVision": {
     "NAME": "Karmic Vision",
     "DESCRIPTION": "fgo:Ignores_Invincibility and deal !D! damage for each removed. NL Deal !D! damage."
-  },
-  "${modID}:TheGoldenFleece": {
-    "NAME": "The Golden Fleece",
-    "DESCRIPTION": "Heal !M! HP. NL Remove all of your debuffs. NL Exhaust."
   },
   "${modID}:UndeadBird": {
     "NAME": "Undead Bird",
@@ -728,20 +715,12 @@
       " NL (Deal !D! damage !M! times.)"
     ]
   },
-  "${modID}:Kaleidoscope": {
-    "NAME": "Kaleidoscope",
-    "DESCRIPTION": "Gain !NP!% fgo:NP."
+  "${modID}:HeroCreation": {
+    "NAME": "Hero Creation",
+    "DESCRIPTION": "Gain 100% fgo:Critical. NL At the end of your turn, lose 100% fgo:Critical."
   },
-  "${modID}:TheBlackGrail": {
-    "NAME": "The Black Grail",
-    "DESCRIPTION": "Gain !M!% fgo:NP_Damage."
-  },
-  "${modID}:Summer": {
-    "NAME": "Sarasvati Meltout",
-    "DESCRIPTION": "fgo:Noble_Phantasm. NL Remove all buff from the enemy. NL Deal !D! damage."
-  },
-  "${modID}:SupportCraft": {
-    "NAME": "Support",
-    "DESCRIPTION": "Gain !NP!% fgo:NP."
+  "${modID}:Coaching": {
+    "NAME": "Coaching",
+    "DESCRIPTION": "Gain [E] [E]. NL Exhaust."
   }
 }

@@ -21,7 +21,7 @@ public class AbyssLight extends FGOCard {
             CardType.SKILL,
             CardRarity.RARE,
             CardTarget.ENEMY,
-            2
+            1
     );
     public AbyssLight() {
         super(ID, INFO);

@@ -21,7 +21,7 @@ public class TeslaCoil extends FGOCard {
             CardType.ATTACK,
             CardRarity.UNCOMMON,
             CardTarget.ENEMY,
-            1
+            0
     );
     public TeslaCoil() {
         super(ID, INFO);

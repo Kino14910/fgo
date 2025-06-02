@@ -29,8 +29,8 @@ public class Overload extends AbsNoblePhantasmCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new RemoveAllBlockAction(m, p));
-        this.addToBot(new DamageAction(m, new DamageInfo(m, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
-        this.addToBot(new ApplyPowerAction(m, p, new DefenseDownPower(m, this.magicNumber), this.magicNumber));
+        addToBot(new RemoveAllBlockAction(m, p));
+        addToBot(new DamageAction(m, new DamageInfo(m, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
+        addToBot(new ApplyPowerAction(m, p, new DefenseDownPower(m, magicNumber)));
     }
 }

@@ -27,32 +27,32 @@ public class GreatRamNautilus extends AbsNoblePhantasmCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+        addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
         if (p.hasPower(WatersidePower.POWER_ID)) {
-            this.addToBot(new GainEnergyAction(1));
+            addToBot(new GainEnergyAction(1));
         }
     }
 
     @Override
     public void applyPowers() {
-        int realBaseDamage = this.baseDamage;
+        int realBaseDamage = baseDamage;
         if (AbstractDungeon.player.hasPower(WatersidePower.POWER_ID)) {
-            this.baseDamage += this.baseDamage / 2;
+            baseDamage += baseDamage / 2;
         }
         super.applyPowers();
-        this.baseDamage = realBaseDamage;
-        this.isDamageModified = this.damage != this.baseDamage;
+        baseDamage = realBaseDamage;
+        isDamageModified = damage != baseDamage;
     }
 
     @Override
     public void calculateCardDamage(AbstractMonster mo) {
-        int realBaseDamage = this.baseDamage;
-        this.baseDamage += this.magicNumber;
+        int realBaseDamage = baseDamage;
+        baseDamage += magicNumber;
         if (AbstractDungeon.player.hasPower(WatersidePower.POWER_ID)) {
-            this.baseDamage += this.baseDamage / 2;
+            baseDamage += baseDamage / 2;
         }
         super.calculateCardDamage(mo);
-        this.baseDamage = realBaseDamage;
-        this.isDamageModified = this.damage != this.baseDamage;
+        baseDamage = realBaseDamage;
+        isDamageModified = damage != baseDamage;
     }
 }

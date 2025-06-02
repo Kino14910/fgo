@@ -26,7 +26,7 @@ public class Shishifunjin extends AbsNoblePhantasmCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
             if (mo.hasPower("StunMonsterPower")) {
-                this.addToBot(new LoseHPAction(mo, p, mo.maxHealth / 100 * this.magicNumber, AbstractGameAction.AttackEffect.FIRE));
+                addToBot(new LoseHPAction(mo, p, mo.maxHealth / 100 * magicNumber, AbstractGameAction.AttackEffect.FIRE));
             }
         }
     }

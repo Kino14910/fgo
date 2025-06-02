@@ -27,8 +27,8 @@ public class GardenOfAvalon extends AbsNoblePhantasmCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ApplyPowerAction(p, p, new MetallicizePower(p, this.magicNumber), this.magicNumber));
-        this.addToBot(new ApplyPowerAction(p, p, new EnergyRegenPower(p, this.magicNumber), this.magicNumber));
-        this.addToBot(new ApplyPowerAction(p, p, new StarRegenPower(p, this.magicNumber), this.magicNumber));
+        addToBot(new ApplyPowerAction(p, p, new MetallicizePower(p, magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new EnergyRegenPower(p, magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new StarRegenPower(p, magicNumber)));
     }
 }

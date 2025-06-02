@@ -24,10 +24,9 @@ public class YewBow extends AbsNoblePhantasmCard {
     }
 
 
-
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-        this.addToBot(new BaneAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn)));
+        addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+        addToBot(new BaneAction(m, new DamageInfo(p, damage, damageTypeForTurn)));
     }
 }

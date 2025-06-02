@@ -31,29 +31,29 @@ public class KurKigalIrkalla extends AbsNoblePhantasmCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-            this.addToBot(new ExpungeVFXAction(mo));
+            addToBot(new ExpungeVFXAction(mo));
             if (!mo.hasPower(FlightPower.POWER_ID)) {
-                this.addToBot(new LoseHPAction(mo, p, mo.maxHealth / 10));
+                addToBot(new LoseHPAction(mo, p, mo.maxHealth / 10));
             }
         }
-        this.addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+        addToBot(new DamageAllEnemiesAction(p, multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.BLUNT_HEAVY));
     }
 
     @Override
     public void applyPowers() {
         if (AbstractDungeon.player.hasPower(BlessingOfKurPower.POWER_ID)) {
-            this.rawDescription = cardStrings.DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0];
+            rawDescription = cardStrings.DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0];
         }
         super.applyPowers();
-        this.initializeDescription();
+        initializeDescription();
     }
 
     @Override
     public void triggerOnGlowCheck() {
         if (AbstractDungeon.player.hasPower(BlessingOfKurPower.POWER_ID)) {
-            this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
+            glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
         } else {
-            this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
+            glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
         }
     }
 }

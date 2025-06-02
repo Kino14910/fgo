@@ -38,28 +38,28 @@ public class FetchFailnaught extends AbsNoblePhantasmCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         int i;
         if (Settings.FAST_MODE) {
-            this.addToBot(new VFXAction(new ViolentAttackEffect(m.hb.cX, m.hb.cY, Color.RED)));
+            addToBot(new VFXAction(new ViolentAttackEffect(m.hb.cX, m.hb.cY, Color.RED)));
         } else {
-            this.addToBot(new VFXAction(new ViolentAttackEffect(m.hb.cX, m.hb.cY, Color.RED), 0.4F));
+            addToBot(new VFXAction(new ViolentAttackEffect(m.hb.cX, m.hb.cY, Color.RED), 0.4F));
         }
-        for(i = 0; i < 5; ++i) {
-            this.addToBot(new VFXAction(new StarBounceEffect(m.hb.cX, m.hb.cY)));
+        for(i = 0; i < 5; i++) {
+            addToBot(new VFXAction(new StarBounceEffect(m.hb.cX, m.hb.cY)));
         }
 
-        this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-        this.addToBot(new ApplyPowerAction(m, p, new CursePower(m, this.magicNumber), this.magicNumber));
-        this.addToBot(new FetchFailnaughtAction(m, p));
+        addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+        addToBot(new ApplyPowerAction(m, p, new CursePower(m, magicNumber)));
+        addToBot(new FetchFailnaughtAction(m, p));
     }
 
     @Override
     public void calculateCardDamage(AbstractMonster mo) {
-        int realBaseDamage = this.baseDamage;
+        int realBaseDamage = baseDamage;
         if (mo.hasPower(CursePower.POWER_ID)) {
             int CurAmt = mo.getPower(CursePower.POWER_ID).amount;
-            this.baseDamage += this.baseDamage / 10 * CurAmt;
+            baseDamage += baseDamage / 10 * CurAmt;
         }
         super.calculateCardDamage(mo);
-        this.baseDamage = realBaseDamage;
-        this.isDamageModified = this.damage != this.baseDamage;
+        baseDamage = realBaseDamage;
+        isDamageModified = damage != baseDamage;
     }
 }

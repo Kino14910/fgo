@@ -19,6 +19,7 @@ public class BlessingOfKur extends FGOCard {
     );
     public BlessingOfKur() {
         super(ID, INFO);
+        setMagic(15, 5);
         setExhaust();
     }
 

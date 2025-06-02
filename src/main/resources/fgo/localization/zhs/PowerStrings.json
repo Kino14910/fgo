@@ -95,12 +95,6 @@
     
     ]
   },
-  "${modID}:PutOnFakeFacePower": {
-    "NAME": "大神祭坛",
-    "DESCRIPTIONS": [
-      "在每回合开始时随机获得其中一个效果： NL 获得 [E] 。 NL 回复 #b5 点生命。 NL 移除 #b3 层 #y诅呪 。"
-    ]
-  },
   "${modID}:BeastMagicPower": {
     "NAME": "对兽魔术",
     "DESCRIPTIONS": [
@@ -577,13 +571,6 @@
     "DESCRIPTIONS": [
       "在本回合，每受到一次 #y攻击 ，造成 #b",
       " 点反伤 ，你获得 #b10 颗 #y暴击星 。"
-    ]
-  },
-  "${modID}:HugeScalePower": {
-    "NAME": "巨型规模",
-    "DESCRIPTIONS": [
-      "在每回合开始时，获得 #b",
-      " 点 #y格挡 和 #y增殖 。"
     ]
   },
   "${modID}:InfiniteGrowthPower": {

@@ -23,10 +23,11 @@ public class EternalMemories extends AbsNoblePhantasmCard {
         cardArtLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH_P)));
     }
 
+
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, 2), 2));
-        this.addToBot(new RemoveDebuffsAction(p));
-        this.addToBot(new ApplyPowerAction(p, p, new EternalMemoriesPower(p, this.magicNumber), this.magicNumber));
+        addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, 2)));
+        addToBot(new RemoveDebuffsAction(p));
+        addToBot(new ApplyPowerAction(p, p, new EternalMemoriesPower(p, magicNumber)));
     }
 }

@@ -23,8 +23,8 @@ public class InnocenceAroundight extends AbsNoblePhantasmCard {
         setDamage(32, 8);
         setMagic(3);
         setExhaust();
-        this.cardsToPreview = new RayHorizon();
-        this.cardsToPreview.upgrade();
+        cardsToPreview = new RayHorizon();
+        cardsToPreview.upgrade();
 
         cardArtLayers512.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH)));
         cardArtLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH_P)));
@@ -32,8 +32,8 @@ public class InnocenceAroundight extends AbsNoblePhantasmCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-        this.addToBot(new ApplyPowerAction(p, p, new NPRatePower(p, this.magicNumber), this.magicNumber));
-        this.addToBot(new MakeTempCardInDrawPileAction(this.cardsToPreview, 1, true, true, false));
+        addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+        addToBot(new ApplyPowerAction(p, p, new NPRatePower(p, magicNumber)));
+        addToBot(new MakeTempCardInDrawPileAction(cardsToPreview, 1, true, true, false));
     }
 }

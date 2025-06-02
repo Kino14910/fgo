@@ -28,10 +28,10 @@ public class Failnaught extends AbsNoblePhantasmCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new RemoveAllBlockAction(m, p));
+        addToBot(new RemoveAllBlockAction(m, p));
         if (m.hasPower(ArtifactPower.POWER_ID)) {
-            this.addToBot(new RemoveSpecificPowerAction(m, p, ArtifactPower.POWER_ID));
+            addToBot(new RemoveSpecificPowerAction(m, p, ArtifactPower.POWER_ID));
         }
-        this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.NONE, true));
+        addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.NONE, true));
     }
 }

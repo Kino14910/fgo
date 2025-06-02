@@ -25,8 +25,8 @@ public class MysticEyes extends FGOCard {
     );
     public MysticEyes() {
         super(ID, INFO);
-        setDamage(10, 5);
-        setMagic(3);
+        setDamage(10);
+        setMagic(3, 3);
         setExhaust();
     }
 

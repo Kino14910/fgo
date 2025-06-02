@@ -33,10 +33,10 @@ public class RoadlessCamelot extends AbsNoblePhantasmCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         for(int i = 0; i < 3; ++i) {
             for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-                this.addToBot(new ExpungeVFXAction(mo));
+                addToBot(new ExpungeVFXAction(mo));
             }
-            this.addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.BLUNT_HEAVY, true));
+            addToBot(new DamageAllEnemiesAction(p, multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.BLUNT_HEAVY, true));
         }
-        this.addToBot(new ApplyPowerAction(p, p, new NPOverchargePower(p, this.magicNumber), this.magicNumber));
+        addToBot(new ApplyPowerAction(p, p, new NPOverchargePower(p, magicNumber)));
     }
 }

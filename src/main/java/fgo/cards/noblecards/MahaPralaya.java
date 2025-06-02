@@ -40,20 +40,20 @@ public class MahaPralaya extends AbsNoblePhantasmCard {
                 }
             }
         }
-        int realBaseDamage = this.baseDamage;
-        this.baseDamage += MahaAmt;
+        int realBaseDamage = baseDamage;
+        baseDamage += MahaAmt;
         super.calculateCardDamage(mo);
-        this.baseDamage = realBaseDamage;
-        this.isDamageModified = this.damage != this.baseDamage;
+        baseDamage = realBaseDamage;
+        isDamageModified = damage != baseDamage;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new VFXAction(new BorderLongFlashEffect(Color.LIGHT_GRAY)));
-        this.addToBot(new VFXAction(new DieDieDieEffect(), 0.7F));
-        this.addToBot(new ShakeScreenAction(0.0F, ScreenShake.ShakeDur.MED, ScreenShake.ShakeIntensity.HIGH));
+        addToBot(new VFXAction(new BorderLongFlashEffect(Color.LIGHT_GRAY)));
+        addToBot(new VFXAction(new DieDieDieEffect(), 0.7F));
+        addToBot(new ShakeScreenAction(0.0F, ScreenShake.ShakeDur.MED, ScreenShake.ShakeIntensity.HIGH));
         for (int i = 0; i < 5; ++i) {
-            this.addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, true));
+            addToBot(new DamageAllEnemiesAction(p, multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, true));
         }
     }
 }

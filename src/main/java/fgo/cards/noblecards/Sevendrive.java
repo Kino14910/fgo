@@ -34,12 +34,12 @@ public class Sevendrive extends AbsNoblePhantasmCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new VFXAction(new BorderLongFlashEffect(Color.LIGHT_GRAY)));
-        this.addToBot(new VFXAction(new DieDieDieEffect(), 0.7F));
-        this.addToBot(new ShakeScreenAction(0.0F, ScreenShake.ShakeDur.MED, ScreenShake.ShakeIntensity.HIGH));
+        addToBot(new VFXAction(new BorderLongFlashEffect(Color.LIGHT_GRAY)));
+        addToBot(new VFXAction(new DieDieDieEffect(), 0.7F));
+        addToBot(new ShakeScreenAction(0.0F, ScreenShake.ShakeDur.MED, ScreenShake.ShakeIntensity.HIGH));
         for (int i = 0; i < 8; ++i) {
-            this.addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, true));
+            addToBot(new DamageAllEnemiesAction(p, multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, true));
         }
-        this.addToBot(new FgoNpAction(np));
+        addToBot(new FgoNpAction(np));
     }
 }
