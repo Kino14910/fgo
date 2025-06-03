@@ -24,6 +24,7 @@ public class BackAgain extends FGOCard {
             CardTarget.ENEMY,
             1
     );
+    
     public BackAgain() {
         super(ID, INFO);
         setStar(5, 10);

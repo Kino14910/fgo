@@ -34,11 +34,9 @@ public class GodsExecution extends FGOCard {
     public void triggerOnGlowCheck() {
         AbstractPlayer p = AbstractDungeon.player;
         for (AbstractPower power : p.powers) {
-            if (power.type == AbstractPower.PowerType.DEBUFF) {
-                glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
-            } else {
-                glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
-            }
+            glowColor = power.type == AbstractPower.PowerType.DEBUFF
+                    ? AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy()
+                    : AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
         }
     }
 }

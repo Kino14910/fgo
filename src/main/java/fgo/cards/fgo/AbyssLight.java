@@ -23,6 +23,7 @@ public class AbyssLight extends FGOCard {
             CardTarget.ENEMY,
             1
     );
+    
     public AbyssLight() {
         super(ID, INFO);
         setMagic(20, 10);
@@ -33,7 +34,6 @@ public class AbyssLight extends FGOCard {
         FlavorText.AbstractCardFlavorFields.flavorBoxType.set(this, FlavorText.boxType.TRADITIONAL);
     }
     
-
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

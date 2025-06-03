@@ -28,11 +28,15 @@ public class SparksRoute extends FGOCard {
     public SparksRoute() {
         super(ID, INFO);
         setMagic(5, 5);
-        setSelfRetain();
         portraitImg = ImageMaster.loadImage("fgo/images/cards/skill/SparksRoute.png");
 
         FlavorText.AbstractCardFlavorFields.textColor.set(this, Color.CHARTREUSE);
         FlavorText.AbstractCardFlavorFields.flavorBoxType.set(this, FlavorText.boxType.TRADITIONAL);
+    }
+
+    @Override
+    public void upgrade() {
+        returnToHand = true;
     }
 
     @Override
@@ -42,7 +46,6 @@ public class SparksRoute extends FGOCard {
         addToBot(new SparksRouteAction());
         addToBot(new ShuffleAction(AbstractDungeon.player.drawPile, false));
         addToBot(new DrawCardAction(p, theSize - 1));
-        //addToBot(new ApplyPowerAction(p, p, new StarPower(p, magicNumber)));
     }
 
     @Override

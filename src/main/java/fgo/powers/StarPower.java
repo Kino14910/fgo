@@ -31,6 +31,11 @@ public class StarPower extends BasePower {
 
     @Override
     public float atDamageGive(float damage, DamageInfo.DamageType type, AbstractCard card) {
+        //如果你有20颗暴击星时，使用翡翠的魅力时，暴击威力提高50%。
+        if (card.cardID.equals("fgo:CharismaOfTheJade") && amount >= 20) {
+            return finalDamage(damage, type, 3.0F);
+        }
+
         //你有10颗暴击星时才能暴击。
         if (!card.hasTag(CardTagsEnum.Noble_Phantasm) && amount >= 10) {
             return finalDamage(damage, type, 2.0F);
@@ -56,7 +61,7 @@ public class StarPower extends BasePower {
             if (owner.hasPower(CrossingArcadiaPower.POWER_ID)) {
                 return;
             }
-            addToBot(new ReducePowerAction(owner, owner, ID, card.cardID.equals("CharismaOfTheJade") && amount >= 20 ? 20 : 10));
+            addToBot(new ReducePowerAction(owner, owner, ID, card.cardID.equals("fgo:CharismaOfTheJade") && amount >= 20 ? 20 : 10));
 
             //在有十二辉剑时，有卡牌暴击时获得一层十二辉剑效果。
             if (owner.hasPower(HeroicKingPower.POWER_ID)) {

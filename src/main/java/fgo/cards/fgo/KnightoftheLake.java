@@ -44,10 +44,8 @@ public class KnightoftheLake extends FGOCard {
 
     @Override
     public void triggerOnGlowCheck() {
-        if (!AbstractDungeon.player.hasPower(CriticalDamageUpPower.POWER_ID)) {
-            glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
-        } else {
-            glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
-        }
+        glowColor = AbstractDungeon.player.hasPower(CriticalDamageUpPower.POWER_ID)
+                ? AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy()
+                : AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
     }
 }

@@ -146,13 +146,6 @@
       "Converts your #yfgo:Invincibility to #yfgo:Anti-Purge_Defense. At the start of your 2nd turn and after each turn, gain #b10 fgo:Stars and #b3% fgo:NP."
     ]
   },
-  "${modID}:Avenger": {
-    "NAME": "Avenger",
-    "FLAVOR": "作为复仇者，人的怨恨和怨念集于一身形成的技能。",
-    "DESCRIPTIONS": [
-      "Whenever you are attacked, gain additional #yfgo:NP equal to #b30% damaged. At the start of each combat, gain #b1 #yFrail."
-    ]
-  },
   "${modID}:OblivionCorrection": {
     "NAME": "Oblivion Correction",
     "FLAVOR": "虽然人是很健忘的生物，但是复仇者绝不会忘却。",

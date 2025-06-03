@@ -22,7 +22,7 @@
 
     <!-- This information will be displayed in ModTheSpire, the modded launcher. -->
     <name>FGO Mod</name>
-    <version>0.2.2</version>
+    <version>0.2.3</version>
     <!-- Avoid using \ in this description, as they can cause the description to fail to load. -->
     <!-- If you really want to use them, you'll need to "escape" them by putting another one in front, like \\ -->
     <description>FGO Mod for Slay the Spire</description>

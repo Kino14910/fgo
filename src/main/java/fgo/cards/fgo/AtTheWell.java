@@ -18,6 +18,7 @@ public class AtTheWell extends FGOCard {
             CardTarget.SELF,
             0
     );
+
     public AtTheWell() {
         super(ID, INFO);
         setMagic(10, 10);
@@ -25,6 +26,7 @@ public class AtTheWell extends FGOCard {
         tags.add(CardTags.HEALING);
     }
 
+    
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new RemoveAllPowersAction(p, true));

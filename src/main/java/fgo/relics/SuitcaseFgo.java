@@ -1,7 +1,6 @@
 package fgo.relics;
 
 import basemod.interfaces.OnStartBattleSubscriber;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import fgo.action.FgoNpAction;
 import fgo.patches.Enum.FGOCardColor;
@@ -17,16 +16,11 @@ public class SuitcaseFgo extends BaseRelic implements OnStartBattleSubscriber {
 
     @Override
     public String getUpdatedDescription() {
-        return this.DESCRIPTIONS[0];
-    }
-
-    @Override
-    public AbstractRelic makeCopy() {
-        return new SuitcaseFgo();
+        return DESCRIPTIONS[0];
     }
 
     @Override
     public void receiveOnBattleStart(AbstractRoom abstractRoom) {
-        this.addToBot(new FgoNpAction(20));
+        addToBot(new FgoNpAction(20));
     }
 }

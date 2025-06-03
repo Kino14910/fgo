@@ -39,11 +39,9 @@ import fgo.event.*;
 import fgo.monster.Emiya;
 import fgo.panel.CommandSpellPanel;
 import fgo.panel.FGOConfig;
-import fgo.panel.NobleDeck;
 import fgo.patches.Enum.FGOCardColor;
 import fgo.potions.BasePotion;
 import fgo.powers.NPRatePower;
-import fgo.relics.Avenger;
 import fgo.relics.BaseRelic;
 import fgo.relics.SuitcaseFgo;
 import fgo.util.*;
@@ -95,23 +93,16 @@ public class FGOMod implements
     public static final String CARD_ENERGY_ORB = "fgo/images/ui/energyOrb.png";
     public static final Color SILVER = CardHelper.getColor(200, 200, 200);
     public static final Color NOBLE = CardHelper.getColor(255, 215, 0);
-    //攻击、技能、能力牌的背景图片(512)
-    // private static final String ATTACK_CC = "fgo/images/512/bg_attack_MASTER_s.png";
-    // private static final String SKILL_CC = "fgo/images/512/bg_skill_MASTER_s.png";
-    // private static final String POWER_CC = "fgo/images/512/bg_power_MASTER_s.png";
+
+    //默认卡牌背景
     private static final String DEFAULT_CC = "fgo/images/512/bg_master_s.png";
     private static final String ENERGY_ORB_CC = "fgo/images/512/MASTEROrb.png";
-    //攻击、技能、能力牌的背景图片(1024)
-    // private static final String ATTACK_CC_PORTRAIT = "fgo/images/1024/bg_attack_MASTER.png";
-    // private static final String SKILL_CC_PORTRAIT = "fgo/images/1024/bg_skill_MASTER.png";
-    // private static final String POWER_CC_PORTRAIT = "fgo/images/1024/bg_power_MASTER.png";
     private static final String DEFAULT_CC_PORTRAIT = "fgo/images/1024/bg_master.png";
     private static final String ENERGY_ORB_CC_PORTRAIT = "fgo/images/1024/MASTEROrb.png";
-    //宝具牌
+    //宝具牌背景
     private static final String ATTACK_Noble = "fgo/images/512/bg_attack_Noble_s.png";
     private static final String SKILL_Noble = "fgo/images/512/bg_skill_Noble_s.png";
     private static final String POWER_Noble = "fgo/images/512/bg_power_Noble_s.png";
-    //攻击、技能、能力牌的背景图片(1024)
     private static final String ATTACK_Noble_PORTRAIT = "fgo/images/1024/bg_attack_Noble.png";
     private static final String SKILL_Noble_PORTRAIT = "fgo/images/1024/bg_skill_Noble.png";
     private static final String POWER_Noble_PORTRAIT = "fgo/images/1024/bg_power_Noble.png";
@@ -119,6 +110,7 @@ public class FGOMod implements
     private static final String MY_CHARACTER_BUTTON = "fgo/images/charSelect/MasterButton.png";
     //默认背景图片。
     private static final String MASTER_PORTRAIT = "fgo/images/charSelect/MasterPortrait1.png";
+    
     public static SpireConfig config;
 
     static {
@@ -381,7 +373,6 @@ public class FGOMod implements
         BaseMod.addEvent(ProofAndRebuttalEvent.ID, ProofAndRebuttalEvent.class, Exordium.ID);
         BaseMod.addEvent(ManofChaldea.ID, ManofChaldea.class, TheBeyond.ID);
         BaseMod.addEvent(Beyondthe.ID, Beyondthe.class, TheBeyond.ID);
-        BaseMod.addEvent(DailyLifeattheBeyond.ID, DailyLifeattheBeyond.class, TheCity.ID);
         BaseMod.addEvent(DevilSlot.ID, DevilSlot.class, TheBeyond.ID);
 //        BaseMod.addEvent((new AddEventParams.Builder(FGOLibrary.ID, FGOLibrary.class))
 //                .dungeonID(TheCity.ID)
@@ -449,10 +440,6 @@ public class FGOMod implements
         }
 
         addToBot(new FgoNpAction(AbstractDungeon.player.hasPower(NPRatePower.POWER_ID) ? 2 * i : i));
-
-        if (AbstractDungeon.player.hasRelic(Avenger.ID)) {
-            addToBot(new FgoNpAction(i / 10 * 3));
-        }
         return i;
     }
 

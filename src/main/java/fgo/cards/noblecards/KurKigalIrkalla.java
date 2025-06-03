@@ -50,10 +50,8 @@ public class KurKigalIrkalla extends AbsNoblePhantasmCard {
 
     @Override
     public void triggerOnGlowCheck() {
-        if (AbstractDungeon.player.hasPower(BlessingOfKurPower.POWER_ID)) {
-            glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
-        } else {
-            glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
-        }
+        glowColor = AbstractDungeon.player.hasPower(BlessingOfKurPower.POWER_ID)
+                ? AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy()
+                : AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
     }
 }

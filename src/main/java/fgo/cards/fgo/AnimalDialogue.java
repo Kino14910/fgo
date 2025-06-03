@@ -19,13 +19,13 @@ public class AnimalDialogue extends FGOCard {
             CardTarget.SELF,
             1
     );
+    
     public AnimalDialogue() {
         super(ID, INFO);
         setMagic(20);
         setCostUpgrade(0);
         setExhaust();
     }
-
 
 
     @Override

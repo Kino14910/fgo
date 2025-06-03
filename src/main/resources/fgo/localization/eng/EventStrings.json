@@ -116,23 +116,6 @@
       "[Leave]"
     ]
   },
-  "${modID}:DailyLifeattheBeyond": {
-    "NAME": "Daily Life at the Beyond",
-    "DESCRIPTIONS": [
-      "The road I once saw. NL Now hidden in the distant corner of my memory, a glimpse of the past scenery. NL NL ...The place I long to return to. NL ...The people I yearn to see again.",
-      "Perhaps it is the coincidence of several chances, several pieces of luck, NL and several \"ifs\" overlapping, NL that finally make it possible, NL to capture that one-in-a-lifetime, perfect moment to press the shutter chance.",
-      "This is an image data of dreams. NL Without losing anything, a warm spring day has finally arrived. NL You gently sketch it in your mind, NL the continuation of that time that should have existed in your heart, yet is no longer visible."
-    ],
-    "OPTIONS": [
-      "[All Chose] #gObtain #gAvenger. #rLose #r",
-      "[All Chose] #gObtain #gOblivion #gCorrection. #rLose #r",
-      "[All Chose] #gObtain #gSelf-Replenishment #g(Magic). #rLose #r",
-      "[Leave]",
-      "[Locked]",
-      "[Continue]",
-      " #rHP."
-    ]
-  },
   "${modID}:DevilSlot": {
     "NAME": "Devil Slot",
     "DESCRIPTIONS": [

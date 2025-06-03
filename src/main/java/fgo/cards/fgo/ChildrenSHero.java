@@ -47,11 +47,9 @@ public class ChildrenSHero extends FGOCard {
 
     @Override
     public void triggerOnGlowCheck() {
-        if (!AbstractDungeon.actionManager.cardsPlayedThisTurn.isEmpty()) {
-            glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
-        } else {
-            glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
-        }
+        glowColor = AbstractDungeon.actionManager.cardsPlayedThisTurn.isEmpty()
+                ? AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy()
+                : AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
     }
 
     @Override

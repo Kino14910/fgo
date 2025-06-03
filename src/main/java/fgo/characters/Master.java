@@ -1,10 +1,11 @@
 package fgo.characters;
 
 import basemod.abstracts.CustomPlayer;
+
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -16,6 +17,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.city.Vampires;
 import com.megacrit.cardcrawl.helpers.*;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
+
 import fgo.cards.fgo.CharismaOfHope;
 import fgo.cards.fgo.Defend;
 import fgo.cards.fgo.DreamUponTheStars;
@@ -27,7 +29,6 @@ import fgo.patches.Enum.FGOCardColor;
 import fgo.patches.Enum.ThmodClassEnum;
 import fgo.patches.MainMenuUIFgoPatch;
 import fgo.patches.PictureSelectFgoPatch;
-import fgo.relics.Avenger;
 import fgo.relics.SuitcaseFgo;
 
 import java.util.ArrayList;
@@ -59,12 +60,14 @@ public class Master extends CustomPlayer{
     private static final String[] TEXT = CardCrawlGame.languagePack.getUIString("fgo:SpireHeartText").TEXT;
     private static final String[] NPTEXT = CardCrawlGame.languagePack.getUIString("fgo:NPText").TEXT;
     private float FgoNpWidth;
+    private float FgoNpHideTimer = 1.0f;
     public static int fgoNp;
+    
     public Master(String name) {
         //构造方法，初始化参数
         super(name, ThmodClassEnum.MASTER_CLASS, ORB_TEXTURES, "fgo/images/ui/energyBlueVFX.png", LAYER_SPEED, null, null);
-        this.dialogX = this.drawX + 0.0F * Settings.scale;
-        this.dialogY = this.drawY + 220.0F * Settings.scale;
+        dialogX = drawX + 0.0F * Settings.scale;
+        dialogY = drawY + 220.0F * Settings.scale;
 
         initializeClass(
                 String.valueOf(MainMenuUIFgoPatch.refreshSkinFgo()),
@@ -113,8 +116,6 @@ public class Master extends CustomPlayer{
         //添加初始遗物
         ArrayList<String> retVal = new ArrayList<>();
         retVal.add(SuitcaseFgo.ID);
-//        retVal.add("HalloweenRoyalty");
-//        retVal.add(CommandSpell.ID);
         return retVal;
     }
 
@@ -180,7 +181,7 @@ public class Master extends CustomPlayer{
 
     @Override
     public void updateOrb(int orbCount) {
-        this.energyOrb.updateOrb(orbCount);
+        energyOrb.updateOrb(orbCount);
     }
 
     @Override
@@ -193,7 +194,7 @@ public class Master extends CustomPlayer{
 
     @Override
     public AbstractPlayer newInstance() {
-        return new Master(this.name);
+        return new Master(name);
     }
 
     @Override
@@ -230,26 +231,32 @@ public class Master extends CustomPlayer{
 
     public void TruthValueUpdatedEvent() {
         int base = fgoNp > 200 ? 200 : (fgoNp > 100 ? 100 : 0);
-        this.FgoNpWidth = this.hb.width * (fgoNp - base) / 100.0F;
+        FgoNpWidth = hb.width * (fgoNp - base) / 100.0F;
     }
 
     public void renderHealth(SpriteBatch sb) {
         super.renderHealth(sb);
-        float x = this.hb.x;
-        float y = this.hb.y + this.hb.height;
-        this.FgoNPhb = new Hitbox(x, y, this.hb_w, FgoNp_BAR_HEIGHT);
-        this.FgoNPhb.render(sb);
+        float x = hb.x;
+        float y = hb.y + hb.height;
+        FgoNPhb = new Hitbox(x, y, hb_w, FgoNp_BAR_HEIGHT);
+        FgoNPhb.render(sb);
         TruthValueBgRender(sb, x, y);
         renderTruthValueBar(sb, x);
         TruthValueText(sb);
 
-        this.FgoNPhb.update();
-        
-        if (this.FgoNPhb.hovered) {
-            if (AbstractDungeon.player.hasRelic(Avenger.ID)) {
-                TipHelper.renderGenericTip(0, y, NPTEXT[0], NPTEXT[4]);
-            } else {
-                TipHelper.renderGenericTip(0, y, NPTEXT[0], NPTEXT[1]);
+        FgoNPhb.update();
+        if (FgoNPhb.hovered) {
+            if (!AbstractDungeon.isScreenUp) {
+                TipHelper.renderGenericTip((float)(hb.cX + hb.width / 2.0f + TIP_OFFSET_R_X), (float)(y + hb.height / 2.0f), (String)NPTEXT[0], (String)NPTEXT[1]);
+            }
+            FgoNpHideTimer -= Gdx.graphics.getDeltaTime() * 4.0f;
+            if (FgoNpHideTimer < 0.2f) {
+                FgoNpHideTimer = 0.2f;
+            }
+        } else {
+            FgoNpHideTimer += Gdx.graphics.getDeltaTime() * 4.0f;
+            if (FgoNpHideTimer > 1.0f) {
+                FgoNpHideTimer = 1.0f;
             }
         }
     }
@@ -258,15 +265,16 @@ public class Master extends CustomPlayer{
         Color color = fgoNp > 200 ? FgoNpBarColor3 : (fgoNp > 100 ? FgoNpBarColor2 : FgoNpBarColor1);
         sb.setColor(color);
 
-        sb.draw(ImageMaster.HEALTH_BAR_L, x - FgoNp_BAR_HEIGHT, this.FgoNPhb.cY - FgoNp_BAR_HEIGHT / 2.0F, 20.0F * Settings.scale, FgoNp_BAR_HEIGHT);
-        sb.draw(ImageMaster.HEALTH_BAR_B, x, this.FgoNPhb.cY - FgoNp_BAR_HEIGHT / 2.0F, this.FgoNpWidth, FgoNp_BAR_HEIGHT);
-        sb.draw(ImageMaster.HEALTH_BAR_R, x + this.FgoNpWidth, this.FgoNPhb.cY - FgoNp_BAR_HEIGHT / 2.0F, 20.0F * Settings.scale, FgoNp_BAR_HEIGHT);
+        sb.draw(ImageMaster.HEALTH_BAR_L, x - FgoNp_BAR_HEIGHT, FgoNPhb.cY - FgoNp_BAR_HEIGHT / 2.0F, 20.0F * Settings.scale, FgoNp_BAR_HEIGHT);
+        sb.draw(ImageMaster.HEALTH_BAR_B, x, FgoNPhb.cY - FgoNp_BAR_HEIGHT / 2.0F, FgoNpWidth, FgoNp_BAR_HEIGHT);
+        sb.draw(ImageMaster.HEALTH_BAR_R, x + FgoNpWidth, FgoNPhb.cY - FgoNp_BAR_HEIGHT / 2.0F, 20.0F * Settings.scale, FgoNp_BAR_HEIGHT);
     }
 
     private void TruthValueText(SpriteBatch sb) {
-        float tmp = this.FgoNptextColor.a;
-        FontHelper.renderFontCentered(sb, FontHelper.healthInfoFont, Master.fgoNp + "%", this.hb.cX, this.FgoNPhb.cY, this.FgoNptextColor);
-        this.FgoNptextColor.a = tmp;
+        float tmp = FgoNptextColor.a;
+        FgoNptextColor.a *= FgoNpHideTimer;
+        FontHelper.renderFontCentered(sb, FontHelper.healthInfoFont, Master.fgoNp + "%", hb.cX, FgoNPhb.cY, FgoNptextColor);
+        FgoNptextColor.a = tmp;
     }
 
     private void TruthValueBgRender(SpriteBatch sb, float x, float y) {
@@ -274,13 +282,13 @@ public class Master extends CustomPlayer{
         sb.setColor(color);
 
         //宝具值外框颜色。
-        sb.draw(ImageMaster.HB_SHADOW_L, x - FgoNp_BAR_HEIGHT, this.FgoNPhb.cY - FgoNp_BAR_HEIGHT / 2.0F, 20.0F * Settings.scale, FgoNp_BAR_HEIGHT);
-        sb.draw(ImageMaster.HB_SHADOW_B, x, this.FgoNPhb.cY - FgoNp_BAR_HEIGHT / 2.0F, this.hb.width, FgoNp_BAR_HEIGHT);
-        sb.draw(ImageMaster.HB_SHADOW_R, x + this.hb.width, this.FgoNPhb.cY - FgoNp_BAR_HEIGHT / 2.0F, 20.0F * Settings.scale, FgoNp_BAR_HEIGHT);
-        sb.setColor(this.FgoNpBgColor);
+        sb.draw(ImageMaster.HB_SHADOW_L, x - FgoNp_BAR_HEIGHT, FgoNPhb.cY - FgoNp_BAR_HEIGHT / 2.0F, 20.0F * Settings.scale, FgoNp_BAR_HEIGHT);
+        sb.draw(ImageMaster.HB_SHADOW_B, x, FgoNPhb.cY - FgoNp_BAR_HEIGHT / 2.0F, hb.width, FgoNp_BAR_HEIGHT);
+        sb.draw(ImageMaster.HB_SHADOW_R, x + hb.width, FgoNPhb.cY - FgoNp_BAR_HEIGHT / 2.0F, 20.0F * Settings.scale, FgoNp_BAR_HEIGHT);
+        sb.setColor(FgoNpBgColor);
         //宝具值内框灰色。
         sb.draw(ImageMaster.HEALTH_BAR_L, x - FgoNp_BAR_HEIGHT, y, 20.0F * Settings.scale, FgoNp_BAR_HEIGHT);
-        sb.draw(ImageMaster.HEALTH_BAR_B, x, y, this.hb.width, FgoNp_BAR_HEIGHT);
-        sb.draw(ImageMaster.HEALTH_BAR_R, x + this.hb.width, y, 20.0F * Settings.scale, FgoNp_BAR_HEIGHT);
+        sb.draw(ImageMaster.HEALTH_BAR_B, x, y, hb.width, FgoNp_BAR_HEIGHT);
+        sb.draw(ImageMaster.HEALTH_BAR_R, x + hb.width, y, 20.0F * Settings.scale, FgoNp_BAR_HEIGHT);
     }
 }
