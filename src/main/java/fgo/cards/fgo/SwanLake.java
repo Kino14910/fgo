@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.cards.red.SearingBlow;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import fgo.cards.FGOCard;
@@ -22,6 +23,7 @@ public class SwanLake extends FGOCard {
             1
     );
     public SwanLake() {this(0);}
+    
     public SwanLake(int upgrades) {
         super(ID, INFO);
         setDamage(2, 1);
@@ -29,13 +31,29 @@ public class SwanLake extends FGOCard {
         timesUpgraded = upgrades;
         setExhaust();
     }
-
+    
     @Override
     public void upgrade() {
-        super.upgrade();
-        upgraded = true;
-    }
+        this.timesUpgraded++;
+        this.upgraded = true;
+        this.name = cardStrings.NAME + "+" + this.timesUpgraded;
+        this.initializeTitle();
 
+        if (upgradeDamage)
+            this.upgradeDamage(damageUpgrade);
+
+        if (upgradeMagic)
+            this.upgradeMagicNumber(magicUpgrade);
+
+        for (LocalVarInfo var : cardVariables.values()) {
+            upgradeCustomVar(var);
+        }
+
+        if (baseExhaust ^ upgExhaust)
+            this.exhaust = upgExhaust;
+
+        this.initializeDescription();
+    }
     @Override
     public boolean canUpgrade() {return true;}
 

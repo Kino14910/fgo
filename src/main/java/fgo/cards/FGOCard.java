@@ -1,24 +1,33 @@
 package fgo.cards;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
+
+import fgo.FGOMod;
 import fgo.util.CardStats;
 
 public abstract class FGOCard extends BaseCard {
-    public boolean upgradedNP;
+    public boolean upgradeNP;
+    public boolean upgradeStar;
+
     public int npUpgrade;
-    public int baseNP;
-    public int np;
-    public boolean upgradedStar;
     public int starUpgrade;
+
+    public int baseNP;
     public int baseStar;
+
+    public int np;
     public int star;
+
     public boolean isModified;
+
+    protected boolean upgradedNP;
+    protected boolean upgradedStar;
 
     private void initValues() {
         np = baseNP = npUpgrade = 0;
-        upgradedNP = false;
+        upgradeNP = false;
         star = baseStar = starUpgrade = 0; 
-        upgradedStar = false;
+        upgradeStar = false;
 
         setCustomVar("NP", baseNP, npUpgrade);
         setCustomVar("S", baseStar, starUpgrade);
@@ -44,58 +53,121 @@ public abstract class FGOCard extends BaseCard {
         initValues();
     }
 
-    protected final void setNP(int np) { setNP(np, npUpgrade); }
+    protected final void setNP(int np) { setNP(np, 0); }
 
     protected final void setNP(int np, int npUpgrade) {
         this.baseNP = this.np = np;
         if (npUpgrade != 0) {
-            this.upgradedNP = true;
+            this.upgradeNP = true;
             this.npUpgrade = npUpgrade;
         }
     }
 
-    protected final void setNPUpgrade(int npUpgrade) {
-        this.npUpgrade = npUpgrade;
+    protected final void upgradeNP(int amount) {
+        this.np = this.baseNP += amount;
         this.upgradedNP = true;
     }
 
-    protected final void setStar(int star) { setStar(star, starUpgrade); }
+    protected final void setStar(int star) { setStar(star, 0); }
 
     protected final void setStar(int star, int starUpgrade) {
         this.baseStar = this.star = star;
         if (starUpgrade != 0) {
-            this.upgradedStar = true;
+            this.upgradeStar = true;
             this.starUpgrade = starUpgrade;
         }
     }
 
-    protected final void setStarUpgrade(int starUpgrade) {
-        this.starUpgrade = starUpgrade;
+    protected final void upgradeStar(int amount) {
+        this.star = this.baseStar += amount;
         this.upgradedStar = true;
     }
 
-    // 重写 upgrade 方法以处理 NP 和 star 升级
     @Override
     public void upgrade() {
-        super.upgrade();
-
-        if (upgradedNP) {
-            this.baseNP += npUpgrade;
-            this.np = this.baseNP;
+        if (upgraded) {
+            return;
         }
 
-        if (upgradedStar) {
-            this.baseStar += starUpgrade;
-            this.star = this.baseStar;
+        this.upgradeName();
+
+        if (this.upgradesDescription) {
+            if (cardStrings.UPGRADE_DESCRIPTION == null) {
+                FGOMod.logger.error("Card " + cardID + " upgrades description and has null upgrade description.");
+            } else {
+                this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            }
+        }
+
+        if (upgradeCost) {
+            if (isCostModified && this.cost < this.baseCost && this.cost >= 0) {
+                int diff = this.costUpgrade - this.baseCost; // how the upgrade alters cost
+                this.upgradeBaseCost(this.cost + diff);
+                if (this.cost < 0)
+                    this.cost = 0;
+            } else {
+                upgradeBaseCost(costUpgrade);
+            }
+        }
+
+        if (upgradeDamage)
+            this.upgradeDamage(damageUpgrade);
+
+        if (upgradeBlock)
+            this.upgradeBlock(blockUpgrade);
+
+        if (upgradeMagic)
+            this.upgradeMagicNumber(magicUpgrade);
+
+        for (LocalVarInfo var : cardVariables.values()) {
+            upgradeCustomVar(var);
+        }
+
+        if (baseExhaust ^ upgExhaust)
+            this.exhaust = upgExhaust;
+
+        if (baseInnate ^ upgInnate)
+            this.isInnate = upgInnate;
+
+        if (baseEthereal ^ upgEthereal)
+            this.isEthereal = upgEthereal;
+
+        if (baseRetain ^ upgRetain)
+            this.selfRetain = upgRetain;
+
+        this.initializeDescription();
+        
+        if (upgradeNP) {
+            upgradeNP(npUpgrade);
+        }
+
+        if (upgradeStar) {
+            upgradeStar(starUpgrade);
         }
     }
 
-    // 自定义方法以获取 NP 和 star 值
     public int getNP() {
         return this.np;
     }
 
     public int getStar() {
         return this.star;
+    }
+
+    @Override
+    public AbstractCard makeStatEquivalentCopy() {
+        AbstractCard candidate = super.makeStatEquivalentCopy();
+
+        if (candidate instanceof FGOCard) {
+            FGOCard fgoCard = (FGOCard) candidate;
+            fgoCard.np = this.np;
+            fgoCard.star = this.star;
+            fgoCard.baseNP = this.baseNP;
+            fgoCard.baseStar = this.baseStar;
+            fgoCard.upgradeNP = this.upgradeNP;
+            fgoCard.upgradeStar = this.upgradeStar;
+        }
+
+        return candidate;
     }
 }

@@ -21,7 +21,7 @@ public class SquireOfProphecyPower extends BasePower {
 
     @Override
     public void onAfterUseCard(AbstractCard card, UseCardAction action) {
-        if (EnergyPanel.totalCount == 0 && !this.owner.hasPower("NoPrayerForRainPower")) {
+        if (EnergyPanel.totalCount == 0 && !this.owner.hasPower("fgo:NoPrayerForRainPower")) {
             this.flash();
             this.addToBot(new GainEnergyAction(2));
             this.addToBot(new ApplyPowerAction(this.owner, this.owner, new NoPrayerForRainPower(this.owner), 1));

@@ -50,7 +50,7 @@ public class CriticalStarVariable extends DynamicVariable {
     public boolean upgraded(AbstractCard card) {
         if (card instanceof FGOCard) {
             FGOCard fgoCard = (FGOCard) card;
-            return fgoCard.upgradedStar;
+            return fgoCard.upgradeStar;
         }
         return false;
     }

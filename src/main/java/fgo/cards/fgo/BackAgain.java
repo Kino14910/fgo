@@ -27,6 +27,7 @@ public class BackAgain extends FGOCard {
     
     public BackAgain() {
         super(ID, INFO);
+        setMagic(3);
         setStar(5, 10);
         tags.add(CardTagsEnum.Foreigner);
 
@@ -36,7 +37,7 @@ public class BackAgain extends FGOCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, m, new DefenseDownPower(m, 3)));
+        addToBot(new ApplyPowerAction(m, p, new DefenseDownPower(m, magicNumber)));
         addToBot(new ApplyPowerAction(p, p, new StarPower(p, star)));
     }
 

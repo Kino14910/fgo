@@ -100,7 +100,7 @@
   },
   "${modID}:BackAgain": {
     "NAME": "雅号·异星蛸",
-    "DESCRIPTION": "给予2层 fgo:防御破坏 。获得 !S! 颗 fgo:暴击星 。",
+    "DESCRIPTION": "给予 !M! 层 fgo:防御破坏 。获得 !S! 颗 fgo:暴击星 。",
     "FLAVOR": "领域外生命。"
   },
   "${modID}:MonteCristoTreasure": {

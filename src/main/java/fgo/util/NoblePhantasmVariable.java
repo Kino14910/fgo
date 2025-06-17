@@ -50,7 +50,7 @@ public class NoblePhantasmVariable extends DynamicVariable {
     public boolean upgraded(AbstractCard card) {
         if (card instanceof FGOCard) {
             FGOCard fgoCard = (FGOCard) card;
-            return fgoCard.upgradedNP;
+            return fgoCard.upgradeNP;
         }
         return false;
     }

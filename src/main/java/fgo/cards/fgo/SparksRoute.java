@@ -36,6 +36,7 @@ public class SparksRoute extends FGOCard {
 
     @Override
     public void upgrade() {
+        super.upgrade();
         returnToHand = true;
     }
 

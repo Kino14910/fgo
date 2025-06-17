@@ -18,14 +18,14 @@ extends AbsNoblePhantasmCard {
 
     public EnumaElish() {
         super(ID, AbstractCard.CardType.ATTACK, AbstractCard.CardTarget.ALL_ENEMY);
-        setDamage(40);
+        setDamage(40, 8);
         setExhaust();
         cardArtLayers512.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH)));
         cardArtLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH_P)));
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAllEnemiesAction(p, damage, damageTypeForTurn, AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+        addToBot(new DamageAllEnemiesAction(p, multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
     }
 }
 

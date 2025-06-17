@@ -99,11 +99,7 @@ public abstract class FateMagineerCard extends FGOCard implements CustomCardPort
     }
 
     public FloatPair getCardTypeLocation(FloatPair pair, boolean isBigCard) {
-        if (isBigCard) {
-            pair.y += 432f;
-        } else {
-            pair.y += 224f;
-        }
+        pair.y += isBigCard ? 432f : 224f;
         return pair;
     }
 

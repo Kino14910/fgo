@@ -23,7 +23,7 @@ extends AbstractGameAction {
 
     public void update() {
         for (AbstractCard c : AbstractDungeon.player.hand.group) {
-            c.setCostForTurn(-this.amount);
+            c.setCostForTurn(c.costForTurn - this.amount);
         }
         this.isDone = true;
     }

@@ -23,11 +23,8 @@ public class SongOfThePoet extends FGOCard {
     }
 
 
-
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        for (int i = 0; i < magicNumber; i++) {
-            addToBot(new SongOfThePoetAction(m, new DamageInfo(p, damage, damageTypeForTurn)));
-        }
+        addToBot(new SongOfThePoetAction(m, new DamageInfo(p, damage, damageTypeForTurn)));
     }
 }

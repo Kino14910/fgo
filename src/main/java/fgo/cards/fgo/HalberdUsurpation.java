@@ -49,6 +49,9 @@ public class HalberdUsurpation extends FGOCard {
             return;
         }
         int HuAmt = (m.getPower(StrengthPower.POWER_ID)).amount * 2;
+        if(HuAmt <= 0) {
+            return;
+        }
         addToBot(new ApplyPowerAction(m, p, new StrengthPower(m, -HuAmt), -HuAmt));
         if (!m.hasPower("Artifact")) {
             addToBot(new ApplyPowerAction(m, p, new GainStrengthPower(m, HuAmt), HuAmt));

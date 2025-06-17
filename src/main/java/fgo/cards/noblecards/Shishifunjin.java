@@ -1,5 +1,6 @@
 package fgo.cards.noblecards;
 
+import com.evacipated.cardcrawl.mod.stslib.powers.StunMonsterPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -25,8 +26,8 @@ public class Shishifunjin extends AbsNoblePhantasmCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-            if (mo.hasPower("StunMonsterPower")) {
-                addToBot(new LoseHPAction(mo, p, mo.maxHealth / 100 * magicNumber, AbstractGameAction.AttackEffect.FIRE));
+            if (mo.hasPower(StunMonsterPower.POWER_ID)) {
+                addToBot(new LoseHPAction(mo, p, (int)Math.floor(mo.maxHealth / 100.0 * magicNumber), AbstractGameAction.AttackEffect.FIRE));
             }
         }
     }
