@@ -1,8 +1,9 @@
-package fgo.relics;
+package fgo.relics.deprecated;
 
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import fgo.patches.Enum.FGOCardColor;
+import fgo.relics.BaseRelic;
 
 import static fgo.FGOMod.makeID;
 

@@ -369,7 +369,7 @@ public class FGOMod implements
         //事件。
         // BaseMod.addEvent(WinterEvent.ID, WinterEvent.class, TheCity.ID);
         // BaseMod.addEvent("FGOLibrary", FGOLibrary.class, "TheCity");
-        BaseMod.addEvent(ConflictEvent.ID, ConflictEvent.class, TheBeyond.ID);
+        // BaseMod.addEvent(ConflictEvent.ID, ConflictEvent.class, TheBeyond.ID);
         BaseMod.addEvent(ProofAndRebuttalEvent.ID, ProofAndRebuttalEvent.class, Exordium.ID);
         BaseMod.addEvent(ManofChaldea.ID, ManofChaldea.class, TheBeyond.ID);
         BaseMod.addEvent(Beyondthe.ID, Beyondthe.class, TheBeyond.ID);

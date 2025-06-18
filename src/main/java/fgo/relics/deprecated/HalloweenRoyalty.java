@@ -1,4 +1,4 @@
-package fgo.relics;
+package fgo.relics.deprecated;
 
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
@@ -13,6 +13,7 @@ import fgo.cards.tempCards.BrilliantEscort;
 import fgo.cards.tempCards.PureCoordinate;
 import fgo.cards.tempCards.SionSkill;
 import fgo.patches.Enum.FGOCardColor;
+import fgo.relics.BaseRelic;
 
 import java.util.ArrayList;
 

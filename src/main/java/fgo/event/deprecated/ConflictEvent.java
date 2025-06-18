@@ -1,4 +1,4 @@
-package fgo.event;
+package fgo.event.deprecated;
 
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -10,7 +10,9 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.relics.Circlet;
 import com.megacrit.cardcrawl.vfx.UpgradeShineEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
-import fgo.relics.SkullCandy;
+
+import fgo.event.BaseEvent;
+import fgo.relics.deprecated.SkullCandy;
 
 import java.util.ArrayList;
 import java.util.Collections;
