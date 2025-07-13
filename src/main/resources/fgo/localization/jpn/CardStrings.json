@@ -1,0 +1,747 @@
+{
+  "${modID}:Strike": {
+    "NAME": "ストライク",
+    "DESCRIPTION": "!D! ダメージを与える。"
+  },
+  "${modID}:Defend": {
+    "NAME": "ガード",
+    "DESCRIPTION": "!B! ブロックを獲得。"
+  },
+  "${modID}:DreamUponTheStars": {
+    "NAME": "星に夢を",
+    "DESCRIPTION": "!NP!% 宝具ゲージを獲得。 NL !M!% 宝具威力を獲得。 NL !B! ブロックを獲得。"
+  },
+  "${modID}:CharismaOfHope": {
+    "NAME": "希望のカリスマ",
+    "DESCRIPTION": "!NP!% 宝具ゲージを獲得。 NL !D! ダメージを与える。"
+  },
+  "${modID}:WallOfSnowflakes": {
+    "NAME": "脆き雪花の壁",
+    "DESCRIPTION": "!B! ブロックを獲得。",
+    "UPGRADE_DESCRIPTION": "!B! ブロックを獲得。 NL このターンに受ける攻撃ダメージを !M! %軽減。"
+  },
+  "${modID}:BlackBarrel": {
+    "NAME": "パラドックス構築体",
+    "DESCRIPTION": "!D! ダメージを与える。 NL 敵の現在のブロックに等しい追加ダメージを与える。 NL 消耗。"
+  },
+  "${modID}:RestoreSpiritOrigin": {
+    "NAME": "霊基復元",
+    "DESCRIPTION": "戦闘不能を防ぎHPを全回復。 NL !NP!% 宝具ゲージを獲得。 NL 戦闘不能になる際、令呪3画を消費して発動。"
+  },
+  "${modID}:RepairSpiritOrigin": {
+    "NAME": "霊基修復",
+    "DESCRIPTION": "HPを30回復。 NL 令呪1画を消費。"
+  },
+  "${modID}:ReleaseNoblePhantasm": {
+    "NAME": "宝具解放",
+    "DESCRIPTION": "!NP!% 宝具ゲージを獲得。 NL 令呪1画を消費。"
+  },
+  "${modID}:BrilliantEscort": {
+    "NAME": "輝く随伴",
+    "DESCRIPTION": "!S! スターを獲得。 NL !NP!% 宝具ゲージを獲得。"
+  },
+  "${modID}:PureCoordinate": {
+    "NAME": "純潔のコーディネート",
+    "DESCRIPTION": "このターン中 !M! 回 無敵状態を獲得。"
+  },
+  "${modID}:BlessedRegenerate": {
+    "NAME": "祝福された再生",
+    "DESCRIPTION": "[E] を獲得。 NL !M! 枚 カードを引く。"
+  },
+  "${modID}:SionSkill": {
+    "NAME": "予測演算",
+    "DESCRIPTION": "カードを1枚破棄。 NL 山札から !M! 枚選択して手札に加える。 NL 第二幕で追加。"
+  },
+  "${modID}:HolyShroud": {
+    "NAME": "聖骸布",
+    "DESCRIPTION": "カードを1枚引く。 NL 次のターンに !B! ブロックを獲得。"
+  },
+  "${modID}:QueensCovenant": {
+    "NAME": "女王の契約",
+    "DESCRIPTION": "次のアビリティカードがプレイされるまで、 NL !M! 筋力を獲得。 NL !M! 敏捷を獲得。"
+  },
+  "${modID}:TrueClash": {
+    "NAME": "切磋",
+    "DESCRIPTION": "敵の意図が攻撃の場合のみプレイ可能。 NL !D! ダメージを与える。 NL !B! ブロックを獲得。",
+    "EXTENDED_DESCRIPTION": [
+      "まだ攻撃のタイミングではない。"
+    ]
+  },
+  "${modID}:MerlinMagic": {
+    "NAME": "幻術",
+    "DESCRIPTION": "敵1体につき !B! ブロックを獲得。 NL 消耗。",
+    "FLAVOR": "テスト用アートは変更可能。"
+  },
+  "${modID}:LivingFlame": {
+    "NAME": "妖星火輪",
+    "DESCRIPTION": "攻撃を受けるたび、攻撃者に !M! 層 燃焼 と1層 防御ダウン を付与。",
+    "FLAVOR": "領域外生命。"
+  },
+  "${modID}:WisdomOfThePeople": {
+    "NAME": "民の叡智",
+    "DESCRIPTION": "!M! HPを回復。 NL 全てのデバフを解除。",
+    "UPGRADE_DESCRIPTION": "!M! HPを回復。 NL !NP!% 宝具ゲージを獲得。 NL 全てのデバフを解除。"
+  },
+  "${modID}:NFFSpecial": {
+    "NAME": "NFF尖塔特別サービス",
+    "DESCRIPTION": "!M! 枚 カードを引く。 NL 2枚の *毒の刃 を捨て札置場に加える。"
+  },
+  "${modID}:PoisonousDagger": {
+    "NAME": "毒の刃",
+    "DESCRIPTION": "!D! ダメージを与える。 NL !M! 層 毒を付与。 NL 消耗。"
+  },
+  "${modID}:JourneyGuidance": {
+    "NAME": "旅路の導き",
+    "DESCRIPTION": "!D! ダメージを与える。 NL fgo:水辺 ：[E] [E] を獲得。 NL *花の邪神 を1枚手札に加える。"
+  },
+  "${modID}:SoulOfWaterChannels": {
+    "NAME": "花の邪神",
+    "DESCRIPTION": "保留。 NL 1層 呪いを獲得。 NL !S! スターを獲得。 NL 消耗。"
+  },
+  "${modID}:BackAgain": {
+    "NAME": "異称・異星蛸",
+    "DESCRIPTION": "!M! 層 防御ダウン を付与。 NL !S! スターを獲得。",
+    "FLAVOR": "領域外生命。"
+  },
+  "${modID}:MonteCristoTreasure": {
+    "NAME": "モンテ・クリストの秘宝",
+    "DESCRIPTION": "クリティカルダメージを与えるたび、貫通したダメージに等しいブロックを獲得。"
+  },
+  "${modID}:Doppelganger": {
+    "NAME": "ドッペルゲンガー",
+    "DESCRIPTION": "!D! ダメージを2回与える。 NL カードを1枚引き、そのコピーを手札に加える。"
+  },
+  "${modID}:MaidenOfaFlowerPatio": {
+    "NAME": "花園の乙女",
+    "DESCRIPTION": "!B! ブロックを2回獲得。 NL !M! 層 呪いを獲得。",
+    "FLAVOR": "テスト用アートは変更可能。"
+  },
+  "${modID}:ItsInevitable": {
+    "NAME": "不可避なるもの",
+    "DESCRIPTION": "全ての敵に !D! ダメージを与える。次の2ターン開始時、再度ダメージを与え（毎回 !M! 増加）。",
+    "FLAVOR": "テスト用アートは変更可能。"
+  },
+  "${modID}:BlessedScion": {
+    "NAME": "後継者",
+    "DESCRIPTION": "手札から消耗するカードを選択、 NL 山札の上に !M! 枚のコピーを加える。",
+    "UPGRADE_DESCRIPTION": "手札から消耗するカードを選択、 NL 山札の上に !M! 枚のコピーを加える（プレイまでコスト0）。",
+    "FLAVOR": "テスト用アートは変更可能。"
+  },
+  "${modID}:BeastMagic": {
+    "NAME": "対獣魔術",
+    "DESCRIPTION": "デバフを得るたび、!M! ブロックを獲得。"
+  },
+  "${modID}:YinYangFish": {
+    "NAME": "陰陽魚",
+    "DESCRIPTION": "!NP!% 宝具ゲージを失う。 NL !M! HPを回復。 NL 消耗。",
+    "UPGRADE_DESCRIPTION": "30% 宝具ゲージを獲得。 NL !M! HPを回復。 NL !NP!% 宝具ゲージを失う。 NL 消耗。"
+  },
+  "${modID}:WarriorsBlade": {
+    "NAME": "剣技迅く鷹の如し",
+    "DESCRIPTION": "!D! ダメージを !M! 回与える。 NL !S! スターを獲得。"
+  },
+  "${modID}:StarHunter": {
+    "NAME": "星の狩人",
+    "DESCRIPTION": "!M! 枚 カードを引く。 NL !S! スターを獲得。 NL 消耗。"
+  },
+  "${modID}:BlessingOfKur": {
+    "NAME": "冥界の加護",
+    "DESCRIPTION": "次にプレイする宝具カードで、!M! 最大HPを追加獲得。 NL 消耗。"
+  },
+  "${modID}:OriginBullet": {
+    "NAME": "起源弾",
+    "DESCRIPTION": "無敵貫通。 NL 解除された状態1つにつき !D! ダメージを与える。 NL 敵の状態数×!M! の追加ダメージ。"
+  },
+  "${modID}:StarPioneer": {
+    "NAME": "星の開拓者",
+    "DESCRIPTION": "!M! 活力を獲得。 NL 手札のカード1枚を戦闘中強化。",
+    "UPGRADE_DESCRIPTION": "!M! 活力を獲得。 NL 手札の全カードを戦闘中強化。"
+  },
+  "${modID}:GodsExecution": {
+    "NAME": "封神執行",
+    "DESCRIPTION": "!D! ダメージを与える。 NL デバフ状態なら [E] とカード1枚を引く。"
+  },
+  "${modID}:CrownedWithLife": {
+    "NAME": "狂乱の晩餐",
+    "DESCRIPTION": "プレイ不可。 NL このカードを引いた時、!M! 枚の *花の邪神 を手札に加え消耗。"
+  },
+  "${modID}:DragonCore": {
+    "NAME": "竜の炉心",
+    "DESCRIPTION": "手札の攻撃カード以外を消耗、同数のランダム攻撃カードを手札に加える（コスト0）。 NL 消耗。"
+  },
+  "${modID}:AtTheWell": {
+    "NAME": "泉のほとりにて",
+    "DESCRIPTION": "全デバフを解除。 NL !M! 層 戦闘続行を獲得。 NL 次ターンに戦闘不能、[E] [E] [E] とカード3枚を引く。 NL 消耗。"
+  },
+  "${modID}:SquireOfProphecy": {
+    "NAME": "雨乞い",
+    "DESCRIPTION": "!M! ターンの間、毎ターン初めて[E]を消費した時、[E] [E] を獲得。 NL 消耗。"
+  },
+  "${modID}:BeyondTheFurthestEnd": {
+    "NAME": "最果てより",
+    "DESCRIPTION": "!M! ターン終了時、全ての敵は1点 筋力を失う NL 全ての敵に1層 衰弱を付与。",
+    "FLAVOR": "テスト用アートは変更可能。"
+  },
+  "${modID}:EndOfADream": {
+    "NAME": "夢の終わり",
+    "DESCRIPTION": "ターン終了時、ランダムな手札1枚を消耗。 NL 宝具カードの攻撃ダメージ2倍。",
+    "UPGRADE_DESCRIPTION": "固有。 NL ターン終了時、ランダムな手札1枚を消耗。 NL 宝具カードの攻撃ダメージ2倍。"
+  },
+  "${modID}:AbyssLight": {
+    "NAME": "深淵に光と化して",
+    "DESCRIPTION": "3ターン間、毎ターン10%宝具ゲージ獲得。 NL !M!% 宝具ゲージ獲得。 NL !M!% 宝具威力獲得。",
+    "FLAVOR": "領域外生命。"
+  },
+  "${modID}:SchwarzwaldFalke": {
+    "NAME": "黒森の鷹",
+    "DESCRIPTION": "!M! 層 黄金律を獲得。 NL 次の !M! ターン終了時、1回 回避を獲得。 NL 消耗。"
+  },
+  "${modID}:ManaBurstGems": {
+    "NAME": "魔力放出（宝石）",
+    "DESCRIPTION": "ターン終了時、!M! 筋力を獲得。 NL このカードのコピーを捨て札置場に加える。",
+    "FLAVOR": "テスト用アートは変更可能。"
+  },
+  "${modID}:VoidSpaceFineArts": {
+    "NAME": "虚数美術",
+    "DESCRIPTION": "10層 戦闘続行を獲得。 NL 1層 呪いを3回獲得。 NL 呪いの層数×!M! の宝具ゲージ獲得。 NL 消耗。",
+    "FLAVOR": "領域外生命。"
+  },
+  "${modID}:TheYellowHouse": {
+    "NAME": "黄色い家",
+    "DESCRIPTION": "!D! ダメージを !M! 回与える。 NL 2層 防御ダウンを付与。 NL 1層 呪いを獲得。 NL このカードを山札に戻す。",
+    "FLAVOR": "領域外生命。"
+  },
+  "${modID}:Insanity": {
+    "NAME": "澪標の魂",
+    "DESCRIPTION": "攻撃カードプレイ時、呪い1層解除（成功時 筋力1と!M!%宝具ゲージ獲得）。 NL 敵の呪いを全て吸収。",
+    "FLAVOR": "領域外生命。"
+  },
+  "${modID}:TaisuiSMisfortune": {
+    "NAME": "血染めの皇子",
+    "DESCRIPTION": "{@@}固有。[E]獲得。 NL 全ての敵に「死亡時、あなたが{!M!|repeat= [E]}獲得」状態を付与。 NL 消耗。"
+  },
+  "${modID}:Executioner": {
+    "NAME": "処刑人",
+    "DESCRIPTION": "!D! ダメージを与える。 NL !M! 筋力を付与。 NL [E] を獲得。"
+  },
+  "${modID}:HeroicKing": {
+    "NAME": "十二輝剣",
+    "DESCRIPTION": "敵ランダムに !D! ダメージを !M! 回与える。戦闘でHPを失うたび、捨て札から手札に戻り1層 王威を獲得。",
+    "EXTENDED_DESCRIPTION": [
+      "全ての敵に !D! ダメージを !M! 回与え、!M! 層 被ダメージ増加を付与。"
+    ]
+  },
+  "${modID}:TheOneWhoSawItAll": {
+    "NAME": "全てを見る者",
+    "DESCRIPTION": "山札からランダムな攻撃カード1枚を手札に加え（戦闘中ダメージ+!M!）。"
+  },
+  "${modID}:HalberdUsurpation": {
+    "NAME": "簒奪の矛",
+    "DESCRIPTION": "!D! ダメージを与える。 NL 敵の筋力分を追加ダメージ、敵は1ターン筋力を2倍失う。"
+  },
+  "${modID}:MysticEyes": {
+    "NAME": "魔眼",
+    "DESCRIPTION": "!D! ダメージを与える。 NL !M! 層 呪いを付与。 NL 敵を1ターン行動不能に。 NL 消耗。"
+  },
+  "${modID}:ChildrenSHero": {
+    "NAME": "子供たちの英雄",
+    "DESCRIPTION": "このターン最後にプレイしたカードのコピー !M! 枚を手札に加える。 NL 消耗。",
+    "EXTENDED_DESCRIPTION": [
+      "このターンはまだカードをプレイしていない。"
+    ],
+    "FLAVOR": "テスト用アートは変更可能。"
+  },
+  "${modID}:Revelation": {
+    "NAME": "燦然聖光の復権",
+    "DESCRIPTION": "!M! 層 衰弱と被ダメージ増加を付与。 NL 消耗。"
+  },
+  "${modID}:JewelOfFourteen": {
+    "NAME": "岩窟王",
+    "DESCRIPTION": "{@@}手札が満タンになるまで *喝采の炎{!Upgrades!|1=+} を追加。"
+  },
+  "${modID}:FlamesofApplause": {
+    "NAME": "喝采の炎",
+    "DESCRIPTION": "!D! ダメージを与える。 NL !M! 層 燃焼を付与。 NL 消耗。"
+  },
+  "${modID}:SwordOfSelection": {
+    "NAME": "聖剣鍛造",
+    "DESCRIPTION": "!M! 枚 カードを引く。 NL 手札数×2の宝具ゲージ獲得。",
+    "EXTENDED_DESCRIPTION": [
+      " NL （!NP! % 宝具ゲージ獲得。）"
+    ]
+  },
+  "${modID}:SparksRoute": {
+    "NAME": "スパークルート∞",
+    "DESCRIPTION": "宝具ゲージ10%減少（不足時プレイ不可）。 NL 手札を山札に戻し、同数引く。",
+    "UPGRADE_DESCRIPTION": "宝具ゲージ10%減少（不足時プレイ不可）。 NL 手札を山札に戻し、同数引く。 NL 手札に戻る。",
+    "EXTENDED_DESCRIPTION": [
+      "燃料不足。"
+    ],
+    "FLAVOR": "テスト用アートは変更可能。"
+  },
+  "${modID}:WildRule": {
+    "NAME": "野性の法則／強食",
+    "DESCRIPTION": "!D! ダメージを与える。 NL HPを3回復。 NL 敵の筋力を1減らし、成功時 !M! 層 被ダメージ増加を付与。"
+  },
+  "${modID}:TeslaCoil": {
+    "NAME": "テスラコイル",
+    "DESCRIPTION": "!D! ダメージを与える。 NL !M! 層 黄金律を獲得。"
+  },
+  "${modID}:TameshiMono": {
+    "NAME": "試し斬り",
+    "DESCRIPTION": "!M! スターを獲得。 NL 手札1枚を消耗。"
+  },
+  "${modID}:SwanLake": {
+    "NAME": "白鳥の湖",
+    "DESCRIPTION": "!D! ダメージを !M! 回与える。 NL fgo:水辺 を獲得。 NL 複数回強化可能。 NL 消耗。"
+  },
+  "${modID}:LuckySpinning": {
+    "NAME": "幸運の紡ぎ糸",
+    "DESCRIPTION": "このカードプレイ後、ターン中ダメージを与えるたび、追加で !S! スターを獲得。"
+  },
+  "${modID}:KnightStance": {
+    "NAME": "騎士の構え",
+    "DESCRIPTION": "!B! ブロックを獲得。 NL このターン受ける攻撃ダメージを !M! %軽減。 NL 1層 黄金律を獲得。"
+  },
+  "${modID}:KarmicVision": {
+    "NAME": "業の瞳",
+    "DESCRIPTION": "無敵貫通。 NL 解除された状態1つにつき !D! ダメージを与える。",
+    "FLAVOR": "テスト用アートは変更可能。"
+  },
+  "${modID}:CurtainoftheNight": {
+    "NAME": "夜の帳",
+    "DESCRIPTION": "{@@}捨て札から{!M!|1=1|@=!M!}枚を手札に加え強化。",
+    "UPGRADE_DESCRIPTION": "捨て札から !M! 枚を手札に加え強化。"
+  },
+  "${modID}:TeachingsoftheEternal": {
+    "NAME": "無限の教え",
+    "DESCRIPTION": "!NP!% 宝具ゲージ獲得。 NL !M!% 宝具威力獲得。"
+  },
+  "${modID}:MorningLark": {
+    "NAME": "朝の雲雀",
+    "DESCRIPTION": "!NP!% 宝具ゲージ獲得。 NL !S! スターを獲得。 NL ターン終了時、20%宝具ゲージを失う。 NL 消耗。"
+  },
+  "${modID}:GraceUnexpectedBirth": {
+    "NAME": "祝福されざる誕生",
+    "DESCRIPTION": "!NP!% 宝具ゲージ獲得。 NL このターン、宝具ゲージ獲得不可。 NL 消耗。"
+  },
+  "${modID}:SongOfThePoet": {
+    "NAME": "歌仙の詩歌",
+    "DESCRIPTION": "!D! ダメージを与える。 NL 貫通ダメージ分の宝具ゲージ獲得。"
+  },
+  "${modID}:CharismaOfTheJade": {
+    "NAME": "翡翠の魅力",
+    "DESCRIPTION": "!D! ダメージを !M! 回与える。 NL 20スター消費でダメージ3倍化可能。",
+    "EXTENDED_DESCRIPTION": [
+      "スターが足りない。"
+    ]
+  },
+  "${modID}:GoldenGrail": {
+    "NAME": "黄金の杯",
+    "DESCRIPTION": "全ての敵に !M! 層 燃焼をX回付与。 NL 7-X層 七つの獣冠を獲得。 NL 消耗。"
+  },
+  "${modID}:CrossingArcadia": {
+    "NAME": "アルカディアを越えて",
+    "DESCRIPTION": "!B! ブロック獲得。 NL 次の !M! 枚の攻撃カードがスターを返し [E] 獲得。"
+  },
+  "${modID}:GoddessMetamorphosisBeast": {
+    "NAME": "女神変生（獣）",
+    "DESCRIPTION": "{@@}{!Upgrades!|0=虚無。 NL }攻撃ダメージを与えるたび、1層 毒・呪いを付与。"
+  },
+  "${modID}:AnimalDialogue": {
+    "NAME": "アニマルダイアローグ",
+    "DESCRIPTION": "宝具ゲージ !M! % ごとに [E] を1獲得。 NL 宝具ゲージを全て失う。"
+  },
+  "${modID}:Chasmatis": {
+    "NAME": "天の裂け目",
+    "DESCRIPTION": "カードやデバフでHPを失うたび、!M! 枚 カードを引く。"
+  },
+  "${modID}:WindsweptSlash": {
+    "NAME": "破竹の勢い",
+    "DESCRIPTION": "!D! ダメージを与える。 NL 山札に *洞察 を1枚加える。",
+    "UPGRADE_DESCRIPTION": "!D! ダメージを与える。 NL *洞察 を1枚手札に加える。",
+    "FLAVOR": "テスト用アートは変更可能。"
+  },
+  "${modID}:DesiresSalvation": {
+    "NAME": "祈り救済の人",
+    "DESCRIPTION": "{@@}{!Upgrades!|1=固有。 NL }ターン開始時、!NP!% 宝具ゲージ獲得。"
+  },
+  "${modID}:FacelessMoon": {
+    "NAME": "無貌の月",
+    "DESCRIPTION": "このターン手札を保留、保留1枚につき !M! スター獲得。 NL 消耗。",
+    "UPGRADE_DESCRIPTION": "このターン手札を保留、保留1枚につき !M! スター獲得。",
+    "FLAVOR": "領域外生命。"
+  },
+  "${modID}:RepayForLife": {
+    "NAME": "生涯の伴侶",
+    "DESCRIPTION": "失ったHPに等しいブロック獲得。 NL 消耗。",
+    "EXTENDED_DESCRIPTION": [
+      " NL （!B! ブロック獲得。）"
+    ]
+  },
+  "${modID}:HeroEli": {
+    "NAME": "勇者イリヤの冒険",
+    "DESCRIPTION": "!D! ダメージを与える。 NL 敵ランダムに !D! ダメージを !M! 回追加。 NL !M! 枚 カードを引く。"
+  },
+  "${modID}:CharismaofAdversity": {
+    "NAME": "逆境の魅力",
+    "DESCRIPTION": "!D! ダメージを与える。 NL 失ったHP12ごとに追加で !D! ダメージ。",
+    "EXTENDED_DESCRIPTION": [
+      " NL （追加で !D! ダメージ",
+      "回。）"
+    ]
+  },
+  "${modID}:Swingby": {
+    "NAME": "重力アシスト",
+    "DESCRIPTION": "虚無。 NL 手札を全て破棄、1枚につき !M! ブロックとスター獲得。",
+    "FLAVOR": "領域外生命。"
+  },
+  "${modID}:KnightoftheLake": {
+    "NAME": "湖上の騎士",
+    "DESCRIPTION": "クリティカル威力未所持時、!M!% クリティカル威力獲得。 NL 所持時、!S! スター獲得。 消耗"
+  },
+  "${modID}:CircuitConnect": {
+    "NAME": "回路接続",
+    "DESCRIPTION": "!B! ブロック獲得。 NL !D! ダメージを与える。"
+  },
+  "${modID}:GiantoftheBridge": {
+    "NAME": "橋の巨人",
+    "DESCRIPTION": "!B! ブロック獲得。 NL !D! ダメージを与える。 NL 第二・四幕で2回発動。"
+  },
+  "${modID}:Borrowingfrom": {
+    "NAME": "転輪自在趺坐より借り",
+    "DESCRIPTION": "宝具ゲージを2倍化。"
+  },
+  "${modID}:MagicBulletCharging": {
+    "NAME": "魔弾装填",
+    "DESCRIPTION": "*魔弾 をX個獲得。 NL *魔弾 所持時は全て失い、1個につき全敵に !D! ダメージ。",
+    "EXTENDED_DESCRIPTION": [
+      "全敵に !D! ダメージを !M! 回与える。"
+    ]
+  },
+  "${modID}:Canopus": {
+    "NAME": "カノープス",
+    "DESCRIPTION": "!D! ダメージを与える。 NL *呪災 を1枚捨て札置場に加える。"
+  },
+  "${modID}:CurseDisaster": {
+    "NAME": "呪災",
+    "DESCRIPTION": "プレイ不可。 NL このカードを引いた時、自分と全敵に !M! 層 呪いを付与。 NL 虚無。"
+  },
+  "${modID}:FgoInsight": {
+    "NAME": "洞察",
+    "DESCRIPTION": "保留。 NL !M! 枚 カードを引く。 NL 消耗。",
+    "FLAVOR": "テスト用アートは変更可能。"
+  },
+  "${modID}:StarBasket": {
+    "NAME": "星の籠",
+    "DESCRIPTION": "!D! ダメージを与える。 NL 対象に !D! ブロック付与。 NL !M! 個のランダムなバフ獲得。"
+  },
+  "${modID}:PrimevalRune": {
+    "NAME": "氷結暴風雪",
+    "DESCRIPTION": "全敵に !M! 層 衰弱・被ダメージ増加を付与。"
+  },
+  "${modID}:EightKindness": {
+    "NAME": "仁義八行",
+    "DESCRIPTION": "!M! 筋力・敏捷・*多層装甲・再生・棘・活力・無形・礼装効果獲得。 NL 消耗。"
+  },
+  "${modID}:MaraPapiyas": {
+    "NAME": "女神の恩恵",
+    "DESCRIPTION": "最大HPを2失う。 NL !M! HPを回復。"
+  },
+  "${modID}:DeathOfDeath": {
+    "NAME": "死の淵",
+    "DESCRIPTION": "!M! 層 戦闘続行獲得。 戦闘続行発動後、次ターンにダメージ2倍。"
+  },
+  "${modID}:PeerlessStrike": {
+    "NAME": "刹那の一撃",
+    "DESCRIPTION": "HPが半分以下のみプレイ可能。 NL 筋力5と100%クリティカル威力獲得。 NL ターン終了時に戦闘不能。",
+    "EXTENDED_DESCRIPTION": [
+      "HPが十分に低くない。"
+    ]
+  },
+  "${modID}:GloriousStrike": {
+    "NAME": "栗饅頭ストライク",
+    "DESCRIPTION": "!D! ダメージを !M! 回与える。 NL ターン終了時、全デバフ解除。 NL 消耗。"
+  },
+  "${modID}:OneTimeOneMeeting": {
+    "NAME": "一期一会",
+    "DESCRIPTION": "次ターン、非アビリティカードを引くたび消耗し、ランダムなアビリティカードを手札に加える。"
+  },
+  "${modID}:SpringOfFire": {
+    "NAME": "たとえ三度落日を迎えても",
+    "DESCRIPTION": "次に戦闘不能になる3回を防ぎ、!M! HP回復・20%宝具威力獲得・全デバフ解除。"
+  },
+  "${modID}:MillenniumCastle": {
+    "NAME": "輝く月",
+    "DESCRIPTION": "3ターン間、毎ターン開始時：筋力1失い、全敵筋力2減少。終了時：負の筋力を敏捷力に変換。",
+    "UPGRADE_DESCRIPTION": "固有。 NL 3ターン間、毎ターン開始時：筋力1失い、全敵筋力2減少。終了時：負の筋力を敏捷力に変換。"
+  },
+  "${modID}:Shvibzik": {
+    "NAME": "小悪魔",
+    "DESCRIPTION": "!D! ダメージを与える。 NL 戦闘中 *凍結の瞳 を獲得。 NL 消耗。",
+    "FLAVOR": "テスト用アートは変更可能。"
+  },
+  "${modID}:Trifas": {
+    "NAME": "トリファスにて",
+    "DESCRIPTION": "!B! ブロック獲得。 NL 全衰弱を解除。",
+    "FLAVOR": "テスト用アートは変更可能。"
+  },
+  "${modID}:LakeTexcoco": {
+    "NAME": "第三の太陽",
+    "DESCRIPTION": "!NP!% 宝具ゲージ獲得。 NL 3ターン間、毎ターン !M!% 宝具ゲージ獲得。 NL fgo:水辺 獲得。 NL 消耗"
+  },
+  "${modID}:BlueStarSea": {
+    "NAME": "蒼の星海",
+    "DESCRIPTION": "!M! HPを回復。 NL カードを1枚引く。"
+  },
+  "${modID}:ReplicaAgateram": {
+    "NAME": "銀の腕",
+    "DESCRIPTION": "!B! ブロック獲得。 NL 全デバフを1層減少（1層につき !B! ブロック追加獲得）。"
+  },
+  "${modID}:BloomInSpring": {
+    "NAME": "春暖花開",
+    "DESCRIPTION": "X HPをX回回復。 NL 消耗。",
+    "UPGRADE_DESCRIPTION": "保留。 NL X HPをX回回復。 NL 消耗。"
+  },
+  "${modID}:LevelSlash": {
+    "NAME": "壱の突き",
+    "DESCRIPTION": "全敵に !D! ダメージ。 平静状態へ。 NL *弐の突き を山札に加える。 消耗。"
+  },
+  "${modID}:CrimsonSlash": {
+    "NAME": "弐の突き",
+    "DESCRIPTION": "全敵に !D! ダメージ、!M! 層 被ダメージ増加付与。 NL 憤怒状態へ。 NL *参の突き を山札に加える。 消耗。"
+  },
+  "${modID}:DivineDualEdge": {
+    "NAME": "参の突き",
+    "DESCRIPTION": "全敵に !D! ダメージを2回与える。 NL ターン開始時、追加で1枚引く。 NL 神格状態へ。 NL 消耗。"
+  },
+  "${modID}:UndeadBird": {
+    "NAME": "不死鳥大地に落つ",
+    "DESCRIPTION": "ランダムな回復カードを !M! 枚手札に加える。 NL 消耗。"
+  },
+  "${modID}:NightlessCharisma": {
+    "NAME": "不夜の魅力",
+    "DESCRIPTION": "ターン開始時、山札からランダムな攻撃カードを !M! 枚手札に加え強化。"
+  },
+  "${modID}:CrystallizationofWinter": {
+    "NAME": "冬の結晶",
+    "DESCRIPTION": "攻撃カードのダメージ・ブロック獲得量+!M!、ターン開始時1減少。"
+  },
+  "${modID}:CharismaOfConflict": {
+    "NAME": "闘争の魅力",
+    "DESCRIPTION": "全敵に !D! ダメージ。 NL 戦闘続行状態時、追加で !D! ダメージ。"
+  },
+  "${modID}:ProofAndRebuttal": {
+    "NAME": "証明と反証",
+    "DESCRIPTION": "カードを1枚引く。 NL 手札の任意枚数を山札の上に置く。 NL 消耗。",
+    "UPGRADE_DESCRIPTION": "カードを1枚引く。 NL 手札の任意枚数を山札の上に置く。",
+    "FLAVOR": "テスト用アートは変更可能。"
+  },
+  "${modID}:TakeRomance": {
+    "NAME": "ロマンスを味わう",
+    "DESCRIPTION": "!M! 枚 先見。"
+  },
+  "${modID}:FifthForm": {
+    "NAME": "第五勢",
+    "DESCRIPTION": "このターン、敵1体への攻撃カードが2回発動（ダメージ50%低下）。 NL 消耗。",
+    "UPGRADE_DESCRIPTION": "このターン、敵1体への攻撃カードが2回発動（ダメージ35%低下）。 NL 消耗。",
+    "FLAVOR": "テスト用アートは変更可能。"
+  },
+  "${modID}:Dumuzid": {
+    "NAME": "ドゥムジ",
+    "DESCRIPTION": "プレイ不可。 NL ターン終了時、*「終わり」を再生。"
+  },
+  "${modID}:GrandOrder": {
+    "NAME": "グランドオーダー",
+    "DESCRIPTION": "非ボス敵を全滅。 NL デッキから永久除外。 NL 消耗。"
+  },
+  "${modID}:Kaleidoscope": {
+    "NAME": "カレイドスコープ",
+    "DESCRIPTION": "!NP!% 宝具ゲージ獲得。"
+  },
+  "${modID}:TheBlackGrail": {
+    "NAME": "黒の聖杯",
+    "DESCRIPTION": "!M!% 宝具威力獲得。"
+  },
+  "${modID}:SupportCraft": {
+    "NAME": "サポートクラフト",
+    "DESCRIPTION": "!NP!% 宝具ゲージ獲得。 NL 強化効果なし。"
+  },
+  "${modID}:HeroCreation": {
+    "NAME": "英雄作成",
+    "DESCRIPTION": "100% クリティカル威力獲得。 NL ターン終了時、100% クリティカル威力を失う。"
+  },
+  "${modID}:Coaching": {
+    "NAME": "指導",
+    "DESCRIPTION": "[E] [E] 獲得。 NL 消耗。"
+  },
+  "${modID}:EternalMemories": {
+    "NAME": "希望の星",
+    "DESCRIPTION": "筋力2獲得。 NL 全デバフ解除。 NL !M! 回 粛正防御獲得。"
+  },
+  "${modID}:BeautifulJourney": {
+    "NAME": "境界を超える存在",
+    "DESCRIPTION": "全敵に !D! ダメージ。敵1体につき !NP!% 宝具ゲージ獲得。"
+  },
+  "${modID}:Failnaught": {
+    "NAME": "痛哭の幻奏",
+    "DESCRIPTION": "敵のブロック・礼装効果を解除。 NL !D! ダメージを与える。"
+  },
+  "${modID}:TsumukariMuramasa": {
+    "NAME": "無元剣制",
+    "DESCRIPTION": "全敵に !D! ダメージを6回与え、全筋力を失う。"
+  },
+  "${modID}:ImitationGodForce": {
+    "NAME": "偽・軍神五兵",
+    "DESCRIPTION": "全敵に !D! ダメージを !M! 回与え、!M! 層 衰弱付与。",
+    "EXTENDED_DESCRIPTION": [
+      "ヒヒーン！"
+    ]
+  },
+  "${modID}:BridalSpinWheel": {
+    "NAME": "花嫁に贈る紡車",
+    "DESCRIPTION": "{@@}{!M!|repeat= [E]} 獲得。 NL !S! スター獲得。"
+  },
+  "${modID}:IraLupus": {
+    "NAME": "狂暴乙女狼",
+    "DESCRIPTION": "敵のHPを !D! 減少。 NL !M! 層 被ダメージ増加付与。"
+  },
+  "${modID}:LostLonginus": {
+    "NAME": "選定の槍",
+    "DESCRIPTION": "全敵に !D! ダメージ、*無敵状態解除。"
+  },
+  "${modID}:WickerMan": {
+    "NAME": "灼け尽きる炎の籠",
+    "DESCRIPTION": "全敵に !D! ダメージ、!M! 層 燃焼・被ダメージ増加付与。"
+  },
+  "${modID}:ExcaliburGalatine": {
+    "NAME": "転輪する勝利の剣",
+    "DESCRIPTION": "fgo:陽光照射 3ターン獲得。 NL !M! 活力獲得。"
+  },
+  "${modID}:Overload": {
+    "NAME": "過重湖光",
+    "DESCRIPTION": "敵のブロック解除。 NL !D! ダメージを与える。 NL !M! 層 防御ダウン付与。"
+  },
+  "${modID}:GardenOfAvalon": {
+    "NAME": "永久隔絶理想郷",
+    "DESCRIPTION": "ターン開始時、!M! ブロック・!M!% 宝具ゲージ・!M! スター獲得。"
+  },
+  "${modID}:ElementaryMyDear": {
+    "NAME": "これは常識",
+    "DESCRIPTION": "ターン開始時、ブロック中の敵はブロック値分のHPを失い、!M! 層 被ダメージ増加獲得。"
+  },
+  "${modID}:GreatRamNautilus": {
+    "NAME": "吾、征く。鸚鵡螺の大衝角",
+    "DESCRIPTION": "!D! ダメージを与える。 NL fgo:水辺 ：ダメージ50%増加。 NL fgo:水辺 ：[E] 獲得。"
+  },
+  "${modID}:LieLikeVortigern": {
+    "NAME": "彼方と墜つ夢の瞳",
+    "DESCRIPTION": "全敵に !D! ダメージ、筋力2減少、!M! 層 無形付与。 NL 自身に !M! 層 無形獲得。"
+  },
+  "${modID}:RoadlessCamelot": {
+    "NAME": "届かざる理想郷",
+    "DESCRIPTION": "{@@}全敵に !D! ダメージを3回与える。 NL 次にプレイする{!M!|1=1|@=!M!}枚の宝具カードが2回発動。"
+  },
+  "${modID}:BlackdogGalatine": {
+    "NAME": "日輪を捕らえる角",
+    "DESCRIPTION": "全敵に !D! ダメージを5回与える。 NL !M! 層 *多層装甲獲得。"
+  },
+  "${modID}:FetchFailnaught": {
+    "NAME": "痛幻哭奏",
+    "DESCRIPTION": "!D! ダメージを与える。 NL 敵の呪い1層につき10%ダメージ増加。 NL !M! 層 呪い付与。 NL 敵の呪い層数を2倍化。"
+  },
+  "${modID}:InnocenceAroundight": {
+    "NAME": "未だ知らざる無垢湖光",
+    "DESCRIPTION": "!D! ダメージを与える。 NL !M! 層 黄金律獲得。 NL *光の地平線+ を山札に加える。"
+  },
+  "${modID}:RayHorizon": {
+    "NAME": "光の地平線",
+    "DESCRIPTION": "!NP!% 宝具ゲージ獲得。 NL このターンの被ダメージを全て防止。 NL 次の宝具カードは *知られざる無垢の鼓動 固定。"
+  },
+  "${modID}:HollowHeartAlbion": {
+    "NAME": "知られざる無垢の鼓動",
+    "DESCRIPTION": "全敵のHPを !D! 減少。 NL !S! スター獲得。"
+  },
+  "${modID}:Sevendrive": {
+    "NAME": "79式掷禍大社",
+    "DESCRIPTION": "全敵に !D! ダメージを8回与える。 NL !NP!% 宝具ゲージ獲得。"
+  },
+  "${modID}:Excalibur": {
+    "NAME": "約束された勝利の剣",
+    "DESCRIPTION": "全敵に !D! ダメージ。 NL !NP!% 宝具ゲージ獲得。"
+  },
+  "${modID}:Camelot": {
+    "NAME": "理想郷",
+    "DESCRIPTION": "!B! ブロック獲得。 NL 筋力2獲得。 NL ターン終了時、!M! ブロック獲得。"
+  },
+  "${modID}:EnferChateaudIf": {
+    "NAME": "虎よ、煌々と燃え盛れ",
+    "DESCRIPTION": "*翼の靴 未所持時、*翼の靴 獲得。",
+    "FLAVOR": "強化効果なし。 *翼の靴 所持時は宝具選択不可。"
+  },
+  "${modID}:Desterrennacht": {
+    "NAME": "星月夜",
+    "DESCRIPTION": "全敵に !M! 層 恐怖付与。 NL 筋力2と50%クリティカル威力獲得。 NL 毎ターン10スター獲得。"
+  },
+  "${modID}:LaPucelle": {
+    "NAME": "紅蓮の聖女",
+    "DESCRIPTION": "!D! ダメージを与える。 NL ダメージの半分の燃焼付与。 NL *灼傷+ を山札に加える。"
+  },
+  "${modID}:Shishifunjin": {
+    "NAME": "機関外法・獅子奮迅",
+    "DESCRIPTION": "行動不能の敵の最大HPの !M! %を減少。"
+  },
+  "${modID}:Fragarach": {
+    "NAME": "戦神の剣を穿つ",
+    "DESCRIPTION": "このターン攻撃を受けるたび、攻撃者に !D! ダメージを与え10スター獲得。"
+  },
+  "${modID}:LastSunXibalba": {
+    "NAME": "星、宇宙より降り",
+    "DESCRIPTION": "全敵に !D! ダメージを5回与える。 NL !S! スター獲得。",
+    "FLAVOR": "ボス遺品「アーキタイプORT」所持時のみ宝具選択可。"
+  },
+  "${modID}:MahaPralaya": {
+    "NAME": "帰滅を裁定する廻剣",
+    "DESCRIPTION": "全敵に !D! ダメージを5回与える。 NL 全敵のデバフ種類数の追加ダメージ。"
+  },
+  "${modID}:KurKigalIrkalla": {
+    "NAME": "霊峰踏抱く冥府の鞴",
+    "DESCRIPTION": "全敵に !D! ダメージ、*飛行状態未所持の敵は追加で最大HP10%減少。",
+    "EXTENDED_DESCRIPTION": [
+      " NL 筋力3獲得。 NL 礼装効果3層獲得。"
+    ]
+  },
+  "${modID}:ParadisChateaudIf": {
+    "NAME": "星よ、輝途へ往け",
+    "DESCRIPTION": "敵の燃焼層数分のダメージを !M! 回与える。 NL 敵を1ターン行動不能に。",
+    "UPGRADE_DESCRIPTION": "敵の燃焼層数+1のダメージを !M! 回与える。 NL 敵を1ターン行動不能に。",
+    "EXTENDED_DESCRIPTION": [
+      " NL （!D! ダメージを !M! 回与える。）"
+    ]
+  },
+  "${modID}:SecondLife": {
+    "NAME": "冥鏡宝典",
+    "DESCRIPTION": "消耗済みカード1枚を選択、強化して手札に加える。 NL 全ての *雑兵 敵が戦闘不能、1体につき !NP!% 宝具ゲージ獲得。",
+    "FLAVOR": "強化効果なし。"
+  },
+  "${modID}:YewBow": {
+    "NAME": "祈りの弓",
+    "DESCRIPTION": "!D! ダメージを与える。 NL 敵が毒状態なら追加で !D! ダメージ。"
+  },
+  "${modID}:Unlimited": {
+    "NAME": "無限の剣製",
+    "DESCRIPTION": "{@@}ターン開始時、ランダムな攻撃カード{!M!|1=1枚|@=!M!枚}を手札に加える（コスト0）。"
+  },
+  "${modID}:Summer": {
+    "NAME": "夏",
+    "DESCRIPTION": "fgo:水辺 獲得。 NL !NP!% 宝具ゲージ獲得。"
+  },
+  "${modID}:EnumaElish": {
+    "NAME": "天地乖離す開闢の星",
+    "DESCRIPTION": "全敵に !D! ダメージ。"
+  },
+  "${modID}:SuitenNikko": {
+    "NAME": "水天日光天照八野鎮石",
+    "DESCRIPTION": "手札の全カードコスト-1（このターン）。 NL !M!% 宝具ゲージ獲得。"
+  }
+}

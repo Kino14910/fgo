@@ -1,0 +1,20 @@
+{
+  "${modID}:OrbID": {
+    "NAME": "Orb Name",
+    "DESCRIPTION": [
+      "#yPassive: At the start of your turn, draw #b",
+      " card.",
+      " cards.",
+      " NL #yEvoke: Deal #b",
+      " damage to all enemies."
+    ]
+  },
+  "${modID}:NoblePhantasmButton": {
+    "NAME": "宝具解放",
+    "DESCRIPTION": [
+      "#y宝具ゲージ が #b100% 以上時、クリックで宝具カードを1枚選択し手札に加える（宝具ゲージ #rリセット）。 NL NL ",
+      "宝具ゲージが #b200% 時、選択可能な宝具カードが #y強化 状態。 NL ",
+      "宝具ゲージが #b300% 時、宝具カードを2枚獲得。"
+    ]
+  }
+}

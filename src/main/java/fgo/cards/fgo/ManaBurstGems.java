@@ -22,6 +22,7 @@ public class ManaBurstGems extends FGOCard {
             CardTarget.SELF,
             1
     );
+    
     public ManaBurstGems() {
         super(ID, INFO);
         setMagic(2, 1);

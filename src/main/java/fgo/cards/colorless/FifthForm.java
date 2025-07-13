@@ -21,7 +21,7 @@ public class FifthForm extends FGOCard {
     );
     public FifthForm() {
         super(ID, INFO);
-        setMagic(3);
+        setMagic(50, -15);
         this.portraitImg = ImageMaster.loadImage("fgo/images/cards/skill/FifthForm.png");
         setExhaust();
 

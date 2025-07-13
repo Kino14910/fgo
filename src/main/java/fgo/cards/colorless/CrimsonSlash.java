@@ -40,7 +40,6 @@ public class CrimsonSlash extends FGOCard {
     }
 
 
-
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new SFXAction("ATTACK_HEAVY"));

@@ -6,6 +6,8 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.red.Metallicize;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
+import com.megacrit.cardcrawl.powers.PlatedArmorPower;
 
 public class IgnoresInvincibilityAction extends AbstractGameAction {
     private int timesAmount;
@@ -26,13 +28,18 @@ public class IgnoresInvincibilityAction extends AbstractGameAction {
                 ++timesAmount;
             }
 
-            if (this.target.hasPower("Plated Armor")) {
-                this.addToBot(new RemoveSpecificPowerAction(this.target, AbstractDungeon.player, "Plated Armor"));
+            if (this.target.hasPower(IntangiblePlayerPower.POWER_ID)) {
+                this.addToBot(new RemoveSpecificPowerAction(this.target, AbstractDungeon.player, IntangiblePlayerPower.POWER_ID));
+                ++timesAmount;
+            }
+
+            if (this.target.hasPower(PlatedArmorPower.POWER_ID)) {
+                this.addToBot(new RemoveSpecificPowerAction(this.target, AbstractDungeon.player, PlatedArmorPower.POWER_ID));
                 ++timesAmount;
             }
 
             if (this.target.hasPower(Metallicize.ID)) {
-                this.addToBot(new RemoveSpecificPowerAction(this.target, AbstractDungeon.player, "Metallicize"));
+                this.addToBot(new RemoveSpecificPowerAction(this.target, AbstractDungeon.player, Metallicize.ID));
                 ++timesAmount;
             }
 

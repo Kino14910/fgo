@@ -1,0 +1,123 @@
+{
+  "${modID}:Example": {
+    "TEXT": [
+      "This is",
+      "an array of Strings."
+    ],
+    "EXTRA_TEXT": [
+      "This is another",
+      "array of Strings."
+    ],
+    "TEXT_DICT": {
+      "This": "Contains pairs of Strings, used to get values based on keys.",
+      "This is a key": "This is a value."
+    }
+  },
+
+  "${modID}:MidsummerNightDream": {
+    "TEXT": [
+      "Immune"
+    ]
+  },
+  "${modID}:PackMainMenuUI": {
+    "TEXT": [
+      "Mystic Codes or...",
+      "Please make your choice. Note that it will be reset when you exit the game.",
+      "Chaldea(BASIC)",
+      "Halloween Royalty",
+      "Wastehole of the Unsalvageable",
+      "Misaki High School Uniform",
+      "New Year's Attire",
+      "White Christmas",
+      "Summer Street",
+      "Sōya High School Uniform",
+      "True Ether Chaldea Uniform",
+      "Ceremonial New Year",
+      "Tropical Summer",
+      "Fragment of Year 2004",
+      "Memoria of the Far Side of the Moon",
+      "Memoria of Lunar Mare",
+      "Brilliant Summer",
+      "Royal Brand",
+      "Anniversary Blonde",
+      "Chaldea Pathfinder",
+      "Winter Casual",
+      "Arcueid Brunestud ?"
+    ]
+  },
+  "${modID}:SpireHeartText": {
+    "TEXT": [
+      "NL You use all the Command Spells...",
+      "Master",
+      "Wake up from your sleep again, this time you are at the bottom of the tower.",
+      "the Master",
+      "The Master"
+    ]
+  },
+  "${modID}:NPText": {
+    "TEXT": [
+      "NP",
+      "1) Whenever you are attacked, gain NP equal to half damaged. NL 2) Whenever you play a card, gain NP equal to triple cost.",
+      "Choose a Noble Phantasm into your hand.",
+      "Unlimited Blade Works: at the start of each turn, choose a copy of Attack from your deck into your hand.",
+      "1) Whenever you are attacked, gain NP equal to #bhalf(+30%) damaged. NL 4) Whenever you play a card, gain NP equal to triple cost."
+    ]
+  },
+  "${modID}:BlessedScionAction": {
+    "TEXT": [
+      "Copy"
+    ]
+  },
+  "${modID}:ProofAndRebuttalAction": {
+    "TEXT": [
+      "put on top of your draw pile."
+    ]
+  },
+  "${modID}:NobleCardTabNamePatch": {
+    "TEXT": [
+      "Noble Phantasm"
+    ]
+  },
+  "${modID}:PictureSelectFgoPatch": {
+    "TEXT": [
+      "Light-Cross",
+      "Starry Trail",
+      "ID: 82330518",
+      "ID: 117839244"
+    ]
+  },
+  "${modID}:CurrentNobleCardsTopPanelItem": {
+    "TEXT": [
+      "Noble Phantasm Card",
+      "You can view all Noble Phantasm cards.",
+      "Display all Noble Phantasm cards, some of which require special conditions."
+    ]
+  },
+  "${modID}:AbsNoblePhantasmCard": {
+    "TEXT": [
+      "Insufficient NP gauge."
+    ]
+  },
+  "${modID}:InSonorousEffectCard": {
+    "TEXT": [
+      "Blessings of the Knights of the Round Table (first 6 Num)",
+      "Mashu's Support"
+    ]
+  },
+  "${modID}:AlterOption": {
+    "TEXT": [
+      "???",
+      "Choose obtain a Noble Phantasm card, Upgrade a random card."
+    ]
+  },
+  "${modID}:AlterOptionEffect": {
+    "TEXT": [
+      "Choose obtain a Noble Phantasm card, Upgrade a random card."
+    ]
+  },
+  "${modID}:FGOConfig": {
+    "TEXT_DICT": {
+      "enableColorlessCards": "启用无色卡"
+    }
+  }
+}

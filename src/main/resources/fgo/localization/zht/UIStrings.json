@@ -1,0 +1,137 @@
+{
+  "${modID}:Example": {
+    "TEXT": [
+      "This is",
+      "an array of Strings."
+    ],
+    "EXTRA_TEXT": [
+      "This is another",
+      "array of Strings."
+    ],
+    "TEXT_DICT": {
+      "This": "Contains pairs of Strings, used to get values based on keys.",
+      "This is a key": "This is a value."
+    }
+  },
+  "${modID}:MidsummerNightDream": {
+    "TEXT": [
+      "免疫"
+    ]
+  },
+  "${modID}:PackMainMenuUI": {
+    "TEXT": [
+      "形象選擇",
+      "請做出你的選擇。注意，在您退出遊戲時會被重置。",
+      "迦勒底（默認）",
+      "萬聖節王室成員",
+      "奏章2校服",
+      "三咲高中校服",
+      "新春裝束",
+      "白色聖誕",
+      "夏日街頭",
+      "總耶高中校服",
+      "第五真實元素環境用迦勒底制服",
+      "華美的新年",
+      "熱帶夏日",
+      "2004年的碎片",
+      "月之背面的記憶",
+      "月之海的記憶",
+      "明亮夏日",
+      "王室品牌",
+      "金色慶典",
+      "迦勒底探險者",
+      "冬日便裝",
+      "貓Arc"
+    ]
+  },
+  "${modID}:SpireHeartText": {
+    "TEXT": [
+      "NL 你使用全部令咒……",
+      "御主",
+      "再一次從睡夢中醒來，這次你身處塔底。 NL 暴擊和寶具將是你突破尖塔的關鍵。",
+      "御主",
+      "御主"
+    ]
+  },
+  "${modID}:NPText": {
+    "TEXT": [
+      "寶具值",
+      "1.每當你打出一張牌，獲得這張牌耗能 #b5 倍的寶具值。 NL 2.獲得受到的攻擊傷害的寶具值。",
+      "選擇一張寶具牌加入你的手牌。",
+      "無限劍制：在每回合開始時，選擇牌堆中的一張攻擊牌的復制品加入你的手牌。"
+    ]
+  },
+  "${modID}:BlessedScionAction": {
+    "TEXT": [
+      "復制"
+    ]
+  },
+  "${modID}:ProofAndRebuttalAction": {
+    "TEXT": [
+      "放到你抽牌堆的頂部。"
+    ]
+  },
+  "${modID}:NobleCardTabNamePatch": {
+    "TEXT": [
+      "寶具"
+    ]
+  },
+  "${modID}:PictureSelectFgoPatch": {
+    "TEXT": [
+      "光の交差",
+      "星の軌跡",
+      "ID: 82330518",
+      "ID: 117839244"
+    ]
+  },
+  "${modID}:CurrentNobleCardsTopPanelItem": {
+    "TEXT": [
+      "寶具牌堆",
+      "你可以查看當前 #y已解鎖 的寶具牌。隨着深入探索尖塔、獲得遺物、獲得新牌等都會解鎖更多的寶具牌。",
+      "當前已解鎖的寶具牌。"
+    ]
+  },
+  "${modID}:AbsNoblePhantasmCard": {
+    "TEXT": [
+      "寶具值不夠。"
+    ]
+  },
+  "${modID}:InSonorousEffectCard": {
+    "TEXT": [
+      "圓桌騎士的祝福（前六層）",
+      "瑪修的支援"
+    ]
+  },
+  "${modID}:AlterOption": {
+    "TEXT": [
+      "靈基再臨",
+      "選擇獲得一張寶具牌，此選項不佔用火堆次數。"
+    ]
+  },
+  "${modID}:CommandSpell": {
+    "TEXT": [
+      "令咒已經用完了。"
+    ]
+  },
+  "${modID}:NoblePhantasm": {
+    "TEXT": [
+      "寶具被封印了。"
+    ]
+  },
+  "${modID}:AlterOptionEffect": {
+    "TEXT": [
+      "選擇獲得一張寶具牌，此選項不佔用火堆次數。"
+    ]
+  },
+  "${modID}:FGOConfig": {
+    "TEXT_DICT": {
+      "enableColorlessCards": "啓用無色卡（需要重啓遊戲）",
+      "enableEmiya": "啓用BOSS: 衛宮（需要重啓遊戲）"
+    }
+  },
+  "${modID}:MysticCode": {
+    "TEXT": [
+      "點擊使用技能。"
+    ]
+  }
+}

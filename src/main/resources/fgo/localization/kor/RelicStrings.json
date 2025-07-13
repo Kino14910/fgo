@@ -1,0 +1,182 @@
+{
+  "${modID}:RelicID": {
+    "NAME": "좋은 유물",
+    "FLAVOR": "상세 유물 보기에 표시되는 설명 텍스트.",
+    "DESCRIPTIONS": [
+      "턴 시작 시 [E]를 얻습니다. [E]는 에너지 아이콘입니다."
+    ]
+  },
+  "${modID}:SuitcaseFgo": {
+    "NAME": "령기 수하물",
+    "FLAVOR": "소환한 모든 서번트 정보를 기록한 장치.",
+    "DESCRIPTIONS": [
+      "전투 시작 시 #b20% #y보구 게이지를 얻습니다."
+    ]
+  },
+  "${modID}:HalloweenRoyalty": {
+    "NAME": "마술예장・첨탑",
+    "FLAVOR": "첨탑 도전자로서의 자격을 얻습니다.",
+    "DESCRIPTIONS": [
+      "매 #b5 턴, #b1 종류의 #y마스터 스킬을 선택 사용 가능. 게임 시작 시 또는 #y휴식처 진입 후, 다음 전투 시작 시 즉시 사용 가능.",
+      "매 #b5 턴, #b1 종류의 #y강화판 마스터 스킬을 선택 사용 가능. 게임 시작 시 또는 #y휴식처 진입 후, 다음 전투 시작 시 즉시 사용 가능."
+    ]
+  },
+  "${modID}:CommandSpell": {
+    "NAME": "마스터의 령주",
+    "FLAVOR": "카르데아 마스터의 령주이지만, 마력 자원으로만 사용 가능.",
+    "DESCRIPTIONS": [
+      "#y령주는 총 #b3 획. 전투 중 #y우클릭으로 소모하여 특수 효과 발동."
+    ]
+  },
+  "${modID}:SurpriseChocolate": {
+    "NAME": "서프라이즈 초콜릿",
+    "FLAVOR": "한 번뿐인 기회를 잡아라!",
+    "DESCRIPTIONS": [
+      "전투 시작 시, 무작위 버프를 #b1 회 획득."
+    ]
+  },
+  "${modID}:LockChocolateStrawberry": {
+    "NAME": "딸기 축복 초콜릿",
+    "FLAVOR": "선물할 대상을 신중히 선택하라.",
+    "DESCRIPTIONS": [
+      "습득 시, #y깨지기 쉬운 눈송이의 벽과 #y패러독스 구조체를 덱에 추가."
+    ]
+  },
+  "${modID}:LockChocolate": {
+    "NAME": "록크 초콜릿",
+    "FLAVOR": "선택하라, 소중한 사람에게 선물하라.",
+    "DESCRIPTIONS": [
+      "턴 시작 시 [E]를 획득. 전투 시작 시, #b1 중의 #y저주를 획득."
+    ]
+  },
+  "${modID}:AstrologicalTeapot": {
+    "NAME": "점성 티포트",
+    "FLAVOR": "마셔서 유대를 깊게 하라.",
+    "DESCRIPTIONS": [
+      "포션 사용 시마다 #b",
+      " 중의 #y전투 속행을 획득."
+    ]
+  },
+  "${modID}:SaveStone": {
+    "NAME": "영맥석",
+    "FLAVOR": "적시에 사용하라.",
+    "DESCRIPTIONS": [
+      "전투 시작 시, 현재 골드의 #b",
+      "%에 상당하는 #y골드를 획득."
+    ]
+  },
+  "${modID}:BlessRockChoco": {
+    "NAME": "축복 록크 초콜릿〔블루베리〕",
+    "FLAVOR": "초초특별한 축복 초콜릿.",
+    "DESCRIPTIONS": [
+      "비용 #b3 이상의 카드를 뽑았을 때, 해당 턴 비용이 #b1 감소."
+    ]
+  },
+  "${modID}:PoisonApple": {
+    "NAME": "독사과",
+    "FLAVOR": "수상하기 짝이 없는 사과. 이것을 받아 먹으려는 자는 틀림없이 대단한 선인일 것이다.",
+    "DESCRIPTIONS": [
+      "#y방어도를 획득할 때마다, 무작위 적에게 #b1 중의 #y독을 부여."
+    ]
+  },
+  "${modID}:MisoPotato": {
+    "NAME": "WEICENG 포테이토",
+    "FLAVOR": "자장 감자튀김에 단간장 소스를 뿌린 것. ZHIFU 산지에서 밀수되어 암시장에서 간편식으로 유통."
+  },
+  "${modID}:FanNight": {
+    "NAME": "밤샘 부채",
+    "FLAVOR": "오늘 밤은 밤새도록 놀자!",
+    "DESCRIPTIONS": [
+      "적의 #y방어도를 돌파할 때마다, #b2 중의 #y쇠약을 부여."
+    ]
+  },
+  "${modID}:BurgerKing": {
+    "NAME": "W 근육 버거",
+    "FLAVOR": "단백질이 근육으로 변하면 당연히 제로 칼로리. 고정용 꼬치가 많이 꽂혀 있어 흐트러지지 않음.",
+    "DESCRIPTIONS": [
+      "습득 시, 최대 HP를 #b40 상승시키고 고유한 #r저주를 1개 획득."
+    ]
+  },
+  "${modID}:DreamChip": {
+    "NAME": "꿈의 칩",
+    "FLAVOR": "꿈을 담은 호화로운 카지노 칩.",
+    "DESCRIPTIONS": [
+      "전투마다 처음으로 덱을 셔플할 때, #y계산 하기를 1장 핸드에 추가."
+    ]
+  },
+  "${modID}:CosmicMedallion": {
+    "NAME": "우주 메달",
+    "FLAVOR": "서번트 우주제 메달.",
+    "DESCRIPTIONS": [
+      "전투 시작 시, 처음 #b3 턴 동안 #y방어도가 사라지지 않음."
+    ]
+  },
+  "${modID}:MidsummerNightDream": {
+    "NAME": "한여름 밤의 꿈",
+    "FLAVOR": "이런 종류의 환영의 현현은 꿈속의 망상에 불과하다. 이 재미없는 줄거리는 꿈처럼 무력하다.",
+    "DESCRIPTIONS": [
+      "#y저주를 받지 않게 됨."
+    ]
+  },
+  "${modID}:Salem": {
+    "NAME": "영역 외 생명",
+    "FLAVOR": "허공으로부터의 강림자.",
+    "DESCRIPTIONS": [
+      "덱 내의 영역 외 생명 관련 카드(특수 마크) 1장당, 턴 시작 시 #b",
+      " 점의 #y활력을 획득.",
+      " 영역 외 생명 관련 카드 없음.",
+      " 영역 외 생명 관련 카드를 #b",
+      " 장 소지."
+    ]
+  },
+  "${modID}:SkullCandy": {
+    "NAME": "해골 사탕",
+    "FLAVOR": "예전에 소유했을지도 모른다.",
+    "DESCRIPTIONS": [
+      "마스터 스킬 옵션이 #y강화됨."
+    ]
+  },
+  "${modID}:ArchetypeORT": {
+    "NAME": "아키타입 ORT",
+    "FLAVOR": "ORT의 심장과 성간 외래종을 융합하여 제작(설계)된 생명체.",
+    "DESCRIPTIONS": [
+      "획득하는 #y무적이 #y숙정 방어로 변화. 2턴 이후 턴 시작 시, #b10 개의 #y스타와 #b3% #y보구 게이지를 획득."
+    ]
+  },
+  "${modID}:OblivionCorrection": {
+    "NAME": "망각 보정",
+    "FLAVOR": "사람은 잊기 쉬운 생물이지만, 복수자는 결코 망각하지 않는다.",
+    "DESCRIPTIONS": [
+      "전투 시작 시, #b30% #y치명타 위력을 획득."
+    ]
+  },
+  "${modID}:SelfReplenishmentMagic": {
+    "NAME": "자기회복(마력)",
+    "FLAVOR": "복수가 완료될 때까지, 마력은 솟아나온다.",
+    "DESCRIPTIONS": [
+      "턴 시작 시, 추가로 #b6% #y보구 게이지를 획득."
+    ]
+  },
+  "${modID}:BB": {
+    "NAME": "BB",
+    "FLAVOR": "때마침.",
+    "DESCRIPTIONS": [
+      "전투 시작 시, 무작위로 버프 또는 디버프 획득. 버프: #b2 점의 #y근력과 #y민첩 획득. 디버프: #b1 중의 #y받는 피해 증가, #y취약, 또는 #y쇠약 획득."
+    ]
+  },
+  "${modID}:BowInsignia": {
+    "NAME": "궁의 인장",
+    "FLAVOR": "아처 클래스의 문양이 새겨진 인장.",
+    "DESCRIPTIONS": [
+      "보구 카드 #y무한의 검제를 해제."
+    ]
+  },
+  "${modID}:MechanicalProtector": {
+    "NAME": "기관 보호구",
+    "FLAVOR": "특수 구조로 관절 굴곡을 보조.",
+    "DESCRIPTIONS": [
+      "다음 #b3회 어빌리티 카드를 플레이할 때, 무작위 적 1체를 #y행동 불가 상태로 만듭니다.",
+      "이 유물은 소진되었습니다!"
+    ]
+  }
+}

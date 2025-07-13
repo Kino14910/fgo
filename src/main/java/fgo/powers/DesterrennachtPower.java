@@ -4,18 +4,26 @@ import com.evacipated.cardcrawl.mod.stslib.powers.StunMonsterPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-
 
 import static fgo.FGOMod.makeID;
 
 public class DesterrennachtPower extends BasePower {
     public static final String POWER_ID = makeID(DesterrennachtPower.class.getSimpleName());
     private static final PowerType TYPE = PowerType.DEBUFF;
-    private static final boolean TURN_BASED = false;
+    private static final boolean TURN_BASED = true;
+    private static int IdOffset;
+    
+    private static final PowerStrings powerStrings;
+    public static final String NAME;
+    public static final String[] DESCRIPTIONS;
 
     public DesterrennachtPower(AbstractCreature owner, int amount) {
-        super(POWER_ID, TYPE, TURN_BASED, owner, amount, "EndOfADreamPower");
+        super(POWER_ID + IdOffset, TYPE, TURN_BASED, owner, amount, "EndOfADreamPower");
+        IdOffset++;
+        this.name = DesterrennachtPower.NAME;
     }
 
     @Override
@@ -35,5 +43,9 @@ public class DesterrennachtPower extends BasePower {
         }
     }
 
-    
+    static {
+        powerStrings = CardCrawlGame.languagePack.getPowerStrings(makeID(DesterrennachtPower.class.getSimpleName()));
+        NAME = DesterrennachtPower.powerStrings.NAME;
+        DESCRIPTIONS = DesterrennachtPower.powerStrings.DESCRIPTIONS;
+    }
 }

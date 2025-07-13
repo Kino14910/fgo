@@ -77,10 +77,10 @@ public class NoblePhantasmButton extends AbstractPanel {
         } 
         
         if (Master.fgoNp >= 100) {
-            ((Master)p).TruthValueUpdatedEvent();
             boolean isUpgraded = Master.fgoNp >= 200;
             int amount = Master.fgoNp == 300 ? 2 : 1;
             Master.fgoNp = 0;
+            ((Master)p).TruthValueUpdatedEvent();
             addToBot(new NoblePhantasmSelectAction(isUpgraded, amount));
         }
     }

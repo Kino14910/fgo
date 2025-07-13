@@ -9,14 +9,13 @@ import fgo.action.FgoNpAction;
 import fgo.panel.CommandSpellPanel;
 import fgo.patches.Enum.ThmodClassEnum;
 import fgo.powers.*;
-import javassist.CtBehavior;
 
 import static fgo.util.GeneralUtils.addToBot;
 
 public class RevivePatch {
     @SpirePatch(clz = AbstractPlayer.class, method = "damage")
     public static class hasEnoughEnergyPatcher {
-        @SpireInsertPatch(locator = Locator.class)
+        @SpireInsertPatch(rloc = 96)
         public static SpireReturn<Void> Insert(AbstractPlayer p) {
             String[] powerIds = {
                 GutsPower.POWER_ID,
@@ -46,13 +45,6 @@ public class RevivePatch {
                 }
 
             return SpireReturn.Continue();
-        }
-
-        private static class Locator extends SpireInsertLocator {
-            public int[] Locate(CtBehavior ctBehavior) throws Exception {
-                Matcher.FieldAccessMatcher fieldAccessMatcher = new Matcher.FieldAccessMatcher(AbstractPlayer.class, "isDead");
-                return LineFinder.findInOrder(ctBehavior, fieldAccessMatcher);
-            }
         }
     }
 }

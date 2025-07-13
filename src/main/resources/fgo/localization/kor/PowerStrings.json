@@ -187,8 +187,9 @@
   "${modID}:BeyondTheFurthestEndPower": {
     "NAME": "Beyond Furthest End",
     "DESCRIPTIONS": [
-      "At the end of this turn, ALL enemies lose #b1 strength. Apply #b1 #yWeak to ALL enemies.",
-      "At the end of your turn, ALL enemies lose #b1 strength. apply #b1 #yWeak to ALL enemies."
+      "At the end of this turn, apply #b1 #yPoison and #b1 #yWeak to ALL enemies.",
+      "At the end of your turn, apply #b",
+      " #yPoison and #b1 #yWeak to ALL enemies and lower this apply #yPoison by #b1."
     ]
   },
   "${modID}:EndOfADreamPower": {

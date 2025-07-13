@@ -1,0 +1,137 @@
+{
+  "${modID}:Example": {
+    "TEXT": [
+      "This is",
+      "an array of Strings."
+    ],
+    "EXTRA_TEXT": [
+      "This is another",
+      "array of Strings."
+    ],
+    "TEXT_DICT": {
+      "This": "Contains pairs of Strings, used to get values based on keys.",
+      "This is a key": "This is a value."
+    }
+  },
+  "${modID}:MidsummerNightDream": {
+    "TEXT": [
+      "免疫"
+    ]
+  },
+  "${modID}:PackMainMenuUI": {
+    "TEXT": [
+      "アバター選択",
+      "選択してください（ゲーム終了時リセット）。",
+      "カルデア（デフォルト）",
+      "ハロウィン王室",
+      "奏章2制服",
+      "三咲高校制服",
+      "新春衣装",
+      "ホワイトクリスマス",
+      "サマーストリート",
+      "総耶高校制服",
+      "第五真実元素環境用カルデア制服",
+      "華やかな新年",
+      "トロピカルサマー",
+      "2004年の断片",
+      "月の裏側の記憶",
+      "月の海の記憶",
+      "明るい夏",
+      "王室ブランド",
+      "ゴールデンセレブレーション",
+      "カルデア探検者",
+      "冬の普段着",
+      "猫アルク"
+    ]
+  },
+  "${modID}:SpireHeartText": {
+    "TEXT": [
+      "NL 全ての令呪を使い……",
+      "マスター",
+      "再び目覚めた時、塔の底にいた。 NL クリティカルと宝具が塔突破の鍵となる。",
+      "マスター",
+      "マスター"
+    ]
+  },
+  "${modID}:NPText": {
+    "TEXT": [
+      "宝具ゲージ",
+      "1.カードプレイ時、消費エネルギー×#b5の宝具ゲージ獲得。 NL 2.受けた攻撃ダメージ分の宝具ゲージ獲得。",
+      "宝具カードを1枚選択し手札に加える。",
+      "無限の剣製：ターン開始時、山札から攻撃カードのコピーを1枚手札に加える。"
+    ]
+  },
+  "${modID}:BlessedScionAction": {
+    "TEXT": [
+      "コピー"
+    ]
+  },
+  "${modID}:ProofAndRebuttalAction": {
+    "TEXT": [
+      "山札の上に置く。"
+    ]
+  },
+  "${modID}:NobleCardTabNamePatch": {
+    "TEXT": [
+      "宝具"
+    ]
+  },
+  "${modID}:PictureSelectFgoPatch": {
+    "TEXT": [
+      "光の交差",
+      "星の軌跡",
+      "ID: 82330518",
+      "ID: 117839244"
+    ]
+  },
+  "${modID}:CurrentNobleCardsTopPanelItem": {
+    "TEXT": [
+      "宝具デッキ",
+      "現在 #y解除済み の宝具カードを閲覧可能。塔の探索・遺品獲得・新カード取得で追加解除。",
+      "現在解除済みの宝具カード。"
+    ]
+  },
+  "${modID}:AbsNoblePhantasmCard": {
+    "TEXT": [
+      "宝具ゲージ不足。"
+    ]
+  },
+  "${modID}:InSonorousEffectCard": {
+    "TEXT": [
+      "円卓騎士の加護（前六層）",
+      "マシュの支援"
+    ]
+  },
+  "${modID}:AlterOption": {
+    "TEXT": [
+      "霊基再臨",
+      "宝具カード1枚獲得（休息回数消費なし）。"
+    ]
+  },
+  "${modID}:CommandSpell": {
+    "TEXT": [
+      "令呪が尽きた。"
+    ]
+  },
+  "${modID}:NoblePhantasm": {
+    "TEXT": [
+      "宝具が封印された。"
+    ]
+  },
+  "${modID}:AlterOptionEffect": {
+    "TEXT": [
+      "宝具カード1枚獲得（休息回数消費なし）。"
+    ]
+  },
+  "${modID}:FGOConfig": {
+    "TEXT_DICT": {
+      "enableColorlessCards": "無色カード有効化（要再起動）",
+      "enableEmiya": "ボス: エミヤ有効化（要再起動）"
+    }
+  },
+  "${modID}:MysticCode": {
+    "TEXT": [
+      "クリックでスキル使用。"
+    ]
+  }
+}
