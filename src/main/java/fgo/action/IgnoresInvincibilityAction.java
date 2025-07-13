@@ -1,51 +1,44 @@
 package fgo.action;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.red.Metallicize;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
+import com.megacrit.cardcrawl.powers.IntangiblePower;
 import com.megacrit.cardcrawl.powers.PlatedArmorPower;
+
+import fgo.powers.IgnoresInvincibilityPower;
 
 public class IgnoresInvincibilityAction extends AbstractGameAction {
     private int timesAmount;
-    private final DamageInfo info;
+    private final  int amount;
+    private final AbstractPlayer p = AbstractDungeon.player;
 
-    public IgnoresInvincibilityAction(AbstractCreature target, DamageInfo info, AttackEffect effect) {
-        this.info = info;
-        this.setValues(target, info);
+    public IgnoresInvincibilityAction(AbstractCreature target, int amount) {
+        this.target = target;
+        this.amount = amount;
         this.actionType = ActionType.DAMAGE;
-        this.attackEffect = effect;
         this.duration = 0.1F;
     }
 
     public void update() {
         if (this.duration == 0.1F && this.target != null) {
-            if (!this.target.isDying && !this.target.isDead && this.target.currentBlock > 0) {
-                this.target.loseBlock();
-                ++timesAmount;
+            String[] powerIds = {
+                IntangiblePower.POWER_ID,
+                PlatedArmorPower.POWER_ID,
+                Metallicize.ID
+            };
+            for (String id : powerIds) {
+                if (this.target.hasPower(id)) {
+                    this.addToBot(new RemoveSpecificPowerAction(this.target, p, id));
+                    timesAmount++;
+                }
             }
 
-            if (this.target.hasPower(IntangiblePlayerPower.POWER_ID)) {
-                this.addToBot(new RemoveSpecificPowerAction(this.target, AbstractDungeon.player, IntangiblePlayerPower.POWER_ID));
-                ++timesAmount;
-            }
-
-            if (this.target.hasPower(PlatedArmorPower.POWER_ID)) {
-                this.addToBot(new RemoveSpecificPowerAction(this.target, AbstractDungeon.player, PlatedArmorPower.POWER_ID));
-                ++timesAmount;
-            }
-
-            if (this.target.hasPower(Metallicize.ID)) {
-                this.addToBot(new RemoveSpecificPowerAction(this.target, AbstractDungeon.player, Metallicize.ID));
-                ++timesAmount;
-            }
-
-            for(int i = 0; i < timesAmount; ++i) {
-                this.target.damage(this.info);
-            }
+            addToBot(new ApplyPowerAction(p, p, new IgnoresInvincibilityPower(p, amount * timesAmount)));
 
             if (AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead()) {
                 AbstractDungeon.actionManager.clearPostCombatActions();
@@ -54,4 +47,6 @@ public class IgnoresInvincibilityAction extends AbstractGameAction {
 
         this.tickDuration();
     }
+
+
 }

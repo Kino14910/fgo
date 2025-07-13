@@ -9,13 +9,14 @@ import fgo.action.FgoNpAction;
 import fgo.panel.CommandSpellPanel;
 import fgo.patches.Enum.ThmodClassEnum;
 import fgo.powers.*;
+import javassist.CtBehavior;
 
 import static fgo.util.GeneralUtils.addToBot;
 
 public class RevivePatch {
     @SpirePatch(clz = AbstractPlayer.class, method = "damage")
     public static class hasEnoughEnergyPatcher {
-        @SpireInsertPatch(rloc = 96)
+        @SpireInsertPatch(locator = Locator.class)
         public static SpireReturn<Void> Insert(AbstractPlayer p) {
             String[] powerIds = {
                 GutsPower.POWER_ID,
@@ -37,14 +38,22 @@ public class RevivePatch {
             if (CommandSpellPanel.commandSpellCount == 3
                     && AbstractDungeon.currMapNode != null
                     && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT
-                    && AbstractDungeon.player.chosenClass == ThmodClassEnum.MASTER_CLASS) {
+                    && AbstractDungeon.player.chosenClass == ThmodClassEnum.MASTER_CLASS
+                    ) {
                 CommandSpellPanel.commandSpellCount = 0;
+                p.heal(p.maxHealth, true);
                 addToBot(new FgoNpAction(300));
-                addToBot(new HealAction(p, p, p.maxHealth));
                 return SpireReturn.Return(null);
-                }
+            }
 
             return SpireReturn.Continue();
+        }
+
+        private static class Locator extends SpireInsertLocator {
+            public int[] Locate(CtBehavior ctBehavior) throws Exception {
+                Matcher.FieldAccessMatcher fieldAccessMatcher = new Matcher.FieldAccessMatcher(AbstractPlayer.class, "isDead");
+                return LineFinder.findInOrder(ctBehavior, fieldAccessMatcher);
+            }
         }
     }
 }

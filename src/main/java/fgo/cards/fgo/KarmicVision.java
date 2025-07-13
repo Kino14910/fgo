@@ -46,6 +46,6 @@ public class KarmicVision extends FGOCard {
             addToBot(new VFXAction(new StarBounceEffect(m.hb.cX, m.hb.cY)));
         }
 
-        addToBot(new IgnoresInvincibilityAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+        addToBot(new IgnoresInvincibilityAction(m, baseDamage));
     }
 }

@@ -25,7 +25,6 @@ public class HolyShroud extends FGOCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DrawCardAction(p, 1));
-        addToBot(new ApplyPowerAction(p, p, new NextTurnBlockPower(p, block), block));
+        
     }
 }

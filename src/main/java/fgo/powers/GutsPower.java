@@ -3,6 +3,8 @@ package fgo.powers;
 import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+
 import static fgo.FGOMod.makeID;
 
 public class GutsPower extends BasePower {
@@ -18,11 +20,16 @@ public class GutsPower extends BasePower {
 
     @Override
     public void onSpecificTrigger() {
-        addToBot(new HealAction(owner, owner, amount));
+        int healAmt = amount;
+        if (healAmt < 1) {
+            healAmt = 1;
+        }
+        AbstractDungeon.player.heal(healAmt, true);
         --time;
         if (time == 0) {
             addToTop(new RemoveSpecificPowerAction(owner, owner, ID));
         }
+        
         updateDescription();
     }
 

@@ -636,11 +636,11 @@
       "这名敌人每次攻击将使用 #b10 颗暴击星，使其下一次攻击伤害提高 #b100% 。"
     ]
   },
-  "${modID}:NextTurnNpPower": {
-    "NAME": "获得NP",
+  "${modID}:IgnoresInvincibilityPower": {
+    "NAME": "无敌贯通",
     "DESCRIPTIONS": [
-      "下回合获得 #b",
-      "宝具值"
+      "造成#b",
+      "点伤害。"
     ]
   }
 }
