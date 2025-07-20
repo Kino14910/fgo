@@ -17,12 +17,11 @@ public class Revelation extends FGOCard {
             CardType.SKILL,
             CardRarity.UNCOMMON,
             CardTarget.ENEMY,
-            1
+            0
     );
     public Revelation() {
         super(ID, INFO);
-        setMagic(1);
-        setCostUpgrade(0);
+        setMagic(1, 1);
         setExhaust();
     }
 

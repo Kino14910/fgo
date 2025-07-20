@@ -150,7 +150,7 @@
   },
   "${modID}:OriginBullet": {
     "NAME": "起源弹",
-    "DESCRIPTION": " fgo:无敌贯通 。 NL 每去除一种状态，就造成 !D! 点伤害。 NL 额外造成敌人状态种类数量 !M! 倍的伤害。"
+    "DESCRIPTION": " fgo:无敌贯通 。NL 每去除一种状态，就造成 !D! 点伤害。 NL 额外造成敌人状态种类数量 !M! 倍的伤害。"
   },
   "${modID}:StarPioneer": {
     "NAME": "星之开拓者",
@@ -360,7 +360,7 @@
   },
   "${modID}:FacelessMoon": {
     "NAME": "无貌之月",
-    "DESCRIPTION": "在本回合 保留 你的手牌，每 保留 一张牌，就获得 !M! 点 fgo:暴击星 。{!Upgrades!|0= NL  消耗 。}",
+    "DESCRIPTION": "{@@}在本回合 保留 你的手牌，每 保留 一张牌，就获得 !M! 点 fgo:暴击星 。{!Upgrades!|0= NL  消耗 。}",
     "FLAVOR": "领域外生命。"
   },
   "${modID}:CharismaofAdversity": {

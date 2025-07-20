@@ -368,7 +368,7 @@
   },
   "${modID}:FacelessMoon": {
     "NAME": "無貌の月",
-    "DESCRIPTION": "このターン手札を保留、保留1枚につき !M! スター獲得。 NL 消耗。",
+    "DESCRIPTION": "{@@}このターン手札を保留、保留1枚につき !M! スター獲得。 NL 消耗。",
     "UPGRADE_DESCRIPTION": "このターン手札を保留、保留1枚につき !M! スター獲得。",
     "FLAVOR": "領域外生命。"
   },

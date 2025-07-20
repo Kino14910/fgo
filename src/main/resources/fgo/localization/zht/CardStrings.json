@@ -360,7 +360,7 @@
   },
   "${modID}:FacelessMoon": {
     "NAME": "無貌之月",
-    "DESCRIPTION": "在本回合 保留 你的手牌，每 保留 一張牌，就獲得 !M! 點 fgo:暴擊星 。{!Upgrades!|0= NL 消耗 。}",
+    "DESCRIPTION": "{@@}在本回合 保留 你的手牌，每 保留 一張牌，就獲得 !M! 點 fgo:暴擊星 。{!Upgrades!|0= NL 消耗 。}",
     "FLAVOR": "領域外生命。"
   },
   "${modID}:CharismaofAdversity": {

@@ -368,7 +368,7 @@
   },
   "${modID}:FacelessMoon": {
     "NAME": "얼굴 없는 달",
-    "DESCRIPTION": "이 턴 핸드를 보류, 보류 1장당 !M! 스타 획득. NL 소멸됩니다.",
+    "DESCRIPTION": "{@@}이 턴 핸드를 보류, 보류 1장당 !M! 스타 획득. NL 소멸됩니다.",
     "UPGRADE_DESCRIPTION": "이 턴 핸드를 보류, 보류 1장당 !M! 스타 획득.",
     "FLAVOR": "영역 외 생명."
   },

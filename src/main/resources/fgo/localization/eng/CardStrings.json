@@ -360,7 +360,7 @@
   },
   "${modID}:FacelessMoon": {
     "NAME": "Faceless Moon",
-    "DESCRIPTION": "Retain your hand this turn. NL Gain !M! Block for each Retain. {!Upgrades!|0= NL Exhaust.}",
+    "DESCRIPTION": "{@@}Retain your hand this turn. NL Gain !M! Block for each Retain. {!Upgrades!|0= NL Exhaust.}",
     "FLAVOR": "Life beyond the domain."
   },
   "${modID}:CharismaofAdversity": {

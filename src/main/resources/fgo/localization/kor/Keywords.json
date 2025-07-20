@@ -197,7 +197,7 @@
       "ignores invincibility",
       "ignores_invincibility"
     ],
-    "DESCRIPTION": "Remove all #yBlock, #yPlated #yArmor, #yMetallicize and #yIntangible from the enemy."
+    "DESCRIPTION": "Remove all #yBlock, #yPlated #yArmor, #yMetallicize and #yIntangible from the enemy and deal that times damage."
   },
   {
     "PROPER_NAME": "Seven Beast Crowns",
