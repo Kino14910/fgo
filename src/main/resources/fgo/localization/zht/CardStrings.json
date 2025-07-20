@@ -54,7 +54,7 @@
   },
   "${modID}:HolyShroud": {
     "NAME": "聖骸布",
-    "DESCRIPTION": "抽1張牌。 NL 下一回合獲得 !B! 點 格擋 。"
+    "DESCRIPTION": "如果有敵人即將造成30以上的傷害，在這個回合受到的攻擊傷害降低 !M! %。"
   },
   "${modID}:QueensCovenant": {
     "NAME": "女王的契約",
@@ -150,7 +150,8 @@
   },
   "${modID}:OriginBullet": {
     "NAME": "起源彈",
-    "DESCRIPTION": " fgo:無敵貫通 。 NL 每去除一種狀態，就造成 !D! 點傷害。 NL 額外造成敵人狀態種類數量 !M! 倍的傷害。"
+    "DESCRIPTION": " fgo:無敵貫通 。 NL 每去除一種狀態，下一張打出的攻擊牌額外造成敵人狀態種類數量 !M! 倍的傷害。",
+    "EXTENDED_DESCRIPTION": "下一张"
   },
   "${modID}:StarPioneer": {
     "NAME": "星之開拓者",

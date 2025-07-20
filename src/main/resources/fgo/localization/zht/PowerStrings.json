@@ -641,5 +641,12 @@
       "下回合獲得 #b",
       "寶具值"
     ]
+  },
+  "${modID}:IgnoresInvincibilityPower": {
+    "NAME": "無敵貫通",
+    "DESCRIPTIONS": [
+      "下一張攻擊牌造成 #b",
+      " 倍傷害。"
+    ]
   }
 }

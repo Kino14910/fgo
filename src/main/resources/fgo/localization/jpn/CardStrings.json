@@ -54,7 +54,7 @@
   },
   "${modID}:HolyShroud": {
     "NAME": "聖骸布",
-    "DESCRIPTION": "カードを1枚引く。 NL 次のターンに !B! ブロックを獲得。"
+    "DESCRIPTION": "如果敵人即將造成30以上的傷害，このターンに受ける攻撃ダメージを !M! %軽減。"
   },
   "${modID}:QueensCovenant": {
     "NAME": "女王の契約",

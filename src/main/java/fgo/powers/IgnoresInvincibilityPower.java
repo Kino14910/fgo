@@ -1,11 +1,12 @@
 package fgo.powers;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
-import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
+import com.megacrit.cardcrawl.actions.utility.UseCardAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.cards.AbstractCard.CardType;
 import com.megacrit.cardcrawl.cards.DamageInfo.DamageType;
 import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import static fgo.FGOMod.makeID;
 
 public class IgnoresInvincibilityPower extends BasePower {
@@ -21,11 +22,15 @@ public class IgnoresInvincibilityPower extends BasePower {
     public void updateDescription() {description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];}
 
     @Override
-    public void atEndOfTurn(boolean isPlayer) {
-        if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
-            addToBot(new DamageAllEnemiesAction(AbstractDungeon.player, DamageInfo.createDamageMatrix(amount, true), DamageType.THORNS, AttackEffect.BLUNT_HEAVY));
-            
-        }
+    public float atDamageGive(float damage, DamageInfo.DamageType type) {
+        return type == DamageType.NORMAL && amount > 0 ? damage * amount : damage;
     }
-    
+
+    @Override
+    public void onUseCard(AbstractCard card, UseCardAction action) {
+        if (card.type == CardType.ATTACK) {
+                flash();
+                addToBot(new RemoveSpecificPowerAction(owner, owner, POWER_ID));
+            }
+    }
 }

@@ -639,8 +639,8 @@
   "${modID}:IgnoresInvincibilityPower": {
     "NAME": "无敌贯通",
     "DESCRIPTIONS": [
-      "造成#b",
-      "点伤害。"
+      "下一张攻击牌造成 #b",
+      " 倍伤害。"
     ]
   }
 }

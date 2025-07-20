@@ -1,10 +1,8 @@
-package fgo.cards.fgo;
+package fgo.cards.deprecated;
 
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.stslib.patches.FlavorText;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
@@ -20,7 +18,7 @@ public class KarmicVision extends FGOCard {
     public static final String ID = makeID(KarmicVision.class.getSimpleName());
     private static final CardStats INFO = new CardStats(
             FGOCardColor.FGO,
-            CardType.ATTACK,
+            CardType.SKILL,
             CardRarity.UNCOMMON,
             CardTarget.ENEMY,
             1

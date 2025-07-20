@@ -1,5 +1,8 @@
 package fgo.cards.fgo;
 
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
@@ -13,33 +16,22 @@ public class OriginBullet extends FGOCard {
     public static final String ID = makeID(OriginBullet.class.getSimpleName());
     private static final CardStats INFO = new CardStats(
             FGOCardColor.FGO,
-            CardType.ATTACK,
+            CardType.SKILL,
             CardRarity.UNCOMMON,
             CardTarget.ENEMY,
             1
     );
+
     public OriginBullet() {
         super(ID, INFO);
-        setDamage(8, 4);
-        setMagic(3, 3);
-    }
-
-    @Override
-    public void calculateCardDamage(AbstractMonster m) {
-        int BulletAmt = 0;
-        for (AbstractPower ignored : m.powers) {
-            ++BulletAmt;
-        }
-
-        int realBaseDamage = baseDamage;
-        baseDamage += BulletAmt * magicNumber;
-        super.calculateCardDamage(m);
-        baseDamage = realBaseDamage;
-        isDamageModified = damage != baseDamage;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new IgnoresInvincibilityAction(m, baseDamage));
+        int BulletAmt = 0;
+        for (AbstractPower ignored : m.powers) {
+            ++BulletAmt;
+        }
+        addToBot(new IgnoresInvincibilityAction(m, upgraded ? BulletAmt : 0));
     }
 }

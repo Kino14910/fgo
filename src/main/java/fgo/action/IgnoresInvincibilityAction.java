@@ -9,13 +9,12 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.IntangiblePower;
 import com.megacrit.cardcrawl.powers.PlatedArmorPower;
-
 import fgo.powers.IgnoresInvincibilityPower;
 
 public class IgnoresInvincibilityAction extends AbstractGameAction {
-    private int timesAmount;
-    private final  int amount;
+    private int timesAmount = 0;
     private final AbstractPlayer p = AbstractDungeon.player;
+
 
     public IgnoresInvincibilityAction(AbstractCreature target, int amount) {
         this.target = target;
@@ -38,7 +37,10 @@ public class IgnoresInvincibilityAction extends AbstractGameAction {
                 }
             }
 
-            addToBot(new ApplyPowerAction(p, p, new IgnoresInvincibilityPower(p, amount * timesAmount)));
+            timesAmount += amount;
+
+            addToBot(new ApplyPowerAction(p, p, new IgnoresInvincibilityPower(p, timesAmount)));
+            // addToBot(new ApplyPowerAction(p, p, new VigorPower(p, timesAmount)));
 
             if (AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead()) {
                 AbstractDungeon.actionManager.clearPostCombatActions();

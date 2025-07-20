@@ -8,8 +8,7 @@ import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.actions.common.*;
 
-public class GodsExecutionAction extends AbstractGameAction
-{
+public class GodsExecutionAction extends AbstractGameAction {
     private DamageInfo info;
     
     public GodsExecutionAction(final AbstractCreature target, final DamageInfo info) {

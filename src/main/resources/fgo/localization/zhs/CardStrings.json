@@ -54,7 +54,7 @@
   },
   "${modID}:HolyShroud": {
     "NAME": "圣骸布",
-    "DESCRIPTION": "抽1张牌。 NL 下一回合获得 !B! 点 格挡 。"
+    "DESCRIPTION": "如果敌人即将造成30以上的伤害，在这个回合受到的攻击伤害降低 !M! %。"
   },
   "${modID}:QueensCovenant": {
     "NAME": "女王的契约",
@@ -150,7 +150,7 @@
   },
   "${modID}:OriginBullet": {
     "NAME": "起源弹",
-    "DESCRIPTION": " fgo:无敌贯通 。NL 每去除一种状态，就造成 !D! 点伤害。 NL 额外造成敌人状态种类数量 !M! 倍的伤害。"
+    "DESCRIPTION": "{@@} fgo:无敌贯通 。{!Upgrades!|1= NL 额外造成敌人状态种类数量 !M! 倍的伤害。}"
   },
   "${modID}:StarPioneer": {
     "NAME": "星之开拓者",
@@ -305,7 +305,7 @@
   },
   "${modID}:KarmicVision": {
     "NAME": "业之瞳",
-    "DESCRIPTION": " fgo:无敌贯通 。 NL 每去除一种状态，就造成 !D! 点伤害。",
+    "DESCRIPTION": "{@@} fgo:无敌贯通 。{!Upgrades!|1= NL 额外造成敌人状态种类数量 !M! 倍的伤害。}",
     "FLAVOR": "测试画风可以更改。"
   },
   "${modID}:CurtainoftheNight": {

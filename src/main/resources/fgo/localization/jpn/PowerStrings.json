@@ -641,5 +641,12 @@
       "次ターン #b",
       "宝具ゲージ獲得"
     ]
+  },
+  "${modID}:IgnoresInvincibilityPower": {
+    "NAME": "無敵貫通",
+    "DESCRIPTIONS": [
+      "次の攻撃カードは #b",
+      " 倍のダメージを与える。"
+    ]
   }
 }

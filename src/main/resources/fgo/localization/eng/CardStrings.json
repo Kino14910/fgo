@@ -54,7 +54,7 @@
   },
   "${modID}:HolyShroud": {
     "NAME": "Holy Shroud",
-    "DESCRIPTION": "Draw 1 card. NL Next turn, gain !B! Block."
+    "DESCRIPTION": "Can only be played if enemies cause over 30 damage, Reduce !M!% damage taken this turn."
   },
   "${modID}:QueensCovenant": {
     "NAME": "Queen's Covenant",

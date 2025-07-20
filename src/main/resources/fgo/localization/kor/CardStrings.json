@@ -54,7 +54,7 @@
   },
   "${modID}:HolyShroud": {
     "NAME": "성해포",
-    "DESCRIPTION": "카드 1장을 뽑습니다. NL 다음 턴에 !B! 방어도를 얻습니다."
+    "DESCRIPTION": "Can only be played if enemies cause over 30 damage, 이 턴에 받는 공격 피해를 !M! % 감소시킵니다."
   },
   "${modID}:QueensCovenant": {
     "NAME": "여왕의 계약",

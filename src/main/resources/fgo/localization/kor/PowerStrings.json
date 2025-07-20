@@ -642,5 +642,13 @@
     "DESCRIPTIONS": [
       "The enemy deal #b100% additional Attack damage and reduce #b10 #yStars."
     ]
+  },
+  "${modID}:IgnoresInvincibilityPower": {
+    "NAME": "Ignores Invincibility",
+    "DESCRIPTIONS": [
+      "Next attack card deal #b",
+      " times damage。"
+    ]
   }
+
 }
