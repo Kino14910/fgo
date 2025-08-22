@@ -27,7 +27,6 @@ public class ChildrenSHero extends FGOCard {
         super(ID, INFO);
         setMagic(1, 1);
         portraitImg = ImageMaster.loadImage("fgo/images/cards/skill/ChildrenSHero.png");
-        setExhaust();
 
         FlavorText.AbstractCardFlavorFields.textColor.set(this, Color.CHARTREUSE);
         FlavorText.AbstractCardFlavorFields.flavorBoxType.set(this, FlavorText.boxType.TRADITIONAL);

@@ -17,7 +17,6 @@ public class YewBow extends AbsNoblePhantasmCard {
     public YewBow() {
         super(ID,CardType.ATTACK, CardTarget.ENEMY);
         setDamage(25, 5);
-        setExhaust();
 
         cardArtLayers512.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH)));
         cardArtLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH_P)));

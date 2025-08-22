@@ -21,7 +21,6 @@ public class HollowHeartAlbion extends AbsNoblePhantasmCard {
         super(ID,AbstractCard.CardType.ATTACK, AbstractCard.CardTarget.ALL_ENEMY);
         setDamage(27, 8);
         setStar(10);
-        setExhaust();
 
         cardArtLayers512.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH)));
         cardArtLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH_P)));

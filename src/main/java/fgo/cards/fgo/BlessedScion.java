@@ -14,14 +14,14 @@ public class BlessedScion extends FGOCard {
     public static final String ID = makeID(BlessedScion.class.getSimpleName());
     private static final CardStats INFO = new CardStats(
             FGOCardColor.FGO,
-            CardType.POWER,
+            CardType.SKILL,
             CardRarity.UNCOMMON,
             CardTarget.SELF,
             1
     );
     public BlessedScion() {
         super(ID, INFO);
-        setMagic(2);
+        setMagic(1, 1);
         portraitImg = ImageMaster.loadImage("fgo/images/cards/power/BlessedScion.png");
 
         FlavorText.AbstractCardFlavorFields.textColor.set(this, Color.CHARTREUSE);
@@ -30,6 +30,6 @@ public class BlessedScion extends FGOCard {
     
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new BlessedScionAction(p, p, magicNumber, upgraded));
+        addToBot(new BlessedScionAction(p, p, magicNumber));
     }
 }

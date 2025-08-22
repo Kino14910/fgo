@@ -17,18 +17,19 @@ public class GardenOfAvalon extends AbsNoblePhantasmCard {
 
     public GardenOfAvalon() {
         super(ID,CardType.POWER, CardTarget.SELF);
-        setMagic(5, 2);
+        setBlock(3, 3);
+        setStar(5, 10);
+        setNP(5);
 
         cardArtLayers512.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH)));
         cardArtLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH_P)));
     }
 
 
-
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new MetallicizePower(p, magicNumber)));
-        addToBot(new ApplyPowerAction(p, p, new EnergyRegenPower(p, magicNumber)));
-        addToBot(new ApplyPowerAction(p, p, new StarRegenPower(p, magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new MetallicizePower(p, block)));
+        addToBot(new ApplyPowerAction(p, p, new EnergyRegenPower(p, np)));
+        addToBot(new ApplyPowerAction(p, p, new StarRegenPower(p, star)));
     }
 }

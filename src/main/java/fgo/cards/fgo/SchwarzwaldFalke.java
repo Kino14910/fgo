@@ -16,7 +16,7 @@ public class SchwarzwaldFalke extends FGOCard {
     public static final String ID = makeID(SchwarzwaldFalke.class.getSimpleName());
     private static final CardStats INFO = new CardStats(
             FGOCardColor.FGO,
-            CardType.SKILL,
+            CardType.POWER,
             CardRarity.RARE,
             CardTarget.SELF,
             3
@@ -25,7 +25,6 @@ public class SchwarzwaldFalke extends FGOCard {
         super(ID, INFO);
         setMagic(3);
         setCostUpgrade(2);
-        setExhaust();
     }
 
     @Override

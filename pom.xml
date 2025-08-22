@@ -22,7 +22,7 @@
 
     <!-- This information will be displayed in ModTheSpire, the modded launcher. -->
     <name>FGO Mod</name>
-    <version>1.0.0-hotfix</version>
+    <version>1.0.4</version>
     <!-- Avoid using \ in this description, as they can cause the description to fail to load. -->
     <!-- If you really want to use them, you'll need to "escape" them by putting another one in front, like \\ -->
     <description>FGO Mod for Slay the Spire</description>
@@ -40,7 +40,7 @@
             <artifactId>slaythespire</artifactId>
             <version>${SlayTheSpire.version}</version>
             <scope>system</scope>
-            <systemPath>${steam.path}${sts.path}</systemPath>
+            <systemPath>${steam.path}/common/SlayTheSpire/desktop-1.0.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>com.evacipated.cardcrawl</groupId>
@@ -78,6 +78,8 @@
                 <version>1.0.4</version>
                 <executions>
                     <execution>
+                        <?m2e ignore?>
+                        <?m2e execute onConfiguration,onIncremental?>
                         <id>validate</id>
                         <phase>validate</phase>
                         <goals>
@@ -174,6 +176,24 @@
                     <target>8</target>
                 </configuration>
                 <version>3.8.1</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>1.8</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <configuration>
+                            <target>
+                                <copy file="target/${project.artifactId}.jar" tofile="${Steam.path}/common/SlayTheSpire/mods/${project.artifactId}.jar"/>
+                            </target>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
 

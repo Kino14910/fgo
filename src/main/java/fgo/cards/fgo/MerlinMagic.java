@@ -23,7 +23,6 @@ public class MerlinMagic extends FGOCard {
     public MerlinMagic() {
         super(ID, INFO);
         setBlock(7, 2);
-        setExhaust();
         portraitImg = ImageMaster.loadImage("fgo/images/cards/skill/MerlinMagic.png");
         FlavorText.AbstractCardFlavorFields.textColor.set(this, Color.CHARTREUSE);
         FlavorText.AbstractCardFlavorFields.flavorBoxType.set(this, FlavorText.boxType.TRADITIONAL);

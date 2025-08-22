@@ -23,7 +23,6 @@ public class BeastMagic extends FGOCard {
     }
     
     
-
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new BeastMagicPower(p, magicNumber)));

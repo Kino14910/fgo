@@ -41,6 +41,7 @@ import fgo.panel.CommandSpellPanel;
 import fgo.panel.FGOConfig;
 import fgo.patches.Enum.FGOCardColor;
 import fgo.potions.BasePotion;
+import fgo.powers.ArtsPerformancePower;
 import fgo.powers.NPRatePower;
 import fgo.relics.BaseRelic;
 import fgo.relics.SuitcaseFgo;
@@ -391,6 +392,10 @@ public class FGOMod implements
 
         if (AbstractDungeon.player.hasPower(NPRatePower.POWER_ID)) {
             npMultiplier *= 2;
+        }
+
+        if (AbstractDungeon.player.hasPower(ArtsPerformancePower.POWER_ID)) {
+            npMultiplier += AbstractDungeon.player.getPower(ArtsPerformancePower.POWER_ID).amount;
         }
 
         int costForTurn = abstractCard.costForTurn;

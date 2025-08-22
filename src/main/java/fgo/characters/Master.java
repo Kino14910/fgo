@@ -125,8 +125,8 @@ public class Master extends CustomPlayer{
         return new CharSelectInfo(
                 TEXT[1],
                 TEXT[2],
-                66,
-                66,
+                76,
+                76,
                 0,
                 99,
                 5,

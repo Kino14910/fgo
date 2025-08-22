@@ -22,8 +22,8 @@ public class CrownedWithLife extends FGOCard {
     public CrownedWithLife() {
         super(ID, INFO);
         setMagic(2, 1);
-        cardsToPreview = new SoulOfWaterChannels();
         setExhaust();
+        cardsToPreview = new SoulOfWaterChannels();
     }
 
     @Override

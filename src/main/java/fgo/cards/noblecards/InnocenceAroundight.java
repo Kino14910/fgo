@@ -22,7 +22,6 @@ public class InnocenceAroundight extends AbsNoblePhantasmCard {
         super(ID,CardType.ATTACK, CardTarget.ENEMY);
         setDamage(32, 8);
         setMagic(3);
-        setExhaust();
         cardsToPreview = new RayHorizon();
         cardsToPreview.upgrade();
 

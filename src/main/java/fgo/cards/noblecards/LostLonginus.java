@@ -22,7 +22,6 @@ public class LostLonginus extends AbsNoblePhantasmCard {
         super(ID,CardType.ATTACK, CardTarget.ALL_ENEMY);
         setDamage(24, 6);
         setMagic(3);
-        setExhaust();
 
         cardArtLayers512.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH)));
         cardArtLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH_P)));

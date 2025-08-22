@@ -99,7 +99,7 @@
     "DESCRIPTION": "保留。 NL 1層 呪いを獲得。 NL !S! スターを獲得。 NL 消耗。"
   },
   "${modID}:BackAgain": {
-    "NAME": "異称・異星蛸",
+    "NAME": "森羅万象",
     "DESCRIPTION": "!M! 層 防御ダウン を付与。 NL !S! スターを獲得。",
     "FLAVOR": "領域外生命。"
   },
@@ -619,7 +619,7 @@
     "DESCRIPTION": "fgo:陽光照射 3ターン獲得。 NL !M! 活力獲得。"
   },
   "${modID}:Overload": {
-    "NAME": "過重湖光",
+    "NAME": "縛鎖全断・過重湖光",
     "DESCRIPTION": "敵のブロック解除。 NL !D! ダメージを与える。 NL !M! 層 防御ダウン付与。"
   },
   "${modID}:GardenOfAvalon": {

@@ -25,7 +25,6 @@ public class VoidSpaceFineArts extends FGOCard {
     public VoidSpaceFineArts() {
         super(ID, INFO);
         setMagic(5, 5);
-        setExhaust();
         tags.add(CardTags.HEALING);
         tags.add(CardTagsEnum.Foreigner);
 

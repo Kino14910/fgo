@@ -27,7 +27,6 @@ public class KnightoftheLake extends FGOCard {
         super(ID, INFO);
         setMagic(50, 50);
         setStar(10);
-        setExhaust();
     }
 
     @Override

@@ -14,7 +14,6 @@ import fgo.cards.FGOCard;
 import fgo.patches.Enum.CardTagsEnum;
 import fgo.patches.Enum.FGOCardColor;
 import fgo.powers.CursePower;
-import fgo.powers.DefenseDownPower;
 import fgo.util.CardStats;
 
 public class TheYellowHouse extends FGOCard {
@@ -38,7 +37,6 @@ public class TheYellowHouse extends FGOCard {
     }
 
 
-
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         for(int i = 0; i < magicNumber; ++i) {
@@ -48,7 +46,6 @@ public class TheYellowHouse extends FGOCard {
 
             addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
         }
-        addToBot(new ApplyPowerAction(m, p, new DefenseDownPower(m, 2), 2));
         addToBot(new ApplyPowerAction(p, p, new CursePower(p, 1), 1));
     }
 }

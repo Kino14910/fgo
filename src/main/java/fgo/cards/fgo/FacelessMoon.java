@@ -23,18 +23,13 @@ public class FacelessMoon extends FGOCard {
     public FacelessMoon() {
         super(ID, INFO);
         setMagic(1);
-        setExhaust();
+        setExhaust(true, false);
         tags.add(CardTagsEnum.Foreigner);
 
         FlavorText.AbstractCardFlavorFields.textColor.set(this, Color.CHARTREUSE);
         FlavorText.AbstractCardFlavorFields.flavorBoxType.set(this, FlavorText.boxType.TRADITIONAL);
     }
-
-    @Override
-    public void upgrade() {
-        setExhaust(false);
-    }
-
+    
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new FacelessMoonPower(p, magicNumber)));

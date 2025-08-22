@@ -26,7 +26,6 @@ public class FetchFailnaught extends AbsNoblePhantasmCard {
         super(ID,CardType.ATTACK, CardTarget.ENEMY);
         setDamage(30, 8);
         setMagic(3);
-        setExhaust();
 
         cardArtLayers512.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH)));
         cardArtLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH_P)));

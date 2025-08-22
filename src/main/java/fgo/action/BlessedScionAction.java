@@ -17,13 +17,11 @@ public class BlessedScionAction extends AbstractGameAction {
     public static final String[] TEXT = uiStrings.TEXT;
     private final AbstractPlayer p;
     private static final float DURATION = Settings.ACTION_DUR_XFAST;
-    private final boolean upgraded;
-    public BlessedScionAction(AbstractCreature target, AbstractCreature source, int amount, boolean upgraded) {
+    public BlessedScionAction(AbstractCreature target, AbstractCreature source, int amount) {
         this.setValues(target, source, amount);
         this.actionType = ActionType.CARD_MANIPULATION;
         this.duration = DURATION;
         this.p = (AbstractPlayer)target;
-        this.upgraded = upgraded;
     }
 
     public void update() {
@@ -65,9 +63,8 @@ public class BlessedScionAction extends AbstractGameAction {
         if (card.hasTag(CardTagsEnum.Noble_Phantasm)) {
             card = new SupportCraft();
         }
-        if (this.upgraded && card.costForTurn >= 0) {
+        if (card.costForTurn >= 0) {
             card.freeToPlayOnce = true;
-
         }
         return card;
     }

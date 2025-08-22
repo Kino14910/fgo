@@ -19,7 +19,6 @@ public class Summer extends AbsNoblePhantasmCard {
     public Summer() {
         super(ID,CardType.POWER, CardTarget.SELF);
         setNP(60, 20);
-        setExhaust();
         tags.add(CardTagsEnum.Noble_Phantasm);
 
         cardArtLayers512.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH)));

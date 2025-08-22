@@ -23,7 +23,6 @@ public class ImitationGodForce extends AbsNoblePhantasmCard {
         super(ID,CardType.ATTACK, CardTarget.ALL_ENEMY);
         setDamage(7, 1);
         setMagic(4);
-        setExhaust();
 
         cardArtLayers512.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH)));
         cardArtLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH_P)));

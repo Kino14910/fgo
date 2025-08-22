@@ -24,7 +24,6 @@ public class GraceUnexpectedBirth extends FGOCard {
     public GraceUnexpectedBirth() {
         super(ID, INFO);
         setNP(30, 20);
-        setExhaust();
     }
 
     @Override

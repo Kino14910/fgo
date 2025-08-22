@@ -16,7 +16,6 @@ public class Fragarach extends AbsNoblePhantasmCard {
     public Fragarach() {
         super(ID,CardType.POWER, CardTarget.SELF);
         setDamage(15, 5);
-        setExhaust();
 
         cardArtLayers512.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH)));
         cardArtLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH_P)));

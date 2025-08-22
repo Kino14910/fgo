@@ -43,7 +43,6 @@ public class WallOfSnowflakes extends FGOCard {
     }
 
 
-
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainBlockAction(p, p, block));

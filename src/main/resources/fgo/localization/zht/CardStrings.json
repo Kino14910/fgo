@@ -99,7 +99,7 @@
     "DESCRIPTION": "保留 。 NL 獲得1層 fgo:詛呪 。 NL 獲得 !S! 顆 fgo:暴擊星 。 NL 消耗 。"
   },
   "${modID}:BackAgain": {
-    "NAME": "雅號·異星蛸",
+    "NAME": "森羅万象",
     "DESCRIPTION": "給予 !M! 層 fgo:防御破壞 。獲得 !S! 顆 fgo:暴擊星 。",
     "FLAVOR": "領域外生命。"
   },
@@ -586,7 +586,7 @@
     "DESCRIPTION": "獲得 fgo:陽光照射 3回合。 NL 獲得 !M! 點 活力 。"
   },
   "${modID}:Overload": {
-    "NAME": "過重湖光",
+    "NAME": "縛鎖全断·過重湖光",
     "DESCRIPTION": "去除敵人的 格擋 值。 NL 造成 !D! 點傷害。 NL 給予 !M! 層 fgo:防御破壞 。"
   },
   "${modID}:GardenOfAvalon": {

@@ -471,7 +471,7 @@
     "NAME": "无可奈何",
     "DESCRIPTIONS": [
       "在下一回合开始时，对所有敌人造成 #b%1$s 点伤害。",
-      "在接下来 #b%1$s 回合开始时，对所有敌人造成 #b%2$s 点伤害，然后将伤害增加 #b%3$s 点。"
+      "对所有敌人造成 #b%2$s 点伤害，然后将伤害增加 #b%3$s 点。"
     ]
   },
   "${modID}:ManaBurstGemsPower": {
@@ -509,7 +509,7 @@
     ]
   },
   "${modID}:ArtsPerformancePower": {
-    "NAME": "Arts",
+    "NAME": "宝具值获取提升",
     "DESCRIPTIONS": [
       "每当你打出一张牌，额外获得 #b",
       "% #y宝具值 。最多额外获得 #b5% 。"

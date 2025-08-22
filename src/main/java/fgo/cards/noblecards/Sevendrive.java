@@ -24,7 +24,6 @@ public class Sevendrive extends AbsNoblePhantasmCard {
         super(ID,CardType.ATTACK, CardTarget.ALL_ENEMY);
         setDamage(3, 1);
         setNP(10);
-        setExhaust();
 
         cardArtLayers512.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH)));
         cardArtLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH_P)));

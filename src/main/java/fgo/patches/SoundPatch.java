@@ -34,7 +34,7 @@ public class SoundPatch {
     public static void Postfix(SoundMaster __instance) {
         // 在 SoundMaster 构造器开始时插入的代码
         HashMap<String, Sfx> map = ReflectionHacks.getPrivate(__instance, SoundMaster.class, "map");
-        String[] sounds = {"S011_Skill1", "S011_Skill2", "S011_Skill3"};
+        String[] sounds = {"S011_Skill1", "S011_Skill2", "S011_Skill3", "UBW", "S011_Attack6"};
         for (String key : sounds) {
         map.put(key, new Sfx("fgo/audio/sound/" + key + ".ogg", false));
     }

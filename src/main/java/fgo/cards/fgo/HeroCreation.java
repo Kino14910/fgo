@@ -16,12 +16,12 @@ public class HeroCreation extends FGOCard {
             CardType.SKILL,
             CardRarity.UNCOMMON,
             CardTarget.ENEMY,
-            1
+            0
     );
 
     public HeroCreation() {
         super(ID, INFO);
-        setCostUpgrade(0);
+        setSelfRetain(false, true);
     }
 
     @Override

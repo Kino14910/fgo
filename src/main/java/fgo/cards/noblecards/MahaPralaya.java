@@ -24,7 +24,6 @@ public class MahaPralaya extends AbsNoblePhantasmCard {
     public MahaPralaya() {
         super(ID,CardType.ATTACK, CardTarget.ALL_ENEMY);
         setDamage(5, 1);
-        setExhaust();
 
         cardArtLayers512.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH)));
         cardArtLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH_P)));

@@ -18,7 +18,6 @@ public class BridalSpinWheel extends AbsNoblePhantasmCard {
         super(ID,CardType.POWER, CardTarget.SELF);
         setMagic(3, 1);
         setStar(10, 10);
-        setExhaust();
 
         cardArtLayers512.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH)));
         cardArtLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH_P)));
