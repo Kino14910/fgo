@@ -65,35 +65,23 @@
 
 ## 引用声明
 
-### 美术资源
-
-- **宝具卡背**: 整合自[HexUILib](https://steamcommunity.com/sharedfiles/filedetails/?id=1667206983)与[Magineer Mod](https://steamcommunity.com/sharedfiles/filedetails/?id=1667220091)
-- **动态背景**: 改编自废墟图书馆Mod
-- **按钮样式**: 参考卡包大师Mod
-
-### 机制参考
-
-- **宝具条设计**: 灵感源于明日方舟斯卡蒂Mod
-
-
-
 ## 翻译协作
 
-**急需以下方面的英语支持：**
+**急需以下方面的语言支持：**
 
 1. 卡牌描述的本地化润色
 2. FGO术语的准确翻译
-3. 技能说明的符合英语习惯表达
+3. 技能说明的符合对应语言习惯表达
 
 **贡献指引**：
 
-- 在`/localization/en/`提交翻译文件
+- 在`/localization/**/`提交翻译文件
 - 使用术语对照表保持一致性
 - 通过Pull Request或Steam工坊留言提交
 
 
 
-**Urgent Call for English Language Support**
+**Urgent Call for Language Support**
 
 We require expert assistance in the following critical areas to enhance our FGO project's accessibility and appeal to English-speaking users:
 
@@ -103,7 +91,7 @@ We require expert assistance in the following critical areas to enhance our FGO 
 
 **Contribution Guidelines:**
 
-- Submit your translation files to the `/localization/en/` directory.
+- Submit your translation files to the `/localization/**/` directory.
 - Maintain consistency by referring to our terminology lookup table.
 - Submit your contributions via Pull Request or through Steam Workshop comments.
 
@@ -127,10 +115,9 @@ We require expert assistance in the following critical areas to enhance our FGO 
 	|- 令咒UI
 	|- 令咒机制实现
 
-🔧 水边地形 
+✅ 水边地形 
 	|- 场地状态影响卡牌效果
 	|- 格挡相关卡牌与遗物
-	|- 专属遗物「水天日光」
 
 ❌ 魔术礼装
 	|- 不同的魔术礼装实现对应效果
