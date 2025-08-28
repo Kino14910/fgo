@@ -17,7 +17,7 @@ public class Kaleidoscope extends FGOCard {
     );
     public Kaleidoscope() {
         super(ID, INFO);
-        setNP(80, 20);
+        setNP(40, 20);
     }
 
 

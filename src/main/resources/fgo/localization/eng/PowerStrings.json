@@ -6,7 +6,7 @@
     ]
   },
 
-  "GutsPower": {
+  "${modID}:GutsPower": {
     "NAME": "Guts",
     "DESCRIPTIONS": [
       "When you would die, heal #b%1$s HP instead.",
@@ -91,12 +91,6 @@
     "NAME": "Remove Debuffs.",
     "DESCRIPTIONS": [
       "Next turn, remove all of your debuffs."
-    ]
-  },
-  "${modID}:PutOnFakeFacePower": {
-    "NAME": "Gain Evil Curse",
-    "DESCRIPTIONS": [
-      "Randomly gain a buff at the start of your turn: NL gain [E] . NL Heal #b5 HP. NL Remove #b3 #yEvil #yCurse."
     ]
   },
   "${modID}:BeastMagicPower": {
@@ -200,7 +194,6 @@
   "${modID}:PowerUpBoostPower": {
     "NAME": "Power Up Boost",
     "DESCRIPTIONS": [
-      "#yNoble #yPhantasm Attack deal double damage.",
       "#yNoble #yPhantasm Attack deal #b",
       " times damage."
     ]
@@ -267,22 +260,6 @@
       " time."
     ]
   },
-  "${modID}:OneTimeOneMeetingPreparedPower": {
-    "NAME": "Delayed Buff",
-    "DESCRIPTIONS": [
-      "Whenever you draw a non-Power card next turn, #yexhaust it and add a random Power card into your hand.",
-      "Whenever you draw a non-Power card next #b",
-      " turns, #yexhaust it and add a random Power card into your hand."
-    ]
-  },
-  "${modID}:OneTimeOneMeetingPower": {
-    "NAME": "One Time One Meeting",
-    "DESCRIPTIONS": [
-      "Whenever you draw a non-Power card this turn, #yexhaust it and add a random Power card into your hand.",
-      "Whenever you draw a non-Power card for #b",
-      " turns, #yexhaust it and add a random Power card into your hand."
-    ]
-  },
   "${modID}:FifthFormPower": {
     "NAME": "Fifth Form",
     "DESCRIPTIONS": [
@@ -339,14 +316,6 @@
       " turns, gain #b3 #yThorns, #b4 #yPlated #yArmor and #yRegen, [E] and draw 1 card each turn, #b1 #yIntangible and #b2 #yArtifact."
     ]
   },
-  "${modID}:CrossingArcadiaPower": {
-    "NAME": "Crossing Arcadia",
-    "DESCRIPTIONS": [
-      "The next Attack you play return #yStars and gain [E] .",
-      "The next #b",
-      " Attacks you play return #yStars and gain [E] ."
-    ]
-  },
   "${modID}:InsanityPower": {
     "NAME": "Insanity",
     "DESCRIPTIONS": [
@@ -364,8 +333,7 @@
   "${modID}:WatersidePower": {
     "NAME": "Waterside",
     "DESCRIPTIONS": [
-      "At the start of for #b",
-      " turn(s), gain #b",
+      "At the start of for turn, you and all enemies gain #b",
       " #yBlock."
     ]
   },
@@ -446,31 +414,6 @@
       "You cannot play ",
       " for #b",
       " turns."
-    ]
-  },
-  "${modID}:WallOfSnowflakesPower": {
-    "NAME": "Defense...",
-    "DESCRIPTIONS": [
-      "Reduce #b",
-      "% damage taken this turn."
-    ]
-  },
-  "${modID}:BusterCardPower": {
-    "NAME": "Buster",
-    "DESCRIPTIONS": [
-      ""
-    ]
-  },
-  "${modID}:ArtsCardPower": {
-    "NAME": "Arts",
-    "DESCRIPTIONS": [
-      ""
-    ]
-  },
-  "${modID}:QuickCardPower": {
-    "NAME": "Quick",
-    "DESCRIPTIONS": [
-      ""
     ]
   },
   "${modID}:ItsInevitablePower": {
@@ -645,8 +588,7 @@
   "${modID}:IgnoresInvincibilityPower": {
     "NAME": "Ignores Invincibility",
     "DESCRIPTIONS": [
-      "Next attack card deal #b",
-      " times damage。"
+      "Next attack card deal #b%d times damage。"
     ]
   }
 }

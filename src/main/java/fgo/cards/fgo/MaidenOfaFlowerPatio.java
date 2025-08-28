@@ -23,7 +23,7 @@ public class MaidenOfaFlowerPatio extends FGOCard {
     );
     public MaidenOfaFlowerPatio() {
         super(ID, INFO);
-        setBlock(7, 3);
+        setBlock(15, 5);
         setMagic(1);
         portraitImg = ImageMaster.loadImage("fgo/images/cards/skill/MaidenOfaFlowerPatio.png");
 
@@ -35,7 +35,6 @@ public class MaidenOfaFlowerPatio extends FGOCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GainBlockAction(p, p, block));
         addToBot(new GainBlockAction(p, p, block));
         addToBot(new ApplyPowerAction(p, p, new CursePower(p, magicNumber)));
     }

@@ -13,111 +13,119 @@
       "This is a key": "This is a value."
     }
   },
-
+  
   "${modID}:MidsummerNightDream": {
     "TEXT": [
-      "Immune"
+      "면역"
     ]
   },
   "${modID}:PackMainMenuUI": {
     "TEXT": [
-      "Mystic Codes or...",
-      "Please make your choice. Note that it will be reset when you exit the game.",
-      "Chaldea(BASIC)",
-      "Halloween Royalty",
-      "Wastehole of the Unsalvageable",
-      "Misaki High School Uniform",
-      "New Year's Attire",
-      "White Christmas",
-      "Summer Street",
-      "Sōya High School Uniform",
-      "True Ether Chaldea Uniform",
-      "Ceremonial New Year",
-      "Tropical Summer",
-      "Fragment of Year 2004",
-      "Memoria of the Far Side of the Moon",
-      "Memoria of Lunar Mare",
-      "Brilliant Summer",
-      "Royal Brand",
-      "Anniversary Blonde",
-      "Chaldea Pathfinder",
-      "Winter Casual",
-      "Arcueid Brunestud ?"
+      "마술예장 또는...",
+      "선택해 주세요. 게임 종료 시 초기화됩니다.",
+      "찰디아(기본)",
+      "할로윈 로열티",
+      "구제불능의 폐기물",
+      "미사키 고등학교 교복",
+      "새해 복장",
+      "화이트 크리스마스",
+      "여름 거리",
+      "소야 고등학교 교복",
+      "진 에테르 찰디아 교복",
+      "의식용 새해 복장",
+      "열대 여름",
+      "2004년의 단편",
+      "달의 뒷면의 메모리아",
+      "달의 바다의 메모리아",
+      "빛나는 여름",
+      "로열 브랜드",
+      "기념 블론드",
+      "찰디아 패스파인더",
+      "겨울 캐주얼",
+      "아르쿠에드 브루네스튜드 ?"
     ]
   },
   "${modID}:SpireHeartText": {
     "TEXT": [
-      "NL You use all the Command Spells...",
-      "Master",
-      "Wake up from your sleep again, this time you are at the bottom of the tower.",
-      "the Master",
-      "The Master"
+      "NL 당신은 모든 영창을 사용합니다...",
+      "마스터",
+      "다시 잠에서 깨어나세요, 이번에는 탑의 바닥에 있습니다.",
+      "마스터",
+      "마스터"
     ]
   },
   "${modID}:NPText": {
     "TEXT": [
-      "NP",
-      "1) Whenever you are attacked, gain NP equal to half damaged. NL 2) Whenever you play a card, gain NP equal to triple cost.",
-      "Choose a Noble Phantasm into your hand.",
-      "Unlimited Blade Works: at the start of each turn, choose a copy of Attack from your deck into your hand.",
-      "1) Whenever you are attacked, gain NP equal to #bhalf(+30%) damaged. NL 4) Whenever you play a card, gain NP equal to triple cost."
+      "보구",
+      "1) 공격받을 때마다 받은 피해의 절반만큼 보구 게이지를 획득합니다. NL 2) 카드를 사용할 때마다 비용의 3배만큼 보구 게이지를 획득합니다.",
+      "보구 카드 1장을 선택해 핸드에 추가합니다.",
+      "무한의 검제: 매 턴 시작 시 덱에서 공격 카드 1장을 선택해 핸드에 추가합니다."
     ]
   },
   "${modID}:BlessedScionAction": {
     "TEXT": [
-      "Copy"
+      "복사"
     ]
   },
   "${modID}:ProofAndRebuttalAction": {
     "TEXT": [
-      "put on top of your draw pile."
+      "드로우 덱의 맨 위에 놓습니다."
     ]
   },
   "${modID}:NobleCardTabNamePatch": {
     "TEXT": [
-      "Noble Phantasm"
+      "보구"
     ]
   },
   "${modID}:PictureSelectFgoPatch": {
     "TEXT": [
-      "Light-Cross",
-      "Starry Trail",
+      "빛의 십자가",
+      "별의 흔적",
       "ID: 82330518",
       "ID: 117839244"
     ]
   },
   "${modID}:CurrentNobleCardsTopPanelItem": {
     "TEXT": [
-      "Noble Phantasm Card",
-      "You can view all Noble Phantasm cards.",
-      "Display all Noble Phantasm cards, some of which require special conditions."
+      "보구 카드",
+      "모든 보구 카드를 볼 수 있습니다.",
+      "모든 보구 카드를 표시합니다. 일부는 특별한 조건이 필요합니다."
     ]
   },
   "${modID}:AbsNoblePhantasmCard": {
     "TEXT": [
-      "Insufficient NP gauge."
+      "보구 게이지가 부족합니다."
     ]
   },
   "${modID}:InSonorousEffectCard": {
     "TEXT": [
-      "Blessings of the Knights of the Round Table (first 6 Num)",
-      "Mashu's Support"
+      "원탁의 기사단의 축복(처음 6회)",
+      "마슈의 지원"
     ]
   },
   "${modID}:AlterOption": {
     "TEXT": [
       "???",
-      "Choose obtain a Noble Phantasm card, Upgrade a random card."
+      "보구 카드 1장을 획득하거나, 무작위 카드 1장을 강화합니다."
     ]
   },
   "${modID}:AlterOptionEffect": {
     "TEXT": [
-      "Choose obtain a Noble Phantasm card, Upgrade a random card."
+      "보구 카드 1장을 획득하거나, 무작위 카드 1장을 강화합니다."
     ]
   },
   "${modID}:FGOConfig": {
     "TEXT_DICT": {
-      "enableColorlessCards": "启用无色卡"
+      "enableColorlessCards": "무색 카드 활성화 (게임 재시작 필요)",
+      "enableEmiya": "보스: 에미야 활성화 (게임 재시작 필요)"
+
     }
+  },
+  "${modID}:NobleDeckViewScreen": {
+    "TEXT": [
+      "보구 카드",
+      "닫기",
+      "상세 보기"
+    ]
   }
 }

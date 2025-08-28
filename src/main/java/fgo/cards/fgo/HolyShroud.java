@@ -36,7 +36,7 @@ public class HolyShroud extends FGOCard {
             sum += actualDmg;
         }
 
-        return sum >= 30;
+        return sum >= 20;
     }
 
     @Override

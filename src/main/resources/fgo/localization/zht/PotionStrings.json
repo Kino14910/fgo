@@ -12,14 +12,19 @@
   "${modID}:ElixirofRejuvenation": {
     "NAME": "返老還童的靈藥",
     "DESCRIPTIONS": [
-      "回復 #b",
-      " 點生命。移除你身上的所有負面效果。這瓶藥水無法在戰鬥外飲用。"
+      "回復 #b%d 點生命。移除你身上的所有負面效果。這瓶藥水無法在戰鬥外飲用。"
     ]
   },
   "${modID}:ExtremelySpicyMapoTofu": {
     "NAME": "罐裝特辣麻婆豆腐",
     "DESCRIPTIONS": [
       "獲得 #b80% #y寶具值 或 #b60% #y寶具威力 。"
+    ]
+  },
+  "${modID}:CursePotion": {
+    "NAME": "詛咒藥水",
+    "DESCRIPTIONS": [
+      "給予 #b%d 層 #y詛咒 。"
     ]
   }
 }

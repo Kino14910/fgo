@@ -5,6 +5,7 @@ import com.evacipated.cardcrawl.mod.stslib.patches.FlavorText;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -12,6 +13,7 @@ import fgo.cards.FGOCard;
 import fgo.patches.Enum.FGOCardColor;
 import fgo.powers.ItsInevitablePower;
 import fgo.util.CardStats;
+import fgo.util.Sounds;
 
 public class ItsInevitable extends FGOCard {
     public static final String ID = makeID(ItsInevitable.class.getSimpleName());
@@ -34,8 +36,9 @@ public class ItsInevitable extends FGOCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new SFXAction(Sounds.gun));
         addToBot(new DamageAllEnemiesAction(p, multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.FIRE));
-        addToBot(new ApplyPowerAction(p, p, new ItsInevitablePower(p, magicNumber, damage + magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new ItsInevitablePower(p, damage + magicNumber, magicNumber)));
         //addToBot(new ApplyPowerAction(p, p, new BurnDamagePower(p, magicNumber)));
     }
 }

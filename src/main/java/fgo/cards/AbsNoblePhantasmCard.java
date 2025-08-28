@@ -28,4 +28,9 @@ public abstract class AbsNoblePhantasmCard extends FateMagineerCard {
             addToTop(new ExhaustSpecificCardAction(this, AbstractDungeon.player.hand));
         }
     }
+
+    @Override
+    public boolean canUpgrade() {
+        return false;
+    }
 }

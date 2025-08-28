@@ -26,6 +26,7 @@ import com.megacrit.cardcrawl.dungeons.Exordium;
 import com.megacrit.cardcrawl.dungeons.TheBeyond;
 import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.helpers.CardHelper;
+import com.megacrit.cardcrawl.helpers.RelicLibrary;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
@@ -39,17 +40,24 @@ import fgo.event.*;
 import fgo.monster.Emiya;
 import fgo.panel.CommandSpellPanel;
 import fgo.panel.FGOConfig;
+import fgo.panel.NobleDeck;
+import fgo.panel.NobleDeckCards;
+import fgo.panel.NobleDeckViewScreen;
+import fgo.patches.Enum.CardTagsEnum;
 import fgo.patches.Enum.FGOCardColor;
 import fgo.potions.BasePotion;
 import fgo.powers.ArtsPerformancePower;
 import fgo.powers.NPRatePower;
 import fgo.relics.BaseRelic;
+import fgo.relics.LockChocolateStrawberry;
 import fgo.relics.SuitcaseFgo;
 import fgo.util.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.scannotation.AnnotationDB;
 
+import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 
@@ -64,12 +72,14 @@ public class FGOMod implements
         EditStringsSubscriber,
         EditRelicsSubscriber,
         EditKeywordsSubscriber,
+        AddAudioSubscriber,
         PostInitializeSubscriber,
         OnCardUseSubscriber,
         OnStartBattleSubscriber,
         OnPlayerDamagedSubscriber,
         PostBattleSubscriber,
-        PostCreateStartingDeckSubscriber
+        PostCreateStartingDeckSubscriber,
+        StartGameSubscriber
 //        PostUpdateSubscriber,
 //        PostRenderSubscriber,
         {
@@ -127,6 +137,7 @@ public class FGOMod implements
         BaseMod.addColor(FGOCardColor.FGO, SILVER, SILVER, SILVER, SILVER, SILVER, SILVER, SILVER, DEFAULT_CC, DEFAULT_CC, DEFAULT_CC, ENERGY_ORB_CC, DEFAULT_CC_PORTRAIT, DEFAULT_CC_PORTRAIT, DEFAULT_CC_PORTRAIT, ENERGY_ORB_CC_PORTRAIT, CARD_ENERGY_ORB);
         BaseMod.addColor(FGOCardColor.Noble_Phantasm, NOBLE, NOBLE, NOBLE, NOBLE, NOBLE, NOBLE, NOBLE, ATTACK_Noble, SKILL_Noble, POWER_Noble, ENERGY_ORB_CC, ATTACK_Noble_PORTRAIT, SKILL_Noble_PORTRAIT, POWER_Noble_PORTRAIT, ENERGY_ORB_CC_PORTRAIT, CARD_ENERGY_ORB);
         BaseMod.addSaveField("commandSpellCount", new CommandSpellPanel());
+        BaseMod.addSaveField("cards", new NobleDeckCards());
         logger.info(modID + " subscribed to BaseMod.");
     }
 
@@ -145,7 +156,10 @@ public class FGOMod implements
         BaseMod.registerModBadge(badgeTexture, info.Name, GeneralUtils.arrToString(info.Authors), info.Description, new FGOConfig());
 
         //顶部宝具牌预览。
-        // BaseMod.addTopPanelItem(new NobleDeck());
+        BaseMod.addTopPanelItem(new NobleDeck());
+        
+        // Register noble custom screen
+        BaseMod.addCustomScreen(new NobleDeckViewScreen());
 
         if(config.getBool("enableEmiya")){
             BaseMod.addMonster(Emiya.ID, Emiya.NAME, () -> new MonsterGroup(new AbstractMonster[]{new Emiya()}));
@@ -182,6 +196,50 @@ public class FGOMod implements
             }
         }
 
+    }
+
+    @Override
+    public void receiveAddAudio() {
+        loadAudio(Sounds.class);
+    }
+
+    private static final String[] AUDIO_EXTENSIONS = { ".ogg", ".wav", ".mp3" }; //There are more valid types, but not really worth checking them all here
+    private void loadAudio(Class<?> cls) {
+        try {
+            Field[] fields = cls.getDeclaredFields();
+            outer:
+            for (Field f : fields) {
+                int modifiers = f.getModifiers();
+                if (Modifier.isStatic(modifiers) && Modifier.isPublic(modifiers) && f.getType().equals(String.class)) {
+                    String s = (String) f.get(null);
+                    if (s == null) { //If no defined value, determine path using field name
+                        s = audioPath(f.getName());
+
+                        for (String ext : AUDIO_EXTENSIONS) {
+                            String testPath = s + ext;
+                            if (Gdx.files.internal(testPath).exists()) {
+                                s = testPath;
+                                BaseMod.addAudio(s, s);
+                                f.set(null, s);
+                                continue outer;
+                            }
+                        }
+                        throw new Exception("Failed to find an audio file \"" + f.getName() + "\" in " + resourcesFolder + "/audio; check to ensure the capitalization and filename are correct.");
+                    }
+                    else { //Otherwise, load defined path
+                        if (Gdx.files.internal(s).exists()) {
+                            BaseMod.addAudio(s, s);
+                        }
+                        else {
+                            throw new Exception("Failed to find audio file \"" + s + "\"; check to ensure this is the correct filepath.");
+                        }
+                    }
+                }
+            }
+        }
+        catch (Exception e) {
+            logger.error("Exception occurred in loadAudio: ", e);
+        }
     }
 
     private void loadLocalization(String lang) {
@@ -238,7 +296,7 @@ public class FGOMod implements
     }
 
     private void registerKeyword(KeywordInfo info) {
-        BaseMod.addKeyword(modID.toLowerCase(), info.PROPER_NAME, info.NAMES, info.DESCRIPTION);
+        BaseMod.addKeyword(modID.toLowerCase(), info.PROPER_NAME, info.NAMES, info.DESCRIPTION, info.COLOR);
         if (!info.ID.isEmpty())
         {
             keywords.put(info.ID, info);
@@ -250,6 +308,15 @@ public class FGOMod implements
         return resourcesFolder + "/localization/" + lang + "/" + file;
     }
 
+    public static String audioPath(String file) {
+        return resourcesFolder + "/audio/" + file;
+    }
+    public static String musicPath(String file) {
+        return resourcesFolder + "/audio/music/" + file;
+    }
+    public static String soundPath(String file) {
+        return resourcesFolder + "/audio/sound/" + file;
+    }
     public static String imagePath(String file) {
         return resourcesFolder + "/images/" + file;
     }
@@ -418,6 +485,9 @@ public class FGOMod implements
             if (AbstractDungeon.player.hasRelic(SuitcaseFgo.ID)) {
                 fgoNp = 20;
             }
+            if(AbstractDungeon.floorNum == 16) {
+                AbstractDungeon.getCurrRoom().spawnRelicAndObtain((float)(Settings.WIDTH / 2), (float)(Settings.HEIGHT / 2), RelicLibrary.getRelic(LockChocolateStrawberry.ID).makeCopy());
+            }
         }
     }
 
@@ -451,7 +521,11 @@ public class FGOMod implements
     @Override
     public void receivePostCreateStartingDeck(AbstractPlayer.PlayerClass playerClass, CardGroup cardGroup) {
         CommandSpellPanel.reset();
+        NobleDeckCards.reset();
     }
 
-
+    @Override
+    public void receiveStartGame() {
+        NobleDeck.addCards(NobleDeckCards.cards); 
+    }
 }

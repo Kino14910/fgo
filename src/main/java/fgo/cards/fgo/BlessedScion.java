@@ -1,9 +1,6 @@
 package fgo.cards.fgo;
 
-import com.badlogic.gdx.graphics.Color;
-import com.evacipated.cardcrawl.mod.stslib.patches.FlavorText;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import fgo.action.BlessedScionAction;
 import fgo.cards.FGOCard;
@@ -22,10 +19,6 @@ public class BlessedScion extends FGOCard {
     public BlessedScion() {
         super(ID, INFO);
         setMagic(1, 1);
-        portraitImg = ImageMaster.loadImage("fgo/images/cards/power/BlessedScion.png");
-
-        FlavorText.AbstractCardFlavorFields.textColor.set(this, Color.CHARTREUSE);
-        FlavorText.AbstractCardFlavorFields.flavorBoxType.set(this, FlavorText.boxType.TRADITIONAL);
     }
     
     @Override

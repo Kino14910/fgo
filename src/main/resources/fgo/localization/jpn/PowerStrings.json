@@ -253,22 +253,6 @@
       " 回）。"
     ]
   },
-  "${modID}:OneTimeOneMeetingPreparedPower": {
-    "NAME": "遅延発動",
-    "DESCRIPTIONS": [
-      "次ターン、非アビリティカードを引くたび #y消耗 し、ランダムなアビリティカードを手札に加える。",
-      "次の #b",
-      " ターン、非アビリティカードを引くたび #y消耗 し、ランダムなアビリティカードを手札に加える。"
-    ]
-  },
-  "${modID}:OneTimeOneMeetingPower": {
-    "NAME": "一期一会",
-    "DESCRIPTIONS": [
-      "このターン、非アビリティカードを引くたび #y消耗 し、ランダムなアビリティカードを手札に加える。",
-      "次の #b",
-      " ターン、非アビリティカードを引くたび #y消耗 し、ランダムなアビリティカードを手札に加える。"
-    ]
-  },
   "${modID}:FifthFormPower": {
     "NAME": "第五勢",
     "DESCRIPTIONS": [
@@ -331,14 +315,6 @@
       "このターン終了時： NL #b3 点の #y棘 を獲得。 NL #b4 層の #y多層装甲 と #y再生 を獲得。 NL ターン開始時、[E] 1点とカード #b1 枚を引く。 NL #b1 層の #y無形 と #y礼装 を獲得。",
       "次の #b",
       " ターン終了時： NL #b3 点の #y棘 を獲得。 NL #b4 層の #y多層装甲 と #y再生 を獲得。 NL ターン開始時、[E] 1点とカード #b1 枚を引く。 NL #b1 層の #y無形 と #y礼装 を獲得。"
-    ]
-  },
-  "${modID}:CrossingArcadiaPower": {
-    "NAME": "アルカディアを越えて",
-    "DESCRIPTIONS": [
-      "次の攻撃カードは #yスター を返還し [E] を獲得。",
-      "次の #b",
-      " 枚の攻撃カードは #yスター を返還し [E] を獲得。"
     ]
   },
   "${modID}:InsanityPower": {
@@ -446,24 +422,6 @@
     "DESCRIPTIONS": [
       "このターンの被攻撃ダメージを #b",
       "% 軽減。"
-    ]
-  },
-  "${modID}:BusterCardPower": {
-    "NAME": "バスター染色",
-    "DESCRIPTIONS": [
-      ""
-    ]
-  },
-  "${modID}:ArtsCardPower": {
-    "NAME": "アーツ染色",
-    "DESCRIPTIONS": [
-      ""
-    ]
-  },
-  "${modID}:QuickCardPower": {
-    "NAME": "クイック染色",
-    "DESCRIPTIONS": [
-      ""
     ]
   },
   "${modID}:ItsInevitablePower": {
@@ -635,18 +593,10 @@
       "この敵の攻撃は #b10 個のスターを消費し、次の攻撃ダメージが #b100% 上昇。"
     ]
   },
-  "${modID}:NextTurnNpPower": {
-    "NAME": "NP獲得",
-    "DESCRIPTIONS": [
-      "次ターン #b",
-      "宝具ゲージ獲得"
-    ]
-  },
   "${modID}:IgnoresInvincibilityPower": {
     "NAME": "無敵貫通",
     "DESCRIPTIONS": [
-      "次の攻撃カードは #b",
-      " 倍のダメージを与える。"
+      "次の攻撃カードは #b%d 倍のダメージを与える。"
     ]
   }
 }

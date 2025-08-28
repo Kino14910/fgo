@@ -19,7 +19,7 @@ public class TheBlackGrail extends FGOCard {
     );
     public TheBlackGrail() {
         super(ID, INFO);
-        setMagic(60, 20);
+        setMagic(40, 20);
     }
 
     @Override

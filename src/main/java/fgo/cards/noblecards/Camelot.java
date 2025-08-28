@@ -30,7 +30,7 @@ public class Camelot extends AbsNoblePhantasmCard {
     
     @Override
     public float getTitleFontSize() {
-        if (language == Settings.GameLanguage.ZHS) {
+        if (language == Settings.GameLanguage.ZHS && upgraded) {
             return 24.0F;
         }
 

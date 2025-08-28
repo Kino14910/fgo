@@ -12,14 +12,19 @@
   "${modID}:ElixirofRejuvenation": {
     "NAME": "Elixir of Rejuvenation",
     "DESCRIPTIONS": [
-      "Heal #b",
-      " HP. Remove all of your debuff."
+      "Heal #b%d HP. Remove all of your debuff."
     ]
   },
   "${modID}:ExtremelySpicyMapoTofu": {
     "NAME": "Mapo Tofu",
     "DESCRIPTIONS": [
       "Gain #b80% #yNP or #b60% #yNP #yDamage."
+    ]
+  },
+  "${modID}:CursePotion": {
+    "NAME": "Curse Potion",
+    "DESCRIPTIONS": [
+      "Apply #b%d stacks of #yCurse."
     ]
   }
 }

@@ -8,6 +8,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import fgo.cards.FGOCard;
 import fgo.util.CardStats;
 
+import static com.megacrit.cardcrawl.core.Settings.language;
+
 public class BlackBarrel extends FGOCard {
     public static final String ID = makeID(BlackBarrel.class.getSimpleName());
     private static final CardStats INFO = new CardStats(
@@ -21,6 +23,25 @@ public class BlackBarrel extends FGOCard {
         super(ID, INFO);
         setDamage(14, 4);
         setExhaust();
+    }
+
+
+    @Override
+    protected void upgradeName() {
+        timesUpgraded++;
+        upgraded = true;
+        switch (language) {
+            case ZHS:
+                name = "悖论构造体";
+                break;
+            case ZHT:
+                name = "悖論構造体";
+                break;
+            case JPN:
+                name = "ブラックバレル";
+            default:
+                break;
+        }
     }
 
 

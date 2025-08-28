@@ -18,7 +18,11 @@
   "${modID}:WallOfSnowflakes": {
     "NAME": "现为脆弱的雪花之壁",
     "DESCRIPTION": "获得 !B! 点 格挡 。",
-    "UPGRADE_DESCRIPTION": "获得 !B! 点 格挡 。 NL 在这个回合受到的攻击伤害降低 !M! %。"
+    "UPGRADE_DESCRIPTION": "获得 !B! 点 格挡 。 NL 在这个回合受到的攻击伤害降低 !M! %。",
+    "EXTENDED_DESCRIPTION": [
+      "在这个回合受到的攻击伤害降低 !M! %。 NL 获得 !NP! % fgo:宝具值 ，3点 力量 ，30点 fgo:暴击伤害 。"
+    ],
+    "FLAVOR": "这张卡会在特定的时候升级。"
   },
   "${modID}:BlackBarrel": {
     "NAME": "悖论构造体",
@@ -38,7 +42,7 @@
   },
   "${modID}:BrilliantEscort": {
     "NAME": "闪耀的陪同",
-    "DESCRIPTION": "获得 !S! 颗 fgo:暴击星 。 NL 获得 !NP! % fgo:宝具值 。"
+    "DESCRIPTION": "获得 !Star! 颗 fgo:暴击星 。 NL 获得 !NP! % fgo:宝具值 。"
   },
   "${modID}:PureCoordinate": {
     "NAME": "纯洁的搭配",
@@ -54,7 +58,7 @@
   },
   "${modID}:HolyShroud": {
     "NAME": "圣骸布",
-    "DESCRIPTION": "如果敌人即将造成30以上的伤害，在这个回合受到的攻击伤害降低 !M! %。"
+    "DESCRIPTION": "如果敌人即将造成20以上的伤害，在这个回合受到的攻击伤害降低 !M! %。"
   },
   "${modID}:QueensCovenant": {
     "NAME": "女王的契约",
@@ -96,11 +100,11 @@
   },
   "${modID}:SoulOfWaterChannels": {
     "NAME": "花之邪神",
-    "DESCRIPTION": "保留 。 NL 获得1层 fgo:诅呪 。 NL 获得 !S! 颗 fgo:暴击星 。 NL 消耗 。"
+    "DESCRIPTION": "保留 。 NL 获得1层 fgo:诅呪 。 NL 获得 !Star! 颗 fgo:暴击星 。 NL 消耗 。"
   },
   "${modID}:BackAgain": {
     "NAME": "雅号·异星蛸",
-    "DESCRIPTION": "获得 !NP! % fgo:宝具值 。 NL 获得 !S! 颗 fgo:暴击星 。",
+    "DESCRIPTION": "获得 !NP! % fgo:宝具值 。 NL 获得 !Star! 颗 fgo:暴击星 。",
     "FLAVOR": "领域外生命。"
   },
   "${modID}:MonteCristoTreasure": {
@@ -123,8 +127,7 @@
   },
   "${modID}:BlessedScion": {
     "NAME": "后继者",
-    "DESCRIPTION": "选择一张手牌 消耗 ， NL 在抽牌堆顶部加入 !M! 张这张牌的复制品。",
-    "UPGRADE_DESCRIPTION": "选择一张手牌 消耗 ， NL 在抽牌堆顶部加入 !M! 张这张牌的复制品，它们在被打出之前耗能变为0。",
+    "DESCRIPTION": "{@@}选择一张手牌 消耗 ， NL 在抽牌堆顶部加入{!M!|1=一|@= !M! }张这张牌的复制品，它们在被打出之前耗能变为0。",
     "FLAVOR": "测试画风可以更改。"
   },
   "${modID}:BeastMagic": {
@@ -138,11 +141,11 @@
   },
   "${modID}:WarriorsBlade": {
     "NAME": "击剑矫捷如鹰隼",
-    "DESCRIPTION": "造成 !D! 点伤害 !M! 次。 NL 获得 !S! 颗 fgo:暴击星 。"
+    "DESCRIPTION": "造成 !D! 点伤害 !M! 次。 NL 获得 !Star! 颗 fgo:暴击星 。"
   },
   "${modID}:StarHunter": {
     "NAME": "星之猎人",
-    "DESCRIPTION": "抽 !M! 张牌。 NL 获得 !S! 颗 fgo:暴击星 。 NL 消耗 。"
+    "DESCRIPTION": "抽 !M! 张牌。 NL 获得 !Star! 颗 fgo:暴击星 。 NL 消耗 。"
   },
   "${modID}:BlessingOfKur": {
     "NAME": "冥界佑护",
@@ -150,7 +153,7 @@
   },
   "${modID}:OriginBullet": {
     "NAME": "起源弹",
-    "DESCRIPTION": "{@@} fgo:无敌贯通 。 NL 每去除一种状态，就使下一张攻击牌伤害增加 !M! 倍。{!Upgrades!|1= NL 额外造成敌人状态种类数量 !M! 倍的伤害。}"
+    "DESCRIPTION": "{@@} fgo:无敌贯通 。 NL 每去除一种状态，就使下一张攻击牌伤害增加1倍。{!Upgrades!|0= NL 消耗 。}"
   },
   "${modID}:StarPioneer": {
     "NAME": "星之开拓者",
@@ -296,7 +299,7 @@
   },
   "${modID}:LuckySpinning": {
     "NAME": "幸运的纺线",
-    "DESCRIPTION": "打出此牌后，在本回合每造成一次伤害，额外获得 !S! 颗 fgo:暴击星 。"
+    "DESCRIPTION": "打出此牌后，在本回合每造成一次伤害，额外获得 !Star! 颗 fgo:暴击星 。"
   },
   "${modID}:KnightStance": {
     "NAME": "骑士的架势",
@@ -318,7 +321,7 @@
   },
   "${modID}:MorningLark": {
     "NAME": "晨之云雀",
-    "DESCRIPTION": "获得 !NP! % fgo:宝具值 。 NL 获得 !S! 颗 fgo:暴击星 。 NL 在你的回合结束时，失去 20% fgo:宝具值 NL 消耗 。"
+    "DESCRIPTION": "获得 !NP! % fgo:宝具值 。 NL 获得 !Star! 颗 fgo:暴击星 。 NL 在你的回合结束时，失去 20% fgo:宝具值 NL 消耗 。"
   },
   "${modID}:GraceUnexpectedBirth": {
     "NAME": "不被祝福的诞生",
@@ -377,7 +380,7 @@
   },
   "${modID}:KnightoftheLake": {
     "NAME": "湖上骑士",
-    "DESCRIPTION": "在你没有 fgo:暴击威力 时， NL 获得 !M! % fgo:暴击威力 。 NL 否则，获得 !S! 颗 fgo:暴击星 。"
+    "DESCRIPTION": "在你没有 fgo:暴击威力 时， NL 获得 !M! % fgo:暴击威力 。 NL 否则，获得 !Star! 颗 fgo:暴击星 。"
   },
   "${modID}:CircuitConnect": {
     "NAME": "回路连接",
@@ -494,11 +497,11 @@
   },
   "${modID}:CharismaOfConflict": {
     "NAME": "斗争的魅力",
-    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 如果你有 fgo:毅力 状态 ，则再次造成 !D! 点伤害。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 如果你有 fgo:毅力 状态 ，则再次造成 !D! 点伤害。"
   },
   "${modID}:ProofAndRebuttal": {
     "NAME": "证明与反证",
-    "DESCRIPTION": "抽1张牌。 NL 将手牌中的任意张牌放到抽牌堆的顶部。 {!Upgrades!|0=NL 消耗 。}",
+    "DESCRIPTION": "{@@}抽1张牌。 NL 将手牌中的任意张牌放到抽牌堆的顶部。{!Upgrades!|0= NL  消耗 。}",
     "FLAVOR": "测试画风可以更改。"
   },
   "${modID}:TakeRomance": {
@@ -509,10 +512,6 @@
     "NAME": "第五势",
     "DESCRIPTION": "在本回合，对一个敌人的攻击牌会打出两次，但伤害降低 !M! %。 NL 消耗 。",
     "FLAVOR": "测试画风可以更改。"
-  },
-  "${modID}:Dumuzid": {
-    "NAME": "杜木兹",
-    "DESCRIPTION": "不能被打出 。 NL 在你的回合结束时，播放 *「The *end」 。"
   },
   "${modID}:GrandOrder": {
     "NAME": "命运指定",
@@ -567,7 +566,7 @@
   },
   "${modID}:BridalSpinWheel": {
     "NAME": "赠予新娘的纺车",
-    "DESCRIPTION": "{@@}获得 {!M!|repeat= [E]} 。 NL 获得 !S! 颗 fgo:暴击星 。"
+    "DESCRIPTION": "{@@}获得 {!M!|repeat= [E]} 。 NL 获得 !Star! 颗 fgo:暴击星 。"
   },
   "${modID}:IraLupus": {
     "NAME": "狂暴少女狼",
@@ -591,7 +590,7 @@
   },
   "${modID}:GardenOfAvalon": {
     "NAME": "永世隔绝的理想乡",
-    "DESCRIPTION": "在你的回合开始时 NL 获得 !M! 点 格挡 ， NL 获得 !M! % fgo:宝具值 ， NL 获得 !M! 颗 fgo:暴击星 。"
+    "DESCRIPTION": "在你的回合开始时 NL 获得 !B! 点 格挡 ， NL 获得 !NP! % fgo:宝具值 ， NL 获得 !Star! 颗 fgo:暴击星 。"
   },
   "${modID}:ElementaryMyDear": {
     "NAME": "这是常识",
@@ -627,7 +626,7 @@
   },
   "${modID}:HollowHeartAlbion": {
     "NAME": "无人知晓的无垢搏动",
-    "DESCRIPTION": "所有敌人失去 !D! 点生命。 NL 获得 !S! 颗 fgo:暴击星 。"
+    "DESCRIPTION": "所有敌人失去 !D! 点生命。 NL 获得 !Star! 颗 fgo:暴击星 。"
   },
   "${modID}:Sevendrive": {
     "NAME": "79式掷祸大社",
@@ -664,7 +663,7 @@
   },
   "${modID}:LastSunXibalba": {
     "NAME": "星，自宇宙降临",
-    "DESCRIPTION": "对所有敌人造成 !D! 点伤害5次。 NL 获得 !S! 颗 fgo:暴击星 。",
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害5次。 NL 获得 !Star! 颗 fgo:暴击星 。",
     "FLAVOR": "在你有boss遗物“Archetype ORT”时才会出现在宝具选择界面。"
   },
   "${modID}:MahaPralaya": {

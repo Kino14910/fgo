@@ -11,14 +11,19 @@
   "${modID}:ElixirofRejuvenation": {
     "NAME": "若返りの霊薬",
     "DESCRIPTIONS": [
-      "HPを #b",
-      " 点回復。全てのデバフを解除。このポーションは戦闘外では飲用不可。"
+      "HPを #b%d 点回復。全てのデバフを解除。このポーションは戦闘外では飲用不可。"
     ]
   },
   "${modID}:ExtremelySpicyMapoTofu": {
     "NAME": "缶詰特辛マーボー豆腐",
     "DESCRIPTIONS": [
       "#b80% #y宝具ゲージ または #b60% #y宝具威力 を獲得。"
+    ]
+  },
+  "${modID}:CursePotion": {
+    "NAME": "呪いのポーション",
+    "DESCRIPTIONS": [
+      "#b%d 層の #y呪い を付与する。"
     ]
   }
 }

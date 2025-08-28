@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import fgo.cards.noblecards.HollowHeartAlbion;
-import fgo.patches.Enum.CardTagsEnum;
+import fgo.panel.NobleDeck;
 import fgo.powers.NoblePhantasmCardPower;
 
 public class NoblePhantasmSelectAction extends AbstractGameAction {
@@ -26,19 +26,20 @@ public class NoblePhantasmSelectAction extends AbstractGameAction {
 
     public void update() {
         if (this.duration == Settings.ACTION_DUR_MED) {
-            CardGroup group = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+            // CardGroup group = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+            CardGroup group = NobleDeck.nobleCards;
             if (AbstractDungeon.player.hasPower(NoblePhantasmCardPower.POWER_ID)) {
                 group.addToTop(new HollowHeartAlbion());
             } else {
-                for (AbstractCard card : AbstractDungeon.player.masterDeck.group) {
-                    if (card.hasTag(CardTagsEnum.Noble_Phantasm)) {
-                        AbstractCard copy = card.makeCopy();
-                        if (card.upgraded) {
-                            copy.upgrade();
-                        } 
-                        group.addToTop(copy);
-                    }
-                }
+                // for (AbstractCard card : AbstractDungeon.player.masterDeck.group) {
+                //     if (card.hasTag(CardTagsEnum.Noble_Phantasm)) {
+                //         AbstractCard copy = card.makeCopy();
+                //         if (card.upgraded) {
+                //             copy.upgrade();
+                //         } 
+                //         group.addToTop(copy);
+                //     }
+                // }
                 
                 if (group.isEmpty()) {
                     this.isDone = true;

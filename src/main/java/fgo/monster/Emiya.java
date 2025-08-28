@@ -25,6 +25,7 @@ import fgo.cards.noblecards.Unlimited;
 import fgo.characters.Master;
 import fgo.powers.CriticalDamageUpPower;
 import fgo.powers.monster.StarGainMonsterPower;
+import fgo.util.Sounds;
 
 import static fgo.FGOMod.makeID;
 
@@ -109,7 +110,8 @@ public class Emiya extends AbstractMonster {
                 addToBot(new DamageAction(AbstractDungeon.player, damage.get(0), AbstractGameAction.AttackEffect.SMASH));
                 break;
             case MULTI_SLASH:
-                addToBot(new SFXAction("S011_Attack6"));
+                // addToBot(new SFXAction("S011_Attack6"));
+                addToBot(new SFXAction(Sounds.S011_Attack6));
                 for(int i = 0; i < HIT_NUM; ++i) {
                     addToBot(new DamageAction(AbstractDungeon.player, damage.get(1), AbstractGameAction.AttackEffect.SLASH_HEAVY));
                 }
@@ -119,7 +121,7 @@ public class Emiya extends AbstractMonster {
             case REBIRTH:
                 CardCrawlGame.music.silenceTempBgmInstantly();
                 CardCrawlGame.music.silenceBGMInstantly();
-                addToBot(new SFXAction("UBW"));
+                addToBot(new SFXAction(Sounds.UBW_Incantation));
                 // addToBot(new WaitFgoAction(1.0F));
                 // addToBot(new WaitAction(1.0F));
                 addToBot(new HealAction(this, this, 
@@ -136,7 +138,7 @@ public class Emiya extends AbstractMonster {
                 break;
             case PROJECTION:
                 addToBot(new TalkAction(this, DIALOG[0], 2.5F, 2.5F));
-                addToBot(new SFXAction("S011_Skill1"));
+                addToBot(new SFXAction(Sounds.S011_Skill1));
                 addToBot(new WaitAction(0.25F));
                 for (int i = 0; i < PROJECTION_ATK_AMT; i++) {
                     addToBot(new DamageAction(AbstractDungeon.player, damage.get(2), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
@@ -149,7 +151,7 @@ public class Emiya extends AbstractMonster {
                 break;
             case MIND_EYE:
                 addToBot(new TalkAction(this, DIALOG[1], 2.5F, 2.5F));
-                addToBot(new SFXAction("S011_Skill2"));
+                addToBot(new SFXAction(Sounds.S011_Skill2));
                 addToBot(new WaitAction(0.25F));
                 addToBot(new ApplyPowerAction(this, this, new CriticalDamageUpPower(this, 25), 25));
                 addToBot(new ApplyPowerAction(this, this, new StrengthPower(this, 
@@ -157,7 +159,7 @@ public class Emiya extends AbstractMonster {
                 break;
             case MAGE_CRAFT:
                 addToBot(new TalkAction(this, DIALOG[2], 2.5F, 2.5F));
-                addToBot(new SFXAction("S011_Skill3"));
+                addToBot(new SFXAction(Sounds.S011_Skill3));
                 addToBot(new WaitAction(0.25F));
                 addToBot(new ApplyPowerAction(AbstractDungeon.player, this, new FrailPower(AbstractDungeon.player, 99, true), 99));
                 break;

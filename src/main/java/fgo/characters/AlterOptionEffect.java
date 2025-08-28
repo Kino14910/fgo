@@ -16,10 +16,11 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.CampfireUI;
 import com.megacrit.cardcrawl.rooms.RestRoom;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
-import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import fgo.cards.noblecards.HollowHeartAlbion;
 import fgo.cards.noblecards.Unlimited;
 import fgo.patches.Enum.CardTagsEnum;
+import fgo.panel.NobleDeck;
+import fgo.panel.NobleDeckCards;
 
 import java.util.ArrayList;
 import java.util.Map;
@@ -45,7 +46,9 @@ public class AlterOptionEffect extends AbstractGameEffect {
 
         if (!AbstractDungeon.isScreenUp && !AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
             AbstractCard c = AbstractDungeon.gridSelectScreen.selectedCards.get(0);
-            AbstractDungeon.topLevelEffects.add(new ShowCardAndObtainEffect(c, (float)Settings.WIDTH / 2.0F + 190.0F * Settings.scale, (float)Settings.HEIGHT / 2.0F));
+            // AbstractDungeon.topLevelEffects.add(new ShowCardAndObtainEffect(c, (float)Settings.WIDTH / 2.0F + 190.0F * Settings.scale, (float)Settings.HEIGHT / 2.0F));
+            // NobleDeck.addCard(c.makeCopy());
+            NobleDeckCards.addCard(c.cardID);
             AlterOption.usedIdentify = true;
             AbstractDungeon.gridSelectScreen.selectedCards.clear();
             ((RestRoom)AbstractDungeon.getCurrRoom()).fadeIn();

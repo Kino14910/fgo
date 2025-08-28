@@ -23,7 +23,8 @@ public class ReducePercentDamagePower extends BasePower {
     }
 
     private float calculateDamageTakenAmount(float damage, DamageInfo.DamageType type) {
-        return type != DamageInfo.DamageType.HP_LOSS && type != DamageInfo.DamageType.THORNS ? damage * (100.0F - this.amount) / 100.0F : damage;
+        // return type != DamageInfo.DamageType.HP_LOSS && type != DamageInfo.DamageType.THORNS ? damage * (100.0F - this.amount) / 100.0F : damage;
+        return damage * (100.0F - this.amount) / 100.0F;
     }
 
     @Override

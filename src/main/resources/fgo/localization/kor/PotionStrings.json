@@ -11,14 +11,19 @@
   "${modID}:ElixirofRejuvenation": {
     "NAME": "회춘의 비약",
     "DESCRIPTIONS": [
-      "HP를 #b",
-      " 회복합니다. 모든 디버프를 제거합니다. 이 포션은 전투 외부에서 사용할 수 없습니다."
+      "HP를 #b%d 회복합니다. 모든 디버프를 제거합니다. 이 포션은 전투 외부에서 사용할 수 없습니다."
     ]
   },
   "${modID}:ExtremelySpicyMapoTofu": {
     "NAME": "통조림 특급 매운 마파두부",
     "DESCRIPTIONS": [
       "#b80% #y보구 게이지 또는 #b60% #y보구 위력을 얻습니다."
+    ]
+  },
+  "${modID}:CursePotion": {
+    "NAME": "저주 물약",
+    "DESCRIPTIONS": [
+      "#b%d 중첩의 #y저주 를 부여한다."
     ]
   }
 }

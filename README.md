@@ -37,13 +37,13 @@
 
 ### 特殊变量系统
 
-- **动态数值**: 使用`!NP!`和`!S!`实现宝具值与暴击星数值
+- **动态数值**: 使用`!NP!`和`!Star!`实现宝具值与暴击星数值
 
 在`CardStrings.json`中使用动态占位符：
 ```json
   "${modID}:MorningLark": {
     "NAME": "晨之云雀",
-    "DESCRIPTION": "获得 !NP! % fgo:宝具值 。 NL 获得 !S! 颗 fgo:暴击星 。 NL 在你的回合结束时，失去 20% fgo:宝具值 NL 消耗 。"
+    "DESCRIPTION": "获得 !NP! % fgo:宝具值 。 NL 获得 !Star! 颗 fgo:暴击星 。 NL 在你的回合结束时，失去 20% fgo:宝具值 NL 消耗 。"
   },
 ```
 

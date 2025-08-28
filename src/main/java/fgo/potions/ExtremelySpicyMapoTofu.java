@@ -11,7 +11,6 @@ import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.helpers.input.InputHelper;
 import com.megacrit.cardcrawl.localization.PotionStrings;
-import com.megacrit.cardcrawl.potions.AbstractPotion;
 import fgo.cards.optionCards.Kaleidoscope;
 import fgo.cards.optionCards.TheBlackGrail;
 
@@ -30,8 +29,7 @@ public class ExtremelySpicyMapoTofu extends BasePotion {
     }
 
     @Override
-    public void initializeData() {
-        super.initializeData();
+    public void addAdditionalTips() {
         this.tips.add(new PowerTip(
                 TipHelper.capitalize(BaseMod.getKeywordTitle("fgo:np")),
                 BaseMod.getKeywordDescription("fgo:np")));
@@ -48,15 +46,9 @@ public class ExtremelySpicyMapoTofu extends BasePotion {
         stanceChoices.add(new TheBlackGrail());
         this.addToBot(new ChooseOneAction(stanceChoices));
     }
-
-    @Override
-    public int getPotency(int ascensionLevel) {return 0;}
-
+    
     @Override
     public String getDescription() {
         return potionStrings.DESCRIPTIONS[0];
     }
-
-    @Override
-    public AbstractPotion makeCopy() {return new ExtremelySpicyMapoTofu();}
 }

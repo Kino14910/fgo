@@ -254,22 +254,6 @@
       " 次。"
     ]
   },
-  "${modID}:OneTimeOneMeetingPreparedPower": {
-    "NAME": "延迟发动",
-    "DESCRIPTIONS": [
-      "在下个回合，每当你抽到一张非能力牌时， #y消耗 其并增加一张随机能力牌到你的手牌。",
-      "在下 #b",
-      " 个回合，每当你抽到一张非能力牌时， #y消耗 其并增加一张随机能力牌到你的手牌。"
-    ]
-  },
-  "${modID}:OneTimeOneMeetingPower": {
-    "NAME": "一期一会",
-    "DESCRIPTIONS": [
-      "在这个回合，每当你抽到一张非能力牌时， #y消耗 其并增加一张随机能力牌到你的手牌。",
-      "在接下来 #b",
-      " 个回合，每当你抽到一张非能力牌时， #y消耗 其并增加一张随机能力牌到你的手牌。"
-    ]
-  },
   "${modID}:FifthFormPower": {
     "NAME": "第五势",
     "DESCRIPTIONS": [
@@ -332,14 +316,6 @@
       "在本回合结束时： NL 获得 #b3 点 #y荆棘 。 NL 获得 #b4 层 #y多层护甲 和 #y再生 。 NL 在你的回合开始时，获得 #b1 点能量和抽 #b1 张牌。 NL 获得 #b1 层 #y无实体 和 #y人工制品 。",
       "你的下 #b",
       " 回合结束时： NL 获得 #b3 点 #y荆棘 。 NL 获得 #b4 层 #y多层护甲 和 #y再生 。 NL 在你的回合开始时，获得 #b1 点能量和抽 #b1 张牌。 NL 获得 #b1 层 #y无实体 和 #y人工制品 。"
-    ]
-  },
-  "${modID}:CrossingArcadiaPower": {
-    "NAME": "越过阿卡迪亚",
-    "DESCRIPTIONS": [
-      "你的下一张攻击牌返还 #y暴击星 并且获得 [E] 。",
-      "你的下 #b",
-      " 张攻击牌返还 #y暴击星 并且获得 [E] 。"
     ]
   },
   "${modID}:InsanityPower": {
@@ -449,29 +425,11 @@
       "% 受到的攻击伤害。"
     ]
   },
-  "${modID}:BusterCardPower": {
-    "NAME": "染红",
-    "DESCRIPTIONS": [
-      ""
-    ]
-  },
-  "${modID}:ArtsCardPower": {
-    "NAME": "染蓝",
-    "DESCRIPTIONS": [
-      ""
-    ]
-  },
-  "${modID}:QuickCardPower": {
-    "NAME": "染绿",
-    "DESCRIPTIONS": [
-      ""
-    ]
-  },
   "${modID}:ItsInevitablePower": {
     "NAME": "无可奈何",
     "DESCRIPTIONS": [
       "在下一回合开始时，对所有敌人造成 #b%1$s 点伤害。",
-      "对所有敌人造成 #b%2$s 点伤害，然后将伤害增加 #b%3$s 点。"
+      "在下一回合开始时，对所有敌人造成 #b%1$s 点伤害，然后将伤害增加 #b%2$s 点。"
     ]
   },
   "${modID}:ManaBurstGemsPower": {
@@ -639,8 +597,7 @@
   "${modID}:IgnoresInvincibilityPower": {
     "NAME": "无敌贯通",
     "DESCRIPTIONS": [
-      "下一张攻击牌造成 #b",
-      " 倍伤害。"
+      "下一张攻击牌造成 #b%d 倍伤害。"
     ]
   }
 }

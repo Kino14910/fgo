@@ -7,8 +7,7 @@ import fgo.cards.FGOCard;
 public class CriticalStarVariable extends DynamicVariable {
     @Override
     public String key() {
-        return "S";
-        // 在本地化文件中用于显示你的值的键。例如，!myKey!。
+        return "Star";
     }
 
     @Override

@@ -1,12 +1,11 @@
-package fgo.relics;
+package fgo.relics.deprecated;
 
-import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
-import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
-import fgo.cards.curses.Dumuzid;
+// import fgo.cards.curses.Dumuzid;
 import fgo.patches.Enum.FGOCardColor;
+import fgo.relics.BaseRelic;
 
 import static fgo.FGOMod.makeID;
 
@@ -25,7 +24,7 @@ public class BurgerKing extends BaseRelic {
     @Override
     public void onEquip() {
         AbstractDungeon.player.increaseMaxHp(40, true);
-        AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new Dumuzid(), (float) Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
+        // AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new Dumuzid(), (float) Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
         UnlockTracker.markCardAsSeen("Dumuzid");
     }
 

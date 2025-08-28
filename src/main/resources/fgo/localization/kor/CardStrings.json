@@ -18,7 +18,12 @@
   "${modID}:WallOfSnowflakes": {
     "NAME": "깨지기 쉬운 눈송이의 벽",
     "DESCRIPTION": "!B! 방어도를 얻습니다.",
-    "UPGRADE_DESCRIPTION": "!B! 방어도를 얻습니다. NL 이 턴에 받는 공격 피해를 !M! % 감소시킵니다."
+    "UPGRADE_DESCRIPTION": "!B! 방어도를 얻습니다. NL 이 턴에 받는 공격 피해를 !M! % 감소시킵니다.",
+    "EXTENDED_DESCRIPTION": [
+      "이번 턴에 받는 공격 피해를 !M!% 감소시킵니다. NL !NP!% fgo:NP 게이지, 3점의 힘, 30점의 fgo:크리티컬 데미지를 얻습니다."
+    ],
+    "FLAVOR": "이 카드는 특정 조건에서 강화됩니다."
+
   },
   "${modID}:BlackBarrel": {
     "NAME": "패러독스 구조체",
@@ -38,7 +43,7 @@
   },
   "${modID}:BrilliantEscort": {
     "NAME": "빛나는 수행",
-    "DESCRIPTION": "!S! 스타를 얻습니다. NL !NP!% 보구 게이지를 얻습니다."
+    "DESCRIPTION": "!Star! 스타를 얻습니다. NL !NP!% 보구 게이지를 얻습니다."
   },
   "${modID}:PureCoordinate": {
     "NAME": "순결의 코디네이트",
@@ -96,11 +101,11 @@
   },
   "${modID}:SoulOfWaterChannels": {
     "NAME": "화의 사신",
-    "DESCRIPTION": "보류합니다. NL 1중 저주를 얻습니다. NL !S! 스타를 얻습니다. NL 소멸됩니다."
+    "DESCRIPTION": "보류합니다. NL 1중 저주를 얻습니다. NL !Star! 스타를 얻습니다. NL 소멸됩니다."
   },
   "${modID}:BackAgain": {
     "NAME": "이칭・이성문어",
-    "DESCRIPTION": "!M! 중 방어 다운을 부여합니다. NL !S! 스타를 얻습니다.",
+    "DESCRIPTION": "!M! 중 방어 다운을 부여합니다. NL !Star! 스타를 얻습니다.",
     "FLAVOR": "영역 외 생명."
   },
   "${modID}:MonteCristoTreasure": {
@@ -124,7 +129,6 @@
   "${modID}:BlessedScion": {
     "NAME": "후계자",
     "DESCRIPTION": "핸드에서 소멸하는 카드를 선택, NL 덱 위에 !M! 장의 복사본을 추가합니다.",
-    "UPGRADE_DESCRIPTION": "핸드에서 소멸하는 카드를 선택, NL 덱 위에 !M! 장의 복사본을 추가합니다(플레이 전까지 비용 0).",
     "FLAVOR": "테스트용 아트는 변경 가능합니다."
   },
   "${modID}:BeastMagic": {
@@ -138,11 +142,11 @@
   },
   "${modID}:WarriorsBlade": {
     "NAME": "검기 빠른 매와 같으니",
-    "DESCRIPTION": "!D! 피해를 !M! 회 줍니다. NL !S! 스타를 얻습니다."
+    "DESCRIPTION": "!D! 피해를 !M! 회 줍니다. NL !Star! 스타를 얻습니다."
   },
   "${modID}:StarHunter": {
     "NAME": "별의 사냥꾼",
-    "DESCRIPTION": "!M! 장 카드를 뽑습니다. NL !S! 스타를 얻습니다. NL 소멸됩니다."
+    "DESCRIPTION": "!M! 장 카드를 뽑습니다. NL !Star! 스타를 얻습니다. NL 소멸됩니다."
   },
   "${modID}:BlessingOfKur": {
     "NAME": "명계의 가호",
@@ -184,8 +188,7 @@
   },
   "${modID}:EndOfADream": {
     "NAME": "꿈의 끝",
-    "DESCRIPTION": "턴 종료 시, 무작위 핸드 1장을 소멸시킵니다. NL 보구 카드의 공격 피해 2배.",
-    "UPGRADE_DESCRIPTION": "고유. NL 턴 종료 시, 무작위 핸드 1장을 소멸시킵니다. NL 보구 카드의 공격 피해 2배."
+    "DESCRIPTION": "{@@}{!Upgrades!|1=고유 。 NL }턴 종료 시, 무작위 핸드 1장을 소멸시킵니다. NL 보구 카드의 공격 피해 2배."
   },
   "${modID}:AbyssLight": {
     "NAME": "심연에 빛이 되어",
@@ -297,7 +300,7 @@
   },
   "${modID}:LuckySpinning": {
     "NAME": "행운의 실뭉치",
-    "DESCRIPTION": "이 카드 플레이 후, 턴 중 피해를 줄 때마다, 추가로 !S! 스타를 얻습니다."
+    "DESCRIPTION": "이 카드 플레이 후, 턴 중 피해를 줄 때마다, 추가로 !Star! 스타를 얻습니다."
   },
   "${modID}:KnightStance": {
     "NAME": "기사의 자세",
@@ -319,7 +322,7 @@
   },
   "${modID}:MorningLark": {
     "NAME": "아침의 종다리",
-    "DESCRIPTION": "!NP!% 보구 게이지 획득. NL !S! 스타 획득. NL 턴 종료 시, 20% 보구 게이지를 잃습니다. NL 소멸됩니다."
+    "DESCRIPTION": "!NP!% 보구 게이지 획득. NL !Star! 스타 획득. NL 턴 종료 시, 20% 보구 게이지를 잃습니다. NL 소멸됩니다."
   },
   "${modID}:GraceUnexpectedBirth": {
     "NAME": "축복받지 못한 탄생",
@@ -335,14 +338,6 @@
     "EXTENDED_DESCRIPTION": [
       "스타가 부족합니다."
     ]
-  },
-  "${modID}:GoldenGrail": {
-    "NAME": "황금의 성배",
-    "DESCRIPTION": "모든 적에게 !M! 중 연소를 X회 부여합니다. NL 7-X중 일곱 짐승의 왕관을 얻습니다. NL 소멸됩니다."
-  },
-  "${modID}:CrossingArcadia": {
-    "NAME": "아르카디아를 넘어",
-    "DESCRIPTION": "!B! 방어도 획득. NL 다음 !M! 장의 공격 카드가 스타를 반환하고 [E] 획득합니다."
   },
   "${modID}:GoddessMetamorphosisBeast": {
     "NAME": "여신변생(수)",
@@ -368,20 +363,8 @@
   },
   "${modID}:FacelessMoon": {
     "NAME": "얼굴 없는 달",
-    "DESCRIPTION": "{@@}이 턴 핸드를 보류, 보류 1장당 !M! 스타 획득. NL 소멸됩니다.",
-    "UPGRADE_DESCRIPTION": "이 턴 핸드를 보류, 보류 1장당 !M! 스타 획득.",
+    "DESCRIPTION": "",
     "FLAVOR": "영역 외 생명."
-  },
-  "${modID}:RepayForLife": {
-    "NAME": "일생의 반려",
-    "DESCRIPTION": "잃은 HP와 동일한 방어도 획득. NL 소멸됩니다.",
-    "EXTENDED_DESCRIPTION": [
-      " NL (!B! 방어도 획득.)"
-    ]
-  },
-  "${modID}:HeroEli": {
-    "NAME": "용자 이리야의 모험",
-    "DESCRIPTION": "!D! 피해를 줍니다. NL 적 무작위에게 !D! 피해를 !M! 회 추가. NL !M! 장 카드를 뽑습니다."
   },
   "${modID}:CharismaofAdversity": {
     "NAME": "역경의 매력",
@@ -398,7 +381,7 @@
   },
   "${modID}:KnightoftheLake": {
     "NAME": "호상의 기사",
-    "DESCRIPTION": "치명타 위력 미소지 시, !M!% 치명타 위력 획득. NL 소지 시, !S! 스타 획득. 소멸"
+    "DESCRIPTION": "치명타 위력 미소지 시, !M!% 치명타 위력 획득. NL 소지 시, !Star! 스타 획득. 소멸"
   },
   "${modID}:CircuitConnect": {
     "NAME": "회로 접속",
@@ -463,18 +446,13 @@
     "NAME": "밤송이 스트라이크",
     "DESCRIPTION": "!D! 피해를 !M! 회 줍니다. NL 턴 종료 시, 모든 디버프 해제. NL 소멸됩니다."
   },
-  "${modID}:OneTimeOneMeeting": {
-    "NAME": "일기일회",
-    "DESCRIPTION": "다음 턴, 비어빌리티 카드를 뽑을 때마다 소멸하고, 무작위 어빌리티 카드를 핸드에 추가합니다."
-  },
   "${modID}:SpringOfFire": {
     "NAME": "비록 세 번 일몰을 맞이해도",
     "DESCRIPTION": "다음에 전투불능이 되는 3회를 방지하고, !M! HP회복・20% 보구 위력 획득・모든 디버프 해제."
   },
   "${modID}:MillenniumCastle": {
     "NAME": "빛나는 달",
-    "DESCRIPTION": "3턴 동안, 매턴 시작 시: 근력 1 잃고, 모든 적 근력 2 감소. 종료 시: 부의 근력을 민첩력으로 전환.",
-    "UPGRADE_DESCRIPTION": "고유. NL 3턴 동안, 매턴 시작 시: 근력 1 잃고, 모든 적 근력 2 감소. 종료 시: 부의 근력을 민첩력으로 전환."
+    "DESCRIPTION": "{@@}{!Upgrades!|1= 고유 . NL }3턴 동안, 매턴 시작 시: 근력 1 잃고, 모든 적 근력 2 감소. 종료 시: 부의 근력을 민첩력으로 전환."
   },
   "${modID}:Shvibzik": {
     "NAME": "작은 악마",
@@ -498,11 +476,6 @@
     "NAME": "은의 팔",
     "DESCRIPTION": "!B! 방어도 획득. NL 모든 디버프를 1중 감소(1중당 !B! 방어도 추가 획득)."
   },
-  "${modID}:BloomInSpring": {
-    "NAME": "춘난화개",
-    "DESCRIPTION": "X HP를 X회 회복합니다. NL 소멸됩니다.",
-    "UPGRADE_DESCRIPTION": "보류합니다. NL X HP를 X회 회복합니다. NL 소멸됩니다."
-  },
   "${modID}:LevelSlash": {
     "NAME": "첫 번째 찌르기",
     "DESCRIPTION": "모든 적에게 !D! 피해. 평정 상태로. NL *두 번째 찌르기를 덱에 추가합니다. 소멸됩니다."
@@ -523,18 +496,13 @@
     "NAME": "밤이 없는 카리스마",
     "DESCRIPTION": "턴 시작 시, 덱에서 무작위 공격 카드를 !M! 장 핸드에 추가하고 강화합니다."
   },
-  "${modID}:CrystallizationofWinter": {
-    "NAME": "겨울의 결정",
-    "DESCRIPTION": "공격 카드의 피해・방어도 획득량+!M!, 턴 시작 시 1 감소."
-  },
   "${modID}:CharismaOfConflict": {
     "NAME": "투쟁의 매력",
     "DESCRIPTION": "모든 적에게 !D! 피해. NL 전투 속행 상태 시, 추가로 !D! 피해."
   },
   "${modID}:ProofAndRebuttal": {
     "NAME": "증명과 반증",
-    "DESCRIPTION": "카드 1장을 뽑습니다. NL 핸드의 임의 장수를 덱 위에 놓습니다. NL 소멸됩니다.",
-    "UPGRADE_DESCRIPTION": "카드 1장을 뽑습니다. NL 핸드의 임의 장수를 덱 위에 놓습니다.",
+    "DESCRIPTION": "{@@}카드 1장을 뽑습니다. NL 핸드의 임의 장수를 덱 위에 놓습니다. {!Upgrades!|1= NL  소멸됩니다 .}",
     "FLAVOR": "테스트용 아트는 변경 가능합니다."
   },
   "${modID}:TakeRomance": {
@@ -543,13 +511,8 @@
   },
   "${modID}:FifthForm": {
     "NAME": "다섯 번째 기세",
-    "DESCRIPTION": "이 턴, 적 1체에 대한 공격 카드가 2회 발동(피해 50% 저하). NL 소멸됩니다.",
-    "UPGRADE_DESCRIPTION": "이 턴, 적 1체에 대한 공격 카드가 2회 발동(피해 35% 저하). NL 소멸됩니다.",
+    "DESCRIPTION": "이번 턴에 한 적군에 대해 공격 카드를 두 번 뽑습니다, 하지만 피해가 !M!% 감소합니다. NL 소멸됩니다.",
     "FLAVOR": "테스트용 아트는 변경 가능합니다."
-  },
-  "${modID}:Dumuzid": {
-    "NAME": "두무지",
-    "DESCRIPTION": "플레이 불가. NL 턴 종료 시, *\"끝\"을 재생합니다."
   },
   "${modID}:GrandOrder": {
     "NAME": "그랜드 오더",
@@ -600,7 +563,7 @@
   },
   "${modID}:BridalSpinWheel": {
     "NAME": "신부에게 바치는 물레",
-    "DESCRIPTION": "{@@}{!M!|repeat= [E]} 획득. NL !S! 스타 획득."
+    "DESCRIPTION": "{@@}{!M!|repeat= [E]} 획득. NL !Star! 스타 획득."
   },
   "${modID}:IraLupus": {
     "NAME": "광란의 소녀 늑대",
@@ -624,7 +587,7 @@
   },
   "${modID}:GardenOfAvalon": {
     "NAME": "영구격절 이상향",
-    "DESCRIPTION": "턴 시작 시, !M! 방어도・!M!% 보구 게이지・!M! 스타 획득."
+    "DESCRIPTION": "턴 시작 시, !B! 방어도・!NP!% 보구 게이지・!Star! 스타 획득."
   },
   "${modID}:ElementaryMyDear": {
     "NAME": "이건 상식",
@@ -660,7 +623,7 @@
   },
   "${modID}:HollowHeartAlbion": {
     "NAME": "알려지지 않은 무구의 고동",
-    "DESCRIPTION": "모든 적의 HP를 !D! 감소. NL !S! 스타 획득."
+    "DESCRIPTION": "모든 적의 HP를 !D! 감소. NL !Star! 스타 획득."
   },
   "${modID}:Sevendrive": {
     "NAME": "79식 지화대사",
@@ -697,7 +660,7 @@
   },
   "${modID}:LastSunXibalba": {
     "NAME": "별, 우주에서 내려와",
-    "DESCRIPTION": "모든 적에게 !D! 피해를 5회 줍니다. NL !S! 스타 획득.",
+    "DESCRIPTION": "모든 적에게 !D! 피해를 5회 줍니다. NL !Star! 스타 획득.",
     "FLAVOR": "보스 유물 \"아키타입 ORT\" 소지 시에만 보구 선택 가능."
   },
   "${modID}:MahaPralaya": {

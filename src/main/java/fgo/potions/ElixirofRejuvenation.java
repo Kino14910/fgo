@@ -6,8 +6,6 @@ import com.megacrit.cardcrawl.actions.unique.RemoveAllPowersAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
-import com.megacrit.cardcrawl.potions.AbstractPotion;
-
 import static fgo.FGOMod.makeID;
 
 public class ElixirofRejuvenation extends BasePotion {
@@ -27,9 +25,6 @@ public class ElixirofRejuvenation extends BasePotion {
 
     @Override
     public String getDescription() {
-        return potionStrings.DESCRIPTIONS[0] + this.potency + potionStrings.DESCRIPTIONS[1];
+        return String.format(DESCRIPTIONS[0], potency);
     }
-
-    @Override
-    public AbstractPotion makeCopy() {return new ElixirofRejuvenation();}
 }

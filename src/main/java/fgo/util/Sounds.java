@@ -1,0 +1,20 @@
+package fgo.util;
+
+// import static fgo.FGOMod.audioPath;
+import static fgo.FGOMod.musicPath;
+import static fgo.FGOMod.soundPath;
+
+public class Sounds {
+    public static final String UBW_Music = musicPath("UBW_Extended.mp3");
+    
+    public static final String masterChoose = soundPath("MASTER_CHOOSE.mp3");
+    public static final String masterCurse = soundPath("MASTER_CURSE.wav");
+    public static final String masterInvictusSpiritus = soundPath("MASTER_INVICTUS_SPIRITUS.mp3");
+    
+    public static final String gun = soundPath("hermit_gun2.ogg");
+    public static final String S011_Attack6 = soundPath("S011_Attack6.ogg");
+    public static final String S011_Skill1 = soundPath("S011_Skill1.ogg");
+    public static final String S011_Skill2 = soundPath("S011_Skill2.ogg");
+    public static final String S011_Skill3 = soundPath("S011_Skill3.ogg");
+    public static final String UBW_Incantation = soundPath("UBW.ogg");
+}

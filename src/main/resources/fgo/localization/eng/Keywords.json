@@ -251,12 +251,5 @@
       "eternal_sleep"
     ],
     "DESCRIPTION": "At the end of your turn, #rremove your first buff."
-  },
-  {
-    "PROPER_NAME": "Unacted",
-    "NAMES": [
-      "unacted"
-    ],
-    "DESCRIPTION": "At the start of turn end turn."
   }
 ]

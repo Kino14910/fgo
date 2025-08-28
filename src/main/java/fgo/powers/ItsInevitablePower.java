@@ -10,29 +10,30 @@ public class ItsInevitablePower extends BasePower {
     public static final String POWER_ID = makeID(ItsInevitablePower.class.getSimpleName());
     private static final PowerType TYPE = PowerType.BUFF;
     private static final boolean TURN_BASED = false;
-    private int damage;
+    private int boost;
 
-    public ItsInevitablePower(AbstractCreature owner, int amount, int damage) {
+    public ItsInevitablePower(AbstractCreature owner, int amount, int boost) {
         super(POWER_ID, TYPE, TURN_BASED, owner, amount, "BurningPower");
-        this.damage = damage;
+        this.boost = boost;
+        this.updateDescription();
     }
 
     @Override
     public void updateDescription() {
-        if (this.amount == 1) {
-            this.description = String.format(DESCRIPTIONS[0], this.damage);
+        if (this.boost == 0) {
+            this.description = String.format(DESCRIPTIONS[0], this.amount);
         } else {
-            this.description = String.format(DESCRIPTIONS[1], this.damage, this.amount);
+            this.description = String.format(DESCRIPTIONS[1], this.amount, this.boost);
         }
     }
 
     @Override
     public void atStartOfTurn() {
         this.flash();
-        this.addToBot(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(this.damage, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
-        this.damage += this.amount;
+        this.addToBot(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(this.boost, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
+        this.amount += this.boost;
         // this.addToBot(new ReducePowerAction(this.owner, this.owner, this.ID, 1));
-        //updateDescription();
+        updateDescription();
     }
 
     

@@ -30,8 +30,8 @@ import fgo.patches.Enum.ThmodClassEnum;
 import fgo.patches.MainMenuUIFgoPatch;
 import fgo.patches.PictureSelectFgoPatch;
 import fgo.relics.SuitcaseFgo;
-
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Master extends CustomPlayer{
     private static final String[] ORB_TEXTURES = new String[] {
@@ -91,23 +91,23 @@ public class Master extends CustomPlayer{
 
     @Override
     public ArrayList<String> getStartingDeck() {
+        // int charIndex = MainMenuUIFgoPatch.modifierIndexes;
+
         //添加初始卡组
         ArrayList<String> retVal = new ArrayList<>();
-        retVal.add(Strike.ID);
-        retVal.add(Strike.ID);
-        retVal.add(Strike.ID);
-        retVal.add(Strike.ID);
-        retVal.add(Defend.ID);
-        retVal.add(Defend.ID);
-        retVal.add(Defend.ID);
-        retVal.add(Defend.ID);
-        retVal.add(CharismaOfHope.ID);
-        retVal.add(DreamUponTheStars.ID);
 
-        //宝具卡
-        retVal.add(EternalMemories.ID);
-        retVal.add(BeautifulJourney.ID);
-        retVal.add(IraLupus.ID);
+        Collections.addAll(retVal,
+            Strike.ID,
+            Strike.ID,
+            Strike.ID,
+            Strike.ID,
+            Defend.ID,
+            Defend.ID,            
+            Defend.ID,
+            Defend.ID,
+            CharismaOfHope.ID,
+            DreamUponTheStars.ID
+        );
         return retVal;
     }
 
@@ -219,6 +219,29 @@ public class Master extends CustomPlayer{
     public void applyEndOfTurnTriggers() {
         super.applyEndOfTurnTriggers();
     }
+
+    private static boolean isNewGame = true;
+
+    // @Override
+    // public void preBattlePrep() {
+    //     super.preBattlePrep();
+        
+    //     if (isNewGame) {
+    //         // 只在首次游戏时初始化NobleDeck
+    //         NobleDeck.nobleCards.clear();
+    //         isNewGame = false;
+    //     }
+        
+    //     // 每场战斗前转移宝具卡
+    //     ArrayList<AbstractCard> nobleCards = new ArrayList<>();
+    //     for (AbstractCard card : masterDeck.group) {
+    //         if (card.hasTag(CardTagsEnum.Noble_Phantasm)) {
+    //             nobleCards.add(card);
+    //             NobleDeck.addCard(card.makeCopy());
+    //         }
+    //     }
+    //     masterDeck.group.removeAll(nobleCards);
+    // }
 
     @Override
     public ArrayList<CutscenePanel> getCutscenePanels() {

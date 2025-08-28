@@ -125,13 +125,20 @@
   },
   "${modID}:FGOConfig": {
     "TEXT_DICT": {
-      "enableColorlessCards": "無色カード有効化（要再起動）",
-      "enableEmiya": "ボス: エミヤ有効化（要再起動）"
+      "enableColorlessCards": "無色カードを有効化 (ゲーム再起動が必要)",
+      "enableEmiya": "ボス: エミヤを有効化 (ゲーム再起動が必要)"
     }
   },
   "${modID}:MysticCode": {
     "TEXT": [
       "クリックでスキル使用。"
+    ]
+  },
+  "${modID}:NobleDeckViewScreen": {
+    "TEXT": [
+      "宝具カード",
+      "閉じる",
+      "詳細を見る"
     ]
   }
 }

@@ -27,7 +27,8 @@
     "PROPER_NAME": "诅呪",
     "NAMES": [
       "诅呪",
-      "evil curse"
+      "evil curse",
+      "curse"
     ],
     "DESCRIPTION": "有诅呪的生物在其回合开始时，失去相应层数的生命。"
   },
@@ -229,6 +230,6 @@
     "NAMES": [
       "宝具值获取提升"
     ],
-    "DESCRIPTION": "你打出一张牌后，额外获得%1 #y宝具值 。"
+    "DESCRIPTION": "你打出一张牌后，额外获得1% #y宝具值 。"
   }
 ]

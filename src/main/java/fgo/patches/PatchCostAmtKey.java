@@ -1,20 +1,3 @@
-/*
- * Decompiled with CFR 0.152.
- * 
- * Could not load the following classes:
- *  com.badlogic.gdx.graphics.Color
- *  com.badlogic.gdx.graphics.g2d.BitmapFont
- *  com.badlogic.gdx.graphics.g2d.SpriteBatch
- *  com.evacipated.cardcrawl.modthespire.lib.SpirePatch
- *  com.evacipated.cardcrawl.modthespire.lib.SpirePrefixPatch
- *  com.megacrit.cardcrawl.cards.AbstractCard
- *  com.megacrit.cardcrawl.core.CardCrawlGame
- *  com.megacrit.cardcrawl.core.Settings
- *  com.megacrit.cardcrawl.dungeons.AbstractDungeon
- *  com.megacrit.cardcrawl.helpers.FontHelper
- *  com.megacrit.cardcrawl.rooms.AbstractRoom$RoomPhase
- *  com.megacrit.cardcrawl.ui.panels.EnergyPanel
- */
 package fgo.patches;
 
 import com.badlogic.gdx.graphics.Color;

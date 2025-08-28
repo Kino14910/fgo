@@ -57,10 +57,9 @@
   "${modID}:NPText": {
     "TEXT": [
       "NP",
-      "1) Whenever you are attacked, gain NP equal to half damaged. NL 2) Whenever you play a card, gain NP equal to triple cost.",
+      "1) Whenever you play a card, gain NP equal to 5 times the cost of the card. NL 2) Whenever you are attacked, gain NP equal to half damaged.",
       "Choose a Noble Phantasm into your hand.",
-      "Unlimited Blade Works: at the start of each turn, choose a copy of Attack from your deck into your hand.",
-      "1) Whenever you are attacked, gain NP equal to #bhalf(+30%) damaged. NL 4) Whenever you play a card, gain NP equal to triple cost."
+      "Unlimited Blade Works: at the start of each turn, choose a copy of Attack from your deck into your hand."
     ]
   },
   "${modID}:BlessedScionAction": {
@@ -117,7 +116,15 @@
   },
   "${modID}:FGOConfig": {
     "TEXT_DICT": {
-      "enableColorlessCards": "启用无色卡"
+      "enableColorlessCards": "Enable Colorless Cards (Requires game restart)",
+      "enableEmiya": "Enable BOSS: Emiya (Requires game restart)"
     }
+  },
+  "${modID}:NobleDeckViewScreen": {
+    "TEXT": [
+      "Noble Phantasms",
+      "Close",
+      "Click to view details"
+    ]
   }
 }

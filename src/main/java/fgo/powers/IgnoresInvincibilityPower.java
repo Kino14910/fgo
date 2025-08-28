@@ -19,7 +19,8 @@ public class IgnoresInvincibilityPower extends BasePower {
     }
 
     @Override
-    public void updateDescription() {description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];}
+    // public void updateDescription() {description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];}
+    public void updateDescription() {description = String.format(DESCRIPTIONS[0], amount);}
 
     @Override
     public float atDamageGive(float damage, DamageInfo.DamageType type) {

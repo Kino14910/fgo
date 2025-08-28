@@ -2,7 +2,7 @@ package fgo.relics;
 
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import fgo.cards.colorless.mash.BlackBarrel;
@@ -32,7 +32,10 @@ public class LockChocolateStrawberry extends BaseRelic {
     }
 
     @Override
-    public AbstractRelic makeCopy() {
-        return new LockChocolateStrawberry();
+    public void onEnterRoom(AbstractRoom room) {
+        if (AbstractDungeon.actNum > 1 && AbstractDungeon.floorNum % 17 == 0) {
+            WallOfSnowflakes card = (WallOfSnowflakes)AbstractDungeon.player.masterDeck.findCardById(WallOfSnowflakes.ID);
+            card.timesUpgraded++;
+        }
     }
 }
