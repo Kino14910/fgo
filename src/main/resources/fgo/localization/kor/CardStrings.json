@@ -23,7 +23,6 @@
       "이번 턴에 받는 공격 피해를 !M!% 감소시킵니다. NL !NP!% fgo:NP 게이지, 3점의 힘, 30점의 fgo:크리티컬 데미지를 얻습니다."
     ],
     "FLAVOR": "이 카드는 특정 조건에서 강화됩니다."
-
   },
   "${modID}:BlackBarrel": {
     "NAME": "패러독스 구조체",
@@ -706,5 +705,8 @@
   "${modID}:SuitenNikko": {
     "NAME": "수천일광천조팔야진석",
     "DESCRIPTION": "핸드의 모든 카드 비용 -1 (이번 턴). NL !M!% 보구 게이지 획득."
+  },
+  "${modID}:SchwarzwaldFalkePower": {
+    "DESCRIPTIONS[0]": ""
   }
 }

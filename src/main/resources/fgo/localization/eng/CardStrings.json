@@ -23,7 +23,6 @@
       "Reduce damage taken by !M!% this turn. NL Gain !NP!% fgo:NP, 3 Strength, and 30 fgo:CriticalDamage."
     ],
     "FLAVOR": "This card will upgrade under specific conditions."
-
   },
   "${modID}:BlackBarrel": {
     "NAME": "Black Barrel",
@@ -211,7 +210,7 @@
   },
   "${modID}:TheYellowHouse": {
     "NAME": "The Yellow House",
-    "DESCRIPTION": "Deal !D! damage !M! times. NL Apply 2 fgo:Defense_Down. NL Gain 1 fgo:Evil_Curse. NL Shuffle this card into your draw pile.",
+    "DESCRIPTION": "Gain #b1 #yfgo:Evasion. NL Gain 1 fgo:Evil_Curse. NL Shuffle this card into your draw pile.",
     "FLAVOR": "Life beyond the domain."
   },
   "${modID}:Insanity": {

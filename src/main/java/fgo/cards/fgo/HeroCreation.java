@@ -15,7 +15,7 @@ public class HeroCreation extends FGOCard {
             FGOCardColor.FGO,
             CardType.SKILL,
             CardRarity.UNCOMMON,
-            CardTarget.ENEMY,
+            CardTarget.SELF,
             0
     );
 

@@ -1,5 +1,6 @@
 package fgo.relics;
 
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
@@ -33,9 +34,11 @@ public class LockChocolateStrawberry extends BaseRelic {
 
     @Override
     public void onEnterRoom(AbstractRoom room) {
-        if (AbstractDungeon.actNum > 1 && AbstractDungeon.floorNum % 17 == 0) {
-            WallOfSnowflakes card = (WallOfSnowflakes)AbstractDungeon.player.masterDeck.findCardById(WallOfSnowflakes.ID);
+        AbstractCard cardById = AbstractDungeon.player.masterDeck.findCardById(WallOfSnowflakes.ID);
+        if (AbstractDungeon.actNum > 1 && AbstractDungeon.floorNum % 17 == 0 && cardById != null) {
+            WallOfSnowflakes card = (WallOfSnowflakes)cardById;
             card.timesUpgraded++;
+            card.initializeDescription();
         }
     }
 }

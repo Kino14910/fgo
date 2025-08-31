@@ -19,10 +19,14 @@ import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import fgo.cards.noblecards.HollowHeartAlbion;
 import fgo.cards.noblecards.Unlimited;
 import fgo.patches.Enum.CardTagsEnum;
+import fgo.util.NobleCardHelper;
 import fgo.panel.NobleDeck;
 import fgo.panel.NobleDeckCards;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.Map;
 import static fgo.FGOMod.makeID;
 
@@ -65,10 +69,15 @@ public class AlterOptionEffect extends AbstractGameEffect {
                 }
             }
 
+            HashSet<String> excludedCards = new HashSet<>();
+            Collections.addAll(excludedCards, 
+                HollowHeartAlbion.ID, 
+                Unlimited.ID
+            );
+
             for (AbstractCard card : noblePhantasmCards) {
-                if (!CardHelper.hasCardWithID(card.cardID)
-                        && !card.cardID.equals(HollowHeartAlbion.ID)
-                        && !card.cardID.equals(Unlimited.ID)) {
+                if (!NobleCardHelper.hasCardWithID(card.cardID)
+                        && !excludedCards.contains(card.cardID)) {
                     group.addToBottom(card);
                 }
             }

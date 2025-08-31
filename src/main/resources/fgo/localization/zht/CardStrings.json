@@ -210,7 +210,7 @@
   },
   "${modID}:TheYellowHouse": {
     "NAME": "黃房子",
-    "DESCRIPTION": "造成 !D! 點傷害 !M! 次。 NL 獲得1層 fgo:詛呪 。 NL 將這張牌放入抽牌堆。",
+    "DESCRIPTION": "獲得#b1次 fgo:回避。 NL 獲得1層 fgo:詛呪 。 NL 將這張牌放入抽牌堆。",
     "FLAVOR": "領域外生命。"
   },
   "${modID}:Insanity": {

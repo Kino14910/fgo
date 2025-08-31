@@ -3,6 +3,8 @@ package fgo.panel;
 import basemod.abstracts.CustomScreen;
 import fgo.util.NobleCardGroup;
 
+import static fgo.FGOMod.makeID;
+
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.utils.Logger;
@@ -11,12 +13,18 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.MathHelper;
 import com.megacrit.cardcrawl.helpers.input.InputHelper;
+import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.screens.mainMenu.ScrollBar;
 import com.megacrit.cardcrawl.screens.mainMenu.ScrollBarListener;
+import com.megacrit.cardcrawl.rooms.AbstractRoom.RoomPhase;
 
 public class NobleDeckViewScreen extends CustomScreen implements ScrollBarListener {
+    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(makeID(NobleDeckViewScreen.class.getSimpleName()));
+    public static final String[] TEXT = NobleDeckViewScreen.uiStrings.TEXT;
+    private static final String HEADER_INFO = TEXT[0];
     public static class Enum {
         @SpireEnum
         public static AbstractDungeon.CurrentScreen Noble_Phantasm;
@@ -71,26 +79,30 @@ public class NobleDeckViewScreen extends CustomScreen implements ScrollBarListen
     private void open(NobleCardGroup nobleCards) {
         // 保存传入的卡组
         this.nobleCards = nobleCards;
-        
-        // 隐藏战斗面板和显示黑屏
-        AbstractDungeon.overlayMenu.hideCombatPanels();
-        AbstractDungeon.overlayMenu.showBlackScreen();
-        AbstractDungeon.overlayMenu.cancelButton.show("返回");
 
-        // 设置屏幕状态
-        AbstractDungeon.isScreenUp = true;
-        AbstractDungeon.screen = curScreen();
-        
-        // 初始化卡牌位置
-        this.hideCards();
-        
-        // 计算滚动边界
-        this.calculateScrollBounds();
+        AbstractDungeon.player.releaseCard();
+        CardCrawlGame.sound.play("DECK_OPEN");
         
         // 重置滚动位置
         this.currentDiffY = this.scrollLowerBound;
         this.grabStartY = this.scrollLowerBound;
         this.grabbedScreen = false;
+        
+        // 初始化卡牌位置
+        this.hideCards();
+        
+        // 设置屏幕状态
+        AbstractDungeon.isScreenUp = true;
+        AbstractDungeon.screen = curScreen();
+
+        // 隐藏战斗面板和显示黑屏
+        AbstractDungeon.overlayMenu.proceedButton.hide();
+        AbstractDungeon.overlayMenu.hideCombatPanels();
+        AbstractDungeon.overlayMenu.showBlackScreen();
+        AbstractDungeon.overlayMenu.cancelButton.show(TEXT[1]);
+
+        // 计算滚动边界
+        this.calculateScrollBounds();
     }
 
     @Override
@@ -127,14 +139,13 @@ public class NobleDeckViewScreen extends CustomScreen implements ScrollBarListen
     public void close() {
         AbstractDungeon.screen = AbstractDungeon.CurrentScreen.NONE;
         AbstractDungeon.isScreenUp = false;
-        // Only show combat panels if we're currently in a combat room
-        if (AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom().phase == com.megacrit.cardcrawl.rooms.AbstractRoom.RoomPhase.COMBAT) {
+        if (AbstractDungeon.getCurrRoom() != null && 
+        AbstractDungeon.getCurrRoom().phase == RoomPhase.COMBAT) {
             AbstractDungeon.overlayMenu.showCombatPanels();
         }
         AbstractDungeon.overlayMenu.hideBlackScreen();
 		
         AbstractDungeon.overlayMenu.cancelButton.hide();
-        
     }
 
     @Override
@@ -157,6 +168,7 @@ public class NobleDeckViewScreen extends CustomScreen implements ScrollBarListen
                 // 渲染悬停卡牌的阴影和卡牌本身
                 this.hoveredCard.renderHoverShadow(sb);
                 this.hoveredCard.render(sb);
+                FontHelper.renderDeckViewTip(sb, HEADER_INFO, 96.0f * Settings.scale, Settings.CREAM_COLOR);
             }
         }
     }

@@ -521,6 +521,7 @@ public class FGOMod implements
     @Override
     public void receivePostCreateStartingDeck(AbstractPlayer.PlayerClass playerClass, CardGroup cardGroup) {
         CommandSpellPanel.reset();
+        NobleDeck.reset();
         NobleDeckCards.reset();
     }
 

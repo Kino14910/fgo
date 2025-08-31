@@ -34,16 +34,66 @@ public class NobleDeck extends TopPanelItem {
 
         // 如果 Noble 屏幕已经打开，则关闭它（切换行为）
         if (AbstractDungeon.screen == NobleDeckViewScreen.Enum.Noble_Phantasm) {
+            AbstractDungeon.screenSwap = false;
+            if (AbstractDungeon.previousScreen == AbstractDungeon.CurrentScreen.MASTER_DECK_VIEW) {
+                AbstractDungeon.previousScreen = null;
+            }
             AbstractDungeon.closeCurrentScreen();
             CardCrawlGame.sound.play("DECK_CLOSE", 0.05f);
             return;
         }
 
-        // 否则，先关闭其他屏幕以避免冲突，然后打开我们的自定义屏幕并传入 nobleCards
-        if (AbstractDungeon.screen != AbstractDungeon.CurrentScreen.NONE) {
+        if (AbstractDungeon.screen == AbstractDungeon.CurrentScreen.COMBAT_REWARD) {
             AbstractDungeon.closeCurrentScreen();
+            BaseMod.openCustomScreen(NobleDeckViewScreen.Enum.Noble_Phantasm, nobleCards);
+            AbstractDungeon.previousScreen = AbstractDungeon.CurrentScreen.COMBAT_REWARD;
+        } else if (!AbstractDungeon.isScreenUp) {
+            BaseMod.openCustomScreen(NobleDeckViewScreen.Enum.Noble_Phantasm, nobleCards);
+        } else if (AbstractDungeon.screen == AbstractDungeon.CurrentScreen.DEATH) {
+            AbstractDungeon.previousScreen = AbstractDungeon.CurrentScreen.DEATH;
+            AbstractDungeon.deathScreen.hide();
+            BaseMod.openCustomScreen(NobleDeckViewScreen.Enum.Noble_Phantasm, nobleCards);
+        } else if (AbstractDungeon.screen == AbstractDungeon.CurrentScreen.BOSS_REWARD) {
+            AbstractDungeon.previousScreen = AbstractDungeon.CurrentScreen.BOSS_REWARD;
+            AbstractDungeon.bossRelicScreen.hide();
+            BaseMod.openCustomScreen(NobleDeckViewScreen.Enum.Noble_Phantasm, nobleCards);
+        } else if (AbstractDungeon.screen == AbstractDungeon.CurrentScreen.SHOP) {
+            AbstractDungeon.overlayMenu.cancelButton.hide();
+            AbstractDungeon.previousScreen = AbstractDungeon.CurrentScreen.SHOP;
+            BaseMod.openCustomScreen(NobleDeckViewScreen.Enum.Noble_Phantasm, nobleCards);
+        } else if (AbstractDungeon.screen == AbstractDungeon.CurrentScreen.MAP && !AbstractDungeon.dungeonMapScreen.dismissable) {
+            AbstractDungeon.previousScreen = AbstractDungeon.CurrentScreen.MAP;
+            BaseMod.openCustomScreen(NobleDeckViewScreen.Enum.Noble_Phantasm, nobleCards);
+        } else if (AbstractDungeon.screen == AbstractDungeon.CurrentScreen.SETTINGS || AbstractDungeon.screen == AbstractDungeon.CurrentScreen.MAP) {
+            if (AbstractDungeon.previousScreen != null) {
+                AbstractDungeon.screenSwap = true;
+            }
+            AbstractDungeon.closeCurrentScreen();
+            BaseMod.openCustomScreen(NobleDeckViewScreen.Enum.Noble_Phantasm, nobleCards);
+        } else if (AbstractDungeon.screen == AbstractDungeon.CurrentScreen.INPUT_SETTINGS) {
+            if (AbstractDungeon.previousScreen != null) {
+                AbstractDungeon.screenSwap = true;
+            }
+            AbstractDungeon.closeCurrentScreen();
+            BaseMod.openCustomScreen(NobleDeckViewScreen.Enum.Noble_Phantasm, nobleCards);
+        } else if (AbstractDungeon.screen == AbstractDungeon.CurrentScreen.CARD_REWARD) {
+            AbstractDungeon.previousScreen = AbstractDungeon.CurrentScreen.CARD_REWARD;
+            AbstractDungeon.dynamicBanner.hide();
+            BaseMod.openCustomScreen(NobleDeckViewScreen.Enum.Noble_Phantasm, nobleCards);
+        } else if (AbstractDungeon.screen == AbstractDungeon.CurrentScreen.GRID) {
+            AbstractDungeon.previousScreen = AbstractDungeon.CurrentScreen.GRID;
+            AbstractDungeon.gridSelectScreen.hide();
+            BaseMod.openCustomScreen(NobleDeckViewScreen.Enum.Noble_Phantasm, nobleCards);
+        } else if (AbstractDungeon.screen == AbstractDungeon.CurrentScreen.HAND_SELECT) {
+            AbstractDungeon.previousScreen = AbstractDungeon.CurrentScreen.HAND_SELECT;
+            BaseMod.openCustomScreen(NobleDeckViewScreen.Enum.Noble_Phantasm, nobleCards);
+        } else {
+            // 默认行为：关闭当前屏幕（如果有）再打开
+            if (AbstractDungeon.screen != AbstractDungeon.CurrentScreen.NONE) {
+                AbstractDungeon.closeCurrentScreen();
+            }
+            BaseMod.openCustomScreen(NobleDeckViewScreen.Enum.Noble_Phantasm, nobleCards);
         }
-        BaseMod.openCustomScreen(NobleDeckViewScreen.Enum.Noble_Phantasm, nobleCards);
 
         // // 标记卡牌为已见
         // nobleCards.group.forEach(c -> UnlockTracker.markCardAsSeen(c.cardID));
@@ -66,5 +116,9 @@ public class NobleDeck extends TopPanelItem {
         for (String cardId : cards) {
             addCardById(cardId);
         }
+    }
+
+    public static void reset() {
+        nobleCards.clear();
     }
 }

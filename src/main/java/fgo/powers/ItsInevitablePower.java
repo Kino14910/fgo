@@ -15,24 +15,24 @@ public class ItsInevitablePower extends BasePower {
     public ItsInevitablePower(AbstractCreature owner, int amount, int boost) {
         super(POWER_ID, TYPE, TURN_BASED, owner, amount, "BurningPower");
         this.boost = boost;
-        this.updateDescription();
+        updateDescription();
     }
 
     @Override
     public void updateDescription() {
-        if (this.boost == 0) {
-            this.description = String.format(DESCRIPTIONS[0], this.amount);
+        if (boost == 0) {
+            description = String.format(DESCRIPTIONS[0], amount);
         } else {
-            this.description = String.format(DESCRIPTIONS[1], this.amount, this.boost);
+            description = String.format(DESCRIPTIONS[1], amount, boost);
         }
     }
 
     @Override
     public void atStartOfTurn() {
-        this.flash();
-        this.addToBot(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(this.boost, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
-        this.amount += this.boost;
-        // this.addToBot(new ReducePowerAction(this.owner, this.owner, this.ID, 1));
+        flash();
+        addToBot(new DamageAllEnemiesAction(owner, DamageInfo.createDamageMatrix(amount, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
+        amount += boost;
+        // addToBot(new ReducePowerAction(owner, owner, ID, 1));
         updateDescription();
     }
 

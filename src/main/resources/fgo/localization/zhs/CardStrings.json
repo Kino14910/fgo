@@ -210,7 +210,7 @@
   },
   "${modID}:TheYellowHouse": {
     "NAME": "黄房子",
-    "DESCRIPTION": "造成 !D! 点伤害 !M! 次。 NL 获得1层 fgo:诅呪 。 NL 将这张牌放入抽牌堆。",
+    "DESCRIPTION": "获得1次 fgo:回避 。 NL 获得1层 fgo:诅呪 。 NL 将这张牌放入抽牌堆。",
     "FLAVOR": "领域外生命。"
   },
   "${modID}:Insanity": {
@@ -537,10 +537,6 @@
     "NAME": "指导",
     "DESCRIPTION": "获得 [E] [E] 。 NL  消耗 。"
   },
-
-
-
-
   "${modID}:EternalMemories": {
     "NAME": "希望之星",
     "DESCRIPTION": "获得2点 力量 。 NL 移除所有负面 状态 。 NL 获得 !M! 次 fgo:肃正防御 。 "

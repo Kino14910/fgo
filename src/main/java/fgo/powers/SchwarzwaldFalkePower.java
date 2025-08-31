@@ -16,17 +16,17 @@ public class SchwarzwaldFalkePower extends BasePower {
 
     @Override
     public void atEndOfTurn(boolean isPlayer) {
-        this.flash();
-        this.addToBot(new ApplyPowerAction(this.owner, this.owner, new EvasionPower(this.owner, 1), 1));
-        this.addToBot(new ReducePowerAction(this.owner, this.owner, this.ID, 1));
+        flash();
+        addToBot(new ApplyPowerAction(owner, owner, new EvasionPower(owner, 1), 1));
+        addToBot(new ReducePowerAction(owner, owner, ID, 1));
     }
 
     @Override
     public void updateDescription() {
-        if (this.amount == 1) {
-            this.description = DESCRIPTIONS[1];
+        if (amount == 1) {
+            description = DESCRIPTIONS[1];
         } else {
-            this.description = String.format(DESCRIPTIONS[0], this.amount);
+            description = String.format(DESCRIPTIONS[0], amount);
         }
     }
 
