@@ -9,9 +9,10 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.ShockWaveEffect;
+
 import fgo.cards.FGOCard;
 import fgo.powers.CursePower;
-import fgo.util.CardStats;
+import fgo.utils.CardStats;
 
 public class CurseDisaster extends FGOCard {
     public static final String ID = makeID(CurseDisaster.class.getSimpleName());

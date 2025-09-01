@@ -1,12 +1,12 @@
 package fgo.hexui_lib.util;
 
-import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.Texture;
-import com.megacrit.cardcrawl.helpers.ImageMaster;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
+
+import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 
 public class BetaPortraitGenerator {
     private static final HashMap<String, ArrayList<RenderLayer>> pregenBetaPortraits;

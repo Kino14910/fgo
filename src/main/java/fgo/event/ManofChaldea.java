@@ -1,11 +1,11 @@
 package fgo.event;
 
+import static fgo.FGOMod.makeID;
+
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.vfx.RainingGoldEffect;
-
-import static fgo.FGOMod.makeID;
 
 public class ManofChaldea extends BaseEvent {
     public static final String ID = makeID(ManofChaldea.class.getSimpleName());

@@ -1,8 +1,9 @@
-package fgo.util;
+package fgo.utils;
 
 import java.util.Iterator;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
+
 import fgo.panel.NobleDeck;
 
 public class NobleCardHelper {

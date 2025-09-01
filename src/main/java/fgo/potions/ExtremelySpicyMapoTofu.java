@@ -1,6 +1,9 @@
 package fgo.potions;
 
-import basemod.BaseMod;
+import static fgo.FGOMod.makeID;
+
+import java.util.ArrayList;
+
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -11,12 +14,10 @@ import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.helpers.input.InputHelper;
 import com.megacrit.cardcrawl.localization.PotionStrings;
+
+import basemod.BaseMod;
 import fgo.cards.optionCards.Kaleidoscope;
 import fgo.cards.optionCards.TheBlackGrail;
-
-import java.util.ArrayList;
-
-import static fgo.FGOMod.makeID;
 
 public class ExtremelySpicyMapoTofu extends BasePotion {
     public static final String ID = makeID(ExtremelySpicyMapoTofu.class.getSimpleName());

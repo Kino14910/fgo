@@ -1,26 +1,31 @@
 package fgo.patches;
 
-import basemod.ReflectionHacks;
-import basemod.abstracts.CustomSavable;
-import basemod.interfaces.ISubscriber;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePostfixPatch;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.helpers.*;
+import com.megacrit.cardcrawl.helpers.FontHelper;
+import com.megacrit.cardcrawl.helpers.Hitbox;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
+import com.megacrit.cardcrawl.helpers.PowerTip;
+import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.helpers.controller.CInputActionSet;
 import com.megacrit.cardcrawl.helpers.input.InputHelper;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.screens.charSelect.CharacterOption;
 import com.megacrit.cardcrawl.screens.options.DropdownMenu;
-import fgo.patches.Enum.ThmodClassEnum;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
+import basemod.ReflectionHacks;
+import basemod.abstracts.CustomSavable;
+import basemod.interfaces.ISubscriber;
+import fgo.patches.Enum.ThmodClassEnum;
 
 public class MainMenuUIFgoPatch implements ISubscriber, CustomSavable<Integer> {
     public static final ArrayList<DropdownMenu> dropdowns = new ArrayList<>();

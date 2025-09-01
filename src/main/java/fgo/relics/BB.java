@@ -1,16 +1,20 @@
 package fgo.relics;
 
+import static fgo.FGOMod.makeID;
+
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.powers.*;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.powers.DexterityPower;
+import com.megacrit.cardcrawl.powers.FrailPower;
+import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.powers.VulnerablePower;
+import com.megacrit.cardcrawl.powers.WeakPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
-import fgo.patches.Enum.FGOCardColor;
 
-import static fgo.FGOMod.makeID;
+import fgo.patches.Enum.FGOCardColor;
 
 public class BB extends BaseRelic {
     private static final String NAME = "BB";
@@ -55,10 +59,5 @@ public class BB extends BaseRelic {
     @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];
-    }
-
-    @Override
-    public AbstractRelic makeCopy() {
-        return new BB();
     }
 }

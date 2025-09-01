@@ -1,4 +1,4 @@
-package fgo.util;
+package fgo.utils;
 
 // import static fgo.FGOMod.audioPath;
 import static fgo.FGOMod.musicPath;

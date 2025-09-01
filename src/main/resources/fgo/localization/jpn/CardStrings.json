@@ -228,7 +228,7 @@
   },
   "${modID}:HeroicKing": {
     "NAME": "十二輝剣",
-    "DESCRIPTION": "敵ランダムに !D! ダメージを !M! 回与える。戦闘でHPを失うたび、捨て札から手札に戻り1層 王威を獲得。",
+    "DESCRIPTION": "敵ランダムに !D! ダメージを !M! 回与える。 NL HPを失うたび、捨て札から手札に戻り1層 王威を獲得。",
     "EXTENDED_DESCRIPTION": [
       "全ての敵に !D! ダメージを !M! 回与え、!M! 層 被ダメージ増加を付与。"
     ]
@@ -497,7 +497,7 @@
   },
   "${modID}:CharismaOfConflict": {
     "NAME": "闘争の魅力",
-    "DESCRIPTION": "!D! ダメージを与える。 NL 戦闘続行状態時、追加で !D! ダメージ。"
+    "DESCRIPTION": "全敵に!D! ダメージを与える。 NL 戦闘続行状態時、追加で !D! ダメージ。"
   },
   "${modID}:ProofAndRebuttal": {
     "NAME": "証明と反証",
@@ -696,7 +696,7 @@
   },
   "${modID}:Summer": {
     "NAME": "夏",
-    "DESCRIPTION": "fgo:水辺 獲得。 NL !NP!% 宝具ゲージ獲得。"
+    "DESCRIPTION": "{@@}fgo:水辺 獲得。{!Upgrades!|= NL !NP!% 宝具ゲージ獲得。}"
   },
   "${modID}:EnumaElish": {
     "NAME": "天地乖離す開闢の星",

@@ -1,5 +1,12 @@
 package fgo.characters;
 
+import static fgo.FGOMod.makeID;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Map;
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -15,17 +22,12 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.CampfireUI;
 import com.megacrit.cardcrawl.rooms.RestRoom;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
+
 import fgo.cards.noblecards.HollowHeartAlbion;
 import fgo.cards.noblecards.Unlimited;
-import fgo.patches.Enum.CardTagsEnum;
-import fgo.util.NobleCardHelper;
 import fgo.panel.NobleDeckCards;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Map;
-import static fgo.FGOMod.makeID;
+import fgo.patches.Enum.CardTagsEnum;
+import fgo.utils.NobleCardHelper;
 
 public class AlterOptionEffect extends AbstractGameEffect {
     private static final String[] TEXT = CardCrawlGame.languagePack.getUIString(makeID(AlterOptionEffect.class.getSimpleName())).TEXT;

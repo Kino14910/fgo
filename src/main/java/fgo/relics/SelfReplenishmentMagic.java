@@ -1,12 +1,12 @@
 package fgo.relics;
 
+import static fgo.FGOMod.makeID;
+
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
+
 import fgo.action.FgoNpAction;
 import fgo.patches.Enum.FGOCardColor;
-
-import static fgo.FGOMod.makeID;
 
 public class SelfReplenishmentMagic extends BaseRelic {
     private static final String NAME = "SelfReplenishmentMagic";
@@ -25,10 +25,5 @@ public class SelfReplenishmentMagic extends BaseRelic {
     @Override
     public String getUpdatedDescription() {
         return this.DESCRIPTIONS[0];
-    }
-
-    @Override
-    public AbstractRelic makeCopy() {
-        return new SelfReplenishmentMagic();
     }
 }

@@ -1,15 +1,15 @@
 package fgo.action;
 
+import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.cardRng;
+
+import java.util.ArrayList;
+import java.util.Map;
+
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
-
-import java.util.ArrayList;
-import java.util.Map;
-
-import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.cardRng;
 
 public class RandomCardWithTagAction extends AbstractGameAction {
     public boolean upgradeCard;

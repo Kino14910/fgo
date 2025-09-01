@@ -1,13 +1,17 @@
 package fgo.cards;
 
-import fgo.hexui_lib.interfaces.CustomCardPortrait;
-import fgo.hexui_lib.interfaces.CustomCardTypeLocation;
-import fgo.hexui_lib.util.*;
+import static fgo.utils.GeneralUtils.removePrefix;
+import static fgo.utils.TextureLoader.getCardTextureString;
 
 import java.util.ArrayList;
 
-import static fgo.util.GeneralUtils.removePrefix;
-import static fgo.util.TextureLoader.getCardTextureString;
+import fgo.hexui_lib.interfaces.CustomCardPortrait;
+import fgo.hexui_lib.interfaces.CustomCardTypeLocation;
+import fgo.hexui_lib.util.BetaPortraitGenerator;
+import fgo.hexui_lib.util.FloatPair;
+import fgo.hexui_lib.util.RenderImageLayer;
+import fgo.hexui_lib.util.RenderLayer;
+import fgo.hexui_lib.util.TextureLoader;
 
 public abstract class FateMagineerCard extends FGOCard implements CustomCardPortrait, CustomCardTypeLocation {
     public static ArrayList<RenderLayer> outerCircuits512 = new ArrayList<>();

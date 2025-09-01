@@ -3,7 +3,7 @@ package fgo.cards;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 
 import fgo.FGOMod;
-import fgo.util.CardStats;
+import fgo.utils.CardStats;
 
 public abstract class FGOCard extends BaseCard {
     public boolean upgradeNP;

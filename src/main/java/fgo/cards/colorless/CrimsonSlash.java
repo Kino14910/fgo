@@ -12,8 +12,9 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
+
 import fgo.cards.FGOCard;
-import fgo.util.CardStats;
+import fgo.utils.CardStats;
 
 public class CrimsonSlash extends FGOCard {
     public static final String ID = makeID(CrimsonSlash.class.getSimpleName());

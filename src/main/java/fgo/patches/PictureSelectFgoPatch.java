@@ -1,5 +1,7 @@
 package fgo.patches;
 
+import static fgo.FGOMod.makeID;
+
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -15,9 +17,8 @@ import com.megacrit.cardcrawl.helpers.input.InputHelper;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.screens.charSelect.CharacterOption;
 import com.megacrit.cardcrawl.screens.charSelect.CharacterSelectScreen;
-import fgo.patches.Enum.ThmodClassEnum;
 
-import static fgo.FGOMod.makeID;
+import fgo.patches.Enum.ThmodClassEnum;
 
 public class PictureSelectFgoPatch {
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(makeID(PictureSelectFgoPatch.class.getSimpleName()));

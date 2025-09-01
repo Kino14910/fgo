@@ -228,7 +228,7 @@
   },
   "${modID}:HeroicKing": {
     "NAME": "Heroic King",
-    "DESCRIPTION": "Deal !D! damage to a random enemy !M! times. NL Whenever you lose HP this combat, return this from the discard pile to your hand and gain 1 fgo:Heroic_King.",
+    "DESCRIPTION": "Deal !D! damage to a random enemy !M! times. NL Whenever you lose HP, return this from the discard pile to your hand and gain 1 fgo:Heroic_King.",
     "EXTENDED_DESCRIPTION": [
       "Deal !D! damage !M! times and apply !M! Vulnerable to ALL enemies."
     ]
@@ -367,7 +367,7 @@
   },
   "${modID}:CharismaofAdversity": {
     "NAME": "Charisma of Adversity",
-    "DESCRIPTION": "Deal !D! damage. NL If your HP is at or below 65, 50, 35 or 15, deal !D! damage each.",
+    "DESCRIPTION": "Deal !D! damage. NL per 12 lost hp, NL deal !D! damage each.",
     "EXTENDED_DESCRIPTION": [
       " NL （再造成 !D! 点伤害",
       "次。）"
@@ -497,7 +497,7 @@
   },
   "${modID}:CharismaOfConflict": {
     "NAME": "Charisma of Conflict",
-    "DESCRIPTION": "Deal !D! damage. NL If you have fgo:guts, deal !D! damage again."
+    "DESCRIPTION": "Deal !D! damage to all enemies. NL If you have fgo:guts, deal !D! damage again."
   },
   "${modID}:ProofAndRebuttal": {
     "NAME": "Proof and Rebuttal",
@@ -691,7 +691,7 @@
   },
   "${modID}:Summer": {
     "NAME": "Summer",
-    "DESCRIPTION": "Gain fgo:Waterside. NL Gain !NP!% fgo:NP."
+    "DESCRIPTION": "{@@}Gain fgo:Waterside.{!Upgrades!|= NL Gain !NP! fgo:NP.}"
   },
   "${modID}:EnumaElish": {
     "NAME": "Enuma Elish",

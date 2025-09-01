@@ -1,6 +1,7 @@
 package fgo.potions;
 
-import basemod.BaseMod;
+import static fgo.FGOMod.makeID;
+
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -11,9 +12,8 @@ import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.localization.PotionStrings;
 
+import basemod.BaseMod;
 import fgo.powers.CursePower;
-
-import static fgo.FGOMod.makeID;
 
 public class CursePotion extends BasePotion {
     public static final String ID = makeID(CursePotion.class.getSimpleName());

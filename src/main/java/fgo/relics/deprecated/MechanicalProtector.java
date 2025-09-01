@@ -1,5 +1,7 @@
 package fgo.relics.deprecated;
 
+import static fgo.FGOMod.makeID;
+
 import com.evacipated.cardcrawl.mod.stslib.powers.StunMonsterPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
@@ -7,11 +9,9 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
+
 import fgo.patches.Enum.FGOCardColor;
 import fgo.relics.BaseRelic;
-
-import static fgo.FGOMod.makeID;
 
 public class MechanicalProtector extends BaseRelic {
     private static final String NAME = "MechanicalProtector";
@@ -50,10 +50,5 @@ public class MechanicalProtector extends BaseRelic {
         if (setCounter <= 0) {
             this.usedUp();
         }
-    }
-
-    @Override
-    public AbstractRelic makeCopy() {
-        return new MechanicalProtector();
     }
 }

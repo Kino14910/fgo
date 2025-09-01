@@ -1,4 +1,4 @@
-package fgo.util;
+package fgo.utils;
 
 import basemod.helpers.KeywordColorInfo;
 

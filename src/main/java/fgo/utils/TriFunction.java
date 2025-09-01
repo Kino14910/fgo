@@ -1,4 +1,4 @@
-package fgo.util;
+package fgo.utils;
 
 @FunctionalInterface
 public interface TriFunction<T, U, V, R> {

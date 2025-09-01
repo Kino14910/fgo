@@ -14,11 +14,12 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.StarBounceEffect;
 import com.megacrit.cardcrawl.vfx.combat.ViolentAttackEffect;
+
 import fgo.cards.FGOCard;
 import fgo.cards.tempCards.SoulOfWaterChannels;
 import fgo.patches.Enum.FGOCardColor;
 import fgo.powers.WatersidePower;
-import fgo.util.CardStats;
+import fgo.utils.CardStats;
 
 public class JourneyGuidance extends FGOCard {
     public static final String ID = makeID(JourneyGuidance.class.getSimpleName());

@@ -1,8 +1,5 @@
 package fgo.panel;
 
-import basemod.abstracts.CustomScreen;
-import fgo.util.NobleCardGroup;
-
 import static fgo.FGOMod.makeID;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -17,9 +14,12 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.MathHelper;
 import com.megacrit.cardcrawl.helpers.input.InputHelper;
 import com.megacrit.cardcrawl.localization.UIStrings;
+import com.megacrit.cardcrawl.rooms.AbstractRoom.RoomPhase;
 import com.megacrit.cardcrawl.screens.mainMenu.ScrollBar;
 import com.megacrit.cardcrawl.screens.mainMenu.ScrollBarListener;
-import com.megacrit.cardcrawl.rooms.AbstractRoom.RoomPhase;
+
+import basemod.abstracts.CustomScreen;
+import fgo.utils.NobleCardGroup;
 
 public class NobleDeckViewScreen extends CustomScreen implements ScrollBarListener {
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(makeID(NobleDeckViewScreen.class.getSimpleName()));

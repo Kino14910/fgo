@@ -1,8 +1,8 @@
 package fgo.hexui_lib.interfaces;
 
-import fgo.hexui_lib.util.RenderLayer;
-
 import java.util.ArrayList;
+
+import fgo.hexui_lib.util.RenderLayer;
 
 public interface CustomCardPortrait {
     ArrayList<RenderLayer> getPortraitLayers512();

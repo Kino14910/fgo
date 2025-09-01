@@ -9,12 +9,13 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
 import fgo.action.FgoNpAction;
 import fgo.action.SparksRouteAction;
 import fgo.cards.FGOCard;
 import fgo.characters.Master;
 import fgo.patches.Enum.FGOCardColor;
-import fgo.util.CardStats;
+import fgo.utils.CardStats;
 
 public class SparksRoute extends FGOCard {
     public static final String ID = makeID(SparksRoute.class.getSimpleName());

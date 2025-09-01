@@ -1,5 +1,7 @@
 package fgo.patches.Button;
 
+import static fgo.utils.GeneralUtils.addToBot;
+
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -20,8 +22,6 @@ import com.megacrit.cardcrawl.vfx.ThoughtBubble;
 import fgo.action.NoblePhantasmSelectAction;
 import fgo.characters.Master;
 import fgo.powers.SealNPPower;
-
-import static fgo.util.GeneralUtils.addToBot;
 
 public class NoblePhantasmButton extends AbstractPanel {
     private static final TutorialStrings tutorialStrings = CardCrawlGame.languagePack.getTutorialString("fgo:NoblePhantasm");

@@ -1,9 +1,5 @@
 package fgo.cards.fgo;
 
-import fgo.cards.FGOCard;
-import fgo.patches.Enum.FGOCardColor;
-import fgo.util.CardStats;
-
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -14,6 +10,10 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.ClashEffect;
+
+import fgo.cards.FGOCard;
+import fgo.patches.Enum.FGOCardColor;
+import fgo.utils.CardStats;
 
 public class TrueClash extends FGOCard {
     public static final String ID = makeID(TrueClash.class.getSimpleName());

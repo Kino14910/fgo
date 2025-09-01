@@ -6,11 +6,12 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.FlameBarrierEffect;
+
 import fgo.cards.FGOCard;
 import fgo.patches.Enum.CardTagsEnum;
 import fgo.powers.CursePower;
 import fgo.powers.StarPower;
-import fgo.util.CardStats;
+import fgo.utils.CardStats;
 
 public class SoulOfWaterChannels extends FGOCard {
     public static final String ID = makeID(SoulOfWaterChannels.class.getSimpleName());

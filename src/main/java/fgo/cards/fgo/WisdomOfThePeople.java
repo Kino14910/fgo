@@ -4,10 +4,11 @@ import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.actions.unique.RemoveDebuffsAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
 import fgo.action.FgoNpAction;
 import fgo.cards.FGOCard;
 import fgo.patches.Enum.FGOCardColor;
-import fgo.util.CardStats;
+import fgo.utils.CardStats;
 
 public class WisdomOfThePeople extends FGOCard {
     public static final String ID = makeID(WisdomOfThePeople.class.getSimpleName());

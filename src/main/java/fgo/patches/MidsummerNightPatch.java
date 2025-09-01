@@ -1,6 +1,8 @@
 package fgo.patches;
 
-import basemod.ReflectionHacks;
+import java.lang.reflect.Field;
+import java.util.Objects;
+
 import com.badlogic.gdx.Gdx;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
@@ -10,11 +12,10 @@ import com.megacrit.cardcrawl.actions.utility.TextAboveCreatureAction;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+
+import basemod.ReflectionHacks;
 import fgo.powers.CursePower;
 import fgo.relics.MidsummerNightDream;
-
-import java.lang.reflect.Field;
-import java.util.Objects;
 
 @SpirePatch(
         clz = ApplyPowerAction.class,

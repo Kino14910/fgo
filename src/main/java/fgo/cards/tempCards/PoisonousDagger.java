@@ -7,8 +7,9 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.PoisonPower;
+
 import fgo.cards.FGOCard;
-import fgo.util.CardStats;
+import fgo.utils.CardStats;
 
 public class PoisonousDagger extends FGOCard {
     public static final String ID = makeID(PoisonousDagger.class.getSimpleName());

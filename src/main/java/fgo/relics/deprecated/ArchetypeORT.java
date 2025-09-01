@@ -1,14 +1,14 @@
 package fgo.relics.deprecated;
 
+import static fgo.FGOMod.makeID;
+
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
+
 import fgo.patches.Enum.FGOCardColor;
 import fgo.powers.ArchetypeORTPower;
 import fgo.relics.BaseRelic;
-
-import static fgo.FGOMod.makeID;
 
 public class ArchetypeORT extends BaseRelic {
     private static final String NAME = "ArchetypeORT";
@@ -32,10 +32,5 @@ public class ArchetypeORT extends BaseRelic {
     @Override
     public boolean canSpawn() {
         return AbstractDungeon.actNum >= 2;
-    }
-
-    @Override
-    public AbstractRelic makeCopy() {
-        return new ArchetypeORT();
     }
 }

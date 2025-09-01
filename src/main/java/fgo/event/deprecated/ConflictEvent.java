@@ -1,5 +1,11 @@
 package fgo.event.deprecated;
 
+import static fgo.FGOMod.makeID;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Random;
+
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -13,12 +19,6 @@ import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
 
 import fgo.event.BaseEvent;
 import fgo.relics.deprecated.SkullCandy;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Random;
-
-import static fgo.FGOMod.makeID;
 
 public class ConflictEvent extends BaseEvent {
     public static final String ID = makeID(ConflictEvent.class.getSimpleName());

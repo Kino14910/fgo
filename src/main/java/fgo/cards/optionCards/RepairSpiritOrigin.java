@@ -4,8 +4,9 @@ import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
 import fgo.cards.FGOCard;
-import fgo.util.CardStats;
+import fgo.utils.CardStats;
 
 public class RepairSpiritOrigin extends FGOCard {
     public static final String ID = makeID(RepairSpiritOrigin.class.getSimpleName());

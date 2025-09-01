@@ -6,13 +6,14 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.watcher.ExpungeVFXAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
 import fgo.action.FgoNpAction;
 import fgo.cards.FGOCard;
 import fgo.patches.Enum.CardTagsEnum;
 import fgo.patches.Enum.FGOCardColor;
 import fgo.powers.EnergyRegenPower;
 import fgo.powers.NPDamagePower;
-import fgo.util.CardStats;
+import fgo.utils.CardStats;
 
 public class AbyssLight extends FGOCard {
     public static final String ID = makeID(AbyssLight.class.getSimpleName());

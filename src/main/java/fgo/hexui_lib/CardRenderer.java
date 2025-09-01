@@ -1,5 +1,7 @@
 package fgo.hexui_lib;
 
+import java.util.ArrayList;
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
@@ -10,12 +12,11 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.glutils.FrameBuffer;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
+
 import fgo.hexui_lib.interfaces.CustomCardPortrait;
 import fgo.hexui_lib.util.RenderCommandLayer;
 import fgo.hexui_lib.util.RenderImageLayer;
 import fgo.hexui_lib.util.RenderLayer;
-
-import java.util.ArrayList;
 
 public class CardRenderer {
     private static final ArrayList<FrameBuffer> fboStack = new ArrayList<>();

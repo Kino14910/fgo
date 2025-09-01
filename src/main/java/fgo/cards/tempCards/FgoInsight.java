@@ -9,8 +9,9 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.LightBulbEffect;
+
 import fgo.cards.FGOCard;
-import fgo.util.CardStats;
+import fgo.utils.CardStats;
 
 public class FgoInsight extends FGOCard {
     public static final String ID = makeID(FgoInsight.class.getSimpleName());

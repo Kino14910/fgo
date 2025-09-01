@@ -1,14 +1,15 @@
 package fgo.cards.colorless.mash;
 
+import static com.megacrit.cardcrawl.core.Settings.language;
+
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import fgo.cards.FGOCard;
-import fgo.util.CardStats;
 
-import static com.megacrit.cardcrawl.core.Settings.language;
+import fgo.cards.FGOCard;
+import fgo.utils.CardStats;
 
 public class BlackBarrel extends FGOCard {
     public static final String ID = makeID(BlackBarrel.class.getSimpleName());

@@ -4,10 +4,11 @@ import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
 import fgo.action.FgoNpAction;
 import fgo.cards.FGOCard;
 import fgo.patches.Enum.FGOCardColor;
-import fgo.util.CardStats;
+import fgo.utils.CardStats;
 
 public class SwordOfSelection extends FGOCard {
     public static final String ID = makeID(SwordOfSelection.class.getSimpleName());

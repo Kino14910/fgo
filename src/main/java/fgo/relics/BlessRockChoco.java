@@ -1,12 +1,12 @@
 package fgo.relics;
 
+import static fgo.FGOMod.makeID;
+
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
-import fgo.patches.Enum.FGOCardColor;
 
-import static fgo.FGOMod.makeID;
+import fgo.patches.Enum.FGOCardColor;
 
 public class BlessRockChoco extends BaseRelic {
     private static final String NAME = "BlessRockChoco";
@@ -28,10 +28,5 @@ public class BlessRockChoco extends BaseRelic {
             drawnCard.costForTurn -= 1;
             drawnCard.isCostModifiedForTurn = true;
         }
-    }
-
-    @Override
-    public AbstractRelic makeCopy() {
-        return new BlessRockChoco();
     }
 }

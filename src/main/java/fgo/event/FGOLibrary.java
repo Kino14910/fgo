@@ -1,6 +1,8 @@
 
 package fgo.event;
 
+import static fgo.FGOMod.makeID;
+
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
@@ -10,12 +12,16 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
-import fgo.cards.colorless.*;
+
+import fgo.cards.colorless.EightKindness;
+import fgo.cards.colorless.MaraPapiyas;
+import fgo.cards.colorless.MillenniumCastle;
+import fgo.cards.colorless.PrimevalRune;
+import fgo.cards.colorless.ReplicaAgateram;
+import fgo.cards.colorless.UndeadBird;
 import fgo.cards.fgo.DeathOfDeath;
 import fgo.cards.fgo.PeerlessStrike;
 import fgo.cards.fgo.SpringOfFire;
-
-import static fgo.FGOMod.makeID;
 
 public class FGOLibrary extends BaseEvent {
     public static final String ID = makeID(FGOLibrary.class.getSimpleName());

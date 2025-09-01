@@ -13,7 +13,7 @@ import fgo.cards.FGOCard;
 import fgo.patches.Enum.CardTagsEnum;
 import fgo.patches.Enum.FGOCardColor;
 import fgo.powers.StarPower;
-import fgo.util.CardStats;
+import fgo.utils.CardStats;
 
 public class BackAgain extends FGOCard {
     public static final String ID = makeID(BackAgain.class.getSimpleName());

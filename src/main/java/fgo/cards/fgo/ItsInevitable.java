@@ -9,11 +9,12 @@ import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
 import fgo.cards.FGOCard;
 import fgo.patches.Enum.FGOCardColor;
 import fgo.powers.ItsInevitablePower;
-import fgo.util.CardStats;
-import fgo.util.Sounds;
+import fgo.utils.CardStats;
+import fgo.utils.Sounds;
 
 public class ItsInevitable extends FGOCard {
     public static final String ID = makeID(ItsInevitable.class.getSimpleName());

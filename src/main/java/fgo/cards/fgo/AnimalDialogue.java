@@ -4,11 +4,12 @@ import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
 import fgo.action.FgoNpAction;
 import fgo.cards.FGOCard;
 import fgo.characters.Master;
 import fgo.patches.Enum.FGOCardColor;
-import fgo.util.CardStats;
+import fgo.utils.CardStats;
 
 public class AnimalDialogue extends FGOCard {
     public static final String ID = makeID(AnimalDialogue.class.getSimpleName());

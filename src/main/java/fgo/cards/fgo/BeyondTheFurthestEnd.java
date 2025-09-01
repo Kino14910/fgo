@@ -1,5 +1,7 @@
 package fgo.cards.fgo;
 
+import static com.megacrit.cardcrawl.core.Settings.language;
+
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.stslib.patches.FlavorText;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -7,12 +9,11 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
 import fgo.cards.FGOCard;
 import fgo.patches.Enum.FGOCardColor;
 import fgo.powers.BeyondTheFurthestEndPower;
-import fgo.util.CardStats;
-
-import static com.megacrit.cardcrawl.core.Settings.language;
+import fgo.utils.CardStats;
 
 public class BeyondTheFurthestEnd extends FGOCard {
     public static final String ID = makeID(BeyondTheFurthestEnd.class.getSimpleName());

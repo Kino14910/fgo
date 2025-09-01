@@ -8,11 +8,12 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.FlameBarrierEffect;
+
 import fgo.cards.FGOCard;
 import fgo.patches.Enum.FGOCardColor;
 import fgo.powers.CriticalDamageUpPower;
 import fgo.powers.StarPower;
-import fgo.util.CardStats;
+import fgo.utils.CardStats;
 
 public class KnightoftheLake extends FGOCard {
     public static final String ID = makeID(KnightoftheLake.class.getSimpleName());

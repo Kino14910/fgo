@@ -14,9 +14,10 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.vfx.combat.BiteEffect;
+
 import fgo.cards.FGOCard;
 import fgo.patches.Enum.FGOCardColor;
-import fgo.util.CardStats;
+import fgo.utils.CardStats;
 
 public class WildRule extends FGOCard {
     public static final String ID = makeID(WildRule.class.getSimpleName());

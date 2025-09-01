@@ -8,8 +8,8 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import fgo.action.IgnoresInvincibilityAction;
 import fgo.cards.FGOCard;
 import fgo.patches.Enum.FGOCardColor;
-import fgo.util.CardStats;
-import fgo.util.Sounds;
+import fgo.utils.CardStats;
+import fgo.utils.Sounds;
 
 public class OriginBullet extends FGOCard {
     public static final String ID = makeID(OriginBullet.class.getSimpleName());

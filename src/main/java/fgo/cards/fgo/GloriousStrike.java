@@ -6,10 +6,11 @@ import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
 import fgo.cards.FGOCard;
 import fgo.patches.Enum.FGOCardColor;
 import fgo.powers.GloriousStrikePower;
-import fgo.util.CardStats;
+import fgo.utils.CardStats;
 
 public class GloriousStrike extends FGOCard {
     public static final String ID = makeID(GloriousStrike.class.getSimpleName());

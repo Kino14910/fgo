@@ -5,10 +5,10 @@ import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
 import fgo.cards.AbsNoblePhantasmCard;
 import fgo.hexui_lib.util.RenderImageLayer;
-
-import fgo.util.TextureLoader;
+import fgo.utils.TextureLoader;
 
 public class EnumaElish
 extends AbsNoblePhantasmCard {
@@ -18,7 +18,7 @@ extends AbsNoblePhantasmCard {
 
     public EnumaElish() {
         super(ID, AbstractCard.CardType.ATTACK, AbstractCard.CardTarget.ALL_ENEMY);
-        setDamage(40, 8);
+        setDamage(32, 8);
         cardArtLayers512.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH)));
         cardArtLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH_P)));
     }

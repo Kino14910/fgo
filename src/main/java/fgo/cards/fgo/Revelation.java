@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.powers.WeakPower;
 
 import fgo.cards.FGOCard;
 import fgo.patches.Enum.FGOCardColor;
-import fgo.util.CardStats;
+import fgo.utils.CardStats;
 
 public class Revelation extends FGOCard {
     public static final String ID = makeID(Revelation.class.getSimpleName());

@@ -1,13 +1,13 @@
 package fgo.relics.deprecated;
 
+import static fgo.FGOMod.makeID;
+
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
+
 // import fgo.cards.curses.Dumuzid;
 import fgo.patches.Enum.FGOCardColor;
 import fgo.relics.BaseRelic;
-
-import static fgo.FGOMod.makeID;
 
 public class BurgerKing extends BaseRelic {
     private static final String NAME = "BurgerKing";
@@ -26,10 +26,5 @@ public class BurgerKing extends BaseRelic {
         AbstractDungeon.player.increaseMaxHp(40, true);
         // AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new Dumuzid(), (float) Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
         UnlockTracker.markCardAsSeen("Dumuzid");
-    }
-
-    @Override
-    public AbstractRelic makeCopy() {
-        return new BurgerKing();
     }
 }

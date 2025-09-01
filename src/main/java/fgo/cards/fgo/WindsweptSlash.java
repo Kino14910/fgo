@@ -13,10 +13,11 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
+
 import fgo.cards.FGOCard;
 import fgo.cards.tempCards.FgoInsight;
 import fgo.patches.Enum.FGOCardColor;
-import fgo.util.CardStats;
+import fgo.utils.CardStats;
 
 public class WindsweptSlash extends FGOCard {
     public static final String ID = makeID(WindsweptSlash.class.getSimpleName());

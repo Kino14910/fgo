@@ -1,23 +1,23 @@
 package fgo.relics.deprecated;
 
+import static fgo.FGOMod.makeID;
+
+import java.util.ArrayList;
+
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PowerTip;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.RestRoom;
+
 import fgo.cards.tempCards.BlessedRegenerate;
 import fgo.cards.tempCards.BrilliantEscort;
 import fgo.cards.tempCards.PureCoordinate;
 import fgo.cards.tempCards.SionSkill;
 import fgo.patches.Enum.FGOCardColor;
 import fgo.relics.BaseRelic;
-
-import java.util.ArrayList;
-
-import static fgo.FGOMod.makeID;
 
 public class HalloweenRoyalty extends BaseRelic {
     private static final String NAME = "HalloweenRoyalty";
@@ -88,10 +88,5 @@ public class HalloweenRoyalty extends BaseRelic {
     @Override
     public String getUpdatedDescription() {
         return this.DESCRIPTIONS[0];
-    }
-
-    @Override
-    public AbstractRelic makeCopy() {
-        return new HalloweenRoyalty();
     }
 }

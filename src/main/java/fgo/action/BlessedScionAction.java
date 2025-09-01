@@ -9,11 +9,12 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
+
 import fgo.cards.tempCards.SupportCraft;
 import fgo.patches.Enum.CardTagsEnum;
 
 public class BlessedScionAction extends AbstractGameAction {
-    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("fgo:BlessedScionAction");
+    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(BlessedScionAction.class.getSimpleName());
     public static final String[] TEXT = uiStrings.TEXT;
     private final AbstractPlayer p;
     private static final float DURATION = Settings.ACTION_DUR_XFAST;

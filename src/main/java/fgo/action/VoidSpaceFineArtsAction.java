@@ -2,6 +2,7 @@ package fgo.action;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+
 import fgo.powers.CursePower;
 
 public class VoidSpaceFineArtsAction extends AbstractGameAction {

@@ -1,13 +1,10 @@
 package fgo.relics;
 
-import basemod.interfaces.OnStartBattleSubscriber;
-import com.megacrit.cardcrawl.rooms.AbstractRoom;
-import fgo.action.FgoNpAction;
-import fgo.patches.Enum.FGOCardColor;
-
 import static fgo.FGOMod.makeID;
 
-public class SuitcaseFgo extends BaseRelic implements OnStartBattleSubscriber {
+import fgo.patches.Enum.FGOCardColor;
+
+public class SuitcaseFgo extends BaseRelic{
     private static final String NAME = "SuitcaseFgo";
     public static final String ID = makeID(NAME);
     public SuitcaseFgo() {
@@ -19,8 +16,10 @@ public class SuitcaseFgo extends BaseRelic implements OnStartBattleSubscriber {
         return DESCRIPTIONS[0];
     }
 
-    @Override
-    public void receiveOnBattleStart(AbstractRoom abstractRoom) {
-        addToBot(new FgoNpAction(20));
-    }
+    // 此处逻辑在Master中
+    // @Override
+    // public void receiveOnBattleStart(AbstractRoom abstractRoom) {
+    //     addToBot(new FgoNpAction(20));
+    //     flash();
+    // }
 }

@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.helpers.CardLibrary;
 import basemod.BaseMod;
 import basemod.TopPanelItem;
 import fgo.patches.Enum.CardTagsEnum;
-import fgo.util.NobleCardGroup;
+import fgo.utils.NobleCardGroup;
 
 public class NobleDeck extends TopPanelItem {
     private static final Texture IMG = new Texture("fgo/images/ui/NobleTopPanel.png");

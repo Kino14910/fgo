@@ -5,10 +5,11 @@ import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
 import fgo.cards.FGOCard;
 import fgo.cards.tempCards.SoulOfWaterChannels;
 import fgo.patches.Enum.FGOCardColor;
-import fgo.util.CardStats;
+import fgo.utils.CardStats;
 
 public class CrownedWithLife extends FGOCard {
     public static final String ID = makeID(CrownedWithLife.class.getSimpleName());

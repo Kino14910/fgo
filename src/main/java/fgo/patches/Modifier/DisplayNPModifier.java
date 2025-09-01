@@ -1,6 +1,5 @@
 package fgo.patches.Modifier;
 
-import basemod.abstracts.AbstractCardModifier;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -8,6 +7,8 @@ import com.evacipated.cardcrawl.mod.stslib.util.extraicons.ExtraIcons;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
+
+import basemod.abstracts.AbstractCardModifier;
 
 public class DisplayNPModifier extends AbstractCardModifier {
     public static String MOD_ID = "fgo:DisplayNPModifier";

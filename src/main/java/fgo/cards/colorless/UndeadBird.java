@@ -2,9 +2,10 @@ package fgo.cards.colorless;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
 import fgo.action.RandomCardWithTagAction;
 import fgo.cards.FGOCard;
-import fgo.util.CardStats;
+import fgo.utils.CardStats;
 
 public class UndeadBird extends FGOCard {
     public static final String ID = makeID(UndeadBird.class.getSimpleName());

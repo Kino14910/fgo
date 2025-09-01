@@ -4,12 +4,13 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
 import fgo.action.HeroicKingAction;
 import fgo.action.KingToHandAction;
 import fgo.cards.FGOCard;
 import fgo.patches.Enum.FGOCardColor;
 import fgo.powers.HeroicKingPower;
-import fgo.util.CardStats;
+import fgo.utils.CardStats;
 
 public class HeroicKing extends FGOCard {
     public static final String ID = makeID(HeroicKing.class.getSimpleName());

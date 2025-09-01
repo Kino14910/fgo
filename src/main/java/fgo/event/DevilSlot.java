@@ -1,5 +1,7 @@
 package fgo.event;
 
+import static fgo.FGOMod.makeID;
+
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -10,8 +12,6 @@ import com.megacrit.cardcrawl.relics.Circlet;
 import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
 
 import fgo.relics.BB;
-
-import static fgo.FGOMod.makeID;
 
 public class DevilSlot extends BaseEvent {
     public static final String ID = makeID(DevilSlot.class.getSimpleName());

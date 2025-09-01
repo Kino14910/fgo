@@ -1,17 +1,18 @@
 package fgo.patches;
 
+import java.util.ArrayList;
+
 import com.evacipated.cardcrawl.modthespire.lib.SpireInstrumentPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.rooms.CampfireUI;
 import com.megacrit.cardcrawl.ui.campfire.AbstractCampfireOption;
+
 import fgo.characters.AlterOption;
 import fgo.characters.Master;
 import javassist.CannotCompileException;
 import javassist.expr.ExprEditor;
 import javassist.expr.FieldAccess;
-
-import java.util.ArrayList;
 
 
 @SpirePatch(clz = CampfireUI.class, method = "initializeButtons")

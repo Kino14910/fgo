@@ -1,12 +1,3 @@
-/*
- * Decompiled with CFR 0.152.
- * 
- * Could not load the following classes:
- *  com.megacrit.cardcrawl.actions.AbstractGameAction
- *  com.megacrit.cardcrawl.cards.AbstractCard
- *  com.megacrit.cardcrawl.core.Settings
- *  com.megacrit.cardcrawl.dungeons.AbstractDungeon
- */
 package fgo.action;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;

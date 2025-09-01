@@ -1,14 +1,15 @@
 package fgo.event;
 
+import static fgo.FGOMod.makeID;
+
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
-import fgo.cards.colorless.Shvibzik;
 
-import static fgo.FGOMod.makeID;
+import fgo.cards.colorless.Shvibzik;
 
 public class Beyondthe extends BaseEvent {
     public static final String ID = makeID(Beyondthe.class.getSimpleName());

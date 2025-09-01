@@ -1,13 +1,13 @@
 package fgo.relics;
 
+import static fgo.FGOMod.makeID;
+
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
+
 import fgo.patches.Enum.FGOCardColor;
 import fgo.powers.CursePower;
-
-import static fgo.FGOMod.makeID;
 
 public class LockChocolate extends BaseRelic {
     private static final String NAME = "LockChocolate";
@@ -38,10 +38,5 @@ public class LockChocolate extends BaseRelic {
     @Override
     public String getUpdatedDescription() {
         return this.DESCRIPTIONS[0];
-    }
-
-    @Override
-    public AbstractRelic makeCopy() {
-        return new LockChocolate();
     }
 }

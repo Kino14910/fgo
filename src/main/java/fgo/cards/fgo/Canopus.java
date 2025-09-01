@@ -8,10 +8,11 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.HemokinesisEffect;
+
 import fgo.cards.FGOCard;
 import fgo.cards.status.CurseDisaster;
 import fgo.patches.Enum.FGOCardColor;
-import fgo.util.CardStats;
+import fgo.utils.CardStats;
 
 public class Canopus extends FGOCard {
     public static final String ID = makeID(Canopus.class.getSimpleName());

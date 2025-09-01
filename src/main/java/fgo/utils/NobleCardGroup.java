@@ -1,7 +1,8 @@
-package fgo.util;
+package fgo.utils;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
+
 import fgo.patches.Enum.CardTagsEnum;
 
 public class NobleCardGroup extends CardGroup {

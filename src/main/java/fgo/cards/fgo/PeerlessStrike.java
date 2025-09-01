@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.powers.watcher.EndTurnDeathPower;
 import fgo.cards.FGOCard;
 import fgo.patches.Enum.FGOCardColor;
 import fgo.powers.CriticalDamageUpPower;
-import fgo.util.CardStats;
+import fgo.utils.CardStats;
 
 public class PeerlessStrike extends FGOCard {
     public static final String ID = makeID(PeerlessStrike.class.getSimpleName());

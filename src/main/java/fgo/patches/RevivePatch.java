@@ -1,16 +1,25 @@
 package fgo.patches;
 
-import com.evacipated.cardcrawl.modthespire.lib.*;
+import static fgo.utils.GeneralUtils.addToBot;
+
+import com.evacipated.cardcrawl.modthespire.lib.LineFinder;
+import com.evacipated.cardcrawl.modthespire.lib.Matcher;
+import com.evacipated.cardcrawl.modthespire.lib.SpireInsertLocator;
+import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
+import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
+import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+
 import fgo.action.FgoNpAction;
 import fgo.panel.CommandSpellPanel;
 import fgo.patches.Enum.ThmodClassEnum;
-import fgo.powers.*;
+import fgo.powers.DeathOfDeathPower;
+import fgo.powers.GutsAtTheWellPower;
+import fgo.powers.GutsPower;
+import fgo.powers.SpringOfFirePower;
 import javassist.CtBehavior;
-
-import static fgo.util.GeneralUtils.addToBot;
 
 public class RevivePatch {
     @SpirePatch(clz = AbstractPlayer.class, method = "damage")

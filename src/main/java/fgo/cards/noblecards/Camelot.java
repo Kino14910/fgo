@@ -1,5 +1,7 @@
 package fgo.cards.noblecards;
 
+import static com.megacrit.cardcrawl.core.Settings.language;
+
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -7,11 +9,10 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.MetallicizePower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
+
 import fgo.cards.AbsNoblePhantasmCard;
 import fgo.hexui_lib.util.RenderImageLayer;
 import fgo.hexui_lib.util.TextureLoader;
-
-import static com.megacrit.cardcrawl.core.Settings.language;
 
 public class Camelot extends AbsNoblePhantasmCard {
     public static final String ID = makeID(Camelot.class.getSimpleName());

@@ -8,11 +8,12 @@ import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
 import fgo.cards.FGOCard;
 import fgo.patches.Enum.CardTagsEnum;
 import fgo.patches.Enum.FGOCardColor;
 import fgo.powers.StarPower;
-import fgo.util.CardStats;
+import fgo.utils.CardStats;
 
 public class Swingby extends FGOCard {
     public static final String ID = makeID(Swingby.class.getSimpleName());

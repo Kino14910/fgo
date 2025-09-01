@@ -1,14 +1,14 @@
 package fgo.relics;
 
+import static fgo.FGOMod.makeID;
+
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.green.CalculatedGamble;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
-import fgo.patches.Enum.FGOCardColor;
 
-import static fgo.FGOMod.makeID;
+import fgo.patches.Enum.FGOCardColor;
 
 public class DreamChip extends BaseRelic {
     private static final String NAME = "DreamChip";
@@ -52,10 +52,5 @@ public class DreamChip extends BaseRelic {
     @Override
     public void onVictory() {
         this.pulse = false;
-    }
-
-    @Override
-    public AbstractRelic makeCopy() {
-        return new DreamChip();
     }
 }

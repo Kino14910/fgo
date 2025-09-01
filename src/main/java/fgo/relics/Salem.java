@@ -1,16 +1,16 @@
 package fgo.relics;
 
+import static fgo.FGOMod.makeID;
+
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.powers.watcher.VigorPower;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
+
 import fgo.patches.Enum.CardTagsEnum;
 import fgo.patches.Enum.FGOCardColor;
-
-import static fgo.FGOMod.makeID;
 
 public class Salem extends BaseRelic {
     private static final String NAME = "Salem";
@@ -85,10 +85,5 @@ public class Salem extends BaseRelic {
             this.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new VigorPower(AbstractDungeon.player, this.counter), this.counter));
             this.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
         }
-    }
-
-    @Override
-    public AbstractRelic makeCopy() {
-        return new Salem();
     }
 }

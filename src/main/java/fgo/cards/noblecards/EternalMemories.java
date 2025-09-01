@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.actions.unique.RemoveDebuffsAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
+
 import fgo.cards.AbsNoblePhantasmCard;
 import fgo.hexui_lib.util.RenderImageLayer;
 import fgo.hexui_lib.util.TextureLoader;
@@ -17,7 +18,7 @@ public class EternalMemories extends AbsNoblePhantasmCard {
 
     public EternalMemories() {
         super(ID,CardType.POWER, CardTarget.SELF);
-        setMagic(1, 1);
+        setMagic(2, 1);
 
         cardArtLayers512.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH)));
         cardArtLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH_P)));
@@ -26,8 +27,8 @@ public class EternalMemories extends AbsNoblePhantasmCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, 2)));
+        addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, magicNumber)));
         addToBot(new RemoveDebuffsAction(p));
-        addToBot(new ApplyPowerAction(p, p, new EternalMemoriesPower(p, magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new EternalMemoriesPower(p, 1)));
     }
 }

@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.BorderLongFlashEffect;
 import com.megacrit.cardcrawl.vfx.combat.DieDieDieEffect;
+
 import fgo.action.FgoNpAction;
 import fgo.cards.AbsNoblePhantasmCard;
 import fgo.hexui_lib.util.RenderImageLayer;
@@ -23,7 +24,7 @@ public class Sevendrive extends AbsNoblePhantasmCard {
     public Sevendrive() {
         super(ID,CardType.ATTACK, CardTarget.ALL_ENEMY);
         setDamage(3, 1);
-        setNP(10);
+        setNP(10, 20);
 
         cardArtLayers512.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH)));
         cardArtLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH_P)));

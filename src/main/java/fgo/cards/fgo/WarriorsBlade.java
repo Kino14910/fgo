@@ -9,10 +9,11 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
+
 import fgo.cards.FGOCard;
 import fgo.patches.Enum.FGOCardColor;
 import fgo.powers.StarPower;
-import fgo.util.CardStats;
+import fgo.utils.CardStats;
 
 public class WarriorsBlade extends FGOCard {
     public static final String ID = makeID(WarriorsBlade.class.getSimpleName());

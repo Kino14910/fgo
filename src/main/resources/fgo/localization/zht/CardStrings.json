@@ -228,7 +228,7 @@
   },
   "${modID}:HeroicKing": {
     "NAME": "十二輝劍",
-    "DESCRIPTION": "隨機對敵人造成 !D! 點傷害 !M! 次。本場戰鬥每次失去生命時，從棄牌堆放回你的手牌並且獲得1層 fgo:王威 。",
+    "DESCRIPTION": "隨機對敵人造成 !D! 點傷害 !M! 次。 NL 每次失去生命時，從棄牌堆放回你的手牌並且獲得1層 fgo:王威 。",
     "EXTENDED_DESCRIPTION": [
       "對所有敵人造成 !D! 點傷害 !M! 次，給予 !M! 層 易傷 。"
     ]
@@ -367,7 +367,7 @@
   },
   "${modID}:CharismaofAdversity": {
     "NAME": "逆境的魅力",
-    "DESCRIPTION": "造成 !D! 點傷害。 NL 如你已失去生命，每12點則再造成 !D! 點傷害。",
+    "DESCRIPTION": "造成 !D! 點傷害。 NL 每12點已失去生命，造成 !D! 點傷害。",
     "EXTENDED_DESCRIPTION": [
       " NL （再造成 !D! 點傷害",
       "次。）"
@@ -497,7 +497,7 @@
   },
   "${modID}:CharismaOfConflict": {
     "NAME": "鬥爭的魅力",
-    "DESCRIPTION": "造成 !D! 點傷害。 NL 如果你有 fgo:毅力 狀態 ，則再次造成 !D! 點傷害。"
+    "DESCRIPTION": "对所有敌人造成 !D! 點傷害。 NL 如果你有 fgo:毅力 狀態 ，則再次造成 !D! 點傷害。"
   },
   "${modID}:ProofAndRebuttal": {
     "NAME": "證明與反證",
@@ -696,7 +696,7 @@
   },
   "${modID}:Summer": {
     "NAME": "夏日",
-    "DESCRIPTION": "獲得 fgo:水邊 。 NL 獲得 !NP! % fgo:寶具值 。"
+    "DESCRIPTION": "{@@}獲得 fgo:水邊 。{!Upgrades!|= NL 獲得 !NP!% fgo:NP.}"
   },
   "${modID}:EnumaElish": {
     "NAME": "天地乖離開闢之星",

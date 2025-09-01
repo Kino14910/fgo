@@ -1,16 +1,17 @@
 package fgo.cards.fgo;
 
+import static com.megacrit.cardcrawl.core.Settings.language;
+
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
 import fgo.action.FgoNpAction;
 import fgo.cards.FGOCard;
 import fgo.patches.Enum.FGOCardColor;
 import fgo.powers.SealNPPower;
-import fgo.util.CardStats;
-
-import static com.megacrit.cardcrawl.core.Settings.language;
+import fgo.utils.CardStats;
 
 public class GraceUnexpectedBirth extends FGOCard {
     public static final String ID = makeID(GraceUnexpectedBirth.class.getSimpleName());

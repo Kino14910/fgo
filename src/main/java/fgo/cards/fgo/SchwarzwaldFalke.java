@@ -6,11 +6,12 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.OfferingEffect;
+
 import fgo.cards.FGOCard;
 import fgo.patches.Enum.FGOCardColor;
 import fgo.powers.NPRatePower;
 import fgo.powers.SchwarzwaldFalkePower;
-import fgo.util.CardStats;
+import fgo.utils.CardStats;
 
 public class SchwarzwaldFalke extends FGOCard {
     public static final String ID = makeID(SchwarzwaldFalke.class.getSimpleName());

@@ -1,12 +1,13 @@
 package fgo.potions;
 
+import static fgo.FGOMod.makeID;
+
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.actions.unique.RemoveAllPowersAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
-import static fgo.FGOMod.makeID;
 
 public class ElixirofRejuvenation extends BasePotion {
     public static final String ID = makeID(ElixirofRejuvenation.class.getSimpleName());

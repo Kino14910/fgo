@@ -8,13 +8,14 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
 import fgo.cards.FGOCard;
 import fgo.cards.tempCards.SupportCraft;
 import fgo.patches.Enum.CardTagsEnum;
 import fgo.patches.Enum.FGOCardColor;
-import fgo.util.CardStats;
+import fgo.utils.CardStats;
 
-public class ChildrenSHero extends FGOCard {
+public class ChildrenSHero extends FGOCard{
     public static final String ID = makeID(ChildrenSHero.class.getSimpleName());
     private static final CardStats INFO = new CardStats(
             FGOCardColor.FGO,

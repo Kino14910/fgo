@@ -3,12 +3,13 @@ package fgo.cards.tempCards;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
 import fgo.action.FgoNpAction;
 import fgo.cards.FGOCard;
 import fgo.cards.noblecards.HollowHeartAlbion;
 import fgo.powers.InvincibilityTurnPower;
 import fgo.powers.NoblePhantasmCardPower;
-import fgo.util.CardStats;
+import fgo.utils.CardStats;
 
 public class RayHorizon extends FGOCard {
     public static final String ID = makeID(RayHorizon.class.getSimpleName());

@@ -1,4 +1,4 @@
-package fgo.util;
+package fgo.utils;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;

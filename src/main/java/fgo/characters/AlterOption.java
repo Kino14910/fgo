@@ -1,14 +1,15 @@
 package fgo.characters;
 
+import static fgo.FGOMod.makeID;
+
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.MathHelper;
 import com.megacrit.cardcrawl.ui.campfire.AbstractCampfireOption;
-import basemod.ReflectionHacks;
 
-import static fgo.FGOMod.makeID;
+import basemod.ReflectionHacks;
 
 public class AlterOption extends AbstractCampfireOption {
     public static final String[] TEXT = (CardCrawlGame.languagePack.getUIString(makeID(AlterOption.class.getSimpleName()))).TEXT;

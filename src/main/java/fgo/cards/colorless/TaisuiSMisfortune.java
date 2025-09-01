@@ -8,9 +8,10 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.OfferingEffect;
+
 import fgo.cards.FGOCard;
 import fgo.powers.TaisuiSPower;
-import fgo.util.CardStats;
+import fgo.utils.CardStats;
 
 public class TaisuiSMisfortune extends FGOCard {
     public static final String ID = makeID(TaisuiSMisfortune.class.getSimpleName());

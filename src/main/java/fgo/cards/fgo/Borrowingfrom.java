@@ -2,11 +2,12 @@ package fgo.cards.fgo;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
 import fgo.action.FgoNpAction;
 import fgo.cards.FGOCard;
 import fgo.characters.Master;
 import fgo.patches.Enum.FGOCardColor;
-import fgo.util.CardStats;
+import fgo.utils.CardStats;
 
 public class Borrowingfrom extends FGOCard {
     public static final String ID = makeID(Borrowingfrom.class.getSimpleName());

@@ -10,8 +10,9 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.DrawPower;
 import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
+
 import fgo.cards.FGOCard;
-import fgo.util.CardStats;
+import fgo.utils.CardStats;
 
 public class DivineDualEdge extends FGOCard {
     public static final String ID = makeID(DivineDualEdge.class.getSimpleName());

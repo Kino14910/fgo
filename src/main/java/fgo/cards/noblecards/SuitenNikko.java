@@ -4,11 +4,12 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
 import fgo.action.FgoNpAction;
 import fgo.action.SuitenNikkoAction;
 import fgo.cards.AbsNoblePhantasmCard;
 import fgo.hexui_lib.util.RenderImageLayer;
-import fgo.util.TextureLoader;
+import fgo.utils.TextureLoader;
 
 public class SuitenNikko extends AbsNoblePhantasmCard {
     public static final String ID = makeID(SuitenNikko.class.getSimpleName());

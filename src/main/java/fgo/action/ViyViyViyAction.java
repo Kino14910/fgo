@@ -1,14 +1,15 @@
 package fgo.action;
 
+import java.util.ArrayList;
+
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.relics.FrozenEye;
-import fgo.powers.ViyViyViyPower;
 
-import java.util.ArrayList;
+import fgo.powers.ViyViyViyPower;
 public class ViyViyViyAction extends AbstractGameAction {
     @Override
     public void update() {

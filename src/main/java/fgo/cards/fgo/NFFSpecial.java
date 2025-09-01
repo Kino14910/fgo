@@ -4,10 +4,11 @@ import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
 import fgo.cards.FGOCard;
 import fgo.cards.tempCards.PoisonousDagger;
 import fgo.patches.Enum.FGOCardColor;
-import fgo.util.CardStats;
+import fgo.utils.CardStats;
 
 public class NFFSpecial extends FGOCard {
     public static final String ID = makeID(NFFSpecial.class.getSimpleName());
@@ -20,7 +21,7 @@ public class NFFSpecial extends FGOCard {
     );
     public NFFSpecial() {
         super(ID, INFO);
-        setMagic(3, 1);
+        setMagic(2, 1);
         cardsToPreview = new PoisonousDagger();
     }
 

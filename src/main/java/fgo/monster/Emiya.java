@@ -1,9 +1,17 @@
 package fgo.monster;
 
+import static fgo.FGOMod.makeID;
+
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.common.*;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.HealAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
+import com.megacrit.cardcrawl.actions.common.RollMoveAction;
+import com.megacrit.cardcrawl.actions.common.SetMoveAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -20,19 +28,19 @@ import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.vfx.FadeWipeParticle;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
+
+import fgo.FGOMod;
 import fgo.action.lor.ChangeSceneEffect;
 import fgo.cards.noblecards.Unlimited;
 import fgo.characters.Master;
 import fgo.powers.CriticalDamageUpPower;
 import fgo.powers.monster.StarGainMonsterPower;
-import fgo.util.Sounds;
-
-import static fgo.FGOMod.makeID;
+import fgo.utils.Sounds;
 
 public class Emiya extends AbstractMonster {
     public static final String ID = makeID(Emiya.class.getSimpleName());
-    public static final String IMG = "fgo/images/monster/emiya.png";
-    public static final String IMG2 = "fgo/images/monster/emiya_Ver2_Stage3.png";
+    public static final String IMG = FGOMod.monsterPath("emiya.png");
+    public static final String IMG2 = FGOMod.monsterPath("emiya_Ver2_Stage3.png");
     private static final MonsterStrings monsterStrings = CardCrawlGame.languagePack.getMonsterStrings("fgo:Emiya");
     public static final String NAME = monsterStrings.NAME;
     public static final String[] MOVES = monsterStrings.MOVES;

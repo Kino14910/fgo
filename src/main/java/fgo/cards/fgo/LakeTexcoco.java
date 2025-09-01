@@ -3,12 +3,13 @@ package fgo.cards.fgo;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
 import fgo.action.FgoNpAction;
 import fgo.cards.FGOCard;
 import fgo.patches.Enum.FGOCardColor;
 import fgo.powers.EnergyRegenPower;
 import fgo.powers.WatersidePower;
-import fgo.util.CardStats;
+import fgo.utils.CardStats;
 
 public class LakeTexcoco extends FGOCard {
     public static final String ID = makeID(LakeTexcoco.class.getSimpleName());

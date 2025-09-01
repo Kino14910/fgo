@@ -7,12 +7,13 @@ import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import fgo.cards.FGOCard;
-import fgo.patches.Enum.FGOCardColor;
-import fgo.cards.colorless.CrimsonSlash;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
-import fgo.util.CardStats;
+
+import fgo.cards.FGOCard;
+import fgo.cards.colorless.CrimsonSlash;
+import fgo.patches.Enum.FGOCardColor;
+import fgo.utils.CardStats;
 
 
 public class LevelSlash extends FGOCard {

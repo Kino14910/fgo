@@ -1,9 +1,9 @@
 package fgo.panel;
 
+import static fgo.FGOMod.makeID;
+
 import basemod.EasyConfigPanel;
 import fgo.FGOMod;
-
-import static fgo.FGOMod.makeID;
 
 public class FGOConfig extends EasyConfigPanel {
     public static boolean enableColorlessCards = true;

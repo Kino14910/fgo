@@ -1,10 +1,11 @@
-package fgo.util;
+package fgo.utils;
 
-import fgo.FGOMod;
 import com.badlogic.gdx.Files;
 import com.badlogic.gdx.backends.lwjgl.LwjglFileHandle;
 import com.badlogic.gdx.files.FileHandle;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
+
+import fgo.FGOMod;
 
 /**
  * A class containing utility methods for checking and logging common issues.

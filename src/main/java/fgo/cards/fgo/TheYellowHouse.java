@@ -5,12 +5,13 @@ import com.evacipated.cardcrawl.mod.stslib.patches.FlavorText;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
 import fgo.cards.FGOCard;
 import fgo.patches.Enum.CardTagsEnum;
 import fgo.patches.Enum.FGOCardColor;
 import fgo.powers.CursePower;
 import fgo.powers.EvasionPower;
-import fgo.util.CardStats;
+import fgo.utils.CardStats;
 
 public class TheYellowHouse extends FGOCard {
     public static final String ID = makeID(TheYellowHouse.class.getSimpleName());

@@ -1,5 +1,9 @@
 package fgo.cards.colorless.mash;
 
+import static com.megacrit.cardcrawl.core.Settings.language;
+
+import com.badlogic.gdx.graphics.Color;
+import com.evacipated.cardcrawl.mod.stslib.patches.FlavorText;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -13,12 +17,7 @@ import fgo.action.FgoNpAction;
 import fgo.cards.FGOCard;
 import fgo.powers.CriticalDamageUpPower;
 import fgo.powers.ReducePercentDamagePower;
-import fgo.util.CardStats;
-
-import static com.megacrit.cardcrawl.core.Settings.language;
-
-import com.badlogic.gdx.graphics.Color;
-import com.evacipated.cardcrawl.mod.stslib.patches.FlavorText;
+import fgo.utils.CardStats;
 
 public class WallOfSnowflakes extends FGOCard {
     public static final String ID = makeID(WallOfSnowflakes.class.getSimpleName());

@@ -9,9 +9,10 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.VerticalImpactEffect;
+
 import fgo.cards.FGOCard;
 import fgo.patches.Enum.FGOCardColor;
-import fgo.util.CardStats;
+import fgo.utils.CardStats;
 
 public class CharismaofAdversity extends FGOCard {
     public static final String ID = makeID(CharismaofAdversity.class.getSimpleName());
@@ -24,7 +25,7 @@ public class CharismaofAdversity extends FGOCard {
     );
     public CharismaofAdversity() {
         super(ID, INFO);
-        setDamage(6, 2);
+        setDamage(6, 3);
     }
 
     @Override

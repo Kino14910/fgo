@@ -1,14 +1,14 @@
-package fgo.util;
+package fgo.utils;
+
+import com.megacrit.cardcrawl.cards.AbstractCard;
 
 import basemod.abstracts.DynamicVariable;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import fgo.cards.FGOCard;
 
-public class NoblePhantasmVariable extends DynamicVariable {
+public class CriticalStarVariable extends DynamicVariable {
     @Override
     public String key() {
-        return "NP";
-        // 在本地化文件中用于显示你的值的键。例如，!myKey!。
+        return "Star";
     }
 
     @Override
@@ -32,7 +32,7 @@ public class NoblePhantasmVariable extends DynamicVariable {
     public int value(AbstractCard card) {
         if (card instanceof FGOCard) {
             FGOCard fgoCard = (FGOCard) card;
-            return fgoCard.np;
+            return fgoCard.star;
         }
         return 0;
     }
@@ -41,7 +41,7 @@ public class NoblePhantasmVariable extends DynamicVariable {
     public int baseValue(AbstractCard card) {
         if (card instanceof FGOCard) {
             FGOCard fgoCard = (FGOCard) card;
-            return fgoCard.baseNP;
+            return fgoCard.baseStar;
         }
         return 0;
     }
@@ -50,7 +50,7 @@ public class NoblePhantasmVariable extends DynamicVariable {
     public boolean upgraded(AbstractCard card) {
         if (card instanceof FGOCard) {
             FGOCard fgoCard = (FGOCard) card;
-            return fgoCard.upgradeNP;
+            return fgoCard.upgradeStar;
         }
         return false;
     }

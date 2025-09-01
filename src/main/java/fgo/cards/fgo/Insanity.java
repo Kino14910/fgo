@@ -7,12 +7,13 @@ import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
 import fgo.cards.FGOCard;
 import fgo.patches.Enum.CardTagsEnum;
 import fgo.patches.Enum.FGOCardColor;
 import fgo.powers.CursePower;
 import fgo.powers.InsanityPower;
-import fgo.util.CardStats;
+import fgo.utils.CardStats;
 
 public class Insanity extends FGOCard {
     public static final String ID = makeID(Insanity.class.getSimpleName());

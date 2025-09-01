@@ -1,6 +1,7 @@
 package fgo.characters;
 
-import basemod.abstracts.CustomPlayer;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
@@ -15,20 +16,24 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.cutscenes.CutscenePanel;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.city.Vampires;
-import com.megacrit.cardcrawl.helpers.*;
+import com.megacrit.cardcrawl.helpers.CardHelper;
+import com.megacrit.cardcrawl.helpers.FontHelper;
+import com.megacrit.cardcrawl.helpers.Hitbox;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
+import com.megacrit.cardcrawl.helpers.ScreenShake;
+import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 
+import basemod.abstracts.CustomPlayer;
 import fgo.cards.fgo.CharismaOfHope;
 import fgo.cards.fgo.Defend;
 import fgo.cards.fgo.DreamUponTheStars;
 import fgo.cards.fgo.Strike;
-import fgo.patches.Enum.FGOCardColor;
-import fgo.patches.Enum.ThmodClassEnum;
 import fgo.patches.MainMenuUIFgoPatch;
 import fgo.patches.PictureSelectFgoPatch;
+import fgo.patches.Enum.FGOCardColor;
+import fgo.patches.Enum.ThmodClassEnum;
 import fgo.relics.SuitcaseFgo;
-import java.util.ArrayList;
-import java.util.Collections;
 
 public class Master extends CustomPlayer{
     private static final String[] ORB_TEXTURES = new String[] {
@@ -91,9 +96,7 @@ public class Master extends CustomPlayer{
         // int charIndex = MainMenuUIFgoPatch.modifierIndexes;
 
         //添加初始卡组
-        ArrayList<String> retVal = new ArrayList<>();
-
-        Collections.addAll(retVal,
+        ArrayList<String> retVal = new ArrayList<>(Arrays.asList(
             Strike.ID,
             Strike.ID,
             Strike.ID,
@@ -104,7 +107,7 @@ public class Master extends CustomPlayer{
             Defend.ID,
             CharismaOfHope.ID,
             DreamUponTheStars.ID
-        );
+        ));
         return retVal;
     }
 
@@ -217,29 +220,6 @@ public class Master extends CustomPlayer{
         super.applyEndOfTurnTriggers();
     }
 
-    private static boolean isNewGame = true;
-
-    // @Override
-    // public void preBattlePrep() {
-    //     super.preBattlePrep();
-        
-    //     if (isNewGame) {
-    //         // 只在首次游戏时初始化NobleDeck
-    //         NobleDeck.nobleCards.clear();
-    //         isNewGame = false;
-    //     }
-        
-    //     // 每场战斗前转移宝具卡
-    //     ArrayList<AbstractCard> nobleCards = new ArrayList<>();
-    //     for (AbstractCard card : masterDeck.group) {
-    //         if (card.hasTag(CardTagsEnum.Noble_Phantasm)) {
-    //             nobleCards.add(card);
-    //             NobleDeck.addCard(card.makeCopy());
-    //         }
-    //     }
-    //     masterDeck.group.removeAll(nobleCards);
-    // }
-
     @Override
     public ArrayList<CutscenePanel> getCutscenePanels() {
         ArrayList<CutscenePanel> panels = new ArrayList<>();
@@ -249,6 +229,17 @@ public class Master extends CustomPlayer{
         return panels;
     }
 
+    @Override
+    public void preBattlePrep() {
+        super.preBattlePrep();
+        Master.fgoNp = 0;
+        // 遍历遗物应用加成
+        relics.stream()
+            .filter(r -> r instanceof SuitcaseFgo)
+            .forEach(r -> Master.fgoNp += 20);
+        TruthValueUpdatedEvent();
+    }
+    
     public void TruthValueUpdatedEvent() {
         int base = fgoNp > 200 ? 200 : (fgoNp > 100 ? 100 : 0);
         FgoNpWidth = hb.width * (fgoNp - base) / 100.0F;

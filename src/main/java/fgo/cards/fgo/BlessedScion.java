@@ -2,10 +2,11 @@ package fgo.cards.fgo;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
 import fgo.action.BlessedScionAction;
 import fgo.cards.FGOCard;
 import fgo.patches.Enum.FGOCardColor;
-import fgo.util.CardStats;
+import fgo.utils.CardStats;
 
 public class BlessedScion extends FGOCard {
     public static final String ID = makeID(BlessedScion.class.getSimpleName());

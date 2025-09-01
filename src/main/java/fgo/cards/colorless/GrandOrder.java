@@ -1,16 +1,17 @@
 package fgo.cards.colorless;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import fgo.cards.FGOCard;
-import fgo.util.CardStats;
 
-import java.util.ArrayList;
-import java.util.Iterator;
+import fgo.cards.FGOCard;
+import fgo.utils.CardStats;
 
 public class GrandOrder extends FGOCard {
     public static final String ID = makeID(GrandOrder.class.getSimpleName());

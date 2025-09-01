@@ -4,11 +4,12 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
 import fgo.cards.FGOCard;
 import fgo.powers.ArchetypeORTPower;
 import fgo.powers.EternalMemoriesPower;
 import fgo.powers.InvincibilityPower;
-import fgo.util.CardStats;
+import fgo.utils.CardStats;
 
 public class PureCoordinate extends FGOCard {
     public static final String ID = makeID(PureCoordinate.class.getSimpleName());

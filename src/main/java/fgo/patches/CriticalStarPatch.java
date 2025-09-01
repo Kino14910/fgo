@@ -1,17 +1,22 @@
 package fgo.patches;
 
-import com.evacipated.cardcrawl.modthespire.lib.*;
+import static fgo.utils.GeneralUtils.addToBot;
+
+import com.evacipated.cardcrawl.modthespire.lib.LineFinder;
+import com.evacipated.cardcrawl.modthespire.lib.Matcher;
+import com.evacipated.cardcrawl.modthespire.lib.SpireInsertLocator;
+import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
+import com.evacipated.cardcrawl.modthespire.lib.SpirePostfixPatch;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
 import fgo.characters.Master;
 import fgo.powers.StarPower;
 import fgo.powers.StarRatePower;
 import javassist.CtBehavior;
-
-import static fgo.util.GeneralUtils.addToBot;
 
 @SpirePatch(
     clz = AbstractMonster.class,

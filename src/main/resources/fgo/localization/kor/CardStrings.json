@@ -228,7 +228,7 @@
   },
   "${modID}:HeroicKing": {
     "NAME": "십이휘검",
-    "DESCRIPTION": "적 무작위에게 !D! 피해를 !M! 회 줍니다. 전투 중 HP를 잃을 때마다, 버린 카드 더미에서 핸드로 돌아와 1중 왕위를 얻습니다.",
+    "DESCRIPTION": "적 무작위에게 !D! 피해를 !M! 회 줍니다. NL  전투 중 HP를 잃을 때마다, 버린 카드 더미에서 핸드로 돌아와 1중 왕위를 얻습니다.",
     "EXTENDED_DESCRIPTION": [
       "모든 적에게 !D! 피해를 !M! 회 주고, !M! 중 받는 피해 증가를 부여합니다."
     ]
@@ -696,7 +696,7 @@
   },
   "${modID}:Summer": {
     "NAME": "여름",
-    "DESCRIPTION": "fgo:수변 획득. NL !NP!% 보구 게이지 획득."
+    "DESCRIPTION": "{@@}fgo:수변 획득.{!Upgrades!|= NL !NP!% 보구 게이지 획득.}"
   },
   "${modID}:EnumaElish": {
     "NAME": "천지개리하는 개벽의 별",

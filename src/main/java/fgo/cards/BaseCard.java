@@ -1,8 +1,12 @@
 package fgo.cards;
 
-import basemod.BaseMod;
-import basemod.abstracts.CustomCard;
-import basemod.abstracts.DynamicVariable;
+import static fgo.utils.GeneralUtils.removePrefix;
+import static fgo.utils.TextureLoader.getCardTextureString;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -10,16 +14,13 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
+import basemod.BaseMod;
+import basemod.abstracts.CustomCard;
+import basemod.abstracts.DynamicVariable;
 import fgo.FGOMod;
-import fgo.util.CardStats;
-import fgo.util.TriFunction;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-
-import static fgo.util.GeneralUtils.removePrefix;
-import static fgo.util.TextureLoader.getCardTextureString;
+import fgo.utils.CardStats;
+import fgo.utils.TriFunction;
 
 public abstract class BaseCard extends CustomCard {
     final private static Map<String, DynamicVariable> customVars = new HashMap<>();

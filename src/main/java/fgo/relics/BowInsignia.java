@@ -1,9 +1,8 @@
 package fgo.relics;
 
-import com.megacrit.cardcrawl.relics.AbstractRelic;
-import fgo.patches.Enum.FGOCardColor;
-
 import static fgo.FGOMod.makeID;
+
+import fgo.patches.Enum.FGOCardColor;
 
 public class BowInsignia extends BaseRelic {
     private static final String NAME = "BowInsignia";
@@ -15,10 +14,5 @@ public class BowInsignia extends BaseRelic {
     @Override
     public String getUpdatedDescription() {
         return this.DESCRIPTIONS[0];
-    }
-
-    @Override
-    public AbstractRelic makeCopy() {
-        return new BowInsignia();
     }
 }

@@ -1,8 +1,23 @@
 package fgo;
 
-import basemod.AutoAdd;
-import basemod.BaseMod;
-import basemod.interfaces.*;
+import static fgo.characters.Master.fgoNp;
+import static fgo.patches.Enum.ThmodClassEnum.MASTER_CLASS;
+import static fgo.utils.GeneralUtils.addToBot;
+
+import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
+import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Optional;
+import java.util.Set;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.scannotation.AnnotationDB;
+
 import com.badlogic.gdx.Files;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.backends.lwjgl.LwjglFileHandle;
@@ -27,16 +42,44 @@ import com.megacrit.cardcrawl.dungeons.TheBeyond;
 import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.RelicLibrary;
-import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.localization.CardStrings;
+import com.megacrit.cardcrawl.localization.CharacterStrings;
+import com.megacrit.cardcrawl.localization.EventStrings;
+import com.megacrit.cardcrawl.localization.MonsterStrings;
+import com.megacrit.cardcrawl.localization.OrbStrings;
+import com.megacrit.cardcrawl.localization.PotionStrings;
+import com.megacrit.cardcrawl.localization.PowerStrings;
+import com.megacrit.cardcrawl.localization.RelicStrings;
+import com.megacrit.cardcrawl.localization.TutorialStrings;
+import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
+
+import basemod.AutoAdd;
+import basemod.BaseMod;
+import basemod.interfaces.AddAudioSubscriber;
+import basemod.interfaces.EditCardsSubscriber;
+import basemod.interfaces.EditCharactersSubscriber;
+import basemod.interfaces.EditKeywordsSubscriber;
+import basemod.interfaces.EditRelicsSubscriber;
+import basemod.interfaces.EditStringsSubscriber;
+import basemod.interfaces.OnCardUseSubscriber;
+import basemod.interfaces.OnPlayerDamagedSubscriber;
+import basemod.interfaces.OnStartBattleSubscriber;
+import basemod.interfaces.PostBattleSubscriber;
+import basemod.interfaces.PostCreateStartingDeckSubscriber;
+import basemod.interfaces.PostInitializeSubscriber;
+import basemod.interfaces.StartGameSubscriber;
 import fgo.action.FgoNpAction;
 import fgo.cards.BaseCard;
 import fgo.characters.Master;
-import fgo.event.*;
+import fgo.event.Beyondthe;
+import fgo.event.DevilSlot;
+import fgo.event.ManofChaldea;
+import fgo.event.ProofAndRebuttalEvent;
 import fgo.monster.Emiya;
 import fgo.panel.CommandSpellPanel;
 import fgo.panel.FGOConfig;
@@ -50,19 +93,12 @@ import fgo.powers.NPRatePower;
 import fgo.relics.BaseRelic;
 import fgo.relics.LockChocolateStrawberry;
 import fgo.relics.SuitcaseFgo;
-import fgo.util.*;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import org.scannotation.AnnotationDB;
-
-import java.lang.reflect.Field;
-import java.lang.reflect.Modifier;
-import java.nio.charset.StandardCharsets;
-import java.util.*;
-
-import static fgo.characters.Master.fgoNp;
-import static fgo.patches.Enum.ThmodClassEnum.MASTER_CLASS;
-import static fgo.util.GeneralUtils.addToBot;
+import fgo.utils.CriticalStarVariable;
+import fgo.utils.GeneralUtils;
+import fgo.utils.KeywordInfo;
+import fgo.utils.NoblePhantasmVariable;
+import fgo.utils.Sounds;
+import fgo.utils.TextureLoader;
 
 @SpireInitializer
 public class FGOMod implements
@@ -322,6 +358,9 @@ public class FGOMod implements
     public static String characterPath(String file) {
         return resourcesFolder + "/images/character/" + file;
     }
+    public static String monsterPath(String file) {
+        return resourcesFolder + "/images/monsters/" + file;
+    }
     public static String powerPath(String file) {
         return resourcesFolder + "/images/powers/" + file;
     }
@@ -520,12 +559,12 @@ public class FGOMod implements
     @Override
     public void receivePostCreateStartingDeck(AbstractPlayer.PlayerClass playerClass, CardGroup cardGroup) {
         CommandSpellPanel.reset();
-        NobleDeck.reset();
         NobleDeckCards.reset();
     }
 
     @Override
     public void receiveStartGame() {
+        NobleDeck.reset();
         NobleDeck.addCards(NobleDeckCards.cards); 
     }
 }
