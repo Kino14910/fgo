@@ -1,6 +1,9 @@
 package fgo.powers;
 
+import static fgo.FGOMod.makeID;
+
 import com.evacipated.cardcrawl.mod.stslib.powers.StunMonsterPower;
+import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.NonStackablePower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -8,9 +11,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import static fgo.FGOMod.makeID;
-
-public class DesterrennachtPower extends BasePower {
+public class DesterrennachtPower extends BasePower implements NonStackablePower{
     public static final String POWER_ID = makeID(DesterrennachtPower.class.getSimpleName());
     private static final PowerType TYPE = PowerType.DEBUFF;
     private static final boolean TURN_BASED = true;

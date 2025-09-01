@@ -24,12 +24,17 @@ import fgo.utils.NobleCardGroup;
 public class NobleDeckViewScreen extends CustomScreen implements ScrollBarListener {
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(makeID(NobleDeckViewScreen.class.getSimpleName()));
     public static final String[] TEXT = NobleDeckViewScreen.uiStrings.TEXT;
-    private static final String HEADER_INFO = TEXT[0];
+    private static final String HEADER_INFO;
     public static class Enum {
         @SpireEnum
         public static AbstractDungeon.CurrentScreen Noble_Phantasm;
     }
 
+    static {
+        drawStartY = (float)Settings.HEIGHT * 0.66f;
+        SCROLL_BAR_THRESHOLD = 500.0f * Settings.scale;
+        HEADER_INFO = TEXT[0];
+    }
     @Override
     public AbstractDungeon.CurrentScreen curScreen() {
         return Enum.Noble_Phantasm;
@@ -40,7 +45,7 @@ public class NobleDeckViewScreen extends CustomScreen implements ScrollBarListen
     private static float drawStartY;
     private static float padX;
     private static float padY;
-    private static final float SCROLL_BAR_THRESHOLD = 500.0f * Settings.scale;
+    private static final float SCROLL_BAR_THRESHOLD;
     private static final int CARDS_PER_LINE = 5;
 
     // 交互相关字段
@@ -155,22 +160,25 @@ public class NobleDeckViewScreen extends CustomScreen implements ScrollBarListen
         }
         
         if (this.nobleCards != null) {
-            if (this.hoveredCard == null) {
-                this.nobleCards.render(sb);
-            } else {
-                // 渲染除悬停卡牌外的所有卡牌
-                for (AbstractCard card : this.nobleCards.group) {
-                    if (card != this.hoveredCard) {
-                        card.render(sb);
-                    }
-                }
-                
-                // 渲染悬停卡牌的阴影和卡牌本身
-                this.hoveredCard.renderHoverShadow(sb);
-                this.hoveredCard.render(sb);
-                FontHelper.renderDeckViewTip(sb, HEADER_INFO, 96.0f * Settings.scale, Settings.CREAM_COLOR);
-            }
+            return;
         }
+
+        if (this.hoveredCard == null) {
+            this.nobleCards.render(sb);
+        } else {
+            // 渲染除悬停卡牌外的所有卡牌
+            for (AbstractCard card : this.nobleCards.group) {
+                if (card != this.hoveredCard) {
+                    card.render(sb);
+                }
+            }
+            
+            // 渲染悬停卡牌的阴影和卡牌本身
+            this.hoveredCard.renderHoverShadow(sb);
+            this.hoveredCard.render(sb);
+        }
+        this.nobleCards.renderTip(sb);
+            FontHelper.renderDeckViewTip(sb, HEADER_INFO, 96.0f * Settings.scale, Settings.CREAM_COLOR);
     }
 
     @Override
@@ -200,15 +208,17 @@ public class NobleDeckViewScreen extends CustomScreen implements ScrollBarListen
 
     // 辅助方法
     private void calculateScrollBounds() {
-        if (this.nobleCards != null && this.nobleCards.size() > 10) {
-            int scrollTmp = this.nobleCards.size() / CARDS_PER_LINE - 2;
-            if (this.nobleCards.size() % CARDS_PER_LINE != 0) {
-                ++scrollTmp;
-            }
-            this.scrollUpperBound = Settings.DEFAULT_SCROLL_LIMIT + (float)scrollTmp * padY;
-        } else {
+        if (this.nobleCards == null || this.nobleCards.size() <= 10) {
             this.scrollUpperBound = Settings.DEFAULT_SCROLL_LIMIT;
+            return;
         }
+        
+        int scrollTmp = this.nobleCards.size() / CARDS_PER_LINE - 2;
+        if (this.nobleCards.size() % CARDS_PER_LINE != 0) {
+            ++scrollTmp;
+        }
+        this.scrollUpperBound = Settings.DEFAULT_SCROLL_LIMIT + (float)scrollTmp * padY;
+
     }
 
     private void hideCards() {
@@ -275,18 +285,18 @@ public class NobleDeckViewScreen extends CustomScreen implements ScrollBarListen
     }
 
     private void updateClicking() {
-        if (this.hoveredCard != null) {
-            if (InputHelper.justClickedLeft) {
-                this.clickStartedCard = this.hoveredCard;
-            }
-            
-            if ((InputHelper.justReleasedClickLeft && this.hoveredCard == this.clickStartedCard)) {
-                InputHelper.justReleasedClickLeft = false;
-                // 处理卡牌点击，例如打开卡牌详情弹窗
-                CardCrawlGame.cardPopup.open(this.hoveredCard, this.nobleCards);
-                this.clickStartedCard = null;
-            }
-        } else {
+        if (this.hoveredCard == null) {
+            this.clickStartedCard = null;
+            return;
+        }
+        if (InputHelper.justClickedLeft) {
+            this.clickStartedCard = this.hoveredCard;
+        }
+        
+        if ((InputHelper.justReleasedClickLeft && this.hoveredCard == this.clickStartedCard)) {
+            InputHelper.justReleasedClickLeft = false;
+            // 处理卡牌点击，例如打开卡牌详情弹窗
+            CardCrawlGame.cardPopup.open(this.hoveredCard, this.nobleCards);
             this.clickStartedCard = null;
         }
     }

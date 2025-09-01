@@ -1,5 +1,6 @@
 package fgo.cards;
 
+import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.CommonKeywordIconsField;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 
 import fgo.FGOMod;
@@ -36,21 +37,25 @@ public abstract class FGOCard extends BaseCard {
     public FGOCard(String ID, CardStats INFO) {
         super(ID, INFO);
         initValues();
+        CommonKeywordIconsField.useIcons.set(this, true);
     }
 
     public FGOCard(String ID, CardStats INFO, String img) {
         super(ID, INFO, img);
         initValues();
+        CommonKeywordIconsField.useIcons.set(this, true);
     }
 
     public FGOCard(String ID, int cost, AbstractCard.CardType cardType, AbstractCard.CardTarget target, AbstractCard.CardRarity rarity, AbstractCard.CardColor color) {
         super(ID, cost, cardType, target, rarity, color);
         initValues();
+        CommonKeywordIconsField.useIcons.set(this, true);
     }
 
     public FGOCard(String ID, int cost, AbstractCard.CardType cardType, AbstractCard.CardTarget target, AbstractCard.CardRarity rarity, AbstractCard.CardColor color, String img) {
         super(ID, cost, cardType, target, rarity, color, img);
         initValues();
+        CommonKeywordIconsField.useIcons.set(this, true);
     }
 
     protected final void setNP(int np) { setNP(np, 0); }

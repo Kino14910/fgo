@@ -245,6 +245,7 @@ public class Master extends CustomPlayer{
         FgoNpWidth = hb.width * (fgoNp - base) / 100.0F;
     }
 
+    @Override
     public void renderHealth(SpriteBatch sb) {
         super.renderHealth(sb);
         float x = hb.x;

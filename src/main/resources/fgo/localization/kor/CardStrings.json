@@ -515,7 +515,7 @@
   },
   "${modID}:GrandOrder": {
     "NAME": "그랜드 오더",
-    "DESCRIPTION": "비보스 적을 전멸시킵니다. NL 덱에서 영구 제외합니다. NL 소멸됩니다."
+    "DESCRIPTION": "비보스 적을 전멸시킵니다. NL stslib:일회성 ."
   },
   "${modID}:Kaleidoscope": {
     "NAME": "만화경",

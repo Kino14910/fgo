@@ -33,7 +33,7 @@ public class HeroicKing extends FGOCard {
             /*if (p.hasPower(HeroicKingPower.POWER_ID) && p.getPower(HeroicKingPower.POWER_ID).amount >= 12) {
                 addToBot(new SFXAction("ATTACK_HEAVY"));
                 addToBot(new VFXAction(p, new CleaveEffect(), 0.1F));
-                addToBot(new DamageAllEnemiesAction(p, multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.NONE, true));
+                addToBot(new DamageAllEnemiesAction(p, damage, damageTypeForTurn, AbstractGameAction.AttackEffect.NONE, true));
             } else {*/
                 /*addToBot(new SFXAction("ATTACK_HEAVY"));
                 addToBot(new VFXAction(AbstractDungeon.player, new CleaveEffect(), 0.1F));*/

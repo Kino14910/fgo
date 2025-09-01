@@ -36,7 +36,7 @@ public class KurKigalIrkalla extends AbsNoblePhantasmCard {
                 addToBot(new LoseHPAction(mo, p, mo.maxHealth / 10));
             }
         }
-        addToBot(new DamageAllEnemiesAction(p, multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+        addToBot(new DamageAllEnemiesAction(p, damage, damageTypeForTurn, AbstractGameAction.AttackEffect.BLUNT_HEAVY));
     }
 
     @Override

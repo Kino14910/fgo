@@ -1,11 +1,10 @@
 package fgo.cards.colorless;
 
-import java.util.ArrayList;
 import java.util.Iterator;
 
+import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.FleetingField;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -19,17 +18,14 @@ public class GrandOrder extends FGOCard {
             CardColor.COLORLESS,
             CardType.ATTACK,
             CardRarity.RARE,
-            CardTarget.ENEMY,
+            CardTarget.ALL_ENEMY,
             1
     );
     public GrandOrder() {
         super(ID, INFO);
         setDamage(9999);
-        setExhaust();
-    }
-
-    @Override
-    public void upgrade() {
+        setCostUpgrade(0);
+        FleetingField.fleeting.set(this, true);
     }
 
     @Override
@@ -42,17 +38,8 @@ public class GrandOrder extends FGOCard {
 
             m = var1.next();
         } while(m.type == AbstractMonster.EnemyType.BOSS);
-        this.addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
-
-        ArrayList<AbstractCard> removeList = new ArrayList<>();
-        for (AbstractCard c : AbstractDungeon.player.masterDeck.group) {
-            if (c instanceof GrandOrder) {
-                removeList.add(c);
-                break;
-            }
-        }
-        AbstractDungeon.actionManager.cardsPlayedThisCombat.removeIf(c -> c instanceof GrandOrder);
-        AbstractDungeon.player.masterDeck.group.removeIf(removeList::contains);
+        this.addToBot(new DamageAllEnemiesAction(p, this.damage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.SLASH_HEAVY));
+        // addToBot(new DamageAction(m, new DamageInfo(m, damage)));
     }
 
 }

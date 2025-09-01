@@ -565,6 +565,6 @@ public class FGOMod implements
     @Override
     public void receiveStartGame() {
         NobleDeck.reset();
-        NobleDeck.addCards(NobleDeckCards.cards); 
+        NobleDeck.addCards(NobleDeckCards.cards);
     }
 }

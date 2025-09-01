@@ -23,6 +23,7 @@ public class CurtainoftheNightAction extends AbstractGameAction {
         this.upgraded = upgraded;
     }
 
+    @Override
     public void update() {
         if (this.duration == this.startDuration) {
             if (this.player.discardPile.isEmpty() || this.numberOfCards <= 0) {

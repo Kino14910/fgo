@@ -41,7 +41,7 @@ public class LastSunXibalba extends AbsNoblePhantasmCard {
         }
 
         for(int i = 0; i < 5; ++i) {
-            addToBot(new DamageAllEnemiesAction(p, multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+            addToBot(new DamageAllEnemiesAction(p, damage, damageTypeForTurn, AbstractGameAction.AttackEffect.BLUNT_HEAVY));
         }
 
         /*for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {

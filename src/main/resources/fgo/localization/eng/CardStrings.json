@@ -515,7 +515,7 @@
   },
   "${modID}:GrandOrder": {
     "NAME": "Grand Order",
-    "DESCRIPTION": "Die ALL non-boss enemies. NL Remove this card from your deck. NL Exhaust."
+    "DESCRIPTION": "Die ALL non-boss enemies. NL stslib:fleeting."
   },
   "${modID}:Kaleidoscope": {
     "NAME": "Kaleidoscope",

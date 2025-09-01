@@ -515,7 +515,7 @@
   },
   "${modID}:GrandOrder": {
     "NAME": "命运指定",
-    "DESCRIPTION": "所有非boss敌人死亡。 NL 从牌组永久移除。 NL 消耗 。"
+    "DESCRIPTION": "所有非boss敌人死亡。 NL stslib:即逝 。"
   },
   "${modID}:Kaleidoscope": {
     "NAME": "万华镜",
