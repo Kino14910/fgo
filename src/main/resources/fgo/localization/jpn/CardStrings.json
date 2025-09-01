@@ -696,7 +696,7 @@
   },
   "${modID}:Summer": {
     "NAME": "夏",
-    "DESCRIPTION": "{@@}fgo:水辺 獲得。{!Upgrades!|= NL !NP!% 宝具ゲージ獲得。}"
+    "DESCRIPTION": "{@@}fgo:水辺 獲得。{!Upgrades!|=1 NL !NP!% 宝具ゲージ獲得。}"
   },
   "${modID}:EnumaElish": {
     "NAME": "天地乖離す開闢の星",

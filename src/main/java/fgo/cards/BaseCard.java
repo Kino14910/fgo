@@ -681,6 +681,7 @@ public abstract class BaseCard extends CustomCard {
             return c instanceof BaseCard && ((BaseCard) c).customVarUpgraded(localKey);
         }
 
+        @Override
         public Color getNormalColor() {
             LocalVarInfo var;
             if (current == null || (var = current.getCustomVar(localKey)) == null)
@@ -689,6 +690,7 @@ public abstract class BaseCard extends CustomCard {
             return var.normalColor;
         }
 
+        @Override
         public Color getUpgradedColor() {
             LocalVarInfo var;
             if (current == null || (var = current.getCustomVar(localKey)) == null)
@@ -697,6 +699,7 @@ public abstract class BaseCard extends CustomCard {
             return var.upgradedColor;
         }
 
+        @Override
         public Color getIncreasedValueColor() {
             LocalVarInfo var;
             if (current == null || (var = current.getCustomVar(localKey)) == null)
@@ -705,6 +708,7 @@ public abstract class BaseCard extends CustomCard {
             return var.increasedColor;
         }
 
+        @Override
         public Color getDecreasedValueColor() {
             LocalVarInfo var;
             if (current == null || (var = current.getCustomVar(localKey)) == null)

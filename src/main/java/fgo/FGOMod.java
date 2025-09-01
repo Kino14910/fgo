@@ -80,7 +80,7 @@ import fgo.event.Beyondthe;
 import fgo.event.DevilSlot;
 import fgo.event.ManofChaldea;
 import fgo.event.ProofAndRebuttalEvent;
-import fgo.monster.Emiya;
+import fgo.monsters.Emiya;
 import fgo.panel.CommandSpellPanel;
 import fgo.panel.FGOConfig;
 import fgo.panel.NobleDeck;

@@ -56,6 +56,7 @@ public abstract class FateMagineerCard extends FGOCard implements CustomCardPort
         decoRenderLayersInitialized = true;
     }
 
+    @Override
     public ArrayList<RenderLayer> getPortraitLayers512() {
         portraitLayers512.clear();
         addCardArtLayers512(portraitLayers512);
@@ -79,6 +80,7 @@ public abstract class FateMagineerCard extends FGOCard implements CustomCardPort
         return portraitLayers512;
     }
 
+    @Override
     public ArrayList<RenderLayer> getPortraitLayers1024() {
         portraitLayers1024.clear();
         addCardArtLayers1024(portraitLayers1024);
@@ -102,6 +104,7 @@ public abstract class FateMagineerCard extends FGOCard implements CustomCardPort
         return portraitLayers1024;
     }
 
+    @Override
     public FloatPair getCardTypeLocation(FloatPair pair, boolean isBigCard) {
         pair.y += isBigCard ? 432f : 224f;
         return pair;

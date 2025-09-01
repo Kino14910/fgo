@@ -1,4 +1,4 @@
-package fgo.monster;
+package fgo.monsters;
 
 import static fgo.FGOMod.makeID;
 
@@ -16,13 +16,13 @@ import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.FrailPower;
 import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
@@ -35,13 +35,14 @@ import fgo.cards.noblecards.Unlimited;
 import fgo.characters.Master;
 import fgo.powers.CriticalDamageUpPower;
 import fgo.powers.monster.StarGainMonsterPower;
+import fgo.utils.ModHelper;
 import fgo.utils.Sounds;
 
-public class Emiya extends AbstractMonster {
+public class Emiya extends BaseMonster {
     public static final String ID = makeID(Emiya.class.getSimpleName());
     public static final String IMG = FGOMod.monsterPath("emiya.png");
     public static final String IMG2 = FGOMod.monsterPath("emiya_Ver2_Stage3.png");
-    private static final MonsterStrings monsterStrings = CardCrawlGame.languagePack.getMonsterStrings("fgo:Emiya");
+    private static final MonsterStrings monsterStrings = CardCrawlGame.languagePack.getMonsterStrings(ID);
     public static final String NAME = monsterStrings.NAME;
     public static final String[] MOVES = monsterStrings.MOVES;
     public static final String[] DIALOG = monsterStrings.DIALOG;
@@ -53,14 +54,6 @@ public class Emiya extends AbstractMonster {
     private static final byte PROJECTION = 5;
     private static final byte MIND_EYE = 6;
     private static final byte MAGE_CRAFT = 8;
-    
-    // Damage values
-    private static final int SLASH_DMG = 16;
-    private static final int A4_SLASH_DMG = 20;
-    private static final int MULTI_SLASH_DMG = 10;
-    private static final int A4_MULTI_SLASH_DMG = 12;
-    private static final int PROJECTION_DMG = 1;
-    private static final int A4_PROJECTION_DMG = 2;
     
     // Other values
     private static final int HIT_NUM = 2;
@@ -86,42 +79,33 @@ public class Emiya extends AbstractMonster {
     }
     
     public Emiya(float x, float y) {
+        // Pass raw id to BaseMonster (it will call FGOMod.makeID internally)
         super(NAME, ID, BASE_HP, 0.0F, 0.0F, 320.0F, 320.0F, IMG, x, y);
         setHp(AbstractDungeon.ascensionLevel < 9 ? BASE_HP : A9_HP);
 
-        int slashDmg;
-        int multiSlashDmg;
-        int projectionDmg;
-
-        if (AbstractDungeon.ascensionLevel < 4) {
-            slashDmg = SLASH_DMG;
-            multiSlashDmg = MULTI_SLASH_DMG;
-            projectionDmg = PROJECTION_DMG;
+        if (ModHelper.moreDamageAscension(type)) {
+            setDamages(16, 10, 1);
         } else {
-            slashDmg = A4_SLASH_DMG;
-            multiSlashDmg = A4_MULTI_SLASH_DMG;
-            projectionDmg = A4_PROJECTION_DMG;
+            setDamages(20, 12, 2);
         }
-        
-        this.damage.add(new DamageInfo(this, slashDmg));
-        this.damage.add(new DamageInfo(this, multiSlashDmg));
-        this.damage.add(new DamageInfo(this, projectionDmg));
     }
 
+    @Override
     public void usePreBattleAction() {
-        // 可以添加一些战斗前的动作
     }
 
+    
+    @Override
     public void takeTurn() {
+        AbstractPlayer p = AbstractDungeon.player;
         switch (nextMove) {
             case SLASH:
-                addToBot(new DamageAction(AbstractDungeon.player, damage.get(0), AbstractGameAction.AttackEffect.SMASH));
+                addToBot(new DamageAction(p, damage.get(0), AbstractGameAction.AttackEffect.SMASH));
                 break;
             case MULTI_SLASH:
-                // addToBot(new SFXAction("S011_Attack6"));
                 addToBot(new SFXAction(Sounds.S011_Attack6));
                 for(int i = 0; i < HIT_NUM; ++i) {
-                    addToBot(new DamageAction(AbstractDungeon.player, damage.get(1), AbstractGameAction.AttackEffect.SLASH_HEAVY));
+                    addToBot(new DamageAction(p, damage.get(1), AbstractGameAction.AttackEffect.SLASH_HEAVY));
                 }
                 addToBot(new ApplyPowerAction(this, this, new StrengthPower(this, 
                     AbstractDungeon.ascensionLevel >= 19 ? A19_STR_AMT : BASE_STR_AMT)));
@@ -130,8 +114,6 @@ public class Emiya extends AbstractMonster {
                 CardCrawlGame.music.silenceTempBgmInstantly();
                 CardCrawlGame.music.silenceBGMInstantly();
                 addToBot(new SFXAction(Sounds.UBW_Incantation));
-                // addToBot(new WaitFgoAction(1.0F));
-                // addToBot(new WaitAction(1.0F));
                 addToBot(new HealAction(this, this, 
                     AbstractDungeon.ascensionLevel >= 9 ? A9_REBIRTH_HP : REBIRTH_HP));
                 form1 = false;
@@ -149,7 +131,7 @@ public class Emiya extends AbstractMonster {
                 addToBot(new SFXAction(Sounds.S011_Skill1));
                 addToBot(new WaitAction(0.25F));
                 for (int i = 0; i < PROJECTION_ATK_AMT; i++) {
-                    addToBot(new DamageAction(AbstractDungeon.player, damage.get(2), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+                    addToBot(new DamageAction(p, damage.get(2), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
                     addToBot(new MakeTempCardInDiscardAction(AbstractDungeon.returnTrulyRandomCardInCombat(AbstractCard.CardType.ATTACK).makeCopy(), SWORD_AMT));
                 }
                 addToBot(new ApplyPowerAction(this, this, new IntangiblePlayerPower(this, 1), 1));
@@ -169,13 +151,14 @@ public class Emiya extends AbstractMonster {
                 addToBot(new TalkAction(this, DIALOG[2], 2.5F, 2.5F));
                 addToBot(new SFXAction(Sounds.S011_Skill3));
                 addToBot(new WaitAction(0.25F));
-                addToBot(new ApplyPowerAction(AbstractDungeon.player, this, new FrailPower(AbstractDungeon.player, 99, true), 99));
+                addToBot(new ApplyPowerAction(p, this, new FrailPower(p, 99, true), 99));
                 break;
         }
 
         addToBot(new RollMoveAction(this));
     }
 
+    @Override
     protected void getMove(int num) {
         if (form1) {
             // 第一阶段逻辑
@@ -240,6 +223,7 @@ public class Emiya extends AbstractMonster {
         }
     }
 
+    @Override
     public void die() {
         // 只有在第二阶段死亡才会真正死亡
         if (!form1) {
@@ -248,6 +232,7 @@ public class Emiya extends AbstractMonster {
                 AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new Unlimited(), 
                     (float)Settings.WIDTH / 2.0F + 190.0F * Settings.scale, (float)Settings.HEIGHT / 2.0F));
             }
+            onBossVictoryLogic();
         }
     }
 }

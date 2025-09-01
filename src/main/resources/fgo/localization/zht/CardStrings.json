@@ -696,7 +696,7 @@
   },
   "${modID}:Summer": {
     "NAME": "夏日",
-    "DESCRIPTION": "{@@}獲得 fgo:水邊 。{!Upgrades!|= NL 獲得 !NP!% fgo:NP.}"
+    "DESCRIPTION": "{@@}獲得 fgo:水邊 。{!Upgrades!|=1 NL 獲得 !NP!% fgo:NP.}"
   },
   "${modID}:EnumaElish": {
     "NAME": "天地乖離開闢之星",
