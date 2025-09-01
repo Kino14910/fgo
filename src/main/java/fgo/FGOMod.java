@@ -43,7 +43,6 @@ import fgo.panel.FGOConfig;
 import fgo.panel.NobleDeck;
 import fgo.panel.NobleDeckCards;
 import fgo.panel.NobleDeckViewScreen;
-import fgo.patches.Enum.CardTagsEnum;
 import fgo.patches.Enum.FGOCardColor;
 import fgo.potions.BasePotion;
 import fgo.powers.ArtsPerformancePower;

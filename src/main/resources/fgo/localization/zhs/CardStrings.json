@@ -117,7 +117,7 @@
   },
   "${modID}:MaidenOfaFlowerPatio": {
     "NAME": "花园少女",
-    "DESCRIPTION": "获得 !B! 点 格挡 2次。 NL 获得 !M! 层 fgo:诅呪 。",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 获得 !M! 层 fgo:诅呪 。",
     "FLAVOR": "测试画风可以更改。"
   },
   "${modID}:ItsInevitable": {

@@ -117,7 +117,7 @@
   },
   "${modID}:MaidenOfaFlowerPatio": {
     "NAME": "花園少女",
-    "DESCRIPTION": "獲得 !B! 點 格擋 2次。 NL 獲得 !M! 層 fgo:詛呪 。",
+    "DESCRIPTION": "獲得 !B! 點 格擋 。 NL 獲得 !M! 層 fgo:詛呪 。",
     "FLAVOR": "測試畫風可以更改。"
   },
   "${modID}:ItsInevitable": {

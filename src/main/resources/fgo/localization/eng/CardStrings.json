@@ -117,7 +117,7 @@
   },
   "${modID}:MaidenOfaFlowerPatio": {
     "NAME": "Maiden of Flower",
-    "DESCRIPTION": "Gain !B! Block 2 times. NL Gain !M! fgo:Evil_Curse.",
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! fgo:Evil_Curse.",
     "FLAVOR": "Test art can be changed."
   },
   "${modID}:ItsInevitable": {

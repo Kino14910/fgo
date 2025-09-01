@@ -18,8 +18,8 @@ public class GardenOfAvalon extends AbsNoblePhantasmCard {
     public GardenOfAvalon() {
         super(ID,CardType.POWER, CardTarget.SELF);
         setBlock(3, 3);
-        setStar(5, 10);
         setNP(5);
+        setStar(5, 10);
 
         cardArtLayers512.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH)));
         cardArtLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH_P)));

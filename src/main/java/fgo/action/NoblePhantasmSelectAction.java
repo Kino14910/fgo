@@ -13,7 +13,6 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import fgo.cards.noblecards.HollowHeartAlbion;
 import fgo.panel.NobleDeck;
 import fgo.powers.NoblePhantasmCardPower;
-import fgo.patches.Enum.CardTagsEnum;
 
 public class NoblePhantasmSelectAction extends AbstractGameAction {
     private static final String[] NPTEXT = CardCrawlGame.languagePack.getUIString("fgo:NPText").TEXT;

@@ -43,57 +43,73 @@ public class NobleDeck extends TopPanelItem {
             return;
         }
 
-        if (AbstractDungeon.screen == AbstractDungeon.CurrentScreen.COMBAT_REWARD) {
-            AbstractDungeon.closeCurrentScreen();
+        if (!AbstractDungeon.isScreenUp) {
             BaseMod.openCustomScreen(NobleDeckViewScreen.Enum.Noble_Phantasm, nobleCards);
-            AbstractDungeon.previousScreen = AbstractDungeon.CurrentScreen.COMBAT_REWARD;
-        } else if (!AbstractDungeon.isScreenUp) {
-            BaseMod.openCustomScreen(NobleDeckViewScreen.Enum.Noble_Phantasm, nobleCards);
-        } else if (AbstractDungeon.screen == AbstractDungeon.CurrentScreen.DEATH) {
-            AbstractDungeon.previousScreen = AbstractDungeon.CurrentScreen.DEATH;
-            AbstractDungeon.deathScreen.hide();
-            BaseMod.openCustomScreen(NobleDeckViewScreen.Enum.Noble_Phantasm, nobleCards);
-        } else if (AbstractDungeon.screen == AbstractDungeon.CurrentScreen.BOSS_REWARD) {
-            AbstractDungeon.previousScreen = AbstractDungeon.CurrentScreen.BOSS_REWARD;
-            AbstractDungeon.bossRelicScreen.hide();
-            BaseMod.openCustomScreen(NobleDeckViewScreen.Enum.Noble_Phantasm, nobleCards);
-        } else if (AbstractDungeon.screen == AbstractDungeon.CurrentScreen.SHOP) {
-            AbstractDungeon.overlayMenu.cancelButton.hide();
-            AbstractDungeon.previousScreen = AbstractDungeon.CurrentScreen.SHOP;
-            BaseMod.openCustomScreen(NobleDeckViewScreen.Enum.Noble_Phantasm, nobleCards);
-        } else if (AbstractDungeon.screen == AbstractDungeon.CurrentScreen.MAP && !AbstractDungeon.dungeonMapScreen.dismissable) {
-            AbstractDungeon.previousScreen = AbstractDungeon.CurrentScreen.MAP;
-            BaseMod.openCustomScreen(NobleDeckViewScreen.Enum.Noble_Phantasm, nobleCards);
-        } else if (AbstractDungeon.screen == AbstractDungeon.CurrentScreen.SETTINGS || AbstractDungeon.screen == AbstractDungeon.CurrentScreen.MAP) {
-            if (AbstractDungeon.previousScreen != null) {
-                AbstractDungeon.screenSwap = true;
-            }
-            AbstractDungeon.closeCurrentScreen();
-            BaseMod.openCustomScreen(NobleDeckViewScreen.Enum.Noble_Phantasm, nobleCards);
-        } else if (AbstractDungeon.screen == AbstractDungeon.CurrentScreen.INPUT_SETTINGS) {
-            if (AbstractDungeon.previousScreen != null) {
-                AbstractDungeon.screenSwap = true;
-            }
-            AbstractDungeon.closeCurrentScreen();
-            BaseMod.openCustomScreen(NobleDeckViewScreen.Enum.Noble_Phantasm, nobleCards);
-        } else if (AbstractDungeon.screen == AbstractDungeon.CurrentScreen.CARD_REWARD) {
-            AbstractDungeon.previousScreen = AbstractDungeon.CurrentScreen.CARD_REWARD;
-            AbstractDungeon.dynamicBanner.hide();
-            BaseMod.openCustomScreen(NobleDeckViewScreen.Enum.Noble_Phantasm, nobleCards);
-        } else if (AbstractDungeon.screen == AbstractDungeon.CurrentScreen.GRID) {
-            AbstractDungeon.previousScreen = AbstractDungeon.CurrentScreen.GRID;
-            AbstractDungeon.gridSelectScreen.hide();
-            BaseMod.openCustomScreen(NobleDeckViewScreen.Enum.Noble_Phantasm, nobleCards);
-        } else if (AbstractDungeon.screen == AbstractDungeon.CurrentScreen.HAND_SELECT) {
-            AbstractDungeon.previousScreen = AbstractDungeon.CurrentScreen.HAND_SELECT;
-            BaseMod.openCustomScreen(NobleDeckViewScreen.Enum.Noble_Phantasm, nobleCards);
-        } else {
-            // 默认行为：关闭当前屏幕（如果有）再打开
-            if (AbstractDungeon.screen != AbstractDungeon.CurrentScreen.NONE) {
-                AbstractDungeon.closeCurrentScreen();
-            }
-            BaseMod.openCustomScreen(NobleDeckViewScreen.Enum.Noble_Phantasm, nobleCards);
+            return;
         }
+
+        switch (AbstractDungeon.screen) {
+            case COMBAT_REWARD:
+                AbstractDungeon.closeCurrentScreen();
+                AbstractDungeon.previousScreen = AbstractDungeon.CurrentScreen.COMBAT_REWARD;
+                break;
+            case DEATH:
+                AbstractDungeon.previousScreen = AbstractDungeon.CurrentScreen.DEATH;
+                AbstractDungeon.deathScreen.hide();
+                break;
+            case BOSS_REWARD:
+                AbstractDungeon.previousScreen = AbstractDungeon.CurrentScreen.BOSS_REWARD;
+                AbstractDungeon.bossRelicScreen.hide();
+                break;
+            case SHOP:
+                AbstractDungeon.overlayMenu.cancelButton.hide();
+                AbstractDungeon.previousScreen = AbstractDungeon.CurrentScreen.SHOP;
+                break;
+            case MAP:
+                if (!AbstractDungeon.dungeonMapScreen.dismissable) {
+                    AbstractDungeon.previousScreen = AbstractDungeon.CurrentScreen.MAP;
+
+                } else {
+                    if (AbstractDungeon.previousScreen != null) {
+                        AbstractDungeon.screenSwap = true;
+                    }
+                    AbstractDungeon.closeCurrentScreen();
+
+                }
+                break;
+            case SETTINGS:
+                if (AbstractDungeon.previousScreen != null) {
+                    AbstractDungeon.screenSwap = true;
+                }
+                AbstractDungeon.closeCurrentScreen();
+                break;
+            case INPUT_SETTINGS:
+                if (AbstractDungeon.previousScreen != null) {
+                    AbstractDungeon.screenSwap = true;
+                }
+                AbstractDungeon.closeCurrentScreen();
+                break;
+            case CARD_REWARD:
+                AbstractDungeon.previousScreen = AbstractDungeon.CurrentScreen.CARD_REWARD;
+                AbstractDungeon.dynamicBanner.hide();
+                break;
+            case GRID:
+                AbstractDungeon.previousScreen = AbstractDungeon.CurrentScreen.GRID;
+                AbstractDungeon.gridSelectScreen.hide();
+                break;
+            case HAND_SELECT:
+                AbstractDungeon.previousScreen = AbstractDungeon.CurrentScreen.HAND_SELECT;
+                break;
+            default:
+                // 默认行为：关闭当前屏幕（如果有）再打开
+                if (AbstractDungeon.screen != AbstractDungeon.CurrentScreen.NONE) {
+                    AbstractDungeon.closeCurrentScreen();
+                }
+                break;
+        }
+
+        BaseMod.openCustomScreen(NobleDeckViewScreen.Enum.Noble_Phantasm, nobleCards);
+
 
         // // 标记卡牌为已见
         // nobleCards.group.forEach(c -> UnlockTracker.markCardAsSeen(c.cardID));

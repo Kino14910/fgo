@@ -2,14 +2,9 @@ package fgo.cards.fgo;
 
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.stslib.patches.FlavorText;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.vfx.combat.ClawEffect;
 import fgo.cards.FGOCard;
 import fgo.patches.Enum.CardTagsEnum;
 import fgo.patches.Enum.FGOCardColor;
@@ -24,11 +19,12 @@ public class TheYellowHouse extends FGOCard {
             CardType.POWER,
             CardRarity.UNCOMMON,
             CardTarget.SELF,
-            1
+            2
     );
     public TheYellowHouse() {
         super(ID, INFO);
-        // shuffleBackIntoDrawPile = true;
+        setCostUpgrade(1);
+        shuffleBackIntoDrawPile = true;
         tags.add(CardTagsEnum.Foreigner);
 
         FlavorText.AbstractCardFlavorFields.textColor.set(this, Color.CHARTREUSE);

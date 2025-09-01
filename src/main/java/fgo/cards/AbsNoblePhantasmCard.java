@@ -13,9 +13,7 @@ public abstract class AbsNoblePhantasmCard extends FateMagineerCard {
     public AbsNoblePhantasmCard(String id, AbstractCard.CardType type, AbstractCard.CardTarget target) {
         super(id, -2, type, target, AbstractCard.CardRarity.SPECIAL, FGOCardColor.Noble_Phantasm);
         setSelfRetain();
-        if (type == AbstractCard.CardType.POWER) {
-            setExhaust();
-        }
+        setExhaust();
         tags.add(CardTagsEnum.Noble_Phantasm);
         FlavorText.AbstractCardFlavorFields.textColor.set(this, Color.CHARTREUSE);
         FlavorText.AbstractCardFlavorFields.flavorBoxType.set(this, FlavorText.boxType.TRADITIONAL);

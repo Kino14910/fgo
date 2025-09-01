@@ -117,7 +117,7 @@
   },
   "${modID}:MaidenOfaFlowerPatio": {
     "NAME": "화원의 소녀",
-    "DESCRIPTION": "!B! 방어도를 2회 얻습니다. NL !M! 중 저주를 얻습니다.",
+    "DESCRIPTION": "!B! 방어도를얻습니다. NL !M! 중 저주를 얻습니다.",
     "FLAVOR": "테스트용 아트는 변경 가능합니다."
   },
   "${modID}:ItsInevitable": {
