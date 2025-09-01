@@ -22,7 +22,7 @@ public class BeyondTheFurthestEnd extends FGOCard {
             CardType.POWER,
             CardRarity.UNCOMMON,
             CardTarget.ALL_ENEMY,
-            1
+            2
     );
     public BeyondTheFurthestEnd() {
         super(ID, INFO);
