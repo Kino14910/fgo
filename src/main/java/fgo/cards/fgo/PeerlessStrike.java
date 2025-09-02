@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.watcher.EndTurnDeathPower;
 
 import fgo.cards.FGOCard;
-import fgo.patches.Enum.FGOCardColor;
+import fgo.characters.CustomEnums.FGOCardColor;
 import fgo.powers.CriticalDamageUpPower;
 import fgo.utils.CardStats;
 

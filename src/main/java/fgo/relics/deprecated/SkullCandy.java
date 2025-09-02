@@ -4,7 +4,7 @@ import static fgo.FGOMod.makeID;
 
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
-import fgo.patches.Enum.FGOCardColor;
+import fgo.characters.CustomEnums.FGOCardColor;
 import fgo.relics.BaseRelic;
 
 public class SkullCandy extends BaseRelic {

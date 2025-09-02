@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.ReflectionHacks;
 import fgo.cards.FGOCard;
-import fgo.patches.Enum.FGOCardColor;
+import fgo.characters.CustomEnums.FGOCardColor;
 import fgo.powers.ReducePercentDamagePower;
 import fgo.utils.CardStats;
 

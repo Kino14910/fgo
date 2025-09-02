@@ -8,7 +8,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.FlameBarrierEffect;
 
 import fgo.cards.FGOCard;
-import fgo.patches.Enum.CardTagsEnum;
+import fgo.characters.CustomEnums.FGOCardColor;
+import static fgo.characters.CustomEnums.Foreigner;
 import fgo.powers.CursePower;
 import fgo.powers.StarPower;
 import fgo.utils.CardStats;
@@ -27,7 +28,7 @@ public class SoulOfWaterChannels extends FGOCard {
         setStar(10, 5);
         setExhaust();
         setSelfRetain();
-        this.tags.add(CardTagsEnum.Foreigner);
+        this.tags.add(Foreigner);
     }
 
     @Override

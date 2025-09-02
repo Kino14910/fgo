@@ -1,4 +1,4 @@
-package fgo.patches.Button;
+package fgo.patches;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpireField;
@@ -8,6 +8,8 @@ import com.megacrit.cardcrawl.core.OverlayMenu;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import fgo.characters.Master;
+import fgo.ui.buttons.CommandSpellButton;
+import fgo.ui.buttons.NoblePhantasmButton;
 
 public class OverlayMenuPatch {
     // 添加 CommandSpellButton 属性

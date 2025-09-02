@@ -5,7 +5,7 @@ import static fgo.FGOMod.makeID;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
-import fgo.patches.Enum.FGOCardColor;
+import fgo.characters.CustomEnums.FGOCardColor;
 import fgo.relics.BaseRelic;
 
 public class SaveStone extends BaseRelic {

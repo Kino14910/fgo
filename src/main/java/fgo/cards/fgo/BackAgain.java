@@ -10,8 +10,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import fgo.action.FgoNpAction;
 import fgo.cards.FGOCard;
-import fgo.patches.Enum.CardTagsEnum;
-import fgo.patches.Enum.FGOCardColor;
+import fgo.characters.CustomEnums.FGOCardColor;
+import static fgo.characters.CustomEnums.Foreigner;
 import fgo.powers.StarPower;
 import fgo.utils.CardStats;
 
@@ -29,7 +29,7 @@ public class BackAgain extends FGOCard {
         super(ID, INFO);
         setNP(20, 10);
         setStar(5, 10);
-        tags.add(CardTagsEnum.Foreigner);
+        tags.add(Foreigner);
 
         FlavorText.AbstractCardFlavorFields.textColor.set(this, Color.CHARTREUSE);
         FlavorText.AbstractCardFlavorFields.flavorBoxType.set(this, FlavorText.boxType.TRADITIONAL);

@@ -8,8 +8,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import fgo.action.VoidSpaceFineArtsAction;
 import fgo.cards.FGOCard;
-import fgo.patches.Enum.CardTagsEnum;
-import fgo.patches.Enum.FGOCardColor;
+import fgo.characters.CustomEnums.FGOCardColor;
+import static fgo.characters.CustomEnums.Foreigner;
 import fgo.powers.CursePower;
 import fgo.powers.GutsPower;
 import fgo.utils.CardStats;
@@ -27,7 +27,7 @@ public class VoidSpaceFineArts extends FGOCard {
         super(ID, INFO);
         setMagic(5, 5);
         tags.add(CardTags.HEALING);
-        tags.add(CardTagsEnum.Foreigner);
+        tags.add(Foreigner);
 
         FlavorText.AbstractCardFlavorFields.textColor.set(this, Color.CHARTREUSE);
         FlavorText.AbstractCardFlavorFields.flavorBoxType.set(this, FlavorText.boxType.TRADITIONAL);

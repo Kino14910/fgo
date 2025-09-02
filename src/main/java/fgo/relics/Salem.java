@@ -9,8 +9,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 
-import fgo.patches.Enum.CardTagsEnum;
-import fgo.patches.Enum.FGOCardColor;
+import fgo.characters.CustomEnums.FGOCardColor;
+import static fgo.characters.CustomEnums.Foreigner;
 
 public class Salem extends BaseRelic {
     private static final String NAME = "Salem";
@@ -42,7 +42,7 @@ public class Salem extends BaseRelic {
     public void onMasterDeckChange() {
         this.counter = 0;
         for (AbstractCard c : AbstractDungeon.player.masterDeck.group) {
-            if (c.hasTag(CardTagsEnum.Foreigner)) {
+            if (c.hasTag(Foreigner)) {
                 ++this.counter;
             }
         }
@@ -62,7 +62,7 @@ public class Salem extends BaseRelic {
     public void onEquip() {
         this.counter = 0;
         for (AbstractCard c : AbstractDungeon.player.masterDeck.group) {
-            if (c.hasTag(CardTagsEnum.Foreigner)) {
+            if (c.hasTag(Foreigner)) {
                 ++this.counter;
             }
         }

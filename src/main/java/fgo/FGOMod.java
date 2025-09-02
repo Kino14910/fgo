@@ -1,7 +1,7 @@
 package fgo;
 
 import static fgo.characters.Master.fgoNp;
-import static fgo.patches.Enum.ThmodClassEnum.MASTER_CLASS;
+import static fgo.characters.CustomEnums.FGO_MASTER;
 import static fgo.utils.ModHelper.addToBot;
 
 import java.lang.reflect.Field;
@@ -81,7 +81,7 @@ import fgo.event.DevilSlot;
 import fgo.event.ManofChaldea;
 import fgo.event.ProofAndRebuttalEvent;
 import fgo.monsters.Emiya;
-import fgo.patches.Enum.FGOCardColor;
+import fgo.characters.CustomEnums.FGOCardColor;
 import fgo.potions.BasePotion;
 import fgo.powers.ArtsPerformancePower;
 import fgo.powers.NPRatePower;
@@ -93,12 +93,12 @@ import fgo.ui.panels.FGOConfig;
 import fgo.ui.panels.NobleDeck;
 import fgo.ui.panels.NobleDeckCards;
 import fgo.ui.panels.NobleDeckViewScreen;
-import fgo.utils.CriticalStarVariable;
 import fgo.utils.GeneralUtils;
 import fgo.utils.KeywordInfo;
-import fgo.utils.NoblePhantasmVariable;
 import fgo.utils.Sounds;
 import fgo.utils.TextureLoader;
+import fgo.utils.dynamicvariables.CriticalStarVariable;
+import fgo.utils.dynamicvariables.NoblePhantasmVariable;
 
 @SpireInitializer
 public class FGOMod implements
@@ -172,7 +172,7 @@ public class FGOMod implements
     public FGOMod() {
         BaseMod.subscribe(this); //This will make BaseMod trigger all the subscribers at their appropriate times.
         BaseMod.addColor(FGOCardColor.FGO, SILVER, SILVER, SILVER, SILVER, SILVER, SILVER, SILVER, DEFAULT_CC, DEFAULT_CC, DEFAULT_CC, ENERGY_ORB_CC, DEFAULT_CC_PORTRAIT, DEFAULT_CC_PORTRAIT, DEFAULT_CC_PORTRAIT, ENERGY_ORB_CC_PORTRAIT, CARD_ENERGY_ORB);
-        BaseMod.addColor(FGOCardColor.Noble_Phantasm, NOBLE, NOBLE, NOBLE, NOBLE, NOBLE, NOBLE, NOBLE, ATTACK_Noble, SKILL_Noble, POWER_Noble, ENERGY_ORB_CC, ATTACK_Noble_PORTRAIT, SKILL_Noble_PORTRAIT, POWER_Noble_PORTRAIT, ENERGY_ORB_CC_PORTRAIT, CARD_ENERGY_ORB);
+        BaseMod.addColor(FGOCardColor.NOBLE_PHANTASM, NOBLE, NOBLE, NOBLE, NOBLE, NOBLE, NOBLE, NOBLE, ATTACK_Noble, SKILL_Noble, POWER_Noble, ENERGY_ORB_CC, ATTACK_Noble_PORTRAIT, SKILL_Noble_PORTRAIT, POWER_Noble_PORTRAIT, ENERGY_ORB_CC_PORTRAIT, CARD_ENERGY_ORB);
         BaseMod.addSaveField("commandSpellCount", new CommandSpellPanel());
         BaseMod.addSaveField("cards", new NobleDeckCards());
         logger.info(modID + " subscribed to BaseMod.");
@@ -422,7 +422,7 @@ public class FGOMod implements
     @Override
     public void receiveEditCharacters() {
         //添加角色到MOD中
-        BaseMod.addCharacter(new Master("Master"), MY_CHARACTER_BUTTON, MASTER_PORTRAIT, MASTER_CLASS);
+        BaseMod.addCharacter(new Master("Master"), MY_CHARACTER_BUTTON, MASTER_PORTRAIT, FGO_MASTER);
     }
 
     @Override
@@ -468,7 +468,7 @@ public class FGOMod implements
                 //These three null parameters are colors.
                 //If they're not null, they'll overwrite whatever color is set in the potions themselves.
                 //This is an old feature added before having potions determine their own color was possible.
-                BaseMod.addPotion(potion.getClass(), BaseMod.getPotionLiquidColor(potion.ID), BaseMod.getPotionHybridColor(potion.ID), BaseMod.getPotionSpotsColor(potion.ID), potion.ID, MASTER_CLASS);
+                BaseMod.addPotion(potion.getClass(), BaseMod.getPotionLiquidColor(potion.ID), BaseMod.getPotionHybridColor(potion.ID), BaseMod.getPotionSpotsColor(potion.ID), potion.ID, FGO_MASTER);
                 //playerClass will make a potion character-specific. By default, it's null and will do nothing.
             });
     }
@@ -484,7 +484,7 @@ public class FGOMod implements
         BaseMod.addEvent(DevilSlot.ID, DevilSlot.class, TheBeyond.ID);
 //        BaseMod.addEvent((new AddEventParams.Builder(FGOLibrary.ID, FGOLibrary.class))
 //                .dungeonID(TheCity.ID)
-//                .playerClass(MASTER_CLASS)
+//                .playerClass(FGO_MASTER)
 //                .create());
     }
     @Override
@@ -545,7 +545,7 @@ public class FGOMod implements
 
     @Override
     public void receivePostCreateStartingDeck(AbstractPlayer.PlayerClass playerClass, CardGroup cardGroup) {
-        if (playerClass == MASTER_CLASS) {
+        if (playerClass == FGO_MASTER) {
             CommandSpellPanel.reset();
             NobleDeckCards.reset();
         }

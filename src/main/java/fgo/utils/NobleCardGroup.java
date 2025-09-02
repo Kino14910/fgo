@@ -3,7 +3,7 @@ package fgo.utils;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 
-import fgo.patches.Enum.CardTagsEnum;
+import fgo.characters.CustomEnums.FGOCardColor;
 
 public class NobleCardGroup extends CardGroup {
     public NobleCardGroup() {
@@ -12,20 +12,20 @@ public class NobleCardGroup extends CardGroup {
 
     @Override
     public void addToTop(AbstractCard card) {
-        if (card.hasTag(CardTagsEnum.Noble_Phantasm)) {
+        if (card.color == FGOCardColor.NOBLE_PHANTASM) {
             super.addToTop(card);
         }
     }
 
     @Override
     public void addToBottom(AbstractCard card) {
-        if (card.hasTag(CardTagsEnum.Noble_Phantasm)) {
+        if (card.color == FGOCardColor.NOBLE_PHANTASM) {
             super.addToBottom(card);
         }
     }
 
     public void addCard(AbstractCard card) {
-        if (card.hasTag(CardTagsEnum.Noble_Phantasm)) {
+        if (card.color == FGOCardColor.NOBLE_PHANTASM) {
             this.addToTop(card.makeCopy());
         }
     }

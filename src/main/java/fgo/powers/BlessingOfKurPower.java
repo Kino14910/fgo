@@ -1,14 +1,15 @@
 package fgo.powers;
 
+import static fgo.FGOMod.makeID;
+
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
-import fgo.cards.noblecards.KurKigalIrkalla;
-import fgo.patches.Enum.CardTagsEnum;
 
-import static fgo.FGOMod.makeID;
+import fgo.cards.noblecards.KurKigalIrkalla;
+import fgo.characters.CustomEnums.FGOCardColor;
 
 public class BlessingOfKurPower extends BasePower {
     public static final String POWER_ID = makeID(BlessingOfKurPower.class.getSimpleName());
@@ -24,7 +25,7 @@ public class BlessingOfKurPower extends BasePower {
 
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
-       if (card.hasTag(CardTagsEnum.Noble_Phantasm)) {
+       if (card.color == FGOCardColor.NOBLE_PHANTASM) {
             flash();
             if (card.cardID.equals(KurKigalIrkalla.ID)) {
                 addToBot(new ApplyPowerAction(owner, owner, new MaxHPPower(owner, amount * 2), amount * 2));

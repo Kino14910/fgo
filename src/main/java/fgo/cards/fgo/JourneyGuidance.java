@@ -17,7 +17,7 @@ import com.megacrit.cardcrawl.vfx.combat.ViolentAttackEffect;
 
 import fgo.cards.FGOCard;
 import fgo.cards.tempCards.SoulOfWaterChannels;
-import fgo.patches.Enum.FGOCardColor;
+import fgo.characters.CustomEnums.FGOCardColor;
 import fgo.powers.WatersidePower;
 import fgo.utils.CardStats;
 

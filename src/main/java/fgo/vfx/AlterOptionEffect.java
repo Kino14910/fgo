@@ -1,6 +1,7 @@
 package fgo.vfx;
 
 import static fgo.FGOMod.makeID;
+import static fgo.characters.CustomEnums.FGOCardColor.NOBLE_PHANTASM;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -25,7 +26,7 @@ import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 
 import fgo.cards.noblecards.HollowHeartAlbion;
 import fgo.cards.noblecards.Unlimited;
-import fgo.patches.Enum.CardTagsEnum;
+import fgo.characters.CustomEnums.FGOCardColor;
 import fgo.ui.campfire.AlterOption;
 import fgo.ui.panels.NobleDeckCards;
 import fgo.utils.NobleCardHelper;
@@ -65,7 +66,7 @@ public class AlterOptionEffect extends AbstractGameEffect {
             CardGroup group = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
             ArrayList<AbstractCard> noblePhantasmCards = new ArrayList<>();
             for (Map.Entry<String, AbstractCard> stringAbstractCardEntry : CardLibrary.cards.entrySet()) {
-                if (stringAbstractCardEntry.getValue().hasTag(CardTagsEnum.Noble_Phantasm)) {
+                if (stringAbstractCardEntry.getValue().color == FGOCardColor.NOBLE_PHANTASM) {
                     noblePhantasmCards.add(stringAbstractCardEntry.getValue().makeCopy());
                 }
             }

@@ -14,7 +14,7 @@ import fgo.action.FgoNpAction;
 import fgo.action.SparksRouteAction;
 import fgo.cards.FGOCard;
 import fgo.characters.Master;
-import fgo.patches.Enum.FGOCardColor;
+import fgo.characters.CustomEnums.FGOCardColor;
 import fgo.utils.CardStats;
 
 public class SparksRoute extends FGOCard {

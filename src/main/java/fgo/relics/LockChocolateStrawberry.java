@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 
 import fgo.cards.colorless.mash.BlackBarrel;
 import fgo.cards.colorless.mash.WallOfSnowflakes;
-import fgo.patches.Enum.FGOCardColor;
+import fgo.characters.CustomEnums.FGOCardColor;
 
 public class LockChocolateStrawberry extends BaseRelic {
     private static final String NAME = "LockChocolateStrawberry";

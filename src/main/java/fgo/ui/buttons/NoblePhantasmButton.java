@@ -1,4 +1,4 @@
-package fgo.patches.Button;
+package fgo.ui.buttons;
 
 import static fgo.utils.ModHelper.addToBot;
 
@@ -19,6 +19,7 @@ import com.megacrit.cardcrawl.localization.TutorialStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.ui.panels.AbstractPanel;
 import com.megacrit.cardcrawl.vfx.ThoughtBubble;
+
 import fgo.action.NoblePhantasmSelectAction;
 import fgo.characters.Master;
 import fgo.powers.SealNPPower;

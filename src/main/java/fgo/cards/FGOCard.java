@@ -6,6 +6,9 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import fgo.FGOMod;
 import fgo.utils.CardStats;
 
+import static fgo.characters.CustomEnums.FGOCardColor.FGO;
+
+
 public abstract class FGOCard extends BaseCard {
     public boolean upgradeNP;
     public boolean upgradeStar;
@@ -42,6 +45,12 @@ public abstract class FGOCard extends BaseCard {
 
     public FGOCard(String ID, CardStats INFO, String img) {
         super(ID, INFO, img);
+        initValues();
+        CommonKeywordIconsField.useIcons.set(this, true);
+    }
+
+    public FGOCard(String ID, int cost, AbstractCard.CardType cardType, AbstractCard.CardTarget target, AbstractCard.CardRarity rarity) {
+        super(ID, cost, cardType, target, rarity, FGO);
         initValues();
         CommonKeywordIconsField.useIcons.set(this, true);
     }

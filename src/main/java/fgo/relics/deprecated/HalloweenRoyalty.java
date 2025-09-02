@@ -16,7 +16,7 @@ import fgo.cards.tempCards.BlessedRegenerate;
 import fgo.cards.tempCards.BrilliantEscort;
 import fgo.cards.tempCards.PureCoordinate;
 import fgo.cards.tempCards.SionSkill;
-import fgo.patches.Enum.FGOCardColor;
+import fgo.characters.CustomEnums.FGOCardColor;
 import fgo.relics.BaseRelic;
 
 public class HalloweenRoyalty extends BaseRelic {

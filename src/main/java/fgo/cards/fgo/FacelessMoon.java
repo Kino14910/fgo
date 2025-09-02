@@ -10,8 +10,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.NightmarePower;
 
 import fgo.cards.FGOCard;
-import fgo.patches.Enum.CardTagsEnum;
-import fgo.patches.Enum.FGOCardColor;
+import fgo.characters.CustomEnums.FGOCardColor;
+import static fgo.characters.CustomEnums.Foreigner;
 import fgo.utils.CardStats;
 import fgo.utils.ModHelper;
 
@@ -28,7 +28,7 @@ public class FacelessMoon extends FGOCard {
         super(ID, INFO);
         setMagic(1);
         setExhaust(true, false);
-        tags.add(CardTagsEnum.Foreigner);
+        tags.add(Foreigner);
 
         FlavorText.AbstractCardFlavorFields.textColor.set(this, Color.CHARTREUSE);
         FlavorText.AbstractCardFlavorFields.flavorBoxType.set(this, FlavorText.boxType.TRADITIONAL);
@@ -39,7 +39,7 @@ public class FacelessMoon extends FGOCard {
         ModHelper.addToBotAbstract(() -> {
             if (!p.hand.isEmpty()) {
                 for (AbstractCard card : AbstractDungeon.player.hand.group) {
-                    if (!card.hasTag(CardTagsEnum.Noble_Phantasm)) {
+                    if (card.color != FGOCardColor.NOBLE_PHANTASM) {
                         addToTop(new ApplyPowerAction(p, p, new NightmarePower(p, magicNumber, card)));
                     }
                 }

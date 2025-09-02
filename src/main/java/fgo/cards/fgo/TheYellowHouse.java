@@ -7,8 +7,8 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import fgo.cards.FGOCard;
-import fgo.patches.Enum.CardTagsEnum;
-import fgo.patches.Enum.FGOCardColor;
+import fgo.characters.CustomEnums.FGOCardColor;
+import static fgo.characters.CustomEnums.Foreigner;
 import fgo.powers.CursePower;
 import fgo.powers.EvasionPower;
 import fgo.utils.CardStats;
@@ -26,7 +26,7 @@ public class TheYellowHouse extends FGOCard {
         super(ID, INFO);
         setCostUpgrade(1);
         shuffleBackIntoDrawPile = true;
-        tags.add(CardTagsEnum.Foreigner);
+        tags.add(Foreigner);
 
         FlavorText.AbstractCardFlavorFields.textColor.set(this, Color.CHARTREUSE);
         FlavorText.AbstractCardFlavorFields.flavorBoxType.set(this, FlavorText.boxType.TRADITIONAL);

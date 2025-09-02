@@ -1,5 +1,7 @@
 package fgo.powers;
 
+import static fgo.FGOMod.makeID;
+
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -8,11 +10,8 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import fgo.patches.Enum.CardTagsEnum;
 
-
-
-import static fgo.FGOMod.makeID;
+import fgo.characters.CustomEnums.FGOCardColor;
 
 public class NPOverchargePower extends BasePower {
     public static final String POWER_ID = makeID(NPOverchargePower.class.getSimpleName());
@@ -34,7 +33,7 @@ public class NPOverchargePower extends BasePower {
 
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        if (!card.purgeOnUse && this.amount > 0 && card.hasTag(CardTagsEnum.Noble_Phantasm)) {
+        if (!card.purgeOnUse && this.amount > 0 && card.color == FGOCardColor.NOBLE_PHANTASM) {
             this.flash();
             AbstractMonster m = null;
             if (action.target != null) {

@@ -1,12 +1,13 @@
 package fgo.powers;
 
+import static fgo.FGOMod.makeID;
+
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import fgo.patches.Enum.CardTagsEnum;
 
-import static fgo.FGOMod.makeID;
+import fgo.characters.CustomEnums.FGOCardColor;
 
 public class NPDamagePower extends BasePower {
     public static final String POWER_ID = makeID(NPDamagePower.class.getSimpleName());
@@ -29,7 +30,7 @@ public class NPDamagePower extends BasePower {
 
     @Override
     public float atDamageGive(float damage, DamageInfo.DamageType type, AbstractCard card) {
-        if (card.hasTag(CardTagsEnum.Noble_Phantasm)) {
+        if (card.color == FGOCardColor.NOBLE_PHANTASM) {
             return this.atDamageGive(damage, type);
         }
 

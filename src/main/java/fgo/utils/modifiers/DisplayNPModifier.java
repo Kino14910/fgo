@@ -1,4 +1,4 @@
-package fgo.patches.Modifier;
+package fgo.utils.modifiers;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
@@ -10,23 +10,27 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 
 import basemod.abstracts.AbstractCardModifier;
 
-public class DisplayStarModifier extends AbstractCardModifier {
-    public static String MOD_ID = "fgo:DisplayStarModifier";
+public class DisplayNPModifier extends AbstractCardModifier {
+    public static String MOD_ID = "fgo:DisplayNPModifier";
     private static final Texture tex = ImageMaster.loadImage("fgo/images/ui/DisplayModifier.png");
     private final int amount;
-    public DisplayStarModifier(int amount) {
+    public DisplayNPModifier(int amount) {
         this.amount = amount;
     }
 
+    @Override
     public void onRender(AbstractCard card, SpriteBatch sb) {
-        ExtraIcons.renderIcon(card, tex, 0, 40, Color.PINK, "+" + amount + " STAR", FontHelper.cardTypeFont, 0, 0, Color.WHITE);
+        ExtraIcons.renderIcon(card, tex, 0, 0, Color.WHITE, "+" + amount + "% NP", FontHelper.cardTypeFont, 0, 0, Color.WHITE);
     }
 
+    @Override
     public String identifier(AbstractCard card) {
         return MOD_ID;
     }
 
+    @Override
     public AbstractCardModifier makeCopy() {
-        return new DisplayStarModifier(this.amount);
+        return new DisplayNPModifier(this.amount);
     }
+
 }

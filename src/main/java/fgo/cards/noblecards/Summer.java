@@ -8,7 +8,7 @@ import fgo.action.FgoNpAction;
 import fgo.cards.AbsNoblePhantasmCard;
 import fgo.hexui_lib.util.RenderImageLayer;
 import fgo.hexui_lib.util.TextureLoader;
-import fgo.patches.Enum.CardTagsEnum;
+import fgo.characters.CustomEnums.FGOCardColor;
 import fgo.powers.WatersidePower;
 
 public class Summer extends AbsNoblePhantasmCard {
@@ -19,7 +19,6 @@ public class Summer extends AbsNoblePhantasmCard {
     public Summer() {
         super(ID,CardType.POWER, CardTarget.SELF);
         setNP(0, 20);
-        tags.add(CardTagsEnum.Noble_Phantasm);
 
         cardArtLayers512.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH)));
         cardArtLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH_P)));

@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.vfx.combat.HemokinesisEffect;
 
 import fgo.cards.FGOCard;
 import fgo.cards.status.CurseDisaster;
-import fgo.patches.Enum.FGOCardColor;
+import fgo.characters.CustomEnums.FGOCardColor;
 import fgo.utils.CardStats;
 
 public class Canopus extends FGOCard {

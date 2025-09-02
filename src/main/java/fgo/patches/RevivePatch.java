@@ -13,14 +13,13 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 import fgo.action.FgoNpAction;
-import fgo.patches.Enum.ThmodClassEnum;
 import fgo.powers.DeathOfDeathPower;
 import fgo.powers.GutsAtTheWellPower;
 import fgo.powers.GutsPower;
 import fgo.powers.SpringOfFirePower;
 import fgo.ui.panels.CommandSpellPanel;
 import javassist.CtBehavior;
-
+import static fgo.characters.CustomEnums.FGO_MASTER;
 public class RevivePatch {
     @SpirePatch(clz = AbstractPlayer.class, method = "damage")
     public static class hasEnoughEnergyPatcher {
@@ -46,7 +45,7 @@ public class RevivePatch {
             if (CommandSpellPanel.commandSpellCount == 3
                     && AbstractDungeon.currMapNode != null
                     && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT
-                    && AbstractDungeon.player.chosenClass == ThmodClassEnum.MASTER_CLASS
+                    && AbstractDungeon.player.chosenClass == FGO_MASTER
                     ) {
                 CommandSpellPanel.commandSpellCount = 0;
                 p.heal(p.maxHealth, true);

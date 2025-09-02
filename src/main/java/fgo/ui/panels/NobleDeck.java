@@ -15,7 +15,7 @@ import com.megacrit.cardcrawl.localization.TutorialStrings;
 
 import basemod.BaseMod;
 import basemod.TopPanelItem;
-import fgo.patches.Enum.CardTagsEnum;
+import fgo.characters.CustomEnums.FGOCardColor;
 import fgo.utils.FGOInputActionSet;
 import fgo.utils.NobleCardGroup;
 
@@ -138,14 +138,14 @@ public class NobleDeck extends TopPanelItem {
     }
     
     public static void addCard(AbstractCard card) {
-        if (card.hasTag(CardTagsEnum.Noble_Phantasm)) {
+        if (card.color == FGOCardColor.NOBLE_PHANTASM) {
             nobleCards.addToTop(card);
         }
     }
 
     public static void addCardById(String cardId) {
         AbstractCard card = CardLibrary.getCopy(cardId);
-        if (card != null && card.hasTag(CardTagsEnum.Noble_Phantasm)) {
+        if (card != null && card.color == FGOCardColor.NOBLE_PHANTASM) {
             nobleCards.addToTop(card);
         }
     }

@@ -25,7 +25,7 @@ import com.megacrit.cardcrawl.screens.options.DropdownMenu;
 import basemod.ReflectionHacks;
 import basemod.abstracts.CustomSavable;
 import basemod.interfaces.ISubscriber;
-import fgo.patches.Enum.ThmodClassEnum;
+import static fgo.characters.CustomEnums.FGO_MASTER;;
 
 public class MainMenuUIFgoPatch implements ISubscriber, CustomSavable<Integer> {
     public static final ArrayList<DropdownMenu> dropdowns = new ArrayList<>();
@@ -114,7 +114,7 @@ public class MainMenuUIFgoPatch implements ISubscriber, CustomSavable<Integer> {
         @SpirePostfixPatch
         public static void Postfix(CharacterOption obj, SpriteBatch sb) {
             CharSelectInfo c = ReflectionHacks.getPrivate(obj, CharacterOption.class, "charInfo");
-            if (c != null && c.player.chosenClass.equals(ThmodClassEnum.MASTER_CLASS) && obj.selected) {
+            if (c != null && c.player.chosenClass.equals(FGO_MASTER) && obj.selected) {
                 packDraftToggle.move(CHECKBOX_X, CHECKBOX_Y);
                 packDraftToggle.render(sb);
 
@@ -141,7 +141,7 @@ public class MainMenuUIFgoPatch implements ISubscriber, CustomSavable<Integer> {
         public static void Postfix(CharacterOption obj) {
             CharSelectInfo c = ReflectionHacks.getPrivate(obj, CharacterOption.class, "charInfo");
 
-            if (c != null && c.player.chosenClass.equals(ThmodClassEnum.MASTER_CLASS) && obj.selected) {
+            if (c != null && c.player.chosenClass.equals(FGO_MASTER) && obj.selected) {
                 boolean stopInput = false;
                 if (customDraft) {
                     for (DropdownMenu d : dropdowns) {

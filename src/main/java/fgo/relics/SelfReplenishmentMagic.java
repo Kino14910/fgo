@@ -6,7 +6,7 @@ import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import fgo.action.FgoNpAction;
-import fgo.patches.Enum.FGOCardColor;
+import fgo.characters.CustomEnums.FGOCardColor;
 
 public class SelfReplenishmentMagic extends BaseRelic {
     private static final String NAME = "SelfReplenishmentMagic";

@@ -16,7 +16,7 @@ import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
 
 import fgo.cards.FGOCard;
 import fgo.cards.tempCards.FgoInsight;
-import fgo.patches.Enum.FGOCardColor;
+import fgo.characters.CustomEnums.FGOCardColor;
 import fgo.utils.CardStats;
 
 public class WindsweptSlash extends FGOCard {

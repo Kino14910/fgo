@@ -1,4 +1,4 @@
-package fgo.patches.Button;
+package fgo.ui.buttons;
 
 import static fgo.utils.ModHelper.addToBot;
 

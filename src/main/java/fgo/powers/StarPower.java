@@ -1,5 +1,7 @@
 package fgo.powers;
 
+import static fgo.FGOMod.makeID;
+
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
@@ -7,9 +9,8 @@ import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
-import fgo.patches.Enum.CardTagsEnum;
 
-import static fgo.FGOMod.makeID;
+import fgo.characters.CustomEnums.FGOCardColor;
 
 public class StarPower extends BasePower {
     public static final String POWER_ID = makeID(StarPower.class.getSimpleName());
@@ -37,7 +38,7 @@ public class StarPower extends BasePower {
         }
 
         //你有10颗暴击星时才能暴击。
-        if (!card.hasTag(CardTagsEnum.Noble_Phantasm) && amount >= 10) {
+        if (card.color != FGOCardColor.NOBLE_PHANTASM && amount >= 10) {
             return finalDamage(damage, type, 2.0F);
         }
 
@@ -57,7 +58,7 @@ public class StarPower extends BasePower {
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
         //在你打出攻击牌时，且有10颗以上暴击星，且不是宝具牌。
-        if (card.type == AbstractCard.CardType.ATTACK && amount >= 10 && !card.hasTag(CardTagsEnum.Noble_Phantasm)) {
+        if (card.type == AbstractCard.CardType.ATTACK && amount >= 10 && card.color != FGOCardColor.NOBLE_PHANTASM) {
             if (owner.hasPower(CrossingArcadiaPower.POWER_ID)) {
                 return;
             }

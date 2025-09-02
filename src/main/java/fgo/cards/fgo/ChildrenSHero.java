@@ -11,8 +11,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import fgo.cards.FGOCard;
 import fgo.cards.tempCards.SupportCraft;
-import fgo.patches.Enum.CardTagsEnum;
-import fgo.patches.Enum.FGOCardColor;
+import fgo.characters.CustomEnums.FGOCardColor;
+import fgo.characters.CustomEnums.FGOCardColor;
 import fgo.utils.CardStats;
 
 public class ChildrenSHero extends FGOCard{
@@ -38,7 +38,7 @@ public class ChildrenSHero extends FGOCard{
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractCard lastCard = AbstractDungeon.actionManager.cardsPlayedThisTurn.get(AbstractDungeon.actionManager.cardsPlayedThisTurn.size() - 2);
-        if (!lastCard.hasTag(CardTagsEnum.Noble_Phantasm)) {
+        if (lastCard.color != FGOCardColor.NOBLE_PHANTASM) {
             addToBot(new MakeTempCardInHandAction(lastCard, magicNumber));
         } else {
             addToBot(new MakeTempCardInHandAction(new SupportCraft(), magicNumber));

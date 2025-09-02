@@ -1,13 +1,14 @@
 package fgo.relics.deprecated;
 
+import static fgo.FGOMod.makeID;
+
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.unique.BouncingFlaskAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import fgo.patches.Enum.FGOCardColor;
-import fgo.relics.BaseRelic;
 
-import static fgo.FGOMod.makeID;
+import fgo.characters.CustomEnums.FGOCardColor;
+import fgo.relics.BaseRelic;
 
 public class PoisonApple extends BaseRelic {
     private static final String NAME = "PoisonApple";

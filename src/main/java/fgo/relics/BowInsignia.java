@@ -2,7 +2,7 @@ package fgo.relics;
 
 import static fgo.FGOMod.makeID;
 
-import fgo.patches.Enum.FGOCardColor;
+import fgo.characters.CustomEnums.FGOCardColor;
 
 public class BowInsignia extends BaseRelic {
     private static final String NAME = "BowInsignia";

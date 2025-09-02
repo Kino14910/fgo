@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import fgo.action.HeroicKingAction;
 import fgo.action.KingToHandAction;
 import fgo.cards.FGOCard;
-import fgo.patches.Enum.FGOCardColor;
+import fgo.characters.CustomEnums.FGOCardColor;
 import fgo.powers.HeroicKingPower;
 import fgo.utils.CardStats;
 

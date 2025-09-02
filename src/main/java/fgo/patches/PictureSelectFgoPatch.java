@@ -18,7 +18,7 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.screens.charSelect.CharacterOption;
 import com.megacrit.cardcrawl.screens.charSelect.CharacterSelectScreen;
 
-import fgo.patches.Enum.ThmodClassEnum;
+import static fgo.characters.CustomEnums.FGO_MASTER;
 
 public class PictureSelectFgoPatch {
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(makeID(PictureSelectFgoPatch.class.getSimpleName()));
@@ -49,7 +49,7 @@ public class PictureSelectFgoPatch {
             }
 
             for (CharacterOption o : __instance.options) {
-                if (o.selected && o.c.chosenClass == ThmodClassEnum.MASTER_CLASS) {
+                if (o.selected && o.c.chosenClass == FGO_MASTER) {
                     TalentRight.render(sb);
                     TalentLeft.render(sb);
 
@@ -83,7 +83,7 @@ public class PictureSelectFgoPatch {
         public static void Postfix(CharacterSelectScreen __instance) {
             // Update your buttons position, check if the player clicked them, and do something if they did
             for (CharacterOption o : __instance.options) {
-                if (o.selected && o.c.chosenClass == ThmodClassEnum.MASTER_CLASS) {
+                if (o.selected && o.c.chosenClass == FGO_MASTER) {
                     return;
                 }
 

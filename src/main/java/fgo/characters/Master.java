@@ -31,8 +31,8 @@ import fgo.cards.fgo.DreamUponTheStars;
 import fgo.cards.fgo.Strike;
 import fgo.patches.MainMenuUIFgoPatch;
 import fgo.patches.PictureSelectFgoPatch;
-import fgo.patches.Enum.FGOCardColor;
-import fgo.patches.Enum.ThmodClassEnum;
+import fgo.characters.CustomEnums.FGOCardColor;
+import static fgo.characters.CustomEnums.FGO_MASTER;
 import fgo.relics.SuitcaseFgo;
 
 public class Master extends CustomPlayer{
@@ -67,7 +67,7 @@ public class Master extends CustomPlayer{
     
     public Master(String name) {
         //构造方法，初始化参数
-        super(name, ThmodClassEnum.MASTER_CLASS, ORB_TEXTURES, "fgo/images/ui/energyBlueVFX.png", LAYER_SPEED, null, null);
+        super(name, FGO_MASTER, ORB_TEXTURES, "fgo/images/ui/energyBlueVFX.png", LAYER_SPEED, null, null);
         dialogX = drawX + 0.0F * Settings.scale;
         dialogY = drawY + 220.0F * Settings.scale;
 

@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
 
 import fgo.cards.tempCards.SupportCraft;
-import fgo.patches.Enum.CardTagsEnum;
+import fgo.characters.CustomEnums.FGOCardColor;
 
 public class BlessedScionAction extends AbstractGameAction {
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(BlessedScionAction.class.getSimpleName());
@@ -25,6 +25,7 @@ public class BlessedScionAction extends AbstractGameAction {
         this.p = (AbstractPlayer)target;
     }
 
+    @Override
     public void update() {
         if (this.duration == DURATION) {
             if (this.p.hand.isEmpty()) {
@@ -61,7 +62,7 @@ public class BlessedScionAction extends AbstractGameAction {
     }
 
     private AbstractCard processCard(AbstractCard card) {
-        if (card.hasTag(CardTagsEnum.Noble_Phantasm)) {
+        if (card.color == FGOCardColor.NOBLE_PHANTASM) {
             card = new SupportCraft();
         }
         if (card.costForTurn >= 0) {
