@@ -38,7 +38,7 @@ public abstract class FateMagineerCard extends FGOCard implements CustomCardPort
 //    }
 
     public static String noblePath(String file) {
-        return "fgo/images/NobleResources" + file;
+        return "fgo/images/NobleResources/" + file;
     }
 
     private void initializeDecoRenderLayers() {

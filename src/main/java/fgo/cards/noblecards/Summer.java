@@ -8,7 +8,6 @@ import fgo.action.FgoNpAction;
 import fgo.cards.AbsNoblePhantasmCard;
 import fgo.hexui_lib.util.RenderImageLayer;
 import fgo.hexui_lib.util.TextureLoader;
-import fgo.characters.CustomEnums.FGOCardColor;
 import fgo.powers.WatersidePower;
 
 public class Summer extends AbsNoblePhantasmCard {

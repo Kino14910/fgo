@@ -1,7 +1,6 @@
 package fgo.vfx;
 
 import static fgo.FGOMod.makeID;
-import static fgo.characters.CustomEnums.FGOCardColor.NOBLE_PHANTASM;
 
 import java.util.ArrayList;
 import java.util.Collections;

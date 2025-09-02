@@ -1,5 +1,7 @@
 package fgo.cards.noblecards;
 
+import static fgo.characters.CustomEnums.Foreigner;
+
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -9,11 +11,9 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 import fgo.cards.AbsNoblePhantasmCard;
 import fgo.hexui_lib.util.RenderImageLayer;
 import fgo.hexui_lib.util.TextureLoader;
-import fgo.characters.CustomEnums.FGOCardColor;
 import fgo.powers.CriticalDamageUpPower;
 import fgo.powers.DesterrennachtPower;
 import fgo.powers.StarRegenPower;
-import static fgo.characters.CustomEnums.Foreigner;
 public class Desterrennacht extends AbsNoblePhantasmCard {
     public static final String ID = makeID(Desterrennacht.class.getSimpleName());
     public static final String IMG_PATH = "fgo/images/cards/noble/Desterrennacht.png";

@@ -1,5 +1,7 @@
 package fgo.cards.tempCards;
 
+import static fgo.characters.CustomEnums.Foreigner;
+
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -8,8 +10,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.FlameBarrierEffect;
 
 import fgo.cards.FGOCard;
-import fgo.characters.CustomEnums.FGOCardColor;
-import static fgo.characters.CustomEnums.Foreigner;
 import fgo.powers.CursePower;
 import fgo.powers.StarPower;
 import fgo.utils.CardStats;

@@ -12,7 +12,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import fgo.cards.FGOCard;
 import fgo.cards.tempCards.SupportCraft;
 import fgo.characters.CustomEnums.FGOCardColor;
-import fgo.characters.CustomEnums.FGOCardColor;
 import fgo.utils.CardStats;
 
 public class ChildrenSHero extends FGOCard{
@@ -32,7 +31,6 @@ public class ChildrenSHero extends FGOCard{
         FlavorText.AbstractCardFlavorFields.textColor.set(this, Color.CHARTREUSE);
         FlavorText.AbstractCardFlavorFields.flavorBoxType.set(this, FlavorText.boxType.TRADITIONAL);
     }
-
 
 
     @Override
