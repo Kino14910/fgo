@@ -1,4 +1,4 @@
-package fgo.characters;
+package fgo.vfx;
 
 import static fgo.FGOMod.makeID;
 
@@ -25,8 +25,9 @@ import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 
 import fgo.cards.noblecards.HollowHeartAlbion;
 import fgo.cards.noblecards.Unlimited;
-import fgo.panel.NobleDeckCards;
 import fgo.patches.Enum.CardTagsEnum;
+import fgo.ui.campfire.AlterOption;
+import fgo.ui.panels.NobleDeckCards;
 import fgo.utils.NobleCardHelper;
 
 public class AlterOptionEffect extends AbstractGameEffect {
@@ -41,6 +42,7 @@ public class AlterOptionEffect extends AbstractGameEffect {
         AbstractDungeon.overlayMenu.proceedButton.hide();
     }
 
+    @Override
     public void update() {
         if (!AbstractDungeon.isScreenUp) {
             this.duration -= Gdx.graphics.getDeltaTime();
@@ -105,6 +107,7 @@ public class AlterOptionEffect extends AbstractGameEffect {
 
     }
 
+    @Override
     public void render(SpriteBatch sb) {
         sb.setColor(this.screenColor);
         sb.draw(ImageMaster.WHITE_SQUARE_IMG, 0.0F, 0.0F, (float) Settings.WIDTH, (float) Settings.HEIGHT);
@@ -114,6 +117,7 @@ public class AlterOptionEffect extends AbstractGameEffect {
 
     }
 
+    @Override
     public void dispose() {
     }
 }

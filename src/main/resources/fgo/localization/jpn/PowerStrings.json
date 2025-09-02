@@ -401,14 +401,6 @@
       " 点の #y活力 を獲得。"
     ]
   },
-  "${modID}:BlessedScionPower": {
-    "NAME": "後継者",
-    "DESCRIPTIONS": [
-      "次ターン開始時、 #b",
-      " をプレイ。対象選択が必要なカードはランダムに選択される。",
-      " 枚 "
-    ]
-  },
   "${modID}:CooldownPower": {
     "NAME": "クールダウン中",
     "DESCRIPTIONS": [
@@ -478,13 +470,6 @@
       "#y攻撃カード のダメージが #b",
       " 点上昇、 #y攻撃カード から #b",
       " 点の #yブロック を追加獲得。ターン開始時 #b1 層減少。"
-    ]
-  },
-  "${modID}:ArtsResistancePower": {
-    "NAME": "アーツ耐性低下",
-    "DESCRIPTIONS": [
-      "#bアーツカード をプレイするたび、 #b",
-      " 層の #yアーツアップ を獲得。"
     ]
   },
   "${modID}:NPRatePower": {

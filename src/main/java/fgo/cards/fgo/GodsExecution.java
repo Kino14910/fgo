@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import fgo.cards.FGOCard;
 import fgo.patches.Enum.FGOCardColor;
 import fgo.utils.CardStats;
-
+import fgo.utils.ModHelper;
 public class GodsExecution extends FGOCard {
     public static final String ID = makeID(GodsExecution.class.getSimpleName());
     private static final CardStats INFO = new CardStats(
@@ -31,13 +31,10 @@ public class GodsExecution extends FGOCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        fgo.utils.ModHelper.addToBotAbstract(() -> {
-            for (AbstractPower power : p.powers) {
-                if (power.type == AbstractPower.PowerType.DEBUFF) {
-                    addToTop(new DrawCardAction(p, 1));
-                    addToTop(new GainEnergyAction(1));
-                    break;
-                }
+        ModHelper.addToBotAbstract(() -> {
+            if (ModHelper.hasBuff(p, AbstractPower.PowerType.DEBUFF)) {
+                addToTop(new DrawCardAction(p, 1));
+                addToTop(new GainEnergyAction(1));
             }
             this.addToTop(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AttackEffect.BLUNT_HEAVY));
         });
@@ -45,11 +42,8 @@ public class GodsExecution extends FGOCard {
 
     @Override
     public void triggerOnGlowCheck() {
-        AbstractPlayer p = AbstractDungeon.player;
-        for (AbstractPower power : p.powers) {
-            glowColor = power.type == AbstractPower.PowerType.DEBUFF
-                    ? AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy()
-                    : AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
-        }
+        glowColor = ModHelper.hasBuff(AbstractDungeon.player, AbstractPower.PowerType.DEBUFF)
+            ? AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy()
+            : AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
     }
 }

@@ -1,4 +1,4 @@
-package fgo.panel;
+package fgo.ui.panels;
 
 import static fgo.FGOMod.makeID;
 
@@ -7,12 +7,16 @@ import java.util.ArrayList;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
+import com.megacrit.cardcrawl.helpers.TipHelper;
+import com.megacrit.cardcrawl.localization.TutorialStrings;
 
 import basemod.BaseMod;
 import basemod.TopPanelItem;
 import fgo.patches.Enum.CardTagsEnum;
+import fgo.utils.FGOInputActionSet;
 import fgo.utils.NobleCardGroup;
 
 public class NobleDeck extends TopPanelItem {
@@ -20,14 +24,24 @@ public class NobleDeck extends TopPanelItem {
     public static final String ID = makeID(NobleDeck.class.getSimpleName());
     public static NobleCardGroup nobleCards = new NobleCardGroup();
     private static final String[] NPTEXT = CardCrawlGame.languagePack.getUIString("fgo:NPText").TEXT;
-
+    private static final TutorialStrings tutorialStrings = CardCrawlGame.languagePack.getTutorialString(makeID(NobleDeck.class.getSimpleName()));
+    public static final String[] TEXT = NobleDeck.tutorialStrings.TEXT;
+    public static final String LABEL = TEXT[0];
+    public static final String MSG = TEXT[1];
     public NobleDeck() {
         super(IMG, ID);
     }
 
     @Override
+    public void update() {
+        super.update();
+        if (FGOInputActionSet.nobleDeckAction.isJustPressed()) {
+            this.onClick();
+        }
+    }
+
+    @Override
     protected void onClick() {
-        // 快速保护
         if (nobleCards.isEmpty()) {
             return;
         }
@@ -115,6 +129,14 @@ public class NobleDeck extends TopPanelItem {
         // nobleCards.group.forEach(c -> UnlockTracker.markCardAsSeen(c.cardID));
     }
 
+    @Override
+    protected void onHover() {
+        if (!AbstractDungeon.isScreenUp || AbstractDungeon.screen == NobleDeckViewScreen.Enum.Noble_Phantasm) {
+            TipHelper.renderGenericTip(1550.0f * Settings.scale, (float)Settings.HEIGHT - 120.0f * Settings.scale, LABEL + "(" + FGOInputActionSet.nobleDeckAction.getKeyString() + ")", MSG);
+        }
+        super.onHover();
+    }
+    
     public static void addCard(AbstractCard card) {
         if (card.hasTag(CardTagsEnum.Noble_Phantasm)) {
             nobleCards.addToTop(card);

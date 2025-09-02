@@ -1,4 +1,4 @@
-package fgo.characters;
+package fgo.ui.campfire;
 
 import static fgo.FGOMod.makeID;
 
@@ -10,6 +10,8 @@ import com.megacrit.cardcrawl.helpers.MathHelper;
 import com.megacrit.cardcrawl.ui.campfire.AbstractCampfireOption;
 
 import basemod.ReflectionHacks;
+import fgo.FGOMod;
+import fgo.vfx.AlterOptionEffect;
 
 public class AlterOption extends AbstractCampfireOption {
     public static final String[] TEXT = (CardCrawlGame.languagePack.getUIString(makeID(AlterOption.class.getSimpleName()))).TEXT;
@@ -18,14 +20,16 @@ public class AlterOption extends AbstractCampfireOption {
     public AlterOption() {
         label = TEXT[0];
         description = TEXT[1];
-        img = ImageMaster.loadImage("fgo/images/ui/tune.png");
+        img = ImageMaster.loadImage(FGOMod.uiPath("tune.png"));
         usedIdentify = false;
     }
 
+    @Override
     public void useOption() {
         if (usable) AbstractDungeon.effectList.add(new AlterOptionEffect());
     }
 
+    @Override
     public void update() {
         if (usable && usedIdentify) {
             usable = false;

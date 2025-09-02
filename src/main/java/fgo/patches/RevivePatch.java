@@ -1,6 +1,6 @@
 package fgo.patches;
 
-import static fgo.utils.GeneralUtils.addToBot;
+import static fgo.utils.ModHelper.addToBot;
 
 import com.evacipated.cardcrawl.modthespire.lib.LineFinder;
 import com.evacipated.cardcrawl.modthespire.lib.Matcher;
@@ -13,12 +13,12 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 import fgo.action.FgoNpAction;
-import fgo.panel.CommandSpellPanel;
 import fgo.patches.Enum.ThmodClassEnum;
 import fgo.powers.DeathOfDeathPower;
 import fgo.powers.GutsAtTheWellPower;
 import fgo.powers.GutsPower;
 import fgo.powers.SpringOfFirePower;
+import fgo.ui.panels.CommandSpellPanel;
 import javassist.CtBehavior;
 
 public class RevivePatch {
@@ -58,6 +58,7 @@ public class RevivePatch {
         }
 
         private static class Locator extends SpireInsertLocator {
+            @Override
             public int[] Locate(CtBehavior ctBehavior) throws Exception {
                 Matcher.FieldAccessMatcher fieldAccessMatcher = new Matcher.FieldAccessMatcher(AbstractPlayer.class, "isDead");
                 return LineFinder.findInOrder(ctBehavior, fieldAccessMatcher);

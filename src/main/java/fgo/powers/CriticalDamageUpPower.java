@@ -1,8 +1,8 @@
 package fgo.powers;
 
-import com.megacrit.cardcrawl.core.AbstractCreature;
-
 import static fgo.FGOMod.makeID;
+
+import com.megacrit.cardcrawl.core.AbstractCreature;
 
 public class CriticalDamageUpPower extends BasePower {
     public static final String POWER_ID = makeID(CriticalDamageUpPower.class.getSimpleName());
@@ -15,8 +15,6 @@ public class CriticalDamageUpPower extends BasePower {
 
     @Override
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
+        this.description = String.format(DESCRIPTIONS[0], this.amount);
     }
-
-    
 }

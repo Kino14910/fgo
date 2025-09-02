@@ -38,8 +38,8 @@ import com.megacrit.cardcrawl.vfx.combat.InflameEffect;
 
 import basemod.abstracts.CustomMonster;
 import fgo.FGOMod;
-import fgo.effects.MoveToEffect;
 import fgo.utils.ModHelper;
+import fgo.vfx.MoveToEffect;
 
 public abstract class BaseMonster extends CustomMonster {
     public MonsterStrings monsterStrings;

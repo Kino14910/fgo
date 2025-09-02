@@ -1,10 +1,10 @@
 package fgo.powers;
 
+import static fgo.FGOMod.makeID;
+
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-
-import static fgo.FGOMod.makeID;
 
 public class GutsPower extends BasePower {
     public static final String POWER_ID = makeID(GutsPower.class.getSimpleName());
@@ -15,19 +15,18 @@ public class GutsPower extends BasePower {
     public GutsPower(AbstractCreature owner, int amount, int time) {
         super(POWER_ID, TYPE, TURN_BASED, owner, amount); 
         this.time = time;
+        this.amount2 = time == 1 ? 0 : time;
+        this.updateDescription();
     }
 
     @Override
     public void onSpecificTrigger() {
-        int healAmt = amount;
-        if (healAmt < 1) {
-            healAmt = 1;
-        }
-        AbstractDungeon.player.heal(healAmt, true);
-        --time;
+        AbstractDungeon.player.heal(Math.max(amount, 1), true);
+        time--;
+        amount2 = time == 1 ? 0 : time;
         if (time == 0) {
             addToTop(new RemoveSpecificPowerAction(owner, owner, ID));
-        }
+        } 
         
         updateDescription();
     }
@@ -40,11 +39,7 @@ public class GutsPower extends BasePower {
     @Override
     public void updateDescription() {
         System.out.println(time);
-        if (time == 1) {
-            description = String.format(DESCRIPTIONS[0], amount);
-        } else {
-            description = String.format(DESCRIPTIONS[1], amount, time);
-        }
+        description = String.format(time == 1 ? DESCRIPTIONS[0] : DESCRIPTIONS[1], amount, time);
     }
 
     

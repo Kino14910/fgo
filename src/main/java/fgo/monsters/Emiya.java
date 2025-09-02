@@ -218,7 +218,7 @@ public class Emiya extends BaseMonster {
             halfDead = true;
             setMove(REBIRTH, Intent.UNKNOWN);
             createIntent();
-            AbstractDungeon.actionManager.addToBottom(new SetMoveAction(this, REBIRTH, Intent.UNKNOWN));
+            addToBot(new SetMoveAction(this, REBIRTH, Intent.UNKNOWN));
             applyPowers();
         }
     }

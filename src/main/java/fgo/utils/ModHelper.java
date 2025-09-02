@@ -24,6 +24,14 @@ import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 
 public class ModHelper {
+    public static void addToBot(AbstractGameAction action) {
+        AbstractDungeon.actionManager.addToBottom(action);
+    }
+
+    public static void addToTop(AbstractGameAction action) {
+        AbstractDungeon.actionManager.addToTop(action);
+    }
+
     public static void addToBotAbstract(Lambda func) {
         AbstractDungeon.actionManager.addToBottom(new AbstractGameAction() {
             @Override
@@ -294,5 +302,9 @@ public class ModHelper {
     
     public static boolean eventAscension() {
         return AbstractDungeon.ascensionLevel >= 15;
+    }
+
+    public static boolean hasBuff(AbstractCreature creature, AbstractPower.PowerType type) {
+        return creature.powers.stream().anyMatch(power -> power.type == type);
     }
 }

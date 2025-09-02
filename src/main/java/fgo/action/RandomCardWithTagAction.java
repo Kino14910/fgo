@@ -8,7 +8,6 @@ import java.util.Map;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 
 public class RandomCardWithTagAction extends AbstractGameAction {
@@ -58,7 +57,7 @@ public class RandomCardWithTagAction extends AbstractGameAction {
             cStudy.modifyCostForCombat(-1);
         }
 
-        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(cStudy, true));
+        addToBot(new MakeTempCardInHandAction(cStudy, true));
 
         this.isDone = true;
     }

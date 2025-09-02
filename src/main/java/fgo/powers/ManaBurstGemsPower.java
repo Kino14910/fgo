@@ -1,11 +1,11 @@
 package fgo.powers;
 
+import static fgo.FGOMod.makeID;
+
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.powers.StrengthPower;
-
-import static fgo.FGOMod.makeID;
 
 public class ManaBurstGemsPower extends BasePower {
     public static final String POWER_ID = makeID(ManaBurstGemsPower.class.getSimpleName());
@@ -18,7 +18,7 @@ public class ManaBurstGemsPower extends BasePower {
 
     @Override
     public void updateDescription() {
-        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+        description = String.format(DESCRIPTIONS[0], amount);
     }
 
     @Override

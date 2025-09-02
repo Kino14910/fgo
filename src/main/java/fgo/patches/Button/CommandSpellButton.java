@@ -1,6 +1,6 @@
 package fgo.patches.Button;
 
-import static fgo.utils.GeneralUtils.addToBot;
+import static fgo.utils.ModHelper.addToBot;
 
 import java.util.ArrayList;
 
@@ -24,7 +24,7 @@ import com.megacrit.cardcrawl.vfx.ThoughtBubble;
 
 import fgo.cards.optionCards.ReleaseNoblePhantasm;
 import fgo.cards.optionCards.RepairSpiritOrigin;
-import fgo.panel.CommandSpellPanel;
+import fgo.ui.panels.CommandSpellPanel;
 
 public class CommandSpellButton extends AbstractPanel {
     private static final TutorialStrings tutorialStrings = CardCrawlGame.languagePack.getTutorialString("fgo:CommandSpell");

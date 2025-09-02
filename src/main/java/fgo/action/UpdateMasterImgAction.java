@@ -1,5 +1,7 @@
 package fgo.action;
 
+import static fgo.FGOMod.characterPath;
+
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
@@ -10,9 +12,10 @@ public class UpdateMasterImgAction extends AbstractGameAction {
     public UpdateMasterImgAction() {
     }
 
+    @Override
     public void update() {
         if (AbstractDungeon.player instanceof Master) {
-            AbstractDungeon.player.img = ImageMaster.loadImage("fgo/images/character/Romani_Archaman.png");
+            AbstractDungeon.player.img = ImageMaster.loadImage(characterPath("Romani_Archaman.png"));
         }
 
         this.isDone = true;

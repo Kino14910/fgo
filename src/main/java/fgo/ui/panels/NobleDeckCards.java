@@ -1,4 +1,4 @@
-package fgo.panel;
+package fgo.ui.panels;
 
 import java.util.ArrayList;
 import java.util.Collections;

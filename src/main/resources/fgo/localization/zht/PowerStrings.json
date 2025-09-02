@@ -401,14 +401,6 @@
       " 點 #y活力 。"
     ]
   },
-  "${modID}:BlessedScionPower": {
-    "NAME": "後繼者",
-    "DESCRIPTIONS": [
-      "在你的下回合開始時，打出 #b",
-      " 。需要選擇目標的牌將隨機選擇目標。",
-      " 張 "
-    ]
-  },
   "${modID}:CooldownPower": {
     "NAME": "冷卻中",
     "DESCRIPTIONS": [
@@ -478,13 +470,6 @@
       "#y攻擊牌 額外造成 #b",
       " 點傷害，從 #y攻擊牌 中額外獲得 #b",
       " 點 #y格擋 。每回合開始時減少 #b1 層。"
-    ]
-  },
-  "${modID}:ArtsResistancePower": {
-    "NAME": "藍耐下降",
-    "DESCRIPTIONS": [
-      "每當你打出一張 #b藍牌 ，你獲得 #b",
-      " 層 #y藍魔放 。"
     ]
   },
   "${modID}:NPRatePower": {

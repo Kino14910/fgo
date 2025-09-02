@@ -17,11 +17,12 @@ public class KingToHandAction extends AbstractGameAction {
         this.duration = Settings.ACTION_DUR_FAST;
     }
 
+    @Override
     public void update() {
         if (this.duration == Settings.ACTION_DUR_FAST) {
             if (AbstractDungeon.player.discardPile.contains(this.card) && AbstractDungeon.player.hand.size() < 10) {
                 AbstractDungeon.player.hand.addToHand(this.card);
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new HeroicKingPower(AbstractDungeon.player, this.amount), this.amount));
+                addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new HeroicKingPower(AbstractDungeon.player, this.amount), this.amount));
                 this.card.unhover();
                 this.card.setAngle(0.0F, true);
                 this.card.lighten(false);

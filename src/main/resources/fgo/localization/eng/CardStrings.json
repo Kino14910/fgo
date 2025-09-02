@@ -700,5 +700,8 @@
   "${modID}:SuitenNikko": {
     "NAME": "Suiten Nikko Amaterasu Yano Shiraishi",
     "DESCRIPTION": "All cards in your hand cost 1 less this turn. NL Gain !M!% fgo:NP."
+  },
+  "${modID}:NobleDeckViewScreen": {
+    "TEXT[0]": "These cards will be retained and removed from the current battle after they are played."
   }
 }

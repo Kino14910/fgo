@@ -402,14 +402,6 @@
       " 点 #y活力 。"
     ]
   },
-  "${modID}:BlessedScionPower": {
-    "NAME": "后继者",
-    "DESCRIPTIONS": [
-      "在你的下回合开始时，打出 #b",
-      " 。需要选择目标的牌将随机选择目标。",
-      " 张 "
-    ]
-  },
   "${modID}:CooldownPower": {
     "NAME": "冷却中",
     "DESCRIPTIONS": [
@@ -421,22 +413,20 @@
   "${modID}:ReducePercentDamagePower": {
     "NAME": "防御中",
     "DESCRIPTIONS": [
-      "在这个回合降低 #b",
-      "% 受到的攻击伤害。"
+      "在这个回合降低 #b%d% 受到的攻击伤害。"
     ]
   },
   "${modID}:ItsInevitablePower": {
     "NAME": "无可奈何",
     "DESCRIPTIONS": [
-      "在下一回合开始时，对所有敌人造成 #b%1$s 点伤害。",
-      "在下一回合开始时，对所有敌人造成 #b%1$s 点伤害，然后将伤害增加 #b%2$s 点。"
+      "在下一回合开始时，对所有敌人造成 #b%d 点伤害。",
+      "在下一回合开始时，对所有敌人造成 #b%d 点伤害，然后将伤害增加 #b%d 点。"
     ]
   },
   "${modID}:ManaBurstGemsPower": {
     "NAME": "魔力放出（宝石）",
     "DESCRIPTIONS": [
-      "在你的回合结束时，获得 #b",
-      " 点 #y力量 。"
+      "在你的回合结束时，获得 #b%d 点 #y力量 。"
     ]
   },
   "${modID}:HeroicKingPower": {
@@ -469,8 +459,7 @@
   "${modID}:ArtsPerformancePower": {
     "NAME": "宝具值获取提升",
     "DESCRIPTIONS": [
-      "每当你打出一张牌，额外获得 #b",
-      "% #y宝具值 。最多额外获得 #b5% 。"
+      "每当你打出一张牌，额外获得 #b%d% #y宝具值 。"
     ]
   },
   "${modID}:BusterPerformancePower": {
@@ -481,26 +470,17 @@
       " 点 #y格挡 。每回合开始时减少 #b1 层。"
     ]
   },
-  "${modID}:ArtsResistancePower": {
-    "NAME": "蓝耐下降",
-    "DESCRIPTIONS": [
-      "每当你打出一张 #b蓝牌 ，你获得 #b",
-      " 层 #y蓝魔放 。"
-    ]
-  },
   "${modID}:NPRatePower": {
     "NAME": "黄金律",
     "DESCRIPTIONS": [
       "在这个回合，打出手牌和受到攻击时，获得的宝具值提高 #b100% 。",
-      "打出手牌和受到攻击时，获得的宝具值提高 #b100% ，持续 #b",
-      " 回合。"
+      "打出手牌和受到攻击时，获得的宝具值提高 #b100% ，持续 #b%d 回合。"
     ]
   },
   "${modID}:StarRatePower": {
     "NAME": "暴击星获得量提升",
     "DESCRIPTIONS": [
-      "在这个回合每当你造成一次伤害，额外获得一次 #b",
-      " 颗 #y暴击星 。"
+      "在这个回合每当你造成一次伤害，额外获得一次 #b%d颗 #y暴击星 。"
     ]
   },
   "${modID}:StarPower": {
@@ -513,15 +493,13 @@
   "${modID}:CriticalDamageUpPower": {
     "NAME": "暴击威力",
     "DESCRIPTIONS": [
-      "#y暴击 额外造成 #b",
-      "% 伤害。"
+      "#y暴击 额外造成 #b%d% 伤害。"
     ]
   },
   "${modID}:LoseCritDamagePower": {
     "NAME": "失去暴击威力",
     "DESCRIPTIONS": [
-      "在你的回合结束时，失去 #b",
-      "% #y暴击威力 。"
+      "在你的回合结束时，失去 #b%d% #y暴击威力 。"
     ]
   },
   "${modID}:FragarachPower": {
@@ -541,8 +519,7 @@
   "${modID}:DesterrennachtPower": {
     "NAME": "恐怖",
     "DESCRIPTIONS": [
-      "在 #b",
-      " 回合开始后其 #y无法行动 一回合。",
+      "在 #b%d 回合开始后其 #y无法行动 一回合。",
       "在本回合其 #y无法行动 一回合。"
     ]
   },

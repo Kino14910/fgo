@@ -1,4 +1,4 @@
-package fgo.panel;
+package fgo.ui.panels;
 
 import static fgo.FGOMod.makeID;
 
@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.MathHelper;
 import com.megacrit.cardcrawl.helpers.input.InputHelper;
-import com.megacrit.cardcrawl.localization.UIStrings;
+import com.megacrit.cardcrawl.localization.TutorialStrings;
 import com.megacrit.cardcrawl.rooms.AbstractRoom.RoomPhase;
 import com.megacrit.cardcrawl.screens.mainMenu.ScrollBar;
 import com.megacrit.cardcrawl.screens.mainMenu.ScrollBarListener;
@@ -22,8 +22,8 @@ import basemod.abstracts.CustomScreen;
 import fgo.utils.NobleCardGroup;
 
 public class NobleDeckViewScreen extends CustomScreen implements ScrollBarListener {
-    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(makeID(NobleDeckViewScreen.class.getSimpleName()));
-    public static final String[] TEXT = NobleDeckViewScreen.uiStrings.TEXT;
+    private static final TutorialStrings tutorialStrings = CardCrawlGame.languagePack.getTutorialString(makeID(NobleDeckViewScreen.class.getSimpleName()));
+    public static final String[] TEXT = NobleDeckViewScreen.tutorialStrings.TEXT;
     private static final String HEADER_INFO;
     public static class Enum {
         @SpireEnum
@@ -155,30 +155,32 @@ public class NobleDeckViewScreen extends CustomScreen implements ScrollBarListen
 
     @Override
     public void render(SpriteBatch sb) {
+        this.nobleCards.renderTip(sb);
+        FontHelper.renderDeckViewTip(sb, HEADER_INFO, 96.0f * Settings.scale, Settings.CREAM_COLOR);
+
         if (this.shouldShowScrollBar()) {
             this.scrollBar.render(sb);
         }
-        
-        if (this.nobleCards != null) {
+
+        if (this.nobleCards == null) {
             return;
         }
 
         if (this.hoveredCard == null) {
             this.nobleCards.render(sb);
-        } else {
-            // 渲染除悬停卡牌外的所有卡牌
-            for (AbstractCard card : this.nobleCards.group) {
-                if (card != this.hoveredCard) {
-                    card.render(sb);
-                }
+            return;
+        } 
+
+        // 渲染除悬停卡牌外的所有卡牌
+        this.nobleCards.group.forEach(card -> {
+            if (card != this.hoveredCard) {
+                card.render(sb);
             }
-            
-            // 渲染悬停卡牌的阴影和卡牌本身
-            this.hoveredCard.renderHoverShadow(sb);
-            this.hoveredCard.render(sb);
-        }
-        this.nobleCards.renderTip(sb);
-            FontHelper.renderDeckViewTip(sb, HEADER_INFO, 96.0f * Settings.scale, Settings.CREAM_COLOR);
+        });
+        
+        // 渲染悬停卡牌的阴影和卡牌本身
+        this.hoveredCard.renderHoverShadow(sb);
+        this.hoveredCard.render(sb);
     }
 
     @Override

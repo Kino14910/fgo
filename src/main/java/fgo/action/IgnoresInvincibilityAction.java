@@ -24,6 +24,7 @@ public class IgnoresInvincibilityAction extends AbstractGameAction {
         this.duration = 0.1F;
     }
 
+    @Override
     public void update() {
         if (this.duration == 0.1F && this.target != null) {
             String[] powerIds = {
@@ -41,7 +42,6 @@ public class IgnoresInvincibilityAction extends AbstractGameAction {
             timesAmount += amount;
 
             addToBot(new ApplyPowerAction(p, p, new IgnoresInvincibilityPower(p, timesAmount)));
-            // addToBot(new ApplyPowerAction(p, p, new VigorPower(p, timesAmount)));
 
             if (AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead()) {
                 AbstractDungeon.actionManager.clearPostCombatActions();

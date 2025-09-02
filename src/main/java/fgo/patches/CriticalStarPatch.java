@@ -1,6 +1,6 @@
 package fgo.patches;
 
-import static fgo.utils.GeneralUtils.addToBot;
+import static fgo.utils.ModHelper.addToBot;
 
 import com.evacipated.cardcrawl.modthespire.lib.LineFinder;
 import com.evacipated.cardcrawl.modthespire.lib.Matcher;
@@ -27,7 +27,8 @@ public class CriticalStarPatch {
     public static void Postfix(AbstractMonster __instance, DamageInfo info) {
         AbstractPlayer p = AbstractDungeon.player;
         if (p instanceof Master && info.type == DamageInfo.DamageType.NORMAL) {
-            addToBot(new ApplyPowerAction(p, p, new StarPower(p, 1 + ( p.hasPower(StarRatePower.POWER_ID) ? p.getPower(StarRatePower.POWER_ID).amount : 0 ) )));
+            int starAmt = p.hasPower(StarRatePower.POWER_ID) ? p.getPower(StarRatePower.POWER_ID).amount : 0;
+            addToBot(new ApplyPowerAction(p, p, new StarPower(p, 1 + starAmt)));
         }
     }
 
@@ -35,6 +36,7 @@ public class CriticalStarPatch {
         private Locator() {
         }
 
+        @Override
         public int[] Locate(CtBehavior ctBehavior) throws Exception {
             Matcher matcher = new Matcher.FieldAccessMatcher(AbstractMonster.class, "currentHealth");
             int line = LineFinder.findAllInOrder(ctBehavior, matcher)[2] + 1;

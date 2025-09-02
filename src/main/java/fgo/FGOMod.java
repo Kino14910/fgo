@@ -2,7 +2,7 @@ package fgo;
 
 import static fgo.characters.Master.fgoNp;
 import static fgo.patches.Enum.ThmodClassEnum.MASTER_CLASS;
-import static fgo.utils.GeneralUtils.addToBot;
+import static fgo.utils.ModHelper.addToBot;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
@@ -81,11 +81,6 @@ import fgo.event.DevilSlot;
 import fgo.event.ManofChaldea;
 import fgo.event.ProofAndRebuttalEvent;
 import fgo.monsters.Emiya;
-import fgo.panel.CommandSpellPanel;
-import fgo.panel.FGOConfig;
-import fgo.panel.NobleDeck;
-import fgo.panel.NobleDeckCards;
-import fgo.panel.NobleDeckViewScreen;
 import fgo.patches.Enum.FGOCardColor;
 import fgo.potions.BasePotion;
 import fgo.powers.ArtsPerformancePower;
@@ -93,6 +88,11 @@ import fgo.powers.NPRatePower;
 import fgo.relics.BaseRelic;
 import fgo.relics.LockChocolateStrawberry;
 import fgo.relics.SuitcaseFgo;
+import fgo.ui.panels.CommandSpellPanel;
+import fgo.ui.panels.FGOConfig;
+import fgo.ui.panels.NobleDeck;
+import fgo.ui.panels.NobleDeckCards;
+import fgo.ui.panels.NobleDeckViewScreen;
 import fgo.utils.CriticalStarVariable;
 import fgo.utils.GeneralUtils;
 import fgo.utils.KeywordInfo;
@@ -121,9 +121,11 @@ public class FGOMod implements
     public static ModInfo info;
     public static String modID; //Edit your pom.xml to change this
     static { loadModInfo(); }
-    private static final String resourcesFolder = checkResourcesPath();
     public static final Logger logger = LogManager.getLogger(modID); //Used to output to the console.
-
+    private static final String resourcesFolder = checkResourcesPath();
+    
+    private static final int BASE_NP_MULTIPLIER = 5;
+    private static final int NP_RATE_POWER_MULTIPLIER = 2;
     //This is used to prefix the IDs of various objects like cards and relics,
     //to avoid conflicts between different mods using the same name for things.
     public static String makeID(String id) {
@@ -189,12 +191,6 @@ public class FGOMod implements
         //The Mod Badges page has a basic example of this, but setting up config is overall a bit complex.
 
         BaseMod.registerModBadge(badgeTexture, info.Name, GeneralUtils.arrToString(info.Authors), info.Description, new FGOConfig());
-
-        //顶部宝具牌预览。
-        BaseMod.addTopPanelItem(new NobleDeck());
-        
-        // Register noble custom screen
-        BaseMod.addCustomScreen(new NobleDeckViewScreen());
 
         if(config.getBool("enableEmiya")){
             BaseMod.addMonster(Emiya.ID, Emiya.NAME, () -> new MonsterGroup(new AbstractMonster[]{new Emiya()}));
@@ -367,6 +363,12 @@ public class FGOMod implements
     public static String relicPath(String file) {
         return resourcesFolder + "/images/relics/" + file;
     }
+    public static String uiPath(String file) {
+        return resourcesFolder + "/images/ui/" + file;
+    }
+    public static String vfxPath(String file) {
+        return resourcesFolder + "/images/vfx/" + file;
+    }
 
     /**
      * Checks the expected resources path based on the package name.
@@ -485,31 +487,14 @@ public class FGOMod implements
 //                .playerClass(MASTER_CLASS)
 //                .create());
     }
-
     @Override
     public void receiveCardUsed(AbstractCard abstractCard) {
-        if (!(AbstractDungeon.player instanceof Master)) {
+        if (!isMaster() || abstractCard == null) {
             return;
         }
 
-        int npMultiplier = 5;
-        int npGain = 0;
-
-        if (AbstractDungeon.player.hasPower(NPRatePower.POWER_ID)) {
-            npMultiplier *= 2;
-        }
-
-        if (AbstractDungeon.player.hasPower(ArtsPerformancePower.POWER_ID)) {
-            npMultiplier += AbstractDungeon.player.getPower(ArtsPerformancePower.POWER_ID).amount;
-        }
-
-        int costForTurn = abstractCard.costForTurn;
-
-        if (costForTurn == -1) {
-            npGain = EnergyPanel.totalCount * npMultiplier; //X费用牌
-        } else if (costForTurn > 0) {
-            npGain = costForTurn * npMultiplier;
-        }
+        int npMultiplier = calculateNpRateMultiplier();
+        int npGain = calculateNpGain(abstractCard, npMultiplier);
 
         if (npGain > 0) {
             addToBot(new FgoNpAction(npGain));
@@ -518,20 +503,22 @@ public class FGOMod implements
 
     @Override
     public void receiveOnBattleStart(AbstractRoom abstractRoom) {
-        if (AbstractDungeon.player instanceof Master) {
-            fgoNp = 0;
-            if (AbstractDungeon.player.hasRelic(SuitcaseFgo.ID)) {
-                fgoNp = 20;
-            }
-            if(AbstractDungeon.floorNum == 16) {
-                AbstractDungeon.getCurrRoom().spawnRelicAndObtain((float)(Settings.WIDTH / 2), (float)(Settings.HEIGHT / 2), RelicLibrary.getRelic(LockChocolateStrawberry.ID).makeCopy());
-            }
+        if (!isMaster()) {
+            return;
+        }
+        
+        fgoNp = 0;
+        if (AbstractDungeon.player.hasRelic(SuitcaseFgo.ID)) {
+            fgoNp = 20;
+        }
+        if(AbstractDungeon.floorNum == 16) {
+            AbstractDungeon.getCurrRoom().spawnRelicAndObtain((float)(Settings.WIDTH / 2), (float)(Settings.HEIGHT / 2), RelicLibrary.getRelic(LockChocolateStrawberry.ID).makeCopy());
         }
     }
 
     @Override
     public void receivePostBattle(AbstractRoom r) {
-        if (AbstractDungeon.player instanceof Master) {
+        if (isMaster()) {
             //在每场战斗开始时宝具值变为0。
             addToBot(new FgoNpAction(-300));
         }
@@ -539,7 +526,7 @@ public class FGOMod implements
 
     @Override
     public int receiveOnPlayerDamaged(int i, DamageInfo damageInfo) {
-        if (!(AbstractDungeon.player instanceof Master)) {
+        if (!isMaster()) {
             return i;
         }
 
@@ -558,13 +545,49 @@ public class FGOMod implements
 
     @Override
     public void receivePostCreateStartingDeck(AbstractPlayer.PlayerClass playerClass, CardGroup cardGroup) {
-        CommandSpellPanel.reset();
-        NobleDeckCards.reset();
+        if (playerClass == MASTER_CLASS) {
+            CommandSpellPanel.reset();
+            NobleDeckCards.reset();
+        }
     }
 
     @Override
     public void receiveStartGame() {
-        NobleDeck.reset();
-        NobleDeck.addCards(NobleDeckCards.cards);
+        if (isMaster()) {
+            NobleDeck.reset();
+            NobleDeck.addCards(NobleDeckCards.cards);
+            BaseMod.addTopPanelItem(new NobleDeck());
+            BaseMod.addCustomScreen(new NobleDeckViewScreen());
+        }
     }
+
+    
+    private int calculateNpRateMultiplier() {
+        int multiplier = BASE_NP_MULTIPLIER;
+        
+        if (AbstractDungeon.player.hasPower(NPRatePower.POWER_ID)) {
+            multiplier *= NP_RATE_POWER_MULTIPLIER;
+        }
+        
+        if (AbstractDungeon.player.hasPower(ArtsPerformancePower.POWER_ID)) {
+            multiplier += AbstractDungeon.player.getPower(ArtsPerformancePower.POWER_ID).amount;
+        }
+        
+        return multiplier;
+    }
+
+    private int calculateNpGain(AbstractCard card, int npRateMultiplier) {
+        int costForTurn = card.costForTurn;
+        
+        if (costForTurn == -1) {
+            return EnergyPanel.totalCount * npRateMultiplier;
+        }
+        
+        return costForTurn > 0 ? costForTurn * npRateMultiplier : 0;
+    }
+
+    private boolean isMaster() {
+        return AbstractDungeon.player instanceof Master;
+    }
+
 }

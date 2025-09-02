@@ -1,8 +1,5 @@
 package fgo.utils;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-
 public class GeneralUtils {
     public static String arrToString(Object[] arr) {
         if (arr == null)
@@ -21,10 +18,4 @@ public class GeneralUtils {
     public static String removePrefix(String ID) {
         return ID.substring(ID.indexOf(":") + 1);
     }
-
-    public static void addToBot(AbstractGameAction action) {
-        AbstractDungeon.actionManager.addToBottom(action);
-    }
-
-
 }

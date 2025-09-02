@@ -1,5 +1,7 @@
 package fgo.powers;
 
+import java.util.Objects;
+
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -13,8 +15,6 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import fgo.utils.GeneralUtils;
 import fgo.utils.TextureLoader;
-
-import java.util.Objects;
 
 public abstract class BasePower extends AbstractPower {
     private static PowerStrings getPowerStrings(String ID)
@@ -87,6 +87,7 @@ public abstract class BasePower extends AbstractPower {
             this.updateDescription();
     }
 
+    @Override
     public void renderAmount(SpriteBatch sb, float x, float y, Color c) {
         super.renderAmount(sb, x, y, c);
 

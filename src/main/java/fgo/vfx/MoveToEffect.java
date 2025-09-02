@@ -1,4 +1,4 @@
-package fgo.effects;
+package fgo.vfx;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -30,6 +30,7 @@ public class MoveToEffect extends AbstractGameEffect {
         this(creature, (float) Settings.WIDTH * 0.75F - creature.animX, AbstractDungeon.floorY - creature.animY, true, 0.75F);
     }
 
+    @Override
     public void update() {
         this.duration -= Gdx.graphics.getDeltaTime();
         if (this.duration <= 0.0F) {
@@ -49,9 +50,11 @@ public class MoveToEffect extends AbstractGameEffect {
         }
     }
 
+    @Override
     public void render(SpriteBatch spriteBatch) {
     }
 
+    @Override
     public void dispose() {
     }
 }

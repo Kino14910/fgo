@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.FadeWipeParticle;
 
+import fgo.FGOMod;
 import fgo.action.WaitFgoAction;
 import fgo.action.lor.ChangeSceneEffect;
 import fgo.cards.AbsNoblePhantasmCard;
@@ -33,7 +34,7 @@ public class Unlimited extends AbsNoblePhantasmCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.topLevelEffects.add(new FadeWipeParticle());
         addToBot(new WaitFgoAction(1.0F));
-        addToBot(new VFXAction(new ChangeSceneEffect(ImageMaster.loadImage("fgo/images/vfx_master/UnlimitedBg.png"))));
+        addToBot(new VFXAction(new ChangeSceneEffect(ImageMaster.loadImage(FGOMod.vfxPath("UnlimitedBg.png")))));
         CardCrawlGame.music.silenceTempBgmInstantly();
         CardCrawlGame.music.silenceBGMInstantly();
         AbstractDungeon.getCurrRoom().playBgmInstantly("UBW_Extended.mp3");

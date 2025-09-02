@@ -40,11 +40,11 @@ public class PeerlessStrike extends FGOCard {
         boolean canUse = super.canUse(p, m);
         if (!canUse) {
             return false;
-        } else {
-            if ((float)p.currentHealth > (float)p.maxHealth / 2.0F) {
-                canUse = false;
-                cantUseMessage = cardStrings.EXTENDED_DESCRIPTION[0];
-            }
+        } 
+
+        if ((float)p.currentHealth > (float)p.maxHealth / 2.0F) {
+            canUse = false;
+            cantUseMessage = cardStrings.EXTENDED_DESCRIPTION[0];
         }
 
         return canUse;

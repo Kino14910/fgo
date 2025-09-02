@@ -8,8 +8,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.rooms.CampfireUI;
 import com.megacrit.cardcrawl.ui.campfire.AbstractCampfireOption;
 
-import fgo.characters.AlterOption;
 import fgo.characters.Master;
+import fgo.ui.campfire.AlterOption;
 import javassist.CannotCompileException;
 import javassist.expr.ExprEditor;
 import javassist.expr.FieldAccess;
@@ -22,6 +22,7 @@ public class CampfireOptionPatch {
         return new ExprEditor() {
             private boolean modified = false;
 
+            @Override
             public void edit(FieldAccess f) throws CannotCompileException {
                 if (!this.modified && f.getFieldName().equals("relics") && f.isReader()) {
                     this.modified = true;

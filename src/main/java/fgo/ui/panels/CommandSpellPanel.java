@@ -1,4 +1,4 @@
-package fgo.panel;
+package fgo.ui.panels;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.helpers.ImageMaster;

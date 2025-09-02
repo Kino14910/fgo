@@ -4,7 +4,7 @@ import java.util.Iterator;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
 
-import fgo.panel.NobleDeck;
+import fgo.ui.panels.NobleDeck;
 
 public class NobleCardHelper {
     public static boolean hasCardWithID(String targetID) {

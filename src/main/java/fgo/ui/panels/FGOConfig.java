@@ -1,4 +1,4 @@
-package fgo.panel;
+package fgo.ui.panels;
 
 import static fgo.FGOMod.makeID;
 

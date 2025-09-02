@@ -27,7 +27,7 @@ public class ViyViyViyAction extends AbstractGameAction {
         }
 
         AbstractRelic abstractRelic = rs.get(0);
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ViyViyViyPower(p, abstractRelic)));
+        addToBot(new ApplyPowerAction(p, p, new ViyViyViyPower(p, abstractRelic)));
 
         this.isDone = true;
     }

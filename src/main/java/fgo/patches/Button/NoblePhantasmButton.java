@@ -1,6 +1,6 @@
 package fgo.patches.Button;
 
-import static fgo.utils.GeneralUtils.addToBot;
+import static fgo.utils.ModHelper.addToBot;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;

@@ -1,9 +1,10 @@
 package fgo.powers;
 
+import static fgo.FGOMod.makeID;
+
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.unique.RemoveDebuffsAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
-import static fgo.FGOMod.makeID;
 
 public class SpringOfFirePower extends BasePower {
     public static final String POWER_ID = makeID(SpringOfFirePower.class.getSimpleName());

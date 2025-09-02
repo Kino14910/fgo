@@ -1,9 +1,9 @@
 package fgo.powers;
 
+import static fgo.FGOMod.makeID;
+
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
-
-import static fgo.FGOMod.makeID;
 
 public class NPRatePower extends BasePower {
     public static final String POWER_ID = makeID(NPRatePower.class.getSimpleName());
@@ -16,11 +16,9 @@ public class NPRatePower extends BasePower {
 
     @Override
     public void updateDescription() {
-        if (this.amount <= 1) {
-            this.description = DESCRIPTIONS[0];
-        } else {
-            this.description = DESCRIPTIONS[1] + this.amount + DESCRIPTIONS[2];
-        }
+        description = amount > 1 ? 
+            String.format(DESCRIPTIONS[1], amount) : 
+            DESCRIPTIONS[0];
     }
 
     @Override

@@ -21,7 +21,7 @@ public class AbyssLight extends FGOCard {
             FGOCardColor.FGO,
             CardType.SKILL,
             CardRarity.RARE,
-            CardTarget.ENEMY,
+            CardTarget.SELF,
             1
     );
     

@@ -18,11 +18,11 @@ public class DeathOfDeath extends FGOCard {
             CardType.POWER,
             CardRarity.RARE,
             CardTarget.SELF,
-            3
+            2
     );
     public DeathOfDeath() {
         super(ID, INFO);
-        setMagic(30, 20);
+        setMagic(15, 10);
         setExhaust();
         this.tags.add(CardTags.HEALING);
     }

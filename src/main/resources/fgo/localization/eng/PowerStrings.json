@@ -400,14 +400,6 @@
       " #yVigor."
     ]
   },
-  "${modID}:BlessedScionPower": {
-    "NAME": "Blessed Scion",
-    "DESCRIPTIONS": [
-      "Play #b",
-      " next turn. Targets are chosen randomly.",
-      " "
-    ]
-  },
   "${modID}:CooldownPower": {
     "NAME": "Cooldown...",
     "DESCRIPTIONS": [
@@ -470,13 +462,6 @@
       "#yAttack card: increases attack damage by #b",
       ", increases #yBlock gained by #b",
       ". At the start of each turn, reduce #b1."
-    ]
-  },
-  "${modID}:ArtsResistancePower": {
-    "NAME": "Arts Resistance",
-    "DESCRIPTIONS": [
-      "Whenever you play a #bArts card, you gain #b",
-      " #yArts."
     ]
   },
   "${modID}:NPRatePower": {

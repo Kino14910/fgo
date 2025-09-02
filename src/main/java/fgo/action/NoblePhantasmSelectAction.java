@@ -12,8 +12,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
 import fgo.cards.noblecards.HollowHeartAlbion;
-import fgo.panel.NobleDeck;
 import fgo.powers.NoblePhantasmCardPower;
+import fgo.ui.panels.NobleDeck;
 
 public class NoblePhantasmSelectAction extends AbstractGameAction {
     private static final String[] NPTEXT = CardCrawlGame.languagePack.getUIString("fgo:NPText").TEXT;
@@ -25,6 +25,7 @@ public class NoblePhantasmSelectAction extends AbstractGameAction {
         this.amount = amount;
     }
 
+    @Override
     public void update() {
         if (this.duration == Settings.ACTION_DUR_MED) {
             // CardGroup group = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
@@ -63,7 +64,7 @@ public class NoblePhantasmSelectAction extends AbstractGameAction {
             if (selectedCard.upgraded || this.upgraded) {
                 selectedCardCopy.upgrade();
             }
-            AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(selectedCardCopy, this.amount));
+            addToBot(new MakeTempCardInHandAction(selectedCardCopy, this.amount));
             selectedCards.clear();
         }
         this.tickDuration();
