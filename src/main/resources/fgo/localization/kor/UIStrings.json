@@ -72,7 +72,7 @@
       "드로우 덱의 맨 위에 놓습니다."
     ]
   },
-  "${modID}:NobleCardTabNamePatch": {
+  "${modID}:TabNamePatch": {
     "TEXT": [
       "보구"
     ]

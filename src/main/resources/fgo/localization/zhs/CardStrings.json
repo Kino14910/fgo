@@ -20,13 +20,18 @@
     "DESCRIPTION": "获得 !B! 点 格挡 。",
     "UPGRADE_DESCRIPTION": "获得 !B! 点 格挡 。 NL 在这个回合受到的攻击伤害降低 !M! %。",
     "EXTENDED_DESCRIPTION": [
-      "在这个回合受到的攻击伤害降低 !M! %。 NL 获得 !NP! % fgo:宝具值 ，3点 力量 ，30点 fgo:暴击伤害 。"
+      "在这个回合受到的攻击伤害降低 !M! %。 NL 获得 !NP! % fgo:宝具值 ，3点 力量 ，30点 fgo:暴击伤害 。",
+      "荣光坚毅的雪花之壁",
+      "荣光远扬的雪花之盾"
     ],
     "FLAVOR": "这张卡会在特定的时候升级。"
   },
   "${modID}:BlackBarrel": {
-    "NAME": "悖论构造体",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 增加一名敌人当前格挡的伤害。 NL 消耗 。"
+    "NAME": "掩体雷弹",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 增加一名敌人当前格挡的伤害。 NL 消耗 。",
+    "EXTENDED_DESCRIPTION": [
+      "悖论构造体"
+    ]
   },
   "${modID}:RestoreSpiritOrigin": {
     "NAME": "灵基复原",
@@ -633,8 +638,30 @@
     "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 获得 !NP! % fgo:宝具值 。"
   },
   "${modID}:Camelot": {
-    "NAME": "理想之城",
-    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 获得2点 力量 。 NL 在你的回合结束时，获得 !M! 点 格挡 。"
+    "NAME": "拟似展开／人理之础",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 获得2点 力量 。 NL 在你的回合结束时，获得 !M! 点 格挡 。",
+    "EXTENDED_DESCRIPTION": [
+      "三回合内受到的攻击伤害降低 !M! %。 NL 在你的回合结束时，获得 !B! 点 格挡 。 NL 获得1层 人工制品 ， 力量 。 NL 下一张 fgo:宝具牌 固定为 *明证希望的人理之剑 。 NL 将 *时为朦胧的白垩之壁 变为 *测定时间的紫弹之薪。",
+      "已然遥远的理想之城",
+      "构筑希望的人理之盾"
+    ],
+    "FLAVOR": "这张卡会在特定的时候升级。"
+  },
+  "${modID}:RayProofKyrielight": {
+    "NAME": "明证希望的人理之剑",
+    "DESCRIPTION": "fgo:无敌贯通 。 NL 给予所有敌人 !M! 层易伤 。 NL 对所有敌人造成 !D! 点伤害。"
+  },
+  "${modID}:ObscurantWallofChalk": {
+    "NAME": "时为朦胧的白垩之壁",
+    "DESCRIPTION": "阻止下一次你受到的生命值损伤。 NL 获得 !NP! % fgo:宝具值 。",
+    "UPGRADE_DESCRIPTION": "获得1层 fgo:肃正防御 和 无实体 。 NL 获得 !NP! % fgo:宝具值 。"
+  },
+  "${modID}:TimewornBulletKindling": {
+    "NAME": "测定时间的紫弹之薪",
+    "DESCRIPTION": "获得 !M! % fgo:宝具威力 。 NL 消耗所有 fgo:暴击星 ，每消耗一个 fgo:宝具值 增加 4%。 NL 失去4点生命。使用后变为 *时为朦胧的白垩之壁 。",
+    "EXTENDED_DESCRIPTION":[
+      "获得 !NP! % fgo:宝具值 。"
+    ]
   },
   "${modID}:EnferChateaudIf": {
     "NAME": "虎啊，煌煌燎燃",
@@ -696,7 +723,7 @@
   },
   "${modID}:Summer": {
     "NAME": "夏日",
-    "DESCRIPTION": "{@@}获得 fgo:水边 。{!Upgrades!|=1 NL 获得 !NP!% fgo:NP.}"
+    "DESCRIPTION": "{@@}获得 fgo:水边 。{!Upgrades!|=1 NL 获得 !NP! % fgo:宝具值 .}"
   },
   "${modID}:EnumaElish": {
     "NAME": "天地乖离开辟之星",

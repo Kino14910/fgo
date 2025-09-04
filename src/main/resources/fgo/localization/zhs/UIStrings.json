@@ -72,9 +72,10 @@
       "放到你抽牌堆的顶部。"
     ]
   },
-  "${modID}:NobleCardTabNamePatch": {
+  "${modID}:TabNamePatch": {
     "TEXT": [
-      "宝具"
+      "宝具",
+      "衍生"
     ]
   },
   "${modID}:PictureSelectFgoPatch": {

@@ -1,9 +1,10 @@
 package fgo.powers;
 
+import static fgo.FGOMod.makeID;
+
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import static fgo.FGOMod.makeID;
 
 public class SealNPPower extends BasePower {
     public static final String POWER_ID = makeID(SealNPPower.class.getSimpleName());
@@ -16,7 +17,7 @@ public class SealNPPower extends BasePower {
 
     @Override
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
+        description = String.format(DESCRIPTIONS[0], amount);
     }
 
     @Override

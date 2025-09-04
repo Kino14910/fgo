@@ -15,29 +15,25 @@
   "${modID}:UnlimitedPower": {
     "NAME": "無限劍制",
     "DESCRIPTIONS": [
-      "在每回合開始時，增加 #b",
-      " 張隨機攻擊牌到你的手牌。這些牌在本回合耗能變爲 #b0 。"
+      "在每回合開始時，增加 #b%d 張隨機攻擊牌到你的手牌。這些牌在本回合耗能變爲 #b0 。"
     ]
   },
   "${modID}:NextLoseHpPower": {
     "NAME": "下回合失去生命",
     "DESCRIPTIONS": [
-      "下回合失去 #b",
-      " 點 #y生命 。"
+      "下回合失去 #b%d 點 #y生命 。"
     ]
   },
   "${modID}:NextCureHpPower": {
     "NAME": "下回合回復生命",
     "DESCRIPTIONS": [
-      "下回合回復 #b",
-      " 點 #y生命 。"
+      "下回合回復 #b%d 點 #y生命 。"
     ]
   },
   "${modID}:DoppelgangerMasterPower": {
     "NAME": "二重身",
     "DESCRIPTIONS": [
-      "本回合你的下 #b",
-      " 張非 #y寶具 牌將被打出兩次並且被 #y消耗 。"
+      "本回合你的下 #b%d 張非 #y寶具 牌將被打出兩次並且被 #y消耗 。"
     ]
   },
   "${modID}:SunlightPower": {
@@ -61,23 +57,20 @@
   "${modID}:ComeOnPower": {
     "NAME": "毅力：治愈",
     "DESCRIPTIONS": [
-      "下一次發動 #y毅力 時額外獲得 #b",
-      " 層 #y再生 。"
+      "下一次發動 #y毅力 時額外獲得 #b%d 層 #y再生 。"
     ]
   },
   "${modID}:SpringOfFirePower": {
     "NAME": "毅力：喝彩",
     "DESCRIPTIONS": [
-      "每當你發動 #y毅力 時，就獲得 #b",
-      "% #y寶具威力 。移除身上的所有負面效果。"
+      "每當你發動 #y毅力 時，就獲得 #b%d %% #y寶具威力 。移除身上的所有負面效果。"
     ]
   },
   "${modID}:MonteCristoTreasurePower": {
     "NAME": "基督山的祕寶",
     "DESCRIPTIONS": [
       "每當你造成 #y暴擊傷害 時，獲得未被 #y格擋 傷害的 #y格擋 。",
-      "每當你造成 #y暴擊傷害 時，獲得未被 #y格擋 傷害 #b",
-      " 倍的 #y格擋 。"
+      "每當你造成 #y暴擊傷害 時，獲得未被 #y格擋 傷害 #b%d 倍的 #y格擋 。"
     ]
   },
   "${modID}:CursePower": {
@@ -90,37 +83,32 @@
     "NAME": "健全化",
     "DESCRIPTIONS": [
       "在這個回合結束時，移除你身上的所有負面效果。",
-      "在接下來 #b",
-      " 個回合結束時，移除你身上的所有負面效果。"
+      "在接下來 #b%d 個回合結束時，移除你身上的所有負面效果。"
     ]
   },
   "${modID}:BeastMagicPower": {
     "NAME": "對獸魔術",
     "DESCRIPTIONS": [
-      "每當你獲得負面效果時，就獲得 #b",
-      " 點 #y格擋 。"
+      "每當你獲得負面效果時，就獲得 #b%d 點 #y格擋 。"
     ]
   },
   "${modID}:AvalonPower": {
     "NAME": "阿瓦隆",
     "DESCRIPTIONS": [
-      "在你的回合結束時，移除你的 #b",
-      " 個負面效果。"
+      "在你的回合結束時，移除你的 #b%d 個負面效果。"
     ]
   },
   "${modID}:ChasmatisPower": {
     "NAME": "天之裂谷",
     "DESCRIPTIONS": [
       "每當你獲得 #y詛呪 時，抽 #b1 張牌。",
-      "每當你獲得 #y詛呪 時，抽 #b",
-      " 張牌。"
+      "每當你獲得 #y詛呪 時，抽 #b%d 張牌。"
     ]
   },
   "${modID}:HPRegenPower": {
     "NAME": "繼續療傷",
     "DESCRIPTIONS": [
-      "在回合開始時，回復 #b",
-      " 點 #y生命 。"
+      "在回合開始時，回復 #b%d 點 #y生命 。"
     ]
   },
   "${modID}:DeathOfDeathPower": {
@@ -132,15 +120,13 @@
   "${modID}:BriefStrengthPower": {
     "NAME": "延遲發動",
     "DESCRIPTIONS": [
-      "下次觸發 #y死之淵 時 #r失去 #b",
-      " 點 #y力量 。"
+      "下次觸發 #y死之淵 時 #r失去 #b%d 點 #y力量 。"
     ]
   },
   "${modID}:StarRegenPower": {
     "NAME": "每回合暴擊星獲得",
     "DESCRIPTIONS": [
-      "在回合開始時，獲得 #b",
-      " 顆 #y暴擊星 。"
+      "在回合開始時，獲得 #b%d 顆 #y暴擊星 。"
     ]
   },
   "${modID}:AtTheWellPower": {
@@ -152,17 +138,14 @@
   "${modID}:GutsAtTheWellPower": {
     "NAME": "獻給世界樹的活祭",
     "DESCRIPTIONS": [
-      "下一次 #y毅力 發動時獲得 [E] #b",
-      " 次並且抽 #b",
-      " 張牌。"
+      "下一次 #y毅力 發動時獲得 [E] #b%d 次並且抽 #b%d 張牌。"
     ]
   },
   "${modID}:SquireOfProphecyPower": {
     "NAME": "祈雨",
     "DESCRIPTIONS": [
       "你在本回合第一次打出牌耗盡 [E] 時，獲得 [E] [E] 。",
-      "你在接下來 #b",
-      " 回合第一次打出牌耗盡 [E] 時，獲得 [E] [E] 。"
+      "你在接下來 #b%d 回合第一次打出牌耗盡 [E] 時，獲得 [E] [E] 。"
     ]
   },
   "${modID}:NoPrayerForRainPower": {
@@ -181,8 +164,7 @@
   "${modID}:PowerUpBoostPower": {
     "NAME": "寶具獲得促進",
     "DESCRIPTIONS": [
-      "#y寶具牌 攻擊傷害提高 #b",
-      " 倍。"
+      "#y寶具牌 攻擊傷害提高 #b%d 倍。"
     ]
   },
   "${modID}:EndOfADreamPower": {
@@ -200,23 +182,20 @@
   "${modID}:CurseHarmonyPower": {
     "NAME": "兔人的詛咒",
     "DESCRIPTIONS": [
-      "在你的回合結束時，隨機給予敵人你 #y詛呪 層數 #b",
-      " 倍的 #y中毒 。"
+      "在你的回合結束時，隨機給予敵人你 #y詛呪 層數 #b%d 倍的 #y中毒 。"
     ]
   },
   "${modID}:EnergyRegenPower": {
     "NAME": "每回合獲得NP",
     "DESCRIPTIONS": [
-      "在每回合開始時獲得 #b",
-      " % #y寶具值 。"
+      "在每回合開始時獲得 #b%d % #y寶具值 。"
     ]
   },
   "${modID}:EvasionPower": {
     "NAME": "回避",
     "DESCRIPTIONS": [
       "阻止下一次你受到的攻擊。",
-      "阻止下 #b",
-      " 次你受到的攻擊。"
+      "阻止下 #b%d 次你受到的攻擊。"
     ]
   },
   "${modID}:SchwarzwaldFalkePower": {
@@ -235,30 +214,26 @@
   "${modID}:DefenseUpPower": {
     "NAME": "被傷害減免",
     "DESCRIPTIONS": [
-      "降低 #b",
-      " 點下一次受到的攻擊傷害。"
+      "降低 #b%d 點下一次受到的攻擊傷害。"
     ]
   },
   "${modID}:DefenseDownPower": {
     "NAME": "防御破壞",
     "DESCRIPTIONS": [
-      "受到攻擊時，增加受到 #b",
-      " 點傷害。在其回合結束時，減少 #b1 層。"
+      "受到攻擊時，增加受到 #b%d 點傷害。在其回合結束時，減少 #b1 層。"
     ]
   },
   "${modID}:BuffBlockPower": {
     "NAME": "力量無效",
     "DESCRIPTIONS": [
-      "無法獲得 #y力量 #b",
-      " 次。"
+      "無法獲得 #y力量 #b%d 次。"
     ]
   },
   "${modID}:FifthFormPower": {
     "NAME": "第五勢",
     "DESCRIPTIONS": [
       "在這個回合對一個敵人的攻擊牌會打出兩次，但傷害降低 #b50% 。",
-      "在接下來 #b",
-      " 個回合對一個敵人的攻擊牌會打出兩次，但傷害降低 #b50% 。",
+      "在接下來 #b%d 個回合對一個敵人的攻擊牌會打出兩次，但傷害降低 #b50% 。",
       "在這個回合對一個敵人的攻擊牌會打出兩次，但傷害降低 #b35% 。",
       " 個回合對一個敵人的攻擊牌會打出兩次，但傷害降低 #b35% 。"
     ]
@@ -266,84 +241,73 @@
   "${modID}:IgnoreDefensePower": {
     "NAME": "無視格擋",
     "DESCRIPTIONS": [
-      "在你的回合開始時，有 #y格擋 的敵人失去等於其 #y格擋 的生命並且給予其 #b",
-      " 層 #y易傷 。"
+      "在你的回合開始時，有 #y格擋 的敵人失去等於其 #y格擋 的生命並且給予其 #b%d 層 #y易傷 。"
     ]
   },
   "${modID}:InvincibilityPower": {
     "NAME": "無敵",
     "DESCRIPTIONS": [
       "在本回合阻止下一次你受到的攻擊。",
-      "在本回合阻止下 #b",
-      " 次你受到的攻擊。"
+      "在本回合阻止下 #b%d 次你受到的攻擊。"
     ]
   },
   "${modID}:InvincibilityTurnPower": {
     "NAME": "無敵",
     "DESCRIPTIONS": [
       "在本回合阻止你受到的所有攻擊。",
-      "阻止你受到的所有攻擊，持續時間 #b",
-      " 回合。"
+      "阻止你受到的所有攻擊，持續時間 #b%d 回合。"
     ]
   },
   "${modID}:EternalMemoriesPower": {
     "NAME": "肅正防御",
     "DESCRIPTIONS": [
       "阻止下一次你受到的生命值損傷。每次阻止成功回復 #b5 點生命。",
-      "阻止下 #b",
-      " 次你受到的生命值損傷。每次阻止成功回復 #b5 點生命。"
+      "阻止下 #b%d 次你受到的生命值損傷。每次阻止成功回復 #b5 點生命。"
     ]
   },
   "${modID}:NPOverchargePower": {
     "NAME": "充能階段上升",
     "DESCRIPTIONS": [
-      "你的下 #b",
-      " 張 #y寶具 牌將被打出兩次。",
+      "你的下 #b%d 張 #y寶具 牌將被打出兩次。",
       "你的下一張 #y寶具 牌將被打出兩次。"
     ]
   },
   "${modID}:CurseEvilFormPower": {
     "NAME": "詛呪形態",
     "DESCRIPTIONS": [
-      "在回合開始時獲得 #b",
-      " 層 #y詛呪 。"
+      "在回合開始時獲得 #b%d 層 #y詛呪 。"
     ]
   },
   "${modID}:SevenBeastCrownsPower": {
     "NAME": "七頂獸冠",
     "DESCRIPTIONS": [
       "在本回合結束時： NL 獲得 #b3 點 #y荊棘 。 NL 獲得 #b4 層 #y多層護甲 和 #y再生 。 NL 在你的回合開始時，獲得 #b1 點能量和抽 #b1 張牌。 NL 獲得 #b1 層 #y無實體 和 #y人工制品 。",
-      "你的下 #b",
-      " 回合結束時： NL 獲得 #b3 點 #y荊棘 。 NL 獲得 #b4 層 #y多層護甲 和 #y再生 。 NL 在你的回合開始時，獲得 #b1 點能量和抽 #b1 張牌。 NL 獲得 #b1 層 #y無實體 和 #y人工制品 。"
+      "你的下 #b%d 回合結束時： NL 獲得 #b3 點 #y荊棘 。 NL 獲得 #b4 層 #y多層護甲 和 #y再生 。 NL 在你的回合開始時，獲得 #b1 點能量和抽 #b1 張牌。 NL 獲得 #b1 層 #y無實體 和 #y人工制品 。"
     ]
   },
   "${modID}:InsanityPower": {
     "NAME": "澪標之魂",
     "DESCRIPTIONS": [
-      "你每打出一張攻擊牌，移除你的 #b1 層 #y詛呪 並且移除成功時獲得 #b1 點 #y力量 和 #b",
-      "% #y寶具值 。"
+      "你每打出一張攻擊牌，移除你的 #b1 層 #y詛呪 並且移除成功時獲得 #b1 點 #y力量 和 #b%d %% #y寶具值 。"
     ]
   },
   "${modID}:TaisuiSPower": {
     "NAME": "血染的皇子",
     "DESCRIPTIONS": [
-      "當這名敵人死亡時，你獲得 [E] #b",
-      " 次。"
+      "當這名敵人死亡時，你獲得 [E] #b%d 次。"
     ]
   },
   "${modID}:WatersidePower": {
     "NAME": "水邊",
     "DESCRIPTIONS": [
-      "在每回合開始時，你和所有敵人獲得 #b",
-      " 點 #y格擋 。"
+      "在每回合開始時，你和所有敵人獲得 #b%d 點 #y格擋 。"
     ]
   },
   "${modID}:AthnGablaPower": {
     "NAME": "四枝之淺灘",
     "DESCRIPTIONS": [
       "每當你失去生命時，獲得失去生命的 #y活力 。",
-      "每當你失去生命時，獲得失去生命的 #b",
-      " 倍 #y活力 。"
+      "每當你失去生命時，獲得失去生命的 #b%d 倍 #y活力 。"
     ]
   },
   "${modID}:BlessingOfKurPower": {
@@ -355,37 +319,32 @@
   "${modID}:LivingFlamePower": {
     "NAME": "活火焰",
     "DESCRIPTIONS": [
-      "每受到一次 #y攻擊 ，給予攻擊者 #b",
-      " 層 #y灼燒 和 #b1 層 #y防御破壞 。"
+      "每受到一次 #y攻擊 ，給予攻擊者 #b%d 層 #y灼燒 和 #b1 層 #y防御破壞 。"
     ]
   },
   "${modID}:NPDamagePower": {
     "NAME": "寶具威力",
     "DESCRIPTIONS": [
-      " #y寶具 攻擊傷害提升 #b",
-      "% 。"
+      " #y寶具 攻擊傷害提升 #b%d %% 。"
     ]
   },
   "${modID}:MillenniumCastlePower": {
     "NAME": "千年城",
     "DESCRIPTIONS": [
-      "在每回合開始時，失去 #b1 點 #y力量 ，所有敵人失去 #b2 點 #y力量 ，持續 #b",
-      " 回合。在結束時反轉你的負面 #y力量 ，獲得等量 #y敏捷 。"
+      "在每回合開始時，失去 #b1 點 #y力量 ，所有敵人失去 #b2 點 #y力量 ，持續 #b%d 回合。在結束時反轉你的負面 #y力量 ，獲得等量 #y敏捷 。"
     ]
   },
   "${modID}:ChildrenHeroPower": {
     "NAME": "無貌之月",
     "DESCRIPTIONS": [
-      "你在接下來 #b",
-      " 回合內不能再抽任何牌和 #y保留 你的手牌。",
+      "你在接下來 #b%d 回合內不能再抽任何牌和 #y保留 你的手牌。",
       "你在這個回合內不能再抽任何牌和 #y保留 你的手牌。"
     ]
   },
   "${modID}:BurnDamagePower": {
     "NAME": "灼燒",
     "DESCRIPTIONS": [
-      "在回合開始時失去 #b",
-      " 點 #y生命 。"
+      "在回合開始時失去 #b%d 點 #y生命 。"
     ]
   },
   "${modID}:ArchetypeORTPower": {
@@ -397,23 +356,20 @@
   "${modID}:ExistenceOutsideDomainPower": {
     "NAME": "領域外生命",
     "DESCRIPTIONS": [
-      "在下回合開始時獲得 #b",
-      " 點 #y活力 。"
+      "在下回合開始時獲得 #b%d 點 #y活力 。"
     ]
   },
   "${modID}:CooldownPower": {
     "NAME": "冷卻中",
     "DESCRIPTIONS": [
       "你不能再打出 ",
-      " 。持續時間 #b",
-      " 回合。"
+      " 。持續時間 #b%d 回合。"
     ]
   },
   "${modID}:ReducePercentDamagePower": {
     "NAME": "防御中",
     "DESCRIPTIONS": [
-      "在這個回合降低 #b",
-      "% 受到的攻擊傷害。"
+      "在這個回合降低 #b%d %% 受到的攻擊傷害。"
     ]
   },
   "${modID}:ItsInevitablePower": {
@@ -426,8 +382,7 @@
   "${modID}:ManaBurstGemsPower": {
     "NAME": "魔力放出（寶石）",
     "DESCRIPTIONS": [
-      "在你的回合結束時，獲得 #b",
-      " 點 #y力量 。"
+      "在你的回合結束時，獲得 #b%d 點 #y力量 。"
     ]
   },
   "${modID}:HeroicKingPower": {
@@ -453,38 +408,32 @@
   "${modID}:QuickPerformancePower": {
     "NAME": "綠牌性能提升",
     "DESCRIPTIONS": [
-      "每當你打出一張 #g綠牌 ，額外獲得 #b",
-      " 顆 #y暴擊星 。"
+      "每當你打出一張 #g綠牌 ，額外獲得 #b%d 顆 #y暴擊星 。"
     ]
   },
   "${modID}:ArtsPerformancePower": {
     "NAME": "寶具值獲取提升",
     "DESCRIPTIONS": [
-      "每當你打出一張牌，額外獲得 #b",
-      "% #y寶具值 。最多額外獲得 #b5% 。"
+      "每當你打出一張牌，額外獲得 #b%d %% #y寶具值 。最多額外獲得 #b5% 。"
     ]
   },
   "${modID}:BusterPerformancePower": {
     "NAME": "攻擊牌性能提升",
     "DESCRIPTIONS": [
-      "#y攻擊牌 額外造成 #b",
-      " 點傷害，從 #y攻擊牌 中額外獲得 #b",
-      " 點 #y格擋 。每回合開始時減少 #b1 層。"
+      "#y攻擊牌 額外造成 #b%d 點傷害，從 #y攻擊牌 中額外獲得 #b%d 點 #y格擋 。每回合開始時減少 #b1 層。"
     ]
   },
   "${modID}:NPRatePower": {
     "NAME": "黃金律",
     "DESCRIPTIONS": [
       "在這個回合，打出手牌和受到攻擊時，獲得的寶具值提高 #b100% 。",
-      "打出手牌和受到攻擊時，獲得的寶具值提高 #b100% ，持續 #b",
-      " 回合。"
+      "打出手牌和受到攻擊時，獲得的寶具值提高 #b100% ，持續 #b%d 回合。"
     ]
   },
   "${modID}:StarRatePower": {
     "NAME": "暴擊星獲得量提升",
     "DESCRIPTIONS": [
-      "在這個回合每當你造成一次傷害，額外獲得一次 #b",
-      " 顆 #y暴擊星 。"
+      "在這個回合每當你造成一次傷害，額外獲得一次 #b%d 顆 #y暴擊星 。"
     ]
   },
   "${modID}:StarPower": {
@@ -497,79 +446,68 @@
   "${modID}:CriticalDamageUpPower": {
     "NAME": "暴擊威力",
     "DESCRIPTIONS": [
-      "#y暴擊 額外造成 #b",
-      "% 傷害。"
+      "#y暴擊 額外造成 #b%d %% 傷害。"
     ]
   },
   "${modID}:LoseCritDamagePower": {
     "NAME": "失去暴擊威力",
     "DESCRIPTIONS": [
-      "在你的回合結束時，失去 #b",
-      "% #y暴擊威力 。"
+      "在你的回合結束時，失去 #b%d %% #y暴擊威力 。"
     ]
   },
   "${modID}:FragarachPower": {
     "NAME": "斬剜戰神之劍",
     "DESCRIPTIONS": [
-      "在本回合，每受到一次 #y攻擊 ，造成 #b",
-      " 點反傷 ，你獲得 #b10 顆 #y暴擊星 。"
+      "在本回合，每受到一次 #y攻擊 ，造成 #b%d 點反傷 ，你獲得 #b10 顆 #y暴擊星 。"
     ]
   },
   "${modID}:InfiniteGrowthPower": {
     "NAME": "增殖",
     "DESCRIPTIONS": [
-      "阻止下一次受到的等於或低於 #b",
-      " 點的生命值損傷。"
+      "阻止下一次受到的等於或低於 #b%d 點的生命值損傷。"
     ]
   },
   "${modID}:DesterrennachtPower": {
     "NAME": "恐怖",
     "DESCRIPTIONS": [
-      "在 #b",
-      " 回合開始後其 #y無法行動 一回合。",
+      "在 #b%d 回合開始後其 #y無法行動 一回合。",
       "在本回合其 #y無法行動 一回合。"
     ]
   },
   "${modID}:GoddessMetamorphosisBeastPower": {
     "NAME": "女神變生（獸）",
     "DESCRIPTIONS": [
-      "每當你造成一次攻擊傷害時，就給予 #b",
-      " 層 #y中毒 、 #y詛呪。"
+      "每當你造成一次攻擊傷害時，就給予 #b%d 層 #y中毒 、 #y詛呪。"
     ]
   },
   "${modID}:MorningLarkPower": {
     "NAME": "晨之雲雀",
     "DESCRIPTIONS": [
-      "在你的下一個回合開始時，少抽 #b",
-      " 張牌。"
+      "在你的下一個回合開始時，少抽 #b%d 張牌。"
     ]
   },
   "${modID}:MaxHPPower": {
     "NAME": "最大生命增加",
     "DESCRIPTIONS": [
-      "在本場戰鬥，你的最大生命值增加 #b",
-      " 點。在戰鬥結束時失去所有臨時增加的最大生命。"
+      "在本場戰鬥，你的最大生命值增加 #b%d 點。在戰鬥結束時失去所有臨時增加的最大生命。"
     ]
   },
   "${modID}:FacelessMoonPower": {
     "NAME": "無貌之月",
     "DESCRIPTIONS": [
-      "在本回合 #y保留 你的手牌。每 #y保留 一張牌，就獲得 #b",
-      " 點 #y格擋 。"
+      "在本回合 #y保留 你的手牌。每 #y保留 一張牌，就獲得 #b%d 點 #y格擋 。"
     ]
   },
   "${modID}:MagicBulletPower": {
     "NAME": "魔彈",
     "DESCRIPTIONS": [
-      "你當前有 #b",
-      " 個魔彈。"
+      "你當前有 #b%d 個魔彈。"
     ]
   },
   "${modID}:SealNPPower": {
     "NAME": "寶具封印",
     "DESCRIPTIONS": [
-      "你無法獲得 #y寶具牌 。持續時間 #b",
-      " 回合。"
+      "你無法獲得 #y寶具牌 。持續時間 #b%d 回合。"
     ]
   },
   "${modID}:StarGainMonsterPower": {

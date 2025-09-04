@@ -1,9 +1,10 @@
 package fgo.powers;
 
+import static fgo.FGOMod.makeID;
+
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
-import static fgo.FGOMod.makeID;
 
 public class InfiniteGrowthPower extends BasePower {
     public static final String POWER_ID = makeID(InfiniteGrowthPower.class.getSimpleName());
@@ -15,7 +16,7 @@ public class InfiniteGrowthPower extends BasePower {
     }
 
     @Override
-    public void updateDescription() {this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];}
+    public void updateDescription() {description = String.format(DESCRIPTIONS[0], amount);}
 
     @Override
     public int onAttackedToChangeDamage(DamageInfo info, int damageAmount) {

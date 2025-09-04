@@ -8,19 +8,13 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import fgo.cards.AbsNoblePhantasmCard;
-import fgo.hexui_lib.util.RenderImageLayer;
-import fgo.hexui_lib.util.TextureLoader;
 
 public class YewBow extends AbsNoblePhantasmCard {
     public static final String ID = makeID(YewBow.class.getSimpleName());
-    public static final String IMG_PATH = "fgo/images/cards/noble/YewBow.png";
-    public static final String IMG_PATH_P = "fgo/images/cards/noble/YewBow_p.png";
+
     public YewBow() {
         super(ID,CardType.ATTACK, CardTarget.ENEMY);
         setDamage(25, 5);
-
-        cardArtLayers512.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH)));
-        cardArtLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH_P)));
     }
 
 

@@ -1,14 +1,15 @@
 package fgo.powers;
 
+import static fgo.FGOMod.makeID;
+
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.powers.StrengthPower;
-import fgo.action.FgoNpAction;
 
-import static fgo.FGOMod.makeID;
+import fgo.action.FgoNpAction;
 
 public class InsanityPower extends BasePower {
     public static final String POWER_ID = makeID(InsanityPower.class.getSimpleName());
@@ -21,7 +22,7 @@ public class InsanityPower extends BasePower {
 
     @Override
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
+        description = String.format(DESCRIPTIONS[0], amount);
     }
 
     @Override

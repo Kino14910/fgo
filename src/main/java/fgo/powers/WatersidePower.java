@@ -1,10 +1,11 @@
 package fgo.powers;
 
+import static fgo.FGOMod.makeID;
+
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import static fgo.FGOMod.makeID;
 
 public class WatersidePower extends BasePower {
     public static final String POWER_ID = makeID(WatersidePower.class.getSimpleName());
@@ -30,6 +31,6 @@ public class WatersidePower extends BasePower {
 
     @Override
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0] + BLOCK_AMT + DESCRIPTIONS[1];
+        this.description = String.format(DESCRIPTIONS[0], BLOCK_AMT);
     }
 }

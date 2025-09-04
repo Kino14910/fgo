@@ -13,10 +13,12 @@ public class CustomEnums {
     public static class FGOCardColor {
         @SpireEnum public static AbstractCard.CardColor FGO;
         @SpireEnum public static AbstractCard.CardColor NOBLE_PHANTASM;
+        @SpireEnum public static AbstractCard.CardColor FGO_DERIVATIVE;
     }
 
     public static class FGOLibraryType {
         @SpireEnum public static CardLibrary.LibraryType FGO;
         @SpireEnum public static CardLibrary.LibraryType NOBLE_PHANTASM;
+        @SpireEnum public static CardLibrary.LibraryType FGO_DERIVATIVE;
     }
 }

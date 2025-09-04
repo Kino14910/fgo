@@ -1,11 +1,11 @@
 package fgo.powers;
 
+import static fgo.FGOMod.makeID;
+
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.powers.PoisonPower;
-
-import static fgo.FGOMod.makeID;
 
 public class GoddessMetamorphosisBeastPower extends BasePower {
     public static final String POWER_ID = makeID(GoddessMetamorphosisBeastPower.class.getSimpleName());
@@ -18,7 +18,7 @@ public class GoddessMetamorphosisBeastPower extends BasePower {
 
     @Override
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
+        description = String.format(DESCRIPTIONS[0], amount);
     }
 
     @Override

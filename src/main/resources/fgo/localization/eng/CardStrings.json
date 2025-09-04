@@ -16,17 +16,22 @@
     "DESCRIPTION": "Gain !NP!% fgo:NP. NL Deal !D! damage."
   },
   "${modID}:WallOfSnowflakes": {
-    "NAME": "Wall of Snow Flakes",
+    "NAME": "Transient Wall of Snowflakes",
     "DESCRIPTION": "Gain !B! Block.",
     "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Reduce !M!% damage taken this turn.",
     "EXTENDED_DESCRIPTION": [
-      "Reduce damage taken by !M!% this turn. NL Gain !NP!% fgo:NP, 3 Strength, and 30 fgo:CriticalDamage."
+      "Reduce damage taken by !M!% this turn. NL Gain !NP!% fgo:NP, 3 Strength, and 30 fgo:CriticalDamage.",
+      "Exalted Impervious Wall of Snowflakes",
+      "Venerated Shield of Snowflakes"
     ],
     "FLAVOR": "This card will upgrade under specific conditions."
   },
   "${modID}:BlackBarrel": {
-    "NAME": "Black Barrel",
-    "DESCRIPTION": "Deal !D! damage. NL Deal additional damage equal to the enemy's current Block. NL Exhaust."
+    "NAME": "Bunker Bolt",
+    "DESCRIPTION": "Deal !D! damage. NL Deal additional damage equal to the enemy's current Block. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "Black Barrel"
+    ]
   },
   "${modID}:RestoreSpiritOrigin": {
     "NAME": "Restore Spirit Origin",
@@ -630,8 +635,29 @@
     "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Gain !NP!% fgo:NP."
   },
   "${modID}:Camelot": {
-    "NAME": "Lord Camelot",
-    "DESCRIPTION": "Gain !B! Block. NL Gain 2 Strength. NL At the end of your turn, gain !M! Block."
+    "NAME": "Lord Chaldeas",
+    "DESCRIPTION": "Gain !B! Block. NL Gain 2 Strength. NL At the end of your turn, gain !M! Block.",
+    "EXTENDED_DESCRIPTION": [
+      "Reduce attack damage taken by !M!% for 3 turns. NL At the end of your turn, gain !B! Block. NL Gain 1 Artifact and 1 Strength. NL Your next fgo:Noble_Phantasm is set to *Ray Proof Kyrielight. NL Transform *Obscurant Wall of Chalk into *Timeworn Bullet Kindling of Amethyst.",
+      "Lord Camelot",
+      "Lord Chaldeas"
+    ],
+    "FLAVOR": "This card upgrades under specific conditions."
+  },
+  "${modID}:RayProofKyrielight": {
+    "NAME": "Ray Proof Kyrielight",
+    "DESCRIPTION": "#yfgo:Ignores_Invincibility. NL Apply !M! Vulnerable to ALL enemies. NL Deal !D! damage to ALL enemies."
+  },
+  "${modID}:ObscurantWallofChalk": {
+    "NAME": "Obscurant Wall of Chalk",
+    "DESCRIPTION": "Gain 1 #yfgo:Guts and #yIntangible. NL Gain !NP!% #yfgo:NP_Gauge."
+  },
+  "${modID}:TimewornBulletKindling": {
+    "NAME": "Timeworn Bullet Kindling of Amethyst",
+    "DESCRIPTION": "Gain !M!% #yfgo:NP_Damage. NL Consume all #yfgo:Critical_Stars, gain 4% #yfgo:NP_Gauge per star consumed. NL Lose 4 HP. Transform into *Obscurant Wall of Chalk when used.",
+    "EXTENDED_DESCRIPTION": [
+      "Gain !NP!% #yfgo:NP_Gauge."
+    ]
   },
   "${modID}:EnferChateaudIf": {
     "NAME": "Enfer Chateau d'If",

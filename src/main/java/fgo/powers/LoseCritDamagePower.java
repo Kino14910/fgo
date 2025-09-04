@@ -1,9 +1,10 @@
 package fgo.powers;
 
+import static fgo.FGOMod.makeID;
+
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
-import static fgo.FGOMod.makeID;
 
 public class LoseCritDamagePower extends BasePower {
     public static final String POWER_ID = makeID(LoseCritDamagePower.class.getSimpleName());
@@ -16,7 +17,7 @@ public class LoseCritDamagePower extends BasePower {
 
     @Override
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
+        this.description = String.format(DESCRIPTIONS[0], this.amount);
     }
 
     @Override

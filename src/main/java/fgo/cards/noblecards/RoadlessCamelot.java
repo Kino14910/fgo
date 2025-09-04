@@ -9,22 +9,15 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import fgo.cards.AbsNoblePhantasmCard;
-import fgo.hexui_lib.util.RenderImageLayer;
-import fgo.hexui_lib.util.TextureLoader;
 import fgo.powers.NPOverchargePower;
 
 public class RoadlessCamelot extends AbsNoblePhantasmCard {
     public static final String ID = makeID(RoadlessCamelot.class.getSimpleName());
-    public static final String IMG_PATH = "fgo/images/cards/noble/RoadlessCamelot.png";
-    public static final String IMG_PATH_P = "fgo/images/cards/noble/RoadlessCamelot_p.png";
 
     public RoadlessCamelot() {
         super(ID,CardType.ATTACK, CardTarget.ALL_ENEMY);
         setDamage(8, 2);
         setMagic(1, 1);
-
-        cardArtLayers512.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH)));
-        cardArtLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH_P)));
     }
 
 

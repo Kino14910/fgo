@@ -1,12 +1,13 @@
 package fgo.powers;
 
+import static fgo.FGOMod.makeID;
+
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import fgo.action.FgoNpAction;
 
-import static fgo.FGOMod.makeID;
+import fgo.action.FgoNpAction;
 
 public class EnergyRegenPower extends BasePower {
     public static final String POWER_ID = makeID(EnergyRegenPower.class.getSimpleName());
@@ -29,21 +30,22 @@ public class EnergyRegenPower extends BasePower {
     @Override
     public void atStartOfTurn() {
         if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
-            this.flash();
-            this.addToBot(new FgoNpAction(this.npAmount));
+            flash();
+            addToBot(new FgoNpAction(npAmount));
             if(isTurnBased)
-                this.addToBot(new ReducePowerAction(this.owner, this.owner, this.ID, 1));
+                addToBot(new ReducePowerAction(owner, owner, ID, 1));
         }
     }
 
     @Override
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0] + this.npAmount + DESCRIPTIONS[1];
+        
+        description = String.format(DESCRIPTIONS[0], npAmount);
     }
 
     public AbstractPower makeCopy() {
         return isTurnBased
-                ? new EnergyRegenPower(this.owner, this.amount, this.npAmount)
-                : new EnergyRegenPower(this.owner, this.amount);
+                ? new EnergyRegenPower(owner, amount, npAmount)
+                : new EnergyRegenPower(owner, amount);
     }
 }

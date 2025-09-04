@@ -12,22 +12,15 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import fgo.cards.AbsNoblePhantasmCard;
-import fgo.hexui_lib.util.RenderImageLayer;
-import fgo.hexui_lib.util.TextureLoader;
 import fgo.powers.ArtsPerformancePower;
 
 public class Overload extends AbsNoblePhantasmCard {
     public static final String ID = makeID(Overload.class.getSimpleName());
-    public static final String IMG_PATH = "fgo/images/cards/noble/Overload.png";
-    public static final String IMG_PATH_P = "fgo/images/cards/noble/Overload_p.png";
 //    public static final String ID = "Overload";
     public Overload() {
         super(ID,CardType.ATTACK, CardTarget.ENEMY);
         setDamage(30, 8);
         setMagic(2);
-
-        cardArtLayers512.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH)));
-        cardArtLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH_P)));
     }
 
 

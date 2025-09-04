@@ -1,11 +1,12 @@
 package fgo.powers;
 
+import static fgo.FGOMod.makeID;
+
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.helpers.FontHelper;
-import static fgo.FGOMod.makeID;
 
 public class NoblePhantasmCardPower extends BasePower {
     public static final String POWER_ID = makeID(NoblePhantasmCardPower.class.getSimpleName());
@@ -22,7 +23,7 @@ public class NoblePhantasmCardPower extends BasePower {
 
     @Override
     public void updateDescription() {
-        description = DESCRIPTIONS[0] + FontHelper.colorString(this.card.name, "y") + DESCRIPTIONS[1];
+        description = String.format(DESCRIPTIONS[0], FontHelper.colorString(this.card.name, "y"));
     }
 
     @Override

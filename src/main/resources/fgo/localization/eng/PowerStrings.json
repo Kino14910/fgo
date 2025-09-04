@@ -16,29 +16,25 @@
   "${modID}:UnlimitedPower": {
     "NAME": "Unlimited Blade Works",
     "DESCRIPTIONS": [
-      "At the start of each turn, add #b",
-      " random Attack into your hand. It costs #b0 this turn."
+      "At the start of each turn, add #b%d random Attack into your hand. It costs #b0 this turn."
     ]
   },
   "${modID}:NextLoseHpPower": {
     "NAME": "Next Turn Lose HP",
     "DESCRIPTIONS": [
-      "Next turn, lose #b",
-      " #yHP."
+      "Next turn, lose #b%d #yHP."
     ]
   },
   "${modID}:NextCureHpPower": {
     "NAME": "Next Turn Lose HP",
     "DESCRIPTIONS": [
-      "Next turn, heal #b",
-      " #yHP."
+      "Next turn, heal #b%d #yHP."
     ]
   },
   "${modID}:DoppelgangerMasterPower": {
     "NAME": "Doppelgänger",
     "DESCRIPTIONS": [
-      "This turn, your next #b",
-      " #ynon-Noble #yPhantasm card(s) are played twice and exhausted."
+      "This turn, your next #b%d #ynon-Noble #yPhantasm card(s) are played twice and exhausted."
     ]
   },
   "${modID}:SunlightPower": {
@@ -62,23 +58,20 @@
   "${modID}:ComeOnPower": {
     "NAME": "Guts: Come On",
     "DESCRIPTIONS": [
-      "The next time you Trigger #yGuts, gain #b",
-      " #yRegen."
+      "The next time you Trigger #yGuts, gain #b%d #yRegen."
     ]
   },
   "${modID}:SpringOfFirePower": {
     "NAME": "Guts BUFF",
     "DESCRIPTIONS": [
-      "Whenever you Trigger #yGuts for #b",
-      " turn, gain #b20% #yNP #yDamage and remove all of your debuff."
+      "Whenever you Trigger #yGuts for #b%d turn, gain #b20% #yNP #yDamage and remove all of your debuff."
     ]
   },
   "${modID}:MonteCristoTreasurePower": {
     "NAME": "Monte Cristo Treasure",
     "DESCRIPTIONS": [
       "Whenever you deal #yCritical damage, gain #yBlock equal to unblocked #yCritical damage dealt.",
-      "Whenever you deal #yCritical damage, gain #b",
-      " times #yBlock equal to unblocked #yCritical damage dealt."
+      "Whenever you deal #yCritical damage, gain #b%d times #yBlock equal to unblocked #yCritical damage dealt."
     ]
   },
   "${modID}:CursePower": {
@@ -96,38 +89,33 @@
   "${modID}:BeastMagicPower": {
     "NAME": "Beast Magic",
     "DESCRIPTIONS": [
-      "Whenever you gain a buff or debuff, gain #b",
-      " #yBlock."
+      "Whenever you gain a buff or debuff, gain #b%d #yBlock."
     ]
   },
   "${modID}:AvalonPower": {
     "NAME": "Avalon",
     "DESCRIPTIONS": [
-      "At the end of your turn, remove #b",
-      " of your debuff."
+      "At the end of your turn, remove #b%d of your debuff."
     ]
   },
   "${modID}:EternalMemoriesPower": {
     "NAME": "Anti-Purge Defense",
     "DESCRIPTIONS": [
       "Prevent the next time you would lose HP. When you Prevent, heal #b5 #yHP.",
-      "Prevent the next #b",
-      " times you would lose HP. When you Prevent, heal #b5 #yHP."
+      "Prevent the next #b%d times you would lose HP. When you Prevent, heal #b5 #yHP."
     ]
   },
   "${modID}:ChasmatisPower": {
     "NAME": "Chasmatis",
     "DESCRIPTIONS": [
       "Whenever you gain #yEvil #yCurse, draw a card.",
-      "Whenever you gain #yEvil #yCurse, draw #b",
-      " cards."
+      "Whenever you gain #yEvil #yCurse, draw #b%d cards."
     ]
   },
   "${modID}:HPRegenPower": {
     "NAME": "Heal HP",
     "DESCRIPTIONS": [
-      "At the start of turn, heal #b",
-      " #yHP."
+      "At the start of turn, heal #b%d #yHP."
     ]
   },
   "${modID}:DeathOfDeathPower": {
@@ -139,15 +127,13 @@
   "${modID}:BriefStrengthPower": {
     "NAME": "Delayed Buff",
     "DESCRIPTIONS": [
-      "The next time you Trigger #yAbyss #yof #yDeath, lose #b",
-      " #yStrength."
+      "The next time you Trigger #yAbyss #yof #yDeath, lose #b%d #yStrength."
     ]
   },
   "${modID}:StarRegenPower": {
     "NAME": "Gain Stars Every Turn",
     "DESCRIPTIONS": [
-      "At the start of your turn, gain #b",
-      " #yStars."
+      "At the start of your turn, gain #b%d #yStars."
     ]
   },
   "${modID}:AtTheWellPower": {
@@ -159,17 +145,14 @@
   "${modID}:GutsAtTheWellPower": {
     "NAME": "Sacrifice For Yggdrasil",
     "DESCRIPTIONS": [
-      "The next time you trigger #yGuts, draw #b",
-      " cards and gain [E] #b",
-      " times."
+      "The next time you trigger #yGuts, draw #b%d cards and gain [E] #b%d times."
     ]
   },
   "${modID}:SquireOfProphecyPower": {
     "NAME": "Prayer for Rain",
     "DESCRIPTIONS": [
       "Whenever you lose the last [E] the first time this turn, gain [E] [E] .",
-      "Whenever you lose the last [E] the first time each turn for #b",
-      " turns, gain [E] [E]."
+      "Whenever you lose the last [E] the first time each turn for #b%d turns, gain [E] [E]."
     ]
   },
   "${modID}:NoPrayerForRainPower": {
@@ -194,8 +177,7 @@
   "${modID}:PowerUpBoostPower": {
     "NAME": "Power Up Boost",
     "DESCRIPTIONS": [
-      "#yNoble #yPhantasm Attack deal #b",
-      " times damage."
+      "#yNoble #yPhantasm Attack deal #b%d times damage."
     ]
   },
   "${modID}:EternalSleepPower": {
@@ -207,23 +189,20 @@
   "${modID}:CurseHarmonyPower": {
     "NAME": "Curse of the Rabbitfolk",
     "DESCRIPTIONS": [
-      "At the end of your turn, apply #b",
-      " times #yEvil #yCurse #yPoison to a random enemy."
+      "At the end of your turn, apply #b%d times #yEvil #yCurse #yPoison to a random enemy."
     ]
   },
   "${modID}:EnergyRegenPower": {
     "NAME": "Energy Regen",
     "DESCRIPTIONS": [
-      "At the start of your turn, gain #b",
-      "% NP."
+      "At the start of your turn, gain #b%d %% NP."
     ]
   },
   "${modID}:EvasionPower": {
     "NAME": "Evasion",
     "DESCRIPTIONS": [
       "Prevent the next time you would attacked.",
-      "Prevent the next #b",
-      " times you would attacked."
+      "Prevent the next #b%d times you would attacked."
     ]
   },
   "${modID}:SchwarzwaldFalkePower": {
@@ -242,30 +221,26 @@
   "${modID}:DefenseUpPower": {
     "NAME": "Defense Up",
     "DESCRIPTIONS": [
-      "Reduce the next time #b",
-      " damage taken."
+      "Reduce the next time #b%d damage taken."
     ]
   },
   "${modID}:DefenseDownPower": {
     "NAME": "Defense Down",
     "DESCRIPTIONS": [
-      "Additional #b",
-      " damage taken. At the end of its turn, reduce #b1."
+      "Additional #b%d damage taken. At the end of its turn, reduce #b1."
     ]
   },
   "${modID}:BuffBlockPower": {
     "NAME": "Buff Block",
     "DESCRIPTIONS": [
-      "Creature cannot gain buffs #b",
-      " time."
+      "Creature cannot gain buffs #b%d time."
     ]
   },
   "${modID}:FifthFormPower": {
     "NAME": "Fifth Form",
     "DESCRIPTIONS": [
       "Your Attack to an enemy is played twice this turn, but its decrease #b50% damage.",
-      "Your Attack to an enemy is played twice for #b",
-      " turns, but its decrease #b50% damage.",
+      "Your Attack to an enemy is played twice for #b%d turns, but its decrease #b50% damage.",
       "Your Attack to an enemy is played twice this turn, but its decrease #b35% damage.",
       " turns, but its decrease #b35% damage."
     ]
@@ -273,76 +248,66 @@
   "${modID}:IgnoreDefensePower": {
     "NAME": "Ignore Defense",
     "DESCRIPTIONS": [
-      "At the start of your turn, remove all #yBlock and lose HP equal to #yBlock to ALL enemies, apply #b",
-      " #yVulnerable to ALL enemies if them have #yBlock."
+      "At the start of your turn, remove all #yBlock and lose HP equal to #yBlock to ALL enemies, apply #b%d #yVulnerable to ALL enemies if them have #yBlock."
     ]
   },
   "${modID}:InvincibilityPower": {
     "NAME": "Invincibility",
     "DESCRIPTIONS": [
       "Prevent the next time you would attacked this turn.",
-      "Prevent the next #b",
-      " times you would attacked this turn."
+      "Prevent the next #b%d times you would attacked this turn."
     ]
   },
   "${modID}:InvincibilityTurnPower": {
     "NAME": "Invincibility",
     "DESCRIPTIONS": [
       "Prevent you would attacked this turn.",
-      "Prevent you would attacked for #b",
-      " turns."
+      "Prevent you would attacked for #b%d turns."
     ]
   },
   "${modID}:NPOverchargePower": {
     "NAME": "NP Overcharge",
     "DESCRIPTIONS": [
-      "Your next #b",
-      " #yNoble #yPhantasm card is played twice.",
+      "Your next #b%d #yNoble #yPhantasm card is played twice.",
       "Your next #yNoble #yPhantasm card is played twice."
     ]
   },
   "${modID}:CurseEvilFormPower": {
     "NAME": "Evil Curse Form",
     "DESCRIPTIONS": [
-      "At the start of turn, gain #b",
-      " #yEvil #yCurse."
+      "At the start of turn, gain #b%d #yEvil #yCurse."
     ]
   },
   "${modID}:SevenBeastCrownsPower": {
     "NAME": "Seven Beast Crowns",
     "DESCRIPTIONS": [
       "At the end of this turn, gain #b3 #yThorns, #b4 #yPlated #yArmor and #yRegen, [E] and draw 1 card each turn, #b1 #yIntangible and #b2 #yArtifact.",
-      "At the end of #b",
-      " turns, gain #b3 #yThorns, #b4 #yPlated #yArmor and #yRegen, [E] and draw 1 card each turn, #b1 #yIntangible and #b2 #yArtifact."
+      "At the end of #b%d turns, gain #b3 #yThorns, #b4 #yPlated #yArmor and #yRegen, [E] and draw 1 card each turn, #b1 #yIntangible and #b2 #yArtifact."
     ]
   },
   "${modID}:InsanityPower": {
     "NAME": "Insanity",
     "DESCRIPTIONS": [
-      "Whenever you play a Attack card, removes #b1 #yEvil #yCurse, gain #b1 #yStrength and #b",
-      "% #yNP if successfully removed."
+      "Whenever you play a Attack card, removes #b1 #yEvil #yCurse, gain #b1 #yStrength and #b%d %% #yNP if successfully removed."
     ]
   },
   "${modID}:TaisuiSPower": {
     "NAME": "Bloodstained Prince",
     "DESCRIPTIONS": [
-      "When the enemy dies, you gain [E] #b",
-      " times."
+      "When the enemy dies, you gain [E] #b%d times."
     ]
   },
   "${modID}:WatersidePower": {
     "NAME": "Waterside",
     "DESCRIPTIONS": [
-      "At the start of for turn, you and all enemies gain #b",
-      " #yBlock."
+      "At the start of for turn, you and all enemies gain #b%d #yBlock."
     ]
   },
   "${modID}:AthnGablaPower": {
     "NAME": "Ath nGabla",
     "DESCRIPTIONS": [
       "Whenever you lose HP, gain #yVigor equal to lose HP.",
-      "Whenever you lose HP, gain #yVigor #b",
-      " times equal to lose HP."
+      "Whenever you lose HP, gain #yVigor #b%d times equal to lose HP."
     ]
   },
   "${modID}:BlessingOfKurPower": {
@@ -354,37 +319,32 @@
   "${modID}:LivingFlamePower": {
     "NAME": "Living Flame",
     "DESCRIPTIONS": [
-      "Whenever you are #yattacked, apply #b",
-      " #yCombust and #b1 #yDefense #yDown back."
+      "Whenever you are #yattacked, apply #b%d #yCombust and #b1 #yDefense #yDown back."
     ]
   },
   "${modID}:NPDamagePower": {
     "NAME": "NP Damage",
     "DESCRIPTIONS": [
-      "Increases Noble Phantasm attack damage by #b",
-      "%."
+      "Increases Noble Phantasm attack damage by #b%d %%."
     ]
   },
   "${modID}:MillenniumCastlePower": {
     "NAME": "Millennium Castle",
     "DESCRIPTIONS": [
-      "At the start of each turn, lose #b1 #yStrength and ALL enemies lose #b2 #yStrength for #b",
-      " turns. Reverse your negative #yStrength and gain an equal amount of #yDexterity at the end."
+      "At the start of each turn, lose #b1 #yStrength and ALL enemies lose #b2 #yStrength for #b%d turns. Reverse your negative #yStrength and gain an equal amount of #yDexterity at the end."
     ]
   },
   "${modID}:ChildrenHeroPower": {
     "NAME": "Faceless Moon",
     "DESCRIPTIONS": [
-      "#yRetain your hand and you cannot draw additional cards for #b",
-      " turns.",
+      "#yRetain your hand and you cannot draw additional cards for #b%d turns.",
       "#yRetain your hand and you cannot draw additional cards this turn."
     ]
   },
   "${modID}:BurnDamagePower": {
     "NAME": "Burn Damage",
     "DESCRIPTIONS": [
-      "At the start of turn, lose #b",
-      " HP."
+      "At the start of turn, lose #b%d HP."
     ]
   },
   "${modID}:ArchetypeORTPower": {
@@ -396,16 +356,14 @@
   "${modID}:ExistenceOutsideDomainPower": {
     "NAME": "Existence Outside the Domain",
     "DESCRIPTIONS": [
-      "Next turn, gain #b",
-      " #yVigor."
+      "Next turn, gain #b%d #yVigor."
     ]
   },
   "${modID}:CooldownPower": {
     "NAME": "Cooldown...",
     "DESCRIPTIONS": [
       "You cannot play ",
-      " for #b",
-      " turns."
+      " for #b%d turns."
     ]
   },
   "${modID}:ItsInevitablePower": {
@@ -418,8 +376,7 @@
   "${modID}:ManaBurstGemsPower": {
     "NAME": "Mana Burst Gems",
     "DESCRIPTIONS": [
-      "At the end of this turn, gain #b",
-      " #yStrength."
+      "At the end of this turn, gain #b%d #yStrength."
     ]
   },
   "${modID}:HeroicKingPower": {
@@ -445,38 +402,32 @@
   "${modID}:QuickPerformancePower": {
     "NAME": "Quick",
     "DESCRIPTIONS": [
-      "Whenever you play a #gQuick card, gain #b",
-      " #yStar."
+      "Whenever you play a #gQuick card, gain #b%d #yStar."
     ]
   },
   "${modID}:ArtsPerformancePower": {
     "NAME": "Arts",
     "DESCRIPTIONS": [
-      "Whenever you play a card, gain #b",
-      "% additional NP. Up to gain 5% additional NP."
+      "Whenever you play a card, gain #b%d %% additional NP. Up to gain 5% additional NP."
     ]
   },
   "${modID}:BusterPerformancePower": {
     "NAME": "Buster",
     "DESCRIPTIONS": [
-      "#yAttack card: increases attack damage by #b",
-      ", increases #yBlock gained by #b",
-      ". At the start of each turn, reduce #b1."
+      "#yAttack card: increases attack damage by #b%d, increases #yBlock gained by #b%d. At the start of each turn, reduce #b1."
     ]
   },
   "${modID}:NPRatePower": {
     "NAME": "NP Rate",
     "DESCRIPTIONS": [
       "Gain #b100% additional NP this turn.",
-      "Gain #b100% additional NP for #b",
-      " turns."
+      "Gain #b100% additional NP for #b%d turns."
     ]
   },
   "${modID}:StarRatePower": {
     "NAME": "Star Rate",
     "DESCRIPTIONS": [
-      " Whenever you play a non-Attack cards this turn, gain #b",
-      " #yStar."
+      " Whenever you play a non-Attack cards this turn, gain #b%d #yStar."
     ]
   },
   "${modID}:StarPower": {
@@ -489,79 +440,68 @@
   "${modID}:CriticalDamageUpPower": {
     "NAME": "Critical Damage",
     "DESCRIPTIONS": [
-      "Increases #yCritical Damage by #b",
-      "%."
+      "Increases #yCritical Damage by #b%d %%."
     ]
   },
   "${modID}:LoseCritDamagePower": {
     "NAME": "Lose Critical Damage",
     "DESCRIPTIONS": [
-      "Whenever you deal #yCritical damage, lose #b",
-      "% #yCritical."
+      "Whenever you deal #yCritical damage, lose #b%d %% #yCritical."
     ]
   },
   "${modID}:FragarachPower": {
     "NAME": "Fragarach",
     "DESCRIPTIONS": [
-      "When attacked, deals #b",
-      " damage back and you gain #b10 Stars."
+      "When attacked, deals #b%d damage back and you gain #b10 Stars."
     ]
   },
   "${modID}:InfiniteGrowthPower": {
     "NAME": "Growth",
     "DESCRIPTIONS": [
-      "Prevent the next time is at or below #b",
-      " you would lose HP."
+      "Prevent the next time is at or below #b%d you would lose HP."
     ]
   },
   "${modID}:DesterrennachtPower": {
     "NAME": "Terror",
     "DESCRIPTIONS": [
-      "At the start of #b",
-      " turns, it is #yStunned.",
+      "At the start of #b%d turns, it is #yStunned.",
       "It is #yStunned at the start of this turn."
     ]
   },
   "${modID}:GoddessMetamorphosisBeastPower": {
     "NAME": "Goddess Metamorphosis Beast",
     "DESCRIPTIONS": [
-      "Whenever an Attack deals damage, apply #b",
-      " #yPoison, #yEvil_Curse and #yCombust."
+      "Whenever an Attack deals damage, apply #b%d #yPoison, #yEvil_Curse and #yCombust."
     ]
   },
   "${modID}:MorningLarkPower": {
     "NAME": "Morning Lark",
     "DESCRIPTIONS": [
-      "Draw #b",
-      " less card(s) next turn."
+      "Draw #b%d less card(s) next turn."
     ]
   },
   "${modID}:MaxHPPower": {
     "NAME": "Max HP",
     "DESCRIPTIONS": [
-      "Raise your Max HP by #b",
-      " this combat. At the end of combat, lose all raise."
+      "Raise your Max HP by #b%d this combat. At the end of combat, lose all raise."
     ]
   },
   "${modID}:FacelessMoonPower": {
     "NAME": "Equilibrium",
     "DESCRIPTIONS": [
-      "#yRetain your hand this turn. Gain #b",
-      " #yBlock for each #yRetain."
+      "#yRetain your hand this turn. Gain #b%d #yBlock for each #yRetain."
     ]
   },
   "${modID}:MagicBulletPower": {
     "NAME": "Magic Bullet",
     "DESCRIPTIONS": [
-      "You have #b",
-      " #yMagic #yBullet."
+      "You have #b%d #yMagic #yBullet."
     ]
   },
   "${modID}:SealNPPower": {
     "NAME": "Seal NP",
     "DESCRIPTIONS": [
-      "You cannot choose #yNoble #yPhantasm card for #b",
-      " turn(s)."
+      "You cannot choose #yNoble #yPhantasm card for #b%d turn(s)."
     ]
   },
   "${modID}:StarGainMonsterPower": {

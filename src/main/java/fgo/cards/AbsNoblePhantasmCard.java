@@ -10,6 +10,8 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import fgo.characters.CustomEnums.FGOCardColor;
+import fgo.hexui_lib.util.RenderImageLayer;
+import fgo.hexui_lib.util.TextureLoader;
 
 public abstract class AbsNoblePhantasmCard extends FateMagineerCard {
     public AbsNoblePhantasmCard(String id, AbstractCard.CardType type, AbstractCard.CardTarget target) {
@@ -19,6 +21,14 @@ public abstract class AbsNoblePhantasmCard extends FateMagineerCard {
         CommonKeywordIconsField.useIcons.set(this, false);
         FlavorText.AbstractCardFlavorFields.textColor.set(this, Color.CHARTREUSE);
         FlavorText.AbstractCardFlavorFields.flavorBoxType.set(this, FlavorText.boxType.TRADITIONAL);
+        
+        cardArtLayers512.add(new RenderImageLayer(TextureLoader.getTexture(noblePath(this.getClass().getSimpleName() + ".png"))));
+        cardArtLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(noblePath(this.getClass().getSimpleName() + "_p.png"))));
+    }
+
+
+    public static String noblePath(String file) {
+        return "fgo/images/cards/noble/" + file;
     }
 
     @Override

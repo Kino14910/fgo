@@ -1,10 +1,11 @@
 package fgo.powers;
 
+import static fgo.FGOMod.makeID;
+
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
-import fgo.action.FgoNpAction;
 
-import static fgo.FGOMod.makeID;
+import fgo.action.FgoNpAction;
 
 public class GutsAtTheWellPower extends BasePower {
     public static final String POWER_ID = makeID(GutsAtTheWellPower.class.getSimpleName());
@@ -24,7 +25,7 @@ public class GutsAtTheWellPower extends BasePower {
 
     @Override
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1] + this.amount + DESCRIPTIONS[2];
+        String.format(DESCRIPTIONS[0], this.amount, this.amount);
     }
 
     

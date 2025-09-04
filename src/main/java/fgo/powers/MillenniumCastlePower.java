@@ -1,5 +1,7 @@
 package fgo.powers;
 
+import static fgo.FGOMod.makeID;
+
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -7,8 +9,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
-
-import static fgo.FGOMod.makeID;
 
 public class MillenniumCastlePower extends BasePower {
     public static final String POWER_ID = makeID(MillenniumCastlePower.class.getSimpleName());
@@ -21,7 +21,7 @@ public class MillenniumCastlePower extends BasePower {
 
     @Override
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
+        description = String.format(DESCRIPTIONS[0], amount);
     }
 
     @Override

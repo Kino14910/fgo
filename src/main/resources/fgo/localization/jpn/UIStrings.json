@@ -71,7 +71,7 @@
       "山札の上に置く。"
     ]
   },
-  "${modID}:NobleCardTabNamePatch": {
+  "${modID}:TabNamePatch": {
     "TEXT": [
       "宝具"
     ]

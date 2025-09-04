@@ -1,7 +1,7 @@
 package fgo;
 
-import static fgo.characters.Master.fgoNp;
 import static fgo.characters.CustomEnums.FGO_MASTER;
+import static fgo.characters.Master.fgoNp;
 import static fgo.utils.ModHelper.addToBot;
 
 import java.lang.reflect.Field;
@@ -75,13 +75,13 @@ import basemod.interfaces.PostInitializeSubscriber;
 import basemod.interfaces.StartGameSubscriber;
 import fgo.action.FgoNpAction;
 import fgo.cards.BaseCard;
+import fgo.characters.CustomEnums.FGOCardColor;
 import fgo.characters.Master;
 import fgo.event.Beyondthe;
 import fgo.event.DevilSlot;
 import fgo.event.ManofChaldea;
 import fgo.event.ProofAndRebuttalEvent;
 import fgo.monsters.Emiya;
-import fgo.characters.CustomEnums.FGOCardColor;
 import fgo.potions.BasePotion;
 import fgo.powers.ArtsPerformancePower;
 import fgo.powers.NPRatePower;
@@ -173,6 +173,7 @@ public class FGOMod implements
         BaseMod.subscribe(this); //This will make BaseMod trigger all the subscribers at their appropriate times.
         BaseMod.addColor(FGOCardColor.FGO, SILVER, SILVER, SILVER, SILVER, SILVER, SILVER, SILVER, DEFAULT_CC, DEFAULT_CC, DEFAULT_CC, ENERGY_ORB_CC, DEFAULT_CC_PORTRAIT, DEFAULT_CC_PORTRAIT, DEFAULT_CC_PORTRAIT, ENERGY_ORB_CC_PORTRAIT, CARD_ENERGY_ORB);
         BaseMod.addColor(FGOCardColor.NOBLE_PHANTASM, NOBLE, NOBLE, NOBLE, NOBLE, NOBLE, NOBLE, NOBLE, ATTACK_Noble, SKILL_Noble, POWER_Noble, ENERGY_ORB_CC, ATTACK_Noble_PORTRAIT, SKILL_Noble_PORTRAIT, POWER_Noble_PORTRAIT, ENERGY_ORB_CC_PORTRAIT, CARD_ENERGY_ORB);
+        BaseMod.addColor(FGOCardColor.FGO_DERIVATIVE, SILVER, SILVER, SILVER, SILVER, SILVER, SILVER, SILVER, DEFAULT_CC, DEFAULT_CC, DEFAULT_CC, ENERGY_ORB_CC, DEFAULT_CC_PORTRAIT, DEFAULT_CC_PORTRAIT, DEFAULT_CC_PORTRAIT, ENERGY_ORB_CC_PORTRAIT, CARD_ENERGY_ORB);
         BaseMod.addSaveField("commandSpellCount", new CommandSpellPanel());
         BaseMod.addSaveField("cards", new NobleDeckCards());
         logger.info(modID + " subscribed to BaseMod.");

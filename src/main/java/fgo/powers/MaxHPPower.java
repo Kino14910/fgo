@@ -1,10 +1,11 @@
 package fgo.powers;
 
+import static fgo.FGOMod.makeID;
+
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
-import static fgo.FGOMod.makeID;
 
 public class MaxHPPower extends BasePower {
     public static final String POWER_ID = makeID(MaxHPPower.class.getSimpleName());
@@ -17,7 +18,7 @@ public class MaxHPPower extends BasePower {
 
     @Override
     public void updateDescription() {
-        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+        description = String.format(DESCRIPTIONS[0], amount);
     }
 
     @Override

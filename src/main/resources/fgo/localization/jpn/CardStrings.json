@@ -20,13 +20,18 @@
     "DESCRIPTION": "!B! ブロックを獲得。",
     "UPGRADE_DESCRIPTION": "!B! ブロックを獲得。 NL このターンに受ける攻撃ダメージを !M! %軽減。",
     "EXTENDED_DESCRIPTION": [
-      "このターンに受ける攻撃ダメージを !M!% 軽減。 NL !NP!% fgo:宝具ゲージ 、3点の筋力 、30点のfgo:クリティカルダメージ を獲得。"
+      "このターンに受ける攻撃ダメージを !M!% 軽減。 NL !NP!% fgo:宝具ゲージ 、3点の筋力 、30点のfgo:クリティカルダメージ を獲得。",
+      "誉れ堅き雪花の壁",
+      "誉れ高き雪花の盾"
     ],
     "FLAVOR": "このカードは特定の条件で強化されます。"
   },
   "${modID}:BlackBarrel": {
-    "NAME": "パラドックス構築体",
-    "DESCRIPTION": "!D! ダメージを与える。 NL 敵の現在のブロックに等しい追加ダメージを与える。 NL 消耗 。"
+    "NAME": "バンカーボルト",
+    "DESCRIPTION": "!D! ダメージを与える。 NL 敵の現在のブロックに等しい追加ダメージを与える。 NL 消耗 。",
+    "EXTENDED_DESCRIPTION": [
+      "パラドックス構築体"
+    ]
   },
   "${modID}:RestoreSpiritOrigin": {
     "NAME": "霊基復元",
@@ -633,8 +638,29 @@
     "DESCRIPTION": "全敵に !D! ダメージ。 NL !NP!% 宝具ゲージ獲得。"
   },
   "${modID}:Camelot": {
-    "NAME": "理想郷",
-    "DESCRIPTION": "!B! ブロック獲得。 NL 筋力2獲得。 NL ターン終了時、!M! ブロック獲得。"
+    "NAME": "疑似展開／人理の礎",
+    "DESCRIPTION": "!B! ブロック獲得。 NL 筋力2獲得。 NL ターン終了時、!M! ブロック獲得。",
+    "EXTENDED_DESCRIPTION": [
+      "3ターン間受ける攻撃ダメージを!M!%軽減。 NL ターン終了時、!B!ブロック獲得。 NL アーティファクト1スタックと筋力1スタック獲得。 NL 次に使用する#yfgo:宝具カードは#r*希望を証す人理の剣#rに固定。 NL #r*時に煙る白亜の壁#rを#r*時を測る紫弾の薪#rに変化",
+      "いまは遙か理想の城",
+      "希望築く人理の盾"
+    ],
+    "FLAVOR": "このカードは特定条件で強化される"
+  },
+  "${modID}:RayProofKyrielight": {
+    "NAME": "希望を証す人理の剣",
+    "DESCRIPTION": "#yfgo:無敵貫通。 NL 全敵に!M!層の脆弱を付与。 NL 全敵に!D!ダメージを与える。"
+  },
+  "${modID}:ObscurantWallofChalk": {
+    "NAME": "時に煙る白亜の壁",
+    "DESCRIPTION": "#yfgo:粛正防御1スタックと#y無形獲得。 NL !NP!%#yfgo:宝具ゲージ獲得。"
+  },
+  "${modID}:TimewornBulletKindling": {
+    "NAME": "時を測る紫弾の薪",
+    "DESCRIPTION": "!M!%#yfgo:宝具威力獲得。 NL 全#yfgo:クリティカルスターを消費、1個毎に4%#yfgo:宝具ゲージ獲得。 NL HPを4失う。使用後#r*時に煙る白亜の壁#rに変化。",
+    "EXTENDED_DESCRIPTION": [
+      "!NP!%#yfgo:宝具ゲージ獲得。"
+    ]
   },
   "${modID}:EnferChateaudIf": {
     "NAME": "虎よ、煌々と燃え盛れ",

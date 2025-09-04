@@ -6,24 +6,17 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.MetallicizePower;
 
 import fgo.cards.AbsNoblePhantasmCard;
-import fgo.hexui_lib.util.RenderImageLayer;
-import fgo.hexui_lib.util.TextureLoader;
 import fgo.powers.EnergyRegenPower;
 import fgo.powers.StarRegenPower;
 
 public class GardenOfAvalon extends AbsNoblePhantasmCard {
     public static final String ID = makeID(GardenOfAvalon.class.getSimpleName());
-    public static final String IMG_PATH = "fgo/images/cards/noble/GardenOfAvalon.png";
-    public static final String IMG_PATH_P = "fgo/images/cards/noble/GardenOfAvalon_p.png";
 
     public GardenOfAvalon() {
         super(ID,CardType.POWER, CardTarget.SELF);
         setBlock(3, 3);
         setNP(5);
         setStar(5, 10);
-
-        cardArtLayers512.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH)));
-        cardArtLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH_P)));
     }
 
 

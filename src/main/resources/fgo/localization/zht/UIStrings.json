@@ -71,7 +71,7 @@
       "放到你抽牌堆的頂部。"
     ]
   },
-  "${modID}:NobleCardTabNamePatch": {
+  "${modID}:TabNamePatch": {
     "TEXT": [
       "寶具"
     ]

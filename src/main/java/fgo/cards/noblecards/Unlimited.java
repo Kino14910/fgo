@@ -13,20 +13,14 @@ import fgo.FGOMod;
 import fgo.action.WaitFgoAction;
 import fgo.action.lor.ChangeSceneEffect;
 import fgo.cards.AbsNoblePhantasmCard;
-import fgo.hexui_lib.util.RenderImageLayer;
-import fgo.hexui_lib.util.TextureLoader;
 import fgo.powers.UnlimitedPower;
+import fgo.utils.Sounds;
 
 public class Unlimited extends AbsNoblePhantasmCard {
     public static final String ID = makeID(Unlimited.class.getSimpleName());
-    public static final String IMG_PATH = "fgo/images/cards/noble/Unlimited.png";
-    public static final String IMG_PATH_P = "fgo/images/cards/noble/Unlimited_p.png";
     public Unlimited() {
         super(ID,CardType.POWER, CardTarget.SELF);
         setMagic(1, 1);
-
-        cardArtLayers512.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH)));
-        cardArtLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH_P)));
     }
 
 
@@ -37,7 +31,7 @@ public class Unlimited extends AbsNoblePhantasmCard {
         addToBot(new VFXAction(new ChangeSceneEffect(ImageMaster.loadImage(FGOMod.vfxPath("UnlimitedBg.png")))));
         CardCrawlGame.music.silenceTempBgmInstantly();
         CardCrawlGame.music.silenceBGMInstantly();
-        AbstractDungeon.getCurrRoom().playBgmInstantly("UBW_Extended.mp3");
+        AbstractDungeon.getCurrRoom().playBgmInstantly(Sounds.UBW_Music);
         addToBot(new ApplyPowerAction(p, p, new UnlimitedPower(p, magicNumber)));
     }
 }

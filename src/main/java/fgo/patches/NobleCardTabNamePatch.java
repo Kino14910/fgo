@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.screens.mainMenu.ColorTabBar;
 
 import javassist.CtBehavior;
 public class NobleCardTabNamePatch {
-    private static final String[] DESCRIPTIONS = (CardCrawlGame.languagePack.getUIString("fgo:NobleCardTabNamePatch")).TEXT;
+    private static final String[] DESCRIPTIONS = (CardCrawlGame.languagePack.getUIString("fgo:TabNamePatch")).TEXT;
     @SpirePatch(
             cls = "basemod.patches.com.megacrit.cardcrawl.screens.mainMenu.ColorTabBar.ColorTabBarFix$Render",
             method = "Insert")
@@ -22,9 +22,12 @@ public class NobleCardTabNamePatch {
         public static void InsertFix(ColorTabBar _instance, SpriteBatch sb, float y, ColorTabBar.CurrentTab curTab, @ByRef String[] tabName) {
             if (tabName[0].equals("Noble_phantasm")) {
                 tabName[0] = DESCRIPTIONS[0];
+            } else if (tabName[0].equals("Fgo_derivative")) {
+                tabName[0] = DESCRIPTIONS[1];
             }
         }
         private static class TabNameLocator extends SpireInsertLocator {
+            @Override
             public int[] Locate(CtBehavior ctMethodToPatch) throws Exception {
                 Matcher.MethodCallMatcher methodCallMatcher = new Matcher.MethodCallMatcher(FontHelper.class, "renderFontCentered");
                 return LineFinder.findInOrder(ctMethodToPatch, methodCallMatcher);

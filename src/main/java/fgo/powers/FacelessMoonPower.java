@@ -1,11 +1,12 @@
 package fgo.powers;
 
+import static fgo.FGOMod.makeID;
+
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import static fgo.FGOMod.makeID;
 
 public class FacelessMoonPower extends BasePower {
     public static final String POWER_ID = makeID(FacelessMoonPower.class.getSimpleName());
@@ -40,7 +41,7 @@ public class FacelessMoonPower extends BasePower {
 
     @Override
     public void updateDescription() {
-        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+        description = String.format(DESCRIPTIONS[0], amount);
     }
 
     

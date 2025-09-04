@@ -20,13 +20,18 @@
     "DESCRIPTION": "獲得 !B! 點 格擋 。",
     "UPGRADE_DESCRIPTION": "獲得 !B! 點 格擋 。 NL 在這個回合受到的攻擊傷害降低 !M! %。",
     "EXTENDED_DESCRIPTION": [
-      "在這個回合受到的攻擊傷害降低 !M!%。 NL 獲得 !NP!% fgo:寶具值，3點力量，30點 fgo:暴擊傷害。"
+      "在這個回合受到的攻擊傷害降低 !M!%。 NL 獲得 !NP!% fgo:寶具值，3點力量，30點 fgo:暴擊傷害。",
+      "榮耀堅固的雪花之壁",
+      "榮耀遠揚的雪花之盾"
     ],
     "FLAVOR": "這張卡會在特定的時候升級。"
   },
   "${modID}:BlackBarrel": {
-    "NAME": "悖論構造體",
-    "DESCRIPTION": "造成 !D! 點傷害。 NL 增加一名敵人當前格擋的傷害。 NL 消耗 。"
+    "NAME": "掩体雷弹",
+    "DESCRIPTION": "造成 !D! 點傷害。 NL 增加一名敵人當前格擋的傷害。 NL 消耗 。",
+    "EXTENDED_DESCRIPTION": [
+      "悖論構造體"
+    ]
   },
   "${modID}:RestoreSpiritOrigin": {
     "NAME": "靈基復原",
@@ -633,8 +638,29 @@
     "DESCRIPTION": "對所有敵人造成 !D! 點傷害。 NL 獲得 !NP! % fgo:寶具值 。"
   },
   "${modID}:Camelot": {
-    "NAME": "理想之城",
-    "DESCRIPTION": "獲得 !B! 點 格擋 。 NL 獲得2點 力量 。 NL 在你的回合結束時，獲得 !M! 點 格擋 。"
+    "NAME": "擬似展開／人理之礎",
+    "DESCRIPTION": "獲得 !B! 點 格擋 。 NL 獲得2點 力量 。 NL 在你的回合結束時，獲得 !M! 點 格擋 。",
+    "EXTENDED_DESCRIPTION": [
+      "三回合內受到的攻擊傷害降低 !M! %。 NL 在你的回合結束時，獲得 !B! 點 格擋 。 NL 獲得1層 人工制品 ， 力量 。 NL 下一張 fgo:寶具牌 固定爲 *明證希望的人理之劍 。 NL 將 *時爲朦朧的白堊之壁 變爲 *測定時間的紫彈之薪。",
+      "已然遙遠的理想之城",
+      "構築希望的人理之盾"
+    ],
+    "FLAVOR": "這張卡會在特定的時候升級。"
+  },
+  "${modID}:RayProofKyrielight": {
+    "NAME": "明證希望的人理之劍",
+    "DESCRIPTION": "fgo:無敵貫通 。 NL 給予所有敵人 !M! 層易傷 。 NL 對所有敵人造成 !D! 點傷害。"
+  },
+  "${modID}:ObscurantWallofChalk": {
+    "NAME": "時爲朦朧的白堊之壁",
+    "DESCRIPTION": "獲得1層 fgo:肅正防御 和 無實體 。 NL 獲得 !NP! % fgo:寶具值 。"
+  },
+  "${modID}:TimewornBulletKindling": {
+    "NAME": "測定時間的紫彈之薪",
+    "DESCRIPTION": "獲得 !M! % fgo:寶具威力 。 NL 消耗所有 fgo:暴擊星 ，每消耗一個 fgo:寶具值 增加 4%。 NL 失去4點生命。使用後變爲 *時爲朦朧的白堊之壁 。",
+    "EXTENDED_DESCRIPTION": [
+      "獲得 !NP! % fgo:寶具值 。"
+    ]
   },
   "${modID}:EnferChateaudIf": {
     "NAME": "虎啊，煌煌燎燃",

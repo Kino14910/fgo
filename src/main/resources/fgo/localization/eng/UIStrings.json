@@ -71,9 +71,10 @@
       "put on top of your draw pile."
     ]
   },
-  "${modID}:NobleCardTabNamePatch": {
+  "${modID}:TabNamePatch": {
     "TEXT": [
-      "Noble Phantasm"
+      "Noble Phantasm",
+      "FGO Derivative"
     ]
   },
   "${modID}:PictureSelectFgoPatch": {

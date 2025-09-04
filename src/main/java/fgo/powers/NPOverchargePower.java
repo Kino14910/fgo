@@ -27,7 +27,7 @@ public class NPOverchargePower extends BasePower {
         if (this.amount == 1) {
             this.description = DESCRIPTIONS[2];
         } else {
-            this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
+            description = String.format(DESCRIPTIONS[0], amount);
         }
     }
 

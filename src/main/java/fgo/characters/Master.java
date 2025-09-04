@@ -1,5 +1,7 @@
 package fgo.characters;
 
+import static fgo.characters.CustomEnums.FGO_MASTER;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -29,10 +31,9 @@ import fgo.cards.fgo.CharismaOfHope;
 import fgo.cards.fgo.Defend;
 import fgo.cards.fgo.DreamUponTheStars;
 import fgo.cards.fgo.Strike;
+import fgo.characters.CustomEnums.FGOCardColor;
 import fgo.patches.MainMenuUIFgoPatch;
 import fgo.patches.PictureSelectFgoPatch;
-import fgo.characters.CustomEnums.FGOCardColor;
-import static fgo.characters.CustomEnums.FGO_MASTER;
 import fgo.relics.SuitcaseFgo;
 
 public class Master extends CustomPlayer{
@@ -103,7 +104,6 @@ public class Master extends CustomPlayer{
             Strike.ID,
             Defend.ID,
             Defend.ID,            
-            Defend.ID,
             Defend.ID,
             CharismaOfHope.ID,
             DreamUponTheStars.ID

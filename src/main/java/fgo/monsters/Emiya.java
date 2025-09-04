@@ -1,22 +1,18 @@
 package fgo.monsters;
 
 import static fgo.FGOMod.makeID;
+import static fgo.FGOMod.vfxPath;
+import static fgo.utils.ModHelper.addToBotAbstract;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.HealAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
-import com.megacrit.cardcrawl.actions.common.RollMoveAction;
 import com.megacrit.cardcrawl.actions.common.SetMoveAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -48,14 +44,13 @@ public class Emiya extends BaseMonster {
     public static final String[] DIALOG = monsterStrings.DIALOG;
     
     // Move constants - 参考AwakenedOne的编号方式
-    private static final byte SLASH = 1;
-    private static final byte MULTI_SLASH = 2;
-    private static final byte REBIRTH = 3; // 复活技能
-    private static final byte PROJECTION = 5;
-    private static final byte MIND_EYE = 6;
-    private static final byte MAGE_CRAFT = 8;
+    private static final byte CALADBOLG = 0;
+    private static final byte KANSHOU = 1;
+    private static final byte REBIRTH = 2; // 复活技能
+    private static final byte PROJECTION = 3;
+    private static final byte MIND_EYE = 4;
+    private static final byte HAWK_EYE = 5;
     
-    // Other values
     private static final int HIT_NUM = 2;
     private static final int SWORD_AMT = 1;
     private static final int PROJECTION_ATK_AMT = 10;
@@ -88,74 +83,57 @@ public class Emiya extends BaseMonster {
         } else {
             setDamages(20, 12, 2);
         }
+
+        addMoveA(Intent.ATTACK, damage.get(0).base, mi -> {
+            shout(CALADBOLG, Sounds.Kanshou);
+            attack(mi, AbstractGameAction.AttackEffect.SMASH);
+        });
+        addMoveA(Intent.ATTACK, damage.get(1).base, HIT_NUM, mi -> {
+            shout(KANSHOU, Sounds.Kanshou);
+            attack(mi, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL);
+            addToBot(new ApplyPowerAction(this, this, new StrengthPower(this, 
+                AbstractDungeon.ascensionLevel >= 19 ? A19_STR_AMT : BASE_STR_AMT)));
+        });
+        addMove(Intent.UNKNOWN, mi -> {
+            CardCrawlGame.music.silenceTempBgmInstantly();
+            CardCrawlGame.music.silenceBGMInstantly();
+            addToBot(new SFXAction(Sounds.UBW_Incantation));
+            addToBot(new HealAction(this, this, AbstractDungeon.ascensionLevel < 9 ? REBIRTH_HP : A9_REBIRTH_HP));
+            form1 = false;
+            halfDead = false;
+            firstTurn = true;
+            AbstractDungeon.topLevelEffects.add(new FadeWipeParticle());
+            addToBot(new VFXAction(new ChangeSceneEffect(ImageMaster.loadImage(vfxPath("UnlimitedBg.png")))));
+            CardCrawlGame.music.unsilenceBGM();
+            AbstractDungeon.scene.fadeOutAmbiance();
+            AbstractDungeon.getCurrRoom().playBgmInstantly("UBW_Extended.mp3");
+            addToBotAbstract(()->{img = ImageMaster.loadImage(IMG2);});
+            
+        });
+        addMoveA(Intent.ATTACK_BUFF, damage.get(2).base, PROJECTION_ATK_AMT, mi -> {
+            shout(0);
+            addToBot(new WaitAction(0.25F));
+            attack(mi, AbstractGameAction.AttackEffect.SLASH_VERTICAL);
+            addToBot(new ApplyPowerAction(this, this, new IntangiblePlayerPower(this, 1), 1));
+            addToBot(new GainBlockAction(this, this, AbstractDungeon.ascensionLevel >= 19 ? A19_BLOCK_AMT : BASE_BLOCK_AMT));
+            addToBot(new ApplyPowerAction(this, this, new StarGainMonsterPower(this, 20), 20));
+        });
+        addMove(Intent.BUFF, mi -> {
+            shout(PROJECTION, Sounds.TraceOn);
+            addToBot(new WaitAction(0.25F));
+            addToBot(new ApplyPowerAction(this, this, new CriticalDamageUpPower(this, 25), 25));
+            addToBot(new ApplyPowerAction(this, this, new StrengthPower(this, 
+                AbstractDungeon.ascensionLevel >= 19 ? A19_STR_AMT : BASE_STR_AMT)));
+        });
+        addMove(Intent.DEBUFF, mi -> {
+            shout(HAWK_EYE, Sounds.Konosaida);
+            addToBot(new WaitAction(0.25F));
+            addToBot(new ApplyPowerAction(p, this, new FrailPower(p, 99, true), 99));
+        });
     }
 
     @Override
     public void usePreBattleAction() {
-    }
-
-    
-    @Override
-    public void takeTurn() {
-        AbstractPlayer p = AbstractDungeon.player;
-        switch (nextMove) {
-            case SLASH:
-                addToBot(new DamageAction(p, damage.get(0), AbstractGameAction.AttackEffect.SMASH));
-                break;
-            case MULTI_SLASH:
-                addToBot(new SFXAction(Sounds.S011_Attack6));
-                for(int i = 0; i < HIT_NUM; ++i) {
-                    addToBot(new DamageAction(p, damage.get(1), AbstractGameAction.AttackEffect.SLASH_HEAVY));
-                }
-                addToBot(new ApplyPowerAction(this, this, new StrengthPower(this, 
-                    AbstractDungeon.ascensionLevel >= 19 ? A19_STR_AMT : BASE_STR_AMT)));
-                break;
-            case REBIRTH:
-                CardCrawlGame.music.silenceTempBgmInstantly();
-                CardCrawlGame.music.silenceBGMInstantly();
-                addToBot(new SFXAction(Sounds.UBW_Incantation));
-                addToBot(new HealAction(this, this, 
-                    AbstractDungeon.ascensionLevel >= 9 ? A9_REBIRTH_HP : REBIRTH_HP));
-                form1 = false;
-                halfDead = false;
-                firstTurn = true;
-                AbstractDungeon.topLevelEffects.add(new FadeWipeParticle());
-                addToBot(new VFXAction(new ChangeSceneEffect(ImageMaster.loadImage("fgo/images/vfx/UnlimitedBg.png"))));
-                CardCrawlGame.music.unsilenceBGM();
-                AbstractDungeon.scene.fadeOutAmbiance();
-                AbstractDungeon.getCurrRoom().playBgmInstantly("UBW_Extended.mp3");
-                img = ImageMaster.loadImage(IMG2);
-                break;
-            case PROJECTION:
-                addToBot(new TalkAction(this, DIALOG[0], 2.5F, 2.5F));
-                addToBot(new SFXAction(Sounds.S011_Skill1));
-                addToBot(new WaitAction(0.25F));
-                for (int i = 0; i < PROJECTION_ATK_AMT; i++) {
-                    addToBot(new DamageAction(p, damage.get(2), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-                    addToBot(new MakeTempCardInDiscardAction(AbstractDungeon.returnTrulyRandomCardInCombat(AbstractCard.CardType.ATTACK).makeCopy(), SWORD_AMT));
-                }
-                addToBot(new ApplyPowerAction(this, this, new IntangiblePlayerPower(this, 1), 1));
-                addToBot(new GainBlockAction(this, this, 
-                    AbstractDungeon.ascensionLevel >= 19 ? A19_BLOCK_AMT : BASE_BLOCK_AMT));
-                addToBot(new ApplyPowerAction(this, this, new StarGainMonsterPower(this, 20), 20));
-                break;
-            case MIND_EYE:
-                addToBot(new TalkAction(this, DIALOG[1], 2.5F, 2.5F));
-                addToBot(new SFXAction(Sounds.S011_Skill2));
-                addToBot(new WaitAction(0.25F));
-                addToBot(new ApplyPowerAction(this, this, new CriticalDamageUpPower(this, 25), 25));
-                addToBot(new ApplyPowerAction(this, this, new StrengthPower(this, 
-                    AbstractDungeon.ascensionLevel >= 19 ? A19_STR_AMT : BASE_STR_AMT)));
-                break;
-            case MAGE_CRAFT:
-                addToBot(new TalkAction(this, DIALOG[2], 2.5F, 2.5F));
-                addToBot(new SFXAction(Sounds.S011_Skill3));
-                addToBot(new WaitAction(0.25F));
-                addToBot(new ApplyPowerAction(p, this, new FrailPower(p, 99, true), 99));
-                break;
-        }
-
-        addToBot(new RollMoveAction(this));
     }
 
     @Override
@@ -163,45 +141,45 @@ public class Emiya extends BaseMonster {
         if (form1) {
             // 第一阶段逻辑
             if (firstTurn) {
-                setMove(SLASH, Intent.ATTACK, damage.get(0).base);
+                setMove(CALADBOLG);
                 firstTurn = false;
                 return;
             }
 
              if (num < 25) {
-                if (!lastTwoMoves(SLASH)) {
-                    setMove(SLASH, Intent.ATTACK, damage.get(0).base);
+                if (!lastTwoMoves(CALADBOLG)) {
+                    setMove(CALADBOLG);
                 } else {
-                    setMove(MULTI_SLASH, Intent.ATTACK, damage.get(1).base, HIT_NUM, true);
+                    setMove(KANSHOU);
                 }
             } else {
-                if (!lastMove(MULTI_SLASH)) {
-                    setMove(MULTI_SLASH, Intent.ATTACK, damage.get(1).base, HIT_NUM, true);
+                if (!lastMove(KANSHOU)) {
+                    setMove(KANSHOU);
                 } else {
-                    setMove(SLASH, Intent.ATTACK, damage.get(0).base);
+                    setMove(CALADBOLG);
                 }
             }
         } else {
             // 第二阶段逻辑
             if (firstTurn) {
-                setMove(MOVES[0], PROJECTION, Intent.ATTACK_BUFF,damage.get(2).base, PROJECTION_ATK_AMT, true);
+                setMove(PROJECTION);
                 firstTurn = false;
                 return;
             }
             if (secondTurn){
-                setMove(MOVES[3], MAGE_CRAFT, Intent.DEBUFF);
+                setMove(HAWK_EYE);
                 return;
             }
             // 第二阶段技能选择 - 按特定顺序使用
             switch (moveCount % 3) {
                 case 0:
-                    setMove(MOVES[1], MIND_EYE, Intent.BUFF);
+                    setMove(MIND_EYE);
                     break;
                 case 1:
-                    setMove(SLASH, Intent.ATTACK, damage.get(0).base);
+                    setMove(CALADBOLG);
                     break;
                 case 2:
-                    setMove(MULTI_SLASH, Intent.ATTACK, damage.get(1).base, HIT_NUM, true);
+                    setMove(KANSHOU);
                     break;
             }
         }
@@ -216,7 +194,7 @@ public class Emiya extends BaseMonster {
         // 检查是否需要触发复活
         if (currentHealth <= 0 && !halfDead && form1) {
             halfDead = true;
-            setMove(REBIRTH, Intent.UNKNOWN);
+            setMove(REBIRTH);
             createIntent();
             addToBot(new SetMoveAction(this, REBIRTH, Intent.UNKNOWN));
             applyPowers();

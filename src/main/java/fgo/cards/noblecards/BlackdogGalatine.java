@@ -11,20 +11,13 @@ import com.megacrit.cardcrawl.powers.PlatedArmorPower;
 import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
 
 import fgo.cards.AbsNoblePhantasmCard;
-import fgo.hexui_lib.util.RenderImageLayer;
-import fgo.hexui_lib.util.TextureLoader;
 
 public class BlackdogGalatine extends AbsNoblePhantasmCard {
     public static final String ID = makeID(BlackdogGalatine.class.getSimpleName());
-    public static final String IMG_PATH = "fgo/images/cards/noble/BlackdogGalatine.png";
-    public static final String IMG_PATH_P = "fgo/images/cards/noble/BlackdogGalatine_p.png";
 
     public BlackdogGalatine() {
         super(ID,CardType.ATTACK, CardTarget.ALL_ENEMY);setDamage(5, 2);
         setMagic(6);
-
-        cardArtLayers512.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH)));
-        cardArtLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH_P)));
     }
 
 

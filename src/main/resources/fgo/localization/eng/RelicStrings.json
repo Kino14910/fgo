@@ -53,16 +53,14 @@
     "NAME": "Astrological Teapot",
     "FLAVOR": "Drink it and deepen the bonds.",
     "DESCRIPTIONS": [
-      "Whenever you use a potion, gain #b",
-      " #yfgo:Guts."
+      "Whenever you use a potion, gain #b%d #yfgo:Guts."
     ]
   },
   "${modID}:SaveStone": {
     "NAME": "Save Stone",
     "FLAVOR": "Use it promptly.",
     "DESCRIPTIONS": [
-      "At the start of each combat, gain #yGold equal to your #b",
-      "% #yGold."
+      "At the start of each combat, gain #yGold equal to your #b%d %% #yGold."
     ]
   },
   "${modID}:BlessRockChoco": {
@@ -122,11 +120,9 @@
     "NAME": "Existence Outside the Domain",
     "FLAVOR": "Visitors from the void.",
     "DESCRIPTIONS": [
-      "For each #rForeigner in your deck, at the start of each turn gain #b",
-      " #yVigor.",
+      "For each #rForeigner in your deck, at the start of each turn gain #b%d #yVigor.",
       " You have no #rForeigner.",
-      " You have #b",
-      " #rCurses."
+      " You have #b%d #rCurses."
     ]
   },
   "${modID}:SkullCandy": {

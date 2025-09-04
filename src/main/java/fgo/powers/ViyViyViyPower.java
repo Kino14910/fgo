@@ -1,12 +1,12 @@
 package fgo.powers;
 
+import static fgo.FGOMod.makeID;
+
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-
-import static fgo.FGOMod.makeID;
 
 public class ViyViyViyPower extends BasePower {
     public static final String POWER_ID = makeID(ViyViyViyPower.class.getSimpleName());
@@ -34,7 +34,7 @@ public class ViyViyViyPower extends BasePower {
 
     @Override
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0] + this.rName + DESCRIPTIONS[1];
+        this.description = String.format(DESCRIPTIONS[0], rName);
     }
 
     

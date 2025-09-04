@@ -15,29 +15,25 @@
   "${modID}:UnlimitedPower": {
     "NAME": "無限の剣製",
     "DESCRIPTIONS": [
-      "ターン開始時、ランダムな攻撃カード #b",
-      " 枚を手札に加える。これらのカードのコストは #b0 になる。"
+      "ターン開始時、ランダムな攻撃カード #b%d 枚を手札に加える。これらのカードのコストは #b0 になる。"
     ]
   },
   "${modID}:NextLoseHpPower": {
     "NAME": "次ターンHP減少",
     "DESCRIPTIONS": [
-      "次ターン #b",
-      " 点の #yHP を失う。"
+      "次ターン #b%d 点の #yHP を失う。"
     ]
   },
   "${modID}:NextCureHpPower": {
     "NAME": "次ターンHP回復",
     "DESCRIPTIONS": [
-      "次ターン #b",
-      " 点の #yHP を回復。"
+      "次ターン #b%d 点の #yHP を回復。"
     ]
   },
   "${modID}:DoppelgangerMasterPower": {
     "NAME": "ドッペルゲンガー",
     "DESCRIPTIONS": [
-      "このターンの次 #b",
-      " 枚の非 #y宝具 カードは2回プレイされ #y消耗 する。"
+      "このターンの次 #b%d 枚の非 #y宝具 カードは2回プレイされ #y消耗 する。"
     ]
   },
   "${modID}:SunlightPower": {
@@ -61,23 +57,20 @@
   "${modID}:ComeOnPower": {
     "NAME": "戦闘続行：治癒",
     "DESCRIPTIONS": [
-      "次に #y戦闘続行 が発動した時、追加で #b",
-      " 層の #y再生 を獲得。"
+      "次に #y戦闘続行 が発動した時、追加で #b%d 層の #y再生 を獲得。"
     ]
   },
   "${modID}:SpringOfFirePower": {
     "NAME": "戦闘続行：喝采",
     "DESCRIPTIONS": [
-      "#y戦闘続行 が発動するたび、 #b",
-      "% #y宝具威力 を獲得。全てのデバフを解除。"
+      "#y戦闘続行 が発動するたび、 #b%d %% #y宝具威力 を獲得。全てのデバフを解除。"
     ]
   },
   "${modID}:MonteCristoTreasurePower": {
     "NAME": "モンテ・クリストの秘宝",
     "DESCRIPTIONS": [
       "#yクリティカルダメージ を与えるたび、貫通ダメージ分の #yブロック を獲得。",
-      "#yクリティカルダメージ を与えるたび、貫通ダメージの #b",
-      " 倍の #yブロック を獲得。"
+      "#yクリティカルダメージ を与えるたび、貫通ダメージの #b%d 倍の #yブロック を獲得。"
     ]
   },
   "${modID}:CursePower": {
@@ -90,37 +83,32 @@
     "NAME": "健全化",
     "DESCRIPTIONS": [
       "このターン終了時、全てのデバフを解除。",
-      "次の #b",
-      " ターン終了時、全てのデバフを解除。"
+      "次の #b%d ターン終了時、全てのデバフを解除。"
     ]
   },
   "${modID}:BeastMagicPower": {
     "NAME": "対獣魔術",
     "DESCRIPTIONS": [
-      "デバフを得るたび、 #b",
-      " 点の #yブロック を獲得。"
+      "デバフを得るたび、 #b%d 点の #yブロック を獲得。"
     ]
   },
   "${modID}:AvalonPower": {
     "NAME": "アヴァロン",
     "DESCRIPTIONS": [
-      "ターン終了時、 #b",
-      " 個のデバフを解除。"
+      "ターン終了時、 #b%d 個のデバフを解除。"
     ]
   },
   "${modID}:ChasmatisPower": {
     "NAME": "天の裂け目",
     "DESCRIPTIONS": [
       "#y呪い を得るたび、カードを #b1 枚引く。",
-      "#y呪い を得るたび、カードを #b",
-      " 枚引く。"
+      "#y呪い を得るたび、カードを #b%d 枚引く。"
     ]
   },
   "${modID}:HPRegenPower": {
     "NAME": "回復継続",
     "DESCRIPTIONS": [
-      "ターン開始時、 #b",
-      " 点の #yHP を回復。"
+      "ターン開始時、 #b%d 点の #yHP を回復。"
     ]
   },
   "${modID}:DeathOfDeathPower": {
@@ -132,15 +120,13 @@
   "${modID}:BriefStrengthPower": {
     "NAME": "遅延発動",
     "DESCRIPTIONS": [
-      "次に #y死の淵 が発動した時 #r#b",
-      " 点の #y筋力 を失う。"
+      "次に #y死の淵 が発動した時 #r#b%d 点の #y筋力 を失う。"
     ]
   },
   "${modID}:StarRegenPower": {
     "NAME": "毎ターンスター獲得",
     "DESCRIPTIONS": [
-      "ターン開始時、 #b",
-      " 個の #yスター を獲得。"
+      "ターン開始時、 #b%d 個の #yスター を獲得。"
     ]
   },
   "${modID}:AtTheWellPower": {
@@ -152,17 +138,14 @@
   "${modID}:GutsAtTheWellPower": {
     "NAME": "世界樹への生贄",
     "DESCRIPTIONS": [
-      "次に #y戦闘続行 が発動した時 [E] #b",
-      " 回とカード #b",
-      " 枚を引く。"
+      "次に #y戦闘続行 が発動した時 [E] #b%d 回とカード #b%d 枚を引く。"
     ]
   },
   "${modID}:SquireOfProphecyPower": {
     "NAME": "雨乞い",
     "DESCRIPTIONS": [
       "このターン初めてカードをプレイして [E] を消費した時、[E] [E] を獲得。",
-      "次の #b",
-      " ターン初めてカードをプレイして [E] を消費した時、[E] [E] を獲得。"
+      "次の #b%d ターン初めてカードをプレイして [E] を消費した時、[E] [E] を獲得。"
     ]
   },
   "${modID}:NoPrayerForRainPower": {
@@ -181,8 +164,7 @@
   "${modID}:PowerUpBoostPower": {
     "NAME": "宝具威力上昇",
     "DESCRIPTIONS": [
-      "#y宝具カード の攻撃ダメージが #b",
-      " 倍になる。"
+      "#y宝具カード の攻撃ダメージが #b%d 倍になる。"
     ]
   },
   "${modID}:EndOfADreamPower": {
@@ -200,23 +182,20 @@
   "${modID}:CurseHarmonyPower": {
     "NAME": "兎人間の呪い",
     "DESCRIPTIONS": [
-      "ターン終了時、ランダムな敵に #y呪い の層数 #b",
-      " 倍の #y毒 を付与。"
+      "ターン終了時、ランダムな敵に #y呪い の層数 #b%d 倍の #y毒 を付与。"
     ]
   },
   "${modID}:EnergyRegenPower": {
     "NAME": "毎ターンNP獲得",
     "DESCRIPTIONS": [
-      "ターン開始時に #b",
-      " % #y宝具ゲージ を獲得。"
+      "ターン開始時に #b%d % #y宝具ゲージ を獲得。"
     ]
   },
   "${modID}:EvasionPower": {
     "NAME": "回避",
     "DESCRIPTIONS": [
       "次に受ける攻撃を無効化。",
-      "次に受ける #b",
-      " 回の攻撃を無効化。"
+      "次に受ける #b%d 回の攻撃を無効化。"
     ]
   },
   "${modID}:SchwarzwaldFalkePower": {
@@ -235,30 +214,26 @@
   "${modID}:DefenseUpPower": {
     "NAME": "被ダメージ軽減",
     "DESCRIPTIONS": [
-      "次に受ける攻撃ダメージを #b",
-      " 点軽減。"
+      "次に受ける攻撃ダメージを #b%d 点軽減。"
     ]
   },
   "${modID}:DefenseDownPower": {
     "NAME": "防御破壊",
     "DESCRIPTIONS": [
-      "攻撃を受ける時、追加で #b",
-      " 点ダメージを受ける。ターン終了時、 #b1 層減少。"
+      "攻撃を受ける時、追加で #b%d 点ダメージを受ける。ターン終了時、 #b1 層減少。"
     ]
   },
   "${modID}:BuffBlockPower": {
     "NAME": "筋力無効",
     "DESCRIPTIONS": [
-      "#y筋力 を獲得不可（ #b",
-      " 回）。"
+      "#y筋力 を獲得不可（ #b%d 回）。"
     ]
   },
   "${modID}:FifthFormPower": {
     "NAME": "第五勢",
     "DESCRIPTIONS": [
       "このターンの敵1体への攻撃カードは2回プレイされるが、ダメージが #b50% 低下。",
-      "次の #b",
-      " ターンの敵1体への攻撃カードは2回プレイされるが、ダメージが #b50% 低下。",
+      "次の #b%d ターンの敵1体への攻撃カードは2回プレイされるが、ダメージが #b50% 低下。",
       "このターンの敵1体への攻撃カードは2回プレイされるが、ダメージが #b35% 低下。",
       " ターンの敵1体への攻撃カードは2回プレイされるが、ダメージが #b35% 低下。"
     ]
@@ -266,84 +241,73 @@
   "${modID}:IgnoreDefensePower": {
     "NAME": "ブロック無視",
     "DESCRIPTIONS": [
-      "ターン開始時、 #yブロック を持つ敵はその #yブロック に等しいHPを失い #b",
-      " 層の #y被ダメージ増加 を付与される。"
+      "ターン開始時、 #yブロック を持つ敵はその #yブロック に等しいHPを失い #b%d 層の #y被ダメージ増加 を付与される。"
     ]
   },
   "${modID}:InvincibilityPower": {
     "NAME": "無敵",
     "DESCRIPTIONS": [
       "このターンの次に受ける攻撃を無効化。",
-      "このターンの次に受ける #b",
-      " 回の攻撃を無効化。"
+      "このターンの次に受ける #b%d 回の攻撃を無効化。"
     ]
   },
   "${modID}:InvincibilityTurnPower": {
     "NAME": "無敵",
     "DESCRIPTIONS": [
       "このターンの全ての攻撃を無効化。",
-      "全ての攻撃を無効化（ #b",
-      " ターン持続）。"
+      "全ての攻撃を無効化（ #b%d ターン持続）。"
     ]
   },
   "${modID}:EternalMemoriesPower": {
     "NAME": "粛正防御",
     "DESCRIPTIONS": [
       "次に受けるHPダメージを無効化。無効化成功ごとに #b5 点HP回復。",
-      "次に受ける #b",
-      " 回のHPダメージを無効化。無効化成功ごとに #b5 点HP回復。"
+      "次に受ける #b%d 回のHPダメージを無効化。無効化成功ごとに #b5 点HP回復。"
     ]
   },
   "${modID}:NPOverchargePower": {
     "NAME": "オーバーチャージ",
     "DESCRIPTIONS": [
-      "次の #b",
-      " 枚の #y宝具 カードは2回プレイされる。",
+      "次の #b%d 枚の #y宝具 カードは2回プレイされる。",
       "次の #y宝具 カードは2回プレイされる。"
     ]
   },
   "${modID}:CurseEvilFormPower": {
     "NAME": "呪い形態",
     "DESCRIPTIONS": [
-      "ターン開始時、 #b",
-      " 層の #y呪い を獲得。"
+      "ターン開始時、 #b%d 層の #y呪い を獲得。"
     ]
   },
   "${modID}:SevenBeastCrownsPower": {
     "NAME": "七つの獣冠",
     "DESCRIPTIONS": [
       "このターン終了時： NL #b3 点の #y棘 を獲得。 NL #b4 層の #y多層装甲 と #y再生 を獲得。 NL ターン開始時、[E] 1点とカード #b1 枚を引く。 NL #b1 層の #y無形 と #y礼装 を獲得。",
-      "次の #b",
-      " ターン終了時： NL #b3 点の #y棘 を獲得。 NL #b4 層の #y多層装甲 と #y再生 を獲得。 NL ターン開始時、[E] 1点とカード #b1 枚を引く。 NL #b1 層の #y無形 と #y礼装 を獲得。"
+      "次の #b%d ターン終了時： NL #b3 点の #y棘 を獲得。 NL #b4 層の #y多層装甲 と #y再生 を獲得。 NL ターン開始時、[E] 1点とカード #b1 枚を引く。 NL #b1 層の #y無形 と #y礼装 を獲得。"
     ]
   },
   "${modID}:InsanityPower": {
     "NAME": "澪標の魂",
     "DESCRIPTIONS": [
-      "攻撃カードをプレイするたび、 #y呪い を #b1 層解除（成功時 #b1 点の #y筋力 と #b",
-      "% #y宝具ゲージ を獲得）。"
+      "攻撃カードをプレイするたび、 #y呪い を #b1 層解除（成功時 #b1 点の #y筋力 と #b%d %% #y宝具ゲージ を獲得）。"
     ]
   },
   "${modID}:TaisuiSPower": {
     "NAME": "血染めの皇子",
     "DESCRIPTIONS": [
-      "この敵が死亡時、 [E] #b",
-      " 回を獲得。"
+      "この敵が死亡時、 [E] #b%d 回を獲得。"
     ]
   },
   "${modID}:WatersidePower": {
     "NAME": "水辺",
     "DESCRIPTIONS": [
-      "ターン開始時、自身と全ての敵が #b",
-      " 点の #yブロック を獲得。"
+      "ターン開始時、自身と全ての敵が #b%d 点の #yブロック を獲得。"
     ]
   },
   "${modID}:AthnGablaPower": {
     "NAME": "アスン・ガブラ",
     "DESCRIPTIONS": [
       "HPを失うたび、失ったHP分の #y活力 を獲得。",
-      "HPを失うたび、失ったHPの #b",
-      " 倍の #y活力 を獲得。"
+      "HPを失うたび、失ったHPの #b%d 倍の #y活力 を獲得。"
     ]
   },
   "${modID}:BlessingOfKurPower": {
@@ -355,37 +319,32 @@
   "${modID}:LivingFlamePower": {
     "NAME": "生ける炎",
     "DESCRIPTIONS": [
-      "攻撃 を受けるたび、攻撃者に #b",
-      " 層の #y燃焼 と #b1 層の #y防御破壊 を付与。"
+      "攻撃 を受けるたび、攻撃者に #b%d 層の #y燃焼 と #b1 層の #y防御破壊 を付与。"
     ]
   },
   "${modID}:NPDamagePower": {
     "NAME": "宝具威力",
     "DESCRIPTIONS": [
-      " #y宝具 の攻撃ダメージが #b",
-      "% 上昇。"
+      " #y宝具 の攻撃ダメージが #b%d %% 上昇。"
     ]
   },
   "${modID}:MillenniumCastlePower": {
     "NAME": "千年城",
     "DESCRIPTIONS": [
-      "ターン開始時、 #b1 点の #y筋力 を失い、全ての敵は #b2 点の #y筋力 を失う（ #b",
-      " ターン持続）。終了時、負の #y筋力 を等量の #y敏捷 に変換。"
+      "ターン開始時、 #b1 点の #y筋力 を失い、全ての敵は #b2 点の #y筋力 を失う（ #b%d ターン持続）。終了時、負の #y筋力 を等量の #y敏捷 に変換。"
     ]
   },
   "${modID}:ChildrenHeroPower": {
     "NAME": "無貌の月",
     "DESCRIPTIONS": [
-      "次の #b",
-      " ターンはカードを引けず手札を #y保留 する。",
+      "次の #b%d ターンはカードを引けず手札を #y保留 する。",
       "このターンはカードを引けず手札を #y保留 する。"
     ]
   },
   "${modID}:BurnDamagePower": {
     "NAME": "燃焼",
     "DESCRIPTIONS": [
-      "ターン開始時に #b",
-      " 点の #yHP を失う。"
+      "ターン開始時に #b%d 点の #yHP を失う。"
     ]
   },
   "${modID}:ArchetypeORTPower": {
@@ -397,23 +356,20 @@
   "${modID}:ExistenceOutsideDomainPower": {
     "NAME": "領域外生命",
     "DESCRIPTIONS": [
-      "次ターン開始時、 #b",
-      " 点の #y活力 を獲得。"
+      "次ターン開始時、 #b%d 点の #y活力 を獲得。"
     ]
   },
   "${modID}:CooldownPower": {
     "NAME": "クールダウン中",
     "DESCRIPTIONS": [
       " ",
-      " をプレイ不可。持続時間 #b",
-      " ターン。"
+      " をプレイ不可。持続時間 #b%d ターン。"
     ]
   },
   "${modID}:ReducePercentDamagePower": {
     "NAME": "防御中",
     "DESCRIPTIONS": [
-      "このターンの被攻撃ダメージを #b",
-      "% 軽減。"
+      "このターンの被攻撃ダメージを #b%d %% 軽減。"
     ]
   },
   "${modID}:ItsInevitablePower": {
@@ -426,8 +382,7 @@
   "${modID}:ManaBurstGemsPower": {
     "NAME": "魔力放出（宝石）",
     "DESCRIPTIONS": [
-      "ターン終了時、 #b",
-      " 点の #y筋力 を獲得。"
+      "ターン終了時、 #b%d 点の #y筋力 を獲得。"
     ]
   },
   "${modID}:HeroicKingPower": {
@@ -453,38 +408,32 @@
   "${modID}:QuickPerformancePower": {
     "NAME": "クイック性能向上",
     "DESCRIPTIONS": [
-      "#gクイックカード プレイ時、追加で #b",
-      " 個の #yスター を獲得。"
+      "#gクイックカード プレイ時、追加で #b%d 個の #yスター を獲得。"
     ]
   },
   "${modID}:ArtsPerformancePower": {
     "NAME": "アーツ",
     "DESCRIPTIONS": [
-      "カードをプレイするたび、追加で #b",
-      "% #y宝具ゲージ を獲得（最大追加 #b5% ）。"
+      "カードをプレイするたび、追加で #b%d %% #y宝具ゲージ を獲得（最大追加 #b5% ）。"
     ]
   },
   "${modID}:BusterPerformancePower": {
     "NAME": "攻撃カード性能向上",
     "DESCRIPTIONS": [
-      "#y攻撃カード のダメージが #b",
-      " 点上昇、 #y攻撃カード から #b",
-      " 点の #yブロック を追加獲得。ターン開始時 #b1 層減少。"
+      "#y攻撃カード のダメージが #b%d 点上昇、 #y攻撃カード から #b%d 点の #yブロック を追加獲得。ターン開始時 #b1 層減少。"
     ]
   },
   "${modID}:NPRatePower": {
     "NAME": "黄金律",
     "DESCRIPTIONS": [
       "このターン、カードプレイ時と被攻撃時の宝具ゲージ獲得量が #b100% 上昇。",
-      "カードプレイ時と被攻撃時の宝具ゲージ獲得量が #b100% 上昇（ #b",
-      " ターン持続）。"
+      "カードプレイ時と被攻撃時の宝具ゲージ獲得量が #b100% 上昇（ #b%d ターン持続）。"
     ]
   },
   "${modID}:StarRatePower": {
     "NAME": "スター獲得量上昇",
     "DESCRIPTIONS": [
-      "このターン、ダメージを与えるたび、追加で #b",
-      " 個の #yスター を獲得。"
+      "このターン、ダメージを与えるたび、追加で #b%d 個の #yスター を獲得。"
     ]
   },
   "${modID}:StarPower": {
@@ -497,79 +446,68 @@
   "${modID}:CriticalDamageUpPower": {
     "NAME": "クリティカル威力",
     "DESCRIPTIONS": [
-      "#yクリティカル ダメージが #b",
-      "% 上昇。"
+      "#yクリティカル ダメージが #b%d %% 上昇。"
     ]
   },
   "${modID}:LoseCritDamagePower": {
     "NAME": "クリティカル威力喪失",
     "DESCRIPTIONS": [
-      "ターン終了時、 #b",
-      "% #yクリティカル威力 を失う。"
+      "ターン終了時、 #b%d %% #yクリティカル威力 を失う。"
     ]
   },
   "${modID}:FragarachPower": {
     "NAME": "フラガラック",
     "DESCRIPTIONS": [
-      "このターン、 #y攻撃 を受けるたび、 #b",
-      " 点の #y反撃ダメージ を与え #b10 個の #yスター を獲得。"
+      "このターン、 #y攻撃 を受けるたび、 #b%d 点の #y反撃ダメージ を与え #b10 個の #yスター を獲得。"
     ]
   },
   "${modID}:InfiniteGrowthPower": {
     "NAME": "増殖",
     "DESCRIPTIONS": [
-      "次に受ける #b",
-      " 点以下のHPダメージを無効化。"
+      "次に受ける #b%d 点以下のHPダメージを無効化。"
     ]
   },
   "${modID}:DesterrennachtPower": {
     "NAME": "恐怖",
     "DESCRIPTIONS": [
-      " #b",
-      " ターン開始後、行動不可状態になる。",
+      " #b%d ターン開始後、行動不可状態になる。",
       "このターン、行動不可状態になる。"
     ]
   },
   "${modID}:GoddessMetamorphosisBeastPower": {
     "NAME": "女神変生（獣）",
     "DESCRIPTIONS": [
-      "攻撃ダメージを与えるたび、 #b",
-      " 層の #y毒 ・ #y呪い を付与。"
+      "攻撃ダメージを与えるたび、 #b%d 層の #y毒 ・ #y呪い を付与。"
     ]
   },
   "${modID}:MorningLarkPower": {
     "NAME": "朝の雲雀",
     "DESCRIPTIONS": [
-      "次ターン開始時、カードを #b",
-      " 枚少なく引く。"
+      "次ターン開始時、カードを #b%d 枚少なく引く。"
     ]
   },
   "${modID}:MaxHPPower": {
     "NAME": "最大HP増加",
     "DESCRIPTIONS": [
-      "この戦闘中、最大HPが #b",
-      " 点上昇。戦闘終了時、一時的な最大HP増加は全て失われる。"
+      "この戦闘中、最大HPが #b%d 点上昇。戦闘終了時、一時的な最大HP増加は全て失われる。"
     ]
   },
   "${modID}:FacelessMoonPower": {
     "NAME": "無貌の月",
     "DESCRIPTIONS": [
-      "このターン手札を #y保留。 #y保留 1枚ごとに #b",
-      " 点の #yブロック を獲得。"
+      "このターン手札を #y保留。 #y保留 1枚ごとに #b%d 点の #yブロック を獲得。"
     ]
   },
   "${modID}:MagicBulletPower": {
     "NAME": "魔弾",
     "DESCRIPTIONS": [
-      "現在 #b",
-      " 個の魔弾を所持。"
+      "現在 #b%d 個の魔弾を所持。"
     ]
   },
   "${modID}:SealNPPower": {
     "NAME": "宝具封印",
     "DESCRIPTIONS": [
-      "#y宝具カード を獲得不可。持続時間 #b",
-      " ターン。"
+      "#y宝具カード を獲得不可。持続時間 #b%d ターン。"
     ]
   },
   "${modID}:StarGainMonsterPower": {

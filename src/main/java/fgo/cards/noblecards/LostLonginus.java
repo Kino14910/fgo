@@ -11,21 +11,14 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.MindblastEffect;
 
 import fgo.cards.AbsNoblePhantasmCard;
-import fgo.hexui_lib.util.RenderImageLayer;
-import fgo.hexui_lib.util.TextureLoader;
 
 public class LostLonginus extends AbsNoblePhantasmCard {
     public static final String ID = makeID(LostLonginus.class.getSimpleName());
-    public static final String IMG_PATH = "fgo/images/cards/noble/LostLonginus.png";
-    public static final String IMG_PATH_P = "fgo/images/cards/noble/LostLonginus_p.png";
 //    public static final String ID = "LostLonginus";
     public LostLonginus() {
         super(ID,CardType.ATTACK, CardTarget.ALL_ENEMY);
         setDamage(24, 6);
         setMagic(3);
-
-        cardArtLayers512.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH)));
-        cardArtLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH_P)));
     }
 
     @Override

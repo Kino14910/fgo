@@ -17,7 +17,7 @@ public class SaveStone extends BaseRelic {
 
     @Override
     public String getUpdatedDescription() {
-        return this.DESCRIPTIONS[0] + 3.5 + this.DESCRIPTIONS[1];
+        return String.format(DESCRIPTIONS[0], 3.5);
     }
 
     @Override

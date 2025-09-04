@@ -1,5 +1,7 @@
 package fgo.powers;
 
+import static fgo.FGOMod.makeID;
+
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -7,8 +9,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import basemod.cardmods.ExhaustMod;
 import basemod.helpers.CardModifierManager;
-
-import static fgo.FGOMod.makeID;
 
 public class UnlimitedPower extends BasePower {
     public static final String POWER_ID = makeID(UnlimitedPower.class.getSimpleName());
@@ -33,6 +33,6 @@ public class UnlimitedPower extends BasePower {
 
     @Override
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
+        description = String.format(DESCRIPTIONS[0], amount);
     }
 }

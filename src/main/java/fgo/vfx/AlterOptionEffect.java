@@ -23,6 +23,8 @@ import com.megacrit.cardcrawl.rooms.CampfireUI;
 import com.megacrit.cardcrawl.rooms.RestRoom;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 
+import fgo.cards.derivative.mash.Camelot;
+import fgo.cards.derivative.mash.RayProofKyrielight;
 import fgo.cards.noblecards.HollowHeartAlbion;
 import fgo.cards.noblecards.Unlimited;
 import fgo.characters.CustomEnums.FGOCardColor;
@@ -73,7 +75,9 @@ public class AlterOptionEffect extends AbstractGameEffect {
             HashSet<String> excludedCards = new HashSet<>();
             Collections.addAll(excludedCards, 
                 HollowHeartAlbion.ID, 
-                Unlimited.ID
+                Unlimited.ID,
+                Camelot.ID,
+                RayProofKyrielight.ID
             );
 
             for (AbstractCard card : noblePhantasmCards) {

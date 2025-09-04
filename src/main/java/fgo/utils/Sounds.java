@@ -12,9 +12,11 @@ public class Sounds {
     public static final String masterInvictusSpiritus = soundPath("MASTER_INVICTUS_SPIRITUS.mp3");
     
     public static final String gun = soundPath("hermit_gun2.ogg");
-    public static final String S011_Attack6 = soundPath("S011_Attack6.ogg");
-    public static final String S011_Skill1 = soundPath("S011_Skill1.ogg");
-    public static final String S011_Skill2 = soundPath("S011_Skill2.ogg");
-    public static final String S011_Skill3 = soundPath("S011_Skill3.ogg");
+    public static final String Kanshou = soundPath("S011_Attack6.ogg");
+    public static final String Sokoda = soundPath("S011_Attack4.ogg");
+    public static final String Segawaruku = soundPath("S011_Skill1.ogg");
+    public static final String TraceOn = soundPath("S011_Skill2.ogg");
+    public static final String Konosaida = soundPath("S011_Skill3.ogg");
+
     public static final String UBW_Incantation = soundPath("UBW.ogg");
 }

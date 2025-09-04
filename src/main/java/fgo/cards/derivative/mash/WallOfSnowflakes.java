@@ -1,6 +1,6 @@
-package fgo.cards.colorless.mash;
+package fgo.cards.derivative.mash;
 
-import static com.megacrit.cardcrawl.core.Settings.language;
+import static fgo.FGOMod.imagePath;
 
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.stslib.patches.FlavorText;
@@ -8,13 +8,13 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
 import fgo.action.FgoNpAction;
 import fgo.cards.FGOCard;
+import fgo.characters.CustomEnums.FGOCardColor;
 import fgo.powers.CriticalDamageUpPower;
 import fgo.powers.ReducePercentDamagePower;
 import fgo.utils.CardStats;
@@ -22,8 +22,11 @@ import fgo.utils.CardStats;
 public class WallOfSnowflakes extends FGOCard {
     public static final String ID = makeID(WallOfSnowflakes.class.getSimpleName());
     public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    private static final String upgradeName = cardStrings.EXTENDED_DESCRIPTION[1];
+    private static final String upgradeName2 = cardStrings.EXTENDED_DESCRIPTION[2];
+    private static final String IMG2 = imagePath("cards/skill/MashPaladin.png");
     private static final CardStats INFO = new CardStats(
-            CardColor.COLORLESS,
+            FGOCardColor.FGO_DERIVATIVE,
             CardType.SKILL,
             CardRarity.SPECIAL,
             CardTarget.SELF,
@@ -40,48 +43,31 @@ public class WallOfSnowflakes extends FGOCard {
 
     @Override
     public float getTitleFontSize() {
-        if (language == Settings.GameLanguage.ZHS) {
-            return 24.0F;
-        }
+        return 24.0F;
+    }
 
-        return -1.0F;
+    @Override
+    public void upgrade() {
+        super.upgrade();
+        if (timesUpgraded == 2) {
+            loadCardImage(IMG2);
+            rawDescription = cardStrings.UPGRADE_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION[0];
+            initializeDescription();
+        };
+        upgraded = false;
     }
 
     @Override
     protected void upgradeName() {
+        ++this.timesUpgraded;
         if(timesUpgraded == 1) {
-            initializeDescription();
-            switch (language) {
-                case ZHS:
-                    name = "荣光坚毅的雪花之壁";
-                    break;
-                case ZHT:
-                    name = "榮耀堅固的雪花之壁";
-                    break;
-                case JPN:
-                    name = "誉れ堅き雪花の壁";
-                    break;
-                default:
-                    break;
-            }
+            name = upgradeName;
         }
         if (timesUpgraded == 2) {
-            cardStrings.UPGRADE_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION[0];
-            initializeDescription();
-            switch (language) {
-                case ZHS:
-                    name = "荣光远扬的雪花之盾";
-                    break;
-                case ZHT:
-                    name = "榮耀遠揚的雪花之盾";
-                    break;
-                case JPN:
-                    name = "誉れ高き雪花の盾";
-                    break;
-                default:
-                    break;
-            }
+            name = upgradeName2;
+            upgraded = true;
         }
+        initializeTitle();
     }
 
 

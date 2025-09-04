@@ -1,9 +1,9 @@
 package fgo.powers;
 
+import static fgo.FGOMod.makeID;
+
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
-
-import static fgo.FGOMod.makeID;
 
 public class StarRegenPower extends BasePower {
     public static final String POWER_ID = makeID(StarRegenPower.class.getSimpleName());
@@ -16,7 +16,7 @@ public class StarRegenPower extends BasePower {
 
     @Override
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
+        description = String.format(DESCRIPTIONS[0], amount);
     }
 
     @Override

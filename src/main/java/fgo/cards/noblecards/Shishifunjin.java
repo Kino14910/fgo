@@ -8,20 +8,13 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import fgo.cards.AbsNoblePhantasmCard;
-import fgo.hexui_lib.util.RenderImageLayer;
-import fgo.hexui_lib.util.TextureLoader;
 
 public class Shishifunjin extends AbsNoblePhantasmCard {
     public static final String ID = makeID(Shishifunjin.class.getSimpleName());
-    public static final String IMG_PATH = "fgo/images/cards/noble/Shishifunjin.png";
-    public static final String IMG_PATH_P = "fgo/images/cards/noble/Shishifunjin_p.png";
 
     public Shishifunjin() {
         super(ID,CardType.POWER, CardTarget.ALL_ENEMY);
         setMagic(40, 10);
-
-        cardArtLayers512.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH)));
-        cardArtLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH_P)));
     }
 
     @Override

@@ -1,9 +1,10 @@
 package fgo.powers;
 
-import com.megacrit.cardcrawl.core.AbstractCreature;
-import fgo.action.FgoNpAction;
-
 import static fgo.FGOMod.makeID;
+
+import com.megacrit.cardcrawl.core.AbstractCreature;
+
+import fgo.action.FgoNpAction;
 
 public class MorningLarkPower extends BasePower {
     public static final String POWER_ID = makeID(MorningLarkPower.class.getSimpleName());
@@ -16,7 +17,7 @@ public class MorningLarkPower extends BasePower {
 
     @Override
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
+        description = String.format(DESCRIPTIONS[0], amount);
     }
 //
 //    @Override

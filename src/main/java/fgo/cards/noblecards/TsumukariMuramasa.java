@@ -18,19 +18,13 @@ import com.megacrit.cardcrawl.vfx.combat.DieDieDieEffect;
 import com.megacrit.cardcrawl.vfx.combat.WhirlwindEffect;
 
 import fgo.cards.AbsNoblePhantasmCard;
-import fgo.hexui_lib.util.RenderImageLayer;
-import fgo.hexui_lib.util.TextureLoader;
 
 public class TsumukariMuramasa extends AbsNoblePhantasmCard {
     public static final String ID = makeID(TsumukariMuramasa.class.getSimpleName());
-    public static final String IMG_PATH = "fgo/images/cards/noble/TsumukariMuramasa.png";
-    public static final String IMG_PATH_P = "fgo/images/cards/noble/TsumukariMuramasa_p.png";
+    
     public TsumukariMuramasa() {
         super(ID,CardType.ATTACK, CardTarget.ALL_ENEMY);
         setDamage(4, 1);
-
-        cardArtLayers512.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH)));
-        cardArtLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH_P)));
     }
 
     @Override

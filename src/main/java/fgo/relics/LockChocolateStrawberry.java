@@ -9,8 +9,8 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 
-import fgo.cards.colorless.mash.BlackBarrel;
-import fgo.cards.colorless.mash.WallOfSnowflakes;
+import fgo.cards.derivative.mash.BlackBarrel;
+import fgo.cards.derivative.mash.WallOfSnowflakes;
 import fgo.characters.CustomEnums.FGOCardColor;
 
 public class LockChocolateStrawberry extends BaseRelic {
@@ -38,8 +38,7 @@ public class LockChocolateStrawberry extends BaseRelic {
         AbstractCard cardById = AbstractDungeon.player.masterDeck.findCardById(WallOfSnowflakes.ID);
         if (AbstractDungeon.actNum > 1 && AbstractDungeon.floorNum % 17 == 0 && cardById != null) {
             WallOfSnowflakes card = (WallOfSnowflakes)cardById;
-            card.timesUpgraded++;
-            card.initializeDescription();
+            card.upgrade();
         }
     }
 }

@@ -1,51 +1,40 @@
-package fgo.cards.colorless.mash;
-
-import static com.megacrit.cardcrawl.core.Settings.language;
+package fgo.cards.derivative.mash;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import fgo.cards.FGOCard;
+import fgo.characters.CustomEnums.FGOCardColor;
 import fgo.utils.CardStats;
-
 public class BlackBarrel extends FGOCard {
     public static final String ID = makeID(BlackBarrel.class.getSimpleName());
+    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    private static final String upgradeName = cardStrings.EXTENDED_DESCRIPTION[0];
     private static final CardStats INFO = new CardStats(
-            CardColor.COLORLESS,
+            FGOCardColor.FGO_DERIVATIVE,
             CardType.ATTACK,
             CardRarity.SPECIAL,
             CardTarget.ENEMY,
-            1
+            0
     );
     public BlackBarrel() {
         super(ID, INFO);
-        setDamage(14, 4);
+        setDamage(6, 6);
         setExhaust();
     }
-
 
     @Override
     protected void upgradeName() {
         timesUpgraded++;
         upgraded = true;
-        switch (language) {
-            case ZHS:
-                name = "悖论构造体";
-                break;
-            case ZHT:
-                name = "悖論構造体";
-                break;
-            case JPN:
-                name = "ブラックバレル";
-            default:
-                break;
-        }
+        name = upgradeName;
+        initializeTitle();
     }
-
-
 
     @Override
     public void calculateCardDamage(AbstractMonster mo) {
@@ -61,6 +50,6 @@ public class BlackBarrel extends FGOCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+        this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
     }
 }

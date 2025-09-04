@@ -14,22 +14,15 @@ import com.megacrit.cardcrawl.vfx.combat.ViolentAttackEffect;
 
 import fgo.action.FetchFailnaughtAction;
 import fgo.cards.AbsNoblePhantasmCard;
-import fgo.hexui_lib.util.RenderImageLayer;
-import fgo.hexui_lib.util.TextureLoader;
 import fgo.powers.CursePower;
 
 public class FetchFailnaught extends AbsNoblePhantasmCard {
     public static final String ID = makeID(FetchFailnaught.class.getSimpleName());
-    public static final String IMG_PATH = "fgo/images/cards/noble/FetchFailnaught.png";
-    public static final String IMG_PATH_P = "fgo/images/cards/noble/FetchFailnaught_p.png";
 
     public FetchFailnaught() {
         super(ID,CardType.ATTACK, CardTarget.ENEMY);
         setDamage(30, 8);
         setMagic(3);
-
-        cardArtLayers512.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH)));
-        cardArtLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH_P)));
     }
 
 

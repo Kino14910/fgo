@@ -1,10 +1,8 @@
 package fgo.monsters;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.function.Consumer;
-import java.util.function.Function;
 import java.util.function.Supplier;
 
 import com.badlogic.gdx.math.MathUtils;
@@ -18,12 +16,7 @@ import com.megacrit.cardcrawl.actions.animations.AnimateSlowAttackAction;
 import com.megacrit.cardcrawl.actions.animations.ShoutAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.actions.common.RollMoveAction;
-import com.megacrit.cardcrawl.actions.common.SpawnMonsterAction;
-import com.megacrit.cardcrawl.actions.common.SuicideAction;
-import com.megacrit.cardcrawl.actions.utility.HideHealthBarAction;
-import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -33,8 +26,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.EnemyMoveInfo;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
-import com.megacrit.cardcrawl.vfx.combat.InflameEffect;
 
 import basemod.abstracts.CustomMonster;
 import fgo.FGOMod;
@@ -48,9 +39,6 @@ public abstract class BaseMonster extends CustomMonster {
     public String[] DIALOG;
     public int turnCount;
     public int[] damages;
-    public int tv = 0;
-    public List<MonsterSlot> slots = new ArrayList<>();
-    public Function<MonsterSlot, AbstractMonster> monFunc;
     public String bgm;
     public AbstractPlayer p = AbstractDungeon.player;
     public List<MoveInfo> moveInfos = new ArrayList<>();
@@ -68,42 +56,7 @@ public abstract class BaseMonster extends CustomMonster {
 
         dialogX = -150.0F * Settings.scale;
         dialogY = 70.0F * Settings.scale;
-
-        // type = EnemyType.valueOf(DataManager.getInstance().getMonsterData(id, MonsterDataCol.Type));
-
-        // int hp = 0;
-        // try {
-        //     hp = DataManager.getInstance().getMonsterDataInt(id + AbstractDungeon.actNum, ModHelper.moreHPAscension(type) ? MonsterDataCol.HP2 : MonsterDataCol.HP1);
-        // } catch (Exception e) {
-        //     hp = DataManager.getInstance().getMonsterDataInt(id, ModHelper.moreHPAscension(type) ? MonsterDataCol.HP2 : MonsterDataCol.HP1);
-        // }
-
-        // switch (type) {
-        //     case NORMAL:
-        //         hp += AbstractDungeon.monsterHpRng.random(-2, 2);
-        //         break;
-        //     case ELITE:
-        //         hp += AbstractDungeon.monsterHpRng.random(-3, 3);
-        //         break;
-        //     default:
-        //         break;
-        // }
-        // setHp(hp);
-
-        // try {
-        //     tv = DataManager.getInstance().getMonsterDataInt(id + AbstractDungeon.actNum, ModHelper.moreHPAscension(type) ? MonsterDataCol.TV2 : MonsterDataCol.TV1);
-        // } catch (Exception e) {
-        //     tv = DataManager.getInstance().getMonsterDataInt(id, ModHelper.moreHPAscension(type) ? MonsterDataCol.TV2 : MonsterDataCol.TV1);
-        // }
-        // if (BaseMod.hasModID("spireTogether:")) {
-        //     try {
-        //         tv += tv * P2PManager.GetPlayerCountWithoutSelf() * 50 / 100;
-        //     } catch (Exception ignored) {}
-        // }
-        // if (HSRModConfig.getActiveTPCount() > 0) {
-        //     tv += (int) (tv * HSRModConfig.getTVInc());
-        // }
-
+        
         p = AbstractDungeon.player;
         moreDamageAs = ModHelper.moreDamageAscension(type);
         moreHPAs = ModHelper.moreHPAscension(type);
@@ -169,11 +122,6 @@ public abstract class BaseMonster extends CustomMonster {
         return this;
     }
 
-    public BaseMonster modifyToughnessByPercent(float percent) {
-        tv = (int) (tv * percent);
-        return this;
-    }
-
     public BaseMonster setPreBattleAction(Consumer<BaseMonster> action) {
         preBattleAction = action;
         return this;
@@ -182,9 +130,6 @@ public abstract class BaseMonster extends CustomMonster {
     @Override
     public void usePreBattleAction() {
         super.usePreBattleAction();
-        // if (tv > 0) {
-        //     addToBot(new ApplyPowerAction(this, this, new ToughnessPower(this, tv, tv), 0));
-        // }
         if (bgm != null) {
             AbstractDungeon.scene.fadeOutAmbiance();
             CardCrawlGame.music.silenceTempBgmInstantly();
@@ -232,122 +177,6 @@ public abstract class BaseMonster extends CustomMonster {
     public void addDamageActions(AbstractCreature target, int index, int numTimes, AbstractGameAction.AttackEffect effect) {
         for (int i = 0; i < numTimes; i++) {
             addToBot(new DamageAction(target, this.damage.get(index), effect));
-        }
-    }
-
-    public void addSlot(float x, float y) {
-        slots.add(new MonsterSlot(x, y));
-    }
-
-    public MonsterSlot getEmptySlot(boolean inOrder) {
-        if (slots.isEmpty()) return null;
-        int startIndex = 0;
-        if (!inOrder) {
-            startIndex = AbstractDungeon.monsterHpRng.random(slots.size() - 1);
-        }
-        for (int i = 0; i < slots.size(); i++) {
-            MonsterSlot slot = slots.get((startIndex + i) % slots.size());
-            if (slot.isEmpty()) {
-                return slot;
-            }
-        }
-        return null;
-    }
-
-    public MonsterSlot getEmptySlot() {
-        return getEmptySlot(true);
-    }
-
-    public int getEmptySlotCount() {
-        int count = 0;
-        for (MonsterSlot slot : slots) {
-            if (slot.isEmpty()) {
-                count++;
-            }
-        }
-        return count;
-    }
-
-    public MonsterSlot getOccupiedSlot() {
-        for (MonsterSlot slot : slots) {
-            if (!slot.isEmpty()) {
-                return slot;
-            }
-        }
-        return null;
-    }
-
-    public void spawnMonsters() {
-        spawnMonsters(getEmptySlotCount());
-    }
-
-    public void spawnMonsters(int count) {
-        spawnMonsters(count, SpawnType.MINION, false);
-    }
-
-    public void spawnMonsters(int count, SpawnType spawnType, boolean inOrder) {
-        count = Math.min(count, getEmptySlotCount());
-        if (count > 0 && monFunc != null)
-            for (int i = 0; i < count; i++) {
-                ModHelper.addToBotAbstract(() -> {
-                    if (isDead || isDying) return;
-                    MonsterSlot slot = getEmptySlot(inOrder);
-                    if (slot == null) return;
-                    AbstractMonster monster = monFunc.apply(slot);
-                    if (monster == null) return;
-                    addToTop(new SpawnMonsterAction(monster, spawnType == SpawnType.MINION));
-                    monster.usePreBattleAction();
-                    // if (spawnType == SpawnType.SUMMONED) {
-                    //     addToTop(new ApplyPowerAction(monster, monster, new SummonedPower(this)));
-                    // }
-                    slot.setMonster(monster);
-                });
-            }
-    }
-
-    public void respawn() {
-        if (MathUtils.randomBoolean()) {
-            addToBot(new SFXAction("DARKLING_REGROW_2", MathUtils.random(-0.1F, 0.1F)));
-        } else {
-            addToBot(new SFXAction("DARKLING_REGROW_1", MathUtils.random(-0.1F, 0.1F)));
-        }
-
-        addToBot(new HealAction(this, this, this.maxHealth / 2));
-        this.halfDead = false;
-        Iterator var1 = AbstractDungeon.player.relics.iterator();
-
-        while (var1.hasNext()) {
-            AbstractRelic r = (AbstractRelic) var1.next();
-            r.onSpawnMonster(this);
-        }
-    }
-
-    @Override
-    public void die(boolean triggerRelics) {
-        super.die(triggerRelics);
-        int shakeTime = 0;
-        switch (type) {
-            case NORMAL:
-                shakeTime = 2;
-                break;
-            case ELITE:
-                shakeTime = 3;
-                break;
-            case BOSS:
-                shakeTime = 5;
-                break;
-        }
-        this.useShakeAnimation(shakeTime);
-        for (MonsterSlot slot : slots) {
-            if (!slot.isEmpty()) {
-                AbstractMonster m = slot.monster;
-                // if (!m.isDead && !m.isDying && (m.hasPower(MinionPower.POWER_ID) || m.hasPower(SummonedPower.POWER_ID) || m.halfDead)) {
-                if (!m.isDead && !m.isDying && m.halfDead) {
-                    AbstractDungeon.actionManager.addToTop(new HideHealthBarAction(m));
-                    AbstractDungeon.actionManager.addToTop(new SuicideAction(m));
-                    AbstractDungeon.actionManager.addToTop(new VFXAction(m, new InflameEffect(m), 0.2F));
-                }
-            }
         }
     }
 
@@ -438,6 +267,17 @@ public abstract class BaseMonster extends CustomMonster {
         shout(index, 1.0F);
     }
 
+    public void shout (int index, String sound) {
+        shout(index, sound, 1.0F);
+    }
+
+    public void shout(int index, String sound, float volume) {
+        if (index >= DIALOG.length) return;
+        ModHelper.addToBotAbstract(() -> CardCrawlGame.sound.playV(sound, volume));
+        addToBot(new ShoutAction(this, DIALOG[index]));
+        
+    }
+
     public void shout(int start, int end, float volume) {
         shout(AbstractDungeon.miscRng.random(start, end), volume);
     }
@@ -476,31 +316,6 @@ public abstract class BaseMonster extends CustomMonster {
         public void move() {
             takeMove.accept(this);
         }
-    }
-
-    public static class MonsterSlot {
-        public float x;
-        public float y;
-        public AbstractMonster monster;
-
-        public MonsterSlot(float x, float y) {
-            this.x = x;
-            this.y = y;
-        }
-
-        public boolean isEmpty() {
-            return (monster == null || monster.isDeadOrEscaped());
-        }
-
-        public void setMonster(AbstractMonster monster) {
-            this.monster = monster;
-        }
-    }
-
-    public enum SpawnType {
-        NONE,
-        MINION,
-        SUMMONED
     }
 
     public enum AttackAnim {

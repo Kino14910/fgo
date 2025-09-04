@@ -2,11 +2,9 @@
   "${modID}:OrbID": {
     "NAME": "Orb Name",
     "DESCRIPTION": [
-      "#yPassive: At the start of your turn, draw #b",
-      " card.",
+      "#yPassive: At the start of your turn, draw #b%d card.",
       " cards.",
-      " NL #yEvoke: Deal #b",
-      " damage to all enemies."
+      " NL #yEvoke: Deal #b%d damage to all enemies."
     ]
   },
   "${modID}:NoblePhantasmButton": {

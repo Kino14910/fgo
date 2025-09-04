@@ -632,10 +632,31 @@
     "NAME": "약속된 승리의 검",
     "DESCRIPTION": "모든 적에게 !D! 피해. NL !NP!% 보구 게이지 획득."
   },
+
   "${modID}:Camelot": {
     "NAME": "이상향",
-    "DESCRIPTION": "!B! 방어도 획득. NL 근력 2 획득. NL 턴 종료 시, !M! 방어도 획득."
+    "DESCRIPTION": "!B! 블록 획득. NL 근력 2 획득. NL 턴 종료 시 !M! 블록 획득.",
+    "EXTENDED_DESCRIPTION": [
+      "3턴간 받는 공격 피해 !M!% 감소. NL 턴 종료 시 !B! 블록 획득. NL 유물 1스택과 근력 1스택 획득. NL 다음 #y보구 카드는 #r*희망을 증명하는 인리의 검#r(으)로 고정. NL #r*때로는 흐린 백악의 벽#r(을)를 #r*시간을 측정하는 자탄의 장작#r(으)로 변경"
+    ],
+    "FLAVOR": "이 카드는 특정 조건에서 강화됩니다."
   },
+  "${modID}:RayProofKyrielight": {
+    "NAME": "희망을 증명하는 인리의 검",
+    "DESCRIPTION": "#y무적 관통. NL 모든 적에게 !M!층 취약 부여. NL 모든 적에게 !D! 피해를 입힙니다."
+  },
+  "${modID}:ObscurantWallofChalk": {
+    "NAME": "때로는 흐린 백악의 벽",
+    "DESCRIPTION": "#y숙청 방어 1스택과 #y무형 획득. NL !NP!% #y보구 게이지 획득."
+  },
+  "${modID}:TimewornBulletKindling": {
+    "NAME": "시간을 측정하는 자탄의 장작",
+    "DESCRIPTION": "!M!% #y보구 위력 획득. NL 모든 #y크리티컬 스타 소모, 1개당 4% #y보구 게이지 획득. NL 체력 4 손실. 사용 후 #r*때로는 흐린 백악의 벽#r(으)로 변경.",
+    "EXTENDED_DESCRIPTION": [
+      "!NP!% #y보구 게이지 획득."
+    ]
+  },
+
   "${modID}:EnferChateaudIf": {
     "NAME": "호랑이여, 환하게 타올라라",
     "DESCRIPTION": "*날개의 신발 미소지 시, *날개의 신발 획득.",

@@ -9,21 +9,14 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import fgo.cards.AbsNoblePhantasmCard;
-import fgo.hexui_lib.util.RenderImageLayer;
-import fgo.hexui_lib.util.TextureLoader;
 import fgo.powers.WatersidePower;
 
 public class GreatRamNautilus extends AbsNoblePhantasmCard {
     public static final String ID = makeID(GreatRamNautilus.class.getSimpleName());
-    public static final String IMG_PATH = "fgo/images/cards/noble/GreatRamNautilus.png";
-    public static final String IMG_PATH_P = "fgo/images/cards/noble/GreatRamNautilus_p.png";
 
     public GreatRamNautilus() {
         super(ID,CardType.ATTACK, CardTarget.ENEMY);
         setDamage(45, 8);
-
-        cardArtLayers512.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH)));
-        cardArtLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(IMG_PATH_P)));
     }
 
     @Override
