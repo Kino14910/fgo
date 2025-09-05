@@ -34,8 +34,8 @@ public class RenderSingleCardTypePatch {
             FloatPair location = locationCard.getCardTypeLocation(new FloatPair(3f, -40f), true);
 
             FontHelper.renderFontCentered(sb, FontHelper.panelNameFont, label,
-                    Settings.WIDTH / 2.0F + location.x * Settings.scale, Settings.HEIGHT / 2.0F + location.y * Settings.scale,
-                    Settings.CREAM_COLOR);
+                    Settings.WIDTH / 2.0F + location.x * Settings.scale, Settings.HEIGHT / 2.0F - location.y * Settings.scale,
+                    new Color(0.35F, 0.35F, 0.35F, 1.0F));
 
             return SpireReturn.Return(null);
         }
@@ -45,6 +45,7 @@ public class RenderSingleCardTypePatch {
     private static class Locator extends SpireInsertLocator {
         // This is the abstract method from SpireInsertLocator that will be used to find the line
         // numbers you want this patch inserted at
+        @Override
         public int[] Locate(CtBehavior ctMethodToPatch) throws CannotCompileException, PatchingException {
             // finalMatcher is the line that we want to insert our patch before -
             // in this example we are using a `MethodCallMatcher` which is a type

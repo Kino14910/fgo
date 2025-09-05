@@ -1,11 +1,8 @@
 package fgo.cards.derivative.mash;
 
-import static com.megacrit.cardcrawl.core.Settings.language;
-
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.MetallicizePower;
@@ -23,15 +20,6 @@ public class Camelot extends AbsNoblePhantasmCard {
         setMagic(10, 20);
     }
     
-    @Override
-    public float getTitleFontSize() {
-        if (language == Settings.GameLanguage.ZHS) {
-            return 24.0F;
-        }
-
-        return -1.0F;
-    }
-
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new MetallicizePower(p, block)));

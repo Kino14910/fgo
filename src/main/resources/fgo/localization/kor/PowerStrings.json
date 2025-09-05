@@ -9,8 +9,8 @@
   "${modID}:GutsPower": {
     "NAME": "근성",
     "DESCRIPTIONS": [
-      "사망할 때 대신 #b%1$s HP를 회복합니다.",
-      "다음 #b%2$s가 사망할 때 대신 #b%1$s HP를 회복합니다."
+      "사망할 때 대신 #b%%1$s HP를 회복합니다.",
+      "다음 #b%%2$s가 사망할 때 대신 #b%%1$s HP를 회복합니다."
     ]
   },
   "${modID}:UnlimitedPower": {

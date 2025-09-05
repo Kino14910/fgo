@@ -1,7 +1,9 @@
 package fgo.cards.fgo;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -13,8 +15,7 @@ import fgo.powers.CriticalDamageUpPower;
 public class PeerlessStrike extends FGOCard {
     public static final String ID = makeID(PeerlessStrike.class.getSimpleName());
     public PeerlessStrike() {
-        super(ID, 1, CardType.ATTACK, CardTarget.ENEMY, CardRarity.RARE);
-        setCostUpgrade(0);
+        super(ID, 0, CardType.ATTACK, CardTarget.ENEMY, CardRarity.RARE);
         tags.add(CardTags.STRIKE);
     }
 
@@ -22,7 +23,11 @@ public class PeerlessStrike extends FGOCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, 5)));
         addToBot(new ApplyPowerAction(p, p, new CriticalDamageUpPower(p, 100)));
-        addToBot(new ApplyPowerAction(p, p, new EndTurnDeathPower(p)));
+        if(!upgraded) {
+            addToBot(new DamageAction(p, new DamageInfo(p, 9999)));
+        } else {
+            addToBot(new ApplyPowerAction(p, p, new EndTurnDeathPower(p)));
+        }
     }
 
     @Override

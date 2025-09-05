@@ -8,8 +8,8 @@
   "${modID}:GutsPower": {
     "NAME": "毅力",
     "DESCRIPTIONS": [
-      "當你要被殺死時，免死並回復 #b%1$s 點 #y生命 。",
-      "當你接下來 #b%2$s 次要被殺死時，免死並回復 #b%1$s 點 #y生命 。"
+      "當你要被殺死時，免死並回復 #b%%1$s 點 #y生命 。",
+      "當你接下來 #b%%2$s 次要被殺死時，免死並回復 #b%%1$s 點 #y生命 。"
     ]
   },
   "${modID}:UnlimitedPower": {
@@ -45,7 +45,7 @@
   "${modID}:NightlessCharismaPower": {
     "NAME": "不夜的魅力",
     "DESCRIPTIONS": [
-      "在每回合開始時，隨機將你抽牌堆中 #b%1$s 張攻擊牌加入你的手牌，並將其 #y升級 。"
+      "在每回合開始時，隨機將你抽牌堆中 #b%%1$s 張攻擊牌加入你的手牌，並將其 #y升級 。"
     ]
   },
   "${modID}:TheOneWhoRevealsTruthPower": {
@@ -76,7 +76,7 @@
   "${modID}:CursePower": {
     "NAME": "詛呪",
     "DESCRIPTIONS": [
-      "在每回合開始時失去 #b%1$s 點 #y生命 。"
+      "在每回合開始時失去 #b%%1$s 點 #y生命 。"
     ]
   },
   "${modID}:GloriousStrikePower": {
@@ -114,7 +114,7 @@
   "${modID}:DeathOfDeathPower": {
     "NAME": "死之淵",
     "DESCRIPTIONS": [
-      "在你 #y毅力 發動時，移除死之淵，並且下一回合造成 #y雙倍傷害 。被移除時，你 #r失去 #b%1$s 點 #y力量 。"
+      "在你 #y毅力 發動時，移除死之淵，並且下一回合造成 #y雙倍傷害 。被移除時，你 #r失去 #b%%1$s 點 #y力量 。"
     ]
   },
   "${modID}:BriefStrengthPower": {
@@ -132,7 +132,7 @@
   "${modID}:AtTheWellPower": {
     "NAME": "獻給世界樹的活祭",
     "DESCRIPTIONS": [
-      "在下回合獲得 #b%1$s 層 #y毅力 ，下一次 #y毅力 發動時獲得 [E] [E] [E] 並且抽 #b3 張牌，然後 #r死亡 。"
+      "在下回合獲得 #b%%1$s 層 #y毅力 ，下一次 #y毅力 發動時獲得 [E] [E] [E] 並且抽 #b3 張牌，然後 #r死亡 。"
     ]
   },
   "${modID}:GutsAtTheWellPower": {
@@ -188,7 +188,7 @@
   "${modID}:EnergyRegenPower": {
     "NAME": "每回合獲得NP",
     "DESCRIPTIONS": [
-      "在每回合開始時獲得 #b%d % #y寶具值 。"
+      "在每回合開始時獲得 #b%d %% #y寶具值 。"
     ]
   },
   "${modID}:EvasionPower": {
@@ -201,14 +201,14 @@
   "${modID}:SchwarzwaldFalkePower": {
     "NAME": "黑森之鷹",
     "DESCRIPTIONS": [
-      "在你的下 #b%1$s 個回合結束時，獲得 #b1 次 #y回避 。",
+      "在你的下 #b%%1$s 個回合結束時，獲得 #b1 次 #y回避 。",
       "在本回合結束時，獲得 #b1 次 #y回避 。"
     ]
   },
   "${modID}:MyFairSoldierPower": {
     "NAME": "我美麗的戰士",
     "DESCRIPTIONS": [
-      "在你的下一張能力牌被打出時，失去 #b%1$s 點 #y力量 和 #y敏捷 。"
+      "在你的下一張能力牌被打出時，失去 #b%%1$s 點 #y力量 和 #y敏捷 。"
     ]
   },
   "${modID}:DefenseUpPower": {
@@ -232,10 +232,10 @@
   "${modID}:FifthFormPower": {
     "NAME": "第五勢",
     "DESCRIPTIONS": [
-      "在這個回合對一個敵人的攻擊牌會打出兩次，但傷害降低 #b50% 。",
-      "在接下來 #b%d 個回合對一個敵人的攻擊牌會打出兩次，但傷害降低 #b50% 。",
-      "在這個回合對一個敵人的攻擊牌會打出兩次，但傷害降低 #b35% 。",
-      " 個回合對一個敵人的攻擊牌會打出兩次，但傷害降低 #b35% 。"
+      "在這個回合對一個敵人的攻擊牌會打出兩次，但傷害降低 #b50%% 。",
+      "在接下來 #b%d 個回合對一個敵人的攻擊牌會打出兩次，但傷害降低 #b50%% 。",
+      "在這個回合對一個敵人的攻擊牌會打出兩次，但傷害降低 #b35%% 。",
+      " 個回合對一個敵人的攻擊牌會打出兩次，但傷害降低 #b35%% 。"
     ]
   },
   "${modID}:IgnoreDefensePower": {
@@ -350,7 +350,7 @@
   "${modID}:ArchetypeORTPower": {
     "NAME": "Archetype ORT",
     "DESCRIPTIONS": [
-      "#y純潔的搭配 的效果變化爲獲得 #b1 次 #y肅正防御 。在每回合開始時獲得 #b10 顆 #y暴擊星 和 #b3% 寶具值。"
+      "#y純潔的搭配 的效果變化爲獲得 #b1 次 #y肅正防御 。在每回合開始時獲得 #b10 顆 #y暴擊星 和 #b3%% 寶具值。"
     ]
   },
   "${modID}:ExistenceOutsideDomainPower": {
@@ -375,8 +375,8 @@
   "${modID}:ItsInevitablePower": {
     "NAME": "無可奈何",
     "DESCRIPTIONS": [
-      "在下一回合開始時，對所有敵人造成 #b%1$s 點傷害。",
-      "對所有敵人造成 #b%2$s 點傷害，然後將傷害增加 #b%3$s 點。"
+      "在下一回合開始時，對所有敵人造成 #b%%1$s 點傷害。",
+      "對所有敵人造成 #b%%2$s 點傷害，然後將傷害增加 #b%%3$s 點。"
     ]
   },
   "${modID}:ManaBurstGemsPower": {
@@ -394,7 +394,7 @@
   "${modID}:NoblePhantasmCardPower": {
     "NAME": "寶具牌",
     "DESCRIPTIONS": [
-      "在寶具值達到 #b100% 及以上時，將一張 ",
+      "在寶具值達到 #b100%% 及以上時，將一張 ",
       " 加入你的手牌，而不是選擇一張。"
     ]
   },
@@ -414,7 +414,7 @@
   "${modID}:ArtsPerformancePower": {
     "NAME": "寶具值獲取提升",
     "DESCRIPTIONS": [
-      "每當你打出一張牌，額外獲得 #b%d %% #y寶具值 。最多額外獲得 #b5% 。"
+      "每當你打出一張牌，額外獲得 #b%d %% #y寶具值 。最多額外獲得 #b5%% 。"
     ]
   },
   "${modID}:BusterPerformancePower": {
@@ -426,8 +426,8 @@
   "${modID}:NPRatePower": {
     "NAME": "黃金律",
     "DESCRIPTIONS": [
-      "在這個回合，打出手牌和受到攻擊時，獲得的寶具值提高 #b100% 。",
-      "打出手牌和受到攻擊時，獲得的寶具值提高 #b100% ，持續 #b%d 回合。"
+      "在這個回合，打出手牌和受到攻擊時，獲得的寶具值提高 #b100%% 。",
+      "打出手牌和受到攻擊時，獲得的寶具值提高 #b100%% ，持續 #b%d 回合。"
     ]
   },
   "${modID}:StarRatePower": {
@@ -439,8 +439,8 @@
   "${modID}:StarPower": {
     "NAME": "暴擊星/暴擊",
     "DESCRIPTIONS": [
-      "在你有至少 #b10 顆時，非 #y寶具 攻擊牌傷害提高 #b100% ，並且打出時減少 #b10 顆。",
-      "在你有至少 #b10 顆時，非 #y寶具 攻擊牌傷害提高 #b100% ，並且打出時減少 #b10 顆。現在可以造成 #y暴擊 ！"
+      "在你有至少 #b10 顆時，非 #y寶具 攻擊牌傷害提高 #b100%% ，並且打出時減少 #b10 顆。",
+      "在你有至少 #b10 顆時，非 #y寶具 攻擊牌傷害提高 #b100%% ，並且打出時減少 #b10 顆。現在可以造成 #y暴擊 ！"
     ]
   },
   "${modID}:CriticalDamageUpPower": {
@@ -513,7 +513,7 @@
   "${modID}:StarGainMonsterPower": {
     "NAME": "暴擊！",
     "DESCRIPTIONS": [
-      "這名敵人每次攻擊將使用 #b10 顆暴擊星，使其下一次攻擊傷害提高 #b100% 。"
+      "這名敵人每次攻擊將使用 #b10 顆暴擊星，使其下一次攻擊傷害提高 #b100%% 。"
     ]
   },
   "${modID}:IgnoresInvincibilityPower": {

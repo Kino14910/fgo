@@ -62,7 +62,7 @@ public class LockChocolateStrawberry extends BaseRelic {
 
     // @Override
     // public void onEnterRoom(AbstractRoom room) {
-    //     if (AbstractDungeon.actNum > 1 && AbstractDungeon.floorNum % 17 == 0) {
+    //     if (AbstractDungeon.actNum > 1 && AbstractDungeon.floorNum %% 17 == 0) {
     //         changeNobleCard(LockChocolateStrawberry.lordCamelot, LockChocolateStrawberry.lordChaldeas);
     //         changeNobleCard(LockChocolateStrawberry.camelot, LockChocolateStrawberry.lordCamelot);
     //         changeCard(LockChocolateStrawberry.veneratedWall, LockChocolateStrawberry.veneratedShield);

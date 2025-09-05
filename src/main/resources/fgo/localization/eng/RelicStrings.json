@@ -10,7 +10,7 @@
     "NAME": "Suitcase",
     "FLAVOR": "",
     "DESCRIPTIONS": [
-      "At the start of combat, gain #b20% #yfgo:NP."
+      "At the start of combat, gain #b20%% #yfgo:NP."
     ]
   },
   "${modID}:HalloweenRoyalty": {
@@ -85,7 +85,7 @@
     "NAME": "Fan Night",
     "FLAVOR": "Let's play all night tonight!",
     "DESCRIPTIONS": [
-      "Whenever you break an enemy's #yBlock the first time each combat, heal for #b20% of your MAX HP."
+      "Whenever you break an enemy's #yBlock the first time each combat, heal for #b20%% of your MAX HP."
     ]
   },
   "${modID}:BurgerKing": {
@@ -136,21 +136,21 @@
     "NAME": "Archetype ORT",
     "FLAVOR": "A lifeform created (designed) by fusing ORT's heart with an extraterrestrial species.",
     "DESCRIPTIONS": [
-      "Converts your #yfgo:Invincibility to #yfgo:Anti-Purge_Defense. At the start of your 2nd turn and after each turn, gain #b10 fgo:Stars and #b3% fgo:NP."
+      "Converts your #yfgo:Invincibility to #yfgo:Anti-Purge_Defense. At the start of your 2nd turn and after each turn, gain #b10 fgo:Stars and #b3%% fgo:NP."
     ]
   },
   "${modID}:OblivionCorrection": {
     "NAME": "Oblivion Correction",
     "FLAVOR": "While humans are forgetful creatures, Avengers never forget.",
     "DESCRIPTIONS": [
-      "At the start of each combat, gain #b30% #yfgo:Critical."
+      "At the start of each combat, gain #b30%% #yfgo:Critical."
     ]
   },
   "${modID}:SelfReplenishmentMagic": {
     "NAME": "Self-Replenishment (Magic)",
     "FLAVOR": "Mana continues to surge forth until vengeance is complete.",
     "DESCRIPTIONS": [
-      "At the start of each turn, gain additional #b6% #yfgo:NP."
+      "At the start of each turn, gain additional #b6%% #yfgo:NP."
     ]
   },
   "${modID}:BB": {

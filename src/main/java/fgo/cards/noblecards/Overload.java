@@ -1,14 +1,11 @@
 package fgo.cards.noblecards;
 
-import static com.megacrit.cardcrawl.core.Settings.language;
-
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.RemoveAllBlockAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import fgo.cards.AbsNoblePhantasmCard;
@@ -21,16 +18,6 @@ public class Overload extends AbsNoblePhantasmCard {
         super(ID,CardType.ATTACK, CardTarget.ENEMY);
         setDamage(30, 8);
         setMagic(2);
-    }
-
-
-    @Override
-    public float getTitleFontSize() {
-        if (language == Settings.GameLanguage.ZHS || language == Settings.GameLanguage.ZHT || language == Settings.GameLanguage.JPN) {
-            return 24.0F;
-        }
-
-        return -1.0F;
     }
 
     @Override

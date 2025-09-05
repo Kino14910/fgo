@@ -9,8 +9,8 @@
   "${modID}:GutsPower": {
     "NAME": "Guts",
     "DESCRIPTIONS": [
-      "When you would die, heal #b%1$s HP instead.",
-      "When you would next #b%2$s dies, heal #b%1$s HP instead."
+      "When you would die, heal #b%%1$s HP instead.",
+      "When you would next #b%%2$s dies, heal #b%%1$s HP instead."
     ]
   },
   "${modID}:UnlimitedPower": {
@@ -46,7 +46,7 @@
   "${modID}:NightlessCharismaPower": {
     "NAME": "Nightless Charisma",
     "DESCRIPTIONS": [
-      "At the start of your turn, put #b%1$s random Attacks from your draw pile into your hand and Upgrade it."
+      "At the start of your turn, put #b%%1$s random Attacks from your draw pile into your hand and Upgrade it."
     ]
   },
   "${modID}:TheOneWhoRevealsTruthPower": {
@@ -64,7 +64,7 @@
   "${modID}:SpringOfFirePower": {
     "NAME": "Guts BUFF",
     "DESCRIPTIONS": [
-      "Whenever you Trigger #yGuts for #b%d turn, gain #b20% #yNP #yDamage and remove all of your debuff."
+      "Whenever you Trigger #yGuts for #b%d turn, gain #b20%% #yNP #yDamage and remove all of your debuff."
     ]
   },
   "${modID}:MonteCristoTreasurePower": {
@@ -77,7 +77,7 @@
   "${modID}:CursePower": {
     "NAME": "Evil Curse",
     "DESCRIPTIONS": [
-      "At the start of turn, lose #b%1$s #yHP."
+      "At the start of turn, lose #b%%1$s #yHP."
     ]
   },
   "${modID}:GloriousStrikePower": {
@@ -121,7 +121,7 @@
   "${modID}:DeathOfDeathPower": {
     "NAME": "Abyss of Death",
     "DESCRIPTIONS": [
-      "When you would next die, heal #b%1$s HP instead and deal #yDouble #yDamage next turn."
+      "When you would next die, heal #b%%1$s HP instead and deal #yDouble #yDamage next turn."
     ]
   },
   "${modID}:BriefStrengthPower": {
@@ -139,7 +139,7 @@
   "${modID}:AtTheWellPower": {
     "NAME": "Sacrifice For Yggdrasil",
     "DESCRIPTIONS": [
-      "Next turn, gain #b%1$s #yGuts, the next time you trigger #yGuts draw #b3 cards and gain [E] [E] [E] . #rDie next turn."
+      "Next turn, gain #b%%1$s #yGuts, the next time you trigger #yGuts draw #b3 cards and gain [E] [E] [E] . #rDie next turn."
     ]
   },
   "${modID}:GutsAtTheWellPower": {
@@ -208,14 +208,14 @@
   "${modID}:SchwarzwaldFalkePower": {
     "NAME": "Schwarzwald Falke",
     "DESCRIPTIONS": [
-      "Gain #b1 #yEvasion at the end of your next #b%1$s turns.",
+      "Gain #b1 #yEvasion at the end of your next #b%%1$s turns.",
       "Gain #b1 #yEvasion at the end of your turn."
     ]
   },
   "${modID}:MyFairSoldierPower": {
     "NAME": "My Fair Soldier",
     "DESCRIPTIONS": [
-      "Whenever you play a Power card, lose #b%1$s #yStrength and #yDexterity."
+      "Whenever you play a Power card, lose #b%%1$s #yStrength and #yDexterity."
     ]
   },
   "${modID}:DefenseUpPower": {
@@ -239,10 +239,10 @@
   "${modID}:FifthFormPower": {
     "NAME": "Fifth Form",
     "DESCRIPTIONS": [
-      "Your Attack to an enemy is played twice this turn, but its decrease #b50% damage.",
-      "Your Attack to an enemy is played twice for #b%d turns, but its decrease #b50% damage.",
-      "Your Attack to an enemy is played twice this turn, but its decrease #b35% damage.",
-      " turns, but its decrease #b35% damage."
+      "Your Attack to an enemy is played twice this turn, but its decrease #b50%% damage.",
+      "Your Attack to an enemy is played twice for #b%d turns, but its decrease #b50%% damage.",
+      "Your Attack to an enemy is played twice this turn, but its decrease #b35%% damage.",
+      " turns, but its decrease #b35%% damage."
     ]
   },
   "${modID}:IgnoreDefensePower": {
@@ -350,7 +350,7 @@
   "${modID}:ArchetypeORTPower": {
     "NAME": "Archetype ORT",
     "DESCRIPTIONS": [
-      "Converts your #yPure #yCoordinate effect to gain #b1 #yAnti-Purge #yDefense. At the start of each turn, gain #b10 Stars and #b3% NP."
+      "Converts your #yPure #yCoordinate effect to gain #b1 #yAnti-Purge #yDefense. At the start of each turn, gain #b10 Stars and #b3%% NP."
     ]
   },
   "${modID}:ExistenceOutsideDomainPower": {
@@ -369,8 +369,8 @@
   "${modID}:ItsInevitablePower": {
     "NAME": "It's Inevitable",
     "DESCRIPTIONS": [
-      "At the start of next turn, deal #b%1$s damage to ALL enemies.",
-      "At the start of next #b%1$s turn(s), deal #b%2$s damage to ALL enemies and increase #b%3$s damage."
+      "At the start of next turn, deal #b%%1$s damage to ALL enemies.",
+      "At the start of next #b%%1$s turn(s), deal #b%%2$s damage to ALL enemies and increase #b%%3$s damage."
     ]
   },
   "${modID}:ManaBurstGemsPower": {
@@ -388,7 +388,7 @@
   "${modID}:NoblePhantasmCardPower": {
     "NAME": "Noble Phantasm Card",
     "DESCRIPTIONS": [
-      "Whenever your NP gauge is at or above #b100%, add a ",
+      "Whenever your NP gauge is at or above #b100%%, add a ",
       " into your hand."
     ]
   },
@@ -408,7 +408,7 @@
   "${modID}:ArtsPerformancePower": {
     "NAME": "Arts",
     "DESCRIPTIONS": [
-      "Whenever you play a card, gain #b%d %% additional NP. Up to gain 5% additional NP."
+      "Whenever you play a card, gain #b%d %% additional NP. Up to gain 5%% additional NP."
     ]
   },
   "${modID}:BusterPerformancePower": {
@@ -420,8 +420,8 @@
   "${modID}:NPRatePower": {
     "NAME": "NP Rate",
     "DESCRIPTIONS": [
-      "Gain #b100% additional NP this turn.",
-      "Gain #b100% additional NP for #b%d turns."
+      "Gain #b100%% additional NP this turn.",
+      "Gain #b100%% additional NP for #b%d turns."
     ]
   },
   "${modID}:StarRatePower": {
@@ -433,8 +433,8 @@
   "${modID}:StarPower": {
     "NAME": "Star (Critical Damage)",
     "DESCRIPTIONS": [
-      "When you obtain #b10 #yStars, deal #b100% additional #ynon-Noble #yPhantasm Attack damage and reduce #b10.",
-      "When you obtain #b10 #yStars, deal #b100% additional #ynon-Noble #yPhantasm Attack damage and reduce #b10. Now you can deal #yCritical Damage!"
+      "When you obtain #b10 #yStars, deal #b100%% additional #ynon-Noble #yPhantasm Attack damage and reduce #b10.",
+      "When you obtain #b10 #yStars, deal #b100%% additional #ynon-Noble #yPhantasm Attack damage and reduce #b10. Now you can deal #yCritical Damage!"
     ]
   },
   "${modID}:CriticalDamageUpPower": {
@@ -507,7 +507,7 @@
   "${modID}:StarGainMonsterPower": {
     "NAME": "Critical Attack!",
     "DESCRIPTIONS": [
-      "The enemy deal #b100% additional Attack damage and reduce #b10 #yStars."
+      "The enemy deal #b100%% additional Attack damage and reduce #b10 #yStars."
     ]
   },
   "${modID}:IgnoresInvincibilityPower": {

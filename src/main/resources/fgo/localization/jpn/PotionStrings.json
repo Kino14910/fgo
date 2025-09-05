@@ -17,7 +17,7 @@
   "${modID}:ExtremelySpicyMapoTofu": {
     "NAME": "缶詰特辛マーボー豆腐",
     "DESCRIPTIONS": [
-      "#b80% #y宝具ゲージ または #b60% #y宝具威力 を獲得。"
+      "#b80%% #y宝具ゲージ または #b60%% #y宝具威力 を獲得。"
     ]
   },
   "${modID}:CursePotion": {

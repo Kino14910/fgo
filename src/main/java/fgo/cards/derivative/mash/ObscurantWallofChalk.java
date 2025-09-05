@@ -24,11 +24,6 @@ public class ObscurantWallofChalk extends FGOCard {
         super(ID, INFO);
         setNP(20, 10);
     }
-    
-    @Override
-    public float getTitleFontSize() {
-        return 24.0F;
-    }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

@@ -21,11 +21,6 @@ public class RayProofKyrielight extends AbsNoblePhantasmCard {
     }
 
     @Override
-    public float getTitleFontSize() {
-        return 24.0F;
-    }
-
-    @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
             if (!mo.isDead && !mo.isDying) {

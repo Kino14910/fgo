@@ -10,7 +10,7 @@
     "NAME": "灵基手提箱",
     "FLAVOR": "记录了召唤过的所有英灵情报的装置。",
     "DESCRIPTIONS": [
-      "在战斗开始时获得 #b20% #yfgo:宝具值 。"
+      "在战斗开始时获得 #b20%% #yfgo:宝具值 。"
     ]
   },
   "${modID}:HalloweenRoyalty": {
@@ -136,21 +136,21 @@
     "NAME": "Archetype ORT",
     "FLAVOR": "使用ORT的心脏与星际外来种融合制作（设计）出来的生命体。",
     "DESCRIPTIONS": [
-      "获得的 #yfgo:无敌 变化为获得 #yfgo:肃正防御 。在第二回合和之后每回合开始时，获得 #b10 颗 #yfgo:暴击星 和 #b3% #yfgo:宝具值 。"
+      "获得的 #yfgo:无敌 变化为获得 #yfgo:肃正防御 。在第二回合和之后每回合开始时，获得 #b10 颗 #yfgo:暴击星 和 #b3%% #yfgo:宝具值 。"
     ]
   },
   "${modID}:OblivionCorrection": {
     "NAME": "忘却补正",
     "FLAVOR": "虽然人是很健忘的生物，但是复仇者绝不会忘却。",
     "DESCRIPTIONS": [
-      "战斗开始时，获得 #b30% #yfgo:暴击威力 。"
+      "战斗开始时，获得 #b30%% #yfgo:暴击威力 。"
     ]
   },
   "${modID}:SelfReplenishmentMagic": {
     "NAME": "自我回复（魔力）",
     "FLAVOR": "直到复仇完成为止，魔力会不断涌出。",
     "DESCRIPTIONS": [
-      "在每回合开始时额外获得 #b6% #yfgo:宝具值 。"
+      "在每回合开始时额外获得 #b6%% #yfgo:宝具值 。"
     ]
   },
   "${modID}:BB": {

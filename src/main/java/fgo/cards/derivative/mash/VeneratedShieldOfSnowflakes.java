@@ -37,11 +37,6 @@ public class VeneratedShieldOfSnowflakes extends FGOCard {
     }
 
     @Override
-    public float getTitleFontSize() {
-        return 24.0F;
-    }
-
-    @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new FgoNpAction(np));
         addToBot(new ApplyPowerAction(p, p, new AntiPurgeDefensePower(p, 1)));

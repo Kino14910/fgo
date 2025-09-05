@@ -35,11 +35,6 @@ public class TimewornBulletKindling extends FGOCard {
     }
 
     @Override
-    public float getTitleFontSize() {
-        return 24.0F;
-    }
-
-    @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new NPRatePower(p, magicNumber)));
         int starAmount = 0;

@@ -4,7 +4,7 @@
     "NAMES": [
       "np"
     ],
-    "DESCRIPTION": "To obtain a #yNoble #yPhantasm card, at least #b100% NP is required."
+    "DESCRIPTION": "To obtain a #yNoble #yPhantasm card, at least #b100%% NP is required."
   },
   {
     "PROPER_NAME": "Noble Phantasm",
@@ -88,7 +88,7 @@
     "NAMES": [
       "overcharge"
     ],
-    "DESCRIPTION": "Gain a effect for every #b100% NP. Up to gain #b5 effects at once."
+    "DESCRIPTION": "Gain a effect for every #b100%% NP. Up to gain #b5 effects at once."
   },
   {
     "PROPER_NAME": "Evasion",
@@ -150,7 +150,7 @@
       "command_spell",
       "command_spells"
     ],
-    "DESCRIPTION": "Choose: heal #b30 HP or gain #b100% NP if you use #b1 #yCommand #ySpell."
+    "DESCRIPTION": "Choose: heal #b30 HP or gain #b100%% NP if you use #b1 #yCommand #ySpell."
   },
   {
     "PROPER_NAME": "Heroic King",
@@ -166,7 +166,7 @@
       "np rate",
       "np_rate"
     ],
-    "DESCRIPTION": "Gain #b100% additional NP."
+    "DESCRIPTION": "Gain #b100%% additional NP."
   },
   {
     "PROPER_NAME": "Star",
@@ -174,7 +174,7 @@
       "star",
       "stars"
     ],
-    "DESCRIPTION": "When you obtain #b10 #yStars, deal #b100% additional #ynon-Noble #yPhantasm Attack damage and reduce #b10."
+    "DESCRIPTION": "When you obtain #b10 #yStars, deal #b100%% additional #ynon-Noble #yPhantasm Attack damage and reduce #b10."
   },
   {
     "PROPER_NAME": "Critical",

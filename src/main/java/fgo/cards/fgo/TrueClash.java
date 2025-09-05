@@ -40,7 +40,6 @@ public class TrueClash extends FGOCard {
 
     @Override
     public void triggerOnGlowCheck() {
-        glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
         for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
             if (m != null && m.getIntentBaseDmg() > 0) {
                 glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();

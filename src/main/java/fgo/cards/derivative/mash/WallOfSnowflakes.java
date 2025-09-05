@@ -32,10 +32,7 @@ public class WallOfSnowflakes extends FGOCard {
         FlavorText.AbstractCardFlavorFields.flavorBoxType.set(this, FlavorText.boxType.TRADITIONAL);
     }
 
-    @Override
-    public float getTitleFontSize() {
-        return 24.0F;
-    }
+
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

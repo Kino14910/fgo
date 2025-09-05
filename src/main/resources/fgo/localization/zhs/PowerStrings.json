@@ -8,8 +8,8 @@
   "${modID}:GutsPower": {
     "NAME": "毅力",
     "DESCRIPTIONS": [
-      "当你要被杀死时，免死并回复 #b%1$s 点 #y生命 。",
-      "当你接下来 #b%2$s 次要被杀死时，免死并回复 #b%1$s 点 #y生命 。"
+      "当你要被杀死时，免死并回复 #b%%1$s 点 #y生命 。",
+      "当你接下来 #b%%2$s 次要被杀死时，免死并回复 #b%%1$s 点 #y生命 。"
     ]
   },
   "${modID}:UnlimitedPower": {
@@ -45,7 +45,7 @@
   "${modID}:NightlessCharismaPower": {
     "NAME": "不夜的魅力",
     "DESCRIPTIONS": [
-      "在每回合开始时，随机将你抽牌堆中 #b%1$s 张攻击牌加入你的手牌，并将其 #y升级 。"
+      "在每回合开始时，随机将你抽牌堆中 #b%%1$s 张攻击牌加入你的手牌，并将其 #y升级 。"
     ]
   },
   "${modID}:TheOneWhoRevealsTruthPower": {
@@ -76,7 +76,7 @@
   "${modID}:CursePower": {
     "NAME": "诅呪",
     "DESCRIPTIONS": [
-      "在每回合开始时失去 #b%1$s 点 #y生命 。"
+      "在每回合开始时失去 #b%%1$s 点 #y生命 。"
     ]
   },
   "${modID}:GloriousStrikePower": {
@@ -115,7 +115,7 @@
   "${modID}:DeathOfDeathPower": {
     "NAME": "死之渊",
     "DESCRIPTIONS": [
-      "在你 #y毅力 发动时，移除死之渊，并且下一回合造成 #y双倍伤害 。被移除时，你 #r失去 #b%1$s 点 #y力量 。"
+      "在你 #y毅力 发动时，移除死之渊，并且下一回合造成 #y双倍伤害 。被移除时，你 #r失去 #b%%1$s 点 #y力量 。"
     ]
   },
   "${modID}:BriefStrengthPower": {
@@ -133,7 +133,7 @@
   "${modID}:AtTheWellPower": {
     "NAME": "献给世界树的活祭",
     "DESCRIPTIONS": [
-      "在下回合获得 #b%1$s 层 #y毅力 ，下一次 #y毅力 发动时获得 [E] [E] [E] 并且抽 #b3 张牌，然后 #r死亡 。"
+      "在下回合获得 #b%%1$s 层 #y毅力 ，下一次 #y毅力 发动时获得 [E] [E] [E] 并且抽 #b3 张牌，然后 #r死亡 。"
     ]
   },
   "${modID}:GutsAtTheWellPower": {
@@ -189,7 +189,7 @@
   "${modID}:EnergyRegenPower": {
     "NAME": "每回合获得NP",
     "DESCRIPTIONS": [
-      "在每回合开始时获得 #b%d % #y宝具值 。"
+      "在每回合开始时获得 #b%d %% #y宝具值 。"
     ]
   },
   "${modID}:EvasionPower": {
@@ -202,14 +202,14 @@
   "${modID}:SchwarzwaldFalkePower": {
     "NAME": "黑森之鹰",
     "DESCRIPTIONS": [
-      "在你的下 #b%1$s 个回合结束时，获得 #b1 次 #y回避 。",
+      "在你的下 #b%%1$s 个回合结束时，获得 #b1 次 #y回避 。",
       "在本回合结束时，获得 #b1 次 #y回避 。"
     ]
   },
   "${modID}:MyFairSoldierPower": {
     "NAME": "我美丽的战士",
     "DESCRIPTIONS": [
-      "在你的下一张能力牌被打出时，失去 #b%1$s 点 #y力量 和 #y敏捷 。"
+      "在你的下一张能力牌被打出时，失去 #b%%1$s 点 #y力量 和 #y敏捷 。"
     ]
   },
   "${modID}:DefenseUpPower": {
@@ -233,10 +233,10 @@
   "${modID}:FifthFormPower": {
     "NAME": "第五势",
     "DESCRIPTIONS": [
-      "在这个回合对一个敌人的攻击牌会打出两次，但伤害降低 #b50% 。",
-      "在接下来 #b%d 个回合对一个敌人的攻击牌会打出两次，但伤害降低 #b50% 。",
-      "在这个回合对一个敌人的攻击牌会打出两次，但伤害降低 #b35% 。",
-      " 个回合对一个敌人的攻击牌会打出两次，但伤害降低 #b35% 。"
+      "在这个回合对一个敌人的攻击牌会打出两次，但伤害降低 #b50%% 。",
+      "在接下来 #b%d 个回合对一个敌人的攻击牌会打出两次，但伤害降低 #b50%% 。",
+      "在这个回合对一个敌人的攻击牌会打出两次，但伤害降低 #b35%% 。",
+      " 个回合对一个敌人的攻击牌会打出两次，但伤害降低 #b35%% 。"
     ]
   },
   "${modID}:IgnoreDefensePower": {
@@ -351,7 +351,7 @@
   "${modID}:ArchetypeORTPower": {
     "NAME": "Archetype ORT",
     "DESCRIPTIONS": [
-      "#y纯洁的搭配 的效果变化为获得 #b1 次 #y肃正防御 。在每回合开始时获得 #b10 颗 #y暴击星 和 #b3% 宝具值。"
+      "#y纯洁的搭配 的效果变化为获得 #b1 次 #y肃正防御 。在每回合开始时获得 #b10 颗 #y暴击星 和 #b3%% 宝具值。"
     ]
   },
   "${modID}:ExistenceOutsideDomainPower": {
@@ -395,7 +395,7 @@
   "${modID}:NoblePhantasmCardPower": {
     "NAME": "宝具牌",
     "DESCRIPTIONS": [
-      "在宝具值达到 #b100% 及以上时，将一张 ",
+      "在宝具值达到 #b100%% 及以上时，将一张 ",
       " 加入你的手牌，而不是选择一张。"
     ]
   },
@@ -427,8 +427,8 @@
   "${modID}:NPRatePower": {
     "NAME": "黄金律",
     "DESCRIPTIONS": [
-      "在这个回合，打出手牌和受到攻击时，获得的宝具值提高 #b100% 。",
-      "打出手牌和受到攻击时，获得的宝具值提高 #b100% ，持续 #b%d 回合。"
+      "在这个回合，打出手牌和受到攻击时，获得的宝具值提高 #b100%% 。",
+      "打出手牌和受到攻击时，获得的宝具值提高 #b100%% ，持续 #b%d 回合。"
     ]
   },
   "${modID}:StarRatePower": {
@@ -440,8 +440,8 @@
   "${modID}:StarPower": {
     "NAME": "暴击星/暴击",
     "DESCRIPTIONS": [
-      "在你有至少 #b10 颗时，非 #y宝具 攻击牌伤害提高 #b100% ，并且打出时减少 #b10 颗。",
-      "在你有至少 #b10 颗时，非 #y宝具 攻击牌伤害提高 #b100% ，并且打出时减少 #b10 颗。现在可以造成 #y暴击 ！"
+      "在你有至少 #b10 颗时，非 #y宝具 攻击牌伤害提高 #b100%% ，并且打出时减少 #b10 颗。",
+      "在你有至少 #b10 颗时，非 #y宝具 攻击牌伤害提高 #b100%% ，并且打出时减少 #b10 颗。现在可以造成 #y暴击 ！"
     ]
   },
   "${modID}:CriticalDamageUpPower": {
@@ -514,7 +514,7 @@
   "${modID}:StarGainMonsterPower": {
     "NAME": "暴击！",
     "DESCRIPTIONS": [
-      "这名敌人每次攻击将使用 #b10 颗暴击星，使其下一次攻击伤害提高 #b100% 。"
+      "这名敌人每次攻击将使用 #b10 颗暴击星，使其下一次攻击伤害提高 #b100%% 。"
     ]
   },
   "${modID}:IgnoresInvincibilityPower": {

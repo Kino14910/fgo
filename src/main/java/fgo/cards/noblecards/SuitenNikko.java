@@ -2,7 +2,6 @@ package fgo.cards.noblecards;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import fgo.action.FgoNpAction;
@@ -15,14 +14,6 @@ public class SuitenNikko extends AbsNoblePhantasmCard {
     public SuitenNikko() {
         super(ID, AbstractCard.CardType.POWER, AbstractCard.CardTarget.ALL_ENEMY);
         setMagic(35, 15);
-    }
-
-    @Override
-    public float getTitleFontSize() {
-        if (Settings.language != Settings.GameLanguage.ZHS) {
-            return 16.0f;
-        }
-        return -1.0f;
     }
 
     @Override

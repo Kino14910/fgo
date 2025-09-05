@@ -20,8 +20,6 @@ public class RoadlessCamelot extends AbsNoblePhantasmCard {
         setMagic(1, 1);
     }
 
-
-
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         for(int i = 0; i < 3; ++i) {

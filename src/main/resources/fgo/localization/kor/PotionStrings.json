@@ -17,7 +17,7 @@
   "${modID}:ExtremelySpicyMapoTofu": {
     "NAME": "통조림 특급 매운 마파두부",
     "DESCRIPTIONS": [
-      "#b80% #y보구 게이지 또는 #b60% #y보구 위력을 얻습니다."
+      "#b80%% #y보구 게이지 또는 #b60%% #y보구 위력을 얻습니다."
     ]
   },
   "${modID}:CursePotion": {

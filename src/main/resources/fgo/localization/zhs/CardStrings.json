@@ -444,7 +444,7 @@
   },
   "${modID}:PeerlessStrike": {
     "NAME": "顷刻一击",
-    "DESCRIPTION": "只有当自己生命值为一半以下时才能打出。 NL 获得5点 力量 和100% fgo:暴击威力 。 NL 回合结束时死亡。",
+    "DESCRIPTION": "{@@}只有当自己生命值为一半以下时才能打出。 NL 获得5点 力量 和100% fgo:暴击威力 。 NL {!Upgraded!|@=立即死亡。|1=回合结束时死亡。}",
     "EXTENDED_DESCRIPTION": [
       "我的生命不够低。"
     ]
@@ -601,7 +601,7 @@
     "DESCRIPTION": "在你的回合开始时，有 格挡 的敌人失去等于其 格挡 的生命并且给予其 !M! 层 易伤 。"
   },
   "${modID}:GreatRamNautilus": {
-    "NAME": "吾将远征，鹦鹉螺的大冲角",
+    "NAME": "鹦鹉螺的大冲角",
     "DESCRIPTION": "造成 !D! 点伤害。 NL fgo:水边 ：伤害提高50%。 NL fgo:水边 ：获得 [E] 。"
   },
   "${modID}:LieLikeVortigern": {

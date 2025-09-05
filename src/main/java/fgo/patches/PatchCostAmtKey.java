@@ -30,7 +30,7 @@ public class PatchCostAmtKey {
             if (PatchSkeletonKeyCanUpgrade.isInCombat() && AbstractDungeon.player.hoveredCard == __instance && __instance.costForTurn > -2 && __instance.costForTurn != 0 && !AbstractDungeon.player.hasPower(SealNPPower.POWER_ID)) {
                 int costModifier = PatchSkeletonKeyCanUpgrade.getCostModifier();
                 int costAmt = PatchSkeletonKeyCanUpgrade.calculateCostAmount(__instance.costForTurn, costModifier);
-                FontHelper.renderFontCentered((SpriteBatch)sb, (BitmapFont)FontHelper.topPanelInfoFont, (String)("+" + costAmt + "% " + NPTEXT[0]), (float)__instance.hb.cX, (float)(__instance.hb.height + 24.0f * Settings.scale), (Color)Color.WHITE.cpy());
+                FontHelper.renderFontCentered((SpriteBatch)sb, (BitmapFont)FontHelper.topPanelInfoFont, (String)("+" + costAmt + "%% " + NPTEXT[0]), (float)__instance.hb.cX, (float)(__instance.hb.height + 24.0f * Settings.scale), (Color)Color.WHITE.cpy());
             }
         }
 

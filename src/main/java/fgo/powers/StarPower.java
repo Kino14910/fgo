@@ -32,7 +32,7 @@ public class StarPower extends BasePower {
 
     @Override
     public float atDamageGive(float damage, DamageInfo.DamageType type, AbstractCard card) {
-        //如果你有20颗暴击星时，使用翡翠的魅力时，暴击威力提高50%。
+        //如果你有20颗暴击星时，使用翡翠的魅力时，暴击威力提高50%%。
         if (card.cardID.equals("fgo:CharismaOfTheJade") && amount >= 20) {
             return finalDamage(damage, type, 3.0F);
         }
