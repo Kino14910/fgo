@@ -5,21 +5,11 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import fgo.cards.FGOCard;
-import fgo.characters.CustomEnums.FGOCardColor;
 import fgo.powers.BlessingOfKurPower;
-import fgo.utils.CardStats;
-
 public class BlessingOfKur extends FGOCard {
     public static final String ID = makeID(BlessingOfKur.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            FGOCardColor.FGO,
-            CardType.SKILL,
-            CardRarity.RARE,
-            CardTarget.NONE,
-            1
-    );
     public BlessingOfKur() {
-        super(ID, INFO);
+        super(ID, 1, CardType.SKILL, CardTarget.NONE, CardRarity.RARE);
         setMagic(15, 5);
         setExhaust();
     }
@@ -29,3 +19,5 @@ public class BlessingOfKur extends FGOCard {
         addToBot(new ApplyPowerAction(p, p, new BlessingOfKurPower((p))));
     }
 }
+
+

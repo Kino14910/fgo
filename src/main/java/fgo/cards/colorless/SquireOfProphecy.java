@@ -6,19 +6,10 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import fgo.cards.FGOCard;
 import fgo.powers.SquireOfProphecyPower;
-import fgo.utils.CardStats;
-
 public class SquireOfProphecy extends FGOCard {
     public static final String ID = makeID(SquireOfProphecy.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            CardColor.COLORLESS,
-            CardType.SKILL,
-            CardRarity.UNCOMMON,
-            CardTarget.SELF,
-            1
-    );
     public SquireOfProphecy() {
-        super(ID, INFO);
+        super(ID, 1, CardType.SKILL, CardTarget.SELF, CardRarity.UNCOMMON, CardColor.COLORLESS);
         setMagic(2, 1);
         setExhaust();
     }
@@ -28,3 +19,5 @@ public class SquireOfProphecy extends FGOCard {
         this.addToBot(new ApplyPowerAction(p, p, new SquireOfProphecyPower(p, this.magicNumber), this.magicNumber));
     }
 }
+
+

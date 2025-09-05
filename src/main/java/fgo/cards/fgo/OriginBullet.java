@@ -7,22 +7,12 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import fgo.action.IgnoresInvincibilityAction;
 import fgo.cards.FGOCard;
-import fgo.characters.CustomEnums.FGOCardColor;
-import fgo.utils.CardStats;
 import fgo.utils.Sounds;
 
 public class OriginBullet extends FGOCard {
     public static final String ID = makeID(OriginBullet.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            FGOCardColor.FGO,
-            CardType.SKILL,
-            CardRarity.UNCOMMON,
-            CardTarget.ENEMY,
-            1
-    );
-
     public OriginBullet() {
-        super(ID, INFO);
+        super(ID, 1, CardType.SKILL, CardTarget.ENEMY, CardRarity.UNCOMMON);
         setExhaust(false, true);
     }
 
@@ -36,3 +26,5 @@ public class OriginBullet extends FGOCard {
         addToBot(new IgnoresInvincibilityAction(m, upgraded ? BulletAmt : 0));
     }
 }
+
+

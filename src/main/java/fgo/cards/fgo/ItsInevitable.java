@@ -11,22 +11,13 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import fgo.cards.FGOCard;
-import fgo.characters.CustomEnums.FGOCardColor;
 import fgo.powers.ItsInevitablePower;
-import fgo.utils.CardStats;
 import fgo.utils.Sounds;
 
 public class ItsInevitable extends FGOCard {
     public static final String ID = makeID(ItsInevitable.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            FGOCardColor.FGO,
-            CardType.ATTACK,
-            CardRarity.COMMON,
-            CardTarget.ALL_ENEMY,
-            1
-    );
     public ItsInevitable() {
-        super(ID, INFO);
+        super(ID, 1, CardType.ATTACK, CardTarget.ALL_ENEMY, CardRarity.COMMON);
         setDamage(4, 1);
         setMagic(2, 1);
         portraitImg = ImageMaster.loadImage("fgo/images/cards/attack/ItsInevitable.png");
@@ -43,3 +34,5 @@ public class ItsInevitable extends FGOCard {
         //addToBot(new ApplyPowerAction(p, p, new BurnDamagePower(p, magicNumber)));
     }
 }
+
+

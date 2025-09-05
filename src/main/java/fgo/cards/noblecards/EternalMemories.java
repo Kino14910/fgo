@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
 import fgo.cards.AbsNoblePhantasmCard;
-import fgo.powers.EternalMemoriesPower;
+import fgo.powers.AntiPurgeDefensePower;
 
 public class EternalMemories extends AbsNoblePhantasmCard {
     public static final String ID = makeID(EternalMemories.class.getSimpleName());
@@ -22,6 +22,6 @@ public class EternalMemories extends AbsNoblePhantasmCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, magicNumber)));
         addToBot(new RemoveDebuffsAction(p));
-        addToBot(new ApplyPowerAction(p, p, new EternalMemoriesPower(p, 1)));
+        addToBot(new ApplyPowerAction(p, p, new AntiPurgeDefensePower(p, 1)));
     }
 }

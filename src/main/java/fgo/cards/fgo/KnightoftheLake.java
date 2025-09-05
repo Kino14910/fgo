@@ -10,22 +10,12 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.FlameBarrierEffect;
 
 import fgo.cards.FGOCard;
-import fgo.characters.CustomEnums.FGOCardColor;
 import fgo.powers.CriticalDamageUpPower;
 import fgo.powers.StarPower;
-import fgo.utils.CardStats;
-
 public class KnightoftheLake extends FGOCard {
     public static final String ID = makeID(KnightoftheLake.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            FGOCardColor.FGO,
-            CardType.SKILL,
-            CardRarity.UNCOMMON,
-            CardTarget.SELF,
-            1
-    );
     public KnightoftheLake() {
-        super(ID, INFO);
+        super(ID, 1, CardType.SKILL, CardTarget.SELF, CardRarity.UNCOMMON);
         setMagic(50, 50);
         setStar(10);
     }
@@ -49,3 +39,5 @@ public class KnightoftheLake extends FGOCard {
                 : AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
     }
 }
+
+

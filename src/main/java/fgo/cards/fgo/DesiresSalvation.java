@@ -5,21 +5,11 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import fgo.cards.FGOCard;
-import fgo.characters.CustomEnums.FGOCardColor;
 import fgo.powers.EnergyRegenPower;
-import fgo.utils.CardStats;
-
 public class DesiresSalvation extends FGOCard {
     public static final String ID = makeID(DesiresSalvation.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            FGOCardColor.FGO,
-            CardType.POWER,
-            CardRarity.UNCOMMON,
-            CardTarget.SELF,
-            1
-    );
     public DesiresSalvation() {
-        super(ID, INFO);
+        super(ID, 1, CardType.POWER, CardTarget.SELF, CardRarity.UNCOMMON);
         setNP(10);
         setInnate(false, true);
     }
@@ -29,3 +19,5 @@ public class DesiresSalvation extends FGOCard {
         addToBot(new ApplyPowerAction(p, p, new EnergyRegenPower(p, np), np));
     }
 }
+
+

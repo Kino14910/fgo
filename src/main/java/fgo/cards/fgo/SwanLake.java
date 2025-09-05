@@ -9,23 +9,13 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import fgo.cards.FGOCard;
-import fgo.characters.CustomEnums.FGOCardColor;
 import fgo.powers.WatersidePower;
-import fgo.utils.CardStats;
-
 public class SwanLake extends FGOCard {
     public static final String ID = makeID(SwanLake.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            FGOCardColor.FGO,
-            CardType.ATTACK,
-            CardRarity.UNCOMMON,
-            CardTarget.ENEMY,
-            1
-    );
     public SwanLake() {this(0);}
     
     public SwanLake(int upgrades) {
-        super(ID, INFO);
+        super(ID, 1, CardType.ATTACK, CardTarget.ENEMY, CardRarity.UNCOMMON);
         setDamage(2, 1);
         setMagic(3, 1);
         timesUpgraded = upgrades;
@@ -70,3 +60,5 @@ public class SwanLake extends FGOCard {
         addToBot(new ApplyPowerAction(p, p, new WatersidePower(p)));
     }
 }
+
+

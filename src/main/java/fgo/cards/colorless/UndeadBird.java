@@ -5,19 +5,10 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import fgo.action.RandomCardWithTagAction;
 import fgo.cards.FGOCard;
-import fgo.utils.CardStats;
-
 public class UndeadBird extends FGOCard {
     public static final String ID = makeID(UndeadBird.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            CardColor.COLORLESS,
-            CardType.SKILL,
-            CardRarity.UNCOMMON,
-            CardTarget.SELF,
-            0
-    );
     public UndeadBird() {
-        super(ID, INFO);
+        super(ID, 0, CardType.SKILL, CardTarget.SELF, CardRarity.UNCOMMON, CardColor.COLORLESS);
         setMagic(1, 1);
         setExhaust();
     }
@@ -30,3 +21,5 @@ public class UndeadBird extends FGOCard {
         }
     }
 }
+
+

@@ -11,20 +11,10 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
 import fgo.cards.FGOCard;
-import fgo.characters.CustomEnums.FGOCardColor;
-import fgo.utils.CardStats;
-
 public class Executioner extends FGOCard {
     public static final String ID = makeID(Executioner.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            FGOCardColor.FGO,
-            CardType.ATTACK,
-            CardRarity.UNCOMMON,
-            CardTarget.ENEMY,
-            0
-    );
     public Executioner() {
-        super(ID, INFO);
+        super(ID, 0, CardType.ATTACK, CardTarget.ENEMY, CardRarity.UNCOMMON);
         setDamage(7, 4);
         setMagic(1);
     }
@@ -38,3 +28,5 @@ public class Executioner extends FGOCard {
         //addToBot(new ExecutionerAction(magicNumber, m));
     }
 }
+
+

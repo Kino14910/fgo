@@ -6,21 +6,11 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import fgo.cards.FGOCard;
-import fgo.characters.CustomEnums.FGOCardColor;
 import fgo.powers.StarPower;
-import fgo.utils.CardStats;
-
 public class TameshiMono extends FGOCard {
     public static final String ID = makeID(TameshiMono.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            FGOCardColor.FGO,
-            CardType.SKILL,
-            CardRarity.UNCOMMON,
-            CardTarget.SELF,
-            1
-    );
     public TameshiMono() {
-        super(ID, INFO);
+        super(ID, 1, CardType.SKILL, CardTarget.SELF, CardRarity.UNCOMMON);
         setMagic(10, 5);
     }
 
@@ -32,3 +22,5 @@ public class TameshiMono extends FGOCard {
         addToBot(new ExhaustAction(1, false));
     }
 }
+
+

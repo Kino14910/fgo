@@ -29,6 +29,7 @@ public class TheBlackGrail extends FGOCard {
 
     @Override
     public void onChoseThisOption() {
-        this.addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new NPDamagePower(AbstractDungeon.player, this.magicNumber), this.magicNumber));
+        AbstractPlayer p = AbstractDungeon.player;
+        this.addToBot(new ApplyPowerAction(p, p, new NPDamagePower(magicNumber)));
     }
 }

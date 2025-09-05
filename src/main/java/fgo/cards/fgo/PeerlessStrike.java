@@ -9,21 +9,11 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.watcher.EndTurnDeathPower;
 
 import fgo.cards.FGOCard;
-import fgo.characters.CustomEnums.FGOCardColor;
 import fgo.powers.CriticalDamageUpPower;
-import fgo.utils.CardStats;
-
 public class PeerlessStrike extends FGOCard {
     public static final String ID = makeID(PeerlessStrike.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            FGOCardColor.FGO,
-            CardType.ATTACK,
-            CardRarity.RARE,
-            CardTarget.ENEMY,
-            1
-    );
     public PeerlessStrike() {
-        super(ID, INFO);
+        super(ID, 1, CardType.ATTACK, CardTarget.ENEMY, CardRarity.RARE);
         setCostUpgrade(0);
         tags.add(CardTags.STRIKE);
     }
@@ -58,3 +48,5 @@ public class PeerlessStrike extends FGOCard {
         }
     }
 }
+
+

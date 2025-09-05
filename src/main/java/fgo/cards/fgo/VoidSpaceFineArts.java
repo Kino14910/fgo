@@ -1,5 +1,7 @@
 package fgo.cards.fgo;
 
+import static fgo.characters.CustomEnums.Foreigner;
+
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.stslib.patches.FlavorText;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -8,23 +10,12 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import fgo.action.VoidSpaceFineArtsAction;
 import fgo.cards.FGOCard;
-import fgo.characters.CustomEnums.FGOCardColor;
-import static fgo.characters.CustomEnums.Foreigner;
 import fgo.powers.CursePower;
 import fgo.powers.GutsPower;
-import fgo.utils.CardStats;
-
 public class VoidSpaceFineArts extends FGOCard {
     public static final String ID = makeID(VoidSpaceFineArts.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            FGOCardColor.FGO,
-            CardType.SKILL,
-            CardRarity.UNCOMMON,
-            CardTarget.SELF,
-            1
-    );
     public VoidSpaceFineArts() {
-        super(ID, INFO);
+        super(ID, 1, CardType.SKILL, CardTarget.SELF, CardRarity.UNCOMMON);
         setMagic(5, 5);
         tags.add(CardTags.HEALING);
         tags.add(Foreigner);
@@ -50,3 +41,5 @@ public class VoidSpaceFineArts extends FGOCard {
         addToBot(new VoidSpaceFineArtsAction(magicNumber));
     }
 }
+
+

@@ -10,22 +10,13 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import fgo.cards.FGOCard;
-import fgo.characters.CustomEnums.FGOCardColor;
 import fgo.powers.StarPower;
-import fgo.utils.CardStats;
 
 public class CharismaOfTheJade extends FGOCard {
     public static final String ID = makeID(CharismaOfTheJade.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            FGOCardColor.FGO,
-            CardType.ATTACK,
-            CardRarity.UNCOMMON,
-            CardTarget.ENEMY,
-            2
-    );
 
     public CharismaOfTheJade() {
-        super(ID, INFO);
+        super(ID, 2, CardType.ATTACK, CardTarget.ENEMY, CardRarity.UNCOMMON);
         setDamage(7);
         setMagic(3, 1);
     }
@@ -50,3 +41,4 @@ public class CharismaOfTheJade extends FGOCard {
                     : AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
     }
 }
+

@@ -5,21 +5,11 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import fgo.cards.FGOCard;
-import fgo.characters.CustomEnums.FGOCardColor;
 import fgo.powers.BeastMagicPower;
-import fgo.utils.CardStats;
-
 public class BeastMagic extends FGOCard {
     public static final String ID = makeID(BeastMagic.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            FGOCardColor.FGO,
-            CardType.POWER,
-            CardRarity.UNCOMMON,
-            CardTarget.SELF,
-            1
-    );
     public BeastMagic() {
-        super(ID, INFO);
+        super(ID, 1, CardType.POWER, CardTarget.SELF, CardRarity.UNCOMMON);
         setMagic(3, 1);
     }
     
@@ -29,3 +19,5 @@ public class BeastMagic extends FGOCard {
         addToBot(new ApplyPowerAction(p, p, new BeastMagicPower(p, magicNumber)));
     }
 }
+
+

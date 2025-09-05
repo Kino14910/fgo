@@ -11,19 +11,10 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import fgo.action.ViyViyViyAction;
 import fgo.cards.FGOCard;
-import fgo.utils.CardStats;
-
 public class Shvibzik extends FGOCard {
     public static final String ID = makeID(Shvibzik.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            CardColor.COLORLESS,
-            CardType.ATTACK,
-            CardRarity.SPECIAL,
-            CardTarget.ENEMY,
-            2
-    );
     public Shvibzik() {
-        super(ID, INFO);
+        super(ID, 2, CardType.ATTACK, CardTarget.ENEMY, CardRarity.SPECIAL, CardColor.COLORLESS);
         setDamage(20, 5);
         setExhaust();
         this.portraitImg = ImageMaster.loadImage("fgo/images/cards/attack/Shvibzik.png");
@@ -40,3 +31,5 @@ public class Shvibzik extends FGOCard {
         this.addToBot(new ViyViyViyAction());
     }
 }
+
+

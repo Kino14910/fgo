@@ -17,21 +17,11 @@ import com.megacrit.cardcrawl.vfx.combat.ViolentAttackEffect;
 
 import fgo.cards.FGOCard;
 import fgo.cards.tempCards.SoulOfWaterChannels;
-import fgo.characters.CustomEnums.FGOCardColor;
 import fgo.powers.WatersidePower;
-import fgo.utils.CardStats;
-
 public class JourneyGuidance extends FGOCard {
     public static final String ID = makeID(JourneyGuidance.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            FGOCardColor.FGO,
-            CardType.ATTACK,
-            CardRarity.COMMON,
-            CardTarget.ENEMY,
-            2
-    );
     public JourneyGuidance() {
-        super(ID, INFO);
+        super(ID, 2, CardType.ATTACK, CardTarget.ENEMY, CardRarity.COMMON);
         setDamage(14, 4);
         cardsToPreview = new SoulOfWaterChannels();
     }
@@ -62,3 +52,5 @@ public class JourneyGuidance extends FGOCard {
                 : AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
     }
 }
+
+

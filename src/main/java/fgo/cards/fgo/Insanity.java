@@ -1,5 +1,7 @@
 package fgo.cards.fgo;
 
+import static fgo.characters.CustomEnums.Foreigner;
+
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.stslib.patches.FlavorText;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -9,23 +11,12 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import fgo.cards.FGOCard;
-import fgo.characters.CustomEnums.FGOCardColor;
-import static fgo.characters.CustomEnums.Foreigner;
 import fgo.powers.CursePower;
 import fgo.powers.InsanityPower;
-import fgo.utils.CardStats;
-
 public class Insanity extends FGOCard {
     public static final String ID = makeID(Insanity.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            FGOCardColor.FGO,
-            CardType.POWER,
-            CardRarity.RARE,
-            CardTarget.ALL_ENEMY,
-            1
-    );
     public Insanity() {
-        super(ID, INFO);
+        super(ID, 1, CardType.POWER, CardTarget.ALL_ENEMY, CardRarity.RARE);
         setMagic(10, 10);
         tags.add(Foreigner);
 
@@ -47,3 +38,5 @@ public class Insanity extends FGOCard {
 
     }
 }
+
+

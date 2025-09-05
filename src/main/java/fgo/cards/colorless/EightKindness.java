@@ -14,24 +14,14 @@ import com.megacrit.cardcrawl.powers.ThornsPower;
 import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 
 import fgo.cards.FGOCard;
-import fgo.utils.CardStats;
-
 public class EightKindness extends FGOCard {
     public static final String ID = makeID(EightKindness.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            CardColor.COLORLESS,
-            CardType.SKILL,
-            CardRarity.RARE,
-            CardTarget.SELF,
-            3
-    );
     public EightKindness() {
-        super(ID, INFO);
+        super(ID, 3, CardType.SKILL, CardTarget.SELF, CardRarity.RARE, CardColor.COLORLESS);
         setMagic(2);
         setExhaust();
     }
-    //调用父类的构造方法，传参为super(卡牌ID,卡牌名称，能量花费，卡牌描述，卡牌类型，卡牌颜色，卡牌稀有度，卡牌目标)
-
+    
     @Override
     public void upgrade() {
         if (!this.upgraded) {
@@ -58,3 +48,5 @@ public class EightKindness extends FGOCard {
     }
 
 }
+
+

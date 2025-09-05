@@ -6,22 +6,12 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import fgo.action.FgoNpAction;
 import fgo.cards.FGOCard;
-import fgo.characters.CustomEnums.FGOCardColor;
 import fgo.powers.EnergyRegenPower;
 import fgo.powers.WatersidePower;
-import fgo.utils.CardStats;
-
 public class LakeTexcoco extends FGOCard {
     public static final String ID = makeID(LakeTexcoco.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            FGOCardColor.FGO,
-            CardType.SKILL,
-            CardRarity.UNCOMMON,
-            CardTarget.SELF,
-            1
-    );
     public LakeTexcoco() {
-        super(ID, INFO);
+        super(ID, 1, CardType.SKILL, CardTarget.SELF, CardRarity.UNCOMMON);
         setNP(20, 10);
         setMagic(5, 5);
     }
@@ -33,3 +23,5 @@ public class LakeTexcoco extends FGOCard {
         this.addToBot(new ApplyPowerAction(p, p, new WatersidePower(p)));
     }
 }
+
+

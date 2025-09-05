@@ -5,20 +5,10 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import fgo.action.BlessedScionAction;
 import fgo.cards.FGOCard;
-import fgo.characters.CustomEnums.FGOCardColor;
-import fgo.utils.CardStats;
-
 public class BlessedScion extends FGOCard {
     public static final String ID = makeID(BlessedScion.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            FGOCardColor.FGO,
-            CardType.SKILL,
-            CardRarity.UNCOMMON,
-            CardTarget.SELF,
-            1
-    );
     public BlessedScion() {
-        super(ID, INFO);
+        super(ID, 1, CardType.SKILL, CardTarget.SELF, CardRarity.UNCOMMON);
         setMagic(1, 1);
     }
     
@@ -27,3 +17,5 @@ public class BlessedScion extends FGOCard {
         addToBot(new BlessedScionAction(p, p, magicNumber));
     }
 }
+
+

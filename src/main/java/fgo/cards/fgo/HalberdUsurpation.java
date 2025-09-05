@@ -10,21 +10,10 @@ import com.megacrit.cardcrawl.powers.GainStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
 import fgo.cards.FGOCard;
-import fgo.characters.CustomEnums.FGOCardColor;
-import fgo.utils.CardStats;
-
 public class HalberdUsurpation extends FGOCard {
     public static final String ID = makeID(HalberdUsurpation.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            FGOCardColor.FGO,
-            CardType.ATTACK,
-            CardRarity.UNCOMMON,
-            CardTarget.ENEMY,
-            2
-    );
-
     public HalberdUsurpation() {
-        super(ID, INFO);
+        super(ID, 2, CardType.ATTACK, CardTarget.ENEMY, CardRarity.UNCOMMON);
         setDamage(15, 5);
     }
 
@@ -59,3 +48,5 @@ public class HalberdUsurpation extends FGOCard {
         }
     }
 }
+
+

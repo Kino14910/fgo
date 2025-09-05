@@ -18,12 +18,16 @@
   "${modID}:WallOfSnowflakes": {
     "NAME": "脆き雪花の壁",
     "DESCRIPTION": "!B! ブロックを獲得。",
-    "UPGRADE_DESCRIPTION": "!B! ブロックを獲得。 NL このターンに受ける攻撃ダメージを !M! %軽減。",
-    "EXTENDED_DESCRIPTION": [
-      "このターンに受ける攻撃ダメージを !M!% 軽減。 NL !NP!% fgo:宝具ゲージ 、3点の筋力 、30点のfgo:クリティカルダメージ を獲得。",
-      "誉れ堅き雪花の壁",
-      "誉れ高き雪花の盾"
-    ],
+    "FLAVOR": "このカードは特定の条件で強化されます。"
+  },
+  "${modID}:VeneratedWallOfSnowflakes": {
+    "NAME": "誉れ堅き雪花の壁",
+    "DESCRIPTION": "!B! ブロックを獲得。 NL このターンに受ける攻撃ダメージを !M! %軽減。",
+    "FLAVOR": "このカードは特定の条件で強化されます。"
+  },
+  "${modID}:VeneratedShieldOfSnowflakes": {
+    "NAME": "誉れ高き雪花の盾",
+    "DESCRIPTION": "このターンに受ける攻撃ダメージを !M!% 軽減。 NL !NP!% fgo:宝具ゲージ 、3点の筋力 、30点のfgo:クリティカルダメージ を獲得。",
     "FLAVOR": "このカードは特定の条件で強化されます。"
   },
   "${modID}:BlackBarrel": {
@@ -641,10 +645,13 @@
     "NAME": "疑似展開／人理の礎",
     "DESCRIPTION": "!B! ブロック獲得。 NL 筋力2獲得。 NL ターン終了時、!M! ブロック獲得。",
     "EXTENDED_DESCRIPTION": [
-      "3ターン間受ける攻撃ダメージを!M!%軽減。 NL ターン終了時、!B!ブロック獲得。 NL アーティファクト1スタックと筋力1スタック獲得。 NL 次に使用する#yfgo:宝具カードは#r*希望を証す人理の剣#rに固定。 NL #r*時に煙る白亜の壁#rを#r*時を測る紫弾の薪#rに変化",
-      "いまは遙か理想の城",
-      "希望築く人理の盾"
+      "いまは遙か理想の城"
     ],
+    "FLAVOR": "このカードは特定条件で強化される"
+  },
+  "${modID}:LordChaldeas": {
+    "NAME": "希望築く人理の盾",
+    "DESCRIPTION": "3ターン間受ける攻撃ダメージを!M!%軽減。 NL ターン終了時、!B!ブロック獲得。 NL アーティファクト1スタックと筋力1スタック獲得。 NL 次に使用する#yfgo:宝具カードは#r*希望を証す人理の剣#rに固定。 NL #r*時に煙る白亜の壁#rを#r*時を測る紫弾の薪#rに変化",
     "FLAVOR": "このカードは特定条件で強化される"
   },
   "${modID}:RayProofKyrielight": {
@@ -674,10 +681,6 @@
   "${modID}:LaPucelle": {
     "NAME": "紅蓮の聖女",
     "DESCRIPTION": "!D! ダメージを与える。 NL ダメージの半分の燃焼付与。 NL *灼傷+ を山札に加える。"
-  },
-  "${modID}:Shishifunjin": {
-    "NAME": "機関外法・獅子奮迅",
-    "DESCRIPTION": "行動不能の敵の最大HPの !M! %を減少。"
   },
   "${modID}:Fragarach": {
     "NAME": "戦神の剣を穿つ",
@@ -722,7 +725,7 @@
   },
   "${modID}:Summer": {
     "NAME": "夏",
-    "DESCRIPTION": "{@@}fgo:水辺 獲得。{!Upgrades!|=1 NL !NP!% 宝具ゲージ獲得。}"
+    "DESCRIPTION": "{@@}fgo:水辺 獲得。{!Upgrades!|1= NL !NP!% 宝具ゲージ獲得。}"
   },
   "${modID}:EnumaElish": {
     "NAME": "天地乖離す開闢の星",

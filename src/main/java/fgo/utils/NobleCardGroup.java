@@ -26,7 +26,7 @@ public class NobleCardGroup extends CardGroup {
 
     public void addCard(AbstractCard card) {
         if (card.color == FGOCardColor.NOBLE_PHANTASM) {
-            this.addToTop(card.makeCopy());
+            this.addToTop(card);
         }
     }
 }

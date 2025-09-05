@@ -5,21 +5,11 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import fgo.cards.FGOCard;
-import fgo.characters.CustomEnums.FGOCardColor;
 import fgo.powers.NightlessCharismaPower;
-import fgo.utils.CardStats;
-
 public class NightlessCharisma extends FGOCard {
     public static final String ID = makeID(NightlessCharisma.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            FGOCardColor.FGO,
-            CardType.POWER,
-            CardRarity.RARE,
-            CardTarget.SELF,
-            1
-    );
     public NightlessCharisma() {
-        super(ID, INFO);
+        super(ID, 1, CardType.POWER, CardTarget.SELF, CardRarity.RARE);
         setMagic(1);
         setCostUpgrade(0);
     }
@@ -29,3 +19,5 @@ public class NightlessCharisma extends FGOCard {
         addToBot(new ApplyPowerAction(p, p, new NightlessCharismaPower(p, magicNumber)));
     }
 }
+
+

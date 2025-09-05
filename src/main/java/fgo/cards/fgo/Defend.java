@@ -7,21 +7,10 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import fgo.cards.FGOCard;
-import fgo.characters.CustomEnums.FGOCardColor;
-import fgo.utils.CardStats;
-
 public class Defend extends FGOCard {
     public static final String ID = makeID(Defend.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            FGOCardColor.FGO,
-            CardType.SKILL,
-            CardRarity.BASIC,
-            CardTarget.SELF,
-            1
-    );
-
     public Defend() {
-        super(ID, INFO);
+        super(ID, 1, CardType.SKILL, CardTarget.SELF, CardRarity.BASIC);
 
         setBlock(5, 3);
 
@@ -38,3 +27,5 @@ public class Defend extends FGOCard {
         return new Defend();
     }
 }
+
+

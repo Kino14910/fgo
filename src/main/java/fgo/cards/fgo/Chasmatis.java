@@ -5,21 +5,11 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import fgo.cards.FGOCard;
-import fgo.characters.CustomEnums.FGOCardColor;
 import fgo.powers.ChasmatisPower;
-import fgo.utils.CardStats;
-
 public class Chasmatis extends FGOCard {
     public static final String ID = makeID(Chasmatis.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            FGOCardColor.FGO,
-            CardType.POWER,
-            CardRarity.UNCOMMON,
-            CardTarget.SELF,
-            1
-    );
     public Chasmatis() {
-        super(ID, INFO);
+        super(ID, 1, CardType.POWER, CardTarget.SELF, CardRarity.UNCOMMON);
         setMagic(1, 1);
     }
 
@@ -28,3 +18,5 @@ public class Chasmatis extends FGOCard {
         addToBot(new ApplyPowerAction(p, p, new ChasmatisPower(p, magicNumber)));
     }
 }
+
+

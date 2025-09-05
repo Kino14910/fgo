@@ -11,21 +11,11 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.ViceCrushEffect;
 
 import fgo.cards.FGOCard;
-import fgo.characters.CustomEnums.FGOCardColor;
 import fgo.powers.CursePower;
-import fgo.utils.CardStats;
-
 public class MysticEyes extends FGOCard {
     public static final String ID = makeID(MysticEyes.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            FGOCardColor.FGO,
-            CardType.ATTACK,
-            CardRarity.RARE,
-            CardTarget.ENEMY,
-            2
-    );
     public MysticEyes() {
-        super(ID, INFO);
+        super(ID, 2, CardType.ATTACK, CardTarget.ENEMY, CardRarity.RARE);
         setDamage(10);
         setMagic(3, 3);
         setExhaust();
@@ -41,3 +31,5 @@ public class MysticEyes extends FGOCard {
         }
     }
 }
+
+

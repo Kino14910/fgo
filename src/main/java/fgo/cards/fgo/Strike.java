@@ -8,21 +8,10 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import fgo.cards.FGOCard;
-import fgo.characters.CustomEnums.FGOCardColor;
-import fgo.utils.CardStats;
-
 public class Strike extends FGOCard {
     public static final String ID = makeID(Strike.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            FGOCardColor.FGO,
-            CardType.ATTACK,
-            CardRarity.BASIC,
-            CardTarget.ENEMY,
-            1
-    );
-
     public Strike() {
-        super(ID, INFO);
+        super(ID, 1, CardType.ATTACK, CardTarget.ENEMY, CardRarity.BASIC);
 
         setDamage(6, 3); //Sets the card's damage and how much it changes when upgraded.
 
@@ -40,3 +29,4 @@ public class Strike extends FGOCard {
         return new Strike();
     }
 }
+

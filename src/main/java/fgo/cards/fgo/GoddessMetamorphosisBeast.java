@@ -5,21 +5,11 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import fgo.cards.FGOCard;
-import fgo.characters.CustomEnums.FGOCardColor;
 import fgo.powers.GoddessMetamorphosisBeastPower;
-import fgo.utils.CardStats;
-
 public class GoddessMetamorphosisBeast extends FGOCard {
     public static final String ID = makeID(GoddessMetamorphosisBeast.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            FGOCardColor.FGO,
-            CardType.POWER,
-            CardRarity.UNCOMMON,
-            CardTarget.SELF,
-            2
-    );
     public GoddessMetamorphosisBeast() {
-        super(ID, INFO);
+        super(ID, 2, CardType.POWER, CardTarget.SELF, CardRarity.UNCOMMON);
         setMagic(1);
         setEthereal(true, false);
     }
@@ -29,3 +19,5 @@ public class GoddessMetamorphosisBeast extends FGOCard {
         addToBot(new ApplyPowerAction(p, p, new GoddessMetamorphosisBeastPower(p, magicNumber)));
     }
 }
+
+

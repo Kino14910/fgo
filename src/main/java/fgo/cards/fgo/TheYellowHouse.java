@@ -1,5 +1,7 @@
 package fgo.cards.fgo;
 
+import static fgo.characters.CustomEnums.Foreigner;
+
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.stslib.patches.FlavorText;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -7,23 +9,12 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import fgo.cards.FGOCard;
-import fgo.characters.CustomEnums.FGOCardColor;
-import static fgo.characters.CustomEnums.Foreigner;
 import fgo.powers.CursePower;
 import fgo.powers.EvasionPower;
-import fgo.utils.CardStats;
-
 public class TheYellowHouse extends FGOCard {
     public static final String ID = makeID(TheYellowHouse.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            FGOCardColor.FGO,
-            CardType.POWER,
-            CardRarity.UNCOMMON,
-            CardTarget.SELF,
-            2
-    );
     public TheYellowHouse() {
-        super(ID, INFO);
+        super(ID, 2, CardType.POWER, CardTarget.SELF, CardRarity.UNCOMMON);
         setCostUpgrade(1);
         shuffleBackIntoDrawPile = true;
         tags.add(Foreigner);
@@ -39,3 +30,5 @@ public class TheYellowHouse extends FGOCard {
         addToBot(new ApplyPowerAction(p, p, new EvasionPower(p, 1)));
     }
 }
+
+

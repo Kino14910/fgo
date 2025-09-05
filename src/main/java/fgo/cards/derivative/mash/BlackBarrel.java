@@ -39,7 +39,6 @@ public class BlackBarrel extends FGOCard {
     @Override
     public void calculateCardDamage(AbstractMonster mo) {
         int realBaseDamage = this.baseDamage;
-        this.baseDamage += this.magicNumber;
         if (!mo.isDying && !mo.isDead && mo.currentBlock > 0) {
             this.baseDamage += mo.currentBlock;
         }

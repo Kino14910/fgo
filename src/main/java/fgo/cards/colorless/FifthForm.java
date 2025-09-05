@@ -9,19 +9,10 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import fgo.cards.FGOCard;
 import fgo.powers.FifthFormPower;
-import fgo.utils.CardStats;
-
 public class FifthForm extends FGOCard {
     public static final String ID = makeID(FifthForm.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            CardColor.COLORLESS,
-            CardType.SKILL,
-            CardRarity.RARE,
-            CardTarget.SELF,
-            0
-    );
     public FifthForm() {
-        super(ID, INFO);
+        super(ID, 0, CardType.SKILL, CardTarget.SELF, CardRarity.RARE, CardColor.COLORLESS);
         setMagic(50, -15);
         this.portraitImg = ImageMaster.loadImage("fgo/images/cards/skill/FifthForm.png");
         setExhaust();
@@ -39,3 +30,5 @@ public class FifthForm extends FGOCard {
         }
     }
 }
+
+

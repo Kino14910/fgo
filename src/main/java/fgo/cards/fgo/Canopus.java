@@ -11,20 +11,10 @@ import com.megacrit.cardcrawl.vfx.combat.HemokinesisEffect;
 
 import fgo.cards.FGOCard;
 import fgo.cards.status.CurseDisaster;
-import fgo.characters.CustomEnums.FGOCardColor;
-import fgo.utils.CardStats;
-
 public class Canopus extends FGOCard {
     public static final String ID = makeID(Canopus.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            FGOCardColor.FGO,
-            CardType.ATTACK,
-            CardRarity.COMMON,
-            CardTarget.ENEMY,
-            1
-    );
     public Canopus() {
-        super(ID, INFO);
+        super(ID, 1, CardType.ATTACK, CardTarget.ENEMY, CardRarity.COMMON);
         setDamage(12, 5);
         cardsToPreview = new CurseDisaster();
     }
@@ -40,3 +30,5 @@ public class Canopus extends FGOCard {
         addToBot(new MakeTempCardInDiscardAction(cardsToPreview, 1));
     }
 }
+
+

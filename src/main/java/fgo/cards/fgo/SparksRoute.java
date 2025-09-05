@@ -14,20 +14,10 @@ import fgo.action.FgoNpAction;
 import fgo.action.SparksRouteAction;
 import fgo.cards.FGOCard;
 import fgo.characters.Master;
-import fgo.characters.CustomEnums.FGOCardColor;
-import fgo.utils.CardStats;
-
 public class SparksRoute extends FGOCard {
     public static final String ID = makeID(SparksRoute.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            FGOCardColor.FGO,
-            CardType.SKILL,
-            CardRarity.COMMON,
-            CardTarget.SELF,
-            0
-    );
     public SparksRoute() {
-        super(ID, INFO);
+        super(ID, 0, CardType.SKILL, CardTarget.SELF, CardRarity.COMMON);
         setMagic(5, 5);
         portraitImg = ImageMaster.loadImage("fgo/images/cards/skill/SparksRoute.png");
 
@@ -72,3 +62,5 @@ public class SparksRoute extends FGOCard {
         }
     }
 }
+
+

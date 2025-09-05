@@ -10,20 +10,12 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import fgo.action.FgoNpAction;
 import fgo.cards.FGOCard;
-import fgo.characters.CustomEnums.FGOCardColor;
-import fgo.utils.CardStats;
 
 public class CharismaOfHope extends FGOCard {
     public static final String ID = makeID(CharismaOfHope.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            FGOCardColor.FGO,
-            CardType.ATTACK,
-            CardRarity.BASIC,
-            CardTarget.ENEMY,
-            1
-    );
+
     public CharismaOfHope() {
-        super(ID, INFO);
+        super(ID, 1, CardType.ATTACK, CardTarget.ENEMY, CardRarity.BASIC);
         setDamage(6, 3);
         setNP(20, 10);
 
@@ -37,3 +29,4 @@ public class CharismaOfHope extends FGOCard {
         addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
     }
 }
+

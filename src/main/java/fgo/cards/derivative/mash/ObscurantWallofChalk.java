@@ -4,12 +4,10 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.BufferPower;
-import com.megacrit.cardcrawl.powers.IntangiblePower;
 
 import fgo.action.FgoNpAction;
 import fgo.cards.FGOCard;
 import fgo.characters.CustomEnums.FGOCardColor;
-import fgo.powers.ReducePercentDamagePower;
 import fgo.utils.CardStats;
 
 public class ObscurantWallofChalk extends FGOCard {
@@ -34,13 +32,7 @@ public class ObscurantWallofChalk extends FGOCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (!upgraded){
-            addToBot(new ApplyPowerAction(p, p, new BufferPower(p, 1)));
-            addToBot(new FgoNpAction(np));
-            return;
-        }
-        addToBot(new ApplyPowerAction(p, p, new ReducePercentDamagePower(p, 20)));
-        addToBot(new ApplyPowerAction(p, p, new IntangiblePower(p, 1)));
+        addToBot(new ApplyPowerAction(p, p, new BufferPower(p, 1)));
         addToBot(new FgoNpAction(np));
     }
 }

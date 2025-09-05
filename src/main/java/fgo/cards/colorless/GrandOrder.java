@@ -10,19 +10,10 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import fgo.cards.FGOCard;
-import fgo.utils.CardStats;
-
 public class GrandOrder extends FGOCard {
     public static final String ID = makeID(GrandOrder.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            CardColor.COLORLESS,
-            CardType.ATTACK,
-            CardRarity.RARE,
-            CardTarget.ALL_ENEMY,
-            1
-    );
     public GrandOrder() {
-        super(ID, INFO);
+        super(ID, 1, CardType.ATTACK, CardTarget.ALL_ENEMY, CardRarity.RARE, CardColor.COLORLESS);
         setDamage(9999);
         setCostUpgrade(0);
         FleetingField.fleeting.set(this, true);
@@ -43,3 +34,5 @@ public class GrandOrder extends FGOCard {
     }
 
 }
+
+

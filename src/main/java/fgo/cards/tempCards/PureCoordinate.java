@@ -6,8 +6,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import fgo.cards.FGOCard;
+import fgo.powers.AntiPurgeDefensePower;
 import fgo.powers.ArchetypeORTPower;
-import fgo.powers.EternalMemoriesPower;
 import fgo.powers.InvincibilityPower;
 import fgo.utils.CardStats;
 
@@ -32,7 +32,7 @@ public class PureCoordinate extends FGOCard {
     public void onChoseThisOption() {
         AbstractPlayer p = AbstractDungeon.player;
         if (p.hasPower(ArchetypeORTPower.POWER_ID)) {
-            this.addToBot(new ApplyPowerAction(p, p, new EternalMemoriesPower(p, this.magicNumber), this.magicNumber));
+            this.addToBot(new ApplyPowerAction(p, p, new AntiPurgeDefensePower(p, this.magicNumber), this.magicNumber));
         } else {
             this.addToBot(new ApplyPowerAction(p, p, new InvincibilityPower(p, this.magicNumber), this.magicNumber));
         }

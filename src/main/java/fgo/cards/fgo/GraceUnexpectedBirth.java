@@ -9,21 +9,11 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import fgo.action.FgoNpAction;
 import fgo.cards.FGOCard;
-import fgo.characters.CustomEnums.FGOCardColor;
 import fgo.powers.SealNPPower;
-import fgo.utils.CardStats;
-
 public class GraceUnexpectedBirth extends FGOCard {
     public static final String ID = makeID(GraceUnexpectedBirth.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            FGOCardColor.FGO,
-            CardType.SKILL,
-            CardRarity.UNCOMMON,
-            CardTarget.SELF,
-            2
-    );
     public GraceUnexpectedBirth() {
-        super(ID, INFO);
+        super(ID, 2, CardType.SKILL, CardTarget.SELF, CardRarity.UNCOMMON);
         setNP(30, 20);
     }
 
@@ -43,3 +33,5 @@ public class GraceUnexpectedBirth extends FGOCard {
         //addToBot(new ApplyPowerAction(p, p, new DrawReductionPower(p, 1), 1));
     }
 }
+
+

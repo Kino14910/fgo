@@ -14,19 +14,10 @@ import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
 
 import fgo.cards.FGOCard;
-import fgo.utils.CardStats;
-
 public class CrimsonSlash extends FGOCard {
     public static final String ID = makeID(CrimsonSlash.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            CardColor.COLORLESS,
-            CardType.ATTACK,
-            CardRarity.SPECIAL,
-            CardTarget.ALL_ENEMY,
-            2
-    );
     public CrimsonSlash() {
-        super(ID, INFO);
+        super(ID, 2, CardType.ATTACK, CardTarget.ALL_ENEMY, CardRarity.SPECIAL, CardColor.COLORLESS);
         setDamage(8, 2);
         setMagic(2, 1);
         this.cardsToPreview = new DivineDualEdge();
@@ -53,3 +44,5 @@ public class CrimsonSlash extends FGOCard {
         this.addToBot(new MakeTempCardInDrawPileAction(this.cardsToPreview.makeStatEquivalentCopy(), 1, true, true));
     }
 }
+
+

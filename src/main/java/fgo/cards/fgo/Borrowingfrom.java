@@ -6,20 +6,10 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import fgo.action.FgoNpAction;
 import fgo.cards.FGOCard;
 import fgo.characters.Master;
-import fgo.characters.CustomEnums.FGOCardColor;
-import fgo.utils.CardStats;
-
 public class Borrowingfrom extends FGOCard {
     public static final String ID = makeID(Borrowingfrom.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            FGOCardColor.FGO,
-            CardType.SKILL,
-            CardRarity.RARE,
-            CardTarget.NONE,
-            2
-    );
     public Borrowingfrom() {
-        super(ID, INFO);
+        super(ID, 2, CardType.SKILL, CardTarget.NONE, CardRarity.RARE);
         setCostUpgrade(1);
     }
 
@@ -28,3 +18,5 @@ public class Borrowingfrom extends FGOCard {
         addToBot(new FgoNpAction(Master.fgoNp));
     }
 }
+
+

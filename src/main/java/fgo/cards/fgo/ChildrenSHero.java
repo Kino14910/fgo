@@ -12,19 +12,10 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import fgo.cards.FGOCard;
 import fgo.cards.tempCards.SupportCraft;
 import fgo.characters.CustomEnums.FGOCardColor;
-import fgo.utils.CardStats;
-
 public class ChildrenSHero extends FGOCard{
     public static final String ID = makeID(ChildrenSHero.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            FGOCardColor.FGO,
-            CardType.SKILL,
-            CardRarity.UNCOMMON,
-            CardTarget.SELF,
-            1
-    );
     public ChildrenSHero() {
-        super(ID, INFO);
+        super(ID, 1, CardType.SKILL, CardTarget.SELF, CardRarity.UNCOMMON);
         setMagic(1, 1);
         portraitImg = ImageMaster.loadImage("fgo/images/cards/skill/ChildrenSHero.png");
 
@@ -65,3 +56,5 @@ public class ChildrenSHero extends FGOCard{
         return canUse;
     }
 }
+
+

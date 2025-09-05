@@ -5,23 +5,12 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import fgo.cards.FGOCard;
-import fgo.characters.CustomEnums.FGOCardColor;
 import fgo.powers.CriticalDamageUpPower;
 import fgo.powers.LoseCritDamagePower;
-import fgo.utils.CardStats;
-
 public class HeroCreation extends FGOCard {
     public static final String ID = makeID(HeroCreation.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            FGOCardColor.FGO,
-            CardType.SKILL,
-            CardRarity.UNCOMMON,
-            CardTarget.SELF,
-            0
-    );
-
     public HeroCreation() {
-        super(ID, INFO);
+        super(ID, 0, CardType.SKILL, CardTarget.SELF, CardRarity.UNCOMMON);
         setSelfRetain(false, true);
     }
 
@@ -31,3 +20,5 @@ public class HeroCreation extends FGOCard {
         addToBot(new ApplyPowerAction(p, p, new LoseCritDamagePower(p, 100)));
     }
 }
+
+

@@ -6,20 +6,10 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import fgo.action.SongOfThePoetAction;
 import fgo.cards.FGOCard;
-import fgo.characters.CustomEnums.FGOCardColor;
-import fgo.utils.CardStats;
-
 public class SongOfThePoet extends FGOCard {
     public static final String ID = makeID(SongOfThePoet.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            FGOCardColor.FGO,
-            CardType.ATTACK,
-            CardRarity.UNCOMMON,
-            CardTarget.ENEMY,
-            1
-    );
     public SongOfThePoet() {
-        super(ID, INFO);
+        super(ID, 1, CardType.ATTACK, CardTarget.ENEMY, CardRarity.UNCOMMON);
         setDamage(9, 3);
     }
 
@@ -29,3 +19,5 @@ public class SongOfThePoet extends FGOCard {
         addToBot(new SongOfThePoetAction(m, new DamageInfo(p, damage, damageTypeForTurn)));
     }
 }
+
+

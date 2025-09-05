@@ -7,21 +7,11 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.ReflectionHacks;
 import fgo.cards.FGOCard;
-import fgo.characters.CustomEnums.FGOCardColor;
 import fgo.powers.ReducePercentDamagePower;
-import fgo.utils.CardStats;
-
 public class HolyShroud extends FGOCard {
     public static final String ID = makeID(HolyShroud.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            FGOCardColor.FGO,
-            CardType.SKILL,
-            CardRarity.UNCOMMON,
-            CardTarget.SELF,
-            0
-    );
     public HolyShroud() {
-        super(ID, INFO);
+        super(ID, 0, CardType.SKILL, CardTarget.SELF, CardRarity.UNCOMMON);
         setMagic(25, 5);
     }
 
@@ -45,3 +35,5 @@ public class HolyShroud extends FGOCard {
         addToBot(new ApplyPowerAction(p, p, new ReducePercentDamagePower(p, magicNumber), magicNumber));
     }
 }
+
+

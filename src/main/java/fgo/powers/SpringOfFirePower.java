@@ -18,7 +18,7 @@ public class SpringOfFirePower extends BasePower {
     @Override
     public void onSpecificTrigger() {
         addToBot(new RemoveDebuffsAction(owner));
-        addToBot(new ApplyPowerAction(owner, owner, new NPDamagePower(owner, amount)));
+        addToBot(new ApplyPowerAction(owner, owner, new NPDamagePower(amount)));
     }
 
     @Override

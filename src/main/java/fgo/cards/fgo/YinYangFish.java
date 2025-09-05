@@ -6,20 +6,10 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import fgo.action.FgoNpAction;
 import fgo.cards.FGOCard;
-import fgo.characters.CustomEnums.FGOCardColor;
-import fgo.utils.CardStats;
-
 public class YinYangFish extends FGOCard {
     public static final String ID = makeID(YinYangFish.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            FGOCardColor.FGO,
-            CardType.SKILL,
-            CardRarity.UNCOMMON,
-            CardTarget.SELF,
-            1
-    );
     public YinYangFish() {
-        super(ID, INFO);
+        super(ID, 1, CardType.SKILL, CardTarget.SELF, CardRarity.UNCOMMON);
         setNP(10);
         setMagic(6);
         tags.add(CardTags.HEALING);
@@ -35,3 +25,5 @@ public class YinYangFish extends FGOCard {
         addToTop(new HealAction(p, p, magicNumber));
     }
 }
+
+

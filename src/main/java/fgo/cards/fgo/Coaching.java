@@ -5,21 +5,10 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import fgo.cards.FGOCard;
-import fgo.characters.CustomEnums.FGOCardColor;
-import fgo.utils.CardStats;
-
 public class Coaching extends FGOCard {
     public static final String ID = makeID(Coaching.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            FGOCardColor.FGO,
-            CardType.SKILL,
-            CardRarity.UNCOMMON,
-            CardTarget.SELF,
-            1
-    );
-
     public Coaching() {
-        super(ID, INFO);
+        super(ID, 1, CardType.SKILL, CardTarget.SELF, CardRarity.UNCOMMON);
         setMagic(2);
         setCostUpgrade(0);
         setExhaust();
@@ -30,3 +19,4 @@ public class Coaching extends FGOCard {
         addToBot(new GainEnergyAction(magicNumber));
     }
 }
+

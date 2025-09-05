@@ -16,20 +16,10 @@ import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
 
 import fgo.cards.FGOCard;
 import fgo.cards.tempCards.FgoInsight;
-import fgo.characters.CustomEnums.FGOCardColor;
-import fgo.utils.CardStats;
-
 public class WindsweptSlash extends FGOCard {
     public static final String ID = makeID(WindsweptSlash.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            FGOCardColor.FGO,
-            CardType.ATTACK,
-            CardRarity.COMMON,
-            CardTarget.ENEMY,
-            1
-    );
     public WindsweptSlash() {
-        super(ID, INFO);
+        super(ID, 1, CardType.ATTACK, CardTarget.ENEMY, CardRarity.COMMON);
         setDamage(9);
         cardsToPreview = new FgoInsight();
         //cardsToPreview.upgrade();
@@ -51,3 +41,5 @@ public class WindsweptSlash extends FGOCard {
         }
     }
 }
+
+

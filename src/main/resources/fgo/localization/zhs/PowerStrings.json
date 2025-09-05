@@ -259,7 +259,7 @@
       "阻止你受到的所有攻击，持续时间 #b%d 回合。"
     ]
   },
-  "${modID}:EternalMemoriesPower": {
+  "${modID}:AntiPurgeDefensePower": {
     "NAME": "肃正防御",
     "DESCRIPTIONS": [
       "阻止下一次你受到的生命值损伤。每次阻止成功回复 #b5 点生命。",

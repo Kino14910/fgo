@@ -12,19 +12,10 @@ import com.megacrit.cardcrawl.powers.DrawPower;
 import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
 
 import fgo.cards.FGOCard;
-import fgo.utils.CardStats;
-
 public class DivineDualEdge extends FGOCard {
     public static final String ID = makeID(DivineDualEdge.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            CardColor.COLORLESS,
-            CardType.ATTACK,
-            CardRarity.SPECIAL,
-            CardTarget.ALL_ENEMY,
-            3
-    );
     public DivineDualEdge() {
-        super(ID, INFO);
+        super(ID, 3, CardType.ATTACK, CardTarget.ALL_ENEMY, CardRarity.SPECIAL, CardColor.COLORLESS);
         setDamage(10, 3);
         setExhaust();
     }
@@ -40,3 +31,5 @@ public class DivineDualEdge extends FGOCard {
         this.addToBot(new ChangeStanceAction("Divinity"));
     }
 }
+
+

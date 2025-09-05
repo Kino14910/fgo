@@ -23,7 +23,8 @@ import com.megacrit.cardcrawl.rooms.CampfireUI;
 import com.megacrit.cardcrawl.rooms.RestRoom;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 
-import fgo.cards.derivative.mash.Camelot;
+import fgo.cards.derivative.mash.LordCamelot;
+import fgo.cards.derivative.mash.LordChaldeas;
 import fgo.cards.derivative.mash.RayProofKyrielight;
 import fgo.cards.noblecards.HollowHeartAlbion;
 import fgo.cards.noblecards.Unlimited;
@@ -76,7 +77,8 @@ public class AlterOptionEffect extends AbstractGameEffect {
             Collections.addAll(excludedCards, 
                 HollowHeartAlbion.ID, 
                 Unlimited.ID,
-                Camelot.ID,
+                LordCamelot.ID,
+                LordChaldeas.ID,
                 RayProofKyrielight.ID
             );
 

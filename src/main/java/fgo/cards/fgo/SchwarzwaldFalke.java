@@ -8,22 +8,12 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.OfferingEffect;
 
 import fgo.cards.FGOCard;
-import fgo.characters.CustomEnums.FGOCardColor;
 import fgo.powers.NPRatePower;
 import fgo.powers.SchwarzwaldFalkePower;
-import fgo.utils.CardStats;
-
 public class SchwarzwaldFalke extends FGOCard {
     public static final String ID = makeID(SchwarzwaldFalke.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            FGOCardColor.FGO,
-            CardType.POWER,
-            CardRarity.RARE,
-            CardTarget.SELF,
-            3
-    );
     public SchwarzwaldFalke() {
-        super(ID, INFO);
+        super(ID, 3, CardType.POWER, CardTarget.SELF, CardRarity.RARE);
         setMagic(3);
         setCostUpgrade(2);
     }
@@ -40,3 +30,5 @@ public class SchwarzwaldFalke extends FGOCard {
         addToBot(new ApplyPowerAction(p, p, new SchwarzwaldFalkePower(p, magicNumber)));
     }
 }
+
+

@@ -8,21 +8,11 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import fgo.action.HeroicKingAction;
 import fgo.action.KingToHandAction;
 import fgo.cards.FGOCard;
-import fgo.characters.CustomEnums.FGOCardColor;
 import fgo.powers.HeroicKingPower;
-import fgo.utils.CardStats;
-
 public class HeroicKing extends FGOCard {
     public static final String ID = makeID(HeroicKing.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            FGOCardColor.FGO,
-            CardType.ATTACK,
-            CardRarity.UNCOMMON,
-            CardTarget.ALL_ENEMY,
-            1
-    );
     public HeroicKing() {
-        super(ID, INFO);
+        super(ID, 1, CardType.ATTACK, CardTarget.ALL_ENEMY, CardRarity.UNCOMMON);
         setDamage(5, 3);
         setMagic(2);
     }
@@ -68,3 +58,5 @@ public class HeroicKing extends FGOCard {
         initializeDescription();
     }
 }
+
+

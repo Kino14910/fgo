@@ -10,19 +10,10 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import fgo.action.ProofAndRebuttalAction;
 import fgo.cards.FGOCard;
-import fgo.utils.CardStats;
-
 public class ProofAndRebuttal extends FGOCard {
     public static final String ID = makeID(ProofAndRebuttal.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            CardColor.COLORLESS,
-            CardType.SKILL,
-            CardRarity.SPECIAL,
-            CardTarget.SELF,
-            0
-    );
     public ProofAndRebuttal() {
-        super(ID, INFO);
+        super(ID, 0, CardType.SKILL, CardTarget.SELF, CardRarity.SPECIAL, CardColor.COLORLESS);
         setExhaust();
         this.portraitImg = ImageMaster.loadImage("fgo/images/cards/skill/ProofAndRebuttal.png");
 
@@ -40,3 +31,5 @@ public class ProofAndRebuttal extends FGOCard {
         }
     }
 }
+
+

@@ -258,7 +258,7 @@
       "全ての攻撃を無効化（ #b%d ターン持続）。"
     ]
   },
-  "${modID}:EternalMemoriesPower": {
+  "${modID}:AntiPurgeDefensePower": {
     "NAME": "粛正防御",
     "DESCRIPTIONS": [
       "次に受けるHPダメージを無効化。無効化成功ごとに #b5 点HP回復。",

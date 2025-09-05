@@ -12,21 +12,10 @@ import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
 
 import fgo.cards.FGOCard;
 import fgo.cards.colorless.CrimsonSlash;
-import fgo.characters.CustomEnums.FGOCardColor;
-import fgo.utils.CardStats;
-
-
 public class LevelSlash extends FGOCard {
     public static final String ID = makeID(LevelSlash.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            FGOCardColor.FGO,
-            CardType.ATTACK,
-            CardRarity.RARE,
-            CardTarget.ALL_ENEMY,
-            1
-    );
     public LevelSlash() {
-        super(ID, INFO);
+        super(ID, 1, CardType.ATTACK, CardTarget.ALL_ENEMY, CardRarity.RARE);
         setDamage(6, 3);
         this.cardsToPreview = new CrimsonSlash();
         setExhaust();
@@ -41,3 +30,5 @@ public class LevelSlash extends FGOCard {
         this.addToBot(new MakeTempCardInDrawPileAction(this.cardsToPreview.makeStatEquivalentCopy(), 1, true, true));
     }
 }
+
+

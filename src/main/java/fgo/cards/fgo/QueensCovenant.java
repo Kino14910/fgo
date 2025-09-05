@@ -7,21 +7,11 @@ import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
 import fgo.cards.FGOCard;
-import fgo.characters.CustomEnums.FGOCardColor;
 import fgo.powers.MyFairSoldierPower;
-import fgo.utils.CardStats;
-
 public class QueensCovenant extends FGOCard {
     public static final String ID = makeID(QueensCovenant.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            FGOCardColor.FGO,
-            CardType.POWER,
-            CardRarity.UNCOMMON,
-            CardTarget.SELF,
-            1
-    );
     public QueensCovenant() {
-        super(ID, INFO);
+        super(ID, 1, CardType.POWER, CardTarget.SELF, CardRarity.UNCOMMON);
         setMagic(3, 1);
     }
 
@@ -34,3 +24,5 @@ public class QueensCovenant extends FGOCard {
         addToBot(new ApplyPowerAction(p, p, new MyFairSoldierPower(p, magicNumber)));
     }
 }
+
+

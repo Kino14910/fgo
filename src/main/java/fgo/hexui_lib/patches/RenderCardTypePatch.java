@@ -35,10 +35,11 @@ public class RenderCardTypePatch {
 
             FontHelper.renderRotatedText(sb, font, text,
                     card.current_x,
-                    card.current_y + location.y * card.drawScale * Settings.scale,
-                    0.0F, -1.0F * card.drawScale * Settings.scale,
+                    card.current_y - (location.y - 7.0F) * card.drawScale * Settings.scale,
+                    0.0F, 
+                    -1.0F * card.drawScale * Settings.scale,
                     card.angle, false,
-                    Settings.CREAM_COLOR);
+                    new Color(0.35F, 0.35F, 0.35F, 1.0F));
 
             return SpireReturn.Return(null);
         }
@@ -48,6 +49,7 @@ public class RenderCardTypePatch {
     private static class Locator extends SpireInsertLocator {
         // This is the abstract method from SpireInsertLocator that will be used to find the line
         // numbers you want this patch inserted at
+        @Override
         public int[] Locate(CtBehavior ctMethodToPatch) throws CannotCompileException, PatchingException {
             // finalMatcher is the line that we want to insert our patch before -
             // in this example we are using a `MethodCallMatcher` which is a type

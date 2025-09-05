@@ -18,13 +18,16 @@
   "${modID}:WallOfSnowflakes": {
     "NAME": "Transient Wall of Snowflakes",
     "DESCRIPTION": "Gain !B! Block.",
-    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Reduce !M!% damage taken this turn.",
-    "EXTENDED_DESCRIPTION": [
-      "Reduce damage taken by !M!% this turn. NL Gain !NP!% fgo:NP, 3 Strength, and 30 fgo:CriticalDamage.",
-      "Exalted Impervious Wall of Snowflakes",
-      "Venerated Shield of Snowflakes"
-    ],
     "FLAVOR": "This card will upgrade under specific conditions."
+  },
+  "${modID}:VeneratedWallOfSnowflakes": {
+    "NAME": "Venerated Wall of Snowflakes",
+    "DESCRIPTION": "Gain !B! Block. NL Reduce damage taken this turn by !M!%.",
+    "FLAVOR": "This card is reinforced under specific conditions."
+  },
+  "${modID}:VeneratedShieldOfSnowflakes": {
+    "NAME": "Venerated Shield of Snowflakes",
+    "DESCRIPTION": "Reduce damage taken by !M!% this turn. NL Gain !NP!% fgo:NP, 3 Strength, and 30 fgo:Critical Damage."
   },
   "${modID}:BlackBarrel": {
     "NAME": "Bunker Bolt",
@@ -636,12 +639,16 @@
   },
   "${modID}:Camelot": {
     "NAME": "Lord Chaldeas",
-    "DESCRIPTION": "Gain !B! Block. NL Gain 2 Strength. NL At the end of your turn, gain !M! Block.",
-    "EXTENDED_DESCRIPTION": [
-      "Reduce attack damage taken by !M!% for 3 turns. NL At the end of your turn, gain !B! Block. NL Gain 1 Artifact and 1 Strength. NL Your next fgo:Noble_Phantasm is set to *Ray Proof Kyrielight. NL Transform *Obscurant Wall of Chalk into *Timeworn Bullet Kindling of Amethyst.",
-      "Lord Camelot",
-      "Lord Chaldeas"
-    ],
+    "DESCRIPTION": "Gain !B! Block. NL At the end of your turn, gain !M! Block.",
+    "FLAVOR": "This card upgrades under specific conditions."
+  },
+  "${modID}:LordCamelot": {
+    "NAME": "Lord Camelot",
+    "DESCRIPTION": "Gain !B! Block. NL Gain 2 Strength. NL At the end of your turn, gain !M! Block."
+  },
+  "${modID}:LordChaldeas": {
+    "NAME": "Lord Chaldeas",
+    "DESCRIPTION": "Reduce attack damage taken by !M!% for 3 turns. NL At the end of your turn, gain !B! Block. NL Gain 1 Artifact and 1 Strength. NL Your next fgo:Noble_Phantasm is set to *Ray Proof Kyrielight. NL Transform *Obscurant Wall of Chalk into *Timeworn Bullet Kindling of Amethyst.",
     "FLAVOR": "This card upgrades under specific conditions."
   },
   "${modID}:RayProofKyrielight": {
@@ -670,10 +677,6 @@
   "${modID}:LaPucelle": {
     "NAME": "La Pucelle",
     "DESCRIPTION": "Deal !D! damage. NL Apply fgo:Combust equal to half damage. NL Shuffle 1 *Burn+ into your draw pile."
-  },
-  "${modID}:Shishifunjin": {
-    "NAME": "Shishifunjin",
-    "DESCRIPTION": "All fgo:Stunned enemies lose their maximum HP !M!%."
   },
   "${modID}:Fragarach": {
     "NAME": "Fragarach",
@@ -717,7 +720,7 @@
   },
   "${modID}:Summer": {
     "NAME": "Summer",
-    "DESCRIPTION": "{@@}Gain fgo:Waterside.{!Upgrades!|=1 NL Gain !NP! fgo:NP.}"
+    "DESCRIPTION": "{@@}Gain fgo:Waterside.{!Upgrades!|1= NL Gain !NP! fgo:NP.}"
   },
   "${modID}:EnumaElish": {
     "NAME": "Enuma Elish",

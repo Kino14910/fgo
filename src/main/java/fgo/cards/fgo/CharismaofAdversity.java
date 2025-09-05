@@ -11,20 +11,12 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.VerticalImpactEffect;
 
 import fgo.cards.FGOCard;
-import fgo.characters.CustomEnums.FGOCardColor;
-import fgo.utils.CardStats;
 
 public class CharismaofAdversity extends FGOCard {
     public static final String ID = makeID(CharismaofAdversity.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            FGOCardColor.FGO,
-            CardType.ATTACK,
-            CardRarity.RARE,
-            CardTarget.ENEMY,
-            1
-    );
+
     public CharismaofAdversity() {
-        super(ID, INFO);
+        super(ID, 1, CardType.ATTACK, CardTarget.ENEMY, CardRarity.RARE);
         setDamage(6, 3);
     }
 
@@ -60,3 +52,4 @@ public class CharismaofAdversity extends FGOCard {
         glowColor = AbstractDungeon.player.maxHealth - AbstractDungeon.player.currentHealth >= 12 ? AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy() : AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
     }
 }
+

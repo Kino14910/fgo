@@ -7,20 +7,10 @@ import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 
 import fgo.cards.FGOCard;
-import fgo.characters.CustomEnums.FGOCardColor;
-import fgo.utils.CardStats;
-
 public class Revelation extends FGOCard {
     public static final String ID = makeID(Revelation.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            FGOCardColor.FGO,
-            CardType.SKILL,
-            CardRarity.UNCOMMON,
-            CardTarget.ENEMY,
-            0
-    );
     public Revelation() {
-        super(ID, INFO);
+        super(ID, 0, CardType.SKILL, CardTarget.ENEMY, CardRarity.UNCOMMON);
         setMagic(1, 1);
         setExhaust();
     }
@@ -32,3 +22,5 @@ public class Revelation extends FGOCard {
         addToBot(new ApplyPowerAction(m, p, new VulnerablePower(m, magicNumber, false)));
     }
 }
+
+

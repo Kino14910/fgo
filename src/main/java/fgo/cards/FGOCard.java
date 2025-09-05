@@ -1,12 +1,11 @@
 package fgo.cards;
 
-import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.CommonKeywordIconsField;
+import static fgo.characters.CustomEnums.FGOCardColor.FGO;
+
 import com.megacrit.cardcrawl.cards.AbstractCard;
 
 import fgo.FGOMod;
 import fgo.utils.CardStats;
-
-import static fgo.characters.CustomEnums.FGOCardColor.FGO;
 
 
 public abstract class FGOCard extends BaseCard {
@@ -40,31 +39,31 @@ public abstract class FGOCard extends BaseCard {
     public FGOCard(String ID, CardStats INFO) {
         super(ID, INFO);
         initValues();
-        CommonKeywordIconsField.useIcons.set(this, true);
     }
 
     public FGOCard(String ID, CardStats INFO, String img) {
         super(ID, INFO, img);
         initValues();
-        CommonKeywordIconsField.useIcons.set(this, true);
     }
 
-    public FGOCard(String ID, int cost, AbstractCard.CardType cardType, AbstractCard.CardTarget target, AbstractCard.CardRarity rarity) {
+    public FGOCard(String ID, int cost, CardType cardType, CardTarget target, CardRarity rarity) {
         super(ID, cost, cardType, target, rarity, FGO);
         initValues();
-        CommonKeywordIconsField.useIcons.set(this, true);
     }
 
-    public FGOCard(String ID, int cost, AbstractCard.CardType cardType, AbstractCard.CardTarget target, AbstractCard.CardRarity rarity, AbstractCard.CardColor color) {
+    public FGOCard(String ID, int cost, CardType cardType, CardTarget target, CardRarity rarity, String img) {
+        super(ID, cost, cardType, target, rarity, FGO, img);
+        initValues();
+    }
+
+    public FGOCard(String ID, int cost, CardType cardType, CardTarget target, CardRarity rarity, CardColor color) {
         super(ID, cost, cardType, target, rarity, color);
         initValues();
-        CommonKeywordIconsField.useIcons.set(this, true);
     }
 
-    public FGOCard(String ID, int cost, AbstractCard.CardType cardType, AbstractCard.CardTarget target, AbstractCard.CardRarity rarity, AbstractCard.CardColor color, String img) {
+    public FGOCard(String ID, int cost, CardType cardType, CardTarget target, CardRarity rarity, CardColor color, String img) {
         super(ID, cost, cardType, target, rarity, color, img);
         initValues();
-        CommonKeywordIconsField.useIcons.set(this, true);
     }
 
     protected final void setNP(int np) { setNP(np, 0); }

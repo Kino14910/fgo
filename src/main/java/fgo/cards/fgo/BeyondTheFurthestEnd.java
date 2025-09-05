@@ -11,21 +11,11 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import fgo.cards.FGOCard;
-import fgo.characters.CustomEnums.FGOCardColor;
 import fgo.powers.BeyondTheFurthestEndPower;
-import fgo.utils.CardStats;
-
 public class BeyondTheFurthestEnd extends FGOCard {
     public static final String ID = makeID(BeyondTheFurthestEnd.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            FGOCardColor.FGO,
-            CardType.POWER,
-            CardRarity.UNCOMMON,
-            CardTarget.ALL_ENEMY,
-            2
-    );
     public BeyondTheFurthestEnd() {
-        super(ID, INFO);
+        super(ID, 2, CardType.POWER, CardTarget.ALL_ENEMY, CardRarity.UNCOMMON);
         setMagic(3, 1);
         portraitImg = ImageMaster.loadImage("fgo/images/cards/power/BeyondTheFurthestEnd.png");
 
@@ -47,3 +37,5 @@ public class BeyondTheFurthestEnd extends FGOCard {
         addToBot(new ApplyPowerAction(p, p, new BeyondTheFurthestEndPower(p, magicNumber)));
     }
 }
+
+

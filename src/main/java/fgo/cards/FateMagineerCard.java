@@ -5,6 +5,9 @@ import static fgo.utils.TextureLoader.getCardTextureString;
 
 import java.util.ArrayList;
 
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.evacipated.cardcrawl.modthespire.lib.SpireOverride;
+
 import fgo.hexui_lib.interfaces.CustomCardPortrait;
 import fgo.hexui_lib.interfaces.CustomCardTypeLocation;
 import fgo.hexui_lib.util.BetaPortraitGenerator;
@@ -42,21 +45,6 @@ public abstract class FateMagineerCard extends FGOCard implements CustomCardPort
     }
 
     private void initializeDecoRenderLayers() {
-        if (decoRenderLayersInitialized) {
-            return;
-        }
-
-        for (int i = 1; i <= 3; i++) {
-            outerCircuits512.add(new RenderImageLayer(TextureLoader.getTexture(nobleResourcePath("512/bg_circuits_outer_" + i + ".png"))));
-            outerMagic512.add(new RenderImageLayer(TextureLoader.getTexture(nobleResourcePath("512/bg_magic_outer_" + i + ".png"))));
-
-            outerCircuits1024.add(new RenderImageLayer(TextureLoader.getTexture(nobleResourcePath("1024/bg_circuits_outer_" + i + ".png"))));
-            outerMagic1024.add(new RenderImageLayer(TextureLoader.getTexture(nobleResourcePath("1024/bg_magic_outer_" + i + ".png"))));
-        }
-
-        //improvementSlotsPanel512 = new RenderImageLayer(TextureLoader.getTexture("512/improvement_slots_panel.png"));
-        //improvementSlotsPanel1024 = new RenderImageLayer(TextureLoader.getTexture("1024/improvement_slots_panel.png"));
-
         decoRenderLayersInitialized = true;
     }
 
@@ -64,23 +52,8 @@ public abstract class FateMagineerCard extends FGOCard implements CustomCardPort
     public ArrayList<RenderLayer> getPortraitLayers512() {
         portraitLayers512.clear();
         addCardArtLayers512(portraitLayers512);
-        portraitLayers512.add(new RenderImageLayer(TextureLoader.getTexture(nobleResourcePath("512/bg_fullportrait_desc_shadow.png"))));
-        //portraitLayers512.add(new RenderImageLayer(TextureLoader.getTexture("512/bg_cardtype_gray.png")));
-        portraitLayers512.add(new RenderImageLayer(TextureLoader.getTexture(nobleResourcePath("512/bg_fullportrait_inner_shadow.png"))));
-        portraitLayers512.add(improvementSlotsPanel512);
-
-        switch (type) {
-            case ATTACK:
-                portraitLayers512.add(new RenderImageLayer(TextureLoader.getTexture(nobleResourcePath("512/bg_attack_fullportait_gray.png"))));
-                break;
-            case POWER:
-                portraitLayers512.add(new RenderImageLayer(TextureLoader.getTexture(nobleResourcePath("512/bg_power_fullportait_gray.png"))));
-                break;
-            case SKILL:
-            default:
-                portraitLayers512.add(new RenderImageLayer(TextureLoader.getTexture(nobleResourcePath("512/bg_skill_fullportait_gray.png"))));
-        }
-
+        portraitLayers512.add(new RenderImageLayer(TextureLoader.getTexture(nobleResourcePath("512/desc_shadow.png"))));
+        portraitLayers512.add(new RenderImageLayer(TextureLoader.getTexture(nobleResourcePath("512/" + this.type.toString().toLowerCase() + "_common.png"))));
         return portraitLayers512;
     }
 
@@ -88,23 +61,8 @@ public abstract class FateMagineerCard extends FGOCard implements CustomCardPort
     public ArrayList<RenderLayer> getPortraitLayers1024() {
         portraitLayers1024.clear();
         addCardArtLayers1024(portraitLayers1024);
-        portraitLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(nobleResourcePath("1024/bg_fullportrait_desc_shadow.png"))));
-        //portraitLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(noblePath("1024/bg_cardtype_gray.png"))));
-        portraitLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(nobleResourcePath("1024/bg_fullportrait_inner_shadow.png"))));
-        portraitLayers1024.add(improvementSlotsPanel1024);
-
-        switch (type) {
-            case ATTACK:
-                portraitLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(nobleResourcePath("1024/bg_attack_fullportait_gray.png"))));
-                break;
-            case POWER:
-                portraitLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(nobleResourcePath("1024/bg_power_fullportait_gray.png"))));
-                break;
-            case SKILL:
-            default:
-                portraitLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(nobleResourcePath("1024/bg_skill_fullportait_gray.png"))));
-        }
-
+        portraitLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(nobleResourcePath("1024/desc_shadow.png"))));
+        portraitLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(nobleResourcePath("1024/" + this.type.toString().toLowerCase() + "_common.png"))));
         return portraitLayers1024;
     }
 
@@ -115,7 +73,6 @@ public abstract class FateMagineerCard extends FGOCard implements CustomCardPort
     }
 
     protected void generateBetaArt() {
-        //logger.info(cardID+".generateBetaArt()");
         cardArtLayers512 = BetaPortraitGenerator.generate(cardID, false);
         cardArtLayers1024 = BetaPortraitGenerator.generate(cardID, true);
     }
@@ -126,5 +83,9 @@ public abstract class FateMagineerCard extends FGOCard implements CustomCardPort
 
     public void addCardArtLayers1024(ArrayList<RenderLayer> portraitLayers) {
         portraitLayers.addAll(cardArtLayers1024);
+    }
+
+    @SpireOverride
+	protected void renderBannerImage(SpriteBatch sb, float x, float y) {
     }
 }

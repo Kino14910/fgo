@@ -11,19 +11,10 @@ import com.megacrit.cardcrawl.vfx.combat.OfferingEffect;
 
 import fgo.cards.FGOCard;
 import fgo.powers.TaisuiSPower;
-import fgo.utils.CardStats;
-
 public class TaisuiSMisfortune extends FGOCard {
     public static final String ID = makeID(TaisuiSMisfortune.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            CardColor.COLORLESS,
-            CardType.SKILL,
-            CardRarity.UNCOMMON,
-            CardTarget.ALL_ENEMY,
-            0
-    );
     public TaisuiSMisfortune() {
-        super(ID, INFO);
+        super(ID, 0, CardType.SKILL, CardTarget.ALL_ENEMY, CardRarity.UNCOMMON, CardColor.COLORLESS);
         setMagic(2, 1);
         setExhaust();
         setInnate();
@@ -42,3 +33,5 @@ public class TaisuiSMisfortune extends FGOCard {
         }
     }
 }
+
+

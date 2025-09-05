@@ -11,21 +11,11 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.LightningEffect;
 
 import fgo.cards.FGOCard;
-import fgo.characters.CustomEnums.FGOCardColor;
 import fgo.powers.NPRatePower;
-import fgo.utils.CardStats;
-
 public class TeslaCoil extends FGOCard {
     public static final String ID = makeID(TeslaCoil.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            FGOCardColor.FGO,
-            CardType.ATTACK,
-            CardRarity.UNCOMMON,
-            CardTarget.ENEMY,
-            0
-    );
     public TeslaCoil() {
-        super(ID, INFO);
+        super(ID, 0, CardType.ATTACK, CardTarget.ENEMY, CardRarity.UNCOMMON);
         setDamage(5, 2);
         setMagic(3, 1);
     }
@@ -41,3 +31,5 @@ public class TeslaCoil extends FGOCard {
         addToBot(new ApplyPowerAction(p, p, new NPRatePower(p, magicNumber)));
     }
 }
+
+

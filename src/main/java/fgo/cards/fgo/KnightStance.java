@@ -6,22 +6,12 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import fgo.cards.FGOCard;
-import fgo.characters.CustomEnums.FGOCardColor;
 import fgo.powers.NPRatePower;
 import fgo.powers.ReducePercentDamagePower;
-import fgo.utils.CardStats;
-
 public class KnightStance extends FGOCard {
     public static final String ID = makeID(KnightStance.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            FGOCardColor.FGO,
-            CardType.SKILL,
-            CardRarity.COMMON,
-            CardTarget.SELF,
-            2
-    );
     public KnightStance() {
-        super(ID, INFO);
+        super(ID, 2, CardType.SKILL, CardTarget.SELF, CardRarity.COMMON);
         setBlock(11);
         setMagic(20, 10);
     }
@@ -35,3 +25,5 @@ public class KnightStance extends FGOCard {
         addToBot(new ApplyPowerAction(p, p, new NPRatePower(p, 1)));
     }
 }
+
+

@@ -6,22 +6,13 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import fgo.cards.FGOCard;
-import fgo.characters.CustomEnums.FGOCardColor;
 import fgo.powers.AtTheWellPower;
-import fgo.utils.CardStats;
 
 public class AtTheWell extends FGOCard {
     public static final String ID = makeID(AtTheWell.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            FGOCardColor.FGO,
-            CardType.SKILL,
-            CardRarity.RARE,
-            CardTarget.SELF,
-            0
-    );
 
     public AtTheWell() {
-        super(ID, INFO);
+        super(ID, 0, CardType.SKILL, CardTarget.SELF, CardRarity.RARE);
         setMagic(10, 10);
         setExhaust();
         tags.add(CardTags.HEALING);
@@ -34,3 +25,4 @@ public class AtTheWell extends FGOCard {
         addToBot(new ApplyPowerAction(p, p, new AtTheWellPower(p, magicNumber)));
     }
 }
+

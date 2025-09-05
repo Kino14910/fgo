@@ -1,5 +1,7 @@
 package fgo.cards.fgo;
 
+import static fgo.characters.CustomEnums.Foreigner;
+
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.stslib.patches.FlavorText;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -10,23 +12,13 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import fgo.action.FgoNpAction;
 import fgo.cards.FGOCard;
-import fgo.characters.CustomEnums.FGOCardColor;
-import static fgo.characters.CustomEnums.Foreigner;
 import fgo.powers.StarPower;
-import fgo.utils.CardStats;
 
 public class BackAgain extends FGOCard {
     public static final String ID = makeID(BackAgain.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            FGOCardColor.FGO,
-            CardType.ATTACK,
-            CardRarity.UNCOMMON,
-            CardTarget.SELF,
-            1
-    );
-    
+
     public BackAgain() {
-        super(ID, INFO);
+        super(ID, 1, CardType.ATTACK, CardTarget.SELF, CardRarity.UNCOMMON);
         setNP(20, 10);
         setStar(5, 10);
         tags.add(Foreigner);
@@ -50,3 +42,4 @@ public class BackAgain extends FGOCard {
         }
     }
 }
+

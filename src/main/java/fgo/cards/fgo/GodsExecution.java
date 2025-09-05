@@ -12,20 +12,11 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import fgo.cards.FGOCard;
-import fgo.characters.CustomEnums.FGOCardColor;
-import fgo.utils.CardStats;
 import fgo.utils.ModHelper;
 public class GodsExecution extends FGOCard {
     public static final String ID = makeID(GodsExecution.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            FGOCardColor.FGO,
-            CardType.ATTACK,
-            CardRarity.UNCOMMON,
-            CardTarget.ENEMY,
-            1
-    );
     public GodsExecution() {
-        super(ID, INFO);
+        super(ID, 1, CardType.ATTACK, CardTarget.ENEMY, CardRarity.UNCOMMON);
         setDamage(5, 3);
     }
 
@@ -47,3 +38,5 @@ public class GodsExecution extends FGOCard {
             : AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
     }
 }
+
+

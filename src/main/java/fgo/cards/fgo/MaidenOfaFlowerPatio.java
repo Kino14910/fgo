@@ -9,21 +9,11 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import fgo.cards.FGOCard;
-import fgo.characters.CustomEnums.FGOCardColor;
 import fgo.powers.CursePower;
-import fgo.utils.CardStats;
-
 public class MaidenOfaFlowerPatio extends FGOCard {
     public static final String ID = makeID(MaidenOfaFlowerPatio.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            FGOCardColor.FGO,
-            CardType.SKILL,
-            CardRarity.UNCOMMON,
-            CardTarget.SELF,
-            1
-    );
     public MaidenOfaFlowerPatio() {
-        super(ID, INFO);
+        super(ID, 1, CardType.SKILL, CardTarget.SELF, CardRarity.UNCOMMON);
         setBlock(15, 5);
         setMagic(1);
         portraitImg = ImageMaster.loadImage("fgo/images/cards/skill/MaidenOfaFlowerPatio.png");
@@ -40,3 +30,5 @@ public class MaidenOfaFlowerPatio extends FGOCard {
         addToBot(new ApplyPowerAction(p, p, new CursePower(p, magicNumber)));
     }
 }
+
+

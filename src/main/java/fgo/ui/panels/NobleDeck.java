@@ -5,6 +5,7 @@ import static fgo.FGOMod.makeID;
 import java.util.ArrayList;
 
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -16,6 +17,7 @@ import com.megacrit.cardcrawl.localization.TutorialStrings;
 import basemod.BaseMod;
 import basemod.TopPanelItem;
 import fgo.characters.CustomEnums.FGOCardColor;
+import fgo.characters.Master;
 import fgo.utils.FGOInputActionSet;
 import fgo.utils.NobleCardGroup;
 
@@ -135,6 +137,13 @@ public class NobleDeck extends TopPanelItem {
             TipHelper.renderGenericTip(1550.0f * Settings.scale, (float)Settings.HEIGHT - 120.0f * Settings.scale, LABEL + "(" + FGOInputActionSet.nobleDeckAction.getKeyString() + ")", MSG);
         }
         super.onHover();
+    }
+
+    @Override
+    public void render(SpriteBatch sb) {
+        if (AbstractDungeon.player instanceof Master) {
+            super.render(sb);
+        }
     }
     
     public static void addCard(AbstractCard card) {

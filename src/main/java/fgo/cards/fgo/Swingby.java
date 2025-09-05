@@ -10,21 +10,11 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import fgo.cards.FGOCard;
-import fgo.characters.CustomEnums.FGOCardColor;
 import fgo.powers.StarPower;
-import fgo.utils.CardStats;
-
 public class Swingby extends FGOCard {
     public static final String ID = makeID(Swingby.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            FGOCardColor.FGO,
-            CardType.SKILL,
-            CardRarity.RARE,
-            CardTarget.SELF,
-            2
-    );
     public Swingby() {
-        super(ID, INFO);
+        super(ID, 2, CardType.SKILL, CardTarget.SELF, CardRarity.RARE);
         setMagic(3, 1);
         setEthereal();
 
@@ -42,3 +32,5 @@ public class Swingby extends FGOCard {
         }
     }
 }
+
+

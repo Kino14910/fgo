@@ -5,21 +5,11 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import fgo.cards.FGOCard;
-import fgo.characters.CustomEnums.FGOCardColor;
 import fgo.powers.StarRatePower;
-import fgo.utils.CardStats;
-
 public class LuckySpinning extends FGOCard {
     public static final String ID = makeID(LuckySpinning.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            FGOCardColor.FGO,
-            CardType.ATTACK,
-            CardRarity.UNCOMMON,
-            CardTarget.SELF,
-            0
-    );
     public LuckySpinning() {
-        super(ID, INFO);
+        super(ID, 0, CardType.ATTACK, CardTarget.SELF, CardRarity.UNCOMMON);
         setStar(1, 1);
     }
 
@@ -30,3 +20,5 @@ public class LuckySpinning extends FGOCard {
         addToBot(new ApplyPowerAction(p, p, new StarRatePower(p, star)));
     }
 }
+
+

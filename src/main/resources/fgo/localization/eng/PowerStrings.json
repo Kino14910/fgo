@@ -98,7 +98,7 @@
       "At the end of your turn, remove #b%d of your debuff."
     ]
   },
-  "${modID}:EternalMemoriesPower": {
+  "${modID}:AntiPurgeDefensePower": {
     "NAME": "Anti-Purge Defense",
     "DESCRIPTIONS": [
       "Prevent the next time you would lose HP. When you Prevent, heal #b5 #yHP.",

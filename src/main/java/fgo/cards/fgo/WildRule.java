@@ -16,21 +16,11 @@ import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.vfx.combat.BiteEffect;
 
 import fgo.cards.FGOCard;
-import fgo.characters.CustomEnums.FGOCardColor;
-import fgo.utils.CardStats;
-
 public class WildRule extends FGOCard {
     public static final String ID = makeID(WildRule.class.getSimpleName());
     boolean hasVulnerable = false;
-    private static final CardStats INFO = new CardStats(
-            FGOCardColor.FGO,
-            CardType.ATTACK,
-            CardRarity.UNCOMMON,
-            CardTarget.ENEMY,
-            2
-    );
     public WildRule() {
-        super(ID, INFO);
+        super(ID, 2, CardType.ATTACK, CardTarget.ENEMY, CardRarity.UNCOMMON);
         setDamage(12, 4);
         setMagic(2, 1);
     }
@@ -59,3 +49,5 @@ public class WildRule extends FGOCard {
         }
     }
 }
+
+

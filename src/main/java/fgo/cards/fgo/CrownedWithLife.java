@@ -8,20 +8,12 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import fgo.cards.FGOCard;
 import fgo.cards.tempCards.SoulOfWaterChannels;
-import fgo.characters.CustomEnums.FGOCardColor;
-import fgo.utils.CardStats;
 
 public class CrownedWithLife extends FGOCard {
     public static final String ID = makeID(CrownedWithLife.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            FGOCardColor.FGO,
-            CardType.SKILL,
-            CardRarity.UNCOMMON,
-            CardTarget.SELF,
-            -2
-    );
+
     public CrownedWithLife() {
-        super(ID, INFO);
+        super(ID, -2, CardType.SKILL, CardTarget.SELF, CardRarity.UNCOMMON);
         setMagic(2, 1);
         setExhaust();
         cardsToPreview = new SoulOfWaterChannels();
@@ -42,3 +34,4 @@ public class CrownedWithLife extends FGOCard {
         addToTop(new ExhaustSpecificCardAction(this, AbstractDungeon.player.hand));
     }
 }
+

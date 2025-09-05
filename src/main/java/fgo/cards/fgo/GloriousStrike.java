@@ -8,21 +8,11 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import fgo.cards.FGOCard;
-import fgo.characters.CustomEnums.FGOCardColor;
 import fgo.powers.GloriousStrikePower;
-import fgo.utils.CardStats;
-
 public class GloriousStrike extends FGOCard {
     public static final String ID = makeID(GloriousStrike.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            FGOCardColor.FGO,
-            CardType.ATTACK,
-            CardRarity.RARE,
-            CardTarget.ENEMY,
-            1
-    );
     public GloriousStrike() {
-        super(ID, INFO);
+        super(ID, 1, CardType.ATTACK, CardTarget.ENEMY, CardRarity.RARE);
         setDamage(8, 4);
         setMagic(2);
         setExhaust();
@@ -38,3 +28,5 @@ public class GloriousStrike extends FGOCard {
         addToBot(new ApplyPowerAction(p, p, new GloriousStrikePower(p)));
     }
 }
+
+

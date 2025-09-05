@@ -6,21 +6,11 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import fgo.action.FgoNpAction;
 import fgo.cards.FGOCard;
-import fgo.characters.CustomEnums.FGOCardColor;
 import fgo.powers.NPDamagePower;
-import fgo.utils.CardStats;
-
 public class TeachingsoftheEternal extends FGOCard {
     public static final String ID = makeID(TeachingsoftheEternal.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            FGOCardColor.FGO,
-            CardType.SKILL,
-            CardRarity.COMMON,
-            CardTarget.SELF,
-            0
-    );
     public TeachingsoftheEternal() {
-        super(ID, INFO);
+        super(ID, 0, CardType.SKILL, CardTarget.SELF, CardRarity.COMMON);
         setNP(10, 10);
         setMagic(10, 10);
     }
@@ -29,6 +19,8 @@ public class TeachingsoftheEternal extends FGOCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new FgoNpAction(np));
-        addToBot(new ApplyPowerAction(p, p, new NPDamagePower(p, magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new NPDamagePower(magicNumber)));
     }
 }
+
+

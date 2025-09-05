@@ -5,20 +5,10 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import fgo.action.DragonCoreAction;
 import fgo.cards.FGOCard;
-import fgo.characters.CustomEnums.FGOCardColor;
-import fgo.utils.CardStats;
-
 public class DragonCore extends FGOCard {
     public static final String ID = makeID(DragonCore.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            FGOCardColor.FGO,
-            CardType.SKILL,
-            CardRarity.RARE,
-            CardTarget.SELF,
-            2
-    );
     public DragonCore() {
-        super(ID, INFO);
+        super(ID, 2, CardType.SKILL, CardTarget.SELF, CardRarity.RARE);
         setMagic(2);
         setExhaust();
         setCostUpgrade(1);
@@ -29,3 +19,5 @@ public class DragonCore extends FGOCard {
         addToBot(new DragonCoreAction());
     }
 }
+
+

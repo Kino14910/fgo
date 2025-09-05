@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.badlogic.gdx.graphics.Color;
+import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.CommonKeywordIconsField;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -87,6 +88,7 @@ public abstract class BaseCard extends CustomCard {
         damageUpgrade = 0;
         blockUpgrade = 0;
         magicUpgrade = 0;
+        CommonKeywordIconsField.useIcons.set(this, true);
     }
 
     private static String getName(String ID) {

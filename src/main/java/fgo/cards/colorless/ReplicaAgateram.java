@@ -7,19 +7,10 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import fgo.cards.FGOCard;
-import fgo.utils.CardStats;
-
 public class ReplicaAgateram extends FGOCard {
     public static final String ID = makeID(ReplicaAgateram.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            CardColor.COLORLESS,
-            CardType.SKILL,
-            CardRarity.UNCOMMON,
-            CardTarget.SELF,
-            0
-    );
     public ReplicaAgateram() {
-        super(ID, INFO);
+        super(ID, 0, CardType.SKILL, CardTarget.SELF, CardRarity.UNCOMMON, CardColor.COLORLESS);
         setBlock(6, 4);
     }
 
@@ -36,3 +27,5 @@ public class ReplicaAgateram extends FGOCard {
         }
     }
 }
+
+

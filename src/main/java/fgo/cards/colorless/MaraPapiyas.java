@@ -6,19 +6,10 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import fgo.cards.FGOCard;
-import fgo.utils.CardStats;
-
 public class MaraPapiyas extends FGOCard {
     public static final String ID = makeID(MaraPapiyas.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            CardColor.COLORLESS,
-            CardType.SKILL,
-            CardRarity.UNCOMMON,
-            CardTarget.SELF,
-            0
-    );
     public MaraPapiyas() {
-        super(ID, INFO);
+        super(ID, 0, CardType.SKILL, CardTarget.SELF, CardRarity.UNCOMMON, CardColor.COLORLESS);
         setMagic(12, 4);
         tags.add(CardTags.HEALING);
     }
@@ -29,3 +20,5 @@ public class MaraPapiyas extends FGOCard {
         this.addToBot(new HealAction(p, p, this.magicNumber));
     }
 }
+
+

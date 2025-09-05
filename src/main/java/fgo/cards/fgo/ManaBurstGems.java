@@ -11,22 +11,11 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.VerticalAuraEffect;
 
 import fgo.cards.FGOCard;
-import fgo.characters.CustomEnums.FGOCardColor;
 import fgo.powers.ManaBurstGemsPower;
-import fgo.utils.CardStats;
-
 public class ManaBurstGems extends FGOCard {
     public static final String ID = makeID(ManaBurstGems.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            FGOCardColor.FGO,
-            CardType.SKILL,
-            CardRarity.UNCOMMON,
-            CardTarget.SELF,
-            1
-    );
-    
     public ManaBurstGems() {
-        super(ID, INFO);
+        super(ID, 1, CardType.SKILL, CardTarget.SELF, CardRarity.UNCOMMON);
         setMagic(2, 1);
         portraitImg = ImageMaster.loadImage("fgo/images/cards/skill/ManaBurstGems.png");
         
@@ -41,3 +30,5 @@ public class ManaBurstGems extends FGOCard {
         addToBot(new MakeTempCardInDiscardAction(makeStatEquivalentCopy(), 1));
     }
 }
+
+

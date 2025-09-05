@@ -675,10 +675,6 @@
     "NAME": "紅蓮聖女",
     "DESCRIPTION": "造成 !D! 點傷害。 NL 給予傷害一半的 fgo:灼燒 。 NL 在你的抽牌堆中加入一張 *灼傷+ 。"
   },
-  "${modID}:Shishifunjin": {
-    "NAME": "機關外法·獅子奮迅",
-    "DESCRIPTION": "使 fgo:無法行動 的敵人失去最大生命的 !M! %。"
-  },
   "${modID}:Fragarach": {
     "NAME": "斬剜戰神之劍",
     "DESCRIPTION": "在本回合，每當你被攻擊時，對攻擊者造成 !D! 點傷害，並且你獲得10顆 fgo:暴擊星 。"
@@ -722,7 +718,7 @@
   },
   "${modID}:Summer": {
     "NAME": "夏日",
-    "DESCRIPTION": "{@@}獲得 fgo:水邊 。{!Upgrades!|=1 NL 獲得 !NP!% fgo:NP.}"
+    "DESCRIPTION": "{@@}獲得 fgo:水邊 。{!Upgrades!|1= NL 獲得 !NP!% fgo:NP.}"
   },
   "${modID}:EnumaElish": {
     "NAME": "天地乖離開闢之星",

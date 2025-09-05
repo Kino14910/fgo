@@ -12,19 +12,10 @@ import com.megacrit.cardcrawl.powers.WeakPower;
 import com.megacrit.cardcrawl.vfx.combat.BlizzardEffect;
 
 import fgo.cards.FGOCard;
-import fgo.utils.CardStats;
-
 public class PrimevalRune extends FGOCard {
     public static final String ID = makeID(PrimevalRune.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            CardColor.COLORLESS,
-            CardType.SKILL,
-            CardRarity.RARE,
-            CardTarget.ALL_ENEMY,
-            1
-    );
     public PrimevalRune() {
-        super(ID, INFO);
+        super(ID, 1, CardType.SKILL, CardTarget.ALL_ENEMY, CardRarity.RARE, CardColor.COLORLESS);
         setMagic(2, 1);
     }
 
@@ -42,3 +33,5 @@ public class PrimevalRune extends FGOCard {
         }
     }
 }
+
+

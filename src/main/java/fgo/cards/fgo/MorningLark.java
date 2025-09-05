@@ -6,22 +6,12 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import fgo.action.FgoNpAction;
 import fgo.cards.FGOCard;
-import fgo.characters.CustomEnums.FGOCardColor;
 import fgo.powers.MorningLarkPower;
 import fgo.powers.StarPower;
-import fgo.utils.CardStats;
-
 public class MorningLark extends FGOCard {
     public static final String ID = makeID(MorningLark.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            FGOCardColor.FGO,
-            CardType.SKILL,
-            CardRarity.RARE,
-            CardTarget.SELF,
-            2
-    );
     public MorningLark() {
-        super(ID, INFO);
+        super(ID, 2, CardType.SKILL, CardTarget.SELF, CardRarity.RARE);
         setNP(30, 20);
         setStar(10, 10);
     }
@@ -34,3 +24,5 @@ public class MorningLark extends FGOCard {
 //        addToBot(new ApplyPowerAction(p, p, new DrawReductionPower(p, 1), 1));
     }
 }
+
+

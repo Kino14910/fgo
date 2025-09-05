@@ -16,7 +16,7 @@ public class RayProofKyrielight extends AbsNoblePhantasmCard {
 
     public RayProofKyrielight() {
         super(ID, CardType.ATTACK, CardTarget.ALL_ENEMY);
-        setDamage(20);
+        setDamage(20, 20);
         setMagic(3);
     }
 
@@ -27,11 +27,11 @@ public class RayProofKyrielight extends AbsNoblePhantasmCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAllEnemiesAction(p, damage, DamageInfo.DamageType.HP_LOSS, AbstractGameAction.AttackEffect.SLASH_HEAVY));
         for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
             if (!mo.isDead && !mo.isDying) {
-                addToBot(new ApplyPowerAction(mo, p, new VulnerablePower(mo, magicNumber, false), magicNumber, true, AbstractGameAction.AttackEffect.NONE));
+                addToBot(new ApplyPowerAction(mo, p, new VulnerablePower(mo, magicNumber, false)));
             }
         }
+        addToBot(new DamageAllEnemiesAction(p, damage, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.SLASH_HEAVY));
     }
 }
