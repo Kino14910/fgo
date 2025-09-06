@@ -180,6 +180,7 @@ public class FGOMod implements
         logger.info(modID + " subscribed to BaseMod.");
     }
 
+    private boolean shouldRenderNobleDeck = false;
     @Override
     public void receivePostInitialize() {
         registerPotions();
@@ -198,6 +199,7 @@ public class FGOMod implements
             BaseMod.addMonster(Emiya.ID, Emiya.NAME, () -> new MonsterGroup(new AbstractMonster[]{new Emiya()}));
             BaseMod.addBoss(TheCity.ID, Emiya.ID, "fgo/images/monster/map_emiya.png", "fgo/images/monster/map_emiya_outline.png");
         }
+        shouldRenderNobleDeck = true;
     }
 
             /*----------Localization----------*/
@@ -558,8 +560,11 @@ public class FGOMod implements
         if (isMaster()) {
             NobleDeck.reset();
             NobleDeck.addCards(NobleDeckCards.cards);
-            BaseMod.addTopPanelItem(new NobleDeck());
-            BaseMod.addCustomScreen(new NobleDeckViewScreen());
+            if (shouldRenderNobleDeck) {
+                BaseMod.addTopPanelItem(new NobleDeck());
+                BaseMod.addCustomScreen(new NobleDeckViewScreen());
+                shouldRenderNobleDeck = false;
+            }
         }
     }
 

@@ -23,10 +23,11 @@
     "DESCRIPTION": "When you would die, heal HP instead."
   },
   {
-    "PROPER_NAME": "Evil Curse",
+    "PROPER_NAME": "Curse",
     "NAMES": [
       "evil curse",
-      "evil_curse"
+      "evil_curse",
+      "curse"
     ],
     "DESCRIPTION": "At the start of turn, lose HP equal to the number of Evil Curse."
   },

@@ -20,7 +20,7 @@ public class CursePotion extends BasePotion {
     private static final PotionStrings potionStrings = CardCrawlGame.languagePack.getPotionString(ID);
     public static final Color NOBLE = CardHelper.getColor(255, 215, 0);
     public CursePotion(){
-        super(ID, 0, PotionRarity.UNCOMMON, PotionSize.SPHERE, Color.PURPLE, Color.RED, Color.DARK_GRAY);
+        super(ID, 5, PotionRarity.UNCOMMON, PotionSize.SPHERE, Color.PURPLE, Color.RED, Color.DARK_GRAY);
         this.labOutlineColor = NOBLE;
         this.isThrown = true;
         this.targetRequired = true;

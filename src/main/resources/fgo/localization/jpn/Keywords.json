@@ -27,7 +27,8 @@
     "PROPER_NAME": "诅呪",
     "NAMES": [
       "呪い",
-      "evil curse"
+      "evil curse",
+      "curse"
     ],
     "DESCRIPTION": "呪いを持つ生物はターン開始時に対応する層数分のHPを失います。"
   },

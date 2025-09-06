@@ -1,13 +1,11 @@
 package fgo.powers;
 
+import static fgo.FGOMod.makeID;
+
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.powers.PhantasmalPower;
-import com.megacrit.cardcrawl.powers.StrengthPower;
-
-
-import static fgo.FGOMod.makeID;
 
 public class DeathOfDeathPower extends BasePower {
     public static final String POWER_ID = makeID(DeathOfDeathPower.class.getSimpleName());
@@ -21,7 +19,6 @@ public class DeathOfDeathPower extends BasePower {
     @Override
     public void onSpecificTrigger() {
         addToBot(new ApplyPowerAction(owner, owner, new PhantasmalPower(owner, 1)));
-        addToBot(new ApplyPowerAction(owner, owner, new StrengthPower(owner, -amount)));
         addToBot(new RemoveSpecificPowerAction(owner, owner, ID));
     }
 

@@ -8,8 +8,8 @@
   "${modID}:GutsPower": {
     "NAME": "毅力",
     "DESCRIPTIONS": [
-      "当你要被杀死时，免死并回复 #b%%1$s 点 #y生命 。",
-      "当你接下来 #b%%2$s 次要被杀死时，免死并回复 #b%%1$s 点 #y生命 。"
+      "当你要被杀死时，免死并回复 #b%1$s 点 #y生命 。",
+      "当你接下来 #b%%2$s 次要被杀死时，免死并回复 #b%1$s 点 #y生命 。"
     ]
   },
   "${modID}:UnlimitedPower": {
@@ -45,7 +45,7 @@
   "${modID}:NightlessCharismaPower": {
     "NAME": "不夜的魅力",
     "DESCRIPTIONS": [
-      "在每回合开始时，随机将你抽牌堆中 #b%%1$s 张攻击牌加入你的手牌，并将其 #y升级 。"
+      "在每回合开始时，随机将你抽牌堆中 #b%1$s 张攻击牌加入你的手牌，并将其 #y升级 。"
     ]
   },
   "${modID}:TheOneWhoRevealsTruthPower": {
@@ -76,7 +76,7 @@
   "${modID}:CursePower": {
     "NAME": "诅呪",
     "DESCRIPTIONS": [
-      "在每回合开始时失去 #b%%1$s 点 #y生命 。"
+      "在每回合开始时失去 #b%1$s 点 #y生命 。"
     ]
   },
   "${modID}:GloriousStrikePower": {
@@ -115,7 +115,7 @@
   "${modID}:DeathOfDeathPower": {
     "NAME": "死之渊",
     "DESCRIPTIONS": [
-      "在你 #y毅力 发动时，移除死之渊，并且下一回合造成 #y双倍伤害 。被移除时，你 #r失去 #b%%1$s 点 #y力量 。"
+      "在你 #y毅力 发动时，下一回合造成 #y双倍伤害 。"
     ]
   },
   "${modID}:BriefStrengthPower": {
@@ -133,7 +133,7 @@
   "${modID}:AtTheWellPower": {
     "NAME": "献给世界树的活祭",
     "DESCRIPTIONS": [
-      "在下回合获得 #b%%1$s 层 #y毅力 ，下一次 #y毅力 发动时获得 [E] [E] [E] 并且抽 #b3 张牌，然后 #r死亡 。"
+      "在下回合获得 #b%1$s 层 #y毅力 ，下一次 #y毅力 发动时获得 [E] [E] [E] 并且抽 #b3 张牌，然后 #r死亡 。"
     ]
   },
   "${modID}:GutsAtTheWellPower": {
@@ -202,14 +202,14 @@
   "${modID}:SchwarzwaldFalkePower": {
     "NAME": "黑森之鹰",
     "DESCRIPTIONS": [
-      "在你的下 #b%%1$s 个回合结束时，获得 #b1 次 #y回避 。",
+      "在你的下 #b%1$s 个回合结束时，获得 #b1 次 #y回避 。",
       "在本回合结束时，获得 #b1 次 #y回避 。"
     ]
   },
   "${modID}:MyFairSoldierPower": {
     "NAME": "我美丽的战士",
     "DESCRIPTIONS": [
-      "在你的下一张能力牌被打出时，失去 #b%%1$s 点 #y力量 和 #y敏捷 。"
+      "在你的下一张能力牌被打出时，失去 #b%1$s 点 #y力量 和 #y敏捷 。"
     ]
   },
   "${modID}:DefenseUpPower": {

@@ -27,7 +27,8 @@
     "PROPER_NAME": "詛呪",
     "NAMES": [
       "詛呪",
-      "evil curse"
+      "evil curse",
+      "curse"
     ],
     "DESCRIPTION": "有詛呪的生物在其回合開始時，失去相應層數的生命。"
   },
