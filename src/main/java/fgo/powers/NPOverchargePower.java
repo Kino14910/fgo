@@ -25,7 +25,7 @@ public class NPOverchargePower extends BasePower {
     @Override
     public void updateDescription() {
         if (this.amount == 1) {
-            this.description = DESCRIPTIONS[2];
+            this.description = DESCRIPTIONS[1];
         } else {
             description = String.format(DESCRIPTIONS[0], amount);
         }
@@ -44,7 +44,7 @@ public class NPOverchargePower extends BasePower {
             AbstractDungeon.player.limbo.addToBottom(tmp);
             tmp.current_x = card.current_x;
             tmp.current_y = card.current_y;
-            tmp.target_x = (float) Settings.WIDTH / 2.0F - 300.0F * Settings.scale;
+            tmp.target_x = (float)Settings.WIDTH / 2.0F - 300.0F * Settings.scale;
             tmp.target_y = (float)Settings.HEIGHT / 2.0F;
             if (m != null) {
                 tmp.calculateCardDamage(m);
