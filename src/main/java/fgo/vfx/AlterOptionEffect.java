@@ -55,7 +55,7 @@ public class AlterOptionEffect extends AbstractGameEffect {
         if (!AbstractDungeon.isScreenUp && !AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
             AbstractCard c = AbstractDungeon.gridSelectScreen.selectedCards.get(0);
             // AbstractDungeon.topLevelEffects.add(new ShowCardAndObtainEffect(c, (float)Settings.WIDTH / 2.0F + 190.0F * Settings.scale, (float)Settings.HEIGHT / 2.0F));
-            // NobleDeck.addCard(c.makeCopy());
+            // NobleDeckPanelItem.addCard(c.makeCopy());
             NobleDeckCards.addCard(c.cardID);
             AlterOption.usedIdentify = true;
             AbstractDungeon.gridSelectScreen.selectedCards.clear();

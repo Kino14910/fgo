@@ -198,8 +198,8 @@
     "NAME": "夢の終わり",
     "DESCRIPTION": "{@@}{!Upgrades!|1=固有 。 NL }ターン終了時、ランダムな手札1枚を消耗。 NL 宝具カードの攻撃ダメージ2倍。"
   },
-  "${modID}:AbyssLight": {
-    "NAME": "深淵に光と化して",
+  "${modID}:WitchOfSalem": {
+    "NAME": "セイレムの魔女",
     "DESCRIPTION": "3ターン間、毎ターン10%宝具ゲージ獲得。 NL !M!% 宝具ゲージ獲得。 NL !M!% 宝具威力獲得。",
     "FLAVOR": "領域外生命。"
   },
@@ -321,8 +321,7 @@
   },
   "${modID}:CurtainoftheNight": {
     "NAME": "夜の帳",
-    "DESCRIPTION": "{@@}捨て札から{!M!|1=1|@=!M!}枚を手札に加え強化。",
-    "UPGRADE_DESCRIPTION": "捨て札から !M! 枚を手札に加え強化。"
+    "DESCRIPTION": "{@@}捨て札から{!M!|1=1|@= !M! }枚を手札に加え強化。"
   },
   "${modID}:TeachingsoftheEternal": {
     "NAME": "無限の教え",

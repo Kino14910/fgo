@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -13,7 +12,8 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
 import fgo.cards.noblecards.HollowHeartAlbion;
 import fgo.powers.NoblePhantasmCardPower;
-import fgo.ui.panels.NobleDeck;
+import fgo.ui.panels.NobleDeckCards;
+import fgo.utils.NobleCardGroup;
 
 public class NoblePhantasmSelectAction extends AbstractGameAction {
     private static final String[] NPTEXT = CardCrawlGame.languagePack.getUIString("fgo:NPText").TEXT;
@@ -29,13 +29,17 @@ public class NoblePhantasmSelectAction extends AbstractGameAction {
     public void update() {
         if (this.duration == Settings.ACTION_DUR_MED) {
             // CardGroup group = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
-            CardGroup nobleCardGroup = NobleDeck.nobleCards;
-            if (nobleCardGroup.isEmpty()) {
+            NobleCardGroup nobleCardGroup = new NobleCardGroup();
+            if (NobleDeckCards.nobleCards.group.isEmpty()) {
                 this.isDone = true;
                 return;
             }
 
-            nobleCardGroup.group.forEach(c -> UnlockTracker.markCardAsSeen(c.cardID));
+            for (AbstractCard card : NobleDeckCards.nobleCards.group) {
+                AbstractCard cardCopy = card.makeCopy();
+                nobleCardGroup.addToBottom(cardCopy);
+                UnlockTracker.markCardAsSeen(cardCopy.cardID);
+            }
 
             if (this.upgraded) {
                 nobleCardGroup.group.forEach(AbstractCard::upgrade);

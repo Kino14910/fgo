@@ -20,7 +20,7 @@ import fgo.cards.derivative.mash.VeneratedShieldOfSnowflakes;
 import fgo.cards.derivative.mash.VeneratedWallOfSnowflakes;
 import fgo.cards.derivative.mash.WallOfSnowflakes;
 import fgo.characters.CustomEnums.FGOCardColor;
-import fgo.ui.panels.NobleDeck;
+import fgo.ui.panels.NobleDeckCards;
 
 public class LockChocolateStrawberry extends BaseRelic {
     private static final String NAME = "LockChocolateStrawberry";
@@ -48,7 +48,7 @@ public class LockChocolateStrawberry extends BaseRelic {
             ObtainCardEffect(LockChocolateStrawberry.wall),
             ObtainCardEffect(LockChocolateStrawberry.ObscurantWall)
         );
-        NobleDeck.nobleCards.addCard(LockChocolateStrawberry.camelot);
+        NobleDeckCards.nobleCards.addCard(LockChocolateStrawberry.camelot);
     }
 
     private AbstractGameEffect ObtainCardEffect(FGOCard card) {
@@ -62,7 +62,7 @@ public class LockChocolateStrawberry extends BaseRelic {
 
     // @Override
     // public void onEnterRoom(AbstractRoom room) {
-    //     if (AbstractDungeon.actNum > 1 && AbstractDungeon.floorNum %% 17 == 0) {
+    //     if (AbstractDungeon.actNum > 1 && AbstractDungeon.floorNum % 17 == 0) {
     //         changeNobleCard(LockChocolateStrawberry.lordCamelot, LockChocolateStrawberry.lordChaldeas);
     //         changeNobleCard(LockChocolateStrawberry.camelot, LockChocolateStrawberry.lordCamelot);
     //         changeCard(LockChocolateStrawberry.veneratedWall, LockChocolateStrawberry.veneratedShield);
@@ -92,12 +92,12 @@ public class LockChocolateStrawberry extends BaseRelic {
     }
     private void changeNobleCard(FGOCard oldCard, FGOCard newCard) {
         System.out.println(oldCard + " " + newCard);
-        boolean hasCard = NobleDeck.nobleCards.group.stream()
+        boolean hasCard = NobleDeckCards.nobleCards.group.stream()
             .anyMatch(card -> card.cardID.equals(oldCard.cardID));
         System.out.println(hasCard);
         if (oldCard != null && hasCard) {
-            NobleDeck.nobleCards.group.removeIf(card -> card.cardID.equals(oldCard.cardID));
-            NobleDeck.nobleCards.addCard(newCard);
+            NobleDeckCards.nobleCards.group.removeIf(card -> card.cardID.equals(oldCard.cardID));
+            NobleDeckCards.nobleCards.addCard(newCard);
         }
     }
 }

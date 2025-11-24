@@ -15,6 +15,7 @@ import com.megacrit.cardcrawl.helpers.MathHelper;
 import com.megacrit.cardcrawl.helpers.input.InputHelper;
 import com.megacrit.cardcrawl.localization.TutorialStrings;
 import com.megacrit.cardcrawl.rooms.AbstractRoom.RoomPhase;
+import com.megacrit.cardcrawl.screens.MasterDeckViewScreen;
 import com.megacrit.cardcrawl.screens.mainMenu.ScrollBar;
 import com.megacrit.cardcrawl.screens.mainMenu.ScrollBarListener;
 
@@ -82,6 +83,7 @@ public class NobleDeckViewScreen extends CustomScreen implements ScrollBarListen
     }
 
     private void open(NobleCardGroup nobleCards) {
+        this.reopen();
         // 保存传入的卡组
         this.nobleCards = nobleCards;
 
@@ -112,8 +114,17 @@ public class NobleDeckViewScreen extends CustomScreen implements ScrollBarListen
 
     @Override
     public void reopen() {
-        AbstractDungeon.screen = curScreen();
+        Settings.hideRelics = true;
         AbstractDungeon.isScreenUp = true;
+        AbstractDungeon.screen = curScreen();
+        AbstractDungeon.overlayMenu.showBlackScreen();
+        AbstractDungeon.dynamicBanner.hide(); // Hide banners that get in the way
+        AbstractDungeon.dungeonMapScreen.map.hideInstantly(); // Because the map won't be hidden properly otherwise
+        AbstractDungeon.gridSelectScreen.hide(); // Because this has to be called at least once to prevent softlocks when upgrading cards
+
+        AbstractDungeon.dungeonMapScreen.map.hideInstantly(); // Because the map won't be hidden properly otherwise
+        AbstractDungeon.overlayMenu.cancelButton.show(MasterDeckViewScreen.TEXT[1]);
+    
     }
 
     @Override

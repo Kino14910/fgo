@@ -197,9 +197,10 @@
     "NAME": "End of a Dream",
     "DESCRIPTION": "{@@}{!Upgrades!|1=Innate . NL }Attack deal double damage. NL At the end of this turn, gain fgo:Eternal_Sleep."
   },
-  "${modID}:AbyssLight": {
-    "NAME": "Abyss Light",
-    "DESCRIPTION": "Deal !D! damage. NL Gain !M!% fgo:NP. NL Gain !M!% fgo:NP_Damage.",
+  "${modID}:WitchOfSalem": {
+    "NAME": "Witch of Salem",
+    "DESCRIPTION": "Apply fgo:Terror (!M!%chance) to ALL enemies. NL Gain 3 Vulnerable and Weak. NL Gain fgo:Anti-Terror. NL Gain !NP!% fgo:NP.",
+    "UPGRADE_DESCRIPTION": "Apply fgo:Terror (!M!% chance) to ALL enemies. NL Gain 3 Vulnerable and Weak. NL Gain fgo:Anti-Terror+. NL Gain !NP!% fgo:NP.",
     "FLAVOR": "Life beyond the domain."
   },
   "${modID}:SchwarzwaldFalke": {
@@ -320,8 +321,7 @@
   },
   "${modID}:CurtainoftheNight": {
     "NAME": "Curtain of the Night",
-    "DESCRIPTION": "Put a card from your discard pile into your hand and Upgrade it.",
-    "UPGRADE_DESCRIPTION": "Put !M! cards from your discard pile into your hand and Upgrade them."
+    "DESCRIPTION": "{@@}Put {!M!|1=a|@=!M!} card from your discard pile into your hand and Upgrade it."
   },
   "${modID}:TeachingsoftheEternal": {
     "NAME": "Teachings of the Eternal",
@@ -672,7 +672,7 @@
   },
   "${modID}:Desterrennacht": {
     "NAME": "De sterrennacht",
-    "DESCRIPTION": "Apply !M! fgo:Terror to ALL enemies. NL Gain 2 Strength and 50% fgo:Critical. NL Gain 10 fgo:Stars each turn."
+    "DESCRIPTION": "Apply 3 fgo:Terror (30% chance) to ALL enemies. NL Gain !M! Strength and 50% fgo:Critical. NL Gain 10 fgo:Stars each turn."
   },
   "${modID}:LaPucelle": {
     "NAME": "La Pucelle",

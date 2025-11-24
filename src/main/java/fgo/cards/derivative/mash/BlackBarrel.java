@@ -24,7 +24,7 @@ public class BlackBarrel extends FGOCard {
     );
     public BlackBarrel() {
         super(ID, INFO);
-        setDamage(6, 6);
+        setDamage(9, 3);
         setExhaust();
     }
 

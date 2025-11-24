@@ -5,12 +5,11 @@
       "You are Very Cool and Strong."
     ]
   },
-
   "${modID}:GutsPower": {
     "NAME": "Guts",
     "DESCRIPTIONS": [
-      "When you would die, heal #b%%1$s HP instead.",
-      "When you would next #b%%2$s dies, heal #b%%1$s HP instead."
+      "When you would die, heal #b%1$s HP instead.",
+      "When you would next #b%2$s dies, heal #b%1$s HP instead."
     ]
   },
   "${modID}:UnlimitedPower": {
@@ -46,7 +45,7 @@
   "${modID}:NightlessCharismaPower": {
     "NAME": "Nightless Charisma",
     "DESCRIPTIONS": [
-      "At the start of your turn, put #b%%1$s random Attacks from your draw pile into your hand and Upgrade it."
+      "At the start of your turn, put #b%1$s random Attacks from your draw pile into your hand and Upgrade it."
     ]
   },
   "${modID}:TheOneWhoRevealsTruthPower": {
@@ -77,7 +76,7 @@
   "${modID}:CursePower": {
     "NAME": "Evil Curse",
     "DESCRIPTIONS": [
-      "At the start of turn, lose #b%%1$s #yHP."
+      "At the start of turn, lose #b%1$s #yHP."
     ]
   },
   "${modID}:GloriousStrikePower": {
@@ -121,7 +120,7 @@
   "${modID}:DeathOfDeathPower": {
     "NAME": "Abyss of Death",
     "DESCRIPTIONS": [
-      "When you would next die, heal #b%%1$s HP instead and deal #yDouble #yDamage next turn."
+      "When you would next die, heal #b%1$s HP instead and deal #yDouble #yDamage next turn."
     ]
   },
   "${modID}:BriefStrengthPower": {
@@ -139,7 +138,7 @@
   "${modID}:AtTheWellPower": {
     "NAME": "Sacrifice For Yggdrasil",
     "DESCRIPTIONS": [
-      "Next turn, gain #b%%1$s #yGuts, the next time you trigger #yGuts draw #b3 cards and gain [E] [E] [E] . #rDie next turn."
+      "Next turn, gain #b%1$s #yGuts, the next time you trigger #yGuts draw #b3 cards and gain [E] [E] [E] . #rDie next turn."
     ]
   },
   "${modID}:GutsAtTheWellPower": {
@@ -208,14 +207,14 @@
   "${modID}:SchwarzwaldFalkePower": {
     "NAME": "Schwarzwald Falke",
     "DESCRIPTIONS": [
-      "Gain #b1 #yEvasion at the end of your next #b%%1$s turns.",
+      "Gain #b1 #yEvasion at the end of your next #b%1$s turns.",
       "Gain #b1 #yEvasion at the end of your turn."
     ]
   },
   "${modID}:MyFairSoldierPower": {
     "NAME": "My Fair Soldier",
     "DESCRIPTIONS": [
-      "Whenever you play a Power card, lose #b%%1$s #yStrength and #yDexterity."
+      "Whenever you play a Power card, lose #b%1$s #yStrength and #yDexterity."
     ]
   },
   "${modID}:DefenseUpPower": {
@@ -325,7 +324,7 @@
   "${modID}:NPDamagePower": {
     "NAME": "NP Damage",
     "DESCRIPTIONS": [
-      "Increases Noble Phantasm attack damage by #b%d %%."
+      "Increases Noble Phantasm attack damage by #b%d %."
     ]
   },
   "${modID}:MillenniumCastlePower": {
@@ -369,8 +368,8 @@
   "${modID}:ItsInevitablePower": {
     "NAME": "It's Inevitable",
     "DESCRIPTIONS": [
-      "At the start of next turn, deal #b%%1$s damage to ALL enemies.",
-      "At the start of next #b%%1$s turn(s), deal #b%%2$s damage to ALL enemies and increase #b%%3$s damage."
+      "At the start of next turn, deal #b%1$s damage to ALL enemies.",
+      "At the start of next #b%1$s turn(s), deal #b%2$s damage to ALL enemies and increase #b%3$s damage."
     ]
   },
   "${modID}:ManaBurstGemsPower": {
@@ -388,7 +387,7 @@
   "${modID}:NoblePhantasmCardPower": {
     "NAME": "Noble Phantasm Card",
     "DESCRIPTIONS": [
-      "Whenever your NP gauge is at or above #b100%%, add a ",
+      "Whenever your NP gauge is at or above #b100%, add a ",
       " into your hand."
     ]
   },
@@ -440,7 +439,7 @@
   "${modID}:CriticalDamageUpPower": {
     "NAME": "Critical Damage",
     "DESCRIPTIONS": [
-      "Increases #yCritical Damage by #b%d %%."
+      "Increases #yCritical Damage by #b%d %."
     ]
   },
   "${modID}:LoseCritDamagePower": {
@@ -461,11 +460,10 @@
       "Prevent the next time is at or below #b%d you would lose HP."
     ]
   },
-  "${modID}:DesterrennachtPower": {
+  "${modID}:TerrorPower": {
     "NAME": "Terror",
     "DESCRIPTIONS": [
-      "At the start of #b%d turns, it is #yStunned.",
-      "It is #yStunned at the start of this turn."
+      "Has a #b%d%% chance to be #yStunned for 1 turn. Lasts #b%d turns."
     ]
   },
   "${modID}:GoddessMetamorphosisBeastPower": {
@@ -514,6 +512,12 @@
     "NAME": "Ignores Invincibility",
     "DESCRIPTIONS": [
       "Next attack card deal #b%d times damage。"
+    ]
+  },
+  "${modID}:VSTerrorDamageUpPower": {
+    "NAME": "vs. Terror Damage +",
+    "DESCRIPTIONS": [
+      "You deal #b%d%% more damage to enemies with Terror this turn."
     ]
   }
 }

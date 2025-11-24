@@ -19,7 +19,7 @@ public class LordChaldeas extends AbsNoblePhantasmCard {
         super(ID, CardType.POWER, CardTarget.SELF);
         setMagic(30, 20);
         setBlock(5, 5);
-        cardsToPreview = new TimewornBulletKindling();
+        cardsToPreview = new RayProofKyrielight();
     }
 
     @Override
@@ -29,6 +29,6 @@ public class LordChaldeas extends AbsNoblePhantasmCard {
         addToBot(new ApplyPowerAction(p, p, new ArtifactPower(p, 1)));
         addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, 3)));
         addToBot(new ApplyPowerAction(p, p, new NPDamagePower(50)));
-        addToBot(new MakeTempCardInDiscardAction(cardsToPreview, 1));
+        addToBot(new MakeTempCardInDiscardAction(new TimewornBulletKindling(), 1));
     }
 }

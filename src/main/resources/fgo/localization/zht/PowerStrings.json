@@ -8,8 +8,8 @@
   "${modID}:GutsPower": {
     "NAME": "毅力",
     "DESCRIPTIONS": [
-      "當你要被殺死時，免死並回復 #b%%1$s 點 #y生命 。",
-      "當你接下來 #b%%2$s 次要被殺死時，免死並回復 #b%%1$s 點 #y生命 。"
+      "當你要被殺死時，免死並回復 #b%1$s 點 #y生命 。",
+      "當你接下來 #b%2$s 次要被殺死時，免死並回復 #b%1$s 點 #y生命 。"
     ]
   },
   "${modID}:UnlimitedPower": {
@@ -45,7 +45,7 @@
   "${modID}:NightlessCharismaPower": {
     "NAME": "不夜的魅力",
     "DESCRIPTIONS": [
-      "在每回合開始時，隨機將你抽牌堆中 #b%%1$s 張攻擊牌加入你的手牌，並將其 #y升級 。"
+      "在每回合開始時，隨機將你抽牌堆中 #b%1$s 張攻擊牌加入你的手牌，並將其 #y升級 。"
     ]
   },
   "${modID}:TheOneWhoRevealsTruthPower": {
@@ -76,7 +76,7 @@
   "${modID}:CursePower": {
     "NAME": "詛呪",
     "DESCRIPTIONS": [
-      "在每回合開始時失去 #b%%1$s 點 #y生命 。"
+      "在每回合開始時失去 #b%1$s 點 #y生命 。"
     ]
   },
   "${modID}:GloriousStrikePower": {
@@ -114,7 +114,7 @@
   "${modID}:DeathOfDeathPower": {
     "NAME": "死之淵",
     "DESCRIPTIONS": [
-      "在你 #y毅力 發動時，移除死之淵，並且下一回合造成 #y雙倍傷害 。被移除時，你 #r失去 #b%%1$s 點 #y力量 。"
+      "在你 #y毅力 發動時，移除死之淵，並且下一回合造成 #y雙倍傷害 。被移除時，你 #r失去 #b%1$s 點 #y力量 。"
     ]
   },
   "${modID}:BriefStrengthPower": {
@@ -132,7 +132,7 @@
   "${modID}:AtTheWellPower": {
     "NAME": "獻給世界樹的活祭",
     "DESCRIPTIONS": [
-      "在下回合獲得 #b%%1$s 層 #y毅力 ，下一次 #y毅力 發動時獲得 [E] [E] [E] 並且抽 #b3 張牌，然後 #r死亡 。"
+      "在下回合獲得 #b%1$s 層 #y毅力 ，下一次 #y毅力 發動時獲得 [E] [E] [E] 並且抽 #b3 張牌，然後 #r死亡 。"
     ]
   },
   "${modID}:GutsAtTheWellPower": {
@@ -201,14 +201,14 @@
   "${modID}:SchwarzwaldFalkePower": {
     "NAME": "黑森之鷹",
     "DESCRIPTIONS": [
-      "在你的下 #b%%1$s 個回合結束時，獲得 #b1 次 #y回避 。",
+      "在你的下 #b%1$s 個回合結束時，獲得 #b1 次 #y回避 。",
       "在本回合結束時，獲得 #b1 次 #y回避 。"
     ]
   },
   "${modID}:MyFairSoldierPower": {
     "NAME": "我美麗的戰士",
     "DESCRIPTIONS": [
-      "在你的下一張能力牌被打出時，失去 #b%%1$s 點 #y力量 和 #y敏捷 。"
+      "在你的下一張能力牌被打出時，失去 #b%1$s 點 #y力量 和 #y敏捷 。"
     ]
   },
   "${modID}:DefenseUpPower": {
@@ -375,8 +375,8 @@
   "${modID}:ItsInevitablePower": {
     "NAME": "無可奈何",
     "DESCRIPTIONS": [
-      "在下一回合開始時，對所有敵人造成 #b%%1$s 點傷害。",
-      "對所有敵人造成 #b%%2$s 點傷害，然後將傷害增加 #b%%3$s 點。"
+      "在下一回合開始時，對所有敵人造成 #b%1$s 點傷害。",
+      "對所有敵人造成 #b%2$s 點傷害，然後將傷害增加 #b%3$s 點。"
     ]
   },
   "${modID}:ManaBurstGemsPower": {
@@ -467,11 +467,10 @@
       "阻止下一次受到的等於或低於 #b%d 點的生命值損傷。"
     ]
   },
-  "${modID}:DesterrennachtPower": {
+  "${modID}:TerrorPower": {
     "NAME": "恐怖",
     "DESCRIPTIONS": [
-      "在 #b%d 回合開始後其 #y無法行動 一回合。",
-      "在本回合其 #y無法行動 一回合。"
+      "有 #b%d 機率 #y無法行動 一回合。持續時間 #b%d 回合。"
     ]
   },
   "${modID}:GoddessMetamorphosisBeastPower": {
@@ -520,6 +519,18 @@
     "NAME": "無敵貫通",
     "DESCRIPTIONS": [
       "下一張攻擊牌造成 #b%d 倍傷害。"
+    ]
+  },
+  "${modID}:VSTerrorDamageUpPower": {
+    "NAME": "對恐怖特攻",
+    "DESCRIPTIONS": [
+      "你在這個回合內對有恐怖的敵人額外造成 #b%d%傷害。"
+    ]
+  },
+  "${modID}:VSTerrorDamageUpPlusPower": {
+    "NAME": "對恐怖特攻2",
+    "DESCRIPTIONS": [
+      "你在這個回合內對有恐怖的敵人額外造成 #b%d%傷害。"
     ]
   }
 }

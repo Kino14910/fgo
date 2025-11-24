@@ -32,7 +32,7 @@ public class StarPower extends BasePower {
 
     @Override
     public float atDamageGive(float damage, DamageInfo.DamageType type, AbstractCard card) {
-        //如果你有20颗暴击星时，使用翡翠的魅力时，暴击威力提高50%%。
+        //如果你有20颗暴击星时，使用翡翠的魅力时，暴击威力提高50%。
         if (card.cardID.equals("fgo:CharismaOfTheJade") && amount >= 20) {
             return finalDamage(damage, type, 3.0F);
         }
@@ -57,21 +57,20 @@ public class StarPower extends BasePower {
 
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        //在你打出攻击牌时，且有10颗以上暴击星，且不是宝具牌。
-        if (card.type == AbstractCard.CardType.ATTACK && amount >= 10 && card.color != FGOCardColor.NOBLE_PHANTASM) {
-            if (owner.hasPower(CrossingArcadiaPower.POWER_ID)) {
-                return;
-            }
-            addToBot(new ReducePowerAction(owner, owner, ID, card.cardID.equals("fgo:CharismaOfTheJade") && amount >= 20 ? 20 : 10));
-
-            //在有十二辉剑时，有卡牌暴击时获得一层十二辉剑效果。
-            if (owner.hasPower(HeroicKingPower.POWER_ID)) {
-                addToBot(new ApplyPowerAction(owner, owner, new HeroicKingPower(owner, 1), 1));
-            }
-            if (owner.hasPower(LoseCritDamagePower.POWER_ID)) {
-                addToBot(new RemoveSpecificPowerAction(owner, owner, LoseCritDamagePower.POWER_ID));
-            }
+        //在你打出攻击牌时，且有10颗以上暴击星，且不是宝具牌并没有使用越过阿卡迪亚。
+        if (card.type != AbstractCard.CardType.ATTACK || amount < 10 || card.color == FGOCardColor.NOBLE_PHANTASM || owner.hasPower(CrossingArcadiaPower.POWER_ID))
+            return;
+        
+        //在有十二辉剑时，有卡牌暴击时获得一层十二辉剑效果。
+        if (owner.hasPower(HeroicKingPower.POWER_ID)) {
+            addToBot(new ApplyPowerAction(owner, owner, new HeroicKingPower(owner, 1), 1));
         }
+        if (owner.hasPower(LoseCritDamagePower.POWER_ID)) {
+            addToBot(new RemoveSpecificPowerAction(owner, owner, LoseCritDamagePower.POWER_ID));
+        }
+
+        addToBot(new ReducePowerAction(owner, owner, ID, card.cardID.equals("fgo:CharismaOfTheJade") && amount >= 20 ? 20 : 10));
+
     }
 
 

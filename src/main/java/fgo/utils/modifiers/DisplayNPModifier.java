@@ -20,7 +20,7 @@ public class DisplayNPModifier extends AbstractCardModifier {
 
     @Override
     public void onRender(AbstractCard card, SpriteBatch sb) {
-        ExtraIcons.renderIcon(card, tex, 0, 0, Color.WHITE, "+" + amount + "%% NP", FontHelper.cardTypeFont, 0, 0, Color.WHITE);
+        ExtraIcons.renderIcon(card, tex, 0, 0, Color.WHITE, "+" + amount + "% NP", FontHelper.cardTypeFont, 0, 0, Color.WHITE);
     }
 
     @Override

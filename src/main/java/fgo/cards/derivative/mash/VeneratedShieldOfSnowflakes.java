@@ -9,11 +9,14 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 
 import fgo.action.FgoNpAction;
 import fgo.cards.FGOCard;
 import fgo.characters.CustomEnums.FGOCardColor;
 import fgo.powers.AntiPurgeDefensePower;
+import fgo.powers.CriticalDamageUpPower;
+import fgo.powers.ReducePercentDamagePower;
 import fgo.utils.CardStats;
 
 public class VeneratedShieldOfSnowflakes extends FGOCard {
@@ -38,7 +41,7 @@ public class VeneratedShieldOfSnowflakes extends FGOCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ReducePercentDamagePower(magicNumber))
+        addToBot(new ApplyPowerAction(p, p, new ReducePercentDamagePower(p, magicNumber)));
         addToBot(new FgoNpAction(np));
         addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, 3)));
         addToBot(new ApplyPowerAction(p, p, new CriticalDamageUpPower(p, 30)));

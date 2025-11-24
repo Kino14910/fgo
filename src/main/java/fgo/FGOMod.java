@@ -74,7 +74,7 @@ import basemod.interfaces.PostCreateStartingDeckSubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
 import basemod.interfaces.StartGameSubscriber;
 import fgo.action.FgoNpAction;
-import fgo.cards.BaseCard;
+import fgo.cards.FGOCard;
 import fgo.characters.CustomEnums.FGOCardColor;
 import fgo.characters.Master;
 import fgo.event.Beyondthe;
@@ -88,9 +88,9 @@ import fgo.powers.NPRatePower;
 import fgo.relics.BaseRelic;
 import fgo.relics.LockChocolateStrawberry;
 import fgo.relics.SuitcaseFgo;
+import fgo.ui.panelitems.NobleDeckPanelItem;
 import fgo.ui.panels.CommandSpellPanel;
 import fgo.ui.panels.FGOConfig;
-import fgo.ui.panels.NobleDeck;
 import fgo.ui.panels.NobleDeckCards;
 import fgo.ui.panels.NobleDeckViewScreen;
 import fgo.utils.GeneralUtils;
@@ -433,7 +433,7 @@ public class FGOMod implements
     public void receiveEditCards() { //somewhere in the class
         AutoAdd autoAdd = new AutoAdd(modID);
         //Loads files from this mod
-        autoAdd.packageFilter(BaseCard.class) //In the same package as this class
+        autoAdd.packageFilter(FGOCard.class) //In the same package as this class
                 .notPackageFilter("fgo.cards.optionCards")
                 .notPackageFilter("fgo.cards.deprecated");
 
@@ -558,10 +558,10 @@ public class FGOMod implements
     @Override
     public void receiveStartGame() {
         if (isMaster()) {
-            NobleDeck.reset();
-            NobleDeck.addCards(NobleDeckCards.cards);
+            NobleDeckCards.getNobleCards().clear();
+            NobleDeckCards.addCards(NobleDeckCards.cards);
             if (shouldRenderNobleDeck) {
-                BaseMod.addTopPanelItem(new NobleDeck());
+                BaseMod.addTopPanelItem(new NobleDeckPanelItem());
                 BaseMod.addCustomScreen(new NobleDeckViewScreen());
                 shouldRenderNobleDeck = false;
             }

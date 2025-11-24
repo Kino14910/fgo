@@ -6,13 +6,5 @@
       " cards.",
       " NL #yEvoke: Deal #b%d damage to all enemies."
     ]
-  },
-  "${modID}:NoblePhantasmButton": {
-    "NAME": "寶具解放",
-    "DESCRIPTION": [
-      "在你有等於或高於 #b100%% 寶具值時，點擊可以選擇一張寶具牌加入你的手牌，並且 #r清空 你的寶具值。 NL NL ",
-      "當寶具值達到 #b200%% 時，額外 #y升級 可以選擇的寶具牌。 NL ",
-      "當寶具值達到 #b300%% 時，獲得的寶具牌變爲兩張。"
-    ]
   }
 }

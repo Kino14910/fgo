@@ -197,9 +197,10 @@
     "NAME": "梦之终结",
     "DESCRIPTION": "{@@}{!Upgrades!|1=固有 。 NL }在你的回合结束时， 消耗 一张随机手牌。 NL fgo:宝具牌 攻击伤害翻倍。"
   },
-  "${modID}:AbyssLight": {
-    "NAME": "于深渊化作光",
-    "DESCRIPTION": "在接下来3回合，获得 10 % fgo:宝具值 。 NL 获得 !M! % fgo:宝具值 。 NL 获得 !M! % fgo:宝具威力 。",
+  "${modID}:WitchOfSalem": {
+    "NAME": "塞勒姆的魔女",
+    "DESCRIPTION": "获得 3 层 脆弱 和 虚弱 。 NL 给予所有敌人 fgo:恐怖 ( !M! %概率)。 NL 获得 fgo:对恐怖特攻 。 NL 获得 !NP! % fgo:宝具值 。",
+    "UPGRADE_DESCRIPTION": "获得 3 层 脆弱 和 虚弱 。 NL 给予所有敌人 fgo:恐怖 ( !M! %概率)。 NL 获得 fgo:对恐怖特攻+ 。 NL 获得 !NP! % fgo:宝具值 。",
     "FLAVOR": "领域外生命。"
   },
   "${modID}:SchwarzwaldFalke": {
@@ -320,8 +321,7 @@
   },
   "${modID}:CurtainoftheNight": {
     "NAME": "夜之帷幕",
-    "DESCRIPTION": "{@@}将弃牌堆中的{!M!|1=一|@= !M! }张牌放入你的手牌，并将这张牌 升级 。",
-    "UPGRADE_DESCRIPTION": "将弃牌堆中的 !M! 张牌放入你的手牌，并将这些牌 升级 。"
+    "DESCRIPTION": "{@@}将弃牌堆中的{!M!|1=一|@= !M! }张牌放入你的手牌，并将这张牌 升级 。"
   },
   "${modID}:TeachingsoftheEternal": {
     "NAME": "无穷的教诲",
@@ -676,7 +676,7 @@
   },
   "${modID}:Desterrennacht": {
     "NAME": "星月夜",
-    "DESCRIPTION": "给予所有敌人3层 fgo:恐怖 。 NL 获得 !M! 点 力量 和50% fgo:暴击威力 。 NL 每回合获得10颗 fgo:暴击星 。"
+    "DESCRIPTION": "给予所有敌人3层 fgo:恐怖 (60%概率)。 NL 获得 !M! 点 力量 和50% fgo:暴击威力 。 NL 每回合获得10颗 fgo:暴击星 。"
   },
   "${modID}:LaPucelle": {
     "NAME": "红莲圣女",

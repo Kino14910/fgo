@@ -30,7 +30,7 @@ public class FgoNpAction extends AbstractGameAction {
         }
 
         if (this.canText) {
-            String text = "NP" + (this.amount > 0 ? "+" : "") + this.amount + "%%";
+            String text = "NP" + (this.amount > 0 ? "+" : "") + this.amount + "%";
             AbstractDungeon.effectList.add(new TextAboveCreatureEffect(
             AbstractDungeon.player.hb.cX - AbstractDungeon.player.animX,
             AbstractDungeon.player.hb.cY + AbstractDungeon.player.hb.height / 2.0F,

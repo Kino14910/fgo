@@ -189,7 +189,7 @@
     "NAME": "꿈의 끝",
     "DESCRIPTION": "{@@}{!Upgrades!|1=고유 。 NL }턴 종료 시, 무작위 핸드 1장을 소멸시킵니다. NL 보구 카드의 공격 피해 2배."
   },
-  "${modID}:AbyssLight": {
+  "${modID}:WitchOfSalem": {
     "NAME": "심연에 빛이 되어",
     "DESCRIPTION": "3턴 동안, 매턴 10% 보구 게이지 획득. NL !M!% 보구 게이지 획득. NL !M!% 보구 위력 획득.",
     "FLAVOR": "영역 외 생명."
@@ -312,8 +312,7 @@
   },
   "${modID}:CurtainoftheNight": {
     "NAME": "밤의 장막",
-    "DESCRIPTION": "{@@}버린 카드 더미에서{!M!|1=1장|@=!M!장}을 핸드에 추가하고 강화합니다.",
-    "UPGRADE_DESCRIPTION": "버린 카드 더미에서 !M! 장을 핸드에 추가하고 강화합니다."
+    "DESCRIPTION": "{@@}버린 카드 더미에서{!M!|1=1장|@= !M! 장}을 핸드에 추가하고 강화합니다."
   },
   "${modID}:TeachingsoftheEternal": {
     "NAME": "무한의 가르침",
@@ -632,7 +631,6 @@
     "NAME": "약속된 승리의 검",
     "DESCRIPTION": "모든 적에게 !D! 피해. NL !NP!% 보구 게이지 획득."
   },
-
   "${modID}:Camelot": {
     "NAME": "이상향",
     "DESCRIPTION": "!B! 블록 획득. NL 근력 2 획득. NL 턴 종료 시 !M! 블록 획득.",
@@ -656,7 +654,6 @@
       "!NP!% #y보구 게이지 획득."
     ]
   },
-
   "${modID}:EnferChateaudIf": {
     "NAME": "호랑이여, 환하게 타올라라",
     "DESCRIPTION": "*날개의 신발 미소지 시, *날개의 신발 획득.",

@@ -4,11 +4,11 @@ import java.util.Iterator;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
 
-import fgo.ui.panels.NobleDeck;
+import fgo.ui.panels.NobleDeckCards;
 
 public class NobleCardHelper {
     public static boolean hasCardWithID(String targetID) {
-        Iterator var1 = NobleDeck.nobleCards.group.iterator();
+        Iterator var1 = NobleDeckCards.nobleCards.group.iterator();
 
         AbstractCard c;
         do {

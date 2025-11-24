@@ -11,31 +11,23 @@ public class ItsInevitablePower extends BasePower {
     public static final String POWER_ID = makeID(ItsInevitablePower.class.getSimpleName());
     private static final PowerType TYPE = PowerType.BUFF;
     private static final boolean TURN_BASED = false;
-    private int boost;
 
     public ItsInevitablePower(AbstractCreature owner, int amount, int boost) {
         super(POWER_ID, TYPE, TURN_BASED, owner, amount, "BurningPower");
-        this.boost = boost;
-        this.amount2 = boost;
+        this.amount2 += boost;
         updateDescription();
     }
 
     @Override
     public void updateDescription() {
-        if (boost == 0) {
-            description = String.format(DESCRIPTIONS[0], amount);
-        } else {
-            description = String.format(DESCRIPTIONS[1], amount, boost);
-        }
+        description = String.format(DESCRIPTIONS[0], amount, amount2);
     }
 
     @Override
     public void atStartOfTurn() {
         flash();
-        addToBot(new DamageAllEnemiesAction(owner, DamageInfo.createDamageMatrix(amount, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
-        amount += boost;
-        amount2 = boost;
-        // addToBot(new ReducePowerAction(owner, owner, ID, 1));
+        amount += amount2;
+        addToBot(new DamageAllEnemiesAction(owner, DamageInfo.createDamageMatrix(amount, true), DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.FIRE));
         updateDescription();
     }
 

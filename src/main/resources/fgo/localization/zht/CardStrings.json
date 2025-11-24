@@ -194,8 +194,8 @@
     "NAME": "夢之終結",
     "DESCRIPTION": "{@@}{!Upgrades!|1=固有 。 NL }在你的回合結束時， 消耗 一張隨機手牌。 NL fgo:寶具牌 攻擊傷害翻倍。"
   },
-  "${modID}:AbyssLight": {
-    "NAME": "於深淵化作光",
+  "${modID}:WitchOfSalem": {
+    "NAME": "塞勒姆的魔女",
     "DESCRIPTION": "在接下來3回合，獲得 10 % fgo:寶具值 。 NL 獲得 !M! % fgo:寶具值 。 NL 獲得 !M! % fgo:寶具威力 。",
     "FLAVOR": "領域外生命。"
   },
@@ -317,8 +317,7 @@
   },
   "${modID}:CurtainoftheNight": {
     "NAME": "夜之帷幕",
-    "DESCRIPTION": "{@@}將棄牌堆中的{!M!|1=一|@= !M! }張牌放入你的手牌，並將這張牌 升級 。",
-    "UPGRADE_DESCRIPTION": "將棄牌堆中的 !M! 張牌放入你的手牌，並將這些牌 升級 。"
+    "DESCRIPTION": "{@@}將棄牌堆中的{!M!|1=一|@= !M! }張牌放入你的手牌，並將這張牌 升級 。"
   },
   "${modID}:TeachingsoftheEternal": {
     "NAME": "無窮的教誨",

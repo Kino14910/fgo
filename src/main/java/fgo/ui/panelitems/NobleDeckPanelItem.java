@@ -1,50 +1,47 @@
-package fgo.ui.panels;
+package fgo.ui.panelitems;
 
 import static fgo.FGOMod.makeID;
 
-import java.util.ArrayList;
-
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.localization.TutorialStrings;
 
 import basemod.BaseMod;
 import basemod.TopPanelItem;
-import fgo.characters.CustomEnums.FGOCardColor;
 import fgo.characters.Master;
+import fgo.ui.panels.NobleDeckCards;
+import fgo.ui.panels.NobleDeckViewScreen;
 import fgo.utils.FGOInputActionSet;
-import fgo.utils.NobleCardGroup;
 
-public class NobleDeck extends TopPanelItem {
+public class NobleDeckPanelItem extends TopPanelItem {
     private static final Texture IMG = new Texture("fgo/images/ui/NobleTopPanel.png");
-    public static final String ID = makeID(NobleDeck.class.getSimpleName());
-    public static NobleCardGroup nobleCards = new NobleCardGroup();
+    public static final String ID = makeID(NobleDeckPanelItem.class.getSimpleName());
     private static final String[] NPTEXT = CardCrawlGame.languagePack.getUIString("fgo:NPText").TEXT;
-    private static final TutorialStrings tutorialStrings = CardCrawlGame.languagePack.getTutorialString(makeID(NobleDeck.class.getSimpleName()));
-    public static final String[] TEXT = NobleDeck.tutorialStrings.TEXT;
+    private static final TutorialStrings tutorialStrings = CardCrawlGame.languagePack.getTutorialString(makeID(NobleDeckPanelItem.class.getSimpleName()));
+    public static final String[] TEXT = NobleDeckPanelItem.tutorialStrings.TEXT;
     public static final String LABEL = TEXT[0];
     public static final String MSG = TEXT[1];
-    public NobleDeck() {
+    public NobleDeckPanelItem() {
         super(IMG, ID);
     }
 
     @Override
     public void update() {
-        super.update();
-        if (FGOInputActionSet.nobleDeckAction.isJustPressed()) {
-            this.onClick();
+        if (AbstractDungeon.screen != AbstractDungeon.CurrentScreen.FTUE) {
+            super.update();
+            if (FGOInputActionSet.nobleDeckAction.isJustPressed()) {
+                this.onClick();
+            }
         }
     }
 
     @Override
     protected void onClick() {
-        if (nobleCards.isEmpty()) {
+        if (NobleDeckCards.getNobleCards().isEmpty()) {
             return;
         }
 
@@ -60,7 +57,7 @@ public class NobleDeck extends TopPanelItem {
         }
 
         if (!AbstractDungeon.isScreenUp) {
-            BaseMod.openCustomScreen(NobleDeckViewScreen.Enum.Noble_Phantasm, nobleCards);
+            BaseMod.openCustomScreen(NobleDeckViewScreen.Enum.Noble_Phantasm, NobleDeckCards.getNobleCards());
             return;
         }
 
@@ -124,11 +121,11 @@ public class NobleDeck extends TopPanelItem {
                 break;
         }
 
-        BaseMod.openCustomScreen(NobleDeckViewScreen.Enum.Noble_Phantasm, nobleCards);
+        BaseMod.openCustomScreen(NobleDeckViewScreen.Enum.Noble_Phantasm, NobleDeckCards.getNobleCards());
 
 
         // // 标记卡牌为已见
-        // nobleCards.group.forEach(c -> UnlockTracker.markCardAsSeen(c.cardID));
+        // NobleDeckCards.getNobleCards().group.forEach(c -> UnlockTracker.markCardAsSeen(c.cardID));
     }
 
     @Override
@@ -144,28 +141,5 @@ public class NobleDeck extends TopPanelItem {
         if (AbstractDungeon.player instanceof Master) {
             super.render(sb);
         }
-    }
-    
-    public static void addCard(AbstractCard card) {
-        if (card.color == FGOCardColor.NOBLE_PHANTASM) {
-            nobleCards.addToTop(card);
-        }
-    }
-
-    public static void addCardById(String cardId) {
-        AbstractCard card = CardLibrary.getCopy(cardId);
-        if (card != null && card.color == FGOCardColor.NOBLE_PHANTASM) {
-            nobleCards.addToTop(card);
-        }
-    }
-
-    public static void addCards(ArrayList<String> cards) {
-        for (String cardId : cards) {
-            addCardById(cardId);
-        }
-    }
-
-    public static void reset() {
-        nobleCards.clear();
     }
 }

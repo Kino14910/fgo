@@ -27,7 +27,7 @@ public class WallOfSnowflakes extends FGOCard {
     );
     public WallOfSnowflakes() {
         super(ID, INFO);
-        setBlock(10, 10);
+        setBlock(15, 5);
         FlavorText.AbstractCardFlavorFields.textColor.set(this, Color.GOLD);
         FlavorText.AbstractCardFlavorFields.flavorBoxType.set(this, FlavorText.boxType.TRADITIONAL);
     }

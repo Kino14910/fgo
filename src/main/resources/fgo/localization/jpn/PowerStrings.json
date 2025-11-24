@@ -8,8 +8,8 @@
   "${modID}:GutsPower": {
     "NAME": "戦闘続行",
     "DESCRIPTIONS": [
-      "死亡する際、耐えて #b%%1$s 点の #yHP を回復。",
-      "次に #b%%2$s 回死亡する際、耐えて #b%%1$s 点の #yHP を回復。"
+      "死亡する際、耐えて #b%1$s 点の #yHP を回復。",
+      "次に #b%2$s 回死亡する際、耐えて #b%1$s 点の #yHP を回復。"
     ]
   },
   "${modID}:UnlimitedPower": {
@@ -45,7 +45,7 @@
   "${modID}:NightlessCharismaPower": {
     "NAME": "不夜のカリスマ",
     "DESCRIPTIONS": [
-      "ターン開始時、抽選山札からランダムな攻撃カード #b%%1$s 枚を手札に加え #y強化。"
+      "ターン開始時、抽選山札からランダムな攻撃カード #b%1$s 枚を手札に加え #y強化。"
     ]
   },
   "${modID}:TheOneWhoRevealsTruthPower": {
@@ -76,7 +76,7 @@
   "${modID}:CursePower": {
     "NAME": "呪い",
     "DESCRIPTIONS": [
-      "ターン開始時に #b%%1$s 点の #yHP を失う。"
+      "ターン開始時に #b%1$s 点の #yHP を失う。"
     ]
   },
   "${modID}:GloriousStrikePower": {
@@ -114,7 +114,7 @@
   "${modID}:DeathOfDeathPower": {
     "NAME": "死の淵",
     "DESCRIPTIONS": [
-      "#y戦闘続行 発動時、死の淵を解除し次ターンのダメージが #y2倍 になる。解除時、 #r#b%%1$s 点の #y筋力 を失う。"
+      "#y戦闘続行 発動時、死の淵を解除し次ターンのダメージが #y2倍 になる。解除時、 #r#b%1$s 点の #y筋力 を失う。"
     ]
   },
   "${modID}:BriefStrengthPower": {
@@ -132,7 +132,7 @@
   "${modID}:AtTheWellPower": {
     "NAME": "世界樹への生贄",
     "DESCRIPTIONS": [
-      "次ターンに #b%%1$s 層の #y戦闘続行 を獲得。次に #y戦闘続行 が発動した時 [E] [E] [E] とカード3枚を引き、その後 #r死亡。"
+      "次ターンに #b%1$s 層の #y戦闘続行 を獲得。次に #y戦闘続行 が発動した時 [E] [E] [E] とカード3枚を引き、その後 #r死亡。"
     ]
   },
   "${modID}:GutsAtTheWellPower": {
@@ -201,14 +201,14 @@
   "${modID}:SchwarzwaldFalkePower": {
     "NAME": "黒森の鷹",
     "DESCRIPTIONS": [
-      "次の #b%%1$s ターン終了時、 #b1 回の #y回避 を獲得。",
+      "次の #b%1$s ターン終了時、 #b1 回の #y回避 を獲得。",
       "このターン終了時、 #b1 回の #y回避 を獲得。"
     ]
   },
   "${modID}:MyFairSoldierPower": {
     "NAME": "我が美しき戦士",
     "DESCRIPTIONS": [
-      "次のアビリティカードプレイ時、 #b%%1$s 点の #y筋力 と #y敏捷 を失う。"
+      "次のアビリティカードプレイ時、 #b%1$s 点の #y筋力 と #y敏捷 を失う。"
     ]
   },
   "${modID}:DefenseUpPower": {
@@ -375,8 +375,8 @@
   "${modID}:ItsInevitablePower": {
     "NAME": "不可避なるもの",
     "DESCRIPTIONS": [
-      "次ターン開始時、全ての敵に #b%%1$s 点ダメージ。",
-      "次の #b%%1$s ターン開始時、全ての敵に #b%%2$s 点ダメージ（毎回 #b%%3$s 点増加）。"
+      "次ターン開始時、全ての敵に #b%1$s 点ダメージ。",
+      "次の #b%1$s ターン開始時、全ての敵に #b%2$s 点ダメージ（毎回 #b%3$s 点増加）。"
     ]
   },
   "${modID}:ManaBurstGemsPower": {
@@ -467,13 +467,6 @@
       "次に受ける #b%d 点以下のHPダメージを無効化。"
     ]
   },
-  "${modID}:DesterrennachtPower": {
-    "NAME": "恐怖",
-    "DESCRIPTIONS": [
-      " #b%d ターン開始後、行動不可状態になる。",
-      "このターン、行動不可状態になる。"
-    ]
-  },
   "${modID}:GoddessMetamorphosisBeastPower": {
     "NAME": "女神変生（獣）",
     "DESCRIPTIONS": [
@@ -520,6 +513,18 @@
     "NAME": "無敵貫通",
     "DESCRIPTIONS": [
       "次の攻撃カードは #b%d 倍のダメージを与える。"
+    ]
+  },
+  "${modID}:TerrorPower": {
+    "NAME": "恐怖",
+    "DESCRIPTIONS": [
+      "#b%d %% の確率で #yスタン 1ターン。持続時間 #b%d ターン。"
+    ]
+  },
+  "${modID}:VSTerrorDamageUpPower": {
+    "NAME": "恐怖特攻",
+    "DESCRIPTIONS": [
+      "このターン、恐怖状態の敵に #b%d%% 追加ダメージを与える。"
     ]
   }
 }

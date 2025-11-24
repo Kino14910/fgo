@@ -16,7 +16,7 @@ public class GreatRamNautilus extends AbsNoblePhantasmCard {
 
     public GreatRamNautilus() {
         super(ID,CardType.ATTACK, CardTarget.ENEMY);
-        setDamage(45, 8);
+        setDamage(40, 12);
     }
 
     @Override
