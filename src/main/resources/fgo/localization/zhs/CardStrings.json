@@ -130,7 +130,7 @@
   },
   "${modID}:ItsInevitable": {
     "NAME": "无可奈何",
-    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。每回合开始时再次发动，并且每次伤害增加 !M! 。",
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。在你的回合开始时再次发动，并且每次伤害增加 !M! 。",
     "FLAVOR": "测试画风可以更改。"
   },
   "${modID}:BlessedScion": {
@@ -665,7 +665,7 @@
   "${modID}:TimewornBulletKindling": {
     "NAME": "测定时间的紫弹之薪",
     "DESCRIPTION": "获得 !M! % fgo:宝具威力 。 NL 消耗所有 fgo:暴击星 ，每消耗一个 fgo:宝具值 增加 4%。 NL 失去4点生命。使用后变为 *时为朦胧的白垩之壁 。",
-    "EXTENDED_DESCRIPTION":[
+    "EXTENDED_DESCRIPTION": [
       "获得 !NP! % fgo:宝具值 。"
     ]
   },
