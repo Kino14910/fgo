@@ -12,11 +12,13 @@ public class InfiniteGrowthPower extends BasePower {
     private static final boolean TURN_BASED = false;
 
     public InfiniteGrowthPower(AbstractCreature owner, int amount) {
-        super(POWER_ID, TYPE, TURN_BASED, owner, amount); 
+        super(POWER_ID, TYPE, TURN_BASED, owner, amount);
     }
 
     @Override
-    public void updateDescription() {description = String.format(DESCRIPTIONS[0], amount);}
+    public void updateDescription() {
+        description = String.format(DESCRIPTIONS[0], amount);
+    }
 
     @Override
     public int onAttackedToChangeDamage(DamageInfo info, int damageAmount) {
@@ -28,5 +30,4 @@ public class InfiniteGrowthPower extends BasePower {
         return damageAmount;
     }
 
-    
 }

@@ -1,9 +1,9 @@
 package fgo.powers;
 
+import static fgo.FGOMod.makeID;
+
 import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
-
-import static fgo.FGOMod.makeID;
 
 public class CursePower extends BasePower {
     public static final String POWER_ID = makeID(CursePower.class.getSimpleName());

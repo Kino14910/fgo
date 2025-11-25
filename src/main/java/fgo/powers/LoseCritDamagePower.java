@@ -12,7 +12,7 @@ public class LoseCritDamagePower extends BasePower {
     private static final boolean TURN_BASED = false;
 
     public LoseCritDamagePower(AbstractCreature owner, int amount) {
-        super(POWER_ID, TYPE, TURN_BASED, owner, amount); 
+        super(POWER_ID, TYPE, TURN_BASED, owner, amount);
     }
 
     @Override
@@ -23,7 +23,7 @@ public class LoseCritDamagePower extends BasePower {
     @Override
     public void atEndOfTurn(boolean isPlayer) {
         this.flash();
-        this.addToBot(new ApplyPowerAction(this.owner, this.owner, new CriticalDamageUpPower(this.owner, -this.amount), -this.amount));
+        this.addToBot(new ApplyPowerAction(this.owner, this.owner, new CriticalDamageUpPower(this.owner, -this.amount)));
         this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
     }
 }

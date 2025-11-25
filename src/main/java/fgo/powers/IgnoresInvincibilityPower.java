@@ -16,12 +16,15 @@ public class IgnoresInvincibilityPower extends BasePower {
     private static final boolean TURN_BASED = false;
 
     public IgnoresInvincibilityPower(AbstractCreature owner, int amount) {
-        super(POWER_ID, TYPE, TURN_BASED, owner, amount); 
+        super(POWER_ID, TYPE, TURN_BASED, owner, amount);
     }
 
     @Override
-    // public void updateDescription() {description = String.format(DESCRIPTIONS[0], amount);}
-    public void updateDescription() {description = String.format(DESCRIPTIONS[0], amount);}
+    // public void updateDescription() {description = String.format(DESCRIPTIONS[0],
+    // amount);}
+    public void updateDescription() {
+        description = String.format(DESCRIPTIONS[0], amount);
+    }
 
     @Override
     public float atDamageGive(float damage, DamageInfo.DamageType type) {
@@ -31,8 +34,8 @@ public class IgnoresInvincibilityPower extends BasePower {
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
         if (card.type == CardType.ATTACK) {
-                flash();
-                addToBot(new RemoveSpecificPowerAction(owner, owner, POWER_ID));
-            }
+            flash();
+            addToBot(new RemoveSpecificPowerAction(owner, owner, POWER_ID));
+        }
     }
 }

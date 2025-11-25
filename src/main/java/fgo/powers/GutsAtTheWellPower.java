@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 
 import fgo.action.FgoNpAction;
+import fgo.patches.RevivePatch;
 
 public class GutsAtTheWellPower extends BasePower {
     public static final String POWER_ID = makeID(GutsAtTheWellPower.class.getSimpleName());
@@ -16,6 +17,9 @@ public class GutsAtTheWellPower extends BasePower {
         super(POWER_ID, TYPE, TURN_BASED, owner, amount, "GutsTriggerPower");
     }
 
+    /**
+     * @see RevivePatch
+     */
     @Override
     public void onSpecificTrigger() {
         this.flash();
@@ -28,5 +32,4 @@ public class GutsAtTheWellPower extends BasePower {
         String.format(DESCRIPTIONS[0], this.amount, this.amount);
     }
 
-    
 }

@@ -28,5 +28,4 @@ public class ManaBurstGemsPower extends BasePower {
         addToBot(new RemoveSpecificPowerAction(owner, owner, ID));
     }
 
-    
 }

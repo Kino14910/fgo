@@ -24,6 +24,7 @@ import com.megacrit.cardcrawl.vfx.ThoughtBubble;
 
 import fgo.cards.optionCards.ReleaseNoblePhantasm;
 import fgo.cards.optionCards.RepairSpiritOrigin;
+import fgo.patches.RevivePatch;
 import fgo.ui.panels.CommandSpellPanel;
 
 public class CommandSpellButton extends AbstractPanel {
@@ -69,6 +70,10 @@ public class CommandSpellButton extends AbstractPanel {
         }
     }
 
+    
+    /**
+     * @see RevivePatch
+     */
     public void chooseCommandSpell() {
         AbstractPlayer p = AbstractDungeon.player;
 

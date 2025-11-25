@@ -7,6 +7,8 @@ import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.powers.PhantasmalPower;
 
+import fgo.patches.RevivePatch;
+
 public class DeathOfDeathPower extends BasePower {
     public static final String POWER_ID = makeID(DeathOfDeathPower.class.getSimpleName());
     private static final PowerType TYPE = PowerType.BUFF;
@@ -16,6 +18,9 @@ public class DeathOfDeathPower extends BasePower {
         super(POWER_ID, TYPE, TURN_BASED, owner, amount, "GutsTriggerPower");
     }
 
+    /**
+     * @see RevivePatch
+     */
     @Override
     public void onSpecificTrigger() {
         addToBot(new ApplyPowerAction(owner, owner, new PhantasmalPower(owner, 1)));

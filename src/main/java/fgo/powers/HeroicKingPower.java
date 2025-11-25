@@ -1,7 +1,8 @@
 package fgo.powers;
 
-import com.megacrit.cardcrawl.core.AbstractCreature;
 import static fgo.FGOMod.makeID;
+
+import com.megacrit.cardcrawl.core.AbstractCreature;
 
 public class HeroicKingPower extends BasePower {
     public static final String POWER_ID = makeID(HeroicKingPower.class.getSimpleName());
@@ -17,13 +18,15 @@ public class HeroicKingPower extends BasePower {
         this.description = DESCRIPTIONS[0];
     }
 
-    /*@Override
+    /*
+    @Override
     public void wasHPLost(DamageInfo info, int damageAmount) {
         if (info.owner != null && info.owner != this.owner && info.type != DamageInfo.DamageType.HP_LOSS && info.type != DamageInfo.DamageType.THORNS && damageAmount > 0) {
             this.flash();
             this.addToBot(new ApplyPowerAction(this.owner, this.owner, new HeroicKingPower(this.owner, 1), 1));
         }
-    }*/
+    }
+    */
 
     
 }

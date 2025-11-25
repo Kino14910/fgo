@@ -1,12 +1,12 @@
 package fgo.powers;
 
+import static fgo.FGOMod.makeID;
+
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
-
-import static fgo.FGOMod.makeID;
 
 public class CrossingArcadiaPower extends BasePower {
     public static final String POWER_ID = makeID(CrossingArcadiaPower.class.getSimpleName());

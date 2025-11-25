@@ -6,6 +6,8 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.unique.RemoveDebuffsAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 
+import fgo.patches.RevivePatch;
+
 public class SpringOfFirePower extends BasePower {
     public static final String POWER_ID = makeID(SpringOfFirePower.class.getSimpleName());
     private static final PowerType TYPE = PowerType.BUFF;
@@ -14,7 +16,10 @@ public class SpringOfFirePower extends BasePower {
     public SpringOfFirePower(AbstractCreature owner, int amount) {
         super(POWER_ID, TYPE, TURN_BASED, owner, amount, "GutsTriggerPower");
     }
-
+    
+    /**
+     * @see RevivePatch
+     */
     @Override
     public void onSpecificTrigger() {
         addToBot(new RemoveDebuffsAction(owner));

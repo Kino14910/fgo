@@ -6,6 +6,8 @@ import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
+import fgo.patches.RevivePatch;
+
 public class GutsPower extends BasePower {
     public static final String POWER_ID = makeID(GutsPower.class.getSimpleName());
     private static final PowerType TYPE = PowerType.BUFF;
@@ -19,6 +21,9 @@ public class GutsPower extends BasePower {
         this.updateDescription();
     }
 
+    /**
+     * @see RevivePatch
+     */
     @Override
     public void onSpecificTrigger() {
         AbstractDungeon.player.heal(Math.max(amount, 1), true);
@@ -38,7 +43,6 @@ public class GutsPower extends BasePower {
 
     @Override
     public void updateDescription() {
-        System.out.println(time);
         description = String.format(time == 1 ? DESCRIPTIONS[0] : DESCRIPTIONS[1], amount, time);
     }
 

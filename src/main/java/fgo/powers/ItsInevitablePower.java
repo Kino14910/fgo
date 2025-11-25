@@ -27,9 +27,9 @@ public class ItsInevitablePower extends BasePower {
     public void atStartOfTurn() {
         flash();
         amount += amount2;
-        addToBot(new DamageAllEnemiesAction(owner, DamageInfo.createDamageMatrix(amount, true), DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.FIRE));
+        addToBot(new DamageAllEnemiesAction(owner, DamageInfo.createDamageMatrix(amount, true),
+                DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.FIRE));
         updateDescription();
     }
 
-    
 }

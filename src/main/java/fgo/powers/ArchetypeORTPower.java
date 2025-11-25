@@ -1,10 +1,11 @@
 package fgo.powers;
 
+import static fgo.FGOMod.makeID;
+
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
-import fgo.action.FgoNpAction;
 
-import static fgo.FGOMod.makeID;
+import fgo.action.FgoNpAction;
 
 public class ArchetypeORTPower extends BasePower {
     public static final String POWER_ID = makeID(ArchetypeORTPower.class.getSimpleName());

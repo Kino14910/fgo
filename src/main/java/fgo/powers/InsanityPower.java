@@ -35,5 +35,4 @@ public class InsanityPower extends BasePower {
         }
     }
 
-    
 }

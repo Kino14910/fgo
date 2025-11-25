@@ -1,5 +1,6 @@
 package fgo.patches;
 
+import static fgo.characters.CustomEnums.FGO_MASTER;
 import static fgo.utils.ModHelper.addToBot;
 
 import com.evacipated.cardcrawl.modthespire.lib.LineFinder;
@@ -19,11 +20,10 @@ import fgo.powers.GutsPower;
 import fgo.powers.SpringOfFirePower;
 import fgo.ui.panels.CommandSpellPanel;
 import javassist.CtBehavior;
-import static fgo.characters.CustomEnums.FGO_MASTER;
 public class RevivePatch {
     @SpirePatch(clz = AbstractPlayer.class, method = "damage")
-    public static class hasEnoughEnergyPatcher {
-        @SpireInsertPatch(locator = Locator.class)
+    public static class GutsPowerPatch {
+        @SpireInsertPatch(locator = GutsPowerLocator.class)
         public static SpireReturn<Void> Insert(AbstractPlayer p) {
             String[] powerIds = {
                 GutsPower.POWER_ID,
@@ -32,8 +32,8 @@ public class RevivePatch {
                 DeathOfDeathPower.POWER_ID
             };
 
+            // Guts Power 的复活逻辑
             if (p.hasPower(GutsPower.POWER_ID)) {
-                p.currentHealth = 0;
                 for (String id : powerIds) {
                     if (p.hasPower(id)) {
                         p.getPower(id).onSpecificTrigger();
@@ -41,7 +41,24 @@ public class RevivePatch {
                 }
                 return SpireReturn.Return(null);
             }
+            return SpireReturn.Continue();
+        }
 
+        private static class GutsPowerLocator extends SpireInsertLocator {
+            @Override
+            public int[] Locate(CtBehavior ctBehavior) throws Exception {
+                // 匹配 "hasRelic" 方法调用，即 "if (!this.hasRelic("Mark of the Bloom"))"
+                Matcher.MethodCallMatcher methodCallMatcher = new Matcher.MethodCallMatcher(AbstractPlayer.class, "hasRelic");
+                return LineFinder.findInOrder(ctBehavior, methodCallMatcher);
+            }
+        }
+    }
+
+    
+    @SpirePatch(clz = AbstractPlayer.class, method = "damage")
+    public static class CommandSpellPatch {
+        @SpireInsertPatch(locator = CommandSpellLocator.class)
+        public static SpireReturn<Void> Insert(AbstractPlayer p) {
             if (CommandSpellPanel.commandSpellCount == 3
                     && AbstractDungeon.currMapNode != null
                     && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT
@@ -52,13 +69,13 @@ public class RevivePatch {
                 addToBot(new FgoNpAction(300));
                 return SpireReturn.Return(null);
             }
-
             return SpireReturn.Continue();
         }
 
-        private static class Locator extends SpireInsertLocator {
+        private static class CommandSpellLocator extends SpireInsertLocator {
             @Override
             public int[] Locate(CtBehavior ctBehavior) throws Exception {
+                // 匹配 "isDead" 字段赋值，即 "this.isDead = true;"
                 Matcher.FieldAccessMatcher fieldAccessMatcher = new Matcher.FieldAccessMatcher(AbstractPlayer.class, "isDead");
                 return LineFinder.findInOrder(ctBehavior, fieldAccessMatcher);
             }
