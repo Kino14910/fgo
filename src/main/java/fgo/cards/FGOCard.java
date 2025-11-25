@@ -115,7 +115,6 @@ public abstract class FGOCard extends CustomCard {
         damageUpgrade = 0;
         blockUpgrade = 0;
         magicUpgrade = 0;
-        CommonKeywordIconsField.useIcons.set(this, true);
         
         np = baseNP = npUpgrade = 0;
         upgradeNP = false;
@@ -127,6 +126,7 @@ public abstract class FGOCard extends CustomCard {
         setCustomVar("NP", baseNP, npUpgrade);
         setCustomVar("S", baseStar, starUpgrade);
         setCustomVar("M2", baseMagicNumber2, magic2Upgrade);
+        CommonKeywordIconsField.useIcons.set(this, true);
     }
 
     private static String getName(String ID) {
