@@ -1,14 +1,11 @@
 package fgo.utils;
 
-import basemod.helpers.KeywordColorInfo;
-
 public class KeywordInfo {
     public String ID = "";
     public String PROPER_NAME;
     public String DESCRIPTION;
     public String[] NAMES;
     public String[] EXTRA = new String[] {};
-    public KeywordColorInfo COLOR;
 
     public KeywordInfo() {
     }
