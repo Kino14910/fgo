@@ -1,6 +1,8 @@
 package fgo.patches;
 
+import static fgo.FGOMod.imagePath;
 import static fgo.FGOMod.makeID;
+import static fgo.characters.CustomEnums.FGO_MASTER;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
@@ -17,8 +19,6 @@ import com.megacrit.cardcrawl.helpers.input.InputHelper;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.screens.charSelect.CharacterOption;
 import com.megacrit.cardcrawl.screens.charSelect.CharacterSelectScreen;
-
-import static fgo.characters.CustomEnums.FGO_MASTER;
 
 public class PictureSelectFgoPatch {
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(makeID(PictureSelectFgoPatch.class.getSimpleName()));
@@ -83,8 +83,8 @@ public class PictureSelectFgoPatch {
         public static void Postfix(CharacterSelectScreen __instance) {
             // Update your buttons position, check if the player clicked them, and do something if they did
             for (CharacterOption o : __instance.options) {
-                if (o.selected && o.c.chosenClass == FGO_MASTER) {
-                    return;
+                if (!o.selected || o.c.chosenClass != FGO_MASTER) {
+                    continue;
                 }
 
                 if (InputHelper.justClickedLeft && TalentLeft.hovered) {
@@ -127,9 +127,9 @@ public class PictureSelectFgoPatch {
     public static Texture updateBgImg(){
         switch (TalentCount){
             case 0:
-                return new Texture("fgo/images/charSelect/MasterPortrait.png");
+                return new Texture(imagePath("charSelect/MasterPortrait"));
             case 1:
-                return new Texture("fgo/images/charSelect/MasterPortrait1.png");
+                return new Texture(imagePath("charSelect/MasterPortrait1"));
             default:
                 return null;
         }

@@ -1,6 +1,7 @@
 package fgo.ui.panelitems;
 
 import static fgo.FGOMod.makeID;
+import static fgo.FGOMod.uiPath;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -14,11 +15,11 @@ import basemod.BaseMod;
 import basemod.TopPanelItem;
 import fgo.characters.Master;
 import fgo.ui.panels.NobleDeckCards;
-import fgo.ui.panels.NobleDeckViewScreen;
+import fgo.ui.screens.NobleDeckViewScreen;
 import fgo.utils.FGOInputActionSet;
 
 public class NobleDeckPanelItem extends TopPanelItem {
-    private static final Texture IMG = new Texture("fgo/images/ui/NobleTopPanel.png");
+    private static final Texture IMG = new Texture(uiPath("NobleTopPanel"));
     public static final String ID = makeID(NobleDeckPanelItem.class.getSimpleName());
     private static final String[] NPTEXT = CardCrawlGame.languagePack.getUIString("fgo:NPText").TEXT;
     private static final TutorialStrings tutorialStrings = CardCrawlGame.languagePack.getTutorialString(makeID(NobleDeckPanelItem.class.getSimpleName()));
@@ -47,10 +48,11 @@ public class NobleDeckPanelItem extends TopPanelItem {
 
         // 如果 Noble 屏幕已经打开，则关闭它（切换行为）
         if (AbstractDungeon.screen == NobleDeckViewScreen.Enum.Noble_Phantasm) {
-            AbstractDungeon.screenSwap = false;
-            if (AbstractDungeon.previousScreen == AbstractDungeon.CurrentScreen.MASTER_DECK_VIEW) {
-                AbstractDungeon.previousScreen = null;
-            }
+            // AbstractDungeon.screenSwap = true;
+            // 如果是在卡牌奖励界面，则关闭当前界面并返回战斗奖励界面
+            // if (AbstractDungeon.previousScreen == AbstractDungeon.CurrentScreen.CARD_REWARD) {
+            //     AbstractDungeon.previousScreen = AbstractDungeon.CurrentScreen.COMBAT_REWARD;
+            // }
             AbstractDungeon.closeCurrentScreen();
             CardCrawlGame.sound.play("DECK_CLOSE", 0.05f);
             return;

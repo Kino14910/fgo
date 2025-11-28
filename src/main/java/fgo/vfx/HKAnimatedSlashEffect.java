@@ -1,5 +1,7 @@
 package fgo.vfx;
 
+import static fgo.FGOMod.vfxPath;
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
@@ -21,7 +23,7 @@ public class HKAnimatedSlashEffect extends AbstractGameEffect {
     private float scaleY;
     private final float targetScale;
     private final Color color2;
-    private static final Texture HK = ImageMaster.loadImage("fgo/images/vfx/HK.png");
+    private static final Texture HK = ImageMaster.loadImage(vfxPath("HK"));
     public HKAnimatedSlashEffect(float x, float y, float dX, float dY, float angle, Color color1, Color color2) {
         this(x, y, dX, dY, angle, 2.0F, color1, color2);
     }
@@ -44,6 +46,7 @@ public class HKAnimatedSlashEffect extends AbstractGameEffect {
         this.rotation = angle;
     }
 
+    @Override
     public void update() {
         if (this.duration > this.startingDuration / 2.0F) {
             this.color.a = Interpolation.exp10In.apply(0.8F, 0.0F, (this.duration - this.startingDuration / 2.0F) / (this.startingDuration / 2.0F));
@@ -63,6 +66,7 @@ public class HKAnimatedSlashEffect extends AbstractGameEffect {
 
     }
 
+    @Override
     public void render(SpriteBatch sb) {
         sb.setColor(this.color2);
         sb.setBlendFunction(770, 1);
@@ -72,6 +76,7 @@ public class HKAnimatedSlashEffect extends AbstractGameEffect {
         sb.setBlendFunction(770, 771);
     }
 
+    @Override
     public void dispose() {
     }
 }

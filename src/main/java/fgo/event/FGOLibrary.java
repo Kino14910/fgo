@@ -1,6 +1,7 @@
 
 package fgo.event;
 
+import static fgo.FGOMod.eventPath;
 import static fgo.FGOMod.makeID;
 
 import com.badlogic.gdx.math.MathUtils;
@@ -33,7 +34,7 @@ public class FGOLibrary extends BaseEvent {
     private final int healAmt;
     private final int maxHPAmt;
     public FGOLibrary() {
-        super(ID, title, "fgo/images/events/FGOLibrary.png");
+        super(ID, title, eventPath("FGOLibrary"));
         this.body = DESCRIPTIONS[0];
         if (AbstractDungeon.ascensionLevel >= 15) {
             this.healAmt = MathUtils.round((float)AbstractDungeon.player.maxHealth * 0.2F);
@@ -47,6 +48,7 @@ public class FGOLibrary extends BaseEvent {
         this.imageEventText.setDialogOption(OPTIONS[1] + this.healAmt + OPTIONS[2]);
     }
 
+    @Override
     public void update() {
         super.update();
         if (this.pickCard && !AbstractDungeon.isScreenUp && !AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
@@ -56,6 +58,7 @@ public class FGOLibrary extends BaseEvent {
         }
     }
 
+    @Override
     protected void buttonEffect(int buttonPressed) {
         if (this.screenNum == 0) {
             if (buttonPressed == 0) {

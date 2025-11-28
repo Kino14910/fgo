@@ -1,5 +1,7 @@
 package fgo.ui.panels;
 
+import static fgo.FGOMod.uiPath;
+
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 
@@ -26,6 +28,6 @@ public class CommandSpellPanel implements CustomSavable<Integer> {
 
     public static void reset(){
         commandSpellCount = 3;
-        CommandSpell = ImageMaster.loadImage("fgo/images/ui/CommandSpell/CommandSpell3.png");
+        CommandSpell = ImageMaster.loadImage(uiPath("CommandSpell/CommandSpell3"));
     }
 }

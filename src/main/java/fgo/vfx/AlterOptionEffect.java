@@ -3,7 +3,7 @@ package fgo.vfx;
 import static fgo.FGOMod.makeID;
 
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Map;
 
@@ -23,6 +23,7 @@ import com.megacrit.cardcrawl.rooms.CampfireUI;
 import com.megacrit.cardcrawl.rooms.RestRoom;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 
+import fgo.cards.derivative.mash.Camelot;
 import fgo.cards.derivative.mash.LordCamelot;
 import fgo.cards.derivative.mash.LordChaldeas;
 import fgo.cards.derivative.mash.RayProofKyrielight;
@@ -73,14 +74,14 @@ public class AlterOptionEffect extends AbstractGameEffect {
                 }
             }
 
-            HashSet<String> excludedCards = new HashSet<>();
-            Collections.addAll(excludedCards, 
+            HashSet<String> excludedCards = new HashSet<>(Arrays.asList(
                 HollowHeartAlbion.ID, 
                 Unlimited.ID,
+                Camelot.ID,
                 LordCamelot.ID,
                 LordChaldeas.ID,
                 RayProofKyrielight.ID
-            );
+            ));
 
             for (AbstractCard card : noblePhantasmCards) {
                 if (!NobleCardHelper.hasCardWithID(card.cardID)

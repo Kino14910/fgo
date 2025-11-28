@@ -1,5 +1,6 @@
 package fgo.ui.buttons;
 
+import static fgo.FGOMod.uiPath;
 import static fgo.utils.ModHelper.addToBot;
 
 import java.util.ArrayList;
@@ -88,7 +89,7 @@ public class CommandSpellButton extends AbstractPanel {
         addToBot(new ChooseOneAction(stanceChoices));
         CommandSpellPanel.commandSpellCount--;
         CommandSpellPanel.CommandSpell = ImageMaster.loadImage(
-            "fgo/images/ui/CommandSpell/CommandSpell" + CommandSpellPanel.commandSpellCount + ".png"
+            uiPath("CommandSpell/CommandSpell" + CommandSpellPanel.commandSpellCount + "")
         );
     }
 
@@ -96,7 +97,7 @@ public class CommandSpellButton extends AbstractPanel {
     public void render(SpriteBatch sb) {
         sb.setColor(renderColor);
         CommandSpellPanel.CommandSpell = ImageMaster.loadImage(
-            "fgo/images/ui/CommandSpell/CommandSpell" + CommandSpellPanel.commandSpellCount + ".png"
+            uiPath("CommandSpell/CommandSpell" + CommandSpellPanel.commandSpellCount + "")
         );
         sb.draw(CommandSpellPanel.CommandSpell, current_x, current_y, 64.0F, 64.0F, 128.0F, 128.0F, scale, scale, 0.0F, 0, 0, 128, 128, false, false);
 

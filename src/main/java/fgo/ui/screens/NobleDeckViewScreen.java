@@ -1,4 +1,4 @@
-package fgo.ui.panels;
+package fgo.ui.screens;
 
 import static fgo.FGOMod.makeID;
 
@@ -14,7 +14,6 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.MathHelper;
 import com.megacrit.cardcrawl.helpers.input.InputHelper;
 import com.megacrit.cardcrawl.localization.TutorialStrings;
-import com.megacrit.cardcrawl.rooms.AbstractRoom.RoomPhase;
 import com.megacrit.cardcrawl.screens.MasterDeckViewScreen;
 import com.megacrit.cardcrawl.screens.mainMenu.ScrollBar;
 import com.megacrit.cardcrawl.screens.mainMenu.ScrollBarListener;
@@ -121,47 +120,34 @@ public class NobleDeckViewScreen extends CustomScreen implements ScrollBarListen
         AbstractDungeon.dynamicBanner.hide(); // Hide banners that get in the way
         AbstractDungeon.dungeonMapScreen.map.hideInstantly(); // Because the map won't be hidden properly otherwise
         AbstractDungeon.gridSelectScreen.hide(); // Because this has to be called at least once to prevent softlocks when upgrading cards
-
-        AbstractDungeon.dungeonMapScreen.map.hideInstantly(); // Because the map won't be hidden properly otherwise
         AbstractDungeon.overlayMenu.cancelButton.show(MasterDeckViewScreen.TEXT[1]);
-    
     }
 
     @Override
-    public void openingSettings() {
-        AbstractDungeon.closeCurrentScreen();
-        AbstractDungeon.settingsScreen.open();
+    public void close() {
+        switchScreen();
     }
 
     @Override
     public void openingDeck() {
-        AbstractDungeon.closeCurrentScreen();
-        AbstractDungeon.deckViewScreen.open();
+        switchScreen();
     }
 
     @Override
     public void openingMap() {
-        AbstractDungeon.closeCurrentScreen();
-        AbstractDungeon.dungeonMapScreen.open(false);
+        switchScreen();
     }
+
+    @Override
+    public void openingSettings() {
+        switchScreen();
+    }
+
 
     @Override
     public void scrolledUsingBar(float newPercent) {
         this.currentDiffY = MathHelper.valueFromPercentBetween(this.scrollLowerBound, this.scrollUpperBound, newPercent);
         this.updateBarPosition();
-    }
-
-    @Override
-    public void close() {
-        AbstractDungeon.screen = AbstractDungeon.CurrentScreen.NONE;
-        AbstractDungeon.isScreenUp = false;
-        if (AbstractDungeon.getCurrRoom() != null && 
-        AbstractDungeon.getCurrRoom().phase == RoomPhase.COMBAT) {
-            AbstractDungeon.overlayMenu.showCombatPanels();
-        }
-        AbstractDungeon.overlayMenu.hideBlackScreen();
-		
-        AbstractDungeon.overlayMenu.cancelButton.hide();
     }
 
     @Override
@@ -329,5 +315,15 @@ public class NobleDeckViewScreen extends CustomScreen implements ScrollBarListen
     private void updateBarPosition() {
         float percent = MathHelper.percentFromValueBetween(this.scrollLowerBound, this.scrollUpperBound, this.currentDiffY);
         this.scrollBar.parentScrolledToPercent(percent);
+    }
+
+    public void switchScreen() {
+        Settings.hideRelics = false;
+        genericScreenOverlayReset();
+        AbstractDungeon.overlayMenu.cancelButton.hide();
+        if (AbstractDungeon.previousScreen != AbstractDungeon.CurrentScreen.CARD_REWARD) {
+            AbstractDungeon.overlayMenu.hideBlackScreen();
+        }
+        AbstractDungeon.isScreenUp = false;
     }
 }

@@ -92,7 +92,7 @@ import fgo.ui.panelitems.NobleDeckPanelItem;
 import fgo.ui.panels.CommandSpellPanel;
 import fgo.ui.panels.FGOConfig;
 import fgo.ui.panels.NobleDeckCards;
-import fgo.ui.panels.NobleDeckViewScreen;
+import fgo.ui.screens.NobleDeckViewScreen;
 import fgo.utils.GeneralUtils;
 import fgo.utils.KeywordInfo;
 import fgo.utils.Sounds;
@@ -138,27 +138,30 @@ public class FGOMod implements
     }
 
     /*----------Create new Color----------*/
-    public static final String CARD_ENERGY_ORB = "fgo/images/ui/energyOrb.png";
+    public static final String CARD_ENERGY_ORB = uiPath("energyOrb");
+    public static final String NOBLE_ENERGY_ORB = uiPath("energyOrb");
     public static final Color SILVER = CardHelper.getColor(200, 200, 200);
     public static final Color NOBLE = CardHelper.getColor(255, 215, 0);
 
     //默认卡牌背景
-    private static final String DEFAULT_CC = "fgo/images/512/bg_master_s.png";
-    private static final String ENERGY_ORB_CC = "fgo/images/512/MASTEROrb.png";
-    private static final String DEFAULT_CC_PORTRAIT = "fgo/images/1024/bg_master.png";
-    private static final String ENERGY_ORB_CC_PORTRAIT = "fgo/images/1024/MASTEROrb.png";
+    private static final String DEFAULT_CC = imagePath("512/bg_master_s");
+    private static final String DEFAULT_CC_PORTRAIT = imagePath("1024/bg_master");
+    private static final String ENERGY_ORB_CC = imagePath("512/MASTEROrb");
+    private static final String ENERGY_ORB_CC_PORTRAIT = imagePath("1024/MASTEROrb");
+    private static final String NOBLE_ORB_CC = imagePath("512/MASTEROrb");
+    private static final String NOBLE_ORB_CC_PORTRAIT = imagePath("1024/MASTEROrb");
     //宝具牌背景    //宝具牌
-    private static final String ATTACK_Noble = "fgo/images/512/bg_empty_512.png";
-    private static final String SKILL_Noble = "fgo/images/512/bg_empty_512.png";
-    private static final String POWER_Noble = "fgo/images/512/bg_empty_512.png";
+    private static final String ATTACK_Noble = imagePath("512/bg_empty_512");
+    private static final String SKILL_Noble = imagePath("512/bg_empty_512");
+    private static final String POWER_Noble = imagePath("512/bg_empty_512");
     //攻击、技能、能力牌的背景图片(1024)
-    private static final String ATTACK_Noble_PORTRAIT = "fgo/images/1024/bg_empty_1024.png";
-    private static final String SKILL_Noble_PORTRAIT = "fgo/images/1024/bg_empty_1024.png";
-    private static final String POWER_Noble_PORTRAIT = "fgo/images/1024/bg_empty_1024.png";
+    private static final String ATTACK_Noble_PORTRAIT = imagePath("1024/bg_empty_1024");
+    private static final String SKILL_Noble_PORTRAIT = imagePath("1024/bg_empty_1024");
+    private static final String POWER_Noble_PORTRAIT = imagePath("1024/bg_empty_1024");
     //角色图标。
-    private static final String MY_CHARACTER_BUTTON = "fgo/images/charSelect/MasterButton.png";
+    private static final String MY_CHARACTER_BUTTON = imagePath("charSelect/MasterButton");
     //默认背景图片。
-    private static final String MASTER_PORTRAIT = "fgo/images/charSelect/MasterPortrait1.png";
+    private static final String MASTER_PORTRAIT = imagePath("charSelect/MasterPortrait1");
     
     public static SpireConfig config;
 
@@ -173,7 +176,7 @@ public class FGOMod implements
     public FGOMod() {
         BaseMod.subscribe(this); //This will make BaseMod trigger all the subscribers at their appropriate times.
         BaseMod.addColor(FGOCardColor.FGO, SILVER, DEFAULT_CC, DEFAULT_CC, DEFAULT_CC, ENERGY_ORB_CC, DEFAULT_CC_PORTRAIT, DEFAULT_CC_PORTRAIT, DEFAULT_CC_PORTRAIT, ENERGY_ORB_CC_PORTRAIT, CARD_ENERGY_ORB);
-        BaseMod.addColor(FGOCardColor.NOBLE_PHANTASM, NOBLE, ATTACK_Noble, SKILL_Noble, POWER_Noble, ENERGY_ORB_CC, ATTACK_Noble_PORTRAIT, SKILL_Noble_PORTRAIT, POWER_Noble_PORTRAIT, ENERGY_ORB_CC_PORTRAIT, CARD_ENERGY_ORB);
+        BaseMod.addColor(FGOCardColor.NOBLE_PHANTASM, NOBLE, ATTACK_Noble, SKILL_Noble, POWER_Noble, NOBLE_ORB_CC, ATTACK_Noble_PORTRAIT, SKILL_Noble_PORTRAIT, POWER_Noble_PORTRAIT, NOBLE_ORB_CC_PORTRAIT, NOBLE_ENERGY_ORB);
         BaseMod.addColor(FGOCardColor.FGO_DERIVATIVE, SILVER, DEFAULT_CC, DEFAULT_CC, DEFAULT_CC, ENERGY_ORB_CC, DEFAULT_CC_PORTRAIT, DEFAULT_CC_PORTRAIT, DEFAULT_CC_PORTRAIT, ENERGY_ORB_CC_PORTRAIT, CARD_ENERGY_ORB);
         BaseMod.addSaveField("commandSpellCount", new CommandSpellPanel());
         BaseMod.addSaveField("cards", new NobleDeckCards());
@@ -197,7 +200,7 @@ public class FGOMod implements
 
         if(config.getBool("enableEmiya")){
             BaseMod.addMonster(Emiya.ID, Emiya.NAME, () -> new MonsterGroup(new AbstractMonster[]{new Emiya()}));
-            BaseMod.addBoss(TheCity.ID, Emiya.ID, "fgo/images/monster/map_emiya.png", "fgo/images/monster/map_emiya_outline.png");
+            BaseMod.addBoss(TheCity.ID, Emiya.ID, imagePath("monster/map_emiya"), imagePath("monster/map_emiya_outline"));
         }
         shouldRenderNobleDeck = true;
     }
@@ -372,6 +375,12 @@ public class FGOMod implements
     }
     public static String vfxPath(String file) {
         return resourcesFolder + "/images/vfx/" + file;
+    }
+    public static String cardPath(String file) {
+        return resourcesFolder + "/images/cards/" + file;
+    }
+    public static String eventPath(String file) {
+        return resourcesFolder + "/images/events/" + file;
     }
 
     /**

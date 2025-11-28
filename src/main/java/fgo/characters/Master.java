@@ -1,5 +1,7 @@
 package fgo.characters;
 
+import static fgo.FGOMod.characterPath;
+import static fgo.FGOMod.uiPath;
 import static fgo.characters.CustomEnums.FGO_MASTER;
 
 import java.util.ArrayList;
@@ -35,20 +37,21 @@ import fgo.characters.CustomEnums.FGOCardColor;
 import fgo.patches.MainMenuUIFgoPatch;
 import fgo.patches.PictureSelectFgoPatch;
 import fgo.relics.SuitcaseFgo;
+import fgo.utils.Sounds;
 
 public class Master extends CustomPlayer{
     private static final String[] ORB_TEXTURES = new String[] {
-            "fgo/images/ui/EPanel/layer5.png",
-            "fgo/images/ui/EPanel/layer4.png",
-            "fgo/images/ui/EPanel/layer3.png",
-            "fgo/images/ui/EPanel/layer2.png",
-            "fgo/images/ui/EPanel/layer1.png",
-            "fgo/images/ui/EPanel/layer0.png",
-            "fgo/images/ui/EPanel/layer5d.png",
-            "fgo/images/ui/EPanel/layer4d.png",
-            "fgo/images/ui/EPanel/layer3d.png",
-            "fgo/images/ui/EPanel/layer2d.png",
-            "fgo/images/ui/EPanel/layer1d.png"};
+            uiPath("EPanel/layer5"),
+            uiPath("EPanel/layer4"),
+            uiPath("EPanel/layer3"),
+            uiPath("EPanel/layer2"),
+            uiPath("EPanel/layer1"),
+            uiPath("EPanel/layer0"),
+            uiPath("EPanel/layer5d"),
+            uiPath("EPanel/layer4d"),
+            uiPath("EPanel/layer3d"),
+            uiPath("EPanel/layer2d"),
+            uiPath("EPanel/layer1d")};
     private static final float[] LAYER_SPEED = new float[] { -40.0F, -32.0F, 20.0F, -20.0F, 0.0F, -10.0F, -8.0F, 5.0F, -5.0F, 0.0F };
     //返回一个颜色
     public static final Color SILVER = CardHelper.getColor(200, 200, 200);
@@ -68,14 +71,14 @@ public class Master extends CustomPlayer{
     
     public Master(String name) {
         //构造方法，初始化参数
-        super(name, FGO_MASTER, ORB_TEXTURES, "fgo/images/ui/energyBlueVFX.png", LAYER_SPEED, null, null);
+        super(name, FGO_MASTER, ORB_TEXTURES, uiPath("energyBlueVFX"), LAYER_SPEED, null, null);
         dialogX = drawX + 0.0F * Settings.scale;
         dialogY = drawY + 220.0F * Settings.scale;
 
         initializeClass(
                 String.valueOf(MainMenuUIFgoPatch.refreshSkinFgo()),
-                "fgo/images/character/shoulder2.png", "fgo/images/character/shoulder1.png",
-                "fgo/images/character/fallen.png",
+                characterPath("shoulder2"), characterPath("shoulder1"),
+                characterPath("fallen"),
                 getLoadout(),
                 0.0F, 5.0F,
                 240.0F, 300.0F,
@@ -175,7 +178,7 @@ public class Master extends CustomPlayer{
     public void doCharSelectScreenSelectEffect() {
         CardCrawlGame.mainMenuScreen.charSelectScreen.bgCharImg = PictureSelectFgoPatch.updateBgImg();
 
-        CardCrawlGame.sound.playV("MASTER_CHOOSE", 0.8F);
+        CardCrawlGame.sound.playV(Sounds.masterChoose, 0.8F);
         CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.MED, ScreenShake.ShakeDur.SHORT, true);
     }
 
@@ -222,10 +225,11 @@ public class Master extends CustomPlayer{
 
     @Override
     public ArrayList<CutscenePanel> getCutscenePanels() {
-        ArrayList<CutscenePanel> panels = new ArrayList<>();
-        panels.add(new CutscenePanel("fgo/images/char_Master/Victory1.png"));
-        panels.add(new CutscenePanel("fgo/images/char_Master/Victory2.png"));
-        panels.add(new CutscenePanel("fgo/images/char_Master/Victory3.png"));
+        ArrayList<CutscenePanel> panels = new ArrayList<>(Arrays.asList(
+            new CutscenePanel(characterPath("Victory1")),
+            new CutscenePanel(characterPath("Victory2")),
+            new CutscenePanel(characterPath("Victory3"))
+        ));
         return panels;
     }
 

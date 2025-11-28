@@ -1,5 +1,7 @@
 package fgo.cards.fgo;
 
+import static fgo.FGOMod.cardPath;
+
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.stslib.patches.FlavorText;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -23,7 +25,7 @@ public class WindsweptSlash extends FGOCard {
         setDamage(9);
         cardsToPreview = new FgoInsight();
         //cardsToPreview.upgrade();
-        portraitImg = ImageMaster.loadImage("fgo/images/cards/attack/WindsweptSlash.png");
+        portraitImg = ImageMaster.loadImage(cardPath("attack/WindsweptSlash"));
 
         FlavorText.AbstractCardFlavorFields.textColor.set(this, Color.CHARTREUSE);
         FlavorText.AbstractCardFlavorFields.flavorBoxType.set(this, FlavorText.boxType.TRADITIONAL);

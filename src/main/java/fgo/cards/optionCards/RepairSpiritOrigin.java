@@ -1,5 +1,7 @@
 package fgo.cards.optionCards;
 
+import static fgo.FGOMod.cardPath;
+
 import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -17,7 +19,7 @@ public class RepairSpiritOrigin extends FGOCard {
             CardTarget.NONE,
             -2
     );
-    public static final String IMG = "fgo/images/cards/power/CommandSpellGuts.png";
+    public static final String IMG = cardPath("power/CommandSpellGuts");
     public RepairSpiritOrigin() {
         super(ID, INFO, IMG);
     }
