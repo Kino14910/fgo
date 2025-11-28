@@ -14,7 +14,7 @@ import basemod.BaseMod;
 import basemod.TopPanelItem;
 import fgo.characters.Master;
 import fgo.ui.panels.NobleDeckCards;
-import fgo.ui.panels.NobleDeckViewScreen;
+import fgo.ui.screens.NobleDeckViewScreen;
 import fgo.utils.FGOInputActionSet;
 
 public class NobleDeckPanelItem extends TopPanelItem {
@@ -47,10 +47,11 @@ public class NobleDeckPanelItem extends TopPanelItem {
 
         // 如果 Noble 屏幕已经打开，则关闭它（切换行为）
         if (AbstractDungeon.screen == NobleDeckViewScreen.Enum.Noble_Phantasm) {
-            AbstractDungeon.screenSwap = false;
-            if (AbstractDungeon.previousScreen == AbstractDungeon.CurrentScreen.MASTER_DECK_VIEW) {
-                AbstractDungeon.previousScreen = null;
-            }
+            // AbstractDungeon.screenSwap = true;
+            // 如果是在卡牌奖励界面，则关闭当前界面并返回战斗奖励界面
+            // if (AbstractDungeon.previousScreen == AbstractDungeon.CurrentScreen.CARD_REWARD) {
+            //     AbstractDungeon.previousScreen = AbstractDungeon.CurrentScreen.COMBAT_REWARD;
+            // }
             AbstractDungeon.closeCurrentScreen();
             CardCrawlGame.sound.play("DECK_CLOSE", 0.05f);
             return;

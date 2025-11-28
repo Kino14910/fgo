@@ -92,7 +92,7 @@ import fgo.ui.panelitems.NobleDeckPanelItem;
 import fgo.ui.panels.CommandSpellPanel;
 import fgo.ui.panels.FGOConfig;
 import fgo.ui.panels.NobleDeckCards;
-import fgo.ui.panels.NobleDeckViewScreen;
+import fgo.ui.screens.NobleDeckViewScreen;
 import fgo.utils.GeneralUtils;
 import fgo.utils.KeywordInfo;
 import fgo.utils.Sounds;
