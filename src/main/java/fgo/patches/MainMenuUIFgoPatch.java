@@ -1,5 +1,8 @@
 package fgo.patches;
 
+import static fgo.FGOMod.characterPath;
+import static fgo.characters.CustomEnums.FGO_MASTER;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -24,8 +27,7 @@ import com.megacrit.cardcrawl.screens.options.DropdownMenu;
 
 import basemod.ReflectionHacks;
 import basemod.abstracts.CustomSavable;
-import basemod.interfaces.ISubscriber;
-import static fgo.characters.CustomEnums.FGO_MASTER;;
+import basemod.interfaces.ISubscriber;;
 
 public class MainMenuUIFgoPatch implements ISubscriber, CustomSavable<Integer> {
     public static final ArrayList<DropdownMenu> dropdowns = new ArrayList<>();
@@ -92,9 +94,9 @@ public class MainMenuUIFgoPatch implements ISubscriber, CustomSavable<Integer> {
     }
 
     public static String refreshSkinFgo() {
-        String skinPath = "fgo/images/character/Master" + modifierIndexes + ".png";
+        String skinPath = characterPath("Master" + modifierIndexes + "");
         if(modifierIndexes == 19) {
-            skinPath = "fgo/images/character/Cat_Arcueid_Brunestud.png";
+            skinPath = characterPath("Cat_Arcueid_Brunestud");
         }
         return skinPath;
     }

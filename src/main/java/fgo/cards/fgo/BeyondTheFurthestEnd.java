@@ -1,5 +1,7 @@
 package fgo.cards.fgo;
 
+import static fgo.FGOMod.cardPath;
+
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.stslib.patches.FlavorText;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -14,7 +16,7 @@ public class BeyondTheFurthestEnd extends FGOCard {
     public BeyondTheFurthestEnd() {
         super(ID, 2, CardType.POWER, CardTarget.ALL_ENEMY, CardRarity.UNCOMMON);
         setMagic(3, 1);
-        portraitImg = ImageMaster.loadImage("fgo/images/cards/power/BeyondTheFurthestEnd.png");
+        portraitImg = ImageMaster.loadImage(cardPath("power/BeyondTheFurthestEnd"));
 
         FlavorText.AbstractCardFlavorFields.textColor.set(this, Color.CHARTREUSE);
         FlavorText.AbstractCardFlavorFields.flavorBoxType.set(this, FlavorText.boxType.TRADITIONAL);

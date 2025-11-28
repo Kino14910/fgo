@@ -1,5 +1,7 @@
 package fgo.cards.tempCards;
 
+import static fgo.FGOMod.cardPath;
+
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.stslib.patches.FlavorText;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -27,7 +29,7 @@ public class FgoInsight extends FGOCard {
         setMagic(2, 1);
         setExhaust();
         setSelfRetain();
-        this.portraitImg = ImageMaster.loadImage("fgo/images/cards/skill/FgoInsight.png");
+        this.portraitImg = ImageMaster.loadImage(cardPath("skill/FgoInsight"));
 
         FlavorText.AbstractCardFlavorFields.textColor.set(this, Color.CHARTREUSE);
         FlavorText.AbstractCardFlavorFields.flavorBoxType.set(this, FlavorText.boxType.TRADITIONAL);

@@ -1,5 +1,7 @@
 package fgo.cards.colorless;
 
+import static fgo.FGOMod.cardPath;
+
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.stslib.patches.FlavorText;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -17,7 +19,7 @@ public class Shvibzik extends FGOCard {
         super(ID, 2, CardType.ATTACK, CardTarget.ENEMY, CardRarity.SPECIAL, CardColor.COLORLESS);
         setDamage(20, 5);
         setExhaust();
-        this.portraitImg = ImageMaster.loadImage("fgo/images/cards/attack/Shvibzik.png");
+        this.portraitImg = ImageMaster.loadImage(cardPath("attack/Shvibzik"));
 
         FlavorText.AbstractCardFlavorFields.textColor.set(this, Color.CHARTREUSE);
         FlavorText.AbstractCardFlavorFields.flavorBoxType.set(this, FlavorText.boxType.TRADITIONAL);

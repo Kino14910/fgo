@@ -1,5 +1,7 @@
 package fgo.hexui_lib.util;
 
+import static fgo.FGOMod.imagePath;
+
 import java.util.HashMap;
 
 import org.apache.logging.log4j.LogManager;
@@ -30,7 +32,7 @@ public class TextureLoader {
                 loadTexture(textureString);
             } catch (GdxRuntimeException e) {
                 logger.error("Could not find texture: " + textureString);
-                return getTexture("fgo/images/missing_texture.png");
+                return getTexture(imagePath("missing_texture"));
             }
         }
         return textures.get(textureString);
@@ -40,7 +42,7 @@ public class TextureLoader {
      * Creates and instance of the texture, applies a linear filter to it, and places it in the HashMap
      *
      * @param textureString - String path to the texture you want to load relative to resources,
-     *                      Example: "fgo/images/ui/missingtexture.png"
+     *                      Example: uiPath("missingtexture")
      * @throws GdxRuntimeException
      */
     private static void loadTexture(final String textureString) throws GdxRuntimeException {

@@ -10,7 +10,7 @@
     "NAME": "靈基手提箱",
     "FLAVOR": "記錄了召喚過的所有英靈情報的裝置。",
     "DESCRIPTIONS": [
-      "在戰鬥開始時獲得 #b20%% #yfgo:寶具值 。"
+      "在戰鬥開始時獲得 #b20% #yfgo:寶具值 。"
     ]
   },
   "${modID}:HalloweenRoyalty": {
@@ -60,7 +60,7 @@
     "NAME": "靈脈石",
     "FLAVOR": "及時使用它。",
     "DESCRIPTIONS": [
-      "在每場戰鬥開始時，獲得等同於當前金幣 #b%d %% 的 #y金幣 。"
+      "在每場戰鬥開始時，獲得等同於當前金幣 #b%d % 的 #y金幣 。"
     ]
   },
   "${modID}:BlessRockChoco": {
@@ -136,21 +136,21 @@
     "NAME": "Archetype ORT",
     "FLAVOR": "使用ORT的心髒與星際外來種融合制作（設計）出來的生命體。",
     "DESCRIPTIONS": [
-      "獲得的 #yfgo:無敵 變化爲獲得 #yfgo:肅正防御 。在第二回合和之後每回合開始時，獲得 #b10 顆 #yfgo:暴擊星 和 #b3%% #yfgo:寶具值 。"
+      "獲得的 #yfgo:無敵 變化爲獲得 #yfgo:肅正防御 。在第二回合和之後每回合開始時，獲得 #b10 顆 #yfgo:暴擊星 和 #b3% #yfgo:寶具值 。"
     ]
   },
   "${modID}:OblivionCorrection": {
     "NAME": "忘卻補正",
     "FLAVOR": "雖然人是很健忘的生物，但是復仇者絕不會忘卻。",
     "DESCRIPTIONS": [
-      "戰鬥開始時，獲得 #b30%% #yfgo:暴擊威力 。"
+      "戰鬥開始時，獲得 #b30% #yfgo:暴擊威力 。"
     ]
   },
   "${modID}:SelfReplenishmentMagic": {
     "NAME": "自我回復（魔力）",
     "FLAVOR": "直到復仇完成爲止，魔力會不斷湧出。",
     "DESCRIPTIONS": [
-      "在每回合開始時額外獲得 #b6%% #yfgo:寶具值 。"
+      "在每回合開始時額外獲得 #b6% #yfgo:寶具值 。"
     ]
   },
   "${modID}:BB": {

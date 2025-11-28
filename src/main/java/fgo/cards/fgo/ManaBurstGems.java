@@ -1,5 +1,7 @@
 package fgo.cards.fgo;
 
+import static fgo.FGOMod.cardPath;
+
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.stslib.patches.FlavorText;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -17,7 +19,7 @@ public class ManaBurstGems extends FGOCard {
     public ManaBurstGems() {
         super(ID, 1, CardType.SKILL, CardTarget.SELF, CardRarity.UNCOMMON);
         setMagic(2, 1);
-        portraitImg = ImageMaster.loadImage("fgo/images/cards/skill/ManaBurstGems.png");
+        portraitImg = ImageMaster.loadImage(cardPath("skill/ManaBurstGems"));
         
         FlavorText.AbstractCardFlavorFields.textColor.set(this, Color.CHARTREUSE);
         FlavorText.AbstractCardFlavorFields.flavorBoxType.set(this, FlavorText.boxType.TRADITIONAL);

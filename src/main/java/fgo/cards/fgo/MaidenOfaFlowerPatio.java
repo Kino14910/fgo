@@ -1,5 +1,7 @@
 package fgo.cards.fgo;
 
+import static fgo.FGOMod.cardPath;
+
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.stslib.patches.FlavorText;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -16,7 +18,7 @@ public class MaidenOfaFlowerPatio extends FGOCard {
         super(ID, 1, CardType.SKILL, CardTarget.SELF, CardRarity.UNCOMMON);
         setBlock(15, 5);
         setMagic(1);
-        portraitImg = ImageMaster.loadImage("fgo/images/cards/skill/MaidenOfaFlowerPatio.png");
+        portraitImg = ImageMaster.loadImage(cardPath("skill/MaidenOfaFlowerPatio"));
 
         FlavorText.AbstractCardFlavorFields.textColor.set(this, Color.CHARTREUSE);
         FlavorText.AbstractCardFlavorFields.flavorBoxType.set(this, FlavorText.boxType.TRADITIONAL);

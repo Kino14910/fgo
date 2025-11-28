@@ -1,5 +1,6 @@
 package fgo.ui.buttons;
 
+import static fgo.FGOMod.uiPath;
 import static fgo.utils.ModHelper.addToBot;
 
 import com.badlogic.gdx.graphics.Color;
@@ -32,7 +33,7 @@ public class NoblePhantasmButton extends AbstractPanel {
     private float scale = 1.0f;
     private final Hitbox hb;
     private final Color renderColor = Color.WHITE.cpy();
-    private static final Texture NP_MAX = ImageMaster.loadImage("fgo/images/ui/np_max.png");
+    private static final Texture NP_MAX = ImageMaster.loadImage(uiPath("np_max"));
 
     public NoblePhantasmButton() {
         super(

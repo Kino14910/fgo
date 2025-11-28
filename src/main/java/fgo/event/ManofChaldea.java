@@ -1,5 +1,6 @@
 package fgo.event;
 
+import static fgo.FGOMod.eventPath;
 import static fgo.FGOMod.makeID;
 
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -15,7 +16,7 @@ public class ManofChaldea extends BaseEvent {
     private static final String title = eventStrings.NAME;
     private CUR_SCREEN screen;
     public ManofChaldea() {
-        super(ID, title, "fgo/images/events/ManofChaldea.png");
+        super(ID, title, eventPath("ManofChaldea"));
         this.body = DESCRIPTIONS[0];
         this.screen = CUR_SCREEN.CONTINUE0;
         //人类即为过去延续到未来的足迹（记忆）， NL 只有一直积累经验、知识与故事， NL 才能作为人而不断成长。

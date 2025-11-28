@@ -1,5 +1,7 @@
 package fgo.cards.fgo;
 
+import static fgo.FGOMod.cardPath;
+
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.stslib.patches.FlavorText;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
@@ -19,7 +21,7 @@ public class SparksRoute extends FGOCard {
     public SparksRoute() {
         super(ID, 0, CardType.SKILL, CardTarget.SELF, CardRarity.COMMON);
         setMagic(5, 5);
-        portraitImg = ImageMaster.loadImage("fgo/images/cards/skill/SparksRoute.png");
+        portraitImg = ImageMaster.loadImage(cardPath("skill/SparksRoute"));
 
         FlavorText.AbstractCardFlavorFields.textColor.set(this, Color.CHARTREUSE);
         FlavorText.AbstractCardFlavorFields.flavorBoxType.set(this, FlavorText.boxType.TRADITIONAL);

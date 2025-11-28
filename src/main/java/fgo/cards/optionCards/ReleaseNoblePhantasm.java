@@ -1,5 +1,7 @@
 package fgo.cards.optionCards;
 
+import static fgo.FGOMod.cardPath;
+
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -16,7 +18,7 @@ public class ReleaseNoblePhantasm extends FGOCard {
             CardTarget.NONE,
             -2
     );
-    public static final String IMG = "fgo/images/cards/power/CommandSpellGuts.png";
+    public static final String IMG = cardPath("power/CommandSpellGuts");
     public ReleaseNoblePhantasm() {
         super(ID, INFO, IMG);
         setNP(100);

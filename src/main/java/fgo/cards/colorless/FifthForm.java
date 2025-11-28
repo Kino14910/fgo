@@ -1,5 +1,7 @@
 package fgo.cards.colorless;
 
+import static fgo.FGOMod.cardPath;
+
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.stslib.patches.FlavorText;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -14,7 +16,7 @@ public class FifthForm extends FGOCard {
     public FifthForm() {
         super(ID, 0, CardType.SKILL, CardTarget.SELF, CardRarity.RARE, CardColor.COLORLESS);
         setMagic(50, -15);
-        this.portraitImg = ImageMaster.loadImage("fgo/images/cards/skill/FifthForm.png");
+        this.portraitImg = ImageMaster.loadImage(cardPath("skill/FifthForm"));
         setExhaust();
 
         FlavorText.AbstractCardFlavorFields.textColor.set(this, Color.CHARTREUSE);

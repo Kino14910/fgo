@@ -1,5 +1,13 @@
 package fgo.event;
 
+import static fgo.FGOMod.eventPath;
+import static fgo.FGOMod.makeID;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Random;
+
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -11,14 +19,8 @@ import com.megacrit.cardcrawl.vfx.UpgradeShineEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
 import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
+
 import fgo.cards.colorless.ProofAndRebuttal;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Random;
-
-import static fgo.FGOMod.makeID;
 
 public class ProofAndRebuttalEvent extends BaseEvent {
     public static final String ID = makeID(ProofAndRebuttalEvent.class.getSimpleName());
@@ -28,7 +30,7 @@ public class ProofAndRebuttalEvent extends BaseEvent {
     private static final String title = eventStrings.NAME;
     private int goldLoss;
     public ProofAndRebuttalEvent() {
-        super(ID, title, "fgo/images/events/ProofAndRebuttalEvent.png");
+        super(ID, title, eventPath("ProofAndRebuttalEvent"));
         this.body = DESCRIPTIONS[0];
         if (AbstractDungeon.ascensionLevel >= 15) {
             this.goldLoss = AbstractDungeon.miscRng.random(50, 75);

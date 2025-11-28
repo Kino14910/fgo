@@ -1,5 +1,6 @@
 package fgo.event;
 
+import static fgo.FGOMod.eventPath;
 import static fgo.FGOMod.makeID;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -21,7 +22,7 @@ public class DevilSlot extends BaseEvent {
     private static final String title = eventStrings.NAME;
 
     public DevilSlot() {
-        super(ID, title, "fgo/images/events/DevilSlot.png");
+        super(ID, title, eventPath("DevilSlot"));
         this.body = DESCRIPTIONS[0];
         this.imageEventText.setDialogOption(OPTIONS[0], new BB());
         this.imageEventText.setDialogOption(OPTIONS[1]);

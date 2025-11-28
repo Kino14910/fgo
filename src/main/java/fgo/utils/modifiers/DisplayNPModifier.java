@@ -1,5 +1,7 @@
 package fgo.utils.modifiers;
 
+import static fgo.FGOMod.uiPath;
+
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -12,7 +14,7 @@ import basemod.abstracts.AbstractCardModifier;
 
 public class DisplayNPModifier extends AbstractCardModifier {
     public static String MOD_ID = "fgo:DisplayNPModifier";
-    private static final Texture tex = ImageMaster.loadImage("fgo/images/ui/DisplayModifier.png");
+    private static final Texture tex = ImageMaster.loadImage(uiPath("DisplayModifier"));
     private final int amount;
     public DisplayNPModifier(int amount) {
         this.amount = amount;

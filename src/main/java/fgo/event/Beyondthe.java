@@ -1,5 +1,6 @@
 package fgo.event;
 
+import static fgo.FGOMod.eventPath;
 import static fgo.FGOMod.makeID;
 
 import com.badlogic.gdx.math.MathUtils;
@@ -20,7 +21,7 @@ public class Beyondthe extends BaseEvent {
     private CUR_SCREEN screen;
     private final int maxHPAmt;
     public Beyondthe() {
-        super(ID, title, "fgo/images/events/Beyondthe.png");
+        super(ID, title, eventPath("Beyondthe"));
         this.body = DESCRIPTIONS[0];
         if (AbstractDungeon.ascensionLevel >= 15) {
             this.maxHPAmt = MathUtils.round(4);

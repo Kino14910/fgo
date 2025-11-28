@@ -1,5 +1,6 @@
 package fgo.event.deprecated;
 
+import static fgo.FGOMod.eventPath;
 import static fgo.FGOMod.makeID;
 
 import java.util.ArrayList;
@@ -30,7 +31,7 @@ public class ConflictEvent extends BaseEvent {
     private final AbstractRelic choice2;
     private AbstractRelic gift;
     public ConflictEvent() {
-        super(ID, title, "fgo/images/events/ConflictEvent.png");
+        super(ID, title, eventPath("ConflictEvent"));
         this.body = DESCRIPTIONS[0];
         ArrayList<AbstractRelic> relics = new ArrayList<>(AbstractDungeon.player.relics);
         Collections.shuffle(relics, new Random(AbstractDungeon.miscRng.randomLong()));
