@@ -9,19 +9,12 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.PoisonPower;
 
 import fgo.cards.FGOCard;
-import fgo.utils.CardStats;
 
 public class PoisonousDagger extends FGOCard {
     public static final String ID = makeID(PoisonousDagger.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            CardColor.COLORLESS,
-            CardType.SKILL,
-            CardRarity.SPECIAL,
-            CardTarget.ENEMY,
-            0
-    );
+
     public PoisonousDagger() {
-        super(ID, INFO);
+        super(ID, 0, CardType.SKILL, CardTarget.ENEMY, CardRarity.SPECIAL, CardColor.COLORLESS);
         setDamage(2);
         setMagic(2, 2);
         this.exhaust = true;

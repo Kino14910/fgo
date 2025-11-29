@@ -16,7 +16,7 @@ public class LostLonginus extends AbsNoblePhantasmCard {
     public static final String ID = makeID(LostLonginus.class.getSimpleName());
 //    public static final String ID = "LostLonginus";
     public LostLonginus() {
-        super(ID,CardType.ATTACK, CardTarget.ALL_ENEMY);
+        super(ID,CardType.ATTACK, CardTarget.ALL_ENEMY, 1);
         setDamage(24, 6);
         setMagic(3);
     }

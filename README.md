@@ -51,7 +51,7 @@
 
 ```java
     public MorningLark() {
-        super(ID, INFO);
+        super(ID, 2, CardType.SKILL, CardTarget.SELF, CardRarity.RARE);
         setNP(30, 20);
         setStar(10, 10);
     }

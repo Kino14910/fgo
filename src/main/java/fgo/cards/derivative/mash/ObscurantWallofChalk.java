@@ -8,20 +8,12 @@ import com.megacrit.cardcrawl.powers.BufferPower;
 import fgo.action.FgoNpAction;
 import fgo.cards.FGOCard;
 import fgo.characters.CustomEnums.FGOCardColor;
-import fgo.utils.CardStats;
 
 public class ObscurantWallofChalk extends FGOCard {
     public static final String ID = makeID(ObscurantWallofChalk.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            FGOCardColor.FGO_DERIVATIVE,
-            CardType.POWER,
-            CardRarity.SPECIAL,
-            CardTarget.SELF,
-            2
-    );
 
     public ObscurantWallofChalk() {
-        super(ID, INFO);
+        super(ID, 2, CardType.POWER, CardTarget.SELF, CardRarity.SPECIAL, FGOCardColor.FGO_DERIVATIVE);
         setNP(20, 10);
     }
 

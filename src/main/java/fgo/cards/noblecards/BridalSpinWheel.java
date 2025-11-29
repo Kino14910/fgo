@@ -12,7 +12,7 @@ public class BridalSpinWheel extends AbsNoblePhantasmCard {
     public static final String ID = makeID(BridalSpinWheel.class.getSimpleName());
 
     public BridalSpinWheel() {
-        super(ID,CardType.POWER, CardTarget.SELF);
+        super(ID,CardType.SKILL, CardTarget.SELF, 1);
         setMagic(3, 1);
         setStar(10, 10);
     }

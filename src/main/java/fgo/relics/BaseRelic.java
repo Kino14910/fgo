@@ -1,16 +1,16 @@
 package fgo.relics;
 
-import basemod.abstracts.CustomRelic;
-import basemod.helpers.RelicType;
-import fgo.utils.GeneralUtils;
-import fgo.utils.TextureLoader;
+import static fgo.FGOMod.relicPath;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 
-import static fgo.FGOMod.relicPath;
+import basemod.abstracts.CustomRelic;
+import basemod.helpers.RelicType;
+import fgo.utils.GeneralUtils;
+import fgo.utils.TextureLoader;
 
 public abstract class BaseRelic extends CustomRelic {
     public AbstractCard.CardColor pool = null;
@@ -40,9 +40,9 @@ public abstract class BaseRelic extends CustomRelic {
     }
 
     protected void loadTexture() {
-        this.img = TextureLoader.getTextureNull(relicPath(imageName + ".png"), true);
+        this.img = TextureLoader.getTextureNull(relicPath(imageName), true);
         if (img != null) {
-            outlineImg = TextureLoader.getTextureNull(relicPath("outline/" + imageName + ".png"), true);
+            outlineImg = TextureLoader.getTextureNull(relicPath("outline/" + imageName), true);
             if (outlineImg == null)
                 outlineImg = img;
         }
@@ -57,7 +57,7 @@ public abstract class BaseRelic extends CustomRelic {
 //    public void loadLargeImg() {
 //        if (notPng(imageName)) {
 //            if (largeImg == null) {
-//                this.largeImg = ImageMaster.loadImage(relicPath("large/" + imageName + ".png"));
+//                this.largeImg = ImageMaster.loadImage(relicPath("large/" + imageName));
 //            }
 //        }
 //        else {

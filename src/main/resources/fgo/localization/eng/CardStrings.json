@@ -9,11 +9,11 @@
   },
   "${modID}:DreamUponTheStars": {
     "NAME": "Dream Upon Stars",
-    "DESCRIPTION": "Gain !NP!% fgo:NP. NL Gain !M!% fgo:NP_Damage. NL Gain !B! Block."
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M!% fgo:NP_Damage."
   },
   "${modID}:CharismaOfHope": {
     "NAME": "Charisma of Hope",
-    "DESCRIPTION": "Gain !NP!% fgo:NP. NL Deal !D! damage."
+    "DESCRIPTION": "Deal !D! damage. NL Gain !NP!% fgo:NP."
   },
   "${modID}:WallOfSnowflakes": {
     "NAME": "Transient Wall of Snowflakes",
@@ -545,7 +545,7 @@
     "NAME": "Coaching",
     "DESCRIPTION": "Gain [E] [E]. NL Exhaust."
   },
-  "${modID}:EternalMemories": {
+  "${modID}:AroundCaliburn": {
     "NAME": "Around Caliburn",
     "DESCRIPTION": "Gain 2 Strength. NL Remove all of debuffs. NL Gain !M! fgo:Anti-Purge_Defense."
   },

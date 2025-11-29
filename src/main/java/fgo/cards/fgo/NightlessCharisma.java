@@ -9,7 +9,7 @@ import fgo.powers.NightlessCharismaPower;
 public class NightlessCharisma extends FGOCard {
     public static final String ID = makeID(NightlessCharisma.class.getSimpleName());
     public NightlessCharisma() {
-        super(ID, 1, CardType.POWER, CardTarget.SELF, CardRarity.RARE);
+        super(ID, 1, CardType.POWER, CardTarget.SELF, CardRarity.UNCOMMON);
         setMagic(1);
         setCostUpgrade(0);
     }

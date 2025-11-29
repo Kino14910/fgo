@@ -12,7 +12,7 @@ public class Summer extends AbsNoblePhantasmCard {
     public static final String ID = makeID(Summer.class.getSimpleName());
 
     public Summer() {
-        super(ID,CardType.POWER, CardTarget.SELF);
+        super(ID,CardType.POWER, CardTarget.SELF, 1);
         setNP(0, 20);
     }
 

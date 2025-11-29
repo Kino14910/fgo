@@ -10,9 +10,9 @@ import fgo.powers.PowerUpBoostPower;
 public class EndOfADream extends FGOCard {
     public static final String ID = makeID(EndOfADream.class.getSimpleName());
     public EndOfADream() {
-        super(ID, 0, CardType.POWER, CardTarget.SELF, CardRarity.RARE);
+        super(ID, 1, CardType.POWER, CardTarget.SELF, CardRarity.RARE);
         setMagic(1);
-        setInnate(false, true);
+        setCostUpgrade(0);
     }
 
     @Override

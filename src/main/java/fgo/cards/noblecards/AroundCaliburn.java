@@ -9,11 +9,11 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 import fgo.cards.AbsNoblePhantasmCard;
 import fgo.powers.AntiPurgeDefensePower;
 
-public class EternalMemories extends AbsNoblePhantasmCard {
-    public static final String ID = makeID(EternalMemories.class.getSimpleName());
+public class AroundCaliburn extends AbsNoblePhantasmCard {
+    public static final String ID = makeID(AroundCaliburn.class.getSimpleName());
 
-    public EternalMemories() {
-        super(ID,CardType.POWER, CardTarget.SELF);
+    public AroundCaliburn() {
+        super(ID,CardType.POWER, CardTarget.SELF, 1);
         setMagic(2, 1);
     }
 

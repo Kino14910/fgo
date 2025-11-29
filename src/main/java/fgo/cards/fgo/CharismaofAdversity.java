@@ -27,7 +27,7 @@ public class CharismaofAdversity extends FGOCard {
         }
 
         int lostHealthPercentage = p.maxHealth - p.currentHealth;
-        int extraHits = lostHealthPercentage / 12;
+        int extraHits = lostHealthPercentage / 6;
         addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
         if (extraHits >= 1) {
             for (int i = 0; i < extraHits; ++i) {
@@ -39,7 +39,7 @@ public class CharismaofAdversity extends FGOCard {
     @Override
     public void applyPowers() {
         int lostHealthPercentage = AbstractDungeon.player.maxHealth - AbstractDungeon.player.currentHealth;
-        int extraHits = lostHealthPercentage / 12;
+        int extraHits = lostHealthPercentage / 6;
         if (extraHits >= 1) {
             rawDescription = cardStrings.DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0] + extraHits + cardStrings.EXTENDED_DESCRIPTION[1];
         }

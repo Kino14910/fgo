@@ -5,19 +5,12 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import fgo.action.FgoNpAction;
 import fgo.cards.FGOCard;
-import fgo.utils.CardStats;
 
 public class Kaleidoscope extends FGOCard {
     public static final String ID = makeID(Kaleidoscope.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            CardColor.COLORLESS,
-            CardType.POWER,
-            CardRarity.SPECIAL,
-            CardTarget.SELF,
-            -2
-    );
+
     public Kaleidoscope() {
-        super(ID, INFO);
+        super(ID, -2, CardType.POWER, CardTarget.SELF, CardRarity.SPECIAL, CardColor.COLORLESS);
         setNP(40, 20);
     }
 

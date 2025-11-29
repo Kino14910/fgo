@@ -124,7 +124,7 @@ public class FGOMod implements
     public static final Logger logger = LogManager.getLogger(modID); //Used to output to the console.
     private static final String resourcesFolder = checkResourcesPath();
     
-    private static final int BASE_NP_MULTIPLIER = 5;
+    private static final int BASE_NP_PERCARD = 5;
     private static final int NP_RATE_POWER_MULTIPLIER = 2;
     //This is used to prefix the IDs of various objects like cards and relics,
     //to avoid conflicts between different mods using the same name for things.
@@ -148,8 +148,8 @@ public class FGOMod implements
     private static final String DEFAULT_CC_PORTRAIT = imagePath("1024/bg_master");
     private static final String ENERGY_ORB_CC = imagePath("512/MASTEROrb");
     private static final String ENERGY_ORB_CC_PORTRAIT = imagePath("1024/MASTEROrb");
-    private static final String NOBLE_ORB_CC = imagePath("512/MASTEROrb");
-    private static final String NOBLE_ORB_CC_PORTRAIT = imagePath("1024/MASTEROrb");
+    private static final String NOBLE_ORB_CC = imagePath("512/noble_orb_512");
+    private static final String NOBLE_ORB_CC_PORTRAIT = imagePath("1024/noble_orb_1024");
     //宝具牌背景    //宝具牌
     private static final String ATTACK_Noble = imagePath("512/bg_empty_512");
     private static final String SKILL_Noble = imagePath("512/bg_empty_512");
@@ -189,7 +189,7 @@ public class FGOMod implements
         registerPotions();
         registerEvents();
         //This loads the image used as an icon in the in-game mods menu.
-        Texture badgeTexture = TextureLoader.getTexture(imagePath("ui/badge.png"));
+        Texture badgeTexture = TextureLoader.getTexture(uiPath("badge"));
         //Set up the mod information displayed in the in-game mods menu.
         //The information used is taken from your pom.xml file.
 
@@ -350,37 +350,37 @@ public class FGOMod implements
         return resourcesFolder + "/audio/" + file;
     }
     public static String musicPath(String file) {
-        return resourcesFolder + "/audio/music/" + file;
+        return audioPath("music/" + file);
     }
     public static String soundPath(String file) {
-        return resourcesFolder + "/audio/sound/" + file;
+        return audioPath("sound/" + file);
     }
     public static String imagePath(String file) {
-        return resourcesFolder + "/images/" + file;
+        return resourcesFolder + "/images/" + file + ".png";
     }
     public static String characterPath(String file) {
-        return resourcesFolder + "/images/character/" + file;
+        return imagePath("character/" + file);
     }
     public static String monsterPath(String file) {
-        return resourcesFolder + "/images/monsters/" + file;
+        return imagePath("monsters/" + file);
     }
     public static String powerPath(String file) {
-        return resourcesFolder + "/images/powers/" + file;
+        return imagePath("powers/" + file);
     }
     public static String relicPath(String file) {
-        return resourcesFolder + "/images/relics/" + file;
+        return imagePath("relics/" + file);
     }
     public static String uiPath(String file) {
-        return resourcesFolder + "/images/ui/" + file;
+        return imagePath("ui/" + file);
     }
     public static String vfxPath(String file) {
-        return resourcesFolder + "/images/vfx/" + file;
+        return imagePath("vfx/" + file);
     }
     public static String cardPath(String file) {
-        return resourcesFolder + "/images/cards/" + file;
+        return imagePath("cards/" + file);
     }
     public static String eventPath(String file) {
-        return resourcesFolder + "/images/events/" + file;
+        return imagePath("events/" + file);
     }
 
     /**
@@ -579,7 +579,7 @@ public class FGOMod implements
 
     
     private int calculateNpRateMultiplier() {
-        int multiplier = BASE_NP_MULTIPLIER;
+        int multiplier = BASE_NP_PERCARD;
         
         if (AbstractDungeon.player.hasPower(NPRatePower.POWER_ID)) {
             multiplier *= NP_RATE_POWER_MULTIPLIER;

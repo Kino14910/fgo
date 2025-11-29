@@ -11,7 +11,7 @@ public class ElementaryMyDear extends AbsNoblePhantasmCard {
     public static final String ID = makeID(ElementaryMyDear.class.getSimpleName());
 
     public ElementaryMyDear() {
-        super(ID,CardType.POWER, CardTarget.SELF);
+        super(ID,CardType.POWER, CardTarget.SELF, 1);
         setMagic(2, 2);
     }
 

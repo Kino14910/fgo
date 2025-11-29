@@ -541,8 +541,8 @@
     "NAME": "指導",
     "DESCRIPTION": "獲得 [E] [E] 。 NL 消耗 。"
   },
-  "${modID}:EternalMemories": {
-    "NAME": "希望之星",
+  "${modID}:AroundCaliburn": {
+    "NAME": "环抱着你的希望之星",
     "DESCRIPTION": "獲得2點 力量 。 NL 移除所有負面 狀態 。 NL 獲得 !M! 次 fgo:肅正防御 。 "
   },
   "${modID}:BeautifulJourney": {

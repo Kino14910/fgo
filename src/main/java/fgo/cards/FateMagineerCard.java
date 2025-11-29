@@ -1,5 +1,6 @@
 package fgo.cards;
 
+import static fgo.FGOMod.imagePath;
 import static fgo.utils.GeneralUtils.removePrefix;
 import static fgo.utils.TextureLoader.getCardTextureString;
 
@@ -41,7 +42,7 @@ public abstract class FateMagineerCard extends FGOCard implements CustomCardPort
 //    }
 
     public static String nobleResourcePath(String file) {
-        return "fgo/images/NobleResources/" + file;
+        return imagePath("NobleResources/" + file);
     }
 
     private void initializeDecoRenderLayers() {
@@ -52,8 +53,8 @@ public abstract class FateMagineerCard extends FGOCard implements CustomCardPort
     public ArrayList<RenderLayer> getPortraitLayers512() {
         portraitLayers512.clear();
         addCardArtLayers512(portraitLayers512);
-        portraitLayers512.add(new RenderImageLayer(TextureLoader.getTexture(nobleResourcePath("512/desc_shadow.png"))));
-        portraitLayers512.add(new RenderImageLayer(TextureLoader.getTexture(nobleResourcePath("512/" + this.type.toString().toLowerCase() + "_common.png"))));
+        portraitLayers512.add(new RenderImageLayer(TextureLoader.getTexture(nobleResourcePath("512/desc_shadow"))));
+        portraitLayers512.add(new RenderImageLayer(TextureLoader.getTexture(nobleResourcePath("512/" + this.type.toString().toLowerCase() + "_common"))));
         return portraitLayers512;
     }
 
@@ -61,8 +62,8 @@ public abstract class FateMagineerCard extends FGOCard implements CustomCardPort
     public ArrayList<RenderLayer> getPortraitLayers1024() {
         portraitLayers1024.clear();
         addCardArtLayers1024(portraitLayers1024);
-        portraitLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(nobleResourcePath("1024/desc_shadow.png"))));
-        portraitLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(nobleResourcePath("1024/" + this.type.toString().toLowerCase() + "_common.png"))));
+        portraitLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(nobleResourcePath("1024/desc_shadow"))));
+        portraitLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(nobleResourcePath("1024/" + this.type.toString().toLowerCase() + "_common"))));
         return portraitLayers1024;
     }
 

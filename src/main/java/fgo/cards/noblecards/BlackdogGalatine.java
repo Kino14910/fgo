@@ -16,7 +16,8 @@ public class BlackdogGalatine extends AbsNoblePhantasmCard {
     public static final String ID = makeID(BlackdogGalatine.class.getSimpleName());
 
     public BlackdogGalatine() {
-        super(ID,CardType.ATTACK, CardTarget.ALL_ENEMY);setDamage(5, 2);
+        super(ID,CardType.ATTACK, CardTarget.ALL_ENEMY, 1);
+        setDamage(5, 2);
         setMagic(6);
     }
 

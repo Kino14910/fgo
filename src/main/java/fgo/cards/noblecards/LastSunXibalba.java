@@ -19,7 +19,7 @@ public class LastSunXibalba extends AbsNoblePhantasmCard {
     public static final String ID = makeID(LastSunXibalba.class.getSimpleName());
 //    public static final String ID = "LastSunXibalba";
     public LastSunXibalba() {
-        super(ID,CardType.ATTACK, CardTarget.ALL_ENEMY);
+        super(ID,CardType.ATTACK, CardTarget.ALL_ENEMY, 1);
         setDamage(6, 2);
         setStar(30);
     }

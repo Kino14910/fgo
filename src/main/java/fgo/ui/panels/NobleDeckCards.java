@@ -8,8 +8,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 
 import basemod.abstracts.CustomSavable;
+import fgo.cards.noblecards.AroundCaliburn;
 import fgo.cards.noblecards.BeautifulJourney;
-import fgo.cards.noblecards.EternalMemories;
 import fgo.cards.noblecards.IraLupus;
 import fgo.characters.CustomEnums.FGOCardColor;
 import fgo.characters.Master;
@@ -45,7 +45,7 @@ public class NobleDeckCards implements CustomSavable<ArrayList<String>> {
     public static void reset() {
         NobleDeckCards.cards = new ArrayList<>(Arrays.asList(
             //宝具卡
-            EternalMemories.ID,
+            AroundCaliburn.ID,
             BeautifulJourney.ID,            
             IraLupus.ID
         ));

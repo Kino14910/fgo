@@ -15,7 +15,7 @@ public class UpdateMasterImgAction extends AbstractGameAction {
     @Override
     public void update() {
         if (AbstractDungeon.player instanceof Master) {
-            AbstractDungeon.player.img = ImageMaster.loadImage(characterPath("Romani_Archaman.png"));
+            AbstractDungeon.player.img = ImageMaster.loadImage(characterPath("Romani_Archaman"));
         }
 
         this.isDone = true;

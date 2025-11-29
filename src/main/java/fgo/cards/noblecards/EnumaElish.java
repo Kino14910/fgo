@@ -13,7 +13,7 @@ extends AbsNoblePhantasmCard {
     public static final String ID = makeID(EnumaElish.class.getSimpleName());
 
     public EnumaElish() {
-        super(ID, AbstractCard.CardType.ATTACK, AbstractCard.CardTarget.ALL_ENEMY);
+        super(ID, AbstractCard.CardType.ATTACK, AbstractCard.CardTarget.ALL_ENEMY, 1);
         setDamage(32, 8);
     }
 

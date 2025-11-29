@@ -83,7 +83,7 @@ public abstract class BaseMonster extends CustomMonster {
                 1,
                 hb_x, hb_y,
                 hb_w, hb_h,
-                FGOMod.monsterPath(id + ".png"),
+                FGOMod.monsterPath(id),
                 x, y);
     }
 
@@ -93,7 +93,7 @@ public abstract class BaseMonster extends CustomMonster {
                 1,
                 0, -15F,
                 hb_w, hb_h,
-                FGOMod.monsterPath(id + ".png"),
+                FGOMod.monsterPath(id),
                 x, y);
     }
 
@@ -103,7 +103,7 @@ public abstract class BaseMonster extends CustomMonster {
                 1,
                 0, -15F,
                 hb_w, hb_h,
-                FGOMod.monsterPath(id + ".png"),
+                FGOMod.monsterPath(id),
                 0, 0);
     }
 

@@ -1,13 +1,11 @@
 package fgo.cards.derivative.mash;
 
-import static fgo.FGOMod.imagePath;
+import static fgo.FGOMod.cardPath;
 
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.stslib.patches.FlavorText;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
@@ -17,22 +15,12 @@ import fgo.characters.CustomEnums.FGOCardColor;
 import fgo.powers.AntiPurgeDefensePower;
 import fgo.powers.CriticalDamageUpPower;
 import fgo.powers.ReducePercentDamagePower;
-import fgo.utils.CardStats;
 
 public class VeneratedShieldOfSnowflakes extends FGOCard {
     public static final String ID = makeID(VeneratedShieldOfSnowflakes.class.getSimpleName());
-    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    private static final String IMG = imagePath("cards/skill/MashPaladin.png");
-    private static final CardStats INFO = new CardStats(
-            FGOCardColor.FGO_DERIVATIVE,
-            CardType.SKILL,
-            CardRarity.SPECIAL,
-            CardTarget.SELF,
-            1
-    );
 
     public VeneratedShieldOfSnowflakes() {
-        super(ID, INFO, IMG);
+        super(ID, 1, CardType.SKILL, CardTarget.SELF, CardRarity.SPECIAL, FGOCardColor.FGO_DERIVATIVE, cardPath("skill/MashPaladin"));
         setMagic(20);
         setNP(20, 10);
         FlavorText.AbstractCardFlavorFields.textColor.set(this, Color.GOLD);

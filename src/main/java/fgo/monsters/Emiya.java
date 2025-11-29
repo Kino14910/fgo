@@ -36,8 +36,8 @@ import fgo.utils.Sounds;
 
 public class Emiya extends BaseMonster {
     public static final String ID = makeID(Emiya.class.getSimpleName());
-    public static final String IMG = FGOMod.monsterPath("emiya.png");
-    public static final String IMG2 = FGOMod.monsterPath("emiya_Ver2_Stage3.png");
+    public static final String IMG = FGOMod.monsterPath("emiya");
+    public static final String IMG2 = FGOMod.monsterPath("emiya_Ver2_Stage3");
     private static final MonsterStrings monsterStrings = CardCrawlGame.languagePack.getMonsterStrings(ID);
     public static final String NAME = monsterStrings.NAME;
     public static final String[] MOVES = monsterStrings.MOVES;
@@ -103,7 +103,7 @@ public class Emiya extends BaseMonster {
             halfDead = false;
             firstTurn = true;
             AbstractDungeon.topLevelEffects.add(new FadeWipeParticle());
-            addToBot(new VFXAction(new ChangeSceneEffect(ImageMaster.loadImage(vfxPath("UnlimitedBg.png")))));
+            addToBot(new VFXAction(new ChangeSceneEffect(ImageMaster.loadImage(vfxPath("UnlimitedBg")))));
             CardCrawlGame.music.unsilenceBGM();
             AbstractDungeon.scene.fadeOutAmbiance();
             AbstractDungeon.getCurrRoom().playBgmInstantly("UBW_Extended.mp3");

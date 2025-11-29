@@ -9,11 +9,11 @@
   },
   "${modID}:DreamUponTheStars": {
     "NAME": "별에 꿈을",
-    "DESCRIPTION": "!NP!% 보구 게이지를 얻습니다. NL !M!% 보구 위력을 얻습니다. NL !B! 방어도를 얻습니다."
+    "DESCRIPTION": "!B! 방어도를 얻습니다. NL !M!% 보구 위력을 얻습니다."
   },
   "${modID}:CharismaOfHope": {
     "NAME": "희망의 카리스마",
-    "DESCRIPTION": "!NP!% 보구 게이지를 얻습니다. NL !D! 피해를 줍니다."
+    "DESCRIPTION": "!D! 피해를 줍니다. NL !NP!% 보구 게이지를 얻습니다."
   },
   "${modID}:WallOfSnowflakes": {
     "NAME": "깨지기 쉬운 눈송이의 벽",
@@ -536,7 +536,7 @@
     "NAME": "지도",
     "DESCRIPTION": "[E] [E] 획득. NL 소멸됩니다."
   },
-  "${modID}:EternalMemories": {
+  "${modID}:AroundCaliburn": {
     "NAME": "희망의 별",
     "DESCRIPTION": "근력 2 획득. NL 모든 디버프 해제. NL !M! 회 숙정 방어 획득."
   },

@@ -9,19 +9,12 @@ import fgo.cards.FGOCard;
 import fgo.cards.noblecards.HollowHeartAlbion;
 import fgo.powers.InvincibilityTurnPower;
 import fgo.powers.NoblePhantasmCardPower;
-import fgo.utils.CardStats;
 
 public class RayHorizon extends FGOCard {
     public static final String ID = makeID(RayHorizon.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            CardColor.COLORLESS,
-            CardType.SKILL,
-            CardRarity.SPECIAL,
-            CardTarget.SELF,
-            0
-    );
+
     public RayHorizon() {
-        super(ID, INFO);
+        super(ID, 0, CardType.SKILL, CardTarget.SELF, CardRarity.SPECIAL, CardColor.COLORLESS);
         setNP(50, 50);
         cardsToPreview = new HollowHeartAlbion();
         setExhaust();

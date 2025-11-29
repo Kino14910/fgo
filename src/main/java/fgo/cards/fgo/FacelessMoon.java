@@ -20,7 +20,7 @@ public class FacelessMoon extends FGOCard {
     public FacelessMoon() {
         super(ID, 1, CardType.SKILL, CardTarget.SELF, CardRarity.COMMON);
         setMagic(1);
-        setExhaust(true, false);
+        setSelfRetain(false, true);
         tags.add(Foreigner);
 
         FlavorText.AbstractCardFlavorFields.textColor.set(this, Color.CHARTREUSE);

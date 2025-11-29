@@ -20,7 +20,7 @@ public class AlterOption extends AbstractCampfireOption {
     public AlterOption() {
         label = TEXT[0];
         description = TEXT[1];
-        img = ImageMaster.loadImage(FGOMod.uiPath("tune.png"));
+        img = ImageMaster.loadImage(FGOMod.uiPath("tune"));
         usedIdentify = false;
     }
 

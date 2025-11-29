@@ -7,19 +7,12 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import fgo.action.FgoNpAction;
 import fgo.cards.FGOCard;
-import fgo.utils.CardStats;
 
 public class RestoreSpiritOrigin extends FGOCard {
     public static final String ID = makeID(RestoreSpiritOrigin.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            CardColor.COLORLESS,
-            CardType.POWER,
-            CardRarity.SPECIAL,
-            CardTarget.NONE,
-            -2
-    );
+
     public RestoreSpiritOrigin() {
-        super(ID, INFO);
+        super(ID, -2, CardType.POWER, CardTarget.NONE, CardRarity.SPECIAL, CardColor.COLORLESS);
         setNP(300);
     }
     

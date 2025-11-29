@@ -15,20 +15,12 @@ import fgo.cards.FGOCard;
 import fgo.characters.CustomEnums.FGOCardColor;
 import fgo.powers.NPRatePower;
 import fgo.powers.StarPower;
-import fgo.utils.CardStats;
 
 public class TimewornBulletKindling extends FGOCard {
     public static final String ID = makeID(TimewornBulletKindling.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            FGOCardColor.FGO_DERIVATIVE,
-            CardType.POWER,
-            CardRarity.SPECIAL,
-            CardTarget.SELF,
-            1
-    );
 
     public TimewornBulletKindling() {
-        super(ID, INFO);
+        super(ID, 1, CardType.POWER, CardTarget.SELF, CardRarity.SPECIAL, FGOCardColor.FGO_DERIVATIVE);
         setMagic(20);
         PurgeField.purge.set(this, true);
         cardsToPreview = new ObscurantWallofChalk();

@@ -4,26 +4,17 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import fgo.cards.FGOCard;
 import fgo.characters.CustomEnums.FGOCardColor;
-import fgo.utils.CardStats;
 public class BlackBarrel extends FGOCard {
     public static final String ID = makeID(BlackBarrel.class.getSimpleName());
-    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    private static final String upgradeName = cardStrings.EXTENDED_DESCRIPTION[0];
-    private static final CardStats INFO = new CardStats(
-            FGOCardColor.FGO_DERIVATIVE,
-            CardType.ATTACK,
-            CardRarity.SPECIAL,
-            CardTarget.ENEMY,
-            0
-    );
+    private final String upgradeName;
+
     public BlackBarrel() {
-        super(ID, INFO);
+        super(ID, 0, CardType.ATTACK, CardTarget.ENEMY, CardRarity.SPECIAL, FGOCardColor.FGO_DERIVATIVE);
+        upgradeName = cardStrings.EXTENDED_DESCRIPTION[0];
         setDamage(9, 3);
         setExhaust();
     }

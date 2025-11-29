@@ -7,19 +7,12 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import fgo.cards.FGOCard;
-import fgo.utils.CardStats;
 
 public class SionSkill extends FGOCard {
     public static final String ID = makeID(SionSkill.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            CardColor.COLORLESS,
-            CardType.POWER,
-            CardRarity.SPECIAL,
-            CardTarget.NONE,
-            -2
-    );
+
     public SionSkill() {
-        super(ID, INFO);
+        super(ID, -2, CardType.POWER, CardTarget.NONE, CardRarity.SPECIAL, CardColor.COLORLESS);
         setMagic(1, 1);
     }
 

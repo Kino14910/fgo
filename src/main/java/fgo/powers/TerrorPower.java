@@ -8,6 +8,7 @@ import com.evacipated.cardcrawl.mod.stslib.powers.StunMonsterPower;
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.NonStackablePower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -33,14 +34,11 @@ public class TerrorPower extends BasePower implements NonStackablePower{
     @Override
     public void atStartOfTurn() {
         addToBot(new ReducePowerAction(owner, owner, this, 1));
-        AbstractDungeon.getMonsters().monsters.forEach(m -> {
-            m.powers.forEach(p -> {System.out.println(p.ID);});
-        });
-
         // amount%概率给眩晕
         if (random.nextInt(100) < amount2) {
             CardCrawlGame.sound.play("POWER_STUN");
             addToBot(new ApplyPowerAction(owner, owner, new StunMonsterPower((AbstractMonster) owner)));
+            addToBot(new RemoveSpecificPowerAction(owner, owner, this));
         }
     }
 

@@ -9,11 +9,11 @@
   },
   "${modID}:DreamUponTheStars": {
     "NAME": "予星以梦",
-    "DESCRIPTION": "获得 !NP! % fgo:宝具值 。 NL 获得 !M! % fgo:宝具威力 。 NL 获得 !B! 点 格挡 。"
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 获得 !M! % fgo:宝具威力 。"
   },
   "${modID}:CharismaOfHope": {
     "NAME": "2019年的格洛斯特",
-    "DESCRIPTION": "获得 !NP! % fgo:宝具值 。 NL 造成 !D! 点伤害。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !NP! % fgo:宝具值 。"
   },
   "${modID}:WallOfSnowflakes": {
     "NAME": "现为脆弱的雪花之壁",
@@ -66,7 +66,7 @@
   },
   "${modID}:HolyShroud": {
     "NAME": "圣骸布",
-    "DESCRIPTION": "如果敌人即将造成20以上的伤害，在这个回合受到的攻击伤害降低 !M! %。"
+    "DESCRIPTION": "如果所有敌人即将造成总共20以上的伤害，在这个回合受到的攻击伤害降低 !M! %。"
   },
   "${modID}:QueensCovenant": {
     "NAME": "女王的契约",
@@ -91,8 +91,7 @@
   },
   "${modID}:WisdomOfThePeople": {
     "NAME": "民之睿智",
-    "DESCRIPTION": "恢复 !M! 点生命。 NL 移除你身上的所有负面 状态 。",
-    "UPGRADE_DESCRIPTION": "恢复 !M! 点生命。 NL 获得 !NP! % fgo:宝具值 。 NL 移除你身上的所有负面 状态 。"
+    "DESCRIPTION": "{@@}恢复 !M! 点生命。{!Upgrades!|1= NL 获得 !NP! % fgo:宝具值 。} NL 移除你身上的所有负面 状态 。 NL  消耗 。"
   },
   "${modID}:NFFSpecial": {
     "NAME": "NFF尖塔特别服务",
@@ -190,17 +189,16 @@
   },
   "${modID}:BeyondTheFurthestEnd": {
     "NAME": "来自止境",
-    "DESCRIPTION": "在接下来 !M! 回合结束时，所有敌人失去1点 力量 。 NL 给予所有敌人1层 虚弱。",
+    "DESCRIPTION": "给予所有敌人3层 虚弱。 NL 在接下来 !M! 回合结束时，所有敌人失去1点 力量 。",
     "FLAVOR": "测试画风可以更改。"
   },
   "${modID}:EndOfADream": {
     "NAME": "梦之终结",
-    "DESCRIPTION": "{@@}{!Upgrades!|1=固有 。 NL }在你的回合结束时， 消耗 一张随机手牌。 NL fgo:宝具牌 攻击伤害翻倍。"
+    "DESCRIPTION": "在你的回合结束时， 消耗 一张随机手牌。 NL fgo:宝具牌 攻击伤害翻倍。"
   },
   "${modID}:WitchOfSalem": {
     "NAME": "塞勒姆的魔女",
-    "DESCRIPTION": "获得 3 层 脆弱 和 虚弱 。 NL 给予所有敌人 fgo:恐怖 ( !M! %概率)。 NL 获得 fgo:对恐怖特攻 。 NL 获得 !NP! % fgo:宝具值 。",
-    "UPGRADE_DESCRIPTION": "获得 3 层 脆弱 和 虚弱 。 NL 给予所有敌人 fgo:恐怖 ( !M! %概率)。 NL 获得 fgo:对恐怖特攻+ 。 NL 获得 !NP! % fgo:宝具值 。",
+    "DESCRIPTION": "{@@}获得 3 层 脆弱 和 虚弱 。 NL 给予所有敌人 3 层 fgo:恐怖 ( !M! %概率)。 NL 获得 {!Upgrades!|@=fgo:对恐怖特攻|1=fgo:对恐怖特攻+} 。 NL 获得 !NP! % fgo:宝具值 。",
     "FLAVOR": "领域外生命。"
   },
   "${modID}:SchwarzwaldFalke": {
@@ -208,8 +206,8 @@
     "DESCRIPTION": "获得 !M! 层 fgo:黄金律 。 NL 在你之后 !M! 个回合结束时，获得1次 fgo:回避 。"
   },
   "${modID}:ManaBurstGems": {
-    "NAME": "魔力放出（宝石）",
-    "DESCRIPTION": "在你的回合结束时，获得 !M! 点 力量 。 NL 在弃牌堆放入一张此牌的复制品。",
+    "NAME": "绝对豪运宝石圈",
+    "DESCRIPTION": "在你的回合结束时，获得 !M! 点 力量 。你在这个回合内不能再抽任何牌。",
     "FLAVOR": "测试画风可以更改。"
   },
   "${modID}:VoidSpaceFineArts": {
@@ -370,12 +368,12 @@
   },
   "${modID}:FacelessMoon": {
     "NAME": "无貌之月",
-    "DESCRIPTION": "{@@}在本回合 保留 你的手牌，每 保留 一张牌，就获得 !M! 点 fgo:暴击星 。{!Upgrades!|0= NL  消耗 。}",
+    "DESCRIPTION": "{@@}{!Upgrades!|1=保留 。 NL }在本回合 保留 你的手牌，每 保留 一张牌，就获得 !M! 点 fgo:暴击星 。",
     "FLAVOR": "领域外生命。"
   },
   "${modID}:CharismaofAdversity": {
     "NAME": "逆境的魅力",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 每12点已失去生命， NL 造成 !D! 点伤害。",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 每6点已失去生命， NL 造成 !D! 点伤害。",
     "EXTENDED_DESCRIPTION": [
       " NL （再造成 !D! 点伤害",
       "次。）"
@@ -444,7 +442,7 @@
   },
   "${modID}:PeerlessStrike": {
     "NAME": "顷刻一击",
-    "DESCRIPTION": "{@@}只有当自己生命值为一半以下时才能打出。 NL 获得5点 力量 和100% fgo:暴击威力 。 NL {!Upgraded!|@=立即死亡。|1=回合结束时死亡。}",
+    "DESCRIPTION": "{@@}只有当自己生命值为一半以下时才能打出。 NL 获得5点 力量 和100% fgo:暴击威力 。 NL {!Upgrades!|@=立即死亡。|1=回合结束时死亡。}",
     "EXTENDED_DESCRIPTION": [
       "我的生命不够低。"
     ]
@@ -545,8 +543,8 @@
     "NAME": "指导",
     "DESCRIPTION": "获得 [E] [E] 。 NL  消耗 。"
   },
-  "${modID}:EternalMemories": {
-    "NAME": "希望之星",
+  "${modID}:AroundCaliburn": {
+    "NAME": "环抱着你的希望之星",
     "DESCRIPTION": "获得2点 力量 。 NL 移除所有负面 状态 。 NL 获得 !M! 次 fgo:肃正防御 。 "
   },
   "${modID}:BeautifulJourney": {
@@ -642,16 +640,16 @@
   },
   "${modID}:Camelot": {
     "NAME": "拟似展开／人理之础",
-    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 在你的回合结束时，获得 !M! 点 格挡 。",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 在这个回合受到的攻击伤害降低 !M! %。",
     "FLAVOR": "这张卡会在特定的时候升级。"
   },
   "${modID}:LordCamelot": {
     "NAME": "已然遥远的理想之城",
-    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 获得2点 力量 。 NL 在你的回合结束时，获得 !M! 点 格挡 。"
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 获得2点 力量 。 NL 在这个回合受到的攻击伤害降低 !M! %。"
   },
   "${modID}:LordChaldeas": {
     "NAME": "构筑希望的人理之盾",
-    "DESCRIPTION": "在这个回合受到的攻击伤害降低 !M! %。 NL 在你的回合结束时，获得 !B! 点 格挡 。 NL 获得1层 人工制品 ， 3层 力量 。 NL 获得30% fgo:宝具威力 。 NL  fgo:迦勒底的圣骑士 。"
+    "DESCRIPTION": "获得1层 人工制品 ， !B! fgo:金属化 ， 3层 力量 ， !M! % fgo:伤害减免 。 NL 获得30% fgo:宝具威力 。 NL  fgo:迦勒底的圣骑士 。"
   },
   "${modID}:RayProofKyrielight": {
     "NAME": "明证希望的人理之剑",
