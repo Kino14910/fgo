@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 
+import fgo.action.IgnoresInvincibilityAction;
 import fgo.cards.AbsNoblePhantasmCard;
 
 public class RayProofKyrielight extends AbsNoblePhantasmCard {
@@ -22,6 +23,7 @@ public class RayProofKyrielight extends AbsNoblePhantasmCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new IgnoresInvincibilityAction(m));
         for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
             if (!mo.isDead && !mo.isDying) {
                 addToBot(new ApplyPowerAction(mo, p, new VulnerablePower(mo, magicNumber, false)));
