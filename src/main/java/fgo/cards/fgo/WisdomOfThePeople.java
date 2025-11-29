@@ -10,8 +10,8 @@ import fgo.cards.FGOCard;
 public class WisdomOfThePeople extends FGOCard {
     public static final String ID = makeID(WisdomOfThePeople.class.getSimpleName());
     public WisdomOfThePeople() {
-        super(ID, 1, CardType.SKILL, CardTarget.SELF, CardRarity.RARE);
-        setMagic(10);
+        super(ID, 2, CardType.SKILL, CardTarget.SELF, CardRarity.RARE);
+        setMagic(20);
         setNP(30);
         setExhaust();
         tags.add(CardTags.HEALING);
