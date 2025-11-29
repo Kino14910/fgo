@@ -10,19 +10,12 @@ import com.megacrit.cardcrawl.vfx.combat.InflameEffect;
 import fgo.action.FgoNpAction;
 import fgo.cards.FGOCard;
 import fgo.powers.StarPower;
-import fgo.utils.CardStats;
 
 public class BrilliantEscort extends FGOCard {
     public static final String ID = makeID(BrilliantEscort.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            CardColor.COLORLESS,
-            CardType.POWER,
-            CardRarity.SPECIAL,
-            CardTarget.NONE,
-            -2
-    );
+
     public BrilliantEscort() {
-        super(ID, INFO);
+        super(ID, -2, CardType.POWER, CardTarget.NONE, CardRarity.SPECIAL, CardColor.COLORLESS);
         setStar(10);
         setNP(10);
     }

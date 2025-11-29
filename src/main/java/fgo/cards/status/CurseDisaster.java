@@ -12,19 +12,12 @@ import com.megacrit.cardcrawl.vfx.combat.ShockWaveEffect;
 
 import fgo.cards.FGOCard;
 import fgo.powers.CursePower;
-import fgo.utils.CardStats;
 
 public class CurseDisaster extends FGOCard {
     public static final String ID = makeID(CurseDisaster.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            CardColor.COLORLESS,
-            CardType.STATUS,
-            CardRarity.COMMON,
-            CardTarget.NONE,
-            -2
-    );
+
     public CurseDisaster() {
-        super(ID, INFO);
+        super(ID, -2, CardType.STATUS, CardTarget.NONE, CardRarity.COMMON, CardColor.COLORLESS);
         setMagic(1);
         setEthereal();
     }

@@ -20,8 +20,8 @@ public class CrimsonSlash extends FGOCard {
         super(ID, 2, CardType.ATTACK, CardTarget.ALL_ENEMY, CardRarity.SPECIAL, CardColor.COLORLESS);
         setDamage(8, 2);
         setMagic(2, 1);
-        this.cardsToPreview = new DivineDualEdge();
         setExhaust();
+        this.cardsToPreview = new DivineDualEdge();
     }
 
     @Override

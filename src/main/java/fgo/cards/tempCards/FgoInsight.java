@@ -13,19 +13,12 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.LightBulbEffect;
 
 import fgo.cards.FGOCard;
-import fgo.utils.CardStats;
 
 public class FgoInsight extends FGOCard {
     public static final String ID = makeID(FgoInsight.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            CardColor.COLORLESS,
-            CardType.SKILL,
-            CardRarity.SPECIAL,
-            CardTarget.SELF,
-            0
-    );
+
     public FgoInsight() {
-        super(ID, INFO);
+        super(ID, 0, CardType.SKILL, CardTarget.SELF, CardRarity.SPECIAL, CardColor.COLORLESS);
         setMagic(2, 1);
         setExhaust();
         setSelfRetain();

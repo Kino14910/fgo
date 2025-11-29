@@ -1,5 +1,7 @@
 package fgo.cards;
 
+import static fgo.FGOMod.cardPath;
+
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.CommonKeywordIconsField;
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.PurgeField;
@@ -15,20 +17,23 @@ import fgo.hexui_lib.util.TextureLoader;
 
 public abstract class AbsNoblePhantasmCard extends FateMagineerCard {
     public AbsNoblePhantasmCard(String id, AbstractCard.CardType type, AbstractCard.CardTarget target) {
-        super(id, -2, type, target, AbstractCard.CardRarity.SPECIAL, FGOCardColor.NOBLE_PHANTASM);
+        this(id, type, target, -2);
+    }
+    public AbsNoblePhantasmCard(String id, AbstractCard.CardType type, AbstractCard.CardTarget target, int cost) {
+        super(id, cost, type, target, AbstractCard.CardRarity.SPECIAL, FGOCardColor.NOBLE_PHANTASM);
         setSelfRetain();
         PurgeField.purge.set(this, true);
         CommonKeywordIconsField.useIcons.set(this, false);
         FlavorText.AbstractCardFlavorFields.textColor.set(this, Color.CHARTREUSE);
         FlavorText.AbstractCardFlavorFields.flavorBoxType.set(this, FlavorText.boxType.TRADITIONAL);
         
-        cardArtLayers512.add(new RenderImageLayer(TextureLoader.getTexture(noblePath(this.getClass().getSimpleName() + ".png"))));
-        cardArtLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(noblePath(this.getClass().getSimpleName() + "_p.png"))));
+        cardArtLayers512.add(new RenderImageLayer(TextureLoader.getTexture(noblePath(this.getClass().getSimpleName()))));
+        cardArtLayers1024.add(new RenderImageLayer(TextureLoader.getTexture(noblePath(this.getClass().getSimpleName() + "_p"))));
     }
 
 
     public static String noblePath(String file) {
-        return "fgo/images/cards/noble/" + file;
+        return cardPath("noble/" + file);
     }
 
     @Override

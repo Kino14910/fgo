@@ -13,7 +13,7 @@ public class GardenOfAvalon extends AbsNoblePhantasmCard {
     public static final String ID = makeID(GardenOfAvalon.class.getSimpleName());
 
     public GardenOfAvalon() {
-        super(ID,CardType.POWER, CardTarget.SELF);
+        super(ID,CardType.POWER, CardTarget.SELF, 1);
         setBlock(3, 3);
         setNP(5);
         setStar(5, 10);

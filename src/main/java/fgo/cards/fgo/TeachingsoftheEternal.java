@@ -11,8 +11,8 @@ public class TeachingsoftheEternal extends FGOCard {
     public static final String ID = makeID(TeachingsoftheEternal.class.getSimpleName());
     public TeachingsoftheEternal() {
         super(ID, 0, CardType.SKILL, CardTarget.SELF, CardRarity.COMMON);
-        setNP(10, 10);
-        setMagic(10, 10);
+        setNP(10, 5);
+        setMagic(10, 5);
     }
     
 

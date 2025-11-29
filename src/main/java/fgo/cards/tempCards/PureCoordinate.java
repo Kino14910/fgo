@@ -9,19 +9,12 @@ import fgo.cards.FGOCard;
 import fgo.powers.AntiPurgeDefensePower;
 import fgo.powers.ArchetypeORTPower;
 import fgo.powers.InvincibilityPower;
-import fgo.utils.CardStats;
 
 public class PureCoordinate extends FGOCard {
     public static final String ID = makeID(PureCoordinate.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            CardColor.COLORLESS,
-            CardType.POWER,
-            CardRarity.SPECIAL,
-            CardTarget.NONE,
-            -2
-    );
+
     public PureCoordinate() {
-        super(ID, INFO);
+        super(ID, -2, CardType.POWER, CardTarget.NONE, CardRarity.SPECIAL, CardColor.COLORLESS);
         setMagic(2, 1);
     }
 

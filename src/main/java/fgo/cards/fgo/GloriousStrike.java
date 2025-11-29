@@ -12,7 +12,7 @@ import fgo.powers.GloriousStrikePower;
 public class GloriousStrike extends FGOCard {
     public static final String ID = makeID(GloriousStrike.class.getSimpleName());
     public GloriousStrike() {
-        super(ID, 1, CardType.ATTACK, CardTarget.ENEMY, CardRarity.RARE);
+        super(ID, 1, CardType.ATTACK, CardTarget.ENEMY, CardRarity.UNCOMMON);
         setDamage(8, 4);
         setMagic(2);
         setExhaust();

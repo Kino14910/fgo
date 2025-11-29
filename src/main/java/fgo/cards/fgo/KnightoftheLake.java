@@ -15,7 +15,7 @@ import fgo.powers.StarPower;
 public class KnightoftheLake extends FGOCard {
     public static final String ID = makeID(KnightoftheLake.class.getSimpleName());
     public KnightoftheLake() {
-        super(ID, 1, CardType.SKILL, CardTarget.SELF, CardRarity.UNCOMMON);
+        super(ID, 2, CardType.SKILL, CardTarget.SELF, CardRarity.UNCOMMON);
         setMagic(50, 50);
         setStar(10);
     }

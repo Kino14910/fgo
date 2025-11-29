@@ -17,7 +17,7 @@ public class ImitationGodForce extends AbsNoblePhantasmCard {
     public static final String ID = makeID(ImitationGodForce.class.getSimpleName());
 
     public ImitationGodForce() {
-        super(ID,CardType.ATTACK, CardTarget.ALL_ENEMY);
+        super(ID,CardType.ATTACK, CardTarget.ALL_ENEMY, 1);
         setDamage(7, 1);
         setMagic(4);
     }

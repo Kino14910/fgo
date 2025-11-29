@@ -28,3 +28,4 @@ replay_pid*
 .idea/
 .vscode/
 target/
+/src/main/resources/fgo/localization/node_modules

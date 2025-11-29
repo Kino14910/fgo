@@ -15,7 +15,7 @@ public class LieLikeVortigern extends AbsNoblePhantasmCard {
     public static final String ID = makeID(LieLikeVortigern.class.getSimpleName());
 //    public static final String ID = "LieLikeVortigern";
     public LieLikeVortigern() {
-        super(ID,CardType.ATTACK, CardTarget.ALL_ENEMY);
+        super(ID,CardType.ATTACK, CardTarget.ALL_ENEMY, 1);
         setDamage(25, 7);
         setMagic(1);
     }

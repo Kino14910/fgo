@@ -12,7 +12,7 @@ public class SuitenNikko extends AbsNoblePhantasmCard {
     public static final String ID = makeID(SuitenNikko.class.getSimpleName());
 
     public SuitenNikko() {
-        super(ID, AbstractCard.CardType.POWER, AbstractCard.CardTarget.ALL_ENEMY);
+        super(ID, AbstractCard.CardType.SKILL, AbstractCard.CardTarget.SELF, 1);
         setMagic(35, 15);
     }
 

@@ -31,7 +31,7 @@ public abstract class FGOCard extends CustomCard {
         return FGOMod.makeID(name);
     }
 
-    protected CardStrings cardStrings;
+    protected final CardStrings cardStrings;
 
     protected boolean upgradesDescription;
 

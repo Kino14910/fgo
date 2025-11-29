@@ -1,15 +1,17 @@
 package fgo.utils;
 
+import static fgo.FGOMod.imagePath;
+import static fgo.FGOMod.logger;
+import static fgo.FGOMod.powerPath;
+
+import java.util.HashMap;
+import java.util.Locale;
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.utils.GdxRuntimeException;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-
-import java.util.HashMap;
-import java.util.Locale;
-
-import static fgo.FGOMod.*;
 
 public class TextureLoader {
     private static final HashMap<String, Texture> textures = new HashMap<>();
@@ -35,9 +37,9 @@ public class TextureLoader {
                 loadTexture(filePath, linear);
             } catch (GdxRuntimeException e) {
                 logger.info("Failed to find texture " + filePath, e);
-                Texture missing = getTextureNull(imagePath("missing.png"), false);
+                Texture missing = getTextureNull(imagePath("missing"), false);
                 if (missing == null) {
-                    logger.info("missing.png is missing, should be at " + imagePath("missing.png"));
+                    logger.info("missing.png is missing, should be at " + imagePath("missing"));
                 }
                 return missing;
             }
@@ -83,20 +85,20 @@ public class TextureLoader {
 
     public static String getCardTextureString(final String cardName, final AbstractCard.CardType cardType)
     {
-        String textureString = imagePath("cards/" + cardType.name().toLowerCase(Locale.ROOT) + "/" + cardName + ".png");
+        String textureString = imagePath("cards/" + cardType.name().toLowerCase(Locale.ROOT) + "/" + cardName);
 
         FileHandle h = Gdx.files.internal(textureString);
         if (!h.exists())
         {
             switch (cardType) {
                 case ATTACK:
-                    textureString = imagePath("cards/attack/default.png");
+                    textureString = imagePath("cards/attack/default");
                     break;
                 case POWER:
-                    textureString = imagePath("cards/power/default.png");
+                    textureString = imagePath("cards/power/default");
                     break;
                 default:
-                    textureString = imagePath("cards/skill/default.png");
+                    textureString = imagePath("cards/skill/default");
                     break;
             }
         }
@@ -124,12 +126,12 @@ public class TextureLoader {
 
     public static Texture getPowerTexture(final String powerName)
     {
-        String textureString = powerPath(powerName + ".png");
+        String textureString = powerPath(powerName);
         return getTexture(textureString);
     }
     public static Texture getHiDefPowerTexture(final String powerName)
     {
-        String textureString = powerPath("large/" + powerName + ".png");
+        String textureString = powerPath("large/" + powerName);
         return getTextureNull(textureString);
     }
 }

@@ -15,7 +15,7 @@ public class LordCamelot extends AbsNoblePhantasmCard {
     public static final String ID = makeID(LordCamelot.class.getSimpleName());
     public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public LordCamelot() {
-        super(ID,CardType.POWER, CardTarget.SELF);
+        super(ID,CardType.POWER, CardTarget.SELF, 1);
         setBlock(5, 7);
         setMagic(10, 20);
     }

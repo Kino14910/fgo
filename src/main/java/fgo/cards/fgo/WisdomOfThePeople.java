@@ -13,6 +13,7 @@ public class WisdomOfThePeople extends FGOCard {
         super(ID, 1, CardType.SKILL, CardTarget.SELF, CardRarity.RARE);
         setMagic(10);
         setNP(30);
+        setExhaust();
         tags.add(CardTags.HEALING);
     }
 

@@ -9,11 +9,11 @@
   },
   "${modID}:DreamUponTheStars": {
     "NAME": "星に夢を",
-    "DESCRIPTION": "!NP!% 宝具ゲージを獲得。 NL !M!% 宝具威力を獲得。 NL !B! ブロックを獲得。"
+    "DESCRIPTION": "!B! ブロックを獲得。 NL !M!% 宝具威力を獲得。"
   },
   "${modID}:CharismaOfHope": {
     "NAME": "希望のカリスマ",
-    "DESCRIPTION": "!NP!% 宝具ゲージを獲得。 NL !D! ダメージを与える。"
+    "DESCRIPTION": "!D! ダメージを与える。 NL !NP!% 宝具ゲージを獲得。"
   },
   "${modID}:WallOfSnowflakes": {
     "NAME": "脆き雪花の壁",
@@ -545,8 +545,8 @@
     "NAME": "指導",
     "DESCRIPTION": "[E] [E] 獲得。 NL 消耗 。"
   },
-  "${modID}:EternalMemories": {
-    "NAME": "希望の星",
+  "${modID}:AroundCaliburn": {
+    "NAME": "きみをいだく希望の星",
     "DESCRIPTION": "筋力2獲得。 NL 全デバフ解除。 NL !M! 回 粛正防御獲得。"
   },
   "${modID}:BeautifulJourney": {

@@ -8,20 +8,12 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import fgo.cards.FGOCard;
-import fgo.utils.CardStats;
 
 public class RepairSpiritOrigin extends FGOCard {
     public static final String ID = makeID(RepairSpiritOrigin.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            CardColor.COLORLESS,
-            CardType.POWER,
-            CardRarity.SPECIAL,
-            CardTarget.NONE,
-            -2
-    );
-    public static final String IMG = cardPath("power/CommandSpellGuts");
+
     public RepairSpiritOrigin() {
-        super(ID, INFO, IMG);
+        super(ID, -2, CardType.POWER, CardTarget.NONE, CardRarity.SPECIAL, CardColor.COLORLESS, cardPath("power/CommandSpellGuts"));
     }
 
     @Override

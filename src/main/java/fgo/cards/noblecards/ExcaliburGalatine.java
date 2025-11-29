@@ -12,7 +12,7 @@ public class ExcaliburGalatine extends AbsNoblePhantasmCard {
     public static final String ID = makeID(ExcaliburGalatine.class.getSimpleName());
 
     public ExcaliburGalatine() {
-        super(ID,CardType.POWER, CardTarget.SELF);
+        super(ID,CardType.POWER, CardTarget.SELF, 1);
         setMagic(3, 1);
     }
 

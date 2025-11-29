@@ -13,7 +13,7 @@ public class BeautifulJourney extends AbsNoblePhantasmCard {
     public static final String ID = makeID(BeautifulJourney.class.getSimpleName());
 
     public BeautifulJourney() {
-        super(ID, CardType.ATTACK, CardTarget.ALL_ENEMY);
+        super(ID, CardType.ATTACK, CardTarget.ALL_ENEMY, 1);
         setDamage(24, 6);
         setNP(20);
     }

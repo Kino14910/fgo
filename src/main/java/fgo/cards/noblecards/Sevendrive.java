@@ -18,7 +18,7 @@ public class Sevendrive extends AbsNoblePhantasmCard {
     public static final String ID = makeID(Sevendrive.class.getSimpleName());
 
     public Sevendrive() {
-        super(ID,CardType.ATTACK, CardTarget.ALL_ENEMY);
+        super(ID,CardType.ATTACK, CardTarget.ALL_ENEMY, 1);
         setDamage(3, 1);
         setNP(10, 20);
     }

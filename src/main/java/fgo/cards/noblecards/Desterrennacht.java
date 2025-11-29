@@ -16,7 +16,7 @@ public class Desterrennacht extends AbsNoblePhantasmCard {
     public static final String ID = makeID(Desterrennacht.class.getSimpleName());
 
     public Desterrennacht() {
-        super(ID,CardType.POWER, CardTarget.ALL_ENEMY);
+        super(ID,CardType.POWER, CardTarget.ALL_ENEMY, 1);
         setMagic(3, 2);
         tags.add(Foreigner);
     }

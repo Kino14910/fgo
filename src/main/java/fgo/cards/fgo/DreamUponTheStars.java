@@ -13,7 +13,6 @@ public class DreamUponTheStars extends FGOCard {
     public DreamUponTheStars() {
         super(ID, 2, CardType.SKILL, CardTarget.SELF, CardRarity.BASIC);
         setBlock(8, 3);
-        setNP(10);
         setMagic(20, 10);
     }
 

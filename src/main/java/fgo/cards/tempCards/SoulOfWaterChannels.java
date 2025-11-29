@@ -12,19 +12,12 @@ import com.megacrit.cardcrawl.vfx.combat.FlameBarrierEffect;
 import fgo.cards.FGOCard;
 import fgo.powers.CursePower;
 import fgo.powers.StarPower;
-import fgo.utils.CardStats;
 
 public class SoulOfWaterChannels extends FGOCard {
     public static final String ID = makeID(SoulOfWaterChannels.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            CardColor.COLORLESS,
-            CardType.SKILL,
-            CardRarity.SPECIAL,
-            CardTarget.SELF,
-            0
-    );
+
     public SoulOfWaterChannels() {
-        super(ID, INFO);
+        super(ID, 0, CardType.SKILL, CardTarget.SELF, CardRarity.SPECIAL, CardColor.COLORLESS);
         setStar(10, 5);
         setExhaust();
         setSelfRetain();

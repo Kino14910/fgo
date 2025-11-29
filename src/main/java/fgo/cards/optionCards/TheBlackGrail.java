@@ -7,19 +7,12 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import fgo.cards.FGOCard;
 import fgo.powers.NPDamagePower;
-import fgo.utils.CardStats;
 
 public class TheBlackGrail extends FGOCard {
     public static final String ID = makeID(TheBlackGrail.class.getSimpleName());
-    private static final CardStats INFO = new CardStats(
-            CardColor.COLORLESS,
-            CardType.POWER,
-            CardRarity.SPECIAL,
-            CardTarget.NONE,
-            -2
-    );
+
     public TheBlackGrail() {
-        super(ID, INFO);
+        super(ID, -2, CardType.POWER, CardTarget.NONE, CardRarity.SPECIAL, CardColor.COLORLESS);
         setMagic(40, 20);
     }
 

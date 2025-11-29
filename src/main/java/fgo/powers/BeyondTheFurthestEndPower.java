@@ -8,7 +8,6 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
-import com.megacrit.cardcrawl.powers.WeakPower;
 
 public class BeyondTheFurthestEndPower extends BasePower {
     public static final String POWER_ID = makeID(BeyondTheFurthestEndPower.class.getSimpleName());
@@ -25,9 +24,14 @@ public class BeyondTheFurthestEndPower extends BasePower {
             for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
                 if (m.isDead || m.isDying) continue;
                 addToBot(new ApplyPowerAction(m, owner, new StrengthPower(m, -1)));
-                addToBot(new ApplyPowerAction(m, owner, new WeakPower(m, 1, false)));
             }
         }
         addToBot(new ReducePowerAction(owner, owner, ID, 1));
+    }
+
+    
+   @Override
+    public void updateDescription() {
+        description = DESCRIPTIONS[0];
     }
 }

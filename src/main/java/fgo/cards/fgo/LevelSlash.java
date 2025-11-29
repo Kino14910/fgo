@@ -10,15 +10,18 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
 
+import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.MultiCardPreview;
 import fgo.cards.FGOCard;
 import fgo.cards.colorless.CrimsonSlash;
+import fgo.cards.colorless.DivineDualEdge;
 public class LevelSlash extends FGOCard {
     public static final String ID = makeID(LevelSlash.class.getSimpleName());
     public LevelSlash() {
         super(ID, 1, CardType.ATTACK, CardTarget.ALL_ENEMY, CardRarity.RARE);
         setDamage(6, 3);
-        this.cardsToPreview = new CrimsonSlash();
         setExhaust();
+        
+        MultiCardPreview.add(this, new CrimsonSlash(), new DivineDualEdge());
     }
 
     @Override

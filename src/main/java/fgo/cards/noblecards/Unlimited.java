@@ -19,7 +19,7 @@ import fgo.utils.Sounds;
 public class Unlimited extends AbsNoblePhantasmCard {
     public static final String ID = makeID(Unlimited.class.getSimpleName());
     public Unlimited() {
-        super(ID,CardType.POWER, CardTarget.SELF);
+        super(ID,CardType.POWER, CardTarget.SELF, 1);
         setMagic(1, 1);
     }
 
@@ -28,7 +28,7 @@ public class Unlimited extends AbsNoblePhantasmCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.topLevelEffects.add(new FadeWipeParticle());
         addToBot(new WaitFgoAction(1.0F));
-        addToBot(new VFXAction(new ChangeSceneEffect(ImageMaster.loadImage(FGOMod.vfxPath("UnlimitedBg.png")))));
+        addToBot(new VFXAction(new ChangeSceneEffect(ImageMaster.loadImage(FGOMod.vfxPath("UnlimitedBg")))));
         CardCrawlGame.music.silenceTempBgmInstantly();
         CardCrawlGame.music.silenceBGMInstantly();
         AbstractDungeon.getCurrRoom().playBgmInstantly(Sounds.UBW_Music);
