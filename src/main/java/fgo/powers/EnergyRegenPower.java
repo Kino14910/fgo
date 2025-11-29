@@ -12,40 +12,36 @@ import fgo.action.FgoNpAction;
 public class EnergyRegenPower extends BasePower {
     public static final String POWER_ID = makeID(EnergyRegenPower.class.getSimpleName());
     private static final PowerType TYPE = PowerType.BUFF;
-    private final int npAmount;
-    private boolean isTurnBased = false;
 
     public EnergyRegenPower(AbstractCreature owner, int npAmount) {
         super(POWER_ID, TYPE, false, owner, npAmount);
-        this.npAmount = npAmount;
-        this.isTurnBased = false;
+        this.amount = npAmount;
     }
 
-    public EnergyRegenPower(AbstractCreature owner, int npAmount, int amount) {
-        super(POWER_ID, TYPE, true, owner, amount);
-        this.npAmount = npAmount;
-        this.isTurnBased = true;
+    public EnergyRegenPower(AbstractCreature owner, int npAmount, int times) {
+        super(POWER_ID, TYPE, true, owner, times);
+        this.amount = npAmount;
+        this.amount2 = times;
     }
 
     @Override
     public void atStartOfTurn() {
         if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
             flash();
-            addToBot(new FgoNpAction(npAmount));
+            addToBot(new FgoNpAction(amount));
             if(isTurnBased)
-                addToBot(new ReducePowerAction(owner, owner, ID, 1));
+                addToBot(new ReducePowerAction(owner, owner, this, 1));
         }
     }
 
     @Override
     public void updateDescription() {
-        
-        description = String.format(DESCRIPTIONS[0], npAmount);
+        this.description = String.format(DESCRIPTIONS[0], amount);
     }
 
     public AbstractPower makeCopy() {
         return isTurnBased
-                ? new EnergyRegenPower(owner, amount, npAmount)
+                ? new EnergyRegenPower(owner, amount, amount2)
                 : new EnergyRegenPower(owner, amount);
     }
 }

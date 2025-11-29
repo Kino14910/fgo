@@ -312,7 +312,7 @@
   "${modID}:BlessingOfKurPower": {
     "NAME": "冥界佑护",
     "DESCRIPTIONS": [
-      "你下一次打出 #y灵峰踏抱冥府之鞴 时额外：获得 #b3 点 #y力量 和 #y人工制品 。"
+      "你下一次打出 #y灵峰踏抱冥府之鞴 时额外获得 #b%d 点 额外生命 和 #b%d 点 #y力量 。"
     ]
   },
   "${modID}:LivingFlamePower": {

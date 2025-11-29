@@ -2,36 +2,38 @@ package fgo.powers;
 
 import static fgo.FGOMod.makeID;
 
+import com.evacipated.cardcrawl.mod.stslib.actions.tempHp.AddTemporaryHPAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 
 import fgo.cards.noblecards.KurKigalIrkalla;
-import fgo.characters.CustomEnums.FGOCardColor;
 
 public class BlessingOfKurPower extends BasePower {
     public static final String POWER_ID = makeID(BlessingOfKurPower.class.getSimpleName());
     private static final PowerType TYPE = PowerType.BUFF;
     private static final boolean TURN_BASED = false;
 
-    public BlessingOfKurPower(AbstractCreature owner) {
+    private final int maxHP;
+    private final int strength;
+
+    public BlessingOfKurPower(AbstractCreature owner, int maxHP, int strength) {
         super(POWER_ID, TYPE, TURN_BASED, owner);
+        this.maxHP = maxHP;
+        this.strength = strength;
     }
 
     @Override
-    public void updateDescription() {description = DESCRIPTIONS[0];}
+    public void updateDescription() {description = String.format(DESCRIPTIONS[0], maxHP, strength);}
 
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
-       if (card.color == FGOCardColor.NOBLE_PHANTASM) {
-            flash();
-            if (card.cardID.equals(KurKigalIrkalla.ID)) {
-                addToBot(new ApplyPowerAction(owner, owner, new MaxHPPower(owner, amount * 2), amount * 2));
-            } else {
-                addToBot(new ApplyPowerAction(owner, owner, new MaxHPPower(owner, amount), amount));
-            }
+        if (card.cardID.equals(KurKigalIrkalla.ID)) {
+            addToBot(new AddTemporaryHPAction(owner, owner, maxHP));
+            addToBot(new ApplyPowerAction(owner, owner, new StrengthPower(owner, strength)));
             addToBot(new RemoveSpecificPowerAction(owner, owner, ID));
         }
     }

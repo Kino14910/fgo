@@ -216,7 +216,7 @@ public abstract class FGOCard extends CustomCard {
         this.upgradedStar = true;
     }
 
-    protected final void setMagicNumber2(int magic2) { setMagic2(magic2, 0); }
+    protected final void setMagic2(int magic2) { setMagic2(magic2, 0); }
 
     protected final void setMagic2(int magic2, int magic2Upgrade) {
         this.baseMagicNumber2 = this.magicNumber2 = magic2;

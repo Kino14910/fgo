@@ -156,7 +156,7 @@
   },
   "${modID}:BlessingOfKur": {
     "NAME": "冥界佑护",
-    "DESCRIPTION": "你打出下一张 fgo:宝具牌 时，额外获得 !M! 点 fgo:最大生命 。 NL 消耗 。"
+    "DESCRIPTION": " fgo:宝具值获取提升 。 NL 你打出下一张 *灵峰踏抱冥府之鞴 时，额外获得 !M! 点 fgo:最大生命 和 !M2! 点 力量 。"
   },
   "${modID}:OriginBullet": {
     "NAME": "起源弹",
@@ -455,6 +455,14 @@
     "NAME": "纵使三度迎来落日",
     "DESCRIPTION": "之后3次要被杀死时，阻止并回复 !M! 点生命，获得20% fgo:宝具威力 ，且移除所有负面状态。"
   },
+  "${modID}:MaidensWillpower": {
+    "NAME": "少女的志气",
+    "DESCRIPTION": "获得 5 层 fgo:毅力 。 NL 获得 1 层 人工制品 。"
+  },
+  "${modID}:LamplightOfTheSoul": {
+    "NAME": "魂之灯火",
+    "DESCRIPTION": "获得 !M! 层 fgo:毅力 。 NL 在你的回合结束时，获得 !B! 点 格挡 。"
+  },
   "${modID}:MillenniumCastle": {
     "NAME": "光辉之月",
     "DESCRIPTION": "{@@}{!Upgrades!|1=固有 。 NL }在每回合开始时，失去1点 力量 ，所有敌人失去2点 力量 ，持续3回合。 NL 在结束时反转你的负面 力量 ，获得等量 敏捷 。"
@@ -732,5 +740,9 @@
   "${modID}:SuitenNikko": {
     "NAME": "水天日光天照八野镇石",
     "DESCRIPTION": "你手牌中的所有牌在本回合的耗能减少1点。 NL 获得 !M! % fgo:宝具值 。"
+  },
+  "${modID}:SneferuIteruNile": {
+    "NAME": "青色美丽的尼罗河",
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 给予 3 层 易伤 。 NL 如果敌人的生命值小于等于 !M! 点，则将其生命值变为0。 NL 获得 fgo:水边 。"
   }
 }
