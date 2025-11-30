@@ -8,10 +8,9 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 public class StarRegenPower extends BasePower {
     public static final String POWER_ID = makeID(StarRegenPower.class.getSimpleName());
     private static final PowerType TYPE = PowerType.BUFF;
-    private static final boolean TURN_BASED = false;
 
     public StarRegenPower(AbstractCreature owner, int amount) {
-        super(POWER_ID, TYPE, TURN_BASED, owner, amount); 
+        super(POWER_ID, TYPE, false, owner, amount); 
     }
 
     @Override

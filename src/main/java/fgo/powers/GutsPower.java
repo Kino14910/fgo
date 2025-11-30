@@ -11,11 +11,10 @@ import fgo.patches.RevivePatch;
 public class GutsPower extends BasePower {
     public static final String POWER_ID = makeID(GutsPower.class.getSimpleName());
     private static final PowerType TYPE = PowerType.BUFF;
-    private static final boolean TURN_BASED = false;
     private int time;
  
     public GutsPower(AbstractCreature owner, int amount, int time) {
-        super(POWER_ID, TYPE, TURN_BASED, owner, amount); 
+        super(POWER_ID, TYPE, false, owner, amount); 
         this.time = time;
         this.amount2 = time == 1 ? 0 : time;
         this.updateDescription();

@@ -9,11 +9,9 @@ import fgo.action.FgoNpAction;
 
 public class ArchetypeORTPower extends BasePower {
     public static final String POWER_ID = makeID(ArchetypeORTPower.class.getSimpleName());
-    private static final PowerType TYPE = PowerType.BUFF;
-    private static final boolean TURN_BASED = false;
 
     public ArchetypeORTPower(AbstractCreature owner) {
-        super(POWER_ID, TYPE, TURN_BASED, owner);
+        super(POWER_ID, PowerType.BUFF, false, owner);
     }
 
     @Override

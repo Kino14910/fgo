@@ -1,5 +1,7 @@
 package fgo.powers;
 
+import static fgo.FGOMod.makeID;
+
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
@@ -8,15 +10,12 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
-import static fgo.FGOMod.makeID;
-
 public class MyFairSoldierPower extends BasePower {
     public static final String POWER_ID = makeID(MyFairSoldierPower.class.getSimpleName());
     private static final PowerType TYPE = PowerType.DEBUFF;
-    private static final boolean TURN_BASED = false;
 
     public MyFairSoldierPower(AbstractCreature owner, int amount) {
-        super(POWER_ID, TYPE, TURN_BASED, owner, amount, "SkillSeal");
+        super(POWER_ID, PowerType.DEBUFF, false, owner, amount, "SkillSeal");
     }
 
     @Override

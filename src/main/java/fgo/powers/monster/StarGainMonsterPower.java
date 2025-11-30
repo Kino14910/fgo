@@ -1,21 +1,21 @@
 package fgo.powers.monster;
 
+import static fgo.FGOMod.makeID;
+
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+
 import fgo.powers.ArchetypeORTPower;
 import fgo.powers.BasePower;
 import fgo.powers.CriticalDamageUpPower;
 
-import static fgo.FGOMod.makeID;
-
 public class StarGainMonsterPower extends BasePower {
     public static final String POWER_ID = makeID(ArchetypeORTPower.class.getSimpleName());
-    private static final PowerType TYPE = PowerType.BUFF;
-    private static final boolean TURN_BASED = false;
+
     public StarGainMonsterPower(AbstractCreature owner, int amount) {
-        super(POWER_ID, TYPE, TURN_BASED, owner, amount);
+        super(POWER_ID, PowerType.BUFF, false, owner, amount);
     }
 
     @Override

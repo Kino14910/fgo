@@ -9,10 +9,9 @@ import fgo.action.FgoNpAction;
 public class MorningLarkPower extends BasePower {
     public static final String POWER_ID = makeID(MorningLarkPower.class.getSimpleName());
     private static final PowerType TYPE = PowerType.DEBUFF;
-    private static final boolean TURN_BASED = false;
 
     public MorningLarkPower(AbstractCreature owner, int amount) {
-        super(POWER_ID, TYPE, TURN_BASED, owner, amount, "EndOfADreamPower");
+        super(POWER_ID, PowerType.DEBUFF, false, owner, amount, "EndOfADreamPower");
     }
 
     @Override

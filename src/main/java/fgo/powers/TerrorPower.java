@@ -22,7 +22,7 @@ public class TerrorPower extends BasePower implements NonStackablePower{
     private final Random random = new Random();
 
     public TerrorPower(AbstractCreature owner, int turns, int chance) {
-        super(POWER_ID, TYPE, TURN_BASED, owner, turns, "EndOfADreamPower");
+        super(POWER_ID, PowerType.DEBUFF, true, owner, turns, "EndOfADreamPower");
         this.amount2 = chance;
     }
 

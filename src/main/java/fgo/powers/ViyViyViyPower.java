@@ -11,13 +11,12 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 public class ViyViyViyPower extends BasePower {
     public static final String POWER_ID = makeID(ViyViyViyPower.class.getSimpleName());
     private static final PowerType TYPE = PowerType.BUFF;
-    private static final boolean TURN_BASED = false;
     private final AbstractRelic r;
     private static int IdOffset;
     private final AbstractPlayer p;
     private final String rName;
     public ViyViyViyPower(AbstractCreature owner, AbstractRelic r) {
-        super(POWER_ID, TYPE, TURN_BASED, owner, "ConcentrateSpellsPower");
+        super(POWER_ID, TYPE, false, owner, "ConcentrateSpellsPower");
         this.ID = "PropBagPower" + IdOffset;
         IdOffset++;
         this.r = r;

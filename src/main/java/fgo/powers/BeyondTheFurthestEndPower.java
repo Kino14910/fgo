@@ -11,10 +11,8 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 
 public class BeyondTheFurthestEndPower extends BasePower {
     public static final String POWER_ID = makeID(BeyondTheFurthestEndPower.class.getSimpleName());
-    private static final PowerType TYPE = PowerType.BUFF;
-    private static final boolean TURN_BASED = false;
     public BeyondTheFurthestEndPower(AbstractCreature owner, int amount) {
-        super(POWER_ID, TYPE, TURN_BASED, owner, amount, "BuffRegenPower");
+        super(POWER_ID, PowerType.BUFF, false, owner, amount, "BuffRegenPower");
     }
 
     @Override

@@ -1,22 +1,22 @@
 package fgo.powers;
 
+import static fgo.FGOMod.makeID;
+
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.powers.watcher.VigorPower;
-import fgo.action.SunlightAction;
 
-import static fgo.FGOMod.makeID;
+import fgo.action.SunlightAction;
 
 public class SunlightPower extends BasePower {
     public static final String POWER_ID = makeID(SunlightPower.class.getSimpleName());
    private static final PowerType TYPE = PowerType.BUFF;
-    private static final boolean TURN_BASED = false;
 
     public SunlightPower(AbstractCreature owner, int amount) {
-        super(POWER_ID, TYPE, TURN_BASED, owner, amount);
+        super(POWER_ID, TYPE, false, owner, amount);
     }
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {

@@ -584,7 +584,7 @@
   },
   "${modID}:LostLonginus": {
     "NAME": "选定之枪",
-    "DESCRIPTION": "对所有敌人造成 !D! 点伤害，移除 *坚不可摧 。"
+    "DESCRIPTION": " fgo:无敌贯通 。对所有敌人造成 !D! 点伤害，移除 *坚不可摧 。"
   },
   "${modID}:WickerMan": {
     "NAME": "灼烧殆尽的炎笼",

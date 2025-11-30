@@ -11,7 +11,7 @@ public class VSTerrorDamageUpPower extends BasePower {
     private static final boolean TURN_BASED = true;
 
     public VSTerrorDamageUpPower(AbstractCreature owner, int amount) {
-        super(POWER_ID, TYPE, TURN_BASED, owner, amount, "AttackUpPower");
+        super(POWER_ID, TYPE, true, owner, amount, "AttackUpPower");
     }
 
     @Override

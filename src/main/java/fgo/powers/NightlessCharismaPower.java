@@ -1,18 +1,18 @@
 package fgo.powers;
 
+import static fgo.FGOMod.makeID;
+
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
-import fgo.action.NightlessCharismaAction;
 
-import static fgo.FGOMod.makeID;
+import fgo.action.NightlessCharismaAction;
 
 public class NightlessCharismaPower extends BasePower {
     public static final String POWER_ID = makeID(NightlessCharismaPower.class.getSimpleName());
     private static final PowerType TYPE = PowerType.BUFF;
-    private static final boolean TURN_BASED = false;
 
     public NightlessCharismaPower(AbstractCreature owner, int amount) {
-        super(POWER_ID, TYPE, TURN_BASED, owner, amount, "SunlightPower");
+        super(POWER_ID, TYPE, false, owner, amount, "SunlightPower");
     }
 
     @Override

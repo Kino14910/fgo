@@ -9,11 +9,9 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 
 public class AntiPurgeDefensePower extends BasePower {
     public static final String POWER_ID = makeID(AntiPurgeDefensePower.class.getSimpleName());
-    private static final PowerType TYPE = PowerType.BUFF;
-    private static final boolean TURN_BASED = false;
 
     public AntiPurgeDefensePower(AbstractCreature owner, int amount) {
-        super(POWER_ID, TYPE, TURN_BASED, owner, amount); 
+        super(POWER_ID, PowerType.BUFF, false, owner, amount); 
     }
 
     @Override

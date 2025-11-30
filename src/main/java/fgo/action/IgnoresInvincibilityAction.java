@@ -15,13 +15,20 @@ import fgo.powers.IgnoresInvincibilityPower;
 public class IgnoresInvincibilityAction extends AbstractGameAction {
     private int timesAmount = 0;
     private final AbstractPlayer p = AbstractDungeon.player;
+    private boolean usePower = false;
 
+    public IgnoresInvincibilityAction(AbstractCreature target) {
+        this.target = target;
+        this.actionType = ActionType.DAMAGE;
+        this.duration = 0.1F;
+    }
 
     public IgnoresInvincibilityAction(AbstractCreature target, int amount) {
         this.target = target;
         this.amount = amount;
         this.actionType = ActionType.DAMAGE;
         this.duration = 0.1F;
+        this.usePower = true;
     }
 
     @Override
@@ -40,8 +47,9 @@ public class IgnoresInvincibilityAction extends AbstractGameAction {
             }
 
             timesAmount += amount;
-
-            addToBot(new ApplyPowerAction(p, p, new IgnoresInvincibilityPower(p, timesAmount)));
+            if(usePower) {
+                addToBot(new ApplyPowerAction(p, p, new IgnoresInvincibilityPower(p, timesAmount)));
+            }
 
             if (AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead()) {
                 AbstractDungeon.actionManager.clearPostCombatActions();
