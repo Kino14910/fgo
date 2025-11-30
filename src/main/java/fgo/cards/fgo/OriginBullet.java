@@ -23,7 +23,7 @@ public class OriginBullet extends FGOCard {
             ++BulletAmt;
         }
         addToBot(new SFXAction(Sounds.gun));
-        addToBot(new IgnoresInvincibilityAction(m, upgraded ? BulletAmt : 0));
+        addToBot(new IgnoresInvincibilityAction(m, true));
     }
 }
 

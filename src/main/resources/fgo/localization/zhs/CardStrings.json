@@ -198,7 +198,7 @@
   },
   "${modID}:WitchOfSalem": {
     "NAME": "塞勒姆的魔女",
-    "DESCRIPTION": "{@@}获得 3 层 脆弱 和 虚弱 。 NL 给予所有敌人 3 层 fgo:恐怖 ( !M! %概率)。 NL 获得 {!Upgrades!|@=fgo:对恐怖特攻|1=fgo:对恐怖特攻+} 。 NL 获得 !NP! % fgo:宝具值 。",
+    "DESCRIPTION": "{@@}给予所有敌人 3 层 脆弱 ， 虚弱 和 fgo:恐怖 ( !M! %概率)。 NL 获得 {!Upgrades!|@=fgo:对恐怖特攻|1=fgo:对恐怖特攻+} 。 NL 获得 !NP! % fgo:宝具值 。",
     "FLAVOR": "领域外生命。"
   },
   "${modID}:SchwarzwaldFalke": {
