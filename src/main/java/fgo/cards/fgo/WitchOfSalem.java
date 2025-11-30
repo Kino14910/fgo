@@ -20,7 +20,7 @@ public class WitchOfSalem extends FGOCard {
     public static final String ID = makeID(WitchOfSalem.class.getSimpleName());
 
     public WitchOfSalem() {
-        super(ID, 1, CardType.SKILL, CardTarget.ALL_ENEMY, CardRarity.RARE);
+        super(ID, 3, CardType.SKILL, CardTarget.ALL_ENEMY, CardRarity.RARE);
         setMagic(30, 20);
         setMagic2(50, 50);
 

@@ -14,15 +14,12 @@ public class CursePower extends BasePower {
 
     @Override
     public void updateDescription() {
-        this.description = String.format(DESCRIPTIONS[0], this.amount);
+        this.description = String.format(DESCRIPTIONS[0], amount);
     }
 
     @Override
     public void atStartOfTurn() {
-        if (!this.owner.hasPower(GloriousStrikePower.POWER_ID)) {
-            this.flash();
-            this.addToBot(new LoseHPAction(this.owner, this.owner, this.amount));
-        }
+        addToBot(new LoseHPAction(owner, owner, amount));
     }
 
     

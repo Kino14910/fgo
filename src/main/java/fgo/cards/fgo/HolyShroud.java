@@ -16,7 +16,7 @@ public class HolyShroud extends FGOCard {
     }
 
     @Override
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+    public void use(AbstractPlayer p, AbstractMonster m) {
         int sum = 0;
         
         for (AbstractMonster monster : AbstractDungeon.getMonsters().monsters) {
@@ -26,13 +26,11 @@ public class HolyShroud extends FGOCard {
                     : dmg;
             sum += actualDmg;
         }
+        
+        if (sum > 20) {
+            addToBot(new ApplyPowerAction(p, p, new ReducePercentDamagePower(p, magicNumber), magicNumber));
+        }
 
-        return sum >= 20;
-    }
-
-    @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new ReducePercentDamagePower(p, magicNumber), magicNumber));
     }
 }
 

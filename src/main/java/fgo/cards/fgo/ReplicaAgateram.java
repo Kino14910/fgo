@@ -1,4 +1,4 @@
-package fgo.cards.colorless;
+package fgo.cards.fgo;
 
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;

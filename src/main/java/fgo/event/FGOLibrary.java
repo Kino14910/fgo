@@ -18,10 +18,10 @@ import fgo.cards.colorless.EightKindness;
 import fgo.cards.colorless.MaraPapiyas;
 import fgo.cards.colorless.MillenniumCastle;
 import fgo.cards.colorless.PrimevalRune;
-import fgo.cards.colorless.ReplicaAgateram;
 import fgo.cards.colorless.UndeadBird;
 import fgo.cards.fgo.DeathOfDeath;
 import fgo.cards.fgo.PeerlessStrike;
+import fgo.cards.fgo.ReplicaAgateram;
 import fgo.cards.fgo.SpringOfFire;
 
 public class FGOLibrary extends BaseEvent {

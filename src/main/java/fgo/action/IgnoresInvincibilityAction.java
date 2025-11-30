@@ -18,22 +18,24 @@ public class IgnoresInvincibilityAction extends AbstractGameAction {
     private boolean usePower = false;
 
     public IgnoresInvincibilityAction(AbstractCreature target) {
-        this.target = target;
-        this.actionType = ActionType.DAMAGE;
-        this.duration = 0.1F;
+        this(target, false);
     }
 
-    public IgnoresInvincibilityAction(AbstractCreature target, int amount) {
+    public IgnoresInvincibilityAction(AbstractCreature target, boolean usePower) {
         this.target = target;
-        this.amount = amount;
         this.actionType = ActionType.DAMAGE;
         this.duration = 0.1F;
-        this.usePower = true;
+        this.usePower = usePower;
     }
 
     @Override
     public void update() {
         if (this.duration == 0.1F && this.target != null) {
+            if (target.currentBlock > 0) {
+                target.currentBlock = 0;
+                timesAmount++;
+            }
+
             String[] powerIds = {
                 IntangiblePower.POWER_ID,
                 PlatedArmorPower.POWER_ID,
@@ -46,7 +48,6 @@ public class IgnoresInvincibilityAction extends AbstractGameAction {
                 }
             }
 
-            timesAmount += amount;
             if(usePower) {
                 addToBot(new ApplyPowerAction(p, p, new IgnoresInvincibilityPower(p, timesAmount)));
             }
