@@ -11,10 +11,9 @@ import fgo.patches.RevivePatch;
 public class SpringOfFirePower extends BasePower {
     public static final String POWER_ID = makeID(SpringOfFirePower.class.getSimpleName());
     private static final PowerType TYPE = PowerType.BUFF;
-    private static final boolean TURN_BASED = false;
 
     public SpringOfFirePower(AbstractCreature owner, int amount) {
-        super(POWER_ID, TYPE, TURN_BASED, owner, amount, "GutsTriggerPower");
+        super(POWER_ID, TYPE, false, owner, amount, "GutsTriggerPower");
     }
     
     /**

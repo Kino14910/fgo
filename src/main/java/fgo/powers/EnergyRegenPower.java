@@ -11,15 +11,14 @@ import fgo.action.FgoNpAction;
 
 public class EnergyRegenPower extends BasePower {
     public static final String POWER_ID = makeID(EnergyRegenPower.class.getSimpleName());
-    private static final PowerType TYPE = PowerType.BUFF;
 
     public EnergyRegenPower(AbstractCreature owner, int npAmount) {
-        super(POWER_ID, TYPE, false, owner, npAmount);
+        super(POWER_ID, PowerType.BUFF, false, owner, npAmount);
         this.amount = npAmount;
     }
 
     public EnergyRegenPower(AbstractCreature owner, int npAmount, int times) {
-        super(POWER_ID, TYPE, true, owner, times);
+        super(POWER_ID, PowerType.BUFF, true, owner, times);
         this.amount = npAmount;
         this.amount2 = times;
     }

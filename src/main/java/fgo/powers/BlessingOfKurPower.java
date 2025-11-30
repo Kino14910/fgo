@@ -14,14 +14,12 @@ import fgo.cards.noblecards.KurKigalIrkalla;
 
 public class BlessingOfKurPower extends BasePower {
     public static final String POWER_ID = makeID(BlessingOfKurPower.class.getSimpleName());
-    private static final PowerType TYPE = PowerType.BUFF;
-    private static final boolean TURN_BASED = false;
 
     private final int maxHP;
     private final int strength;
 
     public BlessingOfKurPower(AbstractCreature owner, int maxHP, int strength) {
-        super(POWER_ID, TYPE, TURN_BASED, owner);
+        super(POWER_ID, PowerType.BUFF, false, owner);
         this.maxHP = maxHP;
         this.strength = strength;
     }

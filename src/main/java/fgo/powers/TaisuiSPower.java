@@ -8,11 +8,9 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public class TaisuiSPower extends BasePower {
     public static final String POWER_ID = makeID(TaisuiSPower.class.getSimpleName());
-    private static final PowerType TYPE = PowerType.DEBUFF;
-    private static final boolean TURN_BASED = false;
 
     public TaisuiSPower(AbstractCreature owner, int amount) {
-        super(POWER_ID, TYPE, TURN_BASED, owner, amount, "EndOfADreamPower");
+        super(POWER_ID, PowerType.DEBUFF, false, owner, amount, "EndOfADreamPower");
     }
 
     @Override

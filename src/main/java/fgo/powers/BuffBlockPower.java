@@ -10,10 +10,9 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 public class BuffBlockPower extends BasePower {
     public static final String POWER_ID = makeID(BuffBlockPower.class.getSimpleName());
     private static final PowerType TYPE = PowerType.BUFF;
-    private static final boolean TURN_BASED = false;
     
     public BuffBlockPower(AbstractCreature owner, int amount) {
-        super(POWER_ID, TYPE, TURN_BASED, owner, amount);
+        super(POWER_ID, TYPE, false, owner, amount);
     }
 
     @Override

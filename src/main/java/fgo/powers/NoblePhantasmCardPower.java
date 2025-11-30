@@ -11,11 +11,10 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 public class NoblePhantasmCardPower extends BasePower {
     public static final String POWER_ID = makeID(NoblePhantasmCardPower.class.getSimpleName());
     private static final PowerType TYPE = PowerType.BUFF;
-    private static final boolean TURN_BASED = false;
     private final AbstractCard card;
  
     public NoblePhantasmCardPower(AbstractCreature owner, AbstractCard copyMe) {
-        super(POWER_ID, TYPE, TURN_BASED, owner, owner, -1, "PutOnFakeFacePower", false);
+        super(POWER_ID, TYPE, false, owner, owner, -1, "PutOnFakeFacePower", false);
         card = copyMe.makeStatEquivalentCopy();
         card.resetAttributes();
         updateDescription();

@@ -8,11 +8,9 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class BeastMagicPower extends BasePower {
     public static final String POWER_ID = makeID(BeastMagicPower.class.getSimpleName());
-    private static final PowerType TYPE = PowerType.BUFF;
-    private static final boolean TURN_BASED = false;
 
     public BeastMagicPower(AbstractCreature owner, int amount) {
-        super(POWER_ID, TYPE, TURN_BASED, owner, amount, "DefenseUpPower");
+        super(POWER_ID, PowerType.BUFF, false, owner, amount, "DefenseUpPower");
     }
     @Override
     public void updateDescription() {

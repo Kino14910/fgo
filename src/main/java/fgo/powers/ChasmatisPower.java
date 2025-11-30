@@ -9,9 +9,8 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 public class ChasmatisPower extends BasePower {
     public static final String POWER_ID = makeID(ChasmatisPower.class.getSimpleName());
     private static final PowerType TYPE = PowerType.BUFF;
-    private static final boolean TURN_BASED = false;
     public ChasmatisPower(AbstractCreature owner, int amount) {
-        super(POWER_ID, TYPE, TURN_BASED, owner, amount, "OriginBulletPower");
+        super(POWER_ID, TYPE, false, owner, amount, "OriginBulletPower");
     }
 
     @Override
