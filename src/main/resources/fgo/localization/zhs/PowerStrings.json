@@ -8,8 +8,7 @@
   "${modID}:GutsPower": {
     "NAME": "毅力",
     "DESCRIPTIONS": [
-      "当你要被杀死时，免死并回复 #b%1$s 点 #y生命 。",
-      "当你接下来 #b%2$s 次要被杀死时，免死并回复 #b%1$s 点 #y生命 。"
+      "当你要被杀死时，免死并回复 #b%d 点 #y生命 。"
     ]
   },
   "${modID}:UnlimitedPower": {
@@ -531,10 +530,11 @@
       " #y毅力 发动时，获得 #b%d 点力量。"
     ]
   },
-  "${modID}:HeraclesGutsPower": {
+  "${modID}:NonStackableGutsPower": {
     "NAME": "毅力",
     "DESCRIPTIONS": [
-      "当你要被杀死时，免死并回复 #b%d 点 #y生命 。"
+      "当你要被杀死时，免死并回复 #b%d 点 #y生命 。",
+      "当你接下来 #b%d 次要被杀死时，免死并回复 #b%d 点 #y生命 。"
     ]
   }
 }

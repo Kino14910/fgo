@@ -8,15 +8,11 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import fgo.patches.RevivePatch;
 
-public class GutsPower extends BasePower {
+public class GutsPower extends BasePower{
     public static final String POWER_ID = makeID(GutsPower.class.getSimpleName());
-    private int time;
  
-    public GutsPower(AbstractCreature owner, int amount, int time) {
+    public GutsPower(AbstractCreature owner, int amount) {
         super(POWER_ID, PowerType.BUFF, false, owner, amount); 
-        this.time = time;
-        this.amount2 = time == 1 ? 0 : time;
-        this.updateDescription();
     }
 
     /**
@@ -25,13 +21,7 @@ public class GutsPower extends BasePower {
     @Override
     public void onSpecificTrigger() {
         AbstractDungeon.player.heal(Math.max(amount, 1), true);
-        time--;
-        amount2 = time == 1 ? 0 : time;
-        if (time == 0) {
-            addToTop(new RemoveSpecificPowerAction(owner, owner, ID));
-        } 
-        
-        updateDescription();
+        addToTop(new RemoveSpecificPowerAction(owner, owner, ID));
     }
 
     @Override
@@ -41,7 +31,7 @@ public class GutsPower extends BasePower {
 
     @Override
     public void updateDescription() {
-        description = String.format(time == 1 ? DESCRIPTIONS[0] : DESCRIPTIONS[1], amount, time);
+        description = String.format(DESCRIPTIONS[0], amount);
     }
 
     

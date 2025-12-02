@@ -18,7 +18,7 @@ public class MaidensWillpower extends FGOCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new GutsPower(p, 5, 1)));
+        addToBot(new ApplyPowerAction(p, p, new GutsPower(p, 5)));
         addToBot(new ApplyPowerAction(p, p, new ArtifactPower(p, 1)));
     }
 }

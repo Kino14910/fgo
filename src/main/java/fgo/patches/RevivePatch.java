@@ -17,8 +17,8 @@ import fgo.action.FgoNpAction;
 import fgo.powers.DeathOfDeathPower;
 import fgo.powers.GutsAtTheWellPower;
 import fgo.powers.GutsPower;
-import fgo.powers.HeraclesGutsPower;
 import fgo.powers.IndomitablePower;
+import fgo.powers.NonStackableGutsPower;
 import fgo.powers.SpringOfFirePower;
 import fgo.ui.panels.CommandSpellPanel;
 import javassist.CtBehavior;
@@ -34,9 +34,9 @@ public class RevivePatch {
                 IndomitablePower.POWER_ID
             };
 
-            if (p.hasPower(GutsPower.POWER_ID) || p.hasPower(HeraclesGutsPower.POWER_ID)) {
-                if (p.hasPower(HeraclesGutsPower.POWER_ID)) {
-                    p.getPower(HeraclesGutsPower.POWER_ID).onSpecificTrigger();
+            if (p.hasPower(GutsPower.POWER_ID) || p.hasPower(NonStackableGutsPower.POWER_ID)) {
+                if (p.hasPower(NonStackableGutsPower.POWER_ID)) {
+                    p.getPower(NonStackableGutsPower.POWER_ID).onSpecificTrigger();
                 } else {
                     p.getPower(GutsPower.POWER_ID).onSpecificTrigger();
                 }
