@@ -16,11 +16,11 @@ public class VSTerrorDamageUpPower extends BasePower {
 
     @Override
     public void updateDescription() {
-        this.description = String.format(DESCRIPTIONS[0], this.amount);
+        this.description = String.format(DESCRIPTIONS[0], amount);
     }
 
     @Override
     public void atEndOfTurn(boolean isPlayer) {
-        if(isPlayer) this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
+        if(isPlayer) addToBot(new RemoveSpecificPowerAction(owner, owner, POWER_ID));
     }
 }

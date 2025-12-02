@@ -24,21 +24,21 @@ public class BlessedScionAction extends AbstractGameAction {
         this.setValues(target, source, amount);
         this.actionType = ActionType.CARD_MANIPULATION;
         this.duration = DURATION;
-        this.p = (AbstractPlayer)target;
+        p = (AbstractPlayer)target;
     }
 
     @Override
     public void update() {
         if (this.duration == DURATION) {
-            if (this.p.hand.isEmpty()) {
+            if (p.hand.isEmpty()) {
                 this.isDone = true;
                 return;
             }
 
-            if (this.p.hand.size() == 1) {
-                AbstractCard card = processCard(this.p.hand.getBottomCard());
-                this.addToTop(new MakeTempCardInDrawPileAction(card, this.amount, false, true));
-                this.p.hand.moveToExhaustPile(card);
+            if (p.hand.size() == 1) {
+                AbstractCard card = processCard(p.hand.getBottomCard());
+                this.addToTop(new MakeTempCardInDrawPileAction(card, amount, false, true));
+                p.hand.moveToExhaustPile(card);
                 this.isDone = true;
                 return;
             }
@@ -53,9 +53,9 @@ public class BlessedScionAction extends AbstractGameAction {
         if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
             AbstractCard selectedCard = AbstractDungeon.handCardSelectScreen.selectedCards.getBottomCard();
             AbstractCard processedCard = processCard(selectedCard);
-            this.addToTop(new MakeTempCardInDrawPileAction(processedCard, this.amount, false, true));
+            this.addToTop(new MakeTempCardInDrawPileAction(processedCard, amount, false, true));
             AbstractDungeon.player.hand.addToHand(processedCard);
-            this.p.hand.moveToExhaustPile(selectedCard);
+            p.hand.moveToExhaustPile(selectedCard);
             AbstractDungeon.handCardSelectScreen.selectedCards.clear();
             AbstractDungeon.handCardSelectScreen.wereCardsRetrieved = true;
         }

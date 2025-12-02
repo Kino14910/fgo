@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.FrailPower;
+import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 
 import fgo.action.FgoNpAction;
@@ -34,11 +34,11 @@ public class WitchOfSalem extends FGOCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         for (AbstractMonster mo : AbstractDungeon.getMonsters().monsters) {
-                if (mo.isDead || mo.isDying) continue;
-                addToBot(new ApplyPowerAction(mo, p, new TerrorPower(mo, 3, magicNumber)));
-                addToBot(new ApplyPowerAction(mo, p, new WeakPower(m, 3, false)));
-                addToBot(new ApplyPowerAction(mo, p, new FrailPower(m, 3, false)));
-            }
+            if(mo.isDead || mo.isDying) continue;
+            addToBot(new ApplyPowerAction(mo, p, new VulnerablePower(mo, 3, false)));
+            addToBot(new ApplyPowerAction(mo, p, new WeakPower(mo, 3, false)));
+            addToBot(new ApplyPowerAction(mo, p, new TerrorPower(mo, 3, magicNumber)));
+        }
         
         addToBot(new ApplyPowerAction(p, p, new VSTerrorDamageUpPower(p, customVar("terror"))));
         addToBot(new FgoNpAction(np));

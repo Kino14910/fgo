@@ -24,6 +24,7 @@ public class TerrorPower extends BasePower implements NonStackablePower{
     public TerrorPower(AbstractCreature owner, int turns, int chance) {
         super(POWER_ID, PowerType.DEBUFF, true, owner, turns, "EndOfADreamPower");
         this.amount2 = chance;
+        updateDescription();
     }
 
     @Override
@@ -33,6 +34,7 @@ public class TerrorPower extends BasePower implements NonStackablePower{
 
     @Override
     public void atStartOfTurn() {
+        flash();
         addToBot(new ReducePowerAction(owner, owner, this, 1));
         // amount%概率给眩晕
         if (random.nextInt(100) < amount2) {
