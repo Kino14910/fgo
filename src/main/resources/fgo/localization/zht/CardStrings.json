@@ -9,25 +9,28 @@
   },
   "${modID}:DreamUponTheStars": {
     "NAME": "予星以夢",
-    "DESCRIPTION": "獲得 !NP! % fgo:寶具值 。 NL 獲得 !M! % fgo:寶具威力 。 NL 獲得 !B! 點 格擋 。"
+    "DESCRIPTION": "獲得 !B! 點 格擋 。 NL 獲得 !M! % fgo:寶具威力 。"
   },
   "${modID}:CharismaOfHope": {
     "NAME": "2019年的格洛斯特",
-    "DESCRIPTION": "獲得 !NP! % fgo:寶具值 。 NL 造成 !D! 點傷害。"
+    "DESCRIPTION": "造成 !D! 點傷害。 NL 獲得 !NP! % fgo:寶具值 。"
   },
   "${modID}:WallOfSnowflakes": {
     "NAME": "現爲脆弱的雪花之壁",
     "DESCRIPTION": "獲得 !B! 點 格擋 。",
-    "UPGRADE_DESCRIPTION": "獲得 !B! 點 格擋 。 NL 在這個回合受到的攻擊傷害降低 !M! %。",
-    "EXTENDED_DESCRIPTION": [
-      "在這個回合受到的攻擊傷害降低 !M!%。 NL 獲得 !NP!% fgo:寶具值，3點力量，30點 fgo:暴擊傷害。",
-      "榮耀堅固的雪花之壁",
-      "榮耀遠揚的雪花之盾"
-    ],
     "FLAVOR": "這張卡會在特定的時候升級。"
   },
+  "${modID}:VeneratedWallOfSnowflakes": {
+    "NAME": "榮光堅毅的雪花之壁",
+    "DESCRIPTION": "獲得 !B! 點 格擋 。 NL 在這個回合受到的攻擊傷害降低 !M! %。",
+    "FLAVOR": "這張卡會在特定的時候升級。"
+  },
+  "${modID}:VeneratedShieldOfSnowflakes": {
+    "NAME": "榮光遠揚的雪花之盾",
+    "DESCRIPTION": "在這個回合受到的攻擊傷害降低 !M! %。 NL 獲得 !NP! % fgo:寶具值 ，3點 力量 ，30點 fgo:暴擊威力 。"
+  },
   "${modID}:BlackBarrel": {
-    "NAME": "掩体雷弹",
+    "NAME": "掩體雷彈",
     "DESCRIPTION": "造成 !D! 點傷害。 NL 增加一名敵人當前格擋的傷害。 NL 消耗 。",
     "EXTENDED_DESCRIPTION": [
       "悖論構造體"
@@ -63,7 +66,7 @@
   },
   "${modID}:HolyShroud": {
     "NAME": "聖骸布",
-    "DESCRIPTION": "如果敵人即將造成30以上的傷害，在這個回合受到的攻擊傷害降低 !M! %。"
+    "DESCRIPTION": "如果所有敵人即將造成總共20以上的傷害，在這個回合受到的攻擊傷害降低 !M! %。"
   },
   "${modID}:QueensCovenant": {
     "NAME": "女王的契約",
@@ -88,8 +91,7 @@
   },
   "${modID}:WisdomOfThePeople": {
     "NAME": "民之睿智",
-    "DESCRIPTION": "恢復 !M! 點生命。 NL 移除你身上的所有負面 狀態 。",
-    "UPGRADE_DESCRIPTION": "恢復 !M! 點生命。 NL 獲得 !NP! % fgo:寶具值 。 NL 移除你身上的所有負面 狀態 。"
+    "DESCRIPTION": "{@@}恢復 !M! 點生命。{!Upgrades!|1= NL 獲得 !NP! % fgo:寶具值 。} NL 移除你身上的所有負面 狀態 。 NL 消耗 。"
   },
   "${modID}:NFFSpecial": {
     "NAME": "NFF尖塔特別服務",
@@ -127,12 +129,12 @@
   },
   "${modID}:ItsInevitable": {
     "NAME": "無可奈何",
-    "DESCRIPTION": "對所有敵人造成 !D! 點傷害。每回合開始時再次發動，並且每次傷害增加 !M! 。",
+    "DESCRIPTION": "對所有敵人造成 !D! 點傷害。在你的回合開始時再次發動，並且每次傷害增加 !M! 。",
     "FLAVOR": "測試畫風可以更改。"
   },
   "${modID}:BlessedScion": {
     "NAME": "後繼者",
-    "DESCRIPTION": "選擇一張手牌 消耗 ， NL 在抽牌堆頂部加入 !M! 張這張牌的復制品。",
+    "DESCRIPTION": "{@@}選擇一張手牌 消耗 ， NL 在抽牌堆頂部加入{!M!|1=一|@= !M! }張這張牌的復制品，它們在被打出之前耗能變爲0。",
     "FLAVOR": "測試畫風可以更改。"
   },
   "${modID}:BeastMagic": {
@@ -154,11 +156,11 @@
   },
   "${modID}:BlessingOfKur": {
     "NAME": "冥界佑護",
-    "DESCRIPTION": "你打出下一張 fgo:寶具牌 時，額外獲得 !M! 點 fgo:最大生命 。 NL 消耗 。"
+    "DESCRIPTION": " fgo:寶具值獲取提升 。 NL 你打出下一張 *靈峯踏抱冥府之鞴 時，額外獲得 !M! 點 fgo:最大生命 和 2 點 力量 。"
   },
   "${modID}:OriginBullet": {
     "NAME": "起源彈",
-    "DESCRIPTION": "{@@} fgo:無敵貫通 。 NL 每去除一種狀態，就使下一張攻擊牌傷害增加 !M! 倍。{!Upgrades!|1= NL 額外造成敵人狀態種類數量 !M! 倍的傷害。}"
+    "DESCRIPTION": "{@@} fgo:無敵貫通 。 NL 每去除一種狀態，就使下一張攻擊牌傷害增加1倍。{!Upgrades!|0= NL 消耗 。}"
   },
   "${modID}:StarPioneer": {
     "NAME": "星之開拓者",
@@ -187,16 +189,16 @@
   },
   "${modID}:BeyondTheFurthestEnd": {
     "NAME": "來自止境",
-    "DESCRIPTION": "在接下來 !M! 回合結束時，所有敵人失去1點 力量 。 NL 給予所有敵人1層 虛弱。",
+    "DESCRIPTION": "給予所有敵人3層 虛弱。 NL 在接下來 !M! 回合結束時，所有敵人失去1點 力量 。",
     "FLAVOR": "測試畫風可以更改。"
   },
   "${modID}:EndOfADream": {
     "NAME": "夢之終結",
-    "DESCRIPTION": "{@@}{!Upgrades!|1=固有 。 NL }在你的回合結束時， 消耗 一張隨機手牌。 NL fgo:寶具牌 攻擊傷害翻倍。"
+    "DESCRIPTION": "在你的回合結束時， 消耗 一張隨機手牌。 NL fgo:寶具牌 攻擊傷害翻倍。"
   },
   "${modID}:WitchOfSalem": {
     "NAME": "塞勒姆的魔女",
-    "DESCRIPTION": "在接下來3回合，獲得 10 % fgo:寶具值 。 NL 獲得 !M! % fgo:寶具值 。 NL 獲得 !M! % fgo:寶具威力 。",
+    "DESCRIPTION": "{@@}給予所有敵人 3 層 脆弱 ， 虛弱 和 fgo:恐怖 ( !M! %概率)。 NL 獲得 {!Upgrades!|@=fgo:對恐怖特攻|1=fgo:對恐怖特攻+} 。 NL 獲得 !NP! % fgo:寶具值 。",
     "FLAVOR": "領域外生命。"
   },
   "${modID}:SchwarzwaldFalke": {
@@ -204,8 +206,8 @@
     "DESCRIPTION": "獲得 !M! 層 fgo:黃金律 。 NL 在你之後 !M! 個回合結束時，獲得1次 fgo:回避 。"
   },
   "${modID}:ManaBurstGems": {
-    "NAME": "魔力放出（寶石）",
-    "DESCRIPTION": "在你的回合結束時，獲得 !M! 點 力量 。 NL 在棄牌堆放入一張此牌的復制品。",
+    "NAME": "絕對豪運寶石圈",
+    "DESCRIPTION": "在你的回合結束時，獲得 !M! 點 力量 。你在這個回合內不能再抽任何牌。",
     "FLAVOR": "測試畫風可以更改。"
   },
   "${modID}:VoidSpaceFineArts": {
@@ -215,7 +217,7 @@
   },
   "${modID}:TheYellowHouse": {
     "NAME": "黃房子",
-    "DESCRIPTION": "獲得#b1次 fgo:回避。 NL 獲得1層 fgo:詛呪 。 NL 將這張牌放入抽牌堆。",
+    "DESCRIPTION": "獲得1次 fgo:回避 。 NL 獲得1層 fgo:詛呪 。 NL 將這張牌放入抽牌堆。",
     "FLAVOR": "領域外生命。"
   },
   "${modID}:Insanity": {
@@ -366,12 +368,12 @@
   },
   "${modID}:FacelessMoon": {
     "NAME": "無貌之月",
-    "DESCRIPTION": "{@@}在本回合 保留 你的手牌，每 保留 一張牌，就獲得 !M! 點 fgo:暴擊星 。{!Upgrades!|0= NL  消耗 。}",
+    "DESCRIPTION": "{@@}{!Upgrades!|1=保留 。 NL }在本回合 保留 你的手牌，每 保留 一張牌，就獲得 !M! 點 fgo:暴擊星 。",
     "FLAVOR": "領域外生命。"
   },
   "${modID}:CharismaofAdversity": {
     "NAME": "逆境的魅力",
-    "DESCRIPTION": "造成 !D! 點傷害。 NL 每12點已失去生命，造成 !D! 點傷害。",
+    "DESCRIPTION": "造成 !D! 點傷害。 NL 每6點已失去生命， NL 造成 !D! 點傷害。",
     "EXTENDED_DESCRIPTION": [
       " NL （再造成 !D! 點傷害",
       "次。）"
@@ -379,7 +381,7 @@
   },
   "${modID}:Swingby": {
     "NAME": "重力助推",
-    "DESCRIPTION": "虛無 。 NL 丟棄所有手牌， NL 每張獲得 !M! 點 格擋 和 fgo:暴擊星 。",
+    "DESCRIPTION": "丟棄所有手牌， NL 每張獲得 !M! 點 格擋 和 fgo:暴擊星 。",
     "FLAVOR": "領域外生命。"
   },
   "${modID}:KnightoftheLake": {
@@ -440,7 +442,7 @@
   },
   "${modID}:PeerlessStrike": {
     "NAME": "頃刻一擊",
-    "DESCRIPTION": "只有當自己生命值爲一半以下時才能打出。 NL 獲得5點 力量 和100% fgo:暴擊威力 。 NL 回合結束時死亡。",
+    "DESCRIPTION": "{@@}只有當自己生命值爲一半以下時才能打出。 NL 獲得5點 力量 和100% fgo:暴擊威力 。 NL {!Upgrades!|@=立即死亡。|1=回合結束時死亡。}",
     "EXTENDED_DESCRIPTION": [
       "我的生命不夠低。"
     ]
@@ -452,6 +454,14 @@
   "${modID}:SpringOfFire": {
     "NAME": "縱使三度迎來落日",
     "DESCRIPTION": "之後3次要被殺死時，阻止並回復 !M! 點生命，獲得20% fgo:寶具威力 ，且移除所有負面狀態。"
+  },
+  "${modID}:MaidensWillpower": {
+    "NAME": "少女的志氣",
+    "DESCRIPTION": "獲得 5 層 fgo:毅力 。 NL 獲得 1 層 人工制品 。"
+  },
+  "${modID}:LamplightOfTheSoul": {
+    "NAME": "魂之燈火",
+    "DESCRIPTION": "獲得 !M! 層 fgo:毅力 。 NL 在你的回合結束時，獲得 !B! 點 格擋 。"
   },
   "${modID}:MillenniumCastle": {
     "NAME": "光輝之月",
@@ -477,7 +487,7 @@
   },
   "${modID}:ReplicaAgateram": {
     "NAME": "銀之臂",
-    "DESCRIPTION": "獲得 !B! 點 格擋 。 NL 失去所有負面狀態1層，每層獲得 !B! 點 格擋 。"
+    "DESCRIPTION": "獲得 6 點 格擋 。 NL 失去所有負面狀態1層，每層獲得 !B! 點 格擋 。"
   },
   "${modID}:LevelSlash": {
     "NAME": "壹之突",
@@ -501,11 +511,11 @@
   },
   "${modID}:CharismaOfConflict": {
     "NAME": "鬥爭的魅力",
-    "DESCRIPTION": "对所有敌人造成 !D! 點傷害。 NL 如果你有 fgo:毅力 狀態 ，則再次造成 !D! 點傷害。"
+    "DESCRIPTION": "對所有敵人造成 !D! 點傷害。 NL 如果你有 fgo:毅力 狀態 ，則再次造成 !D! 點傷害。"
   },
   "${modID}:ProofAndRebuttal": {
     "NAME": "證明與反證",
-    "DESCRIPTION": "{@@}抽1張牌。 NL 將手牌中的任意張牌放到抽牌堆的頂部。{!Upgrades!|0= NL  消耗 。}",
+    "DESCRIPTION": "{@@}抽1張牌。 NL 將手牌中的任意張牌放到抽牌堆的頂部。{!Upgrades!|0= NL 消耗 。}",
     "FLAVOR": "測試畫風可以更改。"
   },
   "${modID}:TakeRomance": {
@@ -542,7 +552,7 @@
     "DESCRIPTION": "獲得 [E] [E] 。 NL 消耗 。"
   },
   "${modID}:AroundCaliburn": {
-    "NAME": "环抱着你的希望之星",
+    "NAME": "環抱着你的希望之星",
     "DESCRIPTION": "獲得2點 力量 。 NL 移除所有負面 狀態 。 NL 獲得 !M! 次 fgo:肅正防御 。 "
   },
   "${modID}:BeautifulJourney": {
@@ -574,7 +584,7 @@
   },
   "${modID}:LostLonginus": {
     "NAME": "選定之槍",
-    "DESCRIPTION": "對所有敵人造成 !D! 點傷害，移除 *堅不可摧 。"
+    "DESCRIPTION": " fgo:無敵貫通 。對所有敵人造成 !D! 點傷害，移除 *堅不可摧 。"
   },
   "${modID}:WickerMan": {
     "NAME": "灼燒殆盡的炎籠",
@@ -597,7 +607,7 @@
     "DESCRIPTION": "在你的回合開始時，有 格擋 的敵人失去等於其 格擋 的生命並且給予其 !M! 層 易傷 。"
   },
   "${modID}:GreatRamNautilus": {
-    "NAME": "吾將遠徵，鸚鵡螺的大衝角",
+    "NAME": "鸚鵡螺的大衝角",
     "DESCRIPTION": "造成 !D! 點傷害。 NL fgo:水邊 ：傷害提高50%。 NL fgo:水邊 ：獲得 [E] 。"
   },
   "${modID}:LieLikeVortigern": {
@@ -638,13 +648,16 @@
   },
   "${modID}:Camelot": {
     "NAME": "擬似展開／人理之礎",
-    "DESCRIPTION": "獲得 !B! 點 格擋 。 NL 獲得2點 力量 。 NL 在你的回合結束時，獲得 !M! 點 格擋 。",
-    "EXTENDED_DESCRIPTION": [
-      "三回合內受到的攻擊傷害降低 !M! %。 NL 在你的回合結束時，獲得 !B! 點 格擋 。 NL 獲得1層 人工制品 ， 力量 。 NL 下一張 fgo:寶具牌 固定爲 *明證希望的人理之劍 。 NL 將 *時爲朦朧的白堊之壁 變爲 *測定時間的紫彈之薪。",
-      "已然遙遠的理想之城",
-      "構築希望的人理之盾"
-    ],
+    "DESCRIPTION": "獲得 !B! 點 格擋 。 NL 在這個回合受到的攻擊傷害降低 !M! %。",
     "FLAVOR": "這張卡會在特定的時候升級。"
+  },
+  "${modID}:LordCamelot": {
+    "NAME": "已然遙遠的理想之城",
+    "DESCRIPTION": "獲得 !B! 點 格擋 。 NL 獲得2點 力量 。 NL 在這個回合受到的攻擊傷害降低 !M! %。"
+  },
+  "${modID}:LordChaldeas": {
+    "NAME": "構築希望的人理之盾",
+    "DESCRIPTION": "獲得1層 人工制品 ， !B! fgo:金屬化 ， 3層 力量 ， !M! % fgo:傷害減免 。 NL 獲得30% fgo:寶具威力 。 NL fgo:迦勒底的聖騎士 。"
   },
   "${modID}:RayProofKyrielight": {
     "NAME": "明證希望的人理之劍",
@@ -652,7 +665,8 @@
   },
   "${modID}:ObscurantWallofChalk": {
     "NAME": "時爲朦朧的白堊之壁",
-    "DESCRIPTION": "獲得1層 fgo:肅正防御 和 無實體 。 NL 獲得 !NP! % fgo:寶具值 。"
+    "DESCRIPTION": "阻止下一次你受到的生命值損傷。 NL 獲得 !NP! % fgo:寶具值 。",
+    "UPGRADE_DESCRIPTION": "獲得1層 fgo:肅正防御 和 無實體 。 NL 獲得 !NP! % fgo:寶具值 。"
   },
   "${modID}:TimewornBulletKindling": {
     "NAME": "測定時間的紫彈之薪",
@@ -668,7 +682,7 @@
   },
   "${modID}:Desterrennacht": {
     "NAME": "星月夜",
-    "DESCRIPTION": "給予所有敵人3層 fgo:恐怖 。 NL 獲得 !M! 點 力量 和50% fgo:暴擊威力 。 NL 每回合獲得10顆 fgo:暴擊星 。"
+    "DESCRIPTION": "給予所有敵人3層 fgo:恐怖 (60%概率)。 NL 獲得 !M! 點 力量 和50% fgo:暴擊威力 。 NL 每回合獲得10顆 fgo:暴擊星 。"
   },
   "${modID}:LaPucelle": {
     "NAME": "紅蓮聖女",
@@ -676,7 +690,7 @@
   },
   "${modID}:Fragarach": {
     "NAME": "斬剜戰神之劍",
-    "DESCRIPTION": "在本回合，每當你被攻擊時，對攻擊者造成 !D! 點傷害，並且你獲得10顆 fgo:暴擊星 。"
+    "DESCRIPTION": "在本回合，每當你被攻擊時，對攻擊者造成 !D! 點傷害，並且你獲得4顆 fgo:暴擊星 。"
   },
   "${modID}:LastSunXibalba": {
     "NAME": "星，自宇宙降臨",
@@ -717,7 +731,7 @@
   },
   "${modID}:Summer": {
     "NAME": "夏日",
-    "DESCRIPTION": "{@@}獲得 fgo:水邊 。{!Upgrades!|1= NL 獲得 !NP!% fgo:NP.}"
+    "DESCRIPTION": "{@@}獲得 fgo:水邊 。{!Upgrades!|1= NL 獲得 !NP! % fgo:寶具值 。}"
   },
   "${modID}:EnumaElish": {
     "NAME": "天地乖離開闢之星",
@@ -726,5 +740,13 @@
   "${modID}:SuitenNikko": {
     "NAME": "水天日光天照八野鎮石",
     "DESCRIPTION": "你手牌中的所有牌在本回合的耗能減少1點。 NL 獲得 !M! % fgo:寶具值 。"
+  },
+  "${modID}:SneferuIteruNile": {
+    "NAME": "青色美麗的尼羅河",
+    "DESCRIPTION": "對所有敵人造成 !D! 點傷害。 NL 給予 3 層 易傷 。 NL 如果敵人的生命值小於等於 !M! 點，則將其生命值變爲0。 NL 獲得 fgo:水邊 。"
+  },
+  "${modID}:Indomitable": {
+    "NAME": "不屈不撓",
+    "DESCRIPTION": "獲得 !M! 層 fgo:毅力 （可與其他毅力重復）。 NL 每次 fgo:毅力 發動時，獲得 2 點 力量 。"
   }
 }

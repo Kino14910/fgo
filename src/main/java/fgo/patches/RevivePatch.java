@@ -17,6 +17,8 @@ import fgo.action.FgoNpAction;
 import fgo.powers.DeathOfDeathPower;
 import fgo.powers.GutsAtTheWellPower;
 import fgo.powers.GutsPower;
+import fgo.powers.HeraclesGutsPower;
+import fgo.powers.IndomitablePower;
 import fgo.powers.SpringOfFirePower;
 import fgo.ui.panels.CommandSpellPanel;
 import javassist.CtBehavior;
@@ -26,14 +28,19 @@ public class RevivePatch {
         @SpireInsertPatch(locator = GutsPowerLocator.class)
         public static SpireReturn<Void> Insert(AbstractPlayer p) {
             String[] powerIds = {
-                GutsPower.POWER_ID,
                 GutsAtTheWellPower.POWER_ID,
                 SpringOfFirePower.POWER_ID,
-                DeathOfDeathPower.POWER_ID
+                DeathOfDeathPower.POWER_ID,
+                IndomitablePower.POWER_ID
             };
 
-            // Guts Power 的复活逻辑
-            if (p.hasPower(GutsPower.POWER_ID)) {
+            if (p.hasPower(GutsPower.POWER_ID) || p.hasPower(HeraclesGutsPower.POWER_ID)) {
+                if (p.hasPower(HeraclesGutsPower.POWER_ID)) {
+                    p.getPower(HeraclesGutsPower.POWER_ID).onSpecificTrigger();
+                } else {
+                    p.getPower(GutsPower.POWER_ID).onSpecificTrigger();
+                }
+
                 for (String id : powerIds) {
                     if (p.hasPower(id)) {
                         p.getPower(id).onSpecificTrigger();

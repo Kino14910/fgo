@@ -59,25 +59,20 @@ public abstract class FGOCard extends CustomCard {
 
     public boolean upgradeNP;
     public boolean upgradeStar;
-    public boolean upgradeMagic2;
 
     public int npUpgrade;
     public int starUpgrade;
-    public int magic2Upgrade;
 
     public int baseNP;
     public int baseStar;
-    public int baseMagicNumber2;
 
     public int np;
     public int star;
-    public int magicNumber2;
 
     public boolean isModified;
 
     protected boolean upgradedNP;
     protected boolean upgradedStar;
-    protected boolean upgradedMagicNumber2;
 
     final protected Map<String, LocalVarInfo> cardVariables = new HashMap<>();
 
@@ -120,12 +115,9 @@ public abstract class FGOCard extends CustomCard {
         upgradeNP = false;
         star = baseStar = starUpgrade = 0; 
         upgradeStar = false;
-        magicNumber2 = baseMagicNumber2 = magic2Upgrade = 0;
-        upgradeMagic2 = false;
 
         setCustomVar("NP", baseNP, npUpgrade);
         setCustomVar("S", baseStar, starUpgrade);
-        setCustomVar("M2", baseMagicNumber2, magic2Upgrade);
         CommonKeywordIconsField.useIcons.set(this, true);
     }
 
@@ -182,10 +174,6 @@ public abstract class FGOCard extends CustomCard {
         return this.star;
     }
 
-    public int getMagicNumber2() {
-        return this.magicNumber2;
-    }
-
     protected final void setNP(int np) { setNP(np, 0); }
 
     protected final void setNP(int np, int npUpgrade) {
@@ -216,22 +204,6 @@ public abstract class FGOCard extends CustomCard {
         this.upgradedStar = true;
     }
 
-    protected final void setMagic2(int magic2) { setMagic2(magic2, 0); }
-
-    protected final void setMagic2(int magic2, int magic2Upgrade) {
-        this.baseMagicNumber2 = this.magicNumber2 = magic2;
-        if (magic2Upgrade != 0) {
-            this.upgradeMagic2 = true;
-            this.magic2Upgrade = magic2Upgrade;
-        }
-    }
-
-    protected final void upgradeMagic2(int amount) {
-        this.magicNumber2 = this.baseMagicNumber2 += amount;
-        this.upgradedMagicNumber2 = true;
-    }
-
-
     protected final void setCustomVar(String key, int base) {
         this.setCustomVar(key, base, 0);
     }
@@ -251,7 +223,6 @@ public abstract class FGOCard extends CustomCard {
         DAMAGE,
         BLOCK,
         MAGIC,
-        MAGIC2,
         NP,
         STAR
     }
@@ -596,13 +567,10 @@ public abstract class FGOCard extends CustomCard {
             FGOCard fgoCard = (FGOCard) candidate;
             fgoCard.np = this.np;
             fgoCard.star = this.star;
-            fgoCard.magicNumber2 = this.magicNumber2;
             fgoCard.baseNP = this.baseNP;
             fgoCard.baseStar = this.baseStar;
-            fgoCard.baseMagicNumber2 = this.baseMagicNumber2;
             fgoCard.upgradeNP = this.upgradeNP;
             fgoCard.upgradeStar = this.upgradeStar;
-            fgoCard.upgradeMagic2 = this.upgradeMagic2;
         }
 
         return candidate;
@@ -650,10 +618,6 @@ public abstract class FGOCard extends CustomCard {
 
         if (upgradeStar) {
             upgradeStar(starUpgrade);
-        }
-
-        if (upgradeMagic2) {
-            upgradeMagic2(magic2Upgrade);
         }
 
         for (LocalVarInfo var : cardVariables.values()) {

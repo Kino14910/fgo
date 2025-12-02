@@ -519,5 +519,17 @@
     "DESCRIPTIONS": [
       "You deal #b%d%% more damage to enemies with Terror this turn."
     ]
+  },
+  "{modID}:IndomitablePower": {
+    "NAME": "Indomitable",
+    "DESCRIPTIONS": [
+      "When you would next die, Gain #b%d Strength。"
+    ]
+  },
+  "${modID}:HeraclesGutsPower": {
+    "NAME": "Guts",
+    "DESCRIPTIONS": [
+      "When you would die, heal #b%1$s HP instead."
+    ]
   }
 }

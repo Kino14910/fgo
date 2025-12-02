@@ -11,9 +11,10 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 public class DragonCoreAction extends AbstractGameAction {
     public DragonCoreAction() {
         this.setValues(AbstractDungeon.player, AbstractDungeon.player);
-        this.actionType = ActionType.BLOCK;
+        this.actionType = ActionType.EXHAUST;
     }
 
+    @Override
     public void update() {
         ArrayList<AbstractCard> cardsToExhaust = new ArrayList<>();
         for (AbstractCard c : AbstractDungeon.player.hand.group) {

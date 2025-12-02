@@ -26,6 +26,7 @@ import com.megacrit.cardcrawl.screens.SingleCardViewPopup;
 import basemod.ReflectionHacks;
 import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.MultiCardPreview;
 import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.MultiCardPreviewRenderer;
+import fgo.FGOMod;
 import fgo.hexui_lib.CardRenderer;
 import fgo.hexui_lib.interfaces.CustomCardPortrait;
 import fgo.hexui_lib.interfaces.CustomCardTypeLocation;
@@ -196,8 +197,12 @@ public class RenderCardPatch {
 		public static void Insert(SingleCardViewPopup _inst, SpriteBatch sb, AbstractCard ___card,
 								  @ByRef TextureAtlas.AtlasRegion[] tmpImg) {
 			if (___card instanceof CustomCardPortrait)  {
-				if (Fields.energyOrb.get(_inst) != null)
+				if (Fields.energyOrb.get(_inst) != null){
 					tmpImg[0] = Fields.energyOrb.get(_inst);
+                    if (FGOMod.config.getBool("disableRenderCost")){
+                        tmpImg = new TextureAtlas.AtlasRegion[0];
+                    }
+                }
 			}
 		}
 	}

@@ -11,7 +11,7 @@ import fgo.powers.StarPower;
 public class MorningLark extends FGOCard {
     public static final String ID = makeID(MorningLark.class.getSimpleName());
     public MorningLark() {
-        super(ID, 2, CardType.SKILL, CardTarget.SELF, CardRarity.RARE);
+        super(ID, 2, CardType.SKILL, CardTarget.SELF, CardRarity.UNCOMMON);
         setNP(30, 20);
         setStar(10, 10);
     }

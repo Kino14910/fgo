@@ -15,7 +15,7 @@ import fgo.powers.StarPower;
 public class WarriorsBlade extends FGOCard {
     public static final String ID = makeID(WarriorsBlade.class.getSimpleName());
     public WarriorsBlade() {
-        super(ID, 1, CardType.ATTACK, CardTarget.ENEMY, CardRarity.UNCOMMON);
+        super(ID, 1, CardType.ATTACK, CardTarget.ENEMY, CardRarity.COMMON);
         setDamage(2);
         setMagic(4, 1);
         setStar(6);

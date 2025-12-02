@@ -12,14 +12,13 @@ public class BlessingOfKur extends FGOCard {
     public BlessingOfKur() {
         super(ID, 1, CardType.POWER, CardTarget.SELF, CardRarity.RARE);
         setMagic(10, 5);
-        setMagic2(2);
         setExhaust();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new ArtsPerformancePower(p, 1)));
-        addToBot(new ApplyPowerAction(p, p, new BlessingOfKurPower(p, magicNumber, magicNumber2)));
+        addToBot(new ApplyPowerAction(p, p, new BlessingOfKurPower(p, magicNumber, 2)));
     }
 }
 
