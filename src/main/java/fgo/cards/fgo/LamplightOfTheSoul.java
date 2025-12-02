@@ -19,7 +19,7 @@ public class LamplightOfTheSoul extends FGOCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new GutsPower(p, magicNumber, 1)));
+        addToBot(new ApplyPowerAction(p, p, new GutsPower(p, magicNumber)));
         addToBot(new ApplyPowerAction(p, p, new MetallicizePower(p, block)));
     }
 }

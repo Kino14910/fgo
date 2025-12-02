@@ -5,8 +5,8 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import fgo.cards.FGOCard;
-import fgo.powers.HeraclesGutsPower;
 import fgo.powers.IndomitablePower;
+import fgo.powers.NonStackableGutsPower;
 
 public class Indomitable extends FGOCard {
     public static final String ID = makeID(Indomitable.class.getSimpleName());
@@ -17,7 +17,7 @@ public class Indomitable extends FGOCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new HeraclesGutsPower(p, magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new NonStackableGutsPower(p, magicNumber, 1)));
         addToBot(new ApplyPowerAction(p, p, new IndomitablePower(p, 2)));
     }
 }

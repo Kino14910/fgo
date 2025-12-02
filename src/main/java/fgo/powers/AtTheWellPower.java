@@ -20,7 +20,7 @@ public class AtTheWellPower extends BasePower {
     public void atStartOfTurn() {
         this.flash();
         if (!this.owner.hasPower(GutsPower.POWER_ID)) {
-            this.addToBot(new ApplyPowerAction(this.owner, this.owner, new GutsPower(this.owner, this.amount, 1), this.amount));
+            this.addToBot(new ApplyPowerAction(this.owner, this.owner, new GutsPower(this.owner, this.amount)));
         }
         this.addToBot(new ApplyPowerAction(this.owner, this.owner, new GutsAtTheWellPower(this.owner, 3), 3));
         this.addToBot(new VFXAction(new LightningEffect(this.owner.hb.cX, this.owner.hb.cY)));

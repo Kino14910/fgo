@@ -22,7 +22,7 @@ public class AstrologicalTeapot extends BaseRelic {
         if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
             this.flash();
             this.addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-            this.addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new GutsPower(AbstractDungeon.player, 10, 1), 10));
+            this.addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new GutsPower(AbstractDungeon.player, 10)));
         }
     }
 
