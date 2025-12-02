@@ -16,8 +16,9 @@ public class Desterrennacht extends AbsNoblePhantasmCard {
     public static final String ID = makeID(Desterrennacht.class.getSimpleName());
 
     public Desterrennacht() {
-        super(ID,CardType.POWER, CardTarget.ALL_ENEMY, 1);
+        super(ID,CardType.POWER, CardTarget.ALL_ENEMY, 2);
         setMagic(3, 2);
+        setCustomVar("CriticalDamage", 50, 50);
         tags.add(Foreigner);
     }
 
@@ -25,10 +26,10 @@ public class Desterrennacht extends AbsNoblePhantasmCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-            addToBot(new ApplyPowerAction(mo, p, new TerrorPower(mo, 60, 3)));
+            addToBot(new ApplyPowerAction(mo, p, new TerrorPower(mo, 3, 60)));
         }
         addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, magicNumber)));
-        addToBot(new ApplyPowerAction(p, p, new CriticalDamageUpPower(p, 50)));
+        addToBot(new ApplyPowerAction(p, p, new CriticalDamageUpPower(p, customVar("CriticalDamage"))));
         addToBot(new ApplyPowerAction(p, p, new StarRegenPower(p, 10)));
     }
 }
