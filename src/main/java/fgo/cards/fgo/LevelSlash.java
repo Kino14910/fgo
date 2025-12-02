@@ -16,21 +16,23 @@ import fgo.cards.colorless.CrimsonSlash;
 import fgo.cards.colorless.DivineDualEdge;
 public class LevelSlash extends FGOCard {
     public static final String ID = makeID(LevelSlash.class.getSimpleName());
+    private final FGOCard CrimsonSlash = new CrimsonSlash();
+    private final FGOCard DivineDualEdge = new DivineDualEdge();
     public LevelSlash() {
         super(ID, 1, CardType.ATTACK, CardTarget.ALL_ENEMY, CardRarity.RARE);
         setDamage(6, 3);
         setExhaust();
         
-        MultiCardPreview.add(this, new CrimsonSlash(), new DivineDualEdge());
+        MultiCardPreview.add(this, CrimsonSlash, DivineDualEdge);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new SFXAction("ATTACK_HEAVY"));
-        this.addToBot(new VFXAction(p, new CleaveEffect(), 0.1F));
-        this.addToBot(new DamageAllEnemiesAction(p, this.damage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
-        this.addToBot(new ChangeStanceAction("Calm"));
-        this.addToBot(new MakeTempCardInDrawPileAction(this.cardsToPreview.makeStatEquivalentCopy(), 1, true, true));
+        addToBot(new SFXAction("ATTACK_HEAVY"));
+        addToBot(new VFXAction(p, new CleaveEffect(), 0.1F));
+        addToBot(new DamageAllEnemiesAction(p, damage, damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
+        addToBot(new ChangeStanceAction("Calm"));
+        addToBot(new MakeTempCardInDrawPileAction(CrimsonSlash.makeStatEquivalentCopy(), 1, true, true));
     }
 }
 
