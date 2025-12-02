@@ -79,16 +79,6 @@
       "现在还不是发起攻击的时机。"
     ]
   },
-  "${modID}:MerlinMagic": {
-    "NAME": "幻术",
-    "DESCRIPTION": "当前每有一名敌人，就获得 !B! 点 格挡 。",
-    "FLAVOR": "测试画风可以更改。"
-  },
-  "${modID}:LivingFlame": {
-    "NAME": "妖星火轮",
-    "DESCRIPTION": "每当你被攻击时， NL 给予攻击者 !M! 层 fgo:灼烧 和1层 fgo:防御破坏 。",
-    "FLAVOR": "领域外生命。"
-  },
   "${modID}:WisdomOfThePeople": {
     "NAME": "民之睿智",
     "DESCRIPTION": "{@@}恢复 !M! 点生命。{!Upgrades!|1= NL 获得 !NP! % fgo:宝具值 。} NL 移除你身上的所有负面 状态 。 NL  消耗 。"
@@ -117,10 +107,6 @@
   "${modID}:MonteCristoTreasure": {
     "NAME": "基督山的秘宝",
     "DESCRIPTION": "每当你造成 fgo:暴击 时， NL 获得未被 格挡 伤害的 格挡 。"
-  },
-  "${modID}:Doppelganger": {
-    "NAME": "二重身",
-    "DESCRIPTION": "造成 !D! 点伤害2次。 NL 抽一张牌，将抽到的牌的一张复制品加入你的手牌中。"
   },
   "${modID}:MaidenOfaFlowerPatio": {
     "NAME": "花园少女",
@@ -161,11 +147,6 @@
   "${modID}:OriginBullet": {
     "NAME": "起源弹",
     "DESCRIPTION": "{@@} fgo:无敌贯通 。 NL 每去除一种状态，就使下一张攻击牌伤害增加1倍。{!Upgrades!|0= NL 消耗 。}"
-  },
-  "${modID}:StarPioneer": {
-    "NAME": "星之开拓者",
-    "DESCRIPTION": "获得 !M! 点 活力 。 NL 在本场战斗中 升级 手牌中的一张牌。",
-    "UPGRADE_DESCRIPTION": "获得 !M! 点 活力 。 NL 在本场战斗中 升级 手牌中的所有牌。"
   },
   "${modID}:GodsExecution": {
     "NAME": "封神执行",
@@ -252,25 +233,9 @@
     "NAME": "魔眼",
     "DESCRIPTION": "造成 !D! 点伤害。 NL 给予 !M! 层 fgo:诅呪 。 NL 敌人 fgo:无法行动 一回合。 NL 消耗 。"
   },
-  "${modID}:ChildrenSHero": {
-    "NAME": "孩子们的英雄",
-    "DESCRIPTION": "将你本回合打出的上一张牌的 !M! 张复制品放入你的手牌中。",
-    "EXTENDED_DESCRIPTION": [
-      "我在本回合还没打出牌。"
-    ],
-    "FLAVOR": "测试画风可以更改。"
-  },
   "${modID}:Revelation": {
     "NAME": "灿然圣光之复权",
     "DESCRIPTION": "给予 !M! 层 虚弱 和 易伤 。 NL 消耗 。"
-  },
-  "${modID}:JewelOfFourteen": {
-    "NAME": "岩窟王",
-    "DESCRIPTION": "{@@}增加 *喝彩之焰{!Upgrades!|1=+} 直到你的手牌满。"
-  },
-  "${modID}:FlamesofApplause": {
-    "NAME": "喝彩之焰",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 给予 !M! 层 fgo:灼烧 。 NL 消耗 。"
   },
   "${modID}:SwordOfSelection": {
     "NAME": "圣剑锻造",
@@ -311,11 +276,6 @@
   "${modID}:KnightStance": {
     "NAME": "骑士的架势",
     "DESCRIPTION": "获得 !B! 点 格挡 。 NL 在这个回合受到的攻击伤害降低 !M! %。 NL 获得1层 fgo:黄金律 。"
-  },
-  "${modID}:KarmicVision": {
-    "NAME": "业之瞳",
-    "DESCRIPTION": "{@@} fgo:无敌贯通 。{!Upgrades!|1= NL 额外造成敌人状态种类数量 !M! 倍的伤害。}",
-    "FLAVOR": "测试画风可以更改。"
   },
   "${modID}:CurtainoftheNight": {
     "NAME": "夜之帷幕",
@@ -388,24 +348,9 @@
     "NAME": "湖上骑士",
     "DESCRIPTION": "在你没有 fgo:暴击威力 时， NL 获得 !M! % fgo:暴击威力 。 NL 否则，获得 !Star! 颗 fgo:暴击星 。"
   },
-  "${modID}:CircuitConnect": {
-    "NAME": "回路连接",
-    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 造成 !D! 点伤害。"
-  },
-  "${modID}:GiantoftheBridge": {
-    "NAME": "桥之巨人",
-    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 造成 !D! 点伤害。 NL 仅在第二、四幕生效两次。"
-  },
   "${modID}:Borrowingfrom": {
     "NAME": "借转轮自在趺坐",
     "DESCRIPTION": "将你的 fgo:宝具值 翻倍。"
-  },
-  "${modID}:MagicBulletCharging": {
-    "NAME": "魔弹装填",
-    "DESCRIPTION": "获得1个 *魔弹 X次。 NL 在你有 *魔弹 时改为失去所有，每个对所有敌人造成 !D! 点伤害。",
-    "EXTENDED_DESCRIPTION": [
-      "对所有敌人造成 !D! 点伤害 !M! 次。"
-    ]
   },
   "${modID}:Canopus": {
     "NAME": "卡诺波",
@@ -419,10 +364,6 @@
     "NAME": "洞见",
     "DESCRIPTION": "保留 。 NL 抽 !M! 张牌。 NL 消耗 。",
     "FLAVOR": "测试画风可以更改。"
-  },
-  "${modID}:StarBasket": {
-    "NAME": "星之笼",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 给予目标 !D! 点 格挡 。 NL 获得 !M! 次随机正面状态。"
   },
   "${modID}:PrimevalRune": {
     "NAME": "冰冻暴风雪",
@@ -447,10 +388,6 @@
       "我的生命不够低。"
     ]
   },
-  "${modID}:GloriousStrike": {
-    "NAME": "栗蓉馅打击",
-    "DESCRIPTION": "造成 !D! 点伤害 !M! 次。 NL 在你的回合结束时，移除所有负面状态。 NL 消耗 。"
-  },
   "${modID}:SpringOfFire": {
     "NAME": "纵使三度迎来落日",
     "DESCRIPTION": "之后3次要被杀死时，阻止并回复 !M! 点生命，获得20% fgo:宝具威力 ，且移除所有负面状态。"
@@ -472,22 +409,9 @@
     "DESCRIPTION": "造成 !D! 点伤害。 NL 在本场战斗中你获得 *冻结之眼 。 NL 消耗 。",
     "FLAVOR": "测试画风可以更改。"
   },
-  "${modID}:Trifas": {
-    "NAME": "身在图利法斯",
-    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 移除你的所有 虚弱 。",
-    "FLAVOR": "测试画风可以更改。"
-  },
   "${modID}:LakeTexcoco": {
     "NAME": "第三太阳",
     "DESCRIPTION": "获得 !NP! % fgo:宝具值 。 NL 在接下来3回合，获得 !M! % fgo:宝具值 。 NL 获得 fgo:水边 。 NL 消耗 "
-  },
-  "${modID}:BlueStarSea": {
-    "NAME": "苍之星海",
-    "DESCRIPTION": "回复 !M! 点生命。 NL 抽1张牌。"
-  },
-  "${modID}:ReplicaAgateram": {
-    "NAME": "银之臂",
-    "DESCRIPTION": "获得 6 点 格挡 。 NL 失去所有负面状态1层，每层获得 !B! 点 格挡 。"
   },
   "${modID}:LevelSlash": {
     "NAME": "壹之突",
@@ -517,10 +441,6 @@
     "NAME": "证明与反证",
     "DESCRIPTION": "{@@}抽1张牌。 NL 将手牌中的任意张牌放到抽牌堆的顶部。{!Upgrades!|0= NL  消耗 。}",
     "FLAVOR": "测试画风可以更改。"
-  },
-  "${modID}:TakeRomance": {
-    "NAME": "享用浪漫",
-    "DESCRIPTION": "预见 !M! 。"
   },
   "${modID}:FifthForm": {
     "NAME": "第五势",
@@ -585,10 +505,6 @@
   "${modID}:LostLonginus": {
     "NAME": "选定之枪",
     "DESCRIPTION": " fgo:无敌贯通 。对所有敌人造成 !D! 点伤害，移除 *坚不可摧 。"
-  },
-  "${modID}:WickerMan": {
-    "NAME": "灼烧殆尽的炎笼",
-    "DESCRIPTION": "对所有敌人造成 !D! 点伤害，给予 !M! 层 fgo:灼烧 和 易伤 。"
   },
   "${modID}:ExcaliburGalatine": {
     "NAME": "轮转胜利之剑",
@@ -684,10 +600,6 @@
     "NAME": "星月夜",
     "DESCRIPTION": "给予所有敌人3层 fgo:恐怖 (60%概率)。 NL 获得 !M! 点 力量 和50% fgo:暴击威力 。 NL 每回合获得10颗 fgo:暴击星 。"
   },
-  "${modID}:LaPucelle": {
-    "NAME": "红莲圣女",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 给予伤害一半的 fgo:灼烧 。 NL 在你的抽牌堆中加入一张 *灼伤+ 。"
-  },
   "${modID}:Fragarach": {
     "NAME": "斩剜战神之剑",
     "DESCRIPTION": "在本回合，每当你被攻击时，对攻击者造成 !D! 点伤害，并且你获得4颗 fgo:暴击星 。"
@@ -708,14 +620,6 @@
       " NL 获得3点 力量 。 NL 获得3层 人工制品 。"
     ]
   },
-  "${modID}:ParadisChateaudIf": {
-    "NAME": "星啊，往赴辉途",
-    "DESCRIPTION": "造成等于敌人 fgo:灼烧 层数的伤害 !M! 次。 NL 敌人 fgo:无法行动 一回合。",
-    "UPGRADE_DESCRIPTION": "造成等于敌人 fgo:灼烧 层数+1的伤害 !M! 次。 NL 敌人 fgo:无法行动 一回合。",
-    "EXTENDED_DESCRIPTION": [
-      " NL （造成 !D! 点伤害 !M! 次。）"
-    ]
-  },
   "${modID}:SecondLife": {
     "NAME": "冥镜宝典",
     "DESCRIPTION": "选择一张已 消耗 的牌，将其 升级 并且放入你的手牌。 NL 所有 *爪牙 敌人死亡，每只获得 !NP! % fgo:宝具值 。",
@@ -728,10 +632,6 @@
   "${modID}:Unlimited": {
     "NAME": "无限剑制",
     "DESCRIPTION": "{@@}在你的回合开始时，增加{!M!|1=一|@= !M! }张随机攻击牌到你的手牌。它{!M!|1=|@=们}在本回合耗能变为0，打出后 消耗 。"
-  },
-  "${modID}:Summer": {
-    "NAME": "夏日",
-    "DESCRIPTION": "{@@}获得 fgo:水边 。{!Upgrades!|1= NL 获得 !NP! % fgo:宝具值 。}"
   },
   "${modID}:EnumaElish": {
     "NAME": "天地乖离开辟之星",

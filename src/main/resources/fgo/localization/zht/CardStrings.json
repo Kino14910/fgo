@@ -79,16 +79,6 @@
       "現在還不是發起攻擊的時機。"
     ]
   },
-  "${modID}:MerlinMagic": {
-    "NAME": "幻術",
-    "DESCRIPTION": "當前每有一名敵人，就獲得 !B! 點 格擋 。",
-    "FLAVOR": "測試畫風可以更改。"
-  },
-  "${modID}:LivingFlame": {
-    "NAME": "妖星火輪",
-    "DESCRIPTION": "每當你被攻擊時， NL 給予攻擊者 !M! 層 fgo:灼燒 和1層 fgo:防御破壞 。",
-    "FLAVOR": "領域外生命。"
-  },
   "${modID}:WisdomOfThePeople": {
     "NAME": "民之睿智",
     "DESCRIPTION": "{@@}恢復 !M! 點生命。{!Upgrades!|1= NL 獲得 !NP! % fgo:寶具值 。} NL 移除你身上的所有負面 狀態 。 NL 消耗 。"
@@ -117,10 +107,6 @@
   "${modID}:MonteCristoTreasure": {
     "NAME": "基督山的祕寶",
     "DESCRIPTION": "每當你造成 fgo:暴擊 時， NL 獲得未被 格擋 傷害的 格擋 。"
-  },
-  "${modID}:Doppelganger": {
-    "NAME": "二重身",
-    "DESCRIPTION": "造成 !D! 點傷害2次。 NL 抽一張牌，將抽到的牌的一張復制品加入你的手牌中。"
   },
   "${modID}:MaidenOfaFlowerPatio": {
     "NAME": "花園少女",
@@ -162,11 +148,6 @@
     "NAME": "起源彈",
     "DESCRIPTION": "{@@} fgo:無敵貫通 。 NL 每去除一種狀態，就使下一張攻擊牌傷害增加1倍。{!Upgrades!|0= NL 消耗 。}"
   },
-  "${modID}:StarPioneer": {
-    "NAME": "星之開拓者",
-    "DESCRIPTION": "獲得 !M! 點 活力 。 NL 在本場戰鬥中 升級 手牌中的一張牌。",
-    "UPGRADE_DESCRIPTION": "獲得 !M! 點 活力 。 NL 在本場戰鬥中 升級 手牌中的所有牌。"
-  },
   "${modID}:GodsExecution": {
     "NAME": "封神執行",
     "DESCRIPTION": "造成 !D! 點傷害。 NL 如果你有負面狀態 ， NL 獲得 [E] 並且 NL 抽1張牌。"
@@ -181,7 +162,7 @@
   },
   "${modID}:AtTheWell": {
     "NAME": "於泉之處",
-    "DESCRIPTION": "移除所有負面 狀態 。 NL 獲得 !M! 層 fgo:毅力 。 NL 在下回合死亡，獲得 [E] [E] [E] 並且抽3張牌。 NL 消耗 。"
+    "DESCRIPTION": "移除所有負面 狀態 。 NL 在下回合獲得 !M! 層 fgo:毅力 然後死亡，獲得 [E] [E] [E] 並且抽3張牌。 NL 消耗 。"
   },
   "${modID}:SquireOfProphecy": {
     "NAME": "祈雨",
@@ -198,7 +179,7 @@
   },
   "${modID}:WitchOfSalem": {
     "NAME": "塞勒姆的魔女",
-    "DESCRIPTION": "{@@}給予所有敵人 3 層 脆弱 ， 虛弱 和 fgo:恐怖 ( !M! %概率)。 NL 獲得 {!Upgrades!|@=fgo:對恐怖特攻|1=fgo:對恐怖特攻+} 。 NL 獲得 !NP! % fgo:寶具值 。",
+    "DESCRIPTION": "{@@}給予所有敵人 3 層 易傷 ， 虛弱 和 fgo:恐怖 ( !M! %概率)。 NL 獲得 {!Upgrades!|@=fgo:對恐怖特攻|1=fgo:對恐怖特攻+} 。 NL 獲得 !NP! % fgo:寶具值 。",
     "FLAVOR": "領域外生命。"
   },
   "${modID}:SchwarzwaldFalke": {
@@ -252,25 +233,9 @@
     "NAME": "魔眼",
     "DESCRIPTION": "造成 !D! 點傷害。 NL 給予 !M! 層 fgo:詛呪 。 NL 敵人 fgo:無法行動 一回合。 NL 消耗 。"
   },
-  "${modID}:ChildrenSHero": {
-    "NAME": "孩子們的英雄",
-    "DESCRIPTION": "將你本回合打出的上一張牌的 !M! 張復制品放入你的手牌中。",
-    "EXTENDED_DESCRIPTION": [
-      "我在本回合還沒打出牌。"
-    ],
-    "FLAVOR": "測試畫風可以更改。"
-  },
   "${modID}:Revelation": {
     "NAME": "燦然聖光之復權",
     "DESCRIPTION": "給予 !M! 層 虛弱 和 易傷 。 NL 消耗 。"
-  },
-  "${modID}:JewelOfFourteen": {
-    "NAME": "巖窟王",
-    "DESCRIPTION": "{@@}增加 *喝彩之焰{!Upgrades!|1=+} 直到你的手牌滿。"
-  },
-  "${modID}:FlamesofApplause": {
-    "NAME": "喝彩之焰",
-    "DESCRIPTION": "造成 !D! 點傷害。 NL 給予 !M! 層 fgo:灼燒 。 NL 消耗 。"
   },
   "${modID}:SwordOfSelection": {
     "NAME": "聖劍鍛造",
@@ -311,11 +276,6 @@
   "${modID}:KnightStance": {
     "NAME": "騎士的架勢",
     "DESCRIPTION": "獲得 !B! 點 格擋 。 NL 在這個回合受到的攻擊傷害降低 !M! %。 NL 獲得1層 fgo:黃金律 。"
-  },
-  "${modID}:KarmicVision": {
-    "NAME": "業之瞳",
-    "DESCRIPTION": "{@@} fgo:無敵貫通 。{!Upgrades!|1= NL 額外造成敵人狀態種類數量 !M! 倍的傷害。}",
-    "FLAVOR": "測試畫風可以更改。"
   },
   "${modID}:CurtainoftheNight": {
     "NAME": "夜之帷幕",
@@ -388,24 +348,9 @@
     "NAME": "湖上騎士",
     "DESCRIPTION": "在你沒有 fgo:暴擊威力 時， NL 獲得 !M! % fgo:暴擊威力 。 NL 否則，獲得 !Star! 顆 fgo:暴擊星 。"
   },
-  "${modID}:CircuitConnect": {
-    "NAME": "回路連接",
-    "DESCRIPTION": "獲得 !B! 點 格擋 。 NL 造成 !D! 點傷害。"
-  },
-  "${modID}:GiantoftheBridge": {
-    "NAME": "橋之巨人",
-    "DESCRIPTION": "獲得 !B! 點 格擋 。 NL 造成 !D! 點傷害。 NL 僅在第二、四幕生效兩次。"
-  },
   "${modID}:Borrowingfrom": {
     "NAME": "借轉輪自在趺坐",
     "DESCRIPTION": "將你的 fgo:寶具值 翻倍。"
-  },
-  "${modID}:MagicBulletCharging": {
-    "NAME": "魔彈裝填",
-    "DESCRIPTION": "獲得1個 *魔彈 X次。 NL 在你有 *魔彈 時改爲失去所有，每個對所有敵人造成 !D! 點傷害。",
-    "EXTENDED_DESCRIPTION": [
-      "對所有敵人造成 !D! 點傷害 !M! 次。"
-    ]
   },
   "${modID}:Canopus": {
     "NAME": "卡諾波",
@@ -419,10 +364,6 @@
     "NAME": "洞見",
     "DESCRIPTION": "保留 。 NL 抽 !M! 張牌。 NL 消耗 。",
     "FLAVOR": "測試畫風可以更改。"
-  },
-  "${modID}:StarBasket": {
-    "NAME": "星之籠",
-    "DESCRIPTION": "造成 !D! 點傷害。 NL 給予目標 !D! 點 格擋 。 NL 獲得 !M! 次隨機正面狀態。"
   },
   "${modID}:PrimevalRune": {
     "NAME": "冰凍暴風雪",
@@ -447,10 +388,6 @@
       "我的生命不夠低。"
     ]
   },
-  "${modID}:GloriousStrike": {
-    "NAME": "慄蓉餡打擊",
-    "DESCRIPTION": "造成 !D! 點傷害 !M! 次。 NL 在你的回合結束時，移除所有負面狀態。 NL 消耗 。"
-  },
   "${modID}:SpringOfFire": {
     "NAME": "縱使三度迎來落日",
     "DESCRIPTION": "之後3次要被殺死時，阻止並回復 !M! 點生命，獲得20% fgo:寶具威力 ，且移除所有負面狀態。"
@@ -472,22 +409,9 @@
     "DESCRIPTION": "造成 !D! 點傷害。 NL 在本場戰鬥中你獲得 *凍結之眼 。 NL 消耗 。",
     "FLAVOR": "測試畫風可以更改。"
   },
-  "${modID}:Trifas": {
-    "NAME": "身在圖利法斯",
-    "DESCRIPTION": "獲得 !B! 點 格擋 。 NL 移除你的所有 虛弱 。",
-    "FLAVOR": "測試畫風可以更改。"
-  },
   "${modID}:LakeTexcoco": {
     "NAME": "第三太陽",
     "DESCRIPTION": "獲得 !NP! % fgo:寶具值 。 NL 在接下來3回合，獲得 !M! % fgo:寶具值 。 NL 獲得 fgo:水邊 。 NL 消耗 "
-  },
-  "${modID}:BlueStarSea": {
-    "NAME": "蒼之星海",
-    "DESCRIPTION": "回復 !M! 點生命。 NL 抽1張牌。"
-  },
-  "${modID}:ReplicaAgateram": {
-    "NAME": "銀之臂",
-    "DESCRIPTION": "獲得 6 點 格擋 。 NL 失去所有負面狀態1層，每層獲得 !B! 點 格擋 。"
   },
   "${modID}:LevelSlash": {
     "NAME": "壹之突",
@@ -517,10 +441,6 @@
     "NAME": "證明與反證",
     "DESCRIPTION": "{@@}抽1張牌。 NL 將手牌中的任意張牌放到抽牌堆的頂部。{!Upgrades!|0= NL 消耗 。}",
     "FLAVOR": "測試畫風可以更改。"
-  },
-  "${modID}:TakeRomance": {
-    "NAME": "享用浪漫",
-    "DESCRIPTION": "預見 !M! 。"
   },
   "${modID}:FifthForm": {
     "NAME": "第五勢",
@@ -585,10 +505,6 @@
   "${modID}:LostLonginus": {
     "NAME": "選定之槍",
     "DESCRIPTION": " fgo:無敵貫通 。對所有敵人造成 !D! 點傷害，移除 *堅不可摧 。"
-  },
-  "${modID}:WickerMan": {
-    "NAME": "灼燒殆盡的炎籠",
-    "DESCRIPTION": "對所有敵人造成 !D! 點傷害，給予 !M! 層 fgo:灼燒 和 易傷 。"
   },
   "${modID}:ExcaliburGalatine": {
     "NAME": "輪轉勝利之劍",
@@ -684,10 +600,6 @@
     "NAME": "星月夜",
     "DESCRIPTION": "給予所有敵人3層 fgo:恐怖 (60%概率)。 NL 獲得 !M! 點 力量 和50% fgo:暴擊威力 。 NL 每回合獲得10顆 fgo:暴擊星 。"
   },
-  "${modID}:LaPucelle": {
-    "NAME": "紅蓮聖女",
-    "DESCRIPTION": "造成 !D! 點傷害。 NL 給予傷害一半的 fgo:灼燒 。 NL 在你的抽牌堆中加入一張 *灼傷+ 。"
-  },
   "${modID}:Fragarach": {
     "NAME": "斬剜戰神之劍",
     "DESCRIPTION": "在本回合，每當你被攻擊時，對攻擊者造成 !D! 點傷害，並且你獲得4顆 fgo:暴擊星 。"
@@ -708,14 +620,6 @@
       " NL 獲得3點 力量 。 NL 獲得3層 人工制品 。"
     ]
   },
-  "${modID}:ParadisChateaudIf": {
-    "NAME": "星啊，往赴輝途",
-    "DESCRIPTION": "造成等於敵人 fgo:灼燒 層數的傷害 !M! 次。 NL 敵人 fgo:無法行動 一回合。",
-    "UPGRADE_DESCRIPTION": "造成等於敵人 fgo:灼燒 層數+1的傷害 !M! 次。 NL 敵人 fgo:無法行動 一回合。",
-    "EXTENDED_DESCRIPTION": [
-      " NL （造成 !D! 點傷害 !M! 次。）"
-    ]
-  },
   "${modID}:SecondLife": {
     "NAME": "冥鏡寶典",
     "DESCRIPTION": "選擇一張已 消耗 的牌，將其 升級 並且放入你的手牌。 NL 所有 *爪牙 敵人死亡，每只獲得 !NP! % fgo:寶具值 。",
@@ -728,10 +632,6 @@
   "${modID}:Unlimited": {
     "NAME": "無限劍制",
     "DESCRIPTION": "{@@}在你的回合開始時，增加{!M!|1=一|@= !M! }張隨機攻擊牌到你的手牌。它{!M!|1=|@=們}在本回合耗能變爲0，打出後 消耗 。"
-  },
-  "${modID}:Summer": {
-    "NAME": "夏日",
-    "DESCRIPTION": "{@@}獲得 fgo:水邊 。{!Upgrades!|1= NL 獲得 !NP! % fgo:寶具值 。}"
   },
   "${modID}:EnumaElish": {
     "NAME": "天地乖離開闢之星",
