@@ -22,7 +22,7 @@ public class WitchOfSalem extends FGOCard {
     public WitchOfSalem() {
         super(ID, 3, CardType.SKILL, CardTarget.ALL_ENEMY, CardRarity.RARE);
         setMagic(30, 20);
-        setMagic2(50, 50);
+        setCustomVar("terror", 50, 50);
 
         setNP(20);
         tags.add(Foreigner);
@@ -36,11 +36,11 @@ public class WitchOfSalem extends FGOCard {
         for (AbstractMonster mo : AbstractDungeon.getMonsters().monsters) {
                 if (mo.isDead || mo.isDying) continue;
                 addToBot(new ApplyPowerAction(mo, p, new TerrorPower(mo, 3, magicNumber)));
+                addToBot(new ApplyPowerAction(mo, p, new WeakPower(m, 3, false)));
+                addToBot(new ApplyPowerAction(mo, p, new FrailPower(m, 3, false)));
             }
         
-        addToBot(new ApplyPowerAction(p, p, new WeakPower(p, 3, false)));
-        addToBot(new ApplyPowerAction(p, p, new FrailPower(p, 3, false)));
-        addToBot(new ApplyPowerAction(p, p, new VSTerrorDamageUpPower(p, magicNumber2)));
+        addToBot(new ApplyPowerAction(p, p, new VSTerrorDamageUpPower(p, customVar("terror"))));
         addToBot(new FgoNpAction(np));
     }
 }

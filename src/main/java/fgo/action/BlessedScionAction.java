@@ -1,5 +1,7 @@
 package fgo.action;
 
+import static fgo.FGOMod.makeID;
+
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -14,7 +16,7 @@ import fgo.cards.tempCards.SupportCraft;
 import fgo.characters.CustomEnums.FGOCardColor;
 
 public class BlessedScionAction extends AbstractGameAction {
-    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(BlessedScionAction.class.getSimpleName());
+    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(makeID(BlessedScionAction.class.getSimpleName()));
     public static final String[] TEXT = uiStrings.TEXT;
     private final AbstractPlayer p;
     private static final float DURATION = Settings.ACTION_DUR_XFAST;

@@ -16,7 +16,6 @@ public class Swingby extends FGOCard {
     public Swingby() {
         super(ID, 2, CardType.SKILL, CardTarget.SELF, CardRarity.RARE);
         setMagic(3, 1);
-        setEthereal();
 
         FlavorText.AbstractCardFlavorFields.textColor.set(this, Color.CHARTREUSE);
         FlavorText.AbstractCardFlavorFields.flavorBoxType.set(this, FlavorText.boxType.TRADITIONAL);

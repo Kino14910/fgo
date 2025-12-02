@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.actions.watcher.JudgementAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo.DamageType;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 
@@ -25,8 +26,11 @@ public class SneferuIteruNile extends AbsNoblePhantasmCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAllEnemiesAction(p, damage, DamageType.NORMAL, AttackEffect.NONE));
-        addToBot(new ApplyPowerAction(m, p, new VulnerablePower(m, 3, false)));
-        addToBot(new JudgementAction(m, magicNumber));
+        for (AbstractMonster mo : AbstractDungeon.getMonsters().monsters) {
+            if(mo.isDead || mo.isDying) continue;
+            addToBot(new ApplyPowerAction(mo, p, new VulnerablePower(mo, 3, false)));
+            addToBot(new JudgementAction(mo, magicNumber));
+        }
         addToBot(new ApplyPowerAction(p, p, new WatersidePower(p)));
     }
 }

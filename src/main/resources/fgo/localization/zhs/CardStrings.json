@@ -156,7 +156,7 @@
   },
   "${modID}:BlessingOfKur": {
     "NAME": "冥界佑护",
-    "DESCRIPTION": " fgo:宝具值获取提升 。 NL 你打出下一张 *灵峰踏抱冥府之鞴 时，额外获得 !M! 点 fgo:最大生命 和 !M2! 点 力量 。"
+    "DESCRIPTION": " fgo:宝具值获取提升 。 NL 你打出下一张 *灵峰踏抱冥府之鞴 时，额外获得 !M! 点 fgo:最大生命 和 2 点 力量 。"
   },
   "${modID}:OriginBullet": {
     "NAME": "起源弹",
@@ -181,7 +181,7 @@
   },
   "${modID}:AtTheWell": {
     "NAME": "于泉之处",
-    "DESCRIPTION": "移除所有负面 状态 。 NL 获得 !M! 层 fgo:毅力 。 NL 在下回合死亡，获得 [E] [E] [E] 并且抽3张牌。 NL 消耗 。"
+    "DESCRIPTION": "移除所有负面 状态 。 NL 在下回合获得 !M! 层 fgo:毅力 然后死亡，获得 [E] [E] [E] 并且抽3张牌。 NL 消耗 。"
   },
   "${modID}:SquireOfProphecy": {
     "NAME": "祈雨",
@@ -381,7 +381,7 @@
   },
   "${modID}:Swingby": {
     "NAME": "重力助推",
-    "DESCRIPTION": "虚无 。 NL 丢弃所有手牌， NL 每张获得 !M! 点 格挡 和 fgo:暴击星 。",
+    "DESCRIPTION": "丢弃所有手牌， NL 每张获得 !M! 点 格挡 和 fgo:暴击星 。",
     "FLAVOR": "领域外生命。"
   },
   "${modID}:KnightoftheLake": {
@@ -487,7 +487,7 @@
   },
   "${modID}:ReplicaAgateram": {
     "NAME": "银之臂",
-    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 失去所有负面状态1层，每层获得 !B! 点 格挡 。"
+    "DESCRIPTION": "获得 6 点 格挡 。 NL 失去所有负面状态1层，每层获得 !B! 点 格挡 。"
   },
   "${modID}:LevelSlash": {
     "NAME": "壹之突",
@@ -690,7 +690,7 @@
   },
   "${modID}:Fragarach": {
     "NAME": "斩剜战神之剑",
-    "DESCRIPTION": "在本回合，每当你被攻击时，对攻击者造成 !D! 点伤害，并且你获得10颗 fgo:暴击星 。"
+    "DESCRIPTION": "在本回合，每当你被攻击时，对攻击者造成 !D! 点伤害，并且你获得4颗 fgo:暴击星 。"
   },
   "${modID}:LastSunXibalba": {
     "NAME": "星，自宇宙降临",
@@ -744,5 +744,9 @@
   "${modID}:SneferuIteruNile": {
     "NAME": "青色美丽的尼罗河",
     "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 给予 3 层 易伤 。 NL 如果敌人的生命值小于等于 !M! 点，则将其生命值变为0。 NL 获得 fgo:水边 。"
+  },
+  "${modID}:Indomitable": {
+    "NAME": "不屈不挠",
+    "DESCRIPTION": "获得 !M! 层 fgo:毅力 （可与其他毅力重复）。 NL 每次 fgo:毅力 发动时，获得 2 点 力量 。"
   }
 }

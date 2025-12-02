@@ -21,7 +21,6 @@ import fgo.cards.colorless.PrimevalRune;
 import fgo.cards.colorless.UndeadBird;
 import fgo.cards.fgo.DeathOfDeath;
 import fgo.cards.fgo.PeerlessStrike;
-import fgo.cards.fgo.ReplicaAgateram;
 import fgo.cards.fgo.SpringOfFire;
 
 public class FGOLibrary extends BaseEvent {
@@ -74,7 +73,6 @@ public class FGOLibrary extends BaseEvent {
                 group.addToBottom(new DeathOfDeath());
                 group.addToBottom(new EightKindness());
                 group.addToBottom(new PeerlessStrike());
-                group.addToBottom(new ReplicaAgateram());
                 group.addToBottom(new UndeadBird());
                 group.addToBottom(new MaraPapiyas());
 

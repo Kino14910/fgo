@@ -132,7 +132,7 @@
   "${modID}:AtTheWellPower": {
     "NAME": "献给世界树的活祭",
     "DESCRIPTIONS": [
-      "在下回合获得 #b%d$s 层 #y毅力 ，下一次 #y毅力 发动时获得 [E] [E] [E] 并且抽 #b3 张牌，然后 #r死亡 。"
+      "在下回合获得 #b%d 层 #y毅力 ，下一次 #y毅力 发动时获得 [E] [E] [E] 并且抽 #b3 张牌，然后 #r死亡 。"
     ]
   },
   "${modID}:GutsAtTheWellPower": {
@@ -523,6 +523,18 @@
     "NAME": "对恐怖特攻",
     "DESCRIPTIONS": [
       "你在这个回合内对有恐怖的敌人额外造成 #b%d %% 伤害。"
+    ]
+  },
+  "${modID}:IndomitablePower": {
+    "NAME": "不屈",
+    "DESCRIPTIONS": [
+      " #y毅力 发动时，获得 #b%d 点力量。"
+    ]
+  },
+  "${modID}:HeraclesGutsPower": {
+    "NAME": "毅力",
+    "DESCRIPTIONS": [
+      "当你要被杀死时，免死并回复 #b%d 点 #y生命 。"
     ]
   }
 }

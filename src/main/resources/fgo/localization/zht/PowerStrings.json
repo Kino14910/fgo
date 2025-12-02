@@ -114,7 +114,7 @@
   "${modID}:DeathOfDeathPower": {
     "NAME": "死之淵",
     "DESCRIPTIONS": [
-      "在你 #y毅力 發動時，移除死之淵，並且下一回合造成 #y雙倍傷害 。被移除時，你 #r失去 #b%1$s 點 #y力量 。"
+      "在你 #y毅力 發動時，下一回合造成 #y雙倍傷害 。"
     ]
   },
   "${modID}:BriefStrengthPower": {
@@ -132,7 +132,7 @@
   "${modID}:AtTheWellPower": {
     "NAME": "獻給世界樹的活祭",
     "DESCRIPTIONS": [
-      "在下回合獲得 #b%1$s 層 #y毅力 ，下一次 #y毅力 發動時獲得 [E] [E] [E] 並且抽 #b3 張牌，然後 #r死亡 。"
+      "在下回合獲得 #b%d$s 層 #y毅力 ，下一次 #y毅力 發動時獲得 [E] [E] [E] 並且抽 #b3 張牌，然後 #r死亡 。"
     ]
   },
   "${modID}:GutsAtTheWellPower": {
@@ -157,8 +157,7 @@
   "${modID}:BeyondTheFurthestEndPower": {
     "NAME": "來自止境",
     "DESCRIPTIONS": [
-      "在本回合結束時，所有敵人失去 #b1 點 力量 。 NL 給予所有敵人 #b1 層 #y虛弱。",
-      "在你的回合結束時，所有敵人失去 #b1 點 力量 。 NL 給予所有敵人 #b1 層 #y虛弱。"
+      "在你的回合結束時，所有敵人失去 #b1 點 力量 。"
     ]
   },
   "${modID}:PowerUpBoostPower": {
@@ -313,7 +312,7 @@
   "${modID}:BlessingOfKurPower": {
     "NAME": "冥界佑護",
     "DESCRIPTIONS": [
-      "你下一次打出 #y靈峯踏抱冥府之鞴 時額外：獲得 #b3 點 #y力量 和 #y人工制品 。"
+      "你下一次打出 #y靈峯踏抱冥府之鞴 時額外獲得 #b%d 點 額外生命 和 #b%d 點 #y力量 。"
     ]
   },
   "${modID}:LivingFlamePower": {
@@ -375,8 +374,7 @@
   "${modID}:ItsInevitablePower": {
     "NAME": "無可奈何",
     "DESCRIPTIONS": [
-      "在下一回合開始時，對所有敵人造成 #b%1$s 點傷害。",
-      "對所有敵人造成 #b%2$s 點傷害，然後將傷害增加 #b%3$s 點。"
+      "在下一回合開始時，對所有敵人造成 #b%d 點傷害，然後將傷害增加 #b%d 點。"
     ]
   },
   "${modID}:ManaBurstGemsPower": {
@@ -414,7 +412,7 @@
   "${modID}:ArtsPerformancePower": {
     "NAME": "寶具值獲取提升",
     "DESCRIPTIONS": [
-      "每當你打出一張牌，額外獲得 #b%d %% #y寶具值 。最多額外獲得 #b5%% 。"
+      "每當你打出一張牌，額外獲得 #b%d %% #y寶具值 。"
     ]
   },
   "${modID}:BusterPerformancePower": {
@@ -433,7 +431,7 @@
   "${modID}:StarRatePower": {
     "NAME": "暴擊星獲得量提升",
     "DESCRIPTIONS": [
-      "在這個回合每當你造成一次傷害，額外獲得一次 #b%d 顆 #y暴擊星 。"
+      "在這個回合每當你造成一次傷害，額外獲得一次 #b%d顆 #y暴擊星 。"
     ]
   },
   "${modID}:StarPower": {
@@ -470,7 +468,7 @@
   "${modID}:TerrorPower": {
     "NAME": "恐怖",
     "DESCRIPTIONS": [
-      "有 #b%d 機率 #y無法行動 一回合。持續時間 #b%d 回合。"
+      "有 #b%d %%概率 #y無法行動 一回合。持續時間 #b%d 回合。"
     ]
   },
   "${modID}:GoddessMetamorphosisBeastPower": {
@@ -524,13 +522,19 @@
   "${modID}:VSTerrorDamageUpPower": {
     "NAME": "對恐怖特攻",
     "DESCRIPTIONS": [
-      "你在這個回合內對有恐怖的敵人額外造成 #b%d%傷害。"
+      "你在這個回合內對有恐怖的敵人額外造成 #b%d %% 傷害。"
     ]
   },
-  "${modID}:VSTerrorDamageUpPlusPower": {
-    "NAME": "對恐怖特攻2",
+  "{modID}:IndomitablePower": {
+    "NAME": "不屈",
     "DESCRIPTIONS": [
-      "你在這個回合內對有恐怖的敵人額外造成 #b%d%傷害。"
+      " #y毅力 發動時，獲得 #b%d 點力量。"
+    ]
+  },
+  "${modID}:HeraclesGutsPower": {
+    "NAME": "毅力",
+    "DESCRIPTIONS": [
+      "當你要被殺死時，免死並回復 #b%d$s 點 #y生命 。"
     ]
   }
 }

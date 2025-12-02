@@ -8,10 +8,9 @@ import fgo.cards.FGOCard;
 public class DragonCore extends FGOCard {
     public static final String ID = makeID(DragonCore.class.getSimpleName());
     public DragonCore() {
-        super(ID, 2, CardType.SKILL, CardTarget.SELF, CardRarity.RARE);
-        setMagic(2);
+        super(ID, 1, CardType.SKILL, CardTarget.SELF, CardRarity.RARE);
         setExhaust();
-        setCostUpgrade(1);
+        setCostUpgrade(0);
     }
 
     @Override
