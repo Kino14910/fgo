@@ -2,7 +2,6 @@ package fgo.cards.fgo;
 
 
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -20,11 +19,6 @@ public class Defend extends FGOCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainBlockAction(p, p, block));
-    }
-
-    @Override
-    public AbstractCard makeCopy() { //Optional
-        return new Defend();
     }
 }
 

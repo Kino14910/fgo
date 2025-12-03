@@ -9,11 +9,10 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class WatersidePower extends BasePower {
     public static final String POWER_ID = makeID(WatersidePower.class.getSimpleName());
-    private static final PowerType TYPE = PowerType.BUFF;
     private static final int BLOCK_AMT = 3;
 
     public WatersidePower(AbstractCreature owner) {
-        super(POWER_ID, TYPE, false, owner);
+        super(POWER_ID, PowerType.BUFF, false, owner);
     }
 
     @Override

@@ -19,6 +19,7 @@ public class NightlessCharismaAction extends AbstractGameAction {
         this.typeToCheck = type;
     }
 
+    @Override
     public void update() {
         if (this.duration == Settings.ACTION_DUR_MED) {
             if (this.p.drawPile.isEmpty()) {

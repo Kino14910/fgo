@@ -1,6 +1,7 @@
 package fgo.characters;
 
 import static fgo.FGOMod.characterPath;
+import static fgo.FGOMod.makeID;
 import static fgo.FGOMod.uiPath;
 import static fgo.characters.CustomEnums.FGO_MASTER;
 
@@ -63,8 +64,8 @@ public class Master extends CustomPlayer{
     public Color FgoNpShadowColor = new Color(0.0F, 0.0F, 0.0F, 0.5F);
     public Color FgoNpBgColor = new Color(0.0F, 0.0F, 0.0F, 0.5F);
     public Color FgoNptextColor = new Color(1.0F, 1.0F, 1.0F, 1.0F);
-    private static final String[] TEXT = CardCrawlGame.languagePack.getUIString("fgo:SpireHeartText").TEXT;
-    private static final String[] NPTEXT = CardCrawlGame.languagePack.getUIString("fgo:NPText").TEXT;
+    private static final String[] TEXT = CardCrawlGame.languagePack.getCharacterString(makeID("Master")).TEXT;
+    private static final String[] NPTEXT = CardCrawlGame.languagePack.getUIString(makeID("NPText")).TEXT;
     private float FgoNpWidth;
     private float FgoNpHideTimer = 1.0f;
     public static int fgoNp;
@@ -236,11 +237,7 @@ public class Master extends CustomPlayer{
     @Override
     public void preBattlePrep() {
         super.preBattlePrep();
-        Master.fgoNp = 0;
-        // 遍历遗物应用加成
-        relics.stream()
-            .filter(r -> r instanceof SuitcaseFgo)
-            .forEach(r -> Master.fgoNp += 20);
+        Master.fgoNp = AbstractDungeon.player.hasRelic(SuitcaseFgo.ID) ? 20 : 0;
         TruthValueUpdatedEvent();
     }
     

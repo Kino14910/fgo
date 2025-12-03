@@ -8,8 +8,7 @@
   "${modID}:GutsPower": {
     "NAME": "毅力",
     "DESCRIPTIONS": [
-      "當你要被殺死時，免死並回復 #b%1$s 點 #y生命 。",
-      "當你接下來 #b%2$s 次要被殺死時，免死並回復 #b%1$s 點 #y生命 。"
+      "當你要被殺死時，免死並回復 #b%d 點 #y生命 。"
     ]
   },
   "${modID}:UnlimitedPower": {
@@ -132,7 +131,7 @@
   "${modID}:AtTheWellPower": {
     "NAME": "獻給世界樹的活祭",
     "DESCRIPTIONS": [
-      "在下回合獲得 #b%d$s 層 #y毅力 ，下一次 #y毅力 發動時獲得 [E] [E] [E] 並且抽 #b3 張牌，然後 #r死亡 。"
+      "在下回合獲得 #b%d 層 #y毅力 ，下一次 #y毅力 發動時獲得 [E] [E] [E] 並且抽 #b3 張牌，然後 #r死亡 。"
     ]
   },
   "${modID}:GutsAtTheWellPower": {
@@ -525,16 +524,17 @@
       "你在這個回合內對有恐怖的敵人額外造成 #b%d %% 傷害。"
     ]
   },
-  "{modID}:IndomitablePower": {
+  "${modID}:IndomitablePower": {
     "NAME": "不屈",
     "DESCRIPTIONS": [
       " #y毅力 發動時，獲得 #b%d 點力量。"
     ]
   },
-  "${modID}:HeraclesGutsPower": {
+  "${modID}:NonStackableGutsPower": {
     "NAME": "毅力",
     "DESCRIPTIONS": [
-      "當你要被殺死時，免死並回復 #b%d$s 點 #y生命 。"
+      "當你要被殺死時，免死並回復 #b%d 點 #y生命 。",
+      "當你接下來 #b%d 次要被殺死時，免死並回復 #b%d 點 #y生命 。"
     ]
   }
 }

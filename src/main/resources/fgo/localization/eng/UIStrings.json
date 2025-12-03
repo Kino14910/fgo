@@ -44,15 +44,6 @@
       "Arcueid Brunestud ?"
     ]
   },
-  "${modID}:SpireHeartText": {
-    "TEXT": [
-      "NL You use all the Command Spells...",
-      "Master",
-      "Wake up from your sleep again, this time you are at the bottom of the tower.",
-      "the Master",
-      "The Master"
-    ]
-  },
   "${modID}:NPText": {
     "TEXT": [
       "NP",

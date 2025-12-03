@@ -231,7 +231,7 @@
   },
   "${modID}:MysticEyes": {
     "NAME": "魔眼",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 给予 !M! 层 fgo:诅呪 。 NL 敌人 fgo:无法行动 一回合。 NL 消耗 。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 给予 !M! 层 fgo:诅呪 。 NL 敌人 fgo:眩晕 一回合。 NL 消耗 。"
   },
   "${modID}:Revelation": {
     "NAME": "灿然圣光之复权",

@@ -2,25 +2,27 @@
   {
     "PROPER_NAME": "NP",
     "NAMES": [
-      "np"
+      "NP Gauge", 
+      "NP"
     ],
-    "DESCRIPTION": "To obtain a #yNoble #yPhantasm card, at least #b100% NP is required."
+    "DESCRIPTION": "Noble Phantasm cards require at least #b100% NP Gauge to be obtained."
   },
   {
     "PROPER_NAME": "Noble Phantasm",
     "NAMES": [
       "noble phantasm",
       "noble_phantasm",
-      "np"
+      "np",
+      "Noble Phantasm Card"
     ],
-    "DESCRIPTION": "Noble Phantasm cards #yRetain and #yExhaust are played."
+    "DESCRIPTION": "Noble Phantasm cards are #yRetain and #yExhaust. Noble Phantasm Cards do not join the deck."
   },
   {
     "PROPER_NAME": "Guts",
     "NAMES": [
       "guts"
     ],
-    "DESCRIPTION": "When you would die, heal HP instead."
+    "DESCRIPTION": "When you would be killed, consume one times of #yUses to survive and restore HP equal to the #yStacks value."
   },
   {
     "PROPER_NAME": "Curse",
@@ -30,13 +32,6 @@
       "curse"
     ],
     "DESCRIPTION": "At the start of turn, lose HP equal to the number of Evil Curse."
-  },
-  {
-    "PROPER_NAME": "Combust",
-    "NAMES": [
-      "combust"
-    ],
-    "DESCRIPTION": "Combusted creatures lose HP at the start of their turn."
   },
   {
     "PROPER_NAME": "Sunlight",
@@ -58,15 +53,7 @@
     "NAMES": [
       "waterside"
     ],
-    "DESCRIPTION": "At the start of your turn, gain #yBlock equal to this turn."
-  },
-  {
-    "PROPER_NAME": "Defense Down",
-    "NAMES": [
-      "defense down",
-      "defense_down"
-    ],
-    "DESCRIPTION": "Additional damage taken. At the end of its turn, reduce #b1."
+    "DESCRIPTION": "At the start of turn, you and all enemies gain #yBlock equal to its stack count."
   },
   {
     "PROPER_NAME": "Defense Up",
@@ -75,14 +62,6 @@
       "defense_up"
     ],
     "DESCRIPTION": "Reduce the next time damage taken. At the end of each turn, reduce #b1."
-  },
-  {
-    "PROPER_NAME": "Buff Block",
-    "NAMES": [
-      "buff block",
-      "buff_block"
-    ],
-    "DESCRIPTION": "Creature cannot gain #yStrength."
   },
   {
     "PROPER_NAME": "Overcharge",
@@ -96,7 +75,7 @@
     "NAMES": [
       "evasion"
     ],
-    "DESCRIPTION": "Prevent you would attacked."
+    "DESCRIPTION": "Prevent you would be attacked."
   },
   {
     "PROPER_NAME": "Invincibility",
@@ -167,7 +146,7 @@
       "np rate",
       "np_rate"
     ],
-    "DESCRIPTION": "Gain #b100% additional NP."
+    "DESCRIPTION": "NP Gauge gained from playing cards or taking damage is increased by #b100%."
   },
   {
     "PROPER_NAME": "Star",
@@ -175,22 +154,14 @@
       "star",
       "stars"
     ],
-    "DESCRIPTION": "When you obtain #b10 #yStars, deal #b100% additional #ynon-Noble #yPhantasm Attack damage and reduce #b10."
+    "DESCRIPTION": "When you have at least #b10 Crit Stars, non-#yNoble Phantasm attack cards deal #b100% more damage and consume #b10 Crit Stars when played."
   },
   {
     "PROPER_NAME": "Critical",
     "NAMES": [
       "critical"
     ],
-    "DESCRIPTION": "Deal more damage from Stars Attack."
-  },
-  {
-    "PROPER_NAME": "Star Rate",
-    "NAMES": [
-      "star rate",
-      "star_rate"
-    ],
-    "DESCRIPTION": "Whenever you play a Quick card, gain double Stars."
+    "DESCRIPTION": "Further increases #yCritical Hit damage."
   },
   {
     "PROPER_NAME": "Ignores Invincibility",
@@ -209,13 +180,6 @@
     "DESCRIPTION": "Gain #b3 #yThorns, #b4 #yPlated #yArmor, #b4 #yRegen, [E] and draw #b1 addition card each turn, #b1 #yIntangible and #b2 #yArtifact."
   },
   {
-    "PROPER_NAME": "Growth",
-    "NAMES": [
-      "growth"
-    ],
-    "DESCRIPTION": "Growth can prevent the next time you would lose HP equal to amount is at or below."
-  },
-  {
     "PROPER_NAME": "Ignores Invincibility",
     "NAMES": [
       "ignores invincibility",
@@ -231,26 +195,22 @@
     "DESCRIPTION": "Has a chance to be #yStunned for 1 turn."
   },
   {
-    "PROPER_NAME": "Max HP",
+    "PROPER_NAME": "Stun",
     "NAMES": [
-      "max hp",
-      "max_hp"
+      "stun"
     ],
-    "DESCRIPTION": "Raise your Max HP this combat. At the end of combat, lose all raise."
+    "DESCRIPTION": "Inflicts Stun on enemies who are not already stunned."
   },
   {
-    "PROPER_NAME": "Stunned",
-    "NAMES": [
-      "stunned"
-    ],
-    "DESCRIPTION": "Stunning is not the enemy that stuns."
+      "PROPER_NAME": "Anti-Terror Advantage",
+    "DESCRIPTION": "This turn, deal #y50% extra damage to enemies afflicted with Terror."
   },
   {
-    "PROPER_NAME": "Eternal Sleep",
-    "NAMES": [
-      "eternal sleep",
-      "eternal_sleep"
-    ],
-    "DESCRIPTION": "At the end of your turn, #rremove your first buff."
+    "PROPER_NAME": "Anti-Terror Advantage+",
+    "DESCRIPTION": "This turn, deal #y100% extra damage to enemies afflicted with Terror."
+  },
+  {
+    "PROPER_NAME": "Metallicize",
+    "DESCRIPTION": "At the end of your turn, gain #yBlock."
   }
 ]

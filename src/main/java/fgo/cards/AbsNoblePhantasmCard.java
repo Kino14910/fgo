@@ -49,4 +49,8 @@ public abstract class AbsNoblePhantasmCard extends FateMagineerCard {
         return false;
     }
 
+    // @Override
+    // public AbstractCard makeCopy() {
+    //     return new SupportCraft();
+    // }
 }

@@ -9,5 +9,14 @@
       " NL Text displayed when smacking the heart. The next one is used for the Vampires event. Usually you just change the last bit.",
       "Navigating an unlit street, you come across several hooded figures in the midst of some dark ritual. As you approach, they turn to you in eerie unison. The tallest among them bares fanged teeth and extends a long, pale hand towards you. NL ~\"Join~ ~us~ ~basic~ ~one,~ ~and~ ~feel~ ~the~ ~warmth~ ~of~ ~the~ ~Spire.\"~"
     ]
+  },
+  "${modID}:Master": {
+    "TEXT": [
+      "NL 你使用全部令咒……",
+      "御主",
+      "被圣杯选中，成功召唤从者的魔术师。 NL 依靠从者的暴击与宝具战斗。",
+      "御主",
+      "御主"
+    ]
   }
 }

@@ -221,12 +221,6 @@
       "受到攻击时，增加受到 #b%d 点伤害。在其回合结束时，减少 #b1 层。"
     ]
   },
-  "${modID}:BuffBlockPower": {
-    "NAME": "力量无效",
-    "DESCRIPTIONS": [
-      "无法获得 #y力量 #b%d 次。"
-    ]
-  },
   "${modID}:FifthFormPower": {
     "NAME": "第五势",
     "DESCRIPTIONS": [
