@@ -1,6 +1,6 @@
 package fgo.cards.fgo;
 
-import static fgo.characters.CustomEnums.Foreigner;
+import static fgo.characters.CustomEnums.FGO_Foreigner;
 
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.stslib.patches.FlavorText;
@@ -17,7 +17,7 @@ public class FacelessMoon extends FGOCard {
         super(ID, 1, CardType.SKILL, CardTarget.SELF, CardRarity.COMMON);
         setMagic(1);
         setSelfRetain(false, true);
-        tags.add(Foreigner);
+        tags.add(FGO_Foreigner);
 
         FlavorText.AbstractCardFlavorFields.textColor.set(this, Color.CHARTREUSE);
         FlavorText.AbstractCardFlavorFields.flavorBoxType.set(this, FlavorText.boxType.TRADITIONAL);

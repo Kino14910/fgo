@@ -1,6 +1,6 @@
 package fgo.cards.tempCards;
 
-import static fgo.characters.CustomEnums.Foreigner;
+import static fgo.characters.CustomEnums.FGO_Foreigner;
 
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -21,7 +21,7 @@ public class SoulOfWaterChannels extends FGOCard {
         setStar(10, 5);
         setExhaust();
         setSelfRetain();
-        this.tags.add(Foreigner);
+        this.tags.add(FGO_Foreigner);
     }
 
     @Override

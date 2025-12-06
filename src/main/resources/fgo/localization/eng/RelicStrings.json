@@ -120,8 +120,8 @@
     "NAME": "Existence Outside the Domain",
     "FLAVOR": "Visitors from the void.",
     "DESCRIPTIONS": [
-      "For each #rForeigner in your deck, at the start of each turn gain #b%d #yVigor.",
-      " You have no #rForeigner.",
+      "For each #rFGO_Foreigner in your deck, at the start of each turn gain #b%d #yVigor.",
+      " You have no #rFGO_Foreigner.",
       " You have #b%d #rCurses."
     ]
   },

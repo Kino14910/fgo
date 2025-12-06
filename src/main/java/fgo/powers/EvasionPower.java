@@ -16,10 +16,10 @@ public class EvasionPower extends BasePower {
 
     @Override
     public void updateDescription() {
-        if (this.amount <= 1) {
-            this.description = DESCRIPTIONS[0];
+        if (amount <= 1) {
+            description = DESCRIPTIONS[0];
         } else {
-            this.description = DESCRIPTIONS[1] + this.amount + DESCRIPTIONS[2];
+            description = String.format(DESCRIPTIONS[1], amount);
         }
     }
 

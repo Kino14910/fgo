@@ -1,7 +1,7 @@
 package fgo.relics;
 
 import static fgo.FGOMod.makeID;
-import static fgo.characters.CustomEnums.Foreigner;
+import static fgo.characters.CustomEnums.FGO_Foreigner;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
@@ -25,10 +25,10 @@ public class Salem extends BaseRelic {
         return this.DESCRIPTIONS[0] + 1 + this.DESCRIPTIONS[1];
     }
 
-    private int countForeignerCards() {
+    private int countFGO_ForeignerCards() {
         int count = 0;
         for (AbstractCard c : AbstractDungeon.player.masterDeck.group) {
-            if (c.hasTag(Foreigner)) {
+            if (c.hasTag(FGO_Foreigner)) {
                 count++;
             }
         }
@@ -55,13 +55,13 @@ public class Salem extends BaseRelic {
 
     @Override
     public void onMasterDeckChange() {
-        this.counter = countForeignerCards();
+        this.counter = countFGO_ForeignerCards();
         updateDescriptionAndTips();
     }
 
     @Override
     public void onEquip() {
-        this.counter = countForeignerCards();
+        this.counter = countFGO_ForeignerCards();
         updateDescriptionAndTips();
     }
 

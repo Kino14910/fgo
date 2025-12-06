@@ -1,6 +1,6 @@
 package fgo.cards.noblecards;
 
-import static fgo.characters.CustomEnums.Foreigner;
+import static fgo.characters.CustomEnums.FGO_Foreigner;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -19,7 +19,7 @@ public class Desterrennacht extends AbsNoblePhantasmCard {
         super(ID,CardType.POWER, CardTarget.ALL_ENEMY, 2);
         setMagic(3, 2);
         setCustomVar("CriticalDamage", 50, 50);
-        tags.add(Foreigner);
+        tags.add(FGO_Foreigner);
     }
 
 

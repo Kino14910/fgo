@@ -1,6 +1,6 @@
 package fgo.cards.fgo;
 
-import static fgo.characters.CustomEnums.Foreigner;
+import static fgo.characters.CustomEnums.FGO_Foreigner;
 
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.stslib.patches.FlavorText;
@@ -21,7 +21,7 @@ public class BackAgain extends FGOCard {
         super(ID, 1, CardType.ATTACK, CardTarget.SELF, CardRarity.UNCOMMON);
         setNP(20, 10);
         setStar(5, 10);
-        tags.add(Foreigner);
+        tags.add(FGO_Foreigner);
 
         FlavorText.AbstractCardFlavorFields.textColor.set(this, Color.CHARTREUSE);
         FlavorText.AbstractCardFlavorFields.flavorBoxType.set(this, FlavorText.boxType.TRADITIONAL);

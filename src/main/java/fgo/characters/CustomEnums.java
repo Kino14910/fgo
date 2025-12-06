@@ -6,7 +6,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 
 public class CustomEnums {
-    @SpireEnum public static AbstractCard.CardTags Foreigner;
+    @SpireEnum public static AbstractCard.CardTags FGO_Foreigner;
 
     @SpireEnum public static AbstractPlayer.PlayerClass FGO_MASTER;
 

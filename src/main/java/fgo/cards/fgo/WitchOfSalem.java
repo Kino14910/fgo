@@ -1,6 +1,6 @@
 package fgo.cards.fgo;
 
-import static fgo.characters.CustomEnums.Foreigner;
+import static fgo.characters.CustomEnums.FGO_Foreigner;
 
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.stslib.patches.FlavorText;
@@ -25,7 +25,7 @@ public class WitchOfSalem extends FGOCard {
         setCustomVar("terror", 50, 50);
 
         setNP(20);
-        tags.add(Foreigner);
+        tags.add(FGO_Foreigner);
 
         FlavorText.AbstractCardFlavorFields.textColor.set(this, Color.CHARTREUSE);
         FlavorText.AbstractCardFlavorFields.flavorBoxType.set(this, FlavorText.boxType.TRADITIONAL);

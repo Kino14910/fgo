@@ -1,6 +1,6 @@
 package fgo.cards.fgo;
 
-import static fgo.characters.CustomEnums.Foreigner;
+import static fgo.characters.CustomEnums.FGO_Foreigner;
 
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.stslib.patches.FlavorText;
@@ -18,7 +18,7 @@ public class Insanity extends FGOCard {
     public Insanity() {
         super(ID, 1, CardType.POWER, CardTarget.ALL_ENEMY, CardRarity.RARE);
         setMagic(10, 10);
-        tags.add(Foreigner);
+        tags.add(FGO_Foreigner);
 
         FlavorText.AbstractCardFlavorFields.textColor.set(this, Color.CHARTREUSE);
         FlavorText.AbstractCardFlavorFields.flavorBoxType.set(this, FlavorText.boxType.TRADITIONAL);
