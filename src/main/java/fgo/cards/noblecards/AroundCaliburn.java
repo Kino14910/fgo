@@ -13,15 +13,15 @@ public class AroundCaliburn extends AbsNoblePhantasmCard {
     public static final String ID = makeID(AroundCaliburn.class.getSimpleName());
 
     public AroundCaliburn() {
-        super(ID,CardType.POWER, CardTarget.SELF, 1);
+        super(ID,CardType.POWER, CardTarget.SELF, 2);
         setMagic(2, 1);
     }
 
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, 3)));
         addToBot(new RemoveDebuffsAction(p));
-        addToBot(new ApplyPowerAction(p, p, new AntiPurgeDefensePower(p, 1)));
+        addToBot(new ApplyPowerAction(p, p, new AntiPurgeDefensePower(p, magicNumber)));
     }
 }

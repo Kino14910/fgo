@@ -47,8 +47,14 @@ public class StarPower extends BasePower {
 
     public float finalDamage(float damage, DamageInfo.DamageType type, float multiplier) {
         //暴击威力提高。
-        if (owner.hasPower(CriticalDamageUpPower.POWER_ID)) {
-            int CrAmt = (owner.getPower(CriticalDamageUpPower.POWER_ID)).amount;
+        if (owner.hasPower(CriticalDamageUpPower.POWER_ID) || owner.hasPower(StarHunterPower.POWER_ID)) {
+            BasePower starHunterPower = (BasePower) owner.getPower(StarHunterPower.POWER_ID);
+            int starHunterAmt = 0;
+            if (owner.hasPower(StarHunterPower.POWER_ID)) {
+                starHunterAmt = starHunterPower.amount2;
+                addToBot(new ReducePowerAction(owner, owner, StarHunterPower.POWER_ID, 1));
+            }
+            int CrAmt = (owner.getPower(CriticalDamageUpPower.POWER_ID)).amount + starHunterAmt;
             return type == DamageInfo.DamageType.NORMAL ? damage * multiplier * (1.0F + CrAmt / 100.0F) : damage;
         }
         return type == DamageInfo.DamageType.NORMAL ? damage * multiplier : damage;

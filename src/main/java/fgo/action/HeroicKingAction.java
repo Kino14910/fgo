@@ -20,13 +20,13 @@ public class HeroicKingAction extends AbstractGameAction {
 
     @Override
     public void update() {
-        this.target = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
-        if (this.target != null) {
-            this.card.calculateCardDamage((AbstractMonster) this.target);
-            this.addToTop(new DamageAction(this.target, new DamageInfo(AbstractDungeon.player, this.card.damage, this.card.damageTypeForTurn), this.effect));
-            this.addToTop(new HKExpungeVFXAction((AbstractMonster) this.target));
+        target = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
+        if (target != null) {
+            card.calculateCardDamage((AbstractMonster) target);
+            addToTop(new DamageAction(target, new DamageInfo(AbstractDungeon.player, card.damage, card.damageTypeForTurn), effect));
+            addToTop(new HKExpungeVFXAction((AbstractMonster) target));
         }
 
-        this.isDone = true;
+        isDone = true;
     }
 }

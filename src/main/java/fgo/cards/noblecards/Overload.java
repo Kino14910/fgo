@@ -13,7 +13,7 @@ import fgo.powers.ArtsPerformancePower;
 
 public class Overload extends AbsNoblePhantasmCard {
     public static final String ID = makeID(Overload.class.getSimpleName());
-//    public static final String ID = "Overload";
+
     public Overload() {
         super(ID,CardType.ATTACK, CardTarget.ENEMY, 1);
         setDamage(30, 8);

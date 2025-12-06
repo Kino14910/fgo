@@ -10,7 +10,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.FadeWipeParticle;
 
 import fgo.FGOMod;
-import fgo.action.WaitFgoAction;
 import fgo.action.lor.ChangeSceneEffect;
 import fgo.cards.AbsNoblePhantasmCard;
 import fgo.powers.UnlimitedPower;
@@ -27,7 +26,6 @@ public class Unlimited extends AbsNoblePhantasmCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.topLevelEffects.add(new FadeWipeParticle());
-        addToBot(new WaitFgoAction(1.0F));
         addToBot(new VFXAction(new ChangeSceneEffect(ImageMaster.loadImage(FGOMod.vfxPath("UnlimitedBg")))));
         CardCrawlGame.music.silenceTempBgmInstantly();
         CardCrawlGame.music.silenceBGMInstantly();

@@ -23,7 +23,7 @@ public class Executioner extends FGOCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ExpungeVFXAction(m));
         addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
-        addToBot(new ApplyPowerAction(m, p, new StrengthPower(m, magicNumber), magicNumber));
+        addToBot(new ApplyPowerAction(m, p, new StrengthPower(m, magicNumber)));
         addToBot(new GainEnergyAction(1));
         //addToBot(new ExecutionerAction(magicNumber, m));
     }

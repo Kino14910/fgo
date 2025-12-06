@@ -17,9 +17,9 @@ public class IraLupus extends AbsNoblePhantasmCard {
     public static final String ID = makeID(IraLupus.class.getSimpleName());
 
     public IraLupus() {
-        super(ID,CardType.ATTACK, CardTarget.ENEMY, 1);
-        setDamage(30, 10);
-        setMagic(3);
+        super(ID, CardType.ATTACK, CardTarget.ENEMY, 1);
+        setDamage(24, 10);
+        setMagic(2, 1);
     }
 
 

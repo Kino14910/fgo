@@ -11,17 +11,14 @@ import fgo.powers.GutsPower;
 public class LamplightOfTheSoul extends FGOCard {
     public static final String ID = makeID(LamplightOfTheSoul.class.getSimpleName());
     public LamplightOfTheSoul() {
-        super(ID, 2, CardType.SKILL, CardTarget.SELF, CardRarity.COMMON);
-        setMagic(10, 5);
-        setBlock(5, 2);
+        super(ID, 2, CardType.SKILL, CardTarget.SELF, CardRarity.UNCOMMON);
+        setMagic(5, 2);
         setExhaust();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new GutsPower(p, magicNumber)));
-        addToBot(new ApplyPowerAction(p, p, new MetallicizePower(p, block)));
+        addToBot(new ApplyPowerAction(p, p, new MetallicizePower(p, magicNumber)));
     }
 }
-
-

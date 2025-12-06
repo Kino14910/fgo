@@ -3,7 +3,9 @@
     "PROPER_NAME": "NP",
     "NAMES": [
       "NP Gauge", 
-      "NP"
+      "NP_Gauge", 
+      "NP",
+      "np"
     ],
     "DESCRIPTION": "Noble Phantasm cards require at least #b100% NP Gauge to be obtained."
   },
@@ -12,7 +14,6 @@
     "NAMES": [
       "noble phantasm",
       "noble_phantasm",
-      "np",
       "Noble Phantasm Card"
     ],
     "DESCRIPTION": "Noble Phantasm cards are #yRetain and #yExhaust. Noble Phantasm Cards do not join the deck."
@@ -112,7 +113,8 @@
     "PROPER_NAME": "NP Damage",
     "NAMES": [
       "np damage",
-      "np_damage"
+      "np_damage",
+      "NP_Damage"
     ],
     "DESCRIPTION": "NP Damage adds additional damage to Noble Phantasm attacks."
   },
@@ -203,14 +205,71 @@
   },
   {
       "PROPER_NAME": "Anti-Terror Advantage",
+    "NAMES": [
+      "anti-terror advantage",
+      "anti-terror_advantage"
+    ],
     "DESCRIPTION": "This turn, deal #y50% extra damage to enemies afflicted with Terror."
   },
   {
     "PROPER_NAME": "Anti-Terror Advantage+",
+    "NAMES": [
+      "anti-terror advantage+",
+      "anti-terror_advantage+"
+    ],
     "DESCRIPTION": "This turn, deal #y100% extra damage to enemies afflicted with Terror."
   },
   {
     "PROPER_NAME": "Metallicize",
+    "NAMES": [
+      "metallicize"
+    ],
     "DESCRIPTION": "At the end of your turn, gain #yBlock."
+  },
+  {
+    "PROPER_NAME": "Combust",
+    "NAMES": [
+      "combust"
+    ],
+    "DESCRIPTION": "At the start of its turn, lose HP equal to the number of Combust."
+  },
+  {
+    "PROPER_NAME": "Defense Down",
+    "NAMES": [
+      "defense down",
+      "defense_down"
+    ],
+    "DESCRIPTION": "Increases damage taken by #b25% for each stack."
+  },
+  {
+    "PROPER_NAME": "Evil Curse",
+    "NAMES": [
+      "evil curse",
+      "evil_curse"
+    ],
+    "DESCRIPTION": "At the start of turn, lose HP equal to the number of Evil Curse."
+  },
+  {
+    "PROPER_NAME": "Eternal Sleep",
+    "NAMES": [
+      "eternal sleep",
+      "eternal_sleep"
+    ],
+    "DESCRIPTION": "Cannot play cards. At the start of your turn, lose 1 stack of Eternal Sleep. When all stacks are lost, die."
+  },
+  {
+    "PROPER_NAME": "Golden Rule",
+    "NAMES": [
+      "golden rule",
+      "golden_rule"
+    ],
+    "DESCRIPTION": "At the end of your turn, gain #yNP equal to the number of stacks."
+  },
+  {
+    "PROPER_NAME": "Stunned",
+    "NAMES": [
+      "stunned"
+    ],
+    "DESCRIPTION": "Cannot act. At the end of its turn, lose 1 stack of Stunned."
   }
 ]

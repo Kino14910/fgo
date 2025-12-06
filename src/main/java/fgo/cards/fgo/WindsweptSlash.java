@@ -24,7 +24,6 @@ public class WindsweptSlash extends FGOCard {
         super(ID, 1, CardType.ATTACK, CardTarget.ENEMY, CardRarity.COMMON);
         setDamage(9);
         cardsToPreview = new FgoInsight();
-        //cardsToPreview.upgrade();
         portraitImg = ImageMaster.loadImage(cardPath("attack/WindsweptSlash"));
 
         FlavorText.AbstractCardFlavorFields.textColor.set(this, Color.CHARTREUSE);

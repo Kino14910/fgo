@@ -10,7 +10,7 @@ import fgo.powers.LoseCritDamagePower;
 public class HeroCreation extends FGOCard {
     public static final String ID = makeID(HeroCreation.class.getSimpleName());
     public HeroCreation() {
-        super(ID, 0, CardType.SKILL, CardTarget.SELF, CardRarity.UNCOMMON);
+        super(ID, 0, CardType.SKILL, CardTarget.SELF, CardRarity.COMMON);
         setSelfRetain(false, true);
     }
 

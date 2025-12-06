@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import fgo.action.VoidSpaceFineArtsAction;
+import fgo.action.FgoNpAction;
 import fgo.cards.FGOCard;
 import fgo.powers.CursePower;
 import fgo.powers.GutsPower;
@@ -38,7 +38,11 @@ public class VoidSpaceFineArts extends FGOCard {
         for(int i = 0; i < 3; ++i) {
             addToBot(new ApplyPowerAction(p, p, new CursePower(p, 1)));
         }
-        addToBot(new VoidSpaceFineArtsAction(magicNumber));
+        
+        if (p.hasPower(CursePower.POWER_ID)) {
+            int CurseAmt = p.getPower(CursePower.POWER_ID).amount;
+            addToBot(new FgoNpAction(magicNumber * CurseAmt));
+        }
     }
 }
 

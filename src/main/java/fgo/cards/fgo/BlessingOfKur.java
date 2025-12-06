@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import fgo.cards.FGOCard;
+import fgo.cards.noblecards.KurKigalIrkalla;
 import fgo.powers.ArtsPerformancePower;
 import fgo.powers.BlessingOfKurPower;
 public class BlessingOfKur extends FGOCard {
@@ -13,6 +14,7 @@ public class BlessingOfKur extends FGOCard {
         super(ID, 1, CardType.POWER, CardTarget.SELF, CardRarity.RARE);
         setMagic(10, 5);
         setExhaust();
+        cardsToPreview = new KurKigalIrkalla();
     }
 
     @Override

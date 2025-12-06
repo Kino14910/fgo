@@ -17,13 +17,13 @@ public class NightlessCharismaPower extends BasePower {
 
     @Override
     public void atStartOfTurn() {
-        this.flash();
-        this.addToBot(new NightlessCharismaAction(this.amount, AbstractCard.CardType.ATTACK));
+        flash();
+        addToBot(new NightlessCharismaAction(amount, AbstractCard.CardType.ATTACK));
     }
 
     @Override
     public void updateDescription() {
-        this.description = String.format(DESCRIPTIONS[0], this.amount);
+        description = String.format(DESCRIPTIONS[0], amount);
     }
 
     

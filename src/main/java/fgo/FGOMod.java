@@ -538,9 +538,9 @@ public class FGOMod implements
     }
 
     @Override
-    public int receiveOnPlayerDamaged(int i, DamageInfo damageInfo) {
+    public int receiveOnPlayerDamaged(int damage, DamageInfo damageInfo) {
         if (!isMaster()) {
-            return i;
+            return damage;
         }
 
         if (damageInfo.type != DamageInfo.DamageType.NORMAL
@@ -548,12 +548,12 @@ public class FGOMod implements
                 || damageInfo.owner == AbstractDungeon.player
                 || AbstractDungeon.currMapNode == null
                 || AbstractDungeon.getCurrRoom().phase != AbstractRoom.RoomPhase.COMBAT
-                || i == 99999) {
-            return i;
+                || damage == 99999) {
+            return damage;
         }
 
-        addToBot(new FgoNpAction(AbstractDungeon.player.hasPower(NPRatePower.POWER_ID) ? 2 * i : i));
-        return i;
+        addToBot(new FgoNpAction(AbstractDungeon.player.hasPower(NPRatePower.POWER_ID) ? 2 * damage : damage));
+        return damage;
     }
 
     @Override

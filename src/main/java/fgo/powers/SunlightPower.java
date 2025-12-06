@@ -1,15 +1,16 @@
 package fgo.powers;
 
 import static fgo.FGOMod.makeID;
+import static fgo.utils.ModHelper.addToBotAbstract;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.watcher.VigorPower;
-
-import fgo.action.SunlightAction;
 
 public class SunlightPower extends BasePower {
     public static final String POWER_ID = makeID(SunlightPower.class.getSimpleName());
@@ -30,14 +31,20 @@ public class SunlightPower extends BasePower {
 
     @Override
     public void atEndOfTurn(boolean isPlayer) {
-        this.flash();
-        this.addToBot(new SunlightAction());
-        this.addToBot(new ReducePowerAction(this.owner, this.owner, this.ID, 1));
+        flash();
+        AbstractPlayer p = AbstractDungeon.player;
+        addToBotAbstract(() -> {
+            if (p.hasPower("Vigor")) {
+                int strAmt = p.getPower("Vigor").amount;
+                addToBot(new ApplyPowerAction(p, p, new VigorPower(p, strAmt), strAmt));
+        }
+        });
+        addToBot(new ReducePowerAction(owner, owner, ID, 1));
     }
 
     @Override
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0];
+        description = DESCRIPTIONS[0];
     }
 
     

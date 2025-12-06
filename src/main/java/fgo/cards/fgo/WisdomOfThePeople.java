@@ -1,7 +1,6 @@
 package fgo.cards.fgo;
 
 import com.megacrit.cardcrawl.actions.common.HealAction;
-import com.megacrit.cardcrawl.actions.unique.RemoveDebuffsAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -23,7 +22,6 @@ public class WisdomOfThePeople extends FGOCard {
         if (upgraded) {
             addToBot(new FgoNpAction(np));
         }
-        addToTop(new RemoveDebuffsAction(p));
     }
 }
 

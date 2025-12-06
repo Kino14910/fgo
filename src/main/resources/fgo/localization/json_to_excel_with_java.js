@@ -12,7 +12,9 @@ function parseJavaCard(code, filename = 'unknown') {
     const data = {
         cost: null, type: '', target: '', rarity: '',
         damage: null, block: null, magicNumber: null,
+        np: null, star: null,
         damageUpgrade: null, blockUpgrade: null, magicUpgrade: null,
+        npUpgrade: null, starUpgrade: null,
         costUpgrade: null, isNoble: false,
     };
 
@@ -70,12 +72,22 @@ function parseJavaCard(code, filename = 'unknown') {
         data.magicUpgrade = base + delta;
     }
 
-    const npMatch = code.match(/setNP\s*\(\s*(\d+)\s*\)/);
-    if (npMatch && data.magicNumber === null) {
-        const val = parseInt(npMatch[1], 10);
-        data.magicNumber = val;
-        data.magicUpgrade = val;
+    const npMatch = code.match(/setNP\s*\(\s*(\d+)\s*,\s*(\d+)\s*\)/);
+    if (npMatch) {
+        const base = parseInt(npMatch[1], 10);
+        const delta = parseInt(npMatch[2], 10);
+        data.np = base;
+        data.npUpgrade = base + delta;
     }
+
+    const starMatch = code.match(/setStar\s*\(\s*(\d+)\s*,\s*(\d+)\s*\)/);
+    if (starMatch) {
+        const base = parseInt(starMatch[1], 10);
+        const delta = parseInt(starMatch[2], 10);
+        data.star = base;
+        data.starUpgrade = base + delta;
+    }
+
 
     const costUpMatch = code.match(/setCostUpgrade\s*\(\s*(\d+)\s*\)/);
     if (costUpMatch) {
@@ -128,6 +140,19 @@ function main() {
     const normalRows = [];
     const nobleRows = [];
 
+    // 定义列顺序（用于保持 Excel 列一致）
+    const normalHeader = [
+        "ID", "牌名", "稀有度", "类型", "目标", "费用", "描述",
+        "伤害值", "格挡值", "特殊值", "宝具值", "暴击星", "费用+", "强化版描述",
+        "伤害值+", "格挡值+", "特殊值+", "宝具值+", "暴击星+"
+    ];
+
+    const nobleHeader = [
+        "ID", "牌名", "类型", "目标", "费用", "描述",
+        "伤害值", "格挡值", "特殊值", "宝具值", "暴击星", "费用+", "强化版描述",
+        "伤害值+", "格挡值+", "特殊值+", "宝具值+", "暴击星+"
+    ];
+
     for (const [fullKey, jsonInfo] of Object.entries(jsonData)) {
         let cardId;
         if (fullKey.startsWith(MOD_ID_PREFIX)) {
@@ -139,14 +164,16 @@ function main() {
         const javaInfo = javaCardInfo[cardId] || {
             cost: null, type: '', target: '', rarity: '',
             damage: null, block: null, magicNumber: null,
+            np: null, star: null,
             damageUpgrade: null, blockUpgrade: null, magicUpgrade: null,
+            npUpgrade: null, starUpgrade: null,
             costUpgrade: null, isNoble: false
         };
 
-        const row = {
+        // 构建通用字段
+        const commonFields = {
             "ID": cardId,
             "牌名": jsonInfo.NAME || '',
-            "稀有度": javaInfo.rarity,
             "类型": javaInfo.type,
             "目标": javaInfo.target,
             "费用": javaInfo.cost,
@@ -154,28 +181,32 @@ function main() {
             "伤害值": javaInfo.damage,
             "格挡值": javaInfo.block,
             "特殊值": javaInfo.magicNumber,
+            "宝具值": javaInfo.np,
+            "暴击星": javaInfo.star,
             "费用+": javaInfo.costUpgrade,
             "强化版描述": cleanDesc(jsonInfo.UPGRADE_DESCRIPTION || ''),
             "伤害值+": javaInfo.damageUpgrade,
             "格挡值+": javaInfo.blockUpgrade,
             "特殊值+": javaInfo.magicUpgrade,
+            "宝具值+": javaInfo.npUpgrade,
+            "暴击星+": javaInfo.starUpgrade,
         };
 
         if (javaInfo.isNoble) {
-            nobleRows.push(row);
+            // 宝具卡：不包含“稀有度”
+            nobleRows.push(commonFields);
         } else {
-            normalRows.push(row);
+            // 普通卡：包含“稀有度”
+            normalRows.push({
+                ...commonFields,
+                "稀有度": javaInfo.rarity
+            });
         }
     }
 
+    // === 输出普通卡 Excel ===
     if (normalRows.length > 0) {
-        const wsNormal = XLSX.utils.json_to_sheet(normalRows, {
-            header: [
-                "ID", "牌名", "稀有度", "类型", "目标", "费用", "描述",
-                "伤害值", "格挡值", "特殊值", "费用+", "强化版描述",
-                "伤害值+", "格挡值+", "特殊值+"
-            ]
-        });
+        const wsNormal = XLSX.utils.json_to_sheet(normalRows, { header: normalHeader });
         const wbNormal = XLSX.utils.book_new();
         XLSX.utils.book_append_sheet(wbNormal, wsNormal, 'Cards');
         XLSX.writeFile(wbNormal, OUTPUT_EXCEL_NORMAL);
@@ -184,14 +215,9 @@ function main() {
         console.log('✅ 普通卡数量为 0，跳过生成普通卡 Excel');
     }
 
+    // === 输出宝具卡 Excel（无稀有度列）===
     if (nobleRows.length > 0) {
-        const wsNoble = XLSX.utils.json_to_sheet(nobleRows, {
-            header: [
-                "ID", "牌名", "稀有度", "类型", "目标", "费用", "描述",
-                "伤害值", "格挡值", "特殊值", "费用+", "强化版描述",
-                "伤害值+", "格挡值+", "特殊值+"
-            ]
-        });
+        const wsNoble = XLSX.utils.json_to_sheet(nobleRows, { header: nobleHeader });
         const wbNoble = XLSX.utils.book_new();
         XLSX.utils.book_append_sheet(wbNoble, wsNoble, 'Noble Cards');
         XLSX.writeFile(wbNoble, OUTPUT_EXCEL_NOBLE);

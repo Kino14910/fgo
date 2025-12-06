@@ -2,7 +2,7 @@ package fgo.powers;
 
 import static fgo.FGOMod.makeID;
 
-import com.megacrit.cardcrawl.actions.common.HealAction;
+import com.evacipated.cardcrawl.mod.stslib.actions.tempHp.AddTemporaryHPAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -24,8 +24,8 @@ public class AntiPurgeDefensePower extends BasePower {
     @Override
     public int onAttackedToChangeDamage(DamageInfo info, int damageAmount) {
         if (damageAmount > 0) {
-            this.addToBot(new HealAction(this.owner, this.owner, 5));
-            this.addToTop(new ReducePowerAction(this.owner, this.owner, this.ID, 1));
+            addToBot(new AddTemporaryHPAction(owner, owner, 5));
+            addToTop(new ReducePowerAction(owner, owner, ID, 1));
         }
 
         return 0;

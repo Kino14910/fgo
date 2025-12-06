@@ -8,12 +8,13 @@ public class StarHunterPower extends BasePower {
     public static final String POWER_ID = makeID(StarHunterPower.class.getSimpleName());
     private static final PowerType TYPE = PowerType.BUFF;
 
-    public StarHunterPower(AbstractCreature owner, int amount) {
+    public StarHunterPower(AbstractCreature owner, int amount, int amount2) {
         super(POWER_ID, TYPE, false, owner, amount, "CriticalDamageUpPower");
+        this.amount2 = amount2;
     }
 
     @Override
     public void updateDescription() {
-        description = String.format(DESCRIPTIONS[0], amount);
+        description = String.format(DESCRIPTIONS[0], amount, amount2);
     }
 }

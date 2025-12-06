@@ -3,6 +3,7 @@ package fgo.powers;
 import static fgo.FGOMod.makeID;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -23,11 +24,12 @@ public class FacelessMoonPower extends BasePower {
             for (AbstractCard c : AbstractDungeon.player.hand.group) {
                 if (!c.isEthereal) {
                     c.retain = true;
-                    ++handAmt;
+                    handAmt++;
                 }
             }
             if (handAmt > 0) {
                 flash();
+                addToBot(new GainBlockAction(owner, handAmt * amount));
                 addToBot(new ApplyPowerAction(owner, owner, new StarPower(owner, handAmt * amount)));
             }
         }

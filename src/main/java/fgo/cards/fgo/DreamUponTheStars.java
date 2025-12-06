@@ -14,6 +14,7 @@ public class DreamUponTheStars extends FGOCard {
         super(ID, 2, CardType.SKILL, CardTarget.SELF, CardRarity.BASIC);
         setBlock(8, 3);
         setMagic(20, 10);
+        setNP(10);
     }
 
     @Override

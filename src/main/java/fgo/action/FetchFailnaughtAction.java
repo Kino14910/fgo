@@ -15,12 +15,13 @@ public class FetchFailnaughtAction extends AbstractGameAction {
         this.actionType = ActionType.DEBUFF;
     }
 
+    @Override
     public void update() {
-        if (this.target != null && this.target.hasPower(CursePower.POWER_ID)) {
-            int curAmt = this.target.getPower(CursePower.POWER_ID).amount;
-            this.addToBot(new ApplyPowerAction(this.target, AbstractDungeon.player, new CursePower(this.target, curAmt), curAmt));
+        if (target != null && target.hasPower(CursePower.POWER_ID)) {
+            int curAmt = target.getPower(CursePower.POWER_ID).amount;
+            addToBot(new ApplyPowerAction(target, AbstractDungeon.player, new CursePower(target, curAmt)));
         }
 
-        this.isDone = true;
+        isDone = true;
     }
 }

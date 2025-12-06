@@ -30,7 +30,7 @@ public class IgnoresInvincibilityAction extends AbstractGameAction {
 
     @Override
     public void update() {
-        if (this.duration == 0.1F && this.target != null) {
+        if (duration == 0.1F && target != null) {
             if (target.currentBlock > 0) {
                 target.currentBlock = 0;
                 timesAmount++;
@@ -42,8 +42,8 @@ public class IgnoresInvincibilityAction extends AbstractGameAction {
                 Metallicize.ID
             };
             for (String id : powerIds) {
-                if (this.target.hasPower(id)) {
-                    this.addToBot(new RemoveSpecificPowerAction(this.target, p, id));
+                if (target.hasPower(id)) {
+                    addToBot(new RemoveSpecificPowerAction(target, p, id));
                     timesAmount++;
                 }
             }
@@ -57,7 +57,7 @@ public class IgnoresInvincibilityAction extends AbstractGameAction {
             }
         }
 
-        this.tickDuration();
+        tickDuration();
     }
 
 
