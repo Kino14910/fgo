@@ -1,4 +1,4 @@
-package fgo.action.lor;
+package fgo.effects;
 
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 

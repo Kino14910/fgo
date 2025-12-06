@@ -16,7 +16,7 @@ public class FifthForm extends FGOCard {
     public FifthForm() {
         super(ID, 0, CardType.SKILL, CardTarget.SELF, CardRarity.RARE, CardColor.COLORLESS);
         setMagic(50, -15);
-        this.portraitImg = ImageMaster.loadImage(cardPath("skill/FifthForm"));
+        portraitImg = ImageMaster.loadImage(cardPath("skill/FifthForm"));
         setExhaust();
 
         FlavorText.AbstractCardFlavorFields.textColor.set(this, Color.CHARTREUSE);
@@ -25,10 +25,10 @@ public class FifthForm extends FGOCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (this.upgraded) {
-            this.addToBot(new ApplyPowerAction(p, p, new FifthFormPower(p, 1, true), 1));
+        if (upgraded) {
+            addToBot(new ApplyPowerAction(p, p, new FifthFormPower(p, 1, true), 1));
         } else {
-            this.addToBot(new ApplyPowerAction(p, p, new FifthFormPower(p, 1, false), 1));
+            addToBot(new ApplyPowerAction(p, p, new FifthFormPower(p, 1, false), 1));
         }
     }
 }

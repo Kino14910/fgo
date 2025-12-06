@@ -16,7 +16,7 @@ public class AntiPurgeDefensePower extends BasePower {
 
     @Override
     public void updateDescription() {
-        this.description = (amount <= 1)
+        description = (amount <= 1)
         ? DESCRIPTIONS[0]
         : String.format(DESCRIPTIONS[1], amount);
     }

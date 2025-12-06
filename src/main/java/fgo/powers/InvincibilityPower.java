@@ -17,17 +17,13 @@ public class InvincibilityPower extends BasePower {
 
     @Override
     public void updateDescription() {
-        if (this.amount <= 1) {
-            this.description = DESCRIPTIONS[0];
-        } else {
-            this.description = DESCRIPTIONS[1] + this.amount + DESCRIPTIONS[2];
-        }
+        description = amount == 1 ? DESCRIPTIONS[0] : String.format(DESCRIPTIONS[1], amount);
     }
 
     @Override
     public int onAttackedToChangeDamage(DamageInfo info, int damageAmount) {
         if (damageAmount > 0) {
-            this.addToTop(new ReducePowerAction(this.owner, this.owner, this.ID, 1));
+            addToTop(new ReducePowerAction(owner, owner, ID, 1));
             return 0;
         }
 
@@ -36,7 +32,7 @@ public class InvincibilityPower extends BasePower {
 
     @Override
     public void atStartOfTurn() {
-        this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
+        addToBot(new RemoveSpecificPowerAction(owner, owner, ID));
     }
 
 }

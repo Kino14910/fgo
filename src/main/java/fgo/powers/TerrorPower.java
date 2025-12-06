@@ -23,7 +23,7 @@ public class TerrorPower extends BasePower implements NonStackablePower{
 
     public TerrorPower(AbstractCreature owner, int turns, int chance) {
         super(POWER_ID, PowerType.DEBUFF, true, owner, turns, "EndOfADreamPower");
-        this.amount2 = chance;
+        amount2 = chance;
         updateDescription();
     }
 
@@ -47,7 +47,7 @@ public class TerrorPower extends BasePower implements NonStackablePower{
     @Override
     public float atDamageReceive(float damage, DamageInfo.DamageType type) {
         if (type == DamageInfo.DamageType.NORMAL) {
-            if (!this.owner.isPlayer && AbstractDungeon.player.hasPower(VSTerrorDamageUpPower.POWER_ID)) {
+            if (!owner.isPlayer && AbstractDungeon.player.hasPower(VSTerrorDamageUpPower.POWER_ID)) {
                 return damage * (1 + AbstractDungeon.player.getPower(VSTerrorDamageUpPower.POWER_ID).amount / 100.0f);
             }
         }

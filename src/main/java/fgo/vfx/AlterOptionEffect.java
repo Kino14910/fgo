@@ -40,17 +40,17 @@ public class AlterOptionEffect extends AbstractGameEffect {
     private boolean openedScreen = false;
     
     public AlterOptionEffect() {
-        this.screenColor = AbstractDungeon.fadeColor.cpy();
-        this.duration = 1.5F;
-        this.screenColor.a = 0.0F;
+        screenColor = AbstractDungeon.fadeColor.cpy();
+        duration = 1.5F;
+        screenColor.a = 0.0F;
         AbstractDungeon.overlayMenu.proceedButton.hide();
     }
 
     @Override
     public void update() {
         if (!AbstractDungeon.isScreenUp) {
-            this.duration -= Gdx.graphics.getDeltaTime();
-            this.updateBlackScreenColor();
+            duration -= Gdx.graphics.getDeltaTime();
+            updateBlackScreenColor();
         }
 
         if (!AbstractDungeon.isScreenUp && !AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
@@ -63,8 +63,8 @@ public class AlterOptionEffect extends AbstractGameEffect {
             ((RestRoom)AbstractDungeon.getCurrRoom()).fadeIn();
         }
 
-        if (this.duration < 1.0F && !this.openedScreen) {
-            this.openedScreen = true;
+        if (duration < 1.0F && !openedScreen) {
+            openedScreen = true;
 
             CardGroup group = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
             ArrayList<AbstractCard> noblePhantasmCards = new ArrayList<>();
@@ -93,8 +93,8 @@ public class AlterOptionEffect extends AbstractGameEffect {
             AbstractDungeon.gridSelectScreen.open(group, 1, TEXT[0], false, false, false, false);
         }
 
-        if (this.duration < 0.0F) {
-            this.isDone = true;
+        if (duration < 0.0F) {
+            isDone = true;
             if (CampfireUI.hidden) {
                 AbstractRoom.waitTimer = 0.0F;
                 AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.INCOMPLETE;
@@ -106,17 +106,17 @@ public class AlterOptionEffect extends AbstractGameEffect {
     }
 
     private void updateBlackScreenColor() {
-        if (this.duration > 1.0F) {
-            this.screenColor.a = Interpolation.fade.apply(1.0F, 0.0F, (this.duration - 1.0F) * 2.0F);
+        if (duration > 1.0F) {
+            screenColor.a = Interpolation.fade.apply(1.0F, 0.0F, (duration - 1.0F) * 2.0F);
         } else {
-            this.screenColor.a = Interpolation.fade.apply(0.0F, 1.0F, this.duration / 1.5F);
+            screenColor.a = Interpolation.fade.apply(0.0F, 1.0F, duration / 1.5F);
         }
 
     }
 
     @Override
     public void render(SpriteBatch sb) {
-        sb.setColor(this.screenColor);
+        sb.setColor(screenColor);
         sb.draw(ImageMaster.WHITE_SQUARE_IMG, 0.0F, 0.0F, (float) Settings.WIDTH, (float) Settings.HEIGHT);
         if (AbstractDungeon.screen == AbstractDungeon.CurrentScreen.GRID) {
             AbstractDungeon.gridSelectScreen.render(sb);

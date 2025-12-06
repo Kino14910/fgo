@@ -23,13 +23,13 @@ public class TaisuiSMisfortune extends FGOCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (Settings.FAST_MODE) {
-            this.addToBot(new VFXAction(new OfferingEffect(), 0.1F));
+            addToBot(new VFXAction(new OfferingEffect(), 0.1F));
         } else {
-            this.addToBot(new VFXAction(new OfferingEffect(), 0.5F));
+            addToBot(new VFXAction(new OfferingEffect(), 0.5F));
         }
-        this.addToBot(new GainEnergyAction(1));
+        addToBot(new GainEnergyAction(1));
         for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-            this.addToBot(new ApplyPowerAction(mo, p, new TaisuiSPower(mo, this.magicNumber), this.magicNumber));
+            addToBot(new ApplyPowerAction(mo, p, new TaisuiSPower(mo, magicNumber)));
         }
     }
 }

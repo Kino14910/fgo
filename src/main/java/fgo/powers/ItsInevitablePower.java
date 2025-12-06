@@ -13,7 +13,7 @@ public class ItsInevitablePower extends BasePower {
 
     public ItsInevitablePower(AbstractCreature owner, int amount, int boost) {
         super(POWER_ID, TYPE, false, owner, amount, "BurningPower");
-        this.amount2 += boost;
+        amount2 += boost;
         updateDescription();
     }
 

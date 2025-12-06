@@ -19,10 +19,10 @@ public class LockChocolate extends BaseRelic {
 
     @Override
     public void atBattleStart() {
-        //this.counter = 0;
-        this.flash();
-        this.addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-        this.addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new CursePower(AbstractDungeon.player, 1), 1));
+        //counter = 0;
+        flash();
+        addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+        addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new CursePower(AbstractDungeon.player, 1), 1));
     }
 
     @Override
@@ -37,6 +37,6 @@ public class LockChocolate extends BaseRelic {
 
     @Override
     public String getUpdatedDescription() {
-        return this.DESCRIPTIONS[0];
+        return DESCRIPTIONS[0];
     }
 }

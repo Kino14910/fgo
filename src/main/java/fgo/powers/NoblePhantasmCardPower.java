@@ -22,7 +22,7 @@ public class NoblePhantasmCardPower extends BasePower {
 
     @Override
     public void updateDescription() {
-        description = String.format(DESCRIPTIONS[0], FontHelper.colorString(this.card.name, "y"));
+        description = String.format(DESCRIPTIONS[0], FontHelper.colorString(card.name, "y"));
     }
 
     @Override

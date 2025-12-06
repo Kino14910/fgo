@@ -10,7 +10,7 @@ public class StarHunterPower extends BasePower {
 
     public StarHunterPower(AbstractCreature owner, int amount, int amount2) {
         super(POWER_ID, TYPE, false, owner, amount, "CriticalDamageUpPower");
-        this.amount2 = amount2;
+        amount2 = amount2;
     }
 
     @Override

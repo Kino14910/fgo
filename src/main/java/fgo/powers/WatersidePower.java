@@ -29,6 +29,6 @@ public class WatersidePower extends BasePower {
 
     @Override
     public void updateDescription() {
-        this.description = String.format(DESCRIPTIONS[0], BLOCK_AMT);
+        description = String.format(DESCRIPTIONS[0], BLOCK_AMT);
     }
 }

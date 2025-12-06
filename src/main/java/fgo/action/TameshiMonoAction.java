@@ -21,10 +21,10 @@ public class TameshiMonoAction extends AbstractGameAction {
   private int num;
 
   public TameshiMonoAction(int number) {
-    this.actionType = AbstractGameAction.ActionType.CARD_MANIPULATION;
-    this.p = AbstractDungeon.player;
-    this.duration = Settings.ACTION_DUR_FAST;
-    this.num = number;
+    actionType = AbstractGameAction.ActionType.CARD_MANIPULATION;
+    p = AbstractDungeon.player;
+    duration = Settings.ACTION_DUR_FAST;
+    num = number;
   }
 
   @Override

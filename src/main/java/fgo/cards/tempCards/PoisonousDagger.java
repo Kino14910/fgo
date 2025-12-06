@@ -17,14 +17,14 @@ public class PoisonousDagger extends FGOCard {
         super(ID, 0, CardType.SKILL, CardTarget.ENEMY, CardRarity.SPECIAL, CardColor.COLORLESS);
         setDamage(2);
         setMagic(2, 2);
-        this.exhaust = true;
+        setExhaust();
     }
 
 
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-        this.addToBot(new ApplyPowerAction(m, p, new PoisonPower(m, p, this.magicNumber), this.magicNumber));
+        addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+        addToBot(new ApplyPowerAction(m, p, new PoisonPower(m, p, magicNumber)));
     }
 }

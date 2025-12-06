@@ -17,14 +17,14 @@ public class BlessRockChoco extends BaseRelic {
 
     @Override
     public String getUpdatedDescription() {
-        return this.DESCRIPTIONS[0];
+        return DESCRIPTIONS[0];
     }
 
     @Override
     public void onCardDraw(AbstractCard drawnCard) {
         if (drawnCard.costForTurn >= 3) {
-            this.flash();
-            this.addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+            flash();
+            addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
             drawnCard.costForTurn -= 1;
             drawnCard.isCostModifiedForTurn = true;
         }

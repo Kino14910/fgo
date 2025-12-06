@@ -23,14 +23,14 @@ public class FgoNpAction extends AbstractGameAction {
     public void update() {
         int oldNp = Master.fgoNp;
         // 0 <= fgoNP <=300
-        Master.fgoNp = Math.min(Math.max(Master.fgoNp + this.amount, 0), 300);
+        Master.fgoNp = Math.min(Math.max(Master.fgoNp + amount, 0), 300);
         // 保留了一部分fgo特性，让你知道自己在玩fgo
         if(Master.fgoNp == 99 && oldNp < 99){
             Master.fgoNp = 100;
         }
 
-        if (this.canText) {
-            String text = "NP" + (this.amount > 0 ? "+" : "") + this.amount + "%";
+        if (canText) {
+            String text = "NP" + (amount > 0 ? "+" : "") + amount + "%";
             AbstractDungeon.effectList.add(new TextAboveCreatureEffect(
             AbstractDungeon.player.hb.cX - AbstractDungeon.player.animX,
             AbstractDungeon.player.hb.cY + AbstractDungeon.player.hb.height / 2.0F,
@@ -42,6 +42,6 @@ public class FgoNpAction extends AbstractGameAction {
             ((Master)AbstractDungeon.player).TruthValueUpdatedEvent();
         }
 
-        this.isDone = true;
+        isDone = true;
     }
 }

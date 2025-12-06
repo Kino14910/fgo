@@ -12,40 +12,40 @@ public class NightlessCharismaAction extends AbstractGameAction {
     private final AbstractCard.CardType typeToCheck;
 
     public NightlessCharismaAction(int amount, AbstractCard.CardType type) {
-        this.p = AbstractDungeon.player;
-        this.setValues(this.p, this.p, amount);
-        this.actionType = ActionType.CARD_MANIPULATION;
-        this.duration = Settings.ACTION_DUR_MED;
-        this.typeToCheck = type;
+        p = AbstractDungeon.player;
+        setValues(p, p, amount);
+        actionType = ActionType.CARD_MANIPULATION;
+        duration = Settings.ACTION_DUR_MED;
+        typeToCheck = type;
     }
 
     @Override
     public void update() {
-        if (this.duration == Settings.ACTION_DUR_MED) {
-            if (this.p.drawPile.isEmpty()) {
-                this.isDone = true;
+        if (duration == Settings.ACTION_DUR_MED) {
+            if (p.drawPile.isEmpty()) {
+                isDone = true;
                 return;
             }
 
             CardGroup tmp = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
-            for (AbstractCard c : this.p.drawPile.group) {
-                if (c.type == this.typeToCheck)
+            for (AbstractCard c : p.drawPile.group) {
+                if (c.type == typeToCheck)
                     tmp.addToRandomSpot(c);
             }
 
             if (tmp.isEmpty()) {
-                this.isDone = true;
+                isDone = true;
                 return;
             }
 
-            for (int i = 0; i < this.amount; ++i) {
+            for (int i = 0; i < amount; ++i) {
                 if (!tmp.isEmpty()) {
                     tmp.shuffle();
                     AbstractCard card = tmp.getBottomCard();
                     tmp.removeCard(card);
-                    if (this.p.hand.size() == 10) {
-                        this.p.drawPile.moveToDiscardPile(card);
-                        this.p.createHandIsFullDialog();
+                    if (p.hand.size() == 10) {
+                        p.drawPile.moveToDiscardPile(card);
+                        p.createHandIsFullDialog();
                     } else {
                         card.unhover();
                         card.lighten(true);
@@ -54,7 +54,7 @@ public class NightlessCharismaAction extends AbstractGameAction {
                         card.targetDrawScale = 0.75F;
                         card.current_x = CardGroup.DRAW_PILE_X;
                         card.current_y = CardGroup.DRAW_PILE_Y;
-                        this.p.drawPile.removeCard(card);
+                        p.drawPile.removeCard(card);
                         AbstractDungeon.player.hand.addToTop(card);
                         AbstractDungeon.player.hand.refreshHandLayout();
                         AbstractDungeon.player.hand.applyPowers();
@@ -68,9 +68,9 @@ public class NightlessCharismaAction extends AbstractGameAction {
                 }
             }
 
-            this.isDone = true;
+            isDone = true;
         }
 
-        this.tickDuration();
+        tickDuration();
     }
 }

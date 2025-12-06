@@ -22,11 +22,11 @@ public class GoddessMetamorphosisBeastPower extends BasePower {
 
     @Override
     public void onAttack(DamageInfo info, int damageAmount, AbstractCreature target) {
-        if (target != this.owner && info.type == DamageInfo.DamageType.NORMAL) {
-            this.flash();
-            this.addToBot(new ApplyPowerAction(target, this.owner, new PoisonPower(target, this.owner, this.amount),
-                    this.amount, true));
-            this.addToBot(new ApplyPowerAction(target, this.owner, new CursePower(target, 1), 1, true));
+        if (target != owner && info.type == DamageInfo.DamageType.NORMAL) {
+            flash();
+            addToBot(new ApplyPowerAction(target, owner, new PoisonPower(target, owner, amount),
+                    amount, true));
+            addToBot(new ApplyPowerAction(target, owner, new CursePower(target, 1), 1, true));
         }
     }
 

@@ -22,13 +22,13 @@ public class FanNight extends BaseRelic {
 
     @Override
     public String getUpdatedDescription() {
-        return this.DESCRIPTIONS[0];
+        return DESCRIPTIONS[0];
     }
 
     @Override
     public void onBlockBroken(final AbstractCreature m) {
-        this.flash();
-        this.addToBot(new RelicAboveCreatureAction(m, this));
-        this.addToBot(new ApplyPowerAction(m, AbstractDungeon.player, new WeakPower(m, WEAKENED_AMT, false), WEAKENED_AMT));
+        flash();
+        addToBot(new RelicAboveCreatureAction(m, this));
+        addToBot(new ApplyPowerAction(m, AbstractDungeon.player, new WeakPower(m, WEAKENED_AMT, false), WEAKENED_AMT));
     }
 }

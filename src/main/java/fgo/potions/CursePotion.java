@@ -21,14 +21,14 @@ public class CursePotion extends BasePotion {
     public static final Color NOBLE = CardHelper.getColor(255, 215, 0);
     public CursePotion(){
         super(ID, 5, PotionRarity.UNCOMMON, PotionSize.SPHERE, Color.PURPLE, Color.RED, Color.DARK_GRAY);
-        this.labOutlineColor = NOBLE;
-        this.isThrown = true;
-        this.targetRequired = true;
+        labOutlineColor = NOBLE;
+        isThrown = true;
+        targetRequired = true;
     }
 
     @Override
     public void addAdditionalTips() {
-        this.tips.add(new PowerTip(
+        tips.add(new PowerTip(
                 TipHelper.capitalize(BaseMod.getKeywordTitle("fgo:curse")),
                 BaseMod.getKeywordDescription("fgo:curse")));
     }

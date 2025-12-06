@@ -20,9 +20,9 @@ public class TaisuiSPower extends BasePower {
 
     @Override
     public void onDeath() {
-        if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead() && this.owner.currentHealth <= 0) {
-            this.flash();
-            this.addToBot(new GainEnergyAction(this.amount));
+        if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead() && owner.currentHealth <= 0) {
+            flash();
+            addToBot(new GainEnergyAction(amount));
         }
     }
 

@@ -154,35 +154,35 @@ public abstract class BaseMonster extends CustomMonster {
     public void update() {
         super.update();
         if (floatIndex != 0)
-            this.animY = floatIndex * MathUtils.cosDeg((float) (System.currentTimeMillis() / 6L % 360L)) * 6.0F * Settings.scale;
+            animY = floatIndex * MathUtils.cosDeg((float) (System.currentTimeMillis() / 6L % 360L)) * 6.0F * Settings.scale;
     }
 
     public void setDamagesWithAscension(int... damages) {
-        this.damage.clear();
-        this.damages = damages;
+        damage.clear();
+        damages = damages;
         for (int i = 0; i < damages.length; i++) {
             damages[i] = Math.round(damages[i] * (ModHelper.moreDamageAscension(type) ? 1.1f : 1));
-            this.damage.add(new DamageInfo(this, damages[i]));
+            damage.add(new DamageInfo(this, damages[i]));
         }
     }
 
     public void setDamages(int... damages) {
-        this.damage.clear();
-        this.damages = damages;
+        damage.clear();
+        damages = damages;
         for (int j : damages) {
-            this.damage.add(new DamageInfo(this, j));
+            damage.add(new DamageInfo(this, j));
         }
     }
 
     public void addDamageActions(AbstractCreature target, int index, int numTimes, AbstractGameAction.AttackEffect effect) {
         for (int i = 0; i < numTimes; i++) {
-            addToBot(new DamageAction(target, this.damage.get(index), effect));
+            addToBot(new DamageAction(target, damage.get(index), effect));
         }
     }
 
     public void addMove(Intent intent, int dmg, Supplier<Integer> dmgTimeSupplier, Consumer<MoveInfo> takeMove) {
         int index = moveInfos.size();
-        this.damage.add(new DamageInfo(this, dmg));
+        damage.add(new DamageInfo(this, dmg));
         moveInfos.add(new MoveInfo(index, intent, () -> damage.get(index).base, dmgTimeSupplier, takeMove));
     }
 
@@ -245,7 +245,7 @@ public abstract class BaseMonster extends CustomMonster {
                     break;
             }
         for (int i = 0; i < info.damageTimeSupplier.get(); i++) {
-            addToBot(new DamageAction(p, this.damage.get(info.index), effect));
+            addToBot(new DamageAction(p, damage.get(info.index), effect));
         }
     }
 
@@ -259,7 +259,7 @@ public abstract class BaseMonster extends CustomMonster {
 
     public void shout(int index, float volume) {
         if (index >= DIALOG.length) return;
-        ModHelper.addToBotAbstract(() -> CardCrawlGame.sound.playV(this.getClass().getSimpleName() + "_" + index, volume));
+        ModHelper.addToBotAbstract(() -> CardCrawlGame.sound.playV(getClass().getSimpleName() + "_" + index, volume));
         addToBot(new ShoutAction(this, DIALOG[index]));
     }
 
@@ -306,11 +306,11 @@ public abstract class BaseMonster extends CustomMonster {
         public Supplier<Integer> damageTimeSupplier;
 
         public MoveInfo(int index, Intent intent, Supplier<Integer> damageSupplier, Supplier<Integer> damageTimeSupplier, Consumer<MoveInfo> takeMove) {
-            this.index = index;
-            this.intent = intent;
-            this.takeMove = takeMove;
-            this.damageSupplier = damageSupplier;
-            this.damageTimeSupplier = damageTimeSupplier;
+            index = index;
+            intent = intent;
+            takeMove = takeMove;
+            damageSupplier = damageSupplier;
+            damageTimeSupplier = damageTimeSupplier;
         }
 
         public void move() {

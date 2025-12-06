@@ -17,7 +17,7 @@ public class UndeadBird extends FGOCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         for(int i = 0; i < this.magicNumber; ++i) {
-            this.addToBot(new RandomCardWithTagAction(false, CardTags.HEALING, false, false));
+            addToBot(new RandomCardWithTagAction(false, CardTags.HEALING, false, false));
         }
     }
 }

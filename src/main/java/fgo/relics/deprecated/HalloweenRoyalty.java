@@ -29,43 +29,43 @@ public class HalloweenRoyalty extends BaseRelic {
 
     @Override
     public void onTrigger() {
-        this.description = this.DESCRIPTIONS[1];
-        this.tips.clear();
-        this.tips.add(new PowerTip(this.name, this.description));
-        this.initializeTips();
+        description = DESCRIPTIONS[1];
+        tips.clear();
+        tips.add(new PowerTip(name, description));
+        initializeTips();
     }
 
     @Override
     public void onEnterRoom(AbstractRoom room) {
-        if (room instanceof RestRoom && this.counter < 4) {
-            this.flash();
-            this.counter = 4;
+        if (room instanceof RestRoom && counter < 4) {
+            flash();
+            counter = 4;
         }
     }
 
     @Override
     public void onEquip() {
-        this.counter = 4;
+        counter = 4;
     }
 
     @Override
     public void atTurnStartPostDraw() {
-        if (this.counter == -1) {
-            this.counter += 2;
+        if (counter == -1) {
+            counter += 2;
         } else {
-            ++this.counter;
+            ++counter;
         }
 
-        if (this.counter == 5) {
-            this.canUse = true;
+        if (counter == 5) {
+            canUse = true;
         }
     }
 
     protected void onRightClick() {
-        if (this.counter > 0 && AbstractDungeon.currMapNode != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
-            this.counter = 0;
-            this.flash();
-            this.addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+        if (counter > 0 && AbstractDungeon.currMapNode != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
+            counter = 0;
+            flash();
+            addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
             ArrayList<AbstractCard> stanceChoices = new ArrayList<>();
             stanceChoices.add(new BrilliantEscort());
             stanceChoices.add(new PureCoordinate());
@@ -80,13 +80,13 @@ public class HalloweenRoyalty extends BaseRelic {
                 }
             }
 
-            this.addToBot(new ChooseOneAction(stanceChoices));
+            addToBot(new ChooseOneAction(stanceChoices));
             canUse = false;
         }
     }
 
     @Override
     public String getUpdatedDescription() {
-        return this.DESCRIPTIONS[0];
+        return DESCRIPTIONS[0];
     }
 }

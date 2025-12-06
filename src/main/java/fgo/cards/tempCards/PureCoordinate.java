@@ -19,15 +19,15 @@ public class PureCoordinate extends FGOCard {
     }
 
     @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {this.onChoseThisOption();}
+    public void use(AbstractPlayer p, AbstractMonster m) {onChoseThisOption();}
 
     @Override
     public void onChoseThisOption() {
         AbstractPlayer p = AbstractDungeon.player;
         if (p.hasPower(ArchetypeORTPower.POWER_ID)) {
-            this.addToBot(new ApplyPowerAction(p, p, new AntiPurgeDefensePower(p, this.magicNumber), this.magicNumber));
+            addToBot(new ApplyPowerAction(p, p, new AntiPurgeDefensePower(p, magicNumber)));
         } else {
-            this.addToBot(new ApplyPowerAction(p, p, new InvincibilityPower(p, this.magicNumber), this.magicNumber));
+            addToBot(new ApplyPowerAction(p, p, new InvincibilityPower(p, magicNumber)));
         }
     }
 }

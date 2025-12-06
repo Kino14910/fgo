@@ -20,7 +20,7 @@ public class StarRatePower extends BasePower {
 
     @Override
     public void atEndOfTurn(boolean isPlayer) {
-        this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
+        addToBot(new RemoveSpecificPowerAction(owner, owner, ID));
     }
 
 

@@ -26,9 +26,9 @@ import com.megacrit.cardcrawl.vfx.FadeWipeParticle;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 
 import fgo.FGOMod;
-import fgo.action.lor.ChangeSceneEffect;
 import fgo.cards.noblecards.Unlimited;
 import fgo.characters.Master;
+import fgo.effects.ChangeSceneEffect;
 import fgo.powers.CriticalDamageUpPower;
 import fgo.powers.monster.StarGainMonsterPower;
 import fgo.utils.ModHelper;

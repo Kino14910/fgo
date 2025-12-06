@@ -27,19 +27,19 @@ public class SparksRouteAction extends AbstractGameAction {
     private boolean shuffled = false;
 
     public SparksRouteAction(boolean sparksRoutePlus) {
-        this.setValues(null, null, 0);
-        this.actionType = ActionType.SHUFFLE;
+        setValues(null, null, 0);
+        actionType = ActionType.SHUFFLE;
         if (!(Boolean) TipTracker.tips.get("SHUFFLE_TIP")) {
             AbstractDungeon.ftue = new FtueTip(LABEL[0], MSG[0], (float) Settings.WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F, FtueTip.TipType.SHUFFLE);
             TipTracker.neverShowAgain("SHUFFLE_TIP");
         }
-        this.upgraded = sparksRoutePlus;
+        upgraded = sparksRoutePlus;
     }
 
     @Override
     public void update() {
-        if (!this.shuffled) {
-            this.shuffled = true;
+        if (!shuffled) {
+            shuffled = true;
             AbstractPlayer p = AbstractDungeon.player;
             int theSize = p.hand.size();
             addToTop(new DrawCardAction(p, theSize));
@@ -48,6 +48,6 @@ public class SparksRouteAction extends AbstractGameAction {
             p.discardPile.shuffle(AbstractDungeon.shuffleRng);
         }
 
-        this.isDone = true;
+        isDone = true;
     }
 }

@@ -34,23 +34,23 @@ public class FGOLibrary extends BaseEvent {
     private final int maxHPAmt;
     public FGOLibrary() {
         super(ID, title, eventPath("FGOLibrary"));
-        this.body = DESCRIPTIONS[0];
+        body = DESCRIPTIONS[0];
         if (AbstractDungeon.ascensionLevel >= 15) {
-            this.healAmt = MathUtils.round((float)AbstractDungeon.player.maxHealth * 0.2F);
-            this.maxHPAmt = MathUtils.round((float)AbstractDungeon.player.maxHealth * 0.15F);
+            healAmt = MathUtils.round((float)AbstractDungeon.player.maxHealth * 0.2F);
+            maxHPAmt = MathUtils.round((float)AbstractDungeon.player.maxHealth * 0.15F);
         } else {
-            this.healAmt = MathUtils.round((float)AbstractDungeon.player.maxHealth * 0.33F);
-            this.maxHPAmt = MathUtils.round((float)AbstractDungeon.player.maxHealth * 0.1F);
+            healAmt = MathUtils.round((float)AbstractDungeon.player.maxHealth * 0.33F);
+            maxHPAmt = MathUtils.round((float)AbstractDungeon.player.maxHealth * 0.1F);
         }
 
-        this.imageEventText.setDialogOption(OPTIONS[0] + this.maxHPAmt + OPTIONS[5]);
-        this.imageEventText.setDialogOption(OPTIONS[1] + this.healAmt + OPTIONS[2]);
+        imageEventText.setDialogOption(OPTIONS[0] + maxHPAmt + OPTIONS[5]);
+        imageEventText.setDialogOption(OPTIONS[1] + healAmt + OPTIONS[2]);
     }
 
     @Override
     public void update() {
         super.update();
-        if (this.pickCard && !AbstractDungeon.isScreenUp && !AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
+        if (pickCard && !AbstractDungeon.isScreenUp && !AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
             AbstractCard c = AbstractDungeon.gridSelectScreen.selectedCards.get(0).makeCopy();
             AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(c, (float) Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
             AbstractDungeon.gridSelectScreen.selectedCards.clear();
@@ -59,13 +59,13 @@ public class FGOLibrary extends BaseEvent {
 
     @Override
     protected void buttonEffect(int buttonPressed) {
-        if (this.screenNum == 0) {
+        if (screenNum == 0) {
             if (buttonPressed == 0) {
-                this.imageEventText.updateBodyText(DESCRIPTIONS[2]);
-                this.screenNum = 1;
-                this.imageEventText.updateDialogOption(0, OPTIONS[3]);
-                this.imageEventText.clearRemainingOptions();
-                this.pickCard = true;
+                imageEventText.updateBodyText(DESCRIPTIONS[2]);
+                screenNum = 1;
+                imageEventText.updateDialogOption(0, OPTIONS[3]);
+                imageEventText.clearRemainingOptions();
+                pickCard = true;
                 CardGroup group = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
                 group.addToBottom(new PrimevalRune());
                 group.addToBottom(new SpringOfFire());
@@ -81,16 +81,16 @@ public class FGOLibrary extends BaseEvent {
                 }
 
                 AbstractDungeon.gridSelectScreen.open(group, 1, OPTIONS[4], false);
-                AbstractDungeon.player.decreaseMaxHealth(this.maxHPAmt);
+                AbstractDungeon.player.decreaseMaxHealth(maxHPAmt);
                 return;
             }
-            this.imageEventText.updateBodyText(DESCRIPTIONS[1]);
-            AbstractDungeon.player.heal(this.healAmt, true);
-            this.screenNum = 1;
-            this.imageEventText.updateDialogOption(0, OPTIONS[3]);
-            this.imageEventText.clearRemainingOptions();
+            imageEventText.updateBodyText(DESCRIPTIONS[1]);
+            AbstractDungeon.player.heal(healAmt, true);
+            screenNum = 1;
+            imageEventText.updateDialogOption(0, OPTIONS[3]);
+            imageEventText.clearRemainingOptions();
         } else {
-            this.openMap();
+            openMap();
         }
     }
 }

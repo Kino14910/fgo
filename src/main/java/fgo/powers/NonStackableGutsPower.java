@@ -15,9 +15,9 @@ public class NonStackableGutsPower extends BasePower implements NonStackablePowe
  
     public NonStackableGutsPower(AbstractCreature owner, int amount, int time) {
         super(POWER_ID, PowerType.BUFF, false, owner, amount, "GutsPower"); 
-        this.time = time;
-        this.amount2 = time == 1 ? 0 : time;
-        this.updateDescription();
+        time = time;
+        amount2 = time == 1 ? 0 : time;
+        updateDescription();
     }
 
     /**

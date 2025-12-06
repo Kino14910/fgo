@@ -21,6 +21,6 @@ public class Kaleidoscope extends FGOCard {
 
     @Override
     public void onChoseThisOption() {
-        this.addToBot(new FgoNpAction(np));
+        addToBot(new FgoNpAction(np));
     }
 }

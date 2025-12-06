@@ -21,14 +21,14 @@ public class GutsAtTheWellPower extends BasePower {
      */
     @Override
     public void onSpecificTrigger() {
-        this.flash();
-        this.addToBot(new FgoNpAction(80));
-        this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
+        flash();
+        addToBot(new FgoNpAction(80));
+        addToBot(new RemoveSpecificPowerAction(owner, owner, ID));
     }
 
     @Override
     public void updateDescription() {
-        String.format(DESCRIPTIONS[0], this.amount, this.amount);
+        String.format(DESCRIPTIONS[0], amount, amount);
     }
 
 }

@@ -16,18 +16,14 @@ public class MonteCristoTreasurePower extends BasePower {
 
     @Override
     public void updateDescription() {
-        if (this.amount == 1) {
-            this.description = DESCRIPTIONS[0];
-        } else {
-            this.description = DESCRIPTIONS[1] + this.amount + DESCRIPTIONS[2];
-        }
+        description = amount == 1 ? DESCRIPTIONS[0] : String.format(DESCRIPTIONS[1], amount);
     }
 
     @Override
     public void onAttack(DamageInfo info, int damageAmount, AbstractCreature target) {
-        if (damageAmount > 0 && target != this.owner && info.type == DamageInfo.DamageType.NORMAL && this.owner.hasPower("fgo:StarPower") && this.owner.getPower("fgo:StarPower").amount >= 10) {
-            this.flash();
-            this.addToBot(new GainBlockAction(this.owner, this.owner, damageAmount * this.amount));
+        if (damageAmount > 0 && target != owner && info.type == DamageInfo.DamageType.NORMAL && owner.hasPower("fgo:StarPower") && owner.getPower("fgo:StarPower").amount >= 10) {
+            flash();
+            addToBot(new GainBlockAction(owner, owner, damageAmount * amount));
         }
     }
 }

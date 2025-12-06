@@ -15,20 +15,20 @@ public class ReducePercentDamagePower extends BasePower {
 
     @Override
     public void updateDescription() {
-        this.description = String.format(DESCRIPTIONS[0], this.amount);
+        description = String.format(DESCRIPTIONS[0], amount);
     }
 
     @Override
     public float atDamageFinalReceive(float damage, DamageInfo.DamageType type) {
-        // return type != DamageInfo.DamageType.HP_LOSS && type != DamageInfo.DamageType.THORNS ? damage * (100.0F - this.amount) / 100.0F : damage;
-        return damage * (100.0F - this.amount) / 100.0F;
+        // return type != DamageInfo.DamageType.HP_LOSS && type != DamageInfo.DamageType.THORNS ? damage * (100.0F - amount) / 100.0F : damage;
+        return damage * (100.0F - amount) / 100.0F;
     }
 
 
     @Override
     public void atStartOfTurn() {
         if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
-            this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
+            addToBot(new RemoveSpecificPowerAction(owner, owner, ID));
         }
     }
 }

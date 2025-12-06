@@ -22,7 +22,7 @@ public class Salem extends BaseRelic {
 
     @Override
     public String getUpdatedDescription() {
-        return this.DESCRIPTIONS[0] + 1 + this.DESCRIPTIONS[1];
+        return DESCRIPTIONS[0] + 1 + DESCRIPTIONS[1];
     }
 
     private int countFGO_ForeignerCards() {
@@ -36,42 +36,42 @@ public class Salem extends BaseRelic {
     }
 
     private void updateDescriptionAndTips() {
-        if (this.counter == 0) {
-            this.description = String.format(DESCRIPTIONS[0] + DESCRIPTIONS[1], 1);
+        if (counter == 0) {
+            description = String.format(DESCRIPTIONS[0] + DESCRIPTIONS[1], 1);
         } else {
-            this.description = String.format(DESCRIPTIONS[0] + DESCRIPTIONS[2], 1, counter);
+            description = String.format(DESCRIPTIONS[0] + DESCRIPTIONS[2], 1, counter);
         }
 
-        this.tips.clear();
-        this.tips.add(new PowerTip(this.name, this.description));
-        this.initializeTips();
+        tips.clear();
+        tips.add(new PowerTip(name, description));
+        initializeTips();
     }
 
     @Override
     public void setCounter(int c) {
-        this.counter = c;
+        counter = c;
         updateDescriptionAndTips();
     }
 
     @Override
     public void onMasterDeckChange() {
-        this.counter = countFGO_ForeignerCards();
+        counter = countFGO_ForeignerCards();
         updateDescriptionAndTips();
     }
 
     @Override
     public void onEquip() {
-        this.counter = countFGO_ForeignerCards();
+        counter = countFGO_ForeignerCards();
         updateDescriptionAndTips();
     }
 
     @Override
     public void atTurnStart() {
-        if (this.counter > 0) {
-            this.flash();
-            this.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, 
-                new VigorPower(AbstractDungeon.player, this.counter), this.counter));
-            this.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+        if (counter > 0) {
+            flash();
+            addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, 
+                new VigorPower(AbstractDungeon.player, counter), counter));
+            addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
         }
     }
 }

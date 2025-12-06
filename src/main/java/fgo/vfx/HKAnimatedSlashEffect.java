@@ -48,31 +48,31 @@ public class HKAnimatedSlashEffect extends AbstractGameEffect {
 
     @Override
     public void update() {
-        if (this.duration > this.startingDuration / 2.0F) {
-            this.color.a = Interpolation.exp10In.apply(0.8F, 0.0F, (this.duration - this.startingDuration / 2.0F) / (this.startingDuration / 2.0F));
-            this.scaleX = Interpolation.exp10In.apply(this.targetScale, 0.1F, (this.duration - this.startingDuration / 2.0F) / (this.startingDuration / 2.0F));
-            this.scaleY = this.scaleX;
-            this.x = Interpolation.fade.apply(this.tX, this.sX, (this.duration - this.startingDuration / 2.0F) / (this.startingDuration / 2.0F));
-            this.y = Interpolation.fade.apply(this.tY, this.sY, (this.duration - this.startingDuration / 2.0F) / (this.startingDuration / 2.0F));
+        if (duration > startingDuration / 2.0F) {
+            color.a = Interpolation.exp10In.apply(0.8F, 0.0F, (duration - startingDuration / 2.0F) / (startingDuration / 2.0F));
+            scaleX = Interpolation.exp10In.apply(targetScale, 0.1F, (duration - startingDuration / 2.0F) / (startingDuration / 2.0F));
+            scaleY = scaleX;
+            x = Interpolation.fade.apply(tX, sX, (duration - startingDuration / 2.0F) / (startingDuration / 2.0F));
+            y = Interpolation.fade.apply(tY, sY, (duration - startingDuration / 2.0F) / (startingDuration / 2.0F));
         } else {
-            this.scaleX = Interpolation.pow2In.apply(0.5F, this.targetScale, this.duration / (this.startingDuration / 2.0F));
-            this.color.a = Interpolation.pow5In.apply(0.0F, 0.8F, this.duration / (this.startingDuration / 2.0F));
+            scaleX = Interpolation.pow2In.apply(0.5F, targetScale, duration / (startingDuration / 2.0F));
+            color.a = Interpolation.pow5In.apply(0.0F, 0.8F, duration / (startingDuration / 2.0F));
         }
 
-        this.duration -= Gdx.graphics.getDeltaTime();
-        if (this.duration < 0.0F) {
-            this.isDone = true;
+        duration -= Gdx.graphics.getDeltaTime();
+        if (duration < 0.0F) {
+            isDone = true;
         }
 
     }
 
     @Override
     public void render(SpriteBatch sb) {
-        sb.setColor(this.color2);
+        sb.setColor(color2);
         sb.setBlendFunction(770, 1);
-        sb.draw(HK, this.x, this.y, 64.0F, 64.0F, 128.0F, 128.0F, this.scaleX * 0.4F * MathUtils.random(0.95F, 1.05F) * Settings.scale, this.scaleY * 0.7F * MathUtils.random(0.95F, 1.05F) * Settings.scale, this.rotation, 0, 0, 128, 128, false, false);
-        sb.setColor(this.color);
-        sb.draw(HK, this.x, this.y, 64.0F, 64.0F, 128.0F, 128.0F, this.scaleX * 0.7F * MathUtils.random(0.95F, 1.05F) * Settings.scale, this.scaleY * MathUtils.random(0.95F, 1.05F) * Settings.scale, this.rotation, 0, 0, 128, 128, false, false);
+        sb.draw(HK, x, y, 64.0F, 64.0F, 128.0F, 128.0F, scaleX * 0.4F * MathUtils.random(0.95F, 1.05F) * Settings.scale, scaleY * 0.7F * MathUtils.random(0.95F, 1.05F) * Settings.scale, rotation, 0, 0, 128, 128, false, false);
+        sb.setColor(color);
+        sb.draw(HK, x, y, 64.0F, 64.0F, 128.0F, 128.0F, scaleX * 0.7F * MathUtils.random(0.95F, 1.05F) * Settings.scale, this.scaleY * MathUtils.random(0.95F, 1.05F) * Settings.scale, this.rotation, 0, 0, 128, 128, false, false);
         sb.setBlendFunction(770, 771);
     }
 

@@ -14,6 +14,6 @@ public class CriticalDamageUpPower extends BasePower {
 
     @Override
     public void updateDescription() {
-        this.description = String.format(DESCRIPTIONS[0], this.amount);
+        description = String.format(DESCRIPTIONS[0], amount);
     }
 }

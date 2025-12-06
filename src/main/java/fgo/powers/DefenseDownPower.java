@@ -21,12 +21,12 @@ public class DefenseDownPower extends BasePower {
 
     @Override
     public void atEndOfRound() {
-        this.addToBot(new ReducePowerAction(this.owner, this.owner, this.ID, 1));
+        addToBot(new ReducePowerAction(owner, owner, ID, 1));
     }
 
     @Override
     public float atDamageReceive(float damage, DamageInfo.DamageType type) {
-        return type == DamageInfo.DamageType.NORMAL ? damage + this.amount : damage;
+        return type == DamageInfo.DamageType.NORMAL ? damage + amount : damage;
     }
 
     

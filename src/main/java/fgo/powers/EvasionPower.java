@@ -25,14 +25,14 @@ public class EvasionPower extends BasePower {
 
     @Override
     public void stackPower(int stackAmount) {
-        this.fontScale = 8.0F;
-        this.amount += stackAmount;
+        fontScale = 8.0F;
+        amount += stackAmount;
     }
 
     @Override
     public int onAttackedToChangeDamage(DamageInfo info, int damageAmount) {
         if (damageAmount > 0 && info.type == DamageInfo.DamageType.NORMAL) {
-            this.addToTop(new ReducePowerAction(this.owner, this.owner, this.ID, 1));
+            addToTop(new ReducePowerAction(owner, owner, ID, 1));
             return 0;
         }
 

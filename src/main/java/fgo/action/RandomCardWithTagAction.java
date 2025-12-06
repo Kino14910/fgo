@@ -17,48 +17,48 @@ public class RandomCardWithTagAction extends AbstractGameAction {
     public boolean oneless;
 
     public RandomCardWithTagAction(AbstractCard.CardTags tagToSearch) {
-        this.tag = tagToSearch;
-        this.actionType = ActionType.CARD_MANIPULATION;
+        tag = tagToSearch;
+        actionType = ActionType.CARD_MANIPULATION;
     }
 
     public RandomCardWithTagAction(AbstractCard.CardTags tagToSearch, boolean free) {
-        this.tag = tagToSearch;
-        this.free = free;
-        this.oneless = false;
+        tag = tagToSearch;
+        free = free;
+        oneless = false;
     }
 
     public RandomCardWithTagAction(boolean upgraded, AbstractCard.CardTags tagToSearch, boolean free, boolean oneless) {
-        this.upgradeCard = upgraded;
-        this.tag = tagToSearch;
-        this.free = free;
-        this.oneless = oneless;
+        upgradeCard = upgraded;
+        tag = tagToSearch;
+        free = free;
+        oneless = oneless;
     }
 
     @Override
     public void update() {
         ArrayList<String> tmp = new ArrayList<>();
         for (Map.Entry<String, AbstractCard> stringAbstractCardEntry : CardLibrary.cards.entrySet()) {
-            if (stringAbstractCardEntry.getValue().hasTag(this.tag)) {
+            if (stringAbstractCardEntry.getValue().hasTag(tag)) {
                 tmp.add(stringAbstractCardEntry.getKey());
             }
         }
 
         AbstractCard cStudy = CardLibrary.cards.get(tmp.get(cardRng.random(0, tmp.size() - 1))).makeCopy();
 
-        if (this.upgradeCard) {
+        if (upgradeCard) {
             cStudy.upgrade();
         }
 
-        if (this.free) {
+        if (free) {
             cStudy.freeToPlayOnce = true;
         }
 
-        if (this.oneless) {
+        if (oneless) {
             cStudy.modifyCostForCombat(-1);
         }
 
         addToBot(new MakeTempCardInHandAction(cStudy, true));
 
-        this.isDone = true;
+        isDone = true;
     }
 }

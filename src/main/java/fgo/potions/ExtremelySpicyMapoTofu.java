@@ -25,16 +25,16 @@ public class ExtremelySpicyMapoTofu extends BasePotion {
     public static final Color NOBLE = CardHelper.getColor(255, 215, 0);
     public ExtremelySpicyMapoTofu(){
         super(ID, 0, PotionRarity.RARE, PotionSize.BOTTLE, Color.ORANGE, Color.RED, null);
-        this.labOutlineColor = NOBLE;
-        this.isThrown = false;
+        labOutlineColor = NOBLE;
+        isThrown = false;
     }
 
     @Override
     public void addAdditionalTips() {
-        this.tips.add(new PowerTip(
+        tips.add(new PowerTip(
                 TipHelper.capitalize(BaseMod.getKeywordTitle("fgo:np")),
                 BaseMod.getKeywordDescription("fgo:np")));
-        this.tips.add(new PowerTip(
+        tips.add(new PowerTip(
                 TipHelper.capitalize(BaseMod.getKeywordTitle("fgo:np_damage")),
                 BaseMod.getKeywordDescription("fgo:np_damage")));
     }
@@ -45,7 +45,7 @@ public class ExtremelySpicyMapoTofu extends BasePotion {
         ArrayList<AbstractCard> stanceChoices = new ArrayList<>();
         stanceChoices.add(new Kaleidoscope());
         stanceChoices.add(new TheBlackGrail());
-        this.addToBot(new ChooseOneAction(stanceChoices));
+        addToBot(new ChooseOneAction(stanceChoices));
     }
     
     @Override

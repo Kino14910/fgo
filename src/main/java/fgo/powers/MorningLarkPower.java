@@ -21,17 +21,17 @@ public class MorningLarkPower extends BasePower {
 //
 //    @Override
 //    public void onInitialApplication() {
-//        AbstractDungeon.player.gameHandSize -= this.amount;
+//        AbstractDungeon.player.gameHandSize -= amount;
 //    }
 //
 //    @Override
 //    public void onRemove() {
-//        AbstractDungeon.player.gameHandSize += this.amount;
+//        AbstractDungeon.player.gameHandSize += amount;
 //    }
 //
 //    @Override
 //    public void atStartOfTurn() {
-//        this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
+//        addToBot(new RemoveSpecificPowerAction(owner, owner, ID));
 //    }
 
     @Override

@@ -17,12 +17,12 @@ public class SionSkill extends FGOCard {
     }
 
     @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {this.onChoseThisOption();}
+    public void use(AbstractPlayer p, AbstractMonster m) {onChoseThisOption();}
 
     @Override
     public void onChoseThisOption() {
         AbstractPlayer p = AbstractDungeon.player;
-        this.addToBot(new DiscardAction(p, p, 1, false));
-        this.addToBot(new BetterDrawPileToHandAction(this.magicNumber));
+        addToBot(new DiscardAction(p, p, 1, false));
+        addToBot(new BetterDrawPileToHandAction(magicNumber));
     }
 }

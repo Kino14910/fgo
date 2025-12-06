@@ -46,7 +46,7 @@ public class NoblePhantasmButton extends AbstractPanel {
             null,
             true
         );
-        this.hb = new Hitbox(
+        hb = new Hitbox(
             AbstractDungeon.player.hb.x - 64.0F * Settings.scale,
             AbstractDungeon.player.hb.y + AbstractDungeon.player.hb.height - 12.0F * Settings.scale,
             64.0F * Settings.scale,

@@ -22,9 +22,9 @@ public class SunlightPower extends BasePower {
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
         if (card.type == AbstractCard.CardType.ATTACK) {
-            if (this.owner.hasPower("Vigor")) {
-                int VigorAmt = this.owner.getPower("Vigor").amount;
-                this.addToBot(new ApplyPowerAction(this.owner, this.owner, new VigorPower(this.owner, VigorAmt), VigorAmt));
+            if (owner.hasPower("Vigor")) {
+                int VigorAmt = owner.getPower("Vigor").amount;
+                addToBot(new ApplyPowerAction(owner, owner, new VigorPower(owner, VigorAmt), VigorAmt));
             }
         }
     }

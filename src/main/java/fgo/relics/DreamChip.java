@@ -21,36 +21,36 @@ public class DreamChip extends BaseRelic {
 
     @Override
     public String getUpdatedDescription() {
-        return this.DESCRIPTIONS[0];
+        return DESCRIPTIONS[0];
     }
 
     @Override
     public void atPreBattle() {
         usedThisCombat = false;
-        this.pulse = true;
-        this.beginPulse();
+        pulse = true;
+        beginPulse();
     }
 
     @Override
     public void onShuffle() {
         if (!usedThisCombat) {
-            this.flash();
-            this.pulse = false;
-            this.addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-            this.addToBot(new MakeTempCardInHandAction(new CalculatedGamble(), 1));
+            flash();
+            pulse = false;
+            addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+            addToBot(new MakeTempCardInHandAction(new CalculatedGamble(), 1));
             usedThisCombat = true;
-            this.grayscale = true;
+            grayscale = true;
         }
 
     }
 
     @Override
     public void justEnteredRoom(AbstractRoom room) {
-        this.grayscale = false;
+        grayscale = false;
     }
 
     @Override
     public void onVictory() {
-        this.pulse = false;
+        pulse = false;
     }
 }

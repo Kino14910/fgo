@@ -24,27 +24,27 @@ public class EightKindness extends FGOCard {
     
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeBaseCost(2);
+        if (!upgraded) {
+            upgradeName();
+            upgradeBaseCost(2);
         }
     }
 
     public void gainPower(AbstractPlayer p, AbstractPower powerToApply){
-        this.addToBot(new ApplyPowerAction(p, p,  powerToApply));
+        addToBot(new ApplyPowerAction(p, p,  powerToApply));
 
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        gainPower(p, new StrengthPower(p, this.magicNumber));
-        gainPower(p, new DexterityPower(p, this.magicNumber));
-        gainPower(p, new PlatedArmorPower(p, this.magicNumber));
-        gainPower(p, new RegenPower(p, this.magicNumber));
-        gainPower(p, new ThornsPower(p, this.magicNumber));
-        gainPower(p, new VigorPower(p, this.magicNumber));
-        gainPower(p, new IntangiblePlayerPower(p, this.magicNumber));
-        gainPower(p, new ArtifactPower(p, this.magicNumber));
+        gainPower(p, new StrengthPower(p, magicNumber));
+        gainPower(p, new DexterityPower(p, magicNumber));
+        gainPower(p, new PlatedArmorPower(p, magicNumber));
+        gainPower(p, new RegenPower(p, magicNumber));
+        gainPower(p, new ThornsPower(p, magicNumber));
+        gainPower(p, new VigorPower(p, magicNumber));
+        gainPower(p, new IntangiblePlayerPower(p, magicNumber));
+        gainPower(p, new ArtifactPower(p, magicNumber));
     }
 
 }

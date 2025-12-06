@@ -23,8 +23,8 @@ public class NPOverchargePower extends BasePower {
 
     @Override
     public void updateDescription() {
-        if (this.amount == 1) {
-            this.description = DESCRIPTIONS[1];
+        if (amount == 1) {
+            description = DESCRIPTIONS[1];
         } else {
             description = String.format(DESCRIPTIONS[0], amount);
         }
@@ -32,8 +32,8 @@ public class NPOverchargePower extends BasePower {
 
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        if (!card.purgeOnUse && this.amount > 0 && card.color == FGOCardColor.NOBLE_PHANTASM) {
-            this.flash();
+        if (!card.purgeOnUse && amount > 0 && card.color == FGOCardColor.NOBLE_PHANTASM) {
+            flash();
             AbstractMonster m = null;
             if (action.target != null) {
                 m = (AbstractMonster)action.target;
@@ -51,9 +51,9 @@ public class NPOverchargePower extends BasePower {
 
             tmp.purgeOnUse = true;
             AbstractDungeon.actionManager.addCardQueueItem(new CardQueueItem(tmp, m, card.energyOnUse, true, true), true);
-            --this.amount;
-            if (this.amount == 0) {
-                this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
+            --amount;
+            if (amount == 0) {
+                addToBot(new RemoveSpecificPowerAction(owner, owner, ID));
             }
         }
     }

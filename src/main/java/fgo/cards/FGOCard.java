@@ -131,7 +131,7 @@ public abstract class FGOCard extends CustomCard {
 
     // Methods meant for constructor use
     protected final void setDamage(int damage) {
-        this.setDamage(damage, 0);
+        setDamage(damage, 0);
     }
 
     protected final void setDamage(int damage, int damageUpgrade) {
@@ -143,7 +143,7 @@ public abstract class FGOCard extends CustomCard {
     }
 
     protected final void setBlock(int block) {
-        this.setBlock(block, 0);
+        setBlock(block, 0);
     }
 
     protected final void setBlock(int block, int blockUpgrade) {
@@ -155,7 +155,7 @@ public abstract class FGOCard extends CustomCard {
     }
 
     protected final void setMagic(int magic) {
-        this.setMagic(magic, 0);
+        setMagic(magic, 0);
     }
 
     protected final void setMagic(int magic, int magicUpgrade) {
@@ -205,7 +205,7 @@ public abstract class FGOCard extends CustomCard {
     }
 
     protected final void setCustomVar(String key, int base) {
-        this.setCustomVar(key, base, 0);
+        setCustomVar(key, base, 0);
     }
 
     protected final void setCustomVar(String key, int base, int upgrade) {
@@ -462,35 +462,35 @@ public abstract class FGOCard extends CustomCard {
     }
 
     protected final void setExhaust() {
-        this.setExhaust(true);
+        setExhaust(true);
     }
 
     protected final void setEthereal() {
-        this.setEthereal(true);
+        setEthereal(true);
     }
 
     protected final void setInnate() {
-        this.setInnate(true);
+        setInnate(true);
     }
 
     protected final void setSelfRetain() {
-        this.setSelfRetain(true);
+        setSelfRetain(true);
     }
 
     protected final void setExhaust(boolean exhaust) {
-        this.setExhaust(exhaust, exhaust);
+        setExhaust(exhaust, exhaust);
     }
 
     protected final void setEthereal(boolean ethereal) {
-        this.setEthereal(ethereal, ethereal);
+        setEthereal(ethereal, ethereal);
     }
 
     protected final void setInnate(boolean innate) {
-        this.setInnate(innate, innate);
+        setInnate(innate, innate);
     }
 
     protected final void setSelfRetain(boolean retain) {
-        this.setSelfRetain(retain, retain);
+        setSelfRetain(retain, retain);
     }
 
     protected final void setExhaust(boolean baseExhaust, boolean upgExhaust) {
@@ -643,7 +643,7 @@ public abstract class FGOCard extends CustomCard {
     protected void upgradeCustomVar(String key) {
         LocalVarInfo var = cardVariables.get(key);
         if (var == null) {
-            throw new NullPointerException("Custom variable with key " + key + " does not exist in " + getClass().getName());
+            throw new NullPointerException("Custom variable with key " + key + " does not exist in " + this.getClass().getName());
         }
         upgradeCustomVar(var, var.upgrade);
     }
@@ -651,7 +651,7 @@ public abstract class FGOCard extends CustomCard {
     protected void upgradeCustomVar(String key, int amount) {
         LocalVarInfo var = cardVariables.get(key);
         if (var == null) {
-            throw new NullPointerException("Custom variable with key " + key + " does not exist in " + getClass().getName());
+            throw new NullPointerException("Custom variable with key " + key + " does not exist in " + this.getClass().getName());
         }
         upgradeCustomVar(var, amount);
     }

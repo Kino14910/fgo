@@ -35,7 +35,7 @@ public class NobleDeckPanelItem extends TopPanelItem {
         if (AbstractDungeon.screen != AbstractDungeon.CurrentScreen.FTUE) {
             super.update();
             if (FGOInputActionSet.nobleDeckAction.isJustPressed()) {
-                this.onClick();
+                onClick();
             }
         }
     }

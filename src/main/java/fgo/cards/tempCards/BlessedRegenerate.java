@@ -17,12 +17,12 @@ public class BlessedRegenerate extends FGOCard {
     }
 
     @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {this.onChoseThisOption();}
+    public void use(AbstractPlayer p, AbstractMonster m) {onChoseThisOption();}
 
     @Override
     public void onChoseThisOption() {
         AbstractPlayer p = AbstractDungeon.player;
-        this.addToBot(new GainEnergyAction(1));
-        this.addToBot(new DrawCardAction(p, this.magicNumber));
+        addToBot(new GainEnergyAction(1));
+        addToBot(new DrawCardAction(p, magicNumber));
     }
 }

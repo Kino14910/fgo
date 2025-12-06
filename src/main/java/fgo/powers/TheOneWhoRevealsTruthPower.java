@@ -15,14 +15,14 @@ public class TheOneWhoRevealsTruthPower extends BasePower {
         super(POWER_ID, TYPE, false, owner);
         String path128 = powerPath("large/PutOnFakeFacePower");
         String path48 = powerPath("PutOnFakeFacePower");
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(path128), 0, 0, 84, 84);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(path48), 0, 0, 32, 32);
+        region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(path128), 0, 0, 84, 84);
+        region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(path48), 0, 0, 32, 32);
 
     }
 
     @Override
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0];
+        description = DESCRIPTIONS[0];
     }
 
     

@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 
 public class BuffBlockPower extends BasePower {
     public static final String POWER_ID = makeID(BuffBlockPower.class.getSimpleName());
@@ -22,11 +23,11 @@ public class BuffBlockPower extends BasePower {
 
     @Override
     public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
-        if (power.type == PowerType.BUFF && source == this.owner && target == this.owner && power.ID.equals("Strength")) {
-            this.addToBot(new RemoveSpecificPowerAction(target, source, power));
+        if (power.type == PowerType.BUFF && source == owner && target == owner && power.ID.equals(StrengthPower.POWER_ID)) {
+            addToBot(new RemoveSpecificPowerAction(target, source, power));
             power.updateDescription();
 
-            this.addToBot(new ReducePowerAction(this.owner, this.owner, this.ID, 1));
+            addToBot(new ReducePowerAction(owner, owner, ID, 1));
         }
     }
 

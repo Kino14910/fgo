@@ -62,8 +62,8 @@ public class StarPower extends BasePower {
 
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        //在你打出攻击牌时，且有10颗以上暴击星，且不是宝具牌并没有使用越过阿卡迪亚。
-        if (card.type != AbstractCard.CardType.ATTACK || amount < 10 || card.color == FGOCardColor.NOBLE_PHANTASM || owner.hasPower(CrossingArcadiaPower.POWER_ID))
+        //在你打出攻击牌时，且有10颗以上暴击星，且不是宝具牌。
+        if (card.type != AbstractCard.CardType.ATTACK || amount < 10 || card.color == FGOCardColor.NOBLE_PHANTASM)
             return;
         
         //在有十二辉剑时，有卡牌暴击时获得一层十二辉剑效果。
@@ -77,6 +77,4 @@ public class StarPower extends BasePower {
         addToBot(new ReducePowerAction(owner, owner, ID, card.cardID.equals("fgo:CharismaOfTheJade") && amount >= 20 ? 20 : 10));
 
     }
-
-
 }

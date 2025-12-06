@@ -22,7 +22,7 @@ public class SealNPPower extends BasePower {
     @Override
     public void atStartOfTurn() {
         if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
-            this.addToBot(new ReducePowerAction(this.owner, this.owner, this.ID, 1));
+            addToBot(new ReducePowerAction(owner, owner, ID, 1));
         }
     }
     

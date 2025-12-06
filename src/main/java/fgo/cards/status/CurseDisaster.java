@@ -32,9 +32,9 @@ public class CurseDisaster extends FGOCard {
     @Override
     public void triggerWhenDrawn() {
         AbstractPlayer p = AbstractDungeon.player;
-        this.addToBot(new SFXAction("ATTACK_PIERCING_WAIL"));
+        addToBot(new SFXAction("ATTACK_PIERCING_WAIL"));
 
-        this.addToBot(
+        addToBot(
                 new VFXAction(
                         p,
                         new ShockWaveEffect(
@@ -47,7 +47,7 @@ public class CurseDisaster extends FGOCard {
                 )
         );
 
-        this.addToBot(
+        addToBot(
                 new ApplyPowerAction(p, p, new CursePower(p, magicNumber))
         );
         addToBot(new AllEnemyApplyPowerAction(p, magicNumber,

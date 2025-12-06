@@ -16,7 +16,6 @@ public abstract class BaseRelic extends CustomRelic {
     public AbstractCard.CardColor pool = null;
     public RelicType relicType = RelicType.SHARED;
     protected String imageName;
-
     //for character specific relics
     public BaseRelic(String id, String imageName, AbstractCard.CardColor pool, RelicTier tier, LandingSound sfx) {
         this(id, imageName, tier, sfx);
@@ -33,14 +32,14 @@ public abstract class BaseRelic extends CustomRelic {
     public BaseRelic(String id, String imageName, RelicTier tier, LandingSound sfx) {
         super(testStrings(id), notPng(imageName) ? "" : imageName, tier, sfx);
 
-        this.imageName = imageName;
+        imageName = imageName;
         if (notPng(imageName)) {
             loadTexture();
         }
     }
 
     protected void loadTexture() {
-        this.img = TextureLoader.getTextureNull(relicPath(imageName), true);
+        img = TextureLoader.getTextureNull(relicPath(imageName), true);
         if (img != null) {
             outlineImg = TextureLoader.getTextureNull(relicPath("outline/" + imageName), true);
             if (outlineImg == null)
@@ -48,8 +47,8 @@ public abstract class BaseRelic extends CustomRelic {
         }
         else {
             ImageMaster.loadRelicImg("Derp Rock", "derpRock.png");
-            this.img = ImageMaster.getRelicImg("Derp Rock");
-            this.outlineImg = ImageMaster.getRelicOutlineImg("Derp Rock");
+            img = ImageMaster.getRelicImg("Derp Rock");
+            outlineImg = ImageMaster.getRelicOutlineImg("Derp Rock");
         }
     }
 
@@ -57,7 +56,7 @@ public abstract class BaseRelic extends CustomRelic {
 //    public void loadLargeImg() {
 //        if (notPng(imageName)) {
 //            if (largeImg == null) {
-//                this.largeImg = ImageMaster.loadImage(relicPath("large/" + imageName));
+//                largeImg = ImageMaster.loadImage(relicPath("large/" + imageName));
 //            }
 //        }
 //        else {
@@ -80,7 +79,7 @@ public abstract class BaseRelic extends CustomRelic {
                 relicType = RelicType.PURPLE;
                 break;
             default:
-                this.pool = pool;
+                pool = pool;
                 break;
         }
     }

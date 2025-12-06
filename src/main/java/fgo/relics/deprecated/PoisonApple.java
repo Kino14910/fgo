@@ -19,14 +19,14 @@ public class PoisonApple extends BaseRelic {
 
     @Override
     public String getUpdatedDescription() {
-        return this.DESCRIPTIONS[0];
+        return DESCRIPTIONS[0];
     }
 
     @Override
     public int onPlayerGainedBlock(float blockAmount) {
-        //this.flash();
+        //flash();
         AbstractMonster randomMonster = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
-        this.addToBot(new BouncingFlaskAction(randomMonster, 1, 1));
+        addToBot(new BouncingFlaskAction(randomMonster, 1, 1));
         return MathUtils.floor(blockAmount);
     }
 }

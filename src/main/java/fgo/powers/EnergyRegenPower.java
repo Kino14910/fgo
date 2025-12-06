@@ -14,13 +14,13 @@ public class EnergyRegenPower extends BasePower {
 
     public EnergyRegenPower(AbstractCreature owner, int npAmount) {
         super(POWER_ID, PowerType.BUFF, false, owner, npAmount);
-        this.amount = npAmount;
+        amount = npAmount;
     }
 
     public EnergyRegenPower(AbstractCreature owner, int npAmount, int times) {
         super(POWER_ID, PowerType.BUFF, true, owner, times);
-        this.amount = npAmount;
-        this.amount2 = times;
+        amount = npAmount;
+        amount2 = times;
     }
 
     @Override
@@ -35,7 +35,7 @@ public class EnergyRegenPower extends BasePower {
 
     @Override
     public void updateDescription() {
-        this.description = String.format(DESCRIPTIONS[0], amount);
+        description = String.format(DESCRIPTIONS[0], amount);
     }
 
     public AbstractPower makeCopy() {

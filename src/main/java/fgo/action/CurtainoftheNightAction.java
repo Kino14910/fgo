@@ -16,43 +16,43 @@ public class CurtainoftheNightAction extends AbstractGameAction {
     private final int numberOfCards;
     private final boolean upgraded;
     public CurtainoftheNightAction(int numberOfCards, boolean upgraded) {
-        this.actionType = ActionType.CARD_MANIPULATION;
-        this.duration = this.startDuration = Settings.ACTION_DUR_FAST;
-        this.player = AbstractDungeon.player;
+        actionType = ActionType.CARD_MANIPULATION;
+        duration = startDuration = Settings.ACTION_DUR_FAST;
+        player = AbstractDungeon.player;
         this.numberOfCards = numberOfCards;
         this.upgraded = upgraded;
     }
 
     @Override
     public void update() {
-        if (this.duration == this.startDuration) {
-            if (this.player.discardPile.isEmpty() || this.numberOfCards <= 0) {
-                this.isDone = true;
+        if (duration == startDuration) {
+            if (player.discardPile.isEmpty() || numberOfCards <= 0) {
+                isDone = true;
                 return;
             }
             boolean optional = false;
-            if (this.player.discardPile.size() <= this.numberOfCards && !optional) {
+            if (player.discardPile.size() <= numberOfCards && !optional) {
                 ArrayList<AbstractCard> cardsToMove = new ArrayList<>();
-                for (AbstractCard c : this.player.discardPile.group) {
+                for (AbstractCard c : player.discardPile.group) {
                     cardsToMove.add(c);
-                    if (this.upgraded) {
+                    if (upgraded) {
                         c.upgrade();
                     }
                 }
                 for (AbstractCard c : cardsToMove) {
-                    if (this.player.hand.size() < 10) {
-                        this.player.hand.addToHand(c);
-                        this.player.discardPile.removeCard(c);
+                    if (player.hand.size() < 10) {
+                        player.hand.addToHand(c);
+                        player.discardPile.removeCard(c);
                     }
                     c.lighten(false);
                 }
-                this.isDone = true;
+                isDone = true;
                 return;
             }
-            if (this.numberOfCards == 1) {
-                AbstractDungeon.gridSelectScreen.open(this.player.discardPile, this.numberOfCards, TEXT[0], false);
+            if (numberOfCards == 1) {
+                AbstractDungeon.gridSelectScreen.open(player.discardPile, numberOfCards, TEXT[0], false);
             } else {
-                AbstractDungeon.gridSelectScreen.open(this.player.discardPile, this.numberOfCards, TEXT[1] + this.numberOfCards + TEXT[2], false);
+                AbstractDungeon.gridSelectScreen.open(player.discardPile, numberOfCards, TEXT[1] + numberOfCards + TEXT[2], false);
             }
 
             tickDuration();
@@ -60,17 +60,17 @@ public class CurtainoftheNightAction extends AbstractGameAction {
         }
         if (!AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
             for (AbstractCard c : AbstractDungeon.gridSelectScreen.selectedCards) {
-                if (this.player.hand.size() < 10) {
-                    this.player.hand.addToHand(c);
-                    if (this.upgraded) {
+                if (player.hand.size() < 10) {
+                    player.hand.addToHand(c);
+                    if (upgraded) {
                         c.upgrade();
                     }
-                    this.player.discardPile.removeCard(c);
+                    player.discardPile.removeCard(c);
                 }
                 c.lighten(false);
                 c.unhover();
             }
-            for (AbstractCard c : this.player.discardPile.group) {
+            for (AbstractCard c : player.discardPile.group) {
                 c.unhover();
                 c.target_x = CardGroup.DISCARD_PILE_X;
                 c.target_y = 0.0F;

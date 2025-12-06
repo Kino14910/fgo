@@ -14,14 +14,14 @@ public class ElixirofRejuvenation extends BasePotion {
     public static final Color NOBLE = CardHelper.getColor(255, 215, 0);
     public ElixirofRejuvenation() {
         super(ID, 10, PotionRarity.RARE, PotionSize.SPHERE, Color.CYAN, Color.CYAN, null);
-        this.labOutlineColor = NOBLE;
-        this.isThrown = false;
+        labOutlineColor = NOBLE;
+        isThrown = false;
     }
 
     @Override
     public void use(AbstractCreature target) {
-        this.addToBot(new HealAction(AbstractDungeon.player, AbstractDungeon.player, this.potency));
-        this.addToBot(new RemoveAllPowersAction(AbstractDungeon.player, true));
+        addToBot(new HealAction(AbstractDungeon.player, AbstractDungeon.player, potency));
+        addToBot(new RemoveAllPowersAction(AbstractDungeon.player, true));
     }
 
     @Override

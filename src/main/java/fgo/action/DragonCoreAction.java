@@ -10,8 +10,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public class DragonCoreAction extends AbstractGameAction {
     public DragonCoreAction() {
-        this.setValues(AbstractDungeon.player, AbstractDungeon.player);
-        this.actionType = ActionType.EXHAUST;
+        setValues(AbstractDungeon.player, AbstractDungeon.player);
+        actionType = ActionType.EXHAUST;
     }
 
     @Override
@@ -26,13 +26,13 @@ public class DragonCoreAction extends AbstractGameAction {
         for (AbstractCard ignored : cardsToExhaust) {
             AbstractCard cm = AbstractDungeon.returnTrulyRandomCardInCombat(AbstractCard.CardType.ATTACK).makeCopy();
             cm.setCostForTurn(0);
-            this.addToBot(new MakeTempCardInHandAction(cm, true));
+            addToBot(new MakeTempCardInHandAction(cm, true));
         }
 
         for (AbstractCard c : cardsToExhaust) {
-            this.addToTop(new ExhaustSpecificCardAction(c, AbstractDungeon.player.hand));
+            addToTop(new ExhaustSpecificCardAction(c, AbstractDungeon.player.hand));
         }
 
-        this.isDone = true;
+        isDone = true;
     }
 }

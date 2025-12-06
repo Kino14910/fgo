@@ -22,13 +22,13 @@ public class ViyViyViyAction extends AbstractGameAction {
         }
 
         if (rs.isEmpty()) {
-            this.isDone = true;
+            isDone = true;
             return;
         }
 
         AbstractRelic abstractRelic = rs.get(0);
         addToBot(new ApplyPowerAction(p, p, new ViyViyViyPower(p, abstractRelic)));
 
-        this.isDone = true;
+        isDone = true;
     }
 }

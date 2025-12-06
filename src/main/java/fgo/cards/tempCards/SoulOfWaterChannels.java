@@ -26,14 +26,14 @@ public class SoulOfWaterChannels extends FGOCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ApplyPowerAction(p, p, new CursePower(p, 1), 1));
+        addToBot(new ApplyPowerAction(p, p, new CursePower(p, 1), 1));
 
         if (Settings.FAST_MODE) {
-            this.addToBot(new VFXAction(p, new FlameBarrierEffect(p.hb.cX, p.hb.cY), 0.1F));
+            addToBot(new VFXAction(p, new FlameBarrierEffect(p.hb.cX, p.hb.cY), 0.1F));
         } else {
-            this.addToBot(new VFXAction(p, new FlameBarrierEffect(p.hb.cX, p.hb.cY), 0.5F));
+            addToBot(new VFXAction(p, new FlameBarrierEffect(p.hb.cX, p.hb.cY), 0.5F));
         }
 
-        this.addToBot(new ApplyPowerAction(p, p, new StarPower(p, this.star)));
+        addToBot(new ApplyPowerAction(p, p, new StarPower(p, this.star)));
     }
 }

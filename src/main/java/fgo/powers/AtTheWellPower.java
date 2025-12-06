@@ -18,19 +18,19 @@ public class AtTheWellPower extends BasePower {
 
     @Override
     public void atStartOfTurn() {
-        this.flash();
-        if (!this.owner.hasPower(GutsPower.POWER_ID)) {
-            this.addToBot(new ApplyPowerAction(this.owner, this.owner, new GutsPower(this.owner, this.amount)));
+        flash();
+        if (!owner.hasPower(GutsPower.POWER_ID)) {
+            addToBot(new ApplyPowerAction(owner, owner, new GutsPower(owner, amount)));
         }
-        this.addToBot(new ApplyPowerAction(this.owner, this.owner, new GutsAtTheWellPower(this.owner, 3), 3));
-        this.addToBot(new VFXAction(new LightningEffect(this.owner.hb.cX, this.owner.hb.cY)));
-        this.addToBot(new LoseHPAction(this.owner, this.owner, 99999));
-        this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
+        addToBot(new ApplyPowerAction(owner, owner, new GutsAtTheWellPower(owner, 3)));
+        addToBot(new VFXAction(new LightningEffect(owner.hb.cX, owner.hb.cY)));
+        addToBot(new LoseHPAction(owner, owner, 99999));
+        addToBot(new RemoveSpecificPowerAction(owner, owner, ID));
     }
 
     @Override
     public void updateDescription() {
-        this.description = String.format(DESCRIPTIONS[0], this.amount);
+        description = String.format(DESCRIPTIONS[0], amount);
     }
 
     

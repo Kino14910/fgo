@@ -30,6 +30,6 @@ public class SupportCraft extends FateMagineerCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new FgoNpAction(np));
+        addToBot(new FgoNpAction(np));
     }
 }

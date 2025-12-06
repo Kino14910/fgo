@@ -26,11 +26,11 @@ public class InsanityPower extends BasePower {
 
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        if (card.type == AbstractCard.CardType.ATTACK && this.owner.hasPower(CursePower.POWER_ID)) {
-            this.flash();
-            this.addToBot(new ApplyPowerAction(this.owner, this.owner, new StrengthPower(this.owner, 1), 1));
-            this.addToBot(new FgoNpAction(this.amount));
-            this.addToBot(new ReducePowerAction(this.owner, this.owner, CursePower.POWER_ID, 1));
+        if (card.type == AbstractCard.CardType.ATTACK && owner.hasPower(CursePower.POWER_ID)) {
+            flash();
+            addToBot(new ApplyPowerAction(owner, owner, new StrengthPower(owner, 1)));
+            addToBot(new FgoNpAction(amount));
+            addToBot(new ReducePowerAction(owner, owner, CursePower.POWER_ID, 1));
         }
     }
 

@@ -25,10 +25,10 @@ public class FragarachPower extends BasePower {
 
     @Override
     public int onAttacked(DamageInfo info, int damageAmount) {
-        if (info.type != DamageInfo.DamageType.THORNS && info.type != DamageInfo.DamageType.HP_LOSS && info.owner != null && info.owner != this.owner) {
-            this.flash();
-            this.addToTop(new ApplyPowerAction(info.owner, info.owner, new StarPower(info.owner, 4)));
-            this.addToTop(new DamageAction(info.owner, new DamageInfo(this.owner, this.amount, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, true));
+        if (info.type != DamageInfo.DamageType.THORNS && info.type != DamageInfo.DamageType.HP_LOSS && info.owner != null && info.owner != owner) {
+            flash();
+            addToTop(new ApplyPowerAction(info.owner, info.owner, new StarPower(info.owner, 4)));
+            addToTop(new DamageAction(info.owner, new DamageInfo(owner, amount, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, true));
         }
 
         return damageAmount;
@@ -37,7 +37,7 @@ public class FragarachPower extends BasePower {
     @Override
     public void atStartOfTurn() {
         if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
-            this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
+            addToBot(new RemoveSpecificPowerAction(owner, owner, ID));
         }
     }
 

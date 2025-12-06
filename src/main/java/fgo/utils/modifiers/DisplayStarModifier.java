@@ -32,6 +32,6 @@ public class DisplayStarModifier extends AbstractCardModifier {
 
     @Override
     public AbstractCardModifier makeCopy() {
-        return new DisplayStarModifier(this.amount);
+        return new DisplayStarModifier(amount);
     }
 }

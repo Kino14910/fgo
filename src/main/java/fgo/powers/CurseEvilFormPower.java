@@ -20,7 +20,7 @@ public class CurseEvilFormPower extends BasePower {
 
     @Override
     public void atStartOfTurnPostDraw() {
-        this.addToBot(new ApplyPowerAction(this.owner, this.owner, new CursePower(this.owner, this.amount), this.amount));
+        addToBot(new ApplyPowerAction(owner, owner, new CursePower(owner, amount)));
     }
 
     

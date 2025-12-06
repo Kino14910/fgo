@@ -37,8 +37,8 @@ public class AlterOption extends AbstractCampfireOption {
 
         float hackScale = ((Float)ReflectionHacks.getPrivate(this, AbstractCampfireOption.class, "scale")).floatValue();
 
-        if (this.hb.hovered) {
-            if (!this.hb.clickStarted) {
+        if (hb.hovered) {
+            if (!hb.clickStarted) {
                 ReflectionHacks.setPrivate(this, AbstractCampfireOption.class, "scale", MathHelper.scaleLerpSnap(hackScale, Settings.scale));
                 ReflectionHacks.setPrivate(this, AbstractCampfireOption.class, "scale", MathHelper.scaleLerpSnap(hackScale, Settings.scale));
             } else {

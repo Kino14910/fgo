@@ -20,19 +20,19 @@ public class CosmicMedallion extends BaseRelic {
 
     @Override
     public void atBattleStart() {
-        this.flash();
-        this.addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-        this.addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new BlurPower(AbstractDungeon.player, 3), 3));
-        this.grayscale = true;
+        flash();
+        addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+        addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new BlurPower(AbstractDungeon.player, 3), 3));
+        grayscale = true;
     }
 
     @Override
     public void justEnteredRoom(AbstractRoom room) {
-        this.grayscale = false;
+        grayscale = false;
     }
 
     @Override
     public String getUpdatedDescription() {
-        return this.DESCRIPTIONS[0];
+        return DESCRIPTIONS[0];
     }
 }

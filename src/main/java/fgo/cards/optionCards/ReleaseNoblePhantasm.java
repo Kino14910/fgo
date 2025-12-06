@@ -21,10 +21,10 @@ public class ReleaseNoblePhantasm extends FGOCard {
     }
 
     @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {this.onChoseThisOption();}
+    public void use(AbstractPlayer p, AbstractMonster m) {onChoseThisOption();}
 
     @Override
     public void onChoseThisOption() {
-        this.addToBot(new FgoNpAction(np));
+        addToBot(new FgoNpAction(np));
     }
 }

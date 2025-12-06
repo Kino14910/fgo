@@ -61,15 +61,15 @@ public abstract class BasePotion extends AbstractPotion {
 
     @Override
     public void initializeData() {
-        this.potency = this.getPotency();
+        potency = getPotency();
 
         potionStrings = CardCrawlGame.languagePack.getPotionString(ID);
         DESCRIPTIONS = potionStrings.DESCRIPTIONS;
-        this.name = potionStrings.NAME;
-        this.description = getDescription();
+        name = potionStrings.NAME;
+        description = getDescription();
 
-        this.tips.clear();
-        this.tips.add(new PowerTip(this.name, this.description));
+        tips.clear();
+        tips.add(new PowerTip(name, description));
         addAdditionalTips();
     }
 
@@ -158,9 +158,9 @@ public abstract class BasePotion extends AbstractPotion {
     @Override
     public AbstractPotion makeCopy() {
         try {
-            return this.getClass().newInstance();
+            return getClass().newInstance();
         } catch (IllegalAccessException | InstantiationException e) {
-            throw new RuntimeException("Failed to auto-generate makeCopy for potion: " + this.ID);
+            throw new RuntimeException("Failed to auto-generate makeCopy for potion: " + ID);
         }
     }
 }

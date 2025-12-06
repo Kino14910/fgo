@@ -23,9 +23,9 @@ public class DevilSlot extends BaseEvent {
 
     public DevilSlot() {
         super(ID, title, eventPath("DevilSlot"));
-        this.body = DESCRIPTIONS[0];
-        this.imageEventText.setDialogOption(OPTIONS[0], new BB());
-        this.imageEventText.setDialogOption(OPTIONS[1]);
+        body = DESCRIPTIONS[0];
+        imageEventText.setDialogOption(OPTIONS[0], new BB());
+        imageEventText.setDialogOption(OPTIONS[1]);
     }
 
     @Override
@@ -41,30 +41,30 @@ public class DevilSlot extends BaseEvent {
 
     @Override
     protected void buttonEffect(int buttonPressed) {
-        switch (this.screenNum) {
+        switch (screenNum) {
             case 0:
                 if (buttonPressed == 0) {
-                    this.imageEventText.updateBodyText(DESCRIPTIONS[2]);
-                    this.imageEventText.updateDialogOption(0, OPTIONS[2]);
+                    imageEventText.updateBodyText(DESCRIPTIONS[2]);
+                    imageEventText.updateDialogOption(0, OPTIONS[2]);
                     if (AbstractDungeon.player.hasRelic(BB.ID)) {
                         AbstractDungeon.getCurrRoom().spawnRelicAndObtain((float)(Settings.WIDTH / 2), (float)(Settings.HEIGHT / 2), new Circlet());
                     } else {
                         AbstractDungeon.getCurrRoom().spawnRelicAndObtain((float)(Settings.WIDTH / 2), (float)(Settings.HEIGHT / 2), new BB());
                     }
-                    this.imageEventText.clearRemainingOptions();
+                    imageEventText.clearRemainingOptions();
                 } else {
-                    this.imageEventText.updateDialogOption(0, OPTIONS[2]);
+                    imageEventText.updateDialogOption(0, OPTIONS[2]);
                     if (!CardGroup.getGroupWithoutBottledCards(AbstractDungeon.player.masterDeck.getPurgeableCards()).isEmpty()) {
-                        this.imageEventText.updateBodyText(DESCRIPTIONS[1]);
+                        imageEventText.updateBodyText(DESCRIPTIONS[1]);
                         AbstractDungeon.gridSelectScreen.open(CardGroup.getGroupWithoutBottledCards(AbstractDungeon.player.masterDeck.getPurgeableCards()), 1, OPTIONS[2], false);
                     }
-                    this.imageEventText.clearRemainingOptions();
+                    imageEventText.clearRemainingOptions();
                 }
 
-                this.screenNum = 1;
+                screenNum = 1;
                 break;
             case 1:
-                this.openMap();
+                openMap();
         }
     }
 }

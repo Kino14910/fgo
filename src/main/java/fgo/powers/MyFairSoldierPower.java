@@ -21,19 +21,19 @@ public class MyFairSoldierPower extends BasePower {
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
         if (card.type == AbstractCard.CardType.POWER) {
-            this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
+            addToBot(new RemoveSpecificPowerAction(owner, owner, ID));
         }
     }
 
     @Override
     public void onRemove() {
-        this.addToBot(new ApplyPowerAction(this.owner, this.owner, new StrengthPower(this.owner, -this.amount), -this.amount));
-        this.addToBot(new ApplyPowerAction(this.owner, this.owner, new DexterityPower(this.owner, -this.amount), -this.amount));
+        addToBot(new ApplyPowerAction(owner, owner, new StrengthPower(owner, -amount), -amount));
+        addToBot(new ApplyPowerAction(owner, owner, new DexterityPower(owner, -amount), -amount));
     }
 
     @Override
     public void updateDescription() {
-        this.description = String.format(DESCRIPTIONS[0], this.amount);
+        description = String.format(DESCRIPTIONS[0], amount);
     }
 
     

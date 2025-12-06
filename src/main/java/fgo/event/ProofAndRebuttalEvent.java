@@ -31,22 +31,22 @@ public class ProofAndRebuttalEvent extends BaseEvent {
     private int goldLoss;
     public ProofAndRebuttalEvent() {
         super(ID, title, eventPath("ProofAndRebuttalEvent"));
-        this.body = DESCRIPTIONS[0];
+        body = DESCRIPTIONS[0];
         if (AbstractDungeon.ascensionLevel >= 15) {
-            this.goldLoss = AbstractDungeon.miscRng.random(50, 75);
+            goldLoss = AbstractDungeon.miscRng.random(50, 75);
         } else {
-            this.goldLoss = AbstractDungeon.miscRng.random(40, 60);
+            goldLoss = AbstractDungeon.miscRng.random(40, 60);
         }
 
-        if (this.goldLoss > AbstractDungeon.player.gold) {
-            this.goldLoss = AbstractDungeon.player.gold;
+        if (goldLoss > AbstractDungeon.player.gold) {
+            goldLoss = AbstractDungeon.player.gold;
         }
 
-        this.imageEventText.setDialogOption(OPTIONS[0], new ProofAndRebuttal());
+        imageEventText.setDialogOption(OPTIONS[0], new ProofAndRebuttal());
         if (AbstractDungeon.player.masterDeck.hasUpgradableCards()) {
-            this.imageEventText.setDialogOption(OPTIONS[1] + this.goldLoss + OPTIONS[2]);
+            imageEventText.setDialogOption(OPTIONS[1] + goldLoss + OPTIONS[2]);
         } else {
-            this.imageEventText.setDialogOption(OPTIONS[5], true);
+            imageEventText.setDialogOption(OPTIONS[5], true);
         }
     }
 
@@ -59,36 +59,36 @@ public class ProofAndRebuttalEvent extends BaseEvent {
 
     @Override
     protected void buttonEffect(int buttonPressed) {
-        switch (this.screenNum) {
+        switch (screenNum) {
             case 0:
                 switch (buttonPressed) {
                     case 0:
-                        this.imageEventText.updateBodyText(DESCRIPTIONS[1]);
+                        imageEventText.updateBodyText(DESCRIPTIONS[1]);
                         AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new ProofAndRebuttal(), (float)Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
-                        this.screenNum = 1;
-                        this.imageEventText.updateDialogOption(0, OPTIONS[3]);
-                        this.imageEventText.clearRemainingOptions();
+                        screenNum = 1;
+                        imageEventText.updateDialogOption(0, OPTIONS[3]);
+                        imageEventText.clearRemainingOptions();
                         return;
                     case 1:
-                        this.imageEventText.updateBodyText(DESCRIPTIONS[2]);
+                        imageEventText.updateBodyText(DESCRIPTIONS[2]);
                         AbstractDungeon.effectList.add(new FlashAtkImgEffect(AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY, AbstractGameAction.AttackEffect.FIRE));
-                        this.upgradeCards();
-                        AbstractDungeon.player.loseGold(this.goldLoss);
+                        upgradeCards();
+                        AbstractDungeon.player.loseGold(goldLoss);
 
-                        this.screenNum = 1;
-                        this.imageEventText.updateDialogOption(0, OPTIONS[3]);
-                        this.imageEventText.clearRemainingOptions();
+                        screenNum = 1;
+                        imageEventText.updateDialogOption(0, OPTIONS[3]);
+                        imageEventText.clearRemainingOptions();
                         return;
                     default:
-                        this.imageEventText.updateBodyText(DESCRIPTIONS[3]);
-                        this.screenNum = 1;
-                        this.imageEventText.updateDialogOption(0, OPTIONS[3]);
-                        this.imageEventText.clearRemainingOptions();
+                        imageEventText.updateBodyText(DESCRIPTIONS[3]);
+                        screenNum = 1;
+                        imageEventText.updateDialogOption(0, OPTIONS[3]);
+                        imageEventText.clearRemainingOptions();
                         return;
                 }
             case 1:
             default:
-                this.openMap();
+                openMap();
         }
     }
 

@@ -16,11 +16,7 @@ public class InvincibilityTurnPower extends BasePower {
 
     @Override
     public void updateDescription() {
-        if (this.amount <= 1) {
-            this.description = DESCRIPTIONS[0];
-        } else {
-            this.description = DESCRIPTIONS[1] + this.amount + DESCRIPTIONS[2];
-        }
+        description = amount == 1 ? DESCRIPTIONS[0] : String.format(DESCRIPTIONS[1], amount);
     }
 
     @Override
@@ -34,7 +30,7 @@ public class InvincibilityTurnPower extends BasePower {
 
     @Override
     public void atStartOfTurn() {
-        this.addToBot(new ReducePowerAction(this.owner, this.owner, this.ID, 1));
+        addToBot(new ReducePowerAction(owner, owner, ID, 1));
     }
 
 }

@@ -21,11 +21,11 @@ public class UnlimitedPower extends BasePower {
     @Override
     public void atStartOfTurn() {
         if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
-            for(int i = 0; i < this.amount; ++i) {
+            for(int i = 0; i < amount; ++i) {
                 AbstractCard card = AbstractDungeon.returnTrulyRandomCardInCombat(AbstractCard.CardType.ATTACK).makeCopy();
                 card.setCostForTurn(0);
                 CardModifierManager.addModifier(card, new ExhaustMod());
-                this.addToBot(new MakeTempCardInHandAction(card, 1, true));
+                addToBot(new MakeTempCardInHandAction(card, 1, true));
             }
         }
     }

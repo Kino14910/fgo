@@ -21,8 +21,8 @@ public class InfiniteGrowthPower extends BasePower {
 
     @Override
     public int onAttackedToChangeDamage(DamageInfo info, int damageAmount) {
-        if (damageAmount < this.amount && damageAmount > 0) {
-            this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
+        if (damageAmount < amount && damageAmount > 0) {
+            addToBot(new RemoveSpecificPowerAction(owner, owner, ID));
             return 0;
         }
 

@@ -16,7 +16,7 @@ public class SquireOfProphecy extends FGOCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ApplyPowerAction(p, p, new SquireOfProphecyPower(p, this.magicNumber), this.magicNumber));
+        addToBot(new ApplyPowerAction(p, p, new SquireOfProphecyPower(p, magicNumber)));
     }
 }
 

@@ -14,7 +14,7 @@ public class CursePower extends BasePower {
 
     @Override
     public void updateDescription() {
-        this.description = String.format(DESCRIPTIONS[0], amount);
+        description = String.format(DESCRIPTIONS[0], amount);
     }
 
     @Override

@@ -22,13 +22,13 @@ public class SaveStone extends BaseRelic {
 
     @Override
     public void atBattleStart() {
-        this.flash();
+        flash();
         AbstractDungeon.player.gainGold((int) (AbstractDungeon.player.gold * 0.035F));
-        this.grayscale = true;
+        grayscale = true;
     }
 
     @Override
     public void justEnteredRoom(AbstractRoom room) {
-        this.grayscale = false;
+        grayscale = false;
     }
 }

@@ -22,7 +22,7 @@ public class FgoInsight extends FGOCard {
         setMagic(2, 1);
         setExhaust();
         setSelfRetain();
-        this.portraitImg = ImageMaster.loadImage(cardPath("skill/FgoInsight"));
+        portraitImg = ImageMaster.loadImage(cardPath("skill/FgoInsight"));
 
         FlavorText.AbstractCardFlavorFields.textColor.set(this, Color.CHARTREUSE);
         FlavorText.AbstractCardFlavorFields.flavorBoxType.set(this, FlavorText.boxType.TRADITIONAL);
@@ -31,11 +31,11 @@ public class FgoInsight extends FGOCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (Settings.FAST_MODE) {
-            this.addToBot(new VFXAction(new LightBulbEffect(p.hb)));
+            addToBot(new VFXAction(new LightBulbEffect(p.hb)));
         } else {
-            this.addToBot(new VFXAction(new LightBulbEffect(p.hb), 0.2F));
+            addToBot(new VFXAction(new LightBulbEffect(p.hb), 0.2F));
         }
 
-        this.addToBot(new DrawCardAction(p, this.magicNumber));
+        addToBot(new DrawCardAction(p, magicNumber));
     }
 }

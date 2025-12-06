@@ -33,7 +33,7 @@ public class NPDamagePower extends BasePower {
     @Override
     public float atDamageGive(float damage, DamageInfo.DamageType type, AbstractCard card) {
         if (card.color == FGOCardColor.NOBLE_PHANTASM) {
-            return this.atDamageGive(damage, type);
+            return atDamageGive(damage, type);
         }
 
         return damage;
@@ -41,7 +41,7 @@ public class NPDamagePower extends BasePower {
 
     @Override
     public float atDamageGive(float damage, DamageInfo.DamageType type) {
-        return type == DamageInfo.DamageType.NORMAL ? damage * (100 + this.amount) / 100 : damage;
+        return type == DamageInfo.DamageType.NORMAL ? damage * (100 + amount) / 100 : damage;
     }
 
     

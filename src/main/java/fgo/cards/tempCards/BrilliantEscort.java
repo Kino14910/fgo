@@ -23,13 +23,13 @@ public class BrilliantEscort extends FGOCard {
 
 
     @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {this.onChoseThisOption();}
+    public void use(AbstractPlayer p, AbstractMonster m) {onChoseThisOption();}
 
     @Override
     public void onChoseThisOption() {
         AbstractPlayer p = AbstractDungeon.player;
-        this.addToBot(new VFXAction(p, new InflameEffect(p), 1.0F));
-        this.addToBot(new ApplyPowerAction(p, p, new StarPower(p, star)));
-        this.addToBot(new FgoNpAction(np));
+        addToBot(new VFXAction(p, new InflameEffect(p), 1.0F));
+        addToBot(new ApplyPowerAction(p, p, new StarPower(p, star)));
+        addToBot(new FgoNpAction(np));
     }
 }

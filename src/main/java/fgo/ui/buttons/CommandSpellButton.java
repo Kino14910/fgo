@@ -47,7 +47,7 @@ public class CommandSpellButton extends AbstractPanel {
             null,
             true
         );
-        this.hb = new Hitbox(
+        hb = new Hitbox(
             Settings.WIDTH - 128.0f * Settings.scale,
             Settings.HEIGHT - 320.0F * Settings.scale,
             128.0F * Settings.scale,

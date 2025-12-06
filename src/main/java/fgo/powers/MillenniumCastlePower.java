@@ -25,21 +25,21 @@ public class MillenniumCastlePower extends BasePower {
 
     @Override
     public void atStartOfTurn() {
-        this.flash();
-        this.addToTop(new ApplyPowerAction(this.owner, this.owner, new StrengthPower(this.owner, -1), -1));
+        flash();
+        addToTop(new ApplyPowerAction(owner, owner, new StrengthPower(owner, -1), -1));
         for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
-            this.addToTop(new ApplyPowerAction(m, m, new StrengthPower(m, -2), -2));
+            addToTop(new ApplyPowerAction(m, m, new StrengthPower(m, -2), -2));
         }
-        this.addToBot(new ReducePowerAction(this.owner, this.owner, this.ID, 1));
+        addToBot(new ReducePowerAction(owner, owner, ID, 1));
     }
 
     @Override
     public void onRemove() {
-        if (this.owner.hasPower("Strength") && (this.owner.getPower("Strength")).amount < 0) {
+        if (owner.hasPower("Strength") && (owner.getPower("Strength")).amount < 0) {
             int StrAmt = 0;
-            StrAmt -= (this.owner.getPower("Strength")).amount;
-            this.addToBot(new ApplyPowerAction(this.owner, this.owner, new StrengthPower(this.owner, StrAmt * 2), StrAmt * 2));
-            this.addToBot(new ApplyPowerAction(this.owner, this.owner, new DexterityPower(this.owner, StrAmt), StrAmt));
+            StrAmt -= (owner.getPower("Strength")).amount;
+            addToBot(new ApplyPowerAction(owner, owner, new StrengthPower(owner, StrAmt * 2), StrAmt * 2));
+            addToBot(new ApplyPowerAction(owner, owner, new DexterityPower(owner, StrAmt), StrAmt));
         }
     }
 

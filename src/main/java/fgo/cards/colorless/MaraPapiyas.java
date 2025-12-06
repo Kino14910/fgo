@@ -17,7 +17,7 @@ public class MaraPapiyas extends FGOCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.player.decreaseMaxHealth(2);
-        this.addToBot(new HealAction(p, p, this.magicNumber));
+        addToBot(new HealAction(p, p, magicNumber));
     }
 }
 

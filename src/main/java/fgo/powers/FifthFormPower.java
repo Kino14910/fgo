@@ -20,23 +20,23 @@ public class FifthFormPower extends BasePower {
     public FifthFormPower(AbstractCreature owner, int amount, boolean upgraded) {
         super(POWER_ID, TYPE, false, owner, amount); 
         if (upgraded) {
-            this.justApplied = true;
+            justApplied = true;
         }
     }
 
     @Override
     public void updateDescription() {
         if (justApplied) {
-            if (this.amount <= 1) {
-                this.description = DESCRIPTIONS[3];
+            if (amount <= 1) {
+                description = DESCRIPTIONS[3];
             } else {
-                this.description = DESCRIPTIONS[1] + this.amount + DESCRIPTIONS[4];
+                description = DESCRIPTIONS[1] + amount + DESCRIPTIONS[4];
             }
         } else {
-            if (this.amount <= 1) {
-                this.description = DESCRIPTIONS[0];
+            if (amount <= 1) {
+                description = DESCRIPTIONS[0];
             } else {
-                this.description = DESCRIPTIONS[1] + this.amount + DESCRIPTIONS[2];
+                description = DESCRIPTIONS[1] + amount + DESCRIPTIONS[2];
             }
         }
     }
@@ -44,7 +44,7 @@ public class FifthFormPower extends BasePower {
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
         if (!card.purgeOnUse && card.type == AbstractCard.CardType.ATTACK && (card.target == AbstractCard.CardTarget.ENEMY || card.target == AbstractCard.CardTarget.SELF_AND_ENEMY)) {
-            this.flash();
+            flash();
             AbstractMonster m = null;
             if (action.target != null) {
                 m = (AbstractMonster)action.target;
@@ -75,12 +75,12 @@ public class FifthFormPower extends BasePower {
             }
         }
 
-        return this.atDamageGive(damage, type);
+        return atDamageGive(damage, type);
     }
 
     @Override
     public void atEndOfTurn(boolean isPlayer) {
-        this.addToBot(new ReducePowerAction(this.owner, this.owner, this.ID, 1));
+        addToBot(new ReducePowerAction(owner, owner, ID, 1));
     }
 
     

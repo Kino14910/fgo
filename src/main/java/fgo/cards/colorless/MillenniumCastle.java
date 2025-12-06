@@ -15,12 +15,12 @@ public class MillenniumCastle extends FGOCard {
         super(ID, 3, CardType.POWER, CardTarget.SELF, CardRarity.RARE, CardColor.COLORLESS);
         setMagic(3);
         setInnate(false, true);
-        this.portraitImg = ImageMaster.loadImage(cardPath("power/MillenniumCastle"));
+        portraitImg = ImageMaster.loadImage(cardPath("power/MillenniumCastle"));
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ApplyPowerAction(p, p, new MillenniumCastlePower(p, this.magicNumber), this.magicNumber));
+        addToBot(new ApplyPowerAction(p, p, new MillenniumCastlePower(p, magicNumber), magicNumber));
     }
 }
 

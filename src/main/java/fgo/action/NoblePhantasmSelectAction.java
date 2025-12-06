@@ -19,19 +19,19 @@ public class NoblePhantasmSelectAction extends AbstractGameAction {
     private static final String[] NPTEXT = CardCrawlGame.languagePack.getUIString("fgo:NPText").TEXT;
     private final boolean upgraded;
     public NoblePhantasmSelectAction(boolean upgraded, int amount) {
-        this.actionType = ActionType.CARD_MANIPULATION;
-        this.duration = Settings.ACTION_DUR_MED;
+        actionType = ActionType.CARD_MANIPULATION;
+        duration = Settings.ACTION_DUR_MED;
         this.upgraded = upgraded;
         this.amount = amount;
     }
 
     @Override
     public void update() {
-        if (this.duration == Settings.ACTION_DUR_MED) {
+        if (duration == Settings.ACTION_DUR_MED) {
             // CardGroup group = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
             NobleCardGroup nobleCardGroup = new NobleCardGroup();
             if (NobleDeckCards.nobleCards.group.isEmpty()) {
-                this.isDone = true;
+                isDone = true;
                 return;
             }
 
@@ -41,7 +41,7 @@ public class NoblePhantasmSelectAction extends AbstractGameAction {
                 UnlockTracker.markCardAsSeen(cardCopy.cardID);
             }
 
-            if (this.upgraded) {
+            if (upgraded) {
                 nobleCardGroup.group.forEach(AbstractCard::upgrade);
             }
             //  else {
@@ -57,7 +57,7 @@ public class NoblePhantasmSelectAction extends AbstractGameAction {
             }
             
             AbstractDungeon.gridSelectScreen.open(nobleCardGroup, 1, NPTEXT[2], false, false, true, false);
-            this.tickDuration();
+            tickDuration();
             return;
         }
 
@@ -65,12 +65,12 @@ public class NoblePhantasmSelectAction extends AbstractGameAction {
         if (!selectedCards.isEmpty()) {
             AbstractCard selectedCard = selectedCards.get(0);
             AbstractCard selectedCardCopy = selectedCard.makeCopy();
-            if (selectedCard.upgraded || this.upgraded) {
+            if (selectedCard.upgraded || upgraded) {
                 selectedCardCopy.upgrade();
             }
-            addToBot(new MakeTempCardInHandAction(selectedCardCopy, this.amount));
+            addToBot(new MakeTempCardInHandAction(selectedCardCopy, amount));
             selectedCards.clear();
         }
-        this.tickDuration();
+        tickDuration();
     }
 }

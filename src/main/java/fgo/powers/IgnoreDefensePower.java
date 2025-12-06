@@ -20,17 +20,17 @@ public class IgnoreDefensePower extends BasePower {
 
     @Override
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0];
+        description = DESCRIPTIONS[0];
     }
 
     @Override
     public void atStartOfTurn() {
-        this.flash();
+        flash();
         for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
             if (mo.currentBlock > 0) {
-                this.addToBot(new LoseHPAction(mo, this.owner, mo.currentBlock, AbstractGameAction.AttackEffect.SHIELD));
-                this.addToBot(new ApplyPowerAction(mo, this.owner, new VulnerablePower(mo, this.amount, false),
-                        this.amount, AbstractGameAction.AttackEffect.NONE));
+                addToBot(new LoseHPAction(mo, owner, mo.currentBlock, AbstractGameAction.AttackEffect.SHIELD));
+                addToBot(new ApplyPowerAction(mo, owner, new VulnerablePower(mo, amount, false),
+                        amount, AbstractGameAction.AttackEffect.NONE));
             }
         }
     }

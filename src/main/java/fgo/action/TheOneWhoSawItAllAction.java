@@ -14,45 +14,46 @@ public class TheOneWhoSawItAllAction extends AbstractGameAction {
     private final AbstractCard.CardType typeToCheck;
     private final int damage;
     public TheOneWhoSawItAllAction(int amount, AbstractCard.CardType type, int damage) {
-        this.p = AbstractDungeon.player;
-        this.setValues(this.p, this.p, amount);
-        this.actionType = ActionType.CARD_MANIPULATION;
-        this.duration = Settings.ACTION_DUR_MED;
-        this.typeToCheck = type;
+        p = AbstractDungeon.player;
+        setValues(p, p, amount);
+        actionType = ActionType.CARD_MANIPULATION;
+        duration = Settings.ACTION_DUR_MED;
+        typeToCheck = type;
         this.damage = damage;
     }
 
+    @Override
     public void update() {
-        if (this.duration == Settings.ACTION_DUR_MED) {
-            if (this.p.drawPile.isEmpty()) {
-                this.isDone = true;
+        if (duration == Settings.ACTION_DUR_MED) {
+            if (p.drawPile.isEmpty()) {
+                isDone = true;
                 return;
             }
 
             CardGroup tmp = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
-            Iterator<AbstractCard> var2 = this.p.drawPile.group.iterator();
+            Iterator<AbstractCard> var2 = p.drawPile.group.iterator();
 
             AbstractCard card;
             while(var2.hasNext()) {
                 card = var2.next();
-                if (card.type == this.typeToCheck) {
+                if (card.type == typeToCheck) {
                     tmp.addToRandomSpot(card);
                 }
             }
 
             if (tmp.isEmpty()) {
-                this.isDone = true;
+                isDone = true;
                 return;
             }
 
-            for(int i = 0; i < this.amount; ++i) {
+            for(int i = 0; i < amount; ++i) {
                 if (!tmp.isEmpty()) {
                     tmp.shuffle();
                     card = tmp.getBottomCard();
                     tmp.removeCard(card);
-                    if (this.p.hand.size() == 10) {
-                        this.p.drawPile.moveToDiscardPile(card);
-                        this.p.createHandIsFullDialog();
+                    if (p.hand.size() == 10) {
+                        p.drawPile.moveToDiscardPile(card);
+                        p.createHandIsFullDialog();
                     } else {
                         card.unhover();
                         card.lighten(true);
@@ -61,21 +62,21 @@ public class TheOneWhoSawItAllAction extends AbstractGameAction {
                         card.targetDrawScale = 0.75F;
                         card.current_x = CardGroup.DRAW_PILE_X;
                         card.current_y = CardGroup.DRAW_PILE_Y;
-                        this.p.drawPile.removeCard(card);
+                        p.drawPile.removeCard(card);
                         AbstractDungeon.player.hand.addToTop(card);
                         AbstractDungeon.player.hand.refreshHandLayout();
                         AbstractDungeon.player.hand.applyPowers();
                     }
 
-                    card.baseDamage += this.damage;
+                    card.baseDamage += damage;
                     card.applyPowers();
                     card.flash();
                 }
             }
 
-            this.isDone = true;
+            isDone = true;
         }
 
-        this.tickDuration();
+        tickDuration();
     }
 }

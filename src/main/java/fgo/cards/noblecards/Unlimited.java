@@ -10,8 +10,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.FadeWipeParticle;
 
 import fgo.FGOMod;
-import fgo.action.lor.ChangeSceneEffect;
 import fgo.cards.AbsNoblePhantasmCard;
+import fgo.effects.ChangeSceneEffect;
 import fgo.powers.UnlimitedPower;
 import fgo.utils.Sounds;
 

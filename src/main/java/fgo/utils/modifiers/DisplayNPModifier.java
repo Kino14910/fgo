@@ -32,7 +32,7 @@ public class DisplayNPModifier extends AbstractCardModifier {
 
     @Override
     public AbstractCardModifier makeCopy() {
-        return new DisplayNPModifier(this.amount);
+        return new DisplayNPModifier(amount);
     }
 
 }

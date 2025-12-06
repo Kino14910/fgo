@@ -77,25 +77,25 @@ public class NobleDeckViewScreen extends CustomScreen implements ScrollBarListen
         padY = AbstractCard.IMG_HEIGHT * 0.75f + Settings.CARD_VIEW_PAD_Y;
 
         // 初始化滚动条
-        this.scrollBar = new ScrollBar(this);
-        this.scrollBar.move(0.0f, -30.0f * Settings.scale);
+        scrollBar = new ScrollBar(this);
+        scrollBar.move(0.0f, -30.0f * Settings.scale);
     }
 
     private void open(NobleCardGroup nobleCards) {
-        this.reopen();
+        reopen();
         // 保存传入的卡组
-        this.nobleCards = nobleCards;
+        nobleCards = nobleCards;
 
         AbstractDungeon.player.releaseCard();
         CardCrawlGame.sound.play("DECK_OPEN");
         
         // 重置滚动位置
-        this.currentDiffY = this.scrollLowerBound;
-        this.grabStartY = this.scrollLowerBound;
-        this.grabbedScreen = false;
+        currentDiffY = scrollLowerBound;
+        grabStartY = scrollLowerBound;
+        grabbedScreen = false;
         
         // 初始化卡牌位置
-        this.hideCards();
+        hideCards();
         
         // 设置屏幕状态
         AbstractDungeon.isScreenUp = true;
@@ -108,7 +108,7 @@ public class NobleDeckViewScreen extends CustomScreen implements ScrollBarListen
         AbstractDungeon.overlayMenu.cancelButton.show(TEXT[1]);
 
         // 计算滚动边界
-        this.calculateScrollBounds();
+        calculateScrollBounds();
     }
 
     @Override
@@ -146,53 +146,53 @@ public class NobleDeckViewScreen extends CustomScreen implements ScrollBarListen
 
     @Override
     public void scrolledUsingBar(float newPercent) {
-        this.currentDiffY = MathHelper.valueFromPercentBetween(this.scrollLowerBound, this.scrollUpperBound, newPercent);
-        this.updateBarPosition();
+        currentDiffY = MathHelper.valueFromPercentBetween(scrollLowerBound, scrollUpperBound, newPercent);
+        updateBarPosition();
     }
 
     @Override
     public void render(SpriteBatch sb) {
-        this.nobleCards.renderTip(sb);
+        nobleCards.renderTip(sb);
         FontHelper.renderDeckViewTip(sb, HEADER_INFO, 96.0f * Settings.scale, Settings.CREAM_COLOR);
 
-        if (this.shouldShowScrollBar()) {
-            this.scrollBar.render(sb);
+        if (shouldShowScrollBar()) {
+            scrollBar.render(sb);
         }
 
-        if (this.nobleCards == null) {
+        if (nobleCards == null) {
             return;
         }
 
-        if (this.hoveredCard == null) {
-            this.nobleCards.render(sb);
+        if (hoveredCard == null) {
+            nobleCards.render(sb);
             return;
         } 
 
         // 渲染除悬停卡牌外的所有卡牌
-        this.nobleCards.group.forEach(card -> {
-            if (card != this.hoveredCard) {
+        nobleCards.group.forEach(card -> {
+            if (card != hoveredCard) {
                 card.render(sb);
             }
         });
         
         // 渲染悬停卡牌的阴影和卡牌本身
-        this.hoveredCard.renderHoverShadow(sb);
-        this.hoveredCard.render(sb);
+        hoveredCard.renderHoverShadow(sb);
+        hoveredCard.render(sb);
     }
 
     @Override
     public void update() {
         boolean isDraggingScrollBar = false;
-        if (this.shouldShowScrollBar()) {
-            isDraggingScrollBar = this.scrollBar.update();
+        if (shouldShowScrollBar()) {
+            isDraggingScrollBar = scrollBar.update();
         }
         
         if (!isDraggingScrollBar) {
-            this.updateScrolling();
+            updateScrolling();
         }
         
-        this.updatePositions();
-        this.updateClicking();
+        updatePositions();
+        updateClicking();
     }
 
     @Override
@@ -207,31 +207,31 @@ public class NobleDeckViewScreen extends CustomScreen implements ScrollBarListen
 
     // 辅助方法
     private void calculateScrollBounds() {
-        if (this.nobleCards == null || this.nobleCards.size() <= 10) {
-            this.scrollUpperBound = Settings.DEFAULT_SCROLL_LIMIT;
+        if (nobleCards == null || nobleCards.size() <= 10) {
+            scrollUpperBound = Settings.DEFAULT_SCROLL_LIMIT;
             return;
         }
         
-        int scrollTmp = this.nobleCards.size() / CARDS_PER_LINE - 2;
-        if (this.nobleCards.size() % CARDS_PER_LINE != 0) {
+        int scrollTmp = nobleCards.size() / CARDS_PER_LINE - 2;
+        if (nobleCards.size() % CARDS_PER_LINE != 0) {
             ++scrollTmp;
         }
-        this.scrollUpperBound = Settings.DEFAULT_SCROLL_LIMIT + (float)scrollTmp * padY;
+        scrollUpperBound = Settings.DEFAULT_SCROLL_LIMIT + (float)scrollTmp * padY;
 
     }
 
     private void hideCards() {
-        if (this.nobleCards == null) return;
+        if (nobleCards == null) return;
         
         int lineNum = 0;
-        for (int i = 0; i < this.nobleCards.size(); ++i) {
+        for (int i = 0; i < nobleCards.size(); ++i) {
             int mod = i % CARDS_PER_LINE;
             if (mod == 0 && i != 0) {
                 ++lineNum;
             }
-            AbstractCard card = this.nobleCards.group.get(i);
+            AbstractCard card = nobleCards.group.get(i);
             card.current_x = drawStartX + (float)mod * padX;
-            card.current_y = drawStartY + this.currentDiffY - (float)lineNum * padY - MathUtils.random(100.0f * Settings.scale, 200.0f * Settings.scale);
+            card.current_y = drawStartY + currentDiffY - (float)lineNum * padY - MathUtils.random(100.0f * Settings.scale, 200.0f * Settings.scale);
             card.targetDrawScale = 0.75f;
             card.drawScale = 0.75f;
             card.setAngle(0.0f, true);
@@ -240,81 +240,81 @@ public class NobleDeckViewScreen extends CustomScreen implements ScrollBarListen
 
     private void updateScrolling() {
         int y = InputHelper.mY;
-        if (!this.grabbedScreen) {
+        if (!grabbedScreen) {
             if (InputHelper.scrolledDown) {
-                this.currentDiffY += Settings.SCROLL_SPEED;
+                currentDiffY += Settings.SCROLL_SPEED;
             } else if (InputHelper.scrolledUp) {
-                this.currentDiffY -= Settings.SCROLL_SPEED;
+                currentDiffY -= Settings.SCROLL_SPEED;
             }
             if (InputHelper.justClickedLeft) {
-                this.grabbedScreen = true;
-                this.grabStartY = (float)y - this.currentDiffY;
+                grabbedScreen = true;
+                grabStartY = (float)y - currentDiffY;
             }
         } else if (InputHelper.isMouseDown) {
-            this.currentDiffY = (float)y - this.grabStartY;
+            currentDiffY = (float)y - grabStartY;
         } else {
-            this.grabbedScreen = false;
+            grabbedScreen = false;
         }
         
-        this.resetScrolling();
-        this.updateBarPosition();
+        resetScrolling();
+        updateBarPosition();
     }
 
     private void updatePositions() {
-        this.hoveredCard = null;
-        if (this.nobleCards == null) return;
+        hoveredCard = null;
+        if (nobleCards == null) return;
         
         int lineNum = 0;
-        for (int i = 0; i < this.nobleCards.size(); ++i) {
+        for (int i = 0; i < nobleCards.size(); ++i) {
             int mod = i % CARDS_PER_LINE;
             if (mod == 0 && i != 0) {
                 ++lineNum;
             }
             
-            AbstractCard card = this.nobleCards.group.get(i);
+            AbstractCard card = nobleCards.group.get(i);
             card.target_x = drawStartX + (float)mod * padX;
-            card.target_y = drawStartY + this.currentDiffY - (float)lineNum * padY;
+            card.target_y = drawStartY + currentDiffY - (float)lineNum * padY;
             card.update();
             card.updateHoverLogic();
             
             if (card.hb.hovered) {
-                this.hoveredCard = card;
+                hoveredCard = card;
             }
         }
     }
 
     private void updateClicking() {
-        if (this.hoveredCard == null) {
-            this.clickStartedCard = null;
+        if (hoveredCard == null) {
+            clickStartedCard = null;
             return;
         }
         if (InputHelper.justClickedLeft) {
-            this.clickStartedCard = this.hoveredCard;
+            clickStartedCard = hoveredCard;
         }
         
-        if ((InputHelper.justReleasedClickLeft && this.hoveredCard == this.clickStartedCard)) {
+        if ((InputHelper.justReleasedClickLeft && hoveredCard == clickStartedCard)) {
             InputHelper.justReleasedClickLeft = false;
             // 处理卡牌点击，例如打开卡牌详情弹窗
-            CardCrawlGame.cardPopup.open(this.hoveredCard, this.nobleCards);
-            this.clickStartedCard = null;
+            CardCrawlGame.cardPopup.open(hoveredCard, nobleCards);
+            clickStartedCard = null;
         }
     }
 
     private void resetScrolling() {
-        if (this.currentDiffY < this.scrollLowerBound) {
-            this.currentDiffY = MathHelper.scrollSnapLerpSpeed(this.currentDiffY, this.scrollLowerBound);
-        } else if (this.currentDiffY > this.scrollUpperBound) {
-            this.currentDiffY = MathHelper.scrollSnapLerpSpeed(this.currentDiffY, this.scrollUpperBound);
+        if (currentDiffY < scrollLowerBound) {
+            currentDiffY = MathHelper.scrollSnapLerpSpeed(currentDiffY, scrollLowerBound);
+        } else if (currentDiffY > scrollUpperBound) {
+            currentDiffY = MathHelper.scrollSnapLerpSpeed(currentDiffY, scrollUpperBound);
         }
     }
 
     private boolean shouldShowScrollBar() {
-        return this.scrollUpperBound > SCROLL_BAR_THRESHOLD;
+        return scrollUpperBound > SCROLL_BAR_THRESHOLD;
     }
 
     private void updateBarPosition() {
-        float percent = MathHelper.percentFromValueBetween(this.scrollLowerBound, this.scrollUpperBound, this.currentDiffY);
-        this.scrollBar.parentScrolledToPercent(percent);
+        float percent = MathHelper.percentFromValueBetween(scrollLowerBound, scrollUpperBound, currentDiffY);
+        scrollBar.parentScrolledToPercent(percent);
     }
 
     public void switchScreen() {

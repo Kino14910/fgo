@@ -27,7 +27,7 @@ public class GodsExecution extends FGOCard {
                 addToTop(new DrawCardAction(p, 1));
                 addToTop(new GainEnergyAction(1));
             }
-            this.addToTop(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AttackEffect.BLUNT_HEAVY));
+            addToTop(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AttackEffect.BLUNT_HEAVY));
         });
     }
 

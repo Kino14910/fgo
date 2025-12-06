@@ -16,13 +16,13 @@ public class LoseCritDamagePower extends BasePower {
 
     @Override
     public void updateDescription() {
-        this.description = String.format(DESCRIPTIONS[0], this.amount);
+        description = String.format(DESCRIPTIONS[0], amount);
     }
 
     @Override
     public void atEndOfTurn(boolean isPlayer) {
-        this.flash();
-        this.addToBot(new ApplyPowerAction(this.owner, this.owner, new CriticalDamageUpPower(this.owner, -this.amount)));
-        this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
+        flash();
+        addToBot(new ApplyPowerAction(owner, owner, new CriticalDamageUpPower(owner, -amount)));
+        addToBot(new RemoveSpecificPowerAction(owner, owner, POWER_ID));
     }
 }

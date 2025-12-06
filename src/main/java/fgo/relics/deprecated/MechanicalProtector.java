@@ -18,37 +18,37 @@ public class MechanicalProtector extends BaseRelic {
 	public static final String ID = makeID(NAME);
     public MechanicalProtector() {
         super(ID, NAME, FGOCardColor.FGO, RelicTier.UNCOMMON, LandingSound.FLAT);
-        this.counter = 3;
+        counter = 3;
     }
 
     @Override
     public void onUseCard(AbstractCard targetCard, UseCardAction useCardAction) {
-        if (targetCard.type == AbstractCard.CardType.POWER && this.counter > 0) {
-            --this.counter;
-            if (this.counter == 0) {
-                this.setCounter(-2);
-                this.description = this.DESCRIPTIONS[1];
-                this.tips.clear();
-                this.tips.add(new PowerTip(this.name, this.description));
-                this.initializeTips();
+        if (targetCard.type == AbstractCard.CardType.POWER && counter > 0) {
+            --counter;
+            if (counter == 0) {
+                setCounter(-2);
+                description = DESCRIPTIONS[1];
+                tips.clear();
+                tips.add(new PowerTip(name, description));
+                initializeTips();
             }
 
-            this.flash();
+            flash();
             AbstractMonster randomMonster = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
-            this.addToBot(new ApplyPowerAction(randomMonster, AbstractDungeon.player, new StunMonsterPower(randomMonster)));
+            addToBot(new ApplyPowerAction(randomMonster, AbstractDungeon.player, new StunMonsterPower(randomMonster)));
         }
     }
 
     @Override
     public String getUpdatedDescription() {
-        return this.DESCRIPTIONS[0];
+        return DESCRIPTIONS[0];
     }
 
     @Override
     public void setCounter(int setCounter) {
-        this.counter = setCounter;
+        counter = setCounter;
         if (setCounter <= 0) {
-            this.usedUp();
+            usedUp();
         }
     }
 }

@@ -15,30 +15,31 @@ public class ProofAndRebuttalAction extends AbstractGameAction {
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("fgo:ProofAndRebuttalAction");
     public static final String[] TEXT = uiStrings.TEXT;
     public ProofAndRebuttalAction() {
-        this.p = AbstractDungeon.player;
-        this.duration = Settings.ACTION_DUR_FAST;
-        this.actionType = ActionType.CARD_MANIPULATION;
+        p = AbstractDungeon.player;
+        duration = Settings.ACTION_DUR_FAST;
+        actionType = ActionType.CARD_MANIPULATION;
     }
 
+    @Override
     public void update() {
-        if (this.duration == Settings.ACTION_DUR_FAST) {
-            if (this.p.hand.isEmpty()) {
-                this.isDone = true;
-            } else if (this.p.hand.size() == 1) {
-                AbstractCard c = this.p.hand.getTopCard();
-                this.p.hand.moveToDeck(c, false);
+        if (duration == Settings.ACTION_DUR_FAST) {
+            if (p.hand.isEmpty()) {
+                isDone = true;
+            } else if (p.hand.size() == 1) {
+                AbstractCard c = p.hand.getTopCard();
+                p.hand.moveToDeck(c, false);
                 AbstractDungeon.player.hand.refreshHandLayout();
-                this.isDone = true;
+                isDone = true;
             } else {
                 AbstractDungeon.handCardSelectScreen.open(TEXT[0], 99, true, true);
-                this.tickDuration();
+                tickDuration();
             }
         } else {
             if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
                 AbstractCard c;
                 for(Iterator<AbstractCard> var1 = AbstractDungeon.handCardSelectScreen.selectedCards.group.iterator();
                     var1.hasNext();
-                    this.p.hand.moveToDeck(c, false)) {
+                    p.hand.moveToDeck(c, false)) {
                     c = var1.next();
                 }
 
@@ -46,7 +47,7 @@ public class ProofAndRebuttalAction extends AbstractGameAction {
                 AbstractDungeon.handCardSelectScreen.wereCardsRetrieved = true;
             }
 
-            this.tickDuration();
+            tickDuration();
         }
     }
 

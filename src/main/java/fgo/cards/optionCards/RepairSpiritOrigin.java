@@ -21,10 +21,10 @@ public class RepairSpiritOrigin extends FGOCard {
     }
 
     @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {this.onChoseThisOption();}
+    public void use(AbstractPlayer p, AbstractMonster m) {onChoseThisOption();}
 
     @Override
     public void onChoseThisOption() {
-        this.addToBot(new HealAction(AbstractDungeon.player, AbstractDungeon.player, 30));
+        addToBot(new HealAction(AbstractDungeon.player, AbstractDungeon.player, 30));
     }
 }

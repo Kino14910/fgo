@@ -22,12 +22,12 @@ public class CurseHarmonyPower extends BasePower {
 
     @Override
     public void atEndOfTurn(boolean isPlayer) {
-        if (this.owner.hasPower(CursePower.POWER_ID) && !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
-            this.flash();
+        if (owner.hasPower(CursePower.POWER_ID) && !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
+            flash();
             int ChAmount = 0;
-            ChAmount += (this.owner.getPower(CursePower.POWER_ID)).amount * this.amount;
+            ChAmount += (owner.getPower(CursePower.POWER_ID)).amount * amount;
             AbstractMonster randomMonster = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
-            this.addToBot(new BouncingFlaskAction(randomMonster, ChAmount, 1));
+            addToBot(new BouncingFlaskAction(randomMonster, ChAmount, 1));
         }
     }
 

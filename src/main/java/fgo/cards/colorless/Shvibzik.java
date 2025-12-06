@@ -19,7 +19,7 @@ public class Shvibzik extends FGOCard {
         super(ID, 2, CardType.ATTACK, CardTarget.ENEMY, CardRarity.SPECIAL, CardColor.COLORLESS);
         setDamage(20, 5);
         setExhaust();
-        this.portraitImg = ImageMaster.loadImage(cardPath("attack/Shvibzik"));
+        portraitImg = ImageMaster.loadImage(cardPath("attack/Shvibzik"));
 
         FlavorText.AbstractCardFlavorFields.textColor.set(this, Color.CHARTREUSE);
         FlavorText.AbstractCardFlavorFields.flavorBoxType.set(this, FlavorText.boxType.TRADITIONAL);
@@ -29,8 +29,8 @@ public class Shvibzik extends FGOCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HEAVY));
-        this.addToBot(new ViyViyViyAction());
+        addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HEAVY));
+        addToBot(new ViyViyViyAction());
     }
 }
 

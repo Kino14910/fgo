@@ -17,13 +17,13 @@ public class MoveToEffect extends AbstractGameEffect {
     private boolean moveBack;
 
     public MoveToEffect(AbstractCreature creature, float targetX, float targetY, boolean moveBack, float duration) {
-        this.creature = creature;
-        this.moveBack = moveBack;
-        this.startingDuration = this.duration = duration;
-        this.startX = creature.animX;
-        this.startY = creature.animY;
-        this.targetX = targetX;
-        this.targetY = targetY;
+        creature = creature;
+        moveBack = moveBack;
+        startingDuration = duration = duration;
+        startX = creature.animX;
+        startY = creature.animY;
+        targetX = targetX;
+        targetY = targetY;
     }
 
     public MoveToEffect(AbstractCreature creature) {
@@ -32,21 +32,21 @@ public class MoveToEffect extends AbstractGameEffect {
 
     @Override
     public void update() {
-        this.duration -= Gdx.graphics.getDeltaTime();
-        if (this.duration <= 0.0F) {
-            this.isDone = true;
-            this.creature.animY = this.startY;
-            this.creature.animX = this.startX;
+        duration -= Gdx.graphics.getDeltaTime();
+        if (duration <= 0.0F) {
+            isDone = true;
+            creature.animY = startY;
+            creature.animX = startX;
         } else {
             float tmp;
-            if (this.moveBack) {
+            if (moveBack) {
                 tmp = 1.0F - Math.abs(duration / startingDuration * 2.0F - 1.0F);
             } else {
-                tmp = 1.0F - this.duration / this.startingDuration;
+                tmp = 1.0F - duration / startingDuration;
             }
 
-            this.creature.animX = Interpolation.pow2In.apply(this.startX, this.targetX, tmp);
-            this.creature.animY = Interpolation.pow2In.apply(this.startY, this.targetY, tmp);
+            creature.animX = Interpolation.pow2In.apply(startX, targetX, tmp);
+            creature.animY = Interpolation.pow2In.apply(startY, targetY, tmp);
         }
     }
 

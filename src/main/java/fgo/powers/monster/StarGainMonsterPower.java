@@ -19,20 +19,20 @@ public class StarGainMonsterPower extends BasePower {
     }
 
     @Override
-    public void updateDescription() {this.description = DESCRIPTIONS[0];}
+    public void updateDescription() {description = DESCRIPTIONS[0];}
 
     @Override
     public float atDamageGive(float damage, DamageInfo.DamageType type, AbstractCard card) {
-        if (this.amount >= 10) {
-            return this.atDamageGive(damage, type);
+        if (amount >= 10) {
+            return atDamageGive(damage, type);
         }
         return damage;
     }
 
     @Override
     public float atDamageGive(float damage, DamageInfo.DamageType type) {
-        if (this.owner.hasPower(CriticalDamageUpPower.POWER_ID)) {
-            int CrAmt = (this.owner.getPower(CriticalDamageUpPower.POWER_ID)).amount;
+        if (owner.hasPower(CriticalDamageUpPower.POWER_ID)) {
+            int CrAmt = (owner.getPower(CriticalDamageUpPower.POWER_ID)).amount;
             return type == DamageInfo.DamageType.NORMAL ? damage * (200.0F + CrAmt) / 100.0F : damage;
         }
         return type == DamageInfo.DamageType.NORMAL ? damage * 2.0F : damage;
@@ -40,8 +40,8 @@ public class StarGainMonsterPower extends BasePower {
 
     @Override
     public void onAttack(DamageInfo info, int damageAmount, AbstractCreature target) {
-       this.flash();
-       this.addToTop(new ReducePowerAction(this.owner, this.owner, this.ID, 10));
+       flash();
+       addToTop(new ReducePowerAction(owner, owner, ID, 10));
     }
 
     

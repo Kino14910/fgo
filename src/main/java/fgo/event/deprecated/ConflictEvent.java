@@ -32,14 +32,14 @@ public class ConflictEvent extends BaseEvent {
     private AbstractRelic gift;
     public ConflictEvent() {
         super(ID, title, eventPath("ConflictEvent"));
-        this.body = DESCRIPTIONS[0];
+        body = DESCRIPTIONS[0];
         ArrayList<AbstractRelic> relics = new ArrayList<>(AbstractDungeon.player.relics);
         Collections.shuffle(relics, new Random(AbstractDungeon.miscRng.randomLong()));
-        this.choice1 = relics.get(0);
-        this.choice2 = relics.get(1);
-        this.gift = new SkullCandy();
-        this.imageEventText.setDialogOption(OPTIONS[0] + this.choice1.name + OPTIONS[1]);
-        this.imageEventText.setDialogOption(OPTIONS[0] + this.choice2.name + OPTIONS[2], new SkullCandy());
+        choice1 = relics.get(0);
+        choice2 = relics.get(1);
+        gift = new SkullCandy();
+        imageEventText.setDialogOption(OPTIONS[0] + choice1.name + OPTIONS[1]);
+        imageEventText.setDialogOption(OPTIONS[0] + choice2.name + OPTIONS[2], new SkullCandy());
     }
 
     @Override
@@ -51,12 +51,12 @@ public class ConflictEvent extends BaseEvent {
 
     @Override
     protected void buttonEffect(int buttonPressed) {
-        switch (this.screenNum) {
+        switch (screenNum) {
             case 0:
                 switch (buttonPressed) {
                     case 0:
-                        this.imageEventText.updateBodyText(DESCRIPTIONS[1]);
-                        AbstractDungeon.player.loseRelic(this.choice1.relicId);
+                        imageEventText.updateBodyText(DESCRIPTIONS[1]);
+                        AbstractDungeon.player.loseRelic(choice1.relicId);
                         int effectCount = 0;
                         for (AbstractCard c : AbstractDungeon.player.masterDeck.group) {
                             if (c.canUpgrade() && c.type == AbstractCard.CardType.ATTACK) {
@@ -72,34 +72,34 @@ public class ConflictEvent extends BaseEvent {
                                 AbstractDungeon.player.bottledCardUpgradeCheck(c);
                             }
                         }
-                        this.screenNum = 1;
-                        this.imageEventText.updateDialogOption(0, OPTIONS[3]);
-                        this.imageEventText.clearRemainingOptions();
+                        screenNum = 1;
+                        imageEventText.updateDialogOption(0, OPTIONS[3]);
+                        imageEventText.clearRemainingOptions();
                         return;
                     case 1:
-                        this.imageEventText.updateBodyText(DESCRIPTIONS[2]);
+                        imageEventText.updateBodyText(DESCRIPTIONS[2]);
                         if (AbstractDungeon.player.hasRelic(SkullCandy.ID)) {
-                            this.gift = new Circlet();
-                            AbstractDungeon.getCurrRoom().spawnRelicAndObtain((float)(Settings.WIDTH / 2), (float)(Settings.HEIGHT / 2), this.gift);
+                            gift = new Circlet();
+                            AbstractDungeon.getCurrRoom().spawnRelicAndObtain((float)(Settings.WIDTH / 2), (float)(Settings.HEIGHT / 2), gift);
                         } else {
-                            AbstractDungeon.player.loseRelic(this.choice2.relicId);
-                            AbstractDungeon.getCurrRoom().spawnRelicAndObtain((float)(Settings.WIDTH / 2), (float)(Settings.HEIGHT / 2), this.gift);
+                            AbstractDungeon.player.loseRelic(choice2.relicId);
+                            AbstractDungeon.getCurrRoom().spawnRelicAndObtain((float)(Settings.WIDTH / 2), (float)(Settings.HEIGHT / 2), gift);
                         }
 
-                        this.screenNum = 1;
-                        this.imageEventText.updateDialogOption(0, OPTIONS[3]);
-                        this.imageEventText.clearRemainingOptions();
+                        screenNum = 1;
+                        imageEventText.updateDialogOption(0, OPTIONS[3]);
+                        imageEventText.clearRemainingOptions();
                         return;
                     default:
-                        this.imageEventText.updateBodyText(DESCRIPTIONS[3]);
-                        this.screenNum = 1;
-                        this.imageEventText.updateDialogOption(0, OPTIONS[3]);
-                        this.imageEventText.clearRemainingOptions();
+                        imageEventText.updateBodyText(DESCRIPTIONS[3]);
+                        screenNum = 1;
+                        imageEventText.updateDialogOption(0, OPTIONS[3]);
+                        imageEventText.clearRemainingOptions();
                         return;
                 }
             case 1:
             default:
-                this.openMap();
+                openMap();
         }
     }
 }

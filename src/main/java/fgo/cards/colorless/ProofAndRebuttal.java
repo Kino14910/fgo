@@ -17,7 +17,7 @@ public class ProofAndRebuttal extends FGOCard {
     public ProofAndRebuttal() {
         super(ID, 0, CardType.SKILL, CardTarget.SELF, CardRarity.SPECIAL, CardColor.COLORLESS);
         setExhaust();
-        this.portraitImg = ImageMaster.loadImage(cardPath("skill/ProofAndRebuttal"));
+        portraitImg = ImageMaster.loadImage(cardPath("skill/ProofAndRebuttal"));
 
         FlavorText.AbstractCardFlavorFields.textColor.set(this, Color.CHARTREUSE);
         FlavorText.AbstractCardFlavorFields.flavorBoxType.set(this, FlavorText.boxType.TRADITIONAL);
@@ -27,9 +27,9 @@ public class ProofAndRebuttal extends FGOCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new DrawCardAction(p, 1));
+        addToBot(new DrawCardAction(p, 1));
         if (!AbstractDungeon.player.hand.isEmpty()) {
-            this.addToBot(new ProofAndRebuttalAction());
+            addToBot(new ProofAndRebuttalAction());
         }
     }
 }
