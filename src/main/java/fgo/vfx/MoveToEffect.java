@@ -17,13 +17,13 @@ public class MoveToEffect extends AbstractGameEffect {
     private boolean moveBack;
 
     public MoveToEffect(AbstractCreature creature, float targetX, float targetY, boolean moveBack, float duration) {
-        creature = creature;
-        moveBack = moveBack;
-        startingDuration = duration = duration;
+        this.creature = creature;
+        this.moveBack = moveBack;
+        startingDuration = this.duration = duration;
         startX = creature.animX;
         startY = creature.animY;
-        targetX = targetX;
-        targetY = targetY;
+        this.targetX = targetX;
+        this.targetY = targetY;
     }
 
     public MoveToEffect(AbstractCreature creature) {

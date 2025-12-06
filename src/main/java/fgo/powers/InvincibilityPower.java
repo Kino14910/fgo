@@ -17,7 +17,7 @@ public class InvincibilityPower extends BasePower {
 
     @Override
     public void updateDescription() {
-        description = amount == 1 ? DESCRIPTIONS[0] : String.format(DESCRIPTIONS[1], amount);
+        description = formatDescriptionByQuantity(amount);
     }
 
     @Override

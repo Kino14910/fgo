@@ -32,7 +32,7 @@ public abstract class BaseRelic extends CustomRelic {
     public BaseRelic(String id, String imageName, RelicTier tier, LandingSound sfx) {
         super(testStrings(id), notPng(imageName) ? "" : imageName, tier, sfx);
 
-        imageName = imageName;
+        this.imageName = imageName;
         if (notPng(imageName)) {
             loadTexture();
         }
@@ -79,7 +79,7 @@ public abstract class BaseRelic extends CustomRelic {
                 relicType = RelicType.PURPLE;
                 break;
             default:
-                pool = pool;
+                this.pool = pool;
                 break;
         }
     }

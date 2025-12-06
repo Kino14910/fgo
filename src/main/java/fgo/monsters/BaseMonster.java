@@ -159,7 +159,7 @@ public abstract class BaseMonster extends CustomMonster {
 
     public void setDamagesWithAscension(int... damages) {
         damage.clear();
-        damages = damages;
+        this.damages = damages;
         for (int i = 0; i < damages.length; i++) {
             damages[i] = Math.round(damages[i] * (ModHelper.moreDamageAscension(type) ? 1.1f : 1));
             damage.add(new DamageInfo(this, damages[i]));
@@ -168,7 +168,7 @@ public abstract class BaseMonster extends CustomMonster {
 
     public void setDamages(int... damages) {
         damage.clear();
-        damages = damages;
+        this.damages = damages;
         for (int j : damages) {
             damage.add(new DamageInfo(this, j));
         }
@@ -306,11 +306,11 @@ public abstract class BaseMonster extends CustomMonster {
         public Supplier<Integer> damageTimeSupplier;
 
         public MoveInfo(int index, Intent intent, Supplier<Integer> damageSupplier, Supplier<Integer> damageTimeSupplier, Consumer<MoveInfo> takeMove) {
-            index = index;
-            intent = intent;
-            takeMove = takeMove;
-            damageSupplier = damageSupplier;
-            damageTimeSupplier = damageTimeSupplier;
+            this.index = index;
+            this.intent = intent;
+            this.takeMove = takeMove;
+            this.damageSupplier = damageSupplier;
+            this.damageTimeSupplier = damageTimeSupplier;
         }
 
         public void move() {

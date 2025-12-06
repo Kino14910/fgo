@@ -22,10 +22,10 @@ public class IgnoresInvincibilityAction extends AbstractGameAction {
     }
 
     public IgnoresInvincibilityAction(AbstractCreature target, boolean usePower) {
-        target = target;
+        this.target = target;
         actionType = ActionType.DAMAGE;
         duration = 0.1F;
-        usePower = usePower;
+        this.usePower = usePower;
     }
 
     @Override

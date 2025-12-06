@@ -34,11 +34,7 @@ public class SquireOfProphecyPower extends BasePower {
 
     @Override
     public void updateDescription() {
-        if (amount == 1) {
-            description = DESCRIPTIONS[0];
-        } else {
-            description = DESCRIPTIONS[1] + amount + DESCRIPTIONS[2];
-        }
+        description = amount == 1 ? DESCRIPTIONS[1] : String.format(DESCRIPTIONS[0], amount);
     }
 
     

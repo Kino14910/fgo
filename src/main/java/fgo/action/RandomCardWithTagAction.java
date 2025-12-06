@@ -23,15 +23,15 @@ public class RandomCardWithTagAction extends AbstractGameAction {
 
     public RandomCardWithTagAction(AbstractCard.CardTags tagToSearch, boolean free) {
         tag = tagToSearch;
-        free = free;
+        this.free = free;
         oneless = false;
     }
 
     public RandomCardWithTagAction(boolean upgraded, AbstractCard.CardTags tagToSearch, boolean free, boolean oneless) {
         upgradeCard = upgraded;
         tag = tagToSearch;
-        free = free;
-        oneless = oneless;
+        this.free = free;
+        this.oneless = oneless;
     }
 
     @Override

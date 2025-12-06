@@ -84,7 +84,7 @@ public class NobleDeckViewScreen extends CustomScreen implements ScrollBarListen
     private void open(NobleCardGroup nobleCards) {
         reopen();
         // 保存传入的卡组
-        nobleCards = nobleCards;
+        this.nobleCards = nobleCards;
 
         AbstractDungeon.player.releaseCard();
         CardCrawlGame.sound.play("DECK_OPEN");

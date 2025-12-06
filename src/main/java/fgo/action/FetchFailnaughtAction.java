@@ -10,8 +10,8 @@ import fgo.powers.CursePower;
 public class FetchFailnaughtAction extends AbstractGameAction {
 
     public FetchFailnaughtAction(AbstractCreature target, AbstractCreature source) {
-        target = target;
-        source = source;
+        this.target = target;
+        this.source = source;
         actionType = ActionType.DEBUFF;
     }
 
