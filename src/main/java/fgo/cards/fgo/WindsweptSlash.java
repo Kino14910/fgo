@@ -7,8 +7,7 @@ import com.evacipated.cardcrawl.mod.stslib.patches.FlavorText;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -23,6 +22,7 @@ public class WindsweptSlash extends FGOCard {
     public WindsweptSlash() {
         super(ID, 1, CardType.ATTACK, CardTarget.ENEMY, CardRarity.COMMON);
         setDamage(9);
+        setMagic(1, 1);
         cardsToPreview = new FgoInsight();
         portraitImg = ImageMaster.loadImage(cardPath("attack/WindsweptSlash"));
 
@@ -35,11 +35,7 @@ public class WindsweptSlash extends FGOCard {
         addToBot(new SFXAction("ATTACK_HEAVY"));
         addToBot(new VFXAction(p, new CleaveEffect(), 0.1F));
         addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
-        if (upgraded) {
-            addToBot(new MakeTempCardInHandAction(cardsToPreview.makeStatEquivalentCopy(), 1));
-        } else {
-            addToBot(new MakeTempCardInDrawPileAction(cardsToPreview, 1, true, true, false));
-        }
+        addToBot(new DrawCardAction(magicNumber));
     }
 }
 
