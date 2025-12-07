@@ -14,7 +14,7 @@ public class NonStackableGutsPower extends BasePower implements NonStackablePowe
     private int time;
  
     public NonStackableGutsPower(AbstractCreature owner, int amount, int time) {
-        super(POWER_ID, PowerType.BUFF, false, owner, amount, "GutsPower"); 
+        super(POWER_ID, PowerType.BUFF, false, owner, amount, GutsPower.class.getSimpleName()); 
         this.time = time;
         amount2 = time == 1 ? 0 : time;
         updateDescription();
@@ -42,12 +42,6 @@ public class NonStackableGutsPower extends BasePower implements NonStackablePowe
 
     @Override
     public void updateDescription() {
-        if (time == 1){
-            description = String.format(DESCRIPTIONS[0], amount);
-        } else {
-            description = String.format(DESCRIPTIONS[1], time, amount);
-        }
+        description = time == 1 ? String.format(DESCRIPTIONS[0], amount) : String.format(DESCRIPTIONS[1], time, amount);
     }
-
-    
 }

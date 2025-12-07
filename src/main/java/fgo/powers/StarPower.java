@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 
+import fgo.cards.fgo.CharismaOfTheJade;
 import fgo.characters.CustomEnums.FGOCardColor;
 
 public class StarPower extends BasePower {
@@ -22,17 +23,13 @@ public class StarPower extends BasePower {
 
     @Override
     public void updateDescription() {
-        if (amount >= 10) {
-            description = DESCRIPTIONS[1];
-        } else {
-            description = DESCRIPTIONS[0];
-        }
+        description = amount < 10 ? DESCRIPTIONS[0] : DESCRIPTIONS[1];
     }
 
     @Override
     public float atDamageGive(float damage, DamageInfo.DamageType type, AbstractCard card) {
-        //如果你有20颗暴击星时，使用翡翠的魅力时，暴击威力提高50%。
-        if (card.cardID.equals("fgo:CharismaOfTheJade") && amount >= 20) {
+        //如果你有20颗暴击星时，使用翡翠的魅力时，暴击威力增加200%。
+        if (CharismaOfTheJade.ID.equals(card.cardID) && amount >= 20) {
             return finalDamage(damage, type, 3.0F);
         }
 
@@ -46,18 +43,21 @@ public class StarPower extends BasePower {
 
 
     public float finalDamage(float damage, DamageInfo.DamageType type, float multiplier) {
-        //暴击威力提高。
-        if (owner.hasPower(CriticalDamageUpPower.POWER_ID) || owner.hasPower(StarHunterPower.POWER_ID)) {
+        int starHunterAmt = 0;
+        if (owner.hasPower(StarHunterPower.POWER_ID)) {
             BasePower starHunterPower = (BasePower) owner.getPower(StarHunterPower.POWER_ID);
-            int starHunterAmt = 0;
-            if (owner.hasPower(StarHunterPower.POWER_ID)) {
-                starHunterAmt = starHunterPower.amount2;
-                addToBot(new ReducePowerAction(owner, owner, StarHunterPower.POWER_ID, 1));
-            }
-            int CrAmt = (owner.getPower(CriticalDamageUpPower.POWER_ID)).amount + starHunterAmt;
-            return type == DamageInfo.DamageType.NORMAL ? damage * multiplier * (1.0F + CrAmt / 100.0F) : damage;
+            starHunterAmt = starHunterPower.amount2;
         }
-        return type == DamageInfo.DamageType.NORMAL ? damage * multiplier : damage;
+
+        int critAmt = 0;
+        if (owner.hasPower(CriticalDamageUpPower.POWER_ID)) {
+            critAmt = owner.getPower(CriticalDamageUpPower.POWER_ID).amount;
+        }
+
+        int CrAmt = critAmt + starHunterAmt;
+        return type == DamageInfo.DamageType.NORMAL
+                ? damage * multiplier * (1.0F + CrAmt / 100.0F)
+                : damage;
     }
 
     @Override
@@ -74,7 +74,7 @@ public class StarPower extends BasePower {
             addToBot(new RemoveSpecificPowerAction(owner, owner, LoseCritDamagePower.POWER_ID));
         }
 
-        addToBot(new ReducePowerAction(owner, owner, ID, card.cardID.equals("fgo:CharismaOfTheJade") && amount >= 20 ? 20 : 10));
+        addToBot(new ReducePowerAction(owner, owner, ID, card.cardID.equals(CharismaOfTheJade.ID) && amount >= 20 ? 20 : 10));
 
     }
 }

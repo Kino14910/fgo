@@ -247,7 +247,7 @@
     "NAME": "无敌",
     "DESCRIPTIONS": [
       "在本回合阻止你受到的所有攻击。",
-      "阻止你受到的所有攻击，持续时间 #b%d 回合。"
+      "阻止你受到的所有攻击，持续 #b%d 回合。"
     ]
   },
   "${modID}:AntiPurgeDefensePower": {
@@ -355,7 +355,7 @@
     "NAME": "冷却中",
     "DESCRIPTIONS": [
       "你不能再打出 ",
-      " 。持续时间 #b%d 回合。"
+      " 。持续 #b%d 回合。"
     ]
   },
   "${modID}:ReducePercentDamagePower": {
@@ -461,7 +461,7 @@
   "${modID}:TerrorPower": {
     "NAME": "恐怖",
     "DESCRIPTIONS": [
-      "有 #b%d %%概率 #y无法行动 一回合。持续时间 #b%d 回合。"
+      "有 #b%d %%概率 #y无法行动 一回合。持续 #b%d 回合。"
     ]
   },
   "${modID}:GoddessMetamorphosisBeastPower": {
@@ -497,7 +497,7 @@
   "${modID}:SealNPPower": {
     "NAME": "宝具封印",
     "DESCRIPTIONS": [
-      "你无法获得 #y宝具牌 。持续时间 #b%d 回合。"
+      "你无法获得 #y宝具牌 。持续 #b%d 回合。"
     ]
   },
   "${modID}:StarGainMonsterPower": {
@@ -531,6 +531,13 @@
       "当你接下来 #b%d 次要被杀死时，免死并回复 #b%d 点 #y生命 。"
     ]
   },
+    "${modID}:NonStackableEnergyRegenPower": {
+    "NAME": "每回合获得NP",
+    "DESCRIPTIONS": [
+      "在每回合开始时获得 #b%d %% #y宝具值 。",
+      "持续 #b%d 回合。"
+    ]
+  },
   "${modID}:LoseArtsPerformancePower": {
     "NAME": "失去宝具值获取提升",
     "DESCRIPTIONS": [
@@ -540,7 +547,7 @@
   "${modID}:StarHunterPower": {
     "NAME": "星辰猎人",
     "DESCRIPTIONS": [
-      "之后 #b%d 次暴击，提高 #b%d %% 暴击威力。"
+      "之后 #b%d 次#y暴击，提高 #b%d %% #y暴击威力。"
     ]
   }
 }

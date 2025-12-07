@@ -6,7 +6,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import fgo.action.FgoNpAction;
 import fgo.cards.FGOCard;
-import fgo.powers.EnergyRegenPower;
+import fgo.powers.NonStackableEnergyRegenPower;
 import fgo.powers.WatersidePower;
 public class LakeTexcoco extends FGOCard {
     public static final String ID = makeID(LakeTexcoco.class.getSimpleName());
@@ -19,7 +19,7 @@ public class LakeTexcoco extends FGOCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new FgoNpAction(np));
-        addToBot(new ApplyPowerAction(p, p, new EnergyRegenPower(p, magicNumber, 3)));
+        addToBot(new ApplyPowerAction(p, p, new NonStackableEnergyRegenPower(p, magicNumber, 3)));
         addToBot(new ApplyPowerAction(p, p, new WatersidePower(p)));
     }
 }
