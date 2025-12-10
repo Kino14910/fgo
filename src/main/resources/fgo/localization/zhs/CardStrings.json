@@ -584,7 +584,7 @@
   },
   "${modID}:RayProofKyrielight": {
     "NAME": "明证希望的人理之剑",
-    "DESCRIPTION": "fgo:无敌贯通 。 NL 给予所有敌人 !M! 层易伤 。 NL 对所有敌人造成 !D! 点伤害。 NL 移除BOSS以外敌人所有增益。"
+    "DESCRIPTION": "fgo:无敌贯通 。 NL 给予所有敌人 !M! 层易伤 。 NL 对所有敌人造成 !D! 点伤害。 NL 移除boss以外敌人所有增益。"
   },
   "${modID}:ObscurantWallofChalk": {
     "NAME": "时为朦胧的白垩之壁",

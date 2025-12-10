@@ -22,7 +22,7 @@
 
     <!-- This information will be displayed in ModTheSpire, the modded launcher. -->
     <name>FGOMod</name>
-    <version>1.2.3-Android-hotfix</version>
+    <version>1.2.3-Android-hotfix2</version>
     <!-- Avoid using \ in this description, as they can cause the description to fail to load. -->
     <!-- If you really want to use them, you'll need to "escape" them by putting another one in front, like \\ -->
     <description>FGO Mod for Slay the Spire</description>
@@ -64,6 +64,12 @@
             <version>2.12.0</version>
             <scope>system</scope>
             <systemPath>${steam.path}/workshop/content/646570/1609158507/StSLib.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+            <version>26.0.2-1</version>
         </dependency>
     </dependencies>
 

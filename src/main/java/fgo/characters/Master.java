@@ -87,28 +87,14 @@ public class Master extends CustomPlayer{
         );
     }
 
-    // public void setNP(int value) {
-    //     fgoNp = MathUtils.clamp(value, 0, 300);
-    // }
-
-    // public int getNP() {
-    //     return fgoNp;
-    // }
-
-
     @Override
     public ArrayList<String> getStartingDeck() {
         // int charIndex = MainMenuUIFgoPatch.modifierIndexes;
 
         //添加初始卡组
         ArrayList<String> retVal = new ArrayList<>(Arrays.asList(
-            Strike.ID,
-            Strike.ID,
-            Strike.ID,
-            Strike.ID,
-            Defend.ID,
-            Defend.ID,            
-            Defend.ID,
+            Strike.ID, Strike.ID, Strike.ID, Strike.ID,
+            Defend.ID, Defend.ID, Defend.ID,
             CharismaOfHope.ID,
             DreamUponTheStars.ID
         ));

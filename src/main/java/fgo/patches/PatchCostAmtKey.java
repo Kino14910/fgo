@@ -1,7 +1,6 @@
 package fgo.patches;
 
 import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePrefixPatch;
@@ -13,6 +12,7 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
+import fgo.characters.CustomEnums.FGOCardColor;
 import fgo.characters.Master;
 import fgo.powers.NPRatePower;
 import fgo.powers.SealNPPower;
@@ -27,10 +27,10 @@ public class PatchCostAmtKey {
             if (!(AbstractDungeon.player instanceof Master) || __instance.isLocked || AbstractDungeon.player.isDraggingCard || AbstractDungeon.player.inSingleTargetMode) {
                 return;
             }
-            if (PatchSkeletonKeyCanUpgrade.isInCombat() && AbstractDungeon.player.hoveredCard == __instance && __instance.costForTurn > -2 && __instance.costForTurn != 0 && !AbstractDungeon.player.hasPower(SealNPPower.POWER_ID)) {
+            if (PatchSkeletonKeyCanUpgrade.isInCombat() && AbstractDungeon.player.hoveredCard == __instance && __instance.costForTurn > -2 && __instance.costForTurn != 0 && !AbstractDungeon.player.hasPower(SealNPPower.POWER_ID) && __instance.color != FGOCardColor.NOBLE_PHANTASM) {
                 int costModifier = PatchSkeletonKeyCanUpgrade.getCostModifier();
                 int costAmt = PatchSkeletonKeyCanUpgrade.calculateCostAmount(__instance.costForTurn, costModifier);
-                FontHelper.renderFontCentered((SpriteBatch)sb, (BitmapFont)FontHelper.topPanelInfoFont, (String)("+" + costAmt + "% " + NPTEXT[0]), (float)__instance.hb.cX, (float)(__instance.hb.height + 24.0f * Settings.scale), (Color)Color.WHITE.cpy());
+                FontHelper.renderFontCentered(sb, FontHelper.topPanelInfoFont, ("+" + costAmt + "% " + NPTEXT[0]), __instance.hb.cX, (__instance.hb.height + 24.0f * Settings.scale), Color.WHITE.cpy());
             }
         }
 

@@ -501,13 +501,13 @@ public class FGOMod implements
 //                .create());
     }
     @Override
-    public void receiveCardUsed(AbstractCard abstractCard) {
-        if (!isMaster() || abstractCard == null) {
+    public void receiveCardUsed(AbstractCard card) {
+        if (!isMaster() || card == null || card.color != FGOCardColor.NOBLE_PHANTASM) {
             return;
         }
 
         int npMultiplier = calculateNpRateMultiplier();
-        int npGain = calculateNpGain(abstractCard, npMultiplier);
+        int npGain = calculateNpGain(card, npMultiplier);
 
         if (npGain > 0) {
             addToBot(new FgoNpAction(npGain));

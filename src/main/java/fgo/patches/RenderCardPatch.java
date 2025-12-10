@@ -6,12 +6,10 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.math.Vector2;
 import com.evacipated.cardcrawl.modthespire.lib.ByRef;
 import com.evacipated.cardcrawl.modthespire.lib.LineFinder;
 import com.evacipated.cardcrawl.modthespire.lib.Matcher;
-import com.evacipated.cardcrawl.modthespire.lib.SpireField;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInsertLocator;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
@@ -26,7 +24,6 @@ import com.megacrit.cardcrawl.screens.SingleCardViewPopup;
 import basemod.ReflectionHacks;
 import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.MultiCardPreview;
 import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.MultiCardPreviewRenderer;
-import fgo.FGOMod;
 import fgo.hexui_lib.CardRenderer;
 import fgo.hexui_lib.interfaces.CustomCardPortrait;
 import fgo.hexui_lib.interfaces.CustomCardTypeLocation;
@@ -185,27 +182,6 @@ public class RenderCardPatch {
                             new Matcher.MethodCallMatcher(FontHelper.class, "renderFontCentered"));
             }
         }
-
-	@SpirePatch(clz = SingleCardViewPopup.class, method = SpirePatch.CLASS)
-	public static class Fields {
-		public static SpireField<TextureAtlas.AtlasRegion> energyOrb = new SpireField<>(() -> null);
-	}
-        
-	@SpirePatch(clz = SingleCardViewPopup.class, method = "renderCost", paramtypez = {SpriteBatch.class})
-	public static class RenderCostPatch {
-		@SpireInsertPatch(rloc = 24, localvars = {"tmpImg"})
-		public static void Insert(SingleCardViewPopup _inst, SpriteBatch sb, AbstractCard ___card,
-								  @ByRef TextureAtlas.AtlasRegion[] tmpImg) {
-			if (___card instanceof CustomCardPortrait)  {
-				if (Fields.energyOrb.get(_inst) != null){
-					tmpImg[0] = Fields.energyOrb.get(_inst);
-                    if (FGOMod.config.getBool("disableRenderCost")){
-                        tmpImg = new TextureAtlas.AtlasRegion[0];
-                    }
-                }
-			}
-		}
-	}
 
 	@SpirePatch(clz = SingleCardViewPopup.class, method = "renderTips", paramtypez = {SpriteBatch.class})
 	public static class RenderTipsPatch {

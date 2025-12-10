@@ -14,6 +14,7 @@ public class LakeTexcoco extends FGOCard {
         super(ID, 1, CardType.SKILL, CardTarget.SELF, CardRarity.UNCOMMON);
         setNP(20, 10);
         setMagic(5, 5);
+        setExhaust();
     }
 
     @Override

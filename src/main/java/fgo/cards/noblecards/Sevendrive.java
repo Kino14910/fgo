@@ -38,9 +38,7 @@ public class Sevendrive extends AbsNoblePhantasmCard {
         addToBot(new ShakeScreenAction(0.0F, ScreenShake.ShakeDur.MED, ScreenShake.ShakeIntensity.HIGH));
         addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, 1)));
         addToBot(new ApplyPowerAction(p, p, new LoseStrengthPower(p, 1)));
-        for (int i = 0; i < 8; ++i) {
-            addToBot(new DamageAllEnemiesAction(p, multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, true));
-        }
+        addToBot(new DamageAllEnemiesAction(p, multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, true));
         for (AbstractMonster mon : AbstractDungeon.getCurrRoom().monsters.monsters) {
             if (mon == null || mon.isDeadOrEscaped()) 
                 return;
