@@ -10,7 +10,7 @@ import fgo.characters.CustomEnums.FGOCardColor;
 import fgo.powers.CursePower;
 
 public class LockChocolate extends BaseRelic {
-    private static final String NAME = "LockChocolate";
+    private static final String NAME = LockChocolate.class.getSimpleName();
 	public static final String ID = makeID(NAME);
     //调用父类的构造方法，传参为super(遗物ID,遗物全图，遗物白底图，遗物稀有度，获得遗物时的音效)
     public LockChocolate() {
@@ -22,7 +22,7 @@ public class LockChocolate extends BaseRelic {
         //counter = 0;
         flash();
         addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-        addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new CursePower(AbstractDungeon.player, 1), 1));
+        addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new CursePower(AbstractDungeon.player, AbstractDungeon.player, 1), 1));
     }
 
     @Override

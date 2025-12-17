@@ -1,7 +1,5 @@
 package fgo.cards.fgo;
 
-import com.badlogic.gdx.graphics.Color;
-import com.evacipated.cardcrawl.mod.stslib.patches.FlavorText;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -18,9 +16,6 @@ public class CharismaOfHope extends FGOCard {
         super(ID, 1, CardType.ATTACK, CardTarget.ENEMY, CardRarity.BASIC);
         setDamage(6, 3);
         setNP(10, 10);
-
-        FlavorText.AbstractCardFlavorFields.textColor.set(this, Color.CHARTREUSE);
-        FlavorText.AbstractCardFlavorFields.flavorBoxType.set(this, FlavorText.boxType.TRADITIONAL);
     }
 
     @Override

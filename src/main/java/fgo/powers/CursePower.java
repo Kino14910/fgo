@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 public class CursePower extends BasePower {
     public static final String POWER_ID = makeID(CursePower.class.getSimpleName());
 
-    public CursePower(AbstractCreature owner, int amount) {
+    public CursePower(AbstractCreature owner, AbstractCreature source, int amount) {
         super(POWER_ID, PowerType.DEBUFF, false, owner, amount); 
     }
 

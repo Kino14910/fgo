@@ -26,7 +26,7 @@ public class GoddessMetamorphosisBeastPower extends BasePower {
             flash();
             addToBot(new ApplyPowerAction(target, owner, new PoisonPower(target, owner, amount),
                     amount, true));
-            addToBot(new ApplyPowerAction(target, owner, new CursePower(target, 1), 1, true));
+            addToBot(new ApplyPowerAction(target, owner, new CursePower(target, owner, 1), 1, true));
         }
     }
 

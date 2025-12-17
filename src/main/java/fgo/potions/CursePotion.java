@@ -29,13 +29,14 @@ public class CursePotion extends BasePotion {
     @Override
     public void addAdditionalTips() {
         tips.add(new PowerTip(
-                TipHelper.capitalize(BaseMod.getKeywordTitle("fgo:curse")),
-                BaseMod.getKeywordDescription("fgo:curse")));
+            TipHelper.capitalize(BaseMod.getKeywordTitle(makeID("curse"))),
+            BaseMod.getKeywordDescription(makeID("curse"))
+        ));
     }
 
     @Override
     public void use(AbstractCreature target) {
-        addToBot(new ApplyPowerAction(target, AbstractDungeon.player, new CursePower(target, potency)));
+        addToBot(new ApplyPowerAction(target, AbstractDungeon.player, new CursePower(target, AbstractDungeon.player, potency)));
     }
     
     @Override

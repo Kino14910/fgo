@@ -21,18 +21,20 @@ public class SongOfThePoetAction extends AbstractGameAction {
     public void update() {
         if (shouldCancelAction()) {
             isDone = true;
-        } else {
-            tickDuration();
-            if (isDone) {
-                target.damage(info);
-                if (target.lastDamageTaken > 0) {
-                    addToTop(new FgoNpAction(target.lastDamageTaken));
-                }
-                if (target != null && target.hb != null) {
-                    addToTop(new VFXAction(new ThrowDaggerEffect(target.hb.cX, target.hb.cY)));
-                }
-            }
+            return;
+        }
 
+        tickDuration();
+        if (!isDone) {
+            return;
+        }
+
+        target.damage(info);
+        if (target.lastDamageTaken > 0) {
+            addToTop(new FgoNpAction(target.lastDamageTaken));
+        }
+        if (target != null && target.hb != null) {
+            addToTop(new VFXAction(new ThrowDaggerEffect(target.hb.cX, target.hb.cY)));
         }
     }
 }

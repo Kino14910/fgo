@@ -16,14 +16,12 @@ import fgo.cards.colorless.CrimsonSlash;
 import fgo.cards.colorless.DivineDualEdge;
 public class LevelSlash extends FGOCard {
     public static final String ID = makeID(LevelSlash.class.getSimpleName());
-    private final FGOCard CrimsonSlash = new CrimsonSlash();
-    private final FGOCard DivineDualEdge = new DivineDualEdge();
     public LevelSlash() {
         super(ID, 1, CardType.ATTACK, CardTarget.ALL_ENEMY, CardRarity.RARE);
         setDamage(6, 3);
         setExhaust();
         
-        MultiCardPreview.add(this, CrimsonSlash, DivineDualEdge);
+        MultiCardPreview.add(this, new CrimsonSlash(), new DivineDualEdge());
     }
 
     @Override
@@ -32,7 +30,7 @@ public class LevelSlash extends FGOCard {
         addToBot(new VFXAction(p, new CleaveEffect(), 0.1F));
         addToBot(new DamageAllEnemiesAction(p, damage, damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
         addToBot(new ChangeStanceAction("Calm"));
-        addToBot(new MakeTempCardInDrawPileAction(CrimsonSlash.makeStatEquivalentCopy(), 1, true, true));
+        addToBot(new MakeTempCardInDrawPileAction(new DivineDualEdge().makeStatEquivalentCopy(), 1, true, true));
     }
 }
 

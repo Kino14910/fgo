@@ -23,7 +23,7 @@ import fgo.characters.CustomEnums.FGOCardColor;
 import fgo.ui.panels.NobleDeckCards;
 
 public class LockChocolateStrawberry extends BaseRelic {
-    private static final String NAME = "LockChocolateStrawberry";
+    private static final String NAME = LockChocolateStrawberry.class.getSimpleName();
 	public static final String ID = makeID(NAME);
     private static BlackBarrel blackBarrel = new BlackBarrel();
 
@@ -81,21 +81,23 @@ public class LockChocolateStrawberry extends BaseRelic {
     }
 
     private void changeCard(FGOCard oldCard, FGOCard newCard) {
-        System.out.println(oldCard + " " + newCard);
         boolean hasCard = AbstractDungeon.player.masterDeck.group.stream()
             .anyMatch(card -> card.cardID.equals(oldCard.cardID));
-        System.out.println(hasCard);
         if (oldCard != null && hasCard) {
+            if (oldCard.upgraded) {
+                newCard.upgrade();
+            }
             AbstractDungeon.player.masterDeck.group.removeIf(card -> card.cardID.equals(oldCard.cardID));
             AbstractDungeon.player.masterDeck.addToBottom(newCard);
         }
     }
     private void changeNobleCard(FGOCard oldCard, FGOCard newCard) {
-        System.out.println(oldCard + " " + newCard);
         boolean hasCard = NobleDeckCards.nobleCards.group.stream()
             .anyMatch(card -> card.cardID.equals(oldCard.cardID));
-        System.out.println(hasCard);
         if (oldCard != null && hasCard) {
+            if (oldCard.upgraded) {
+                newCard.upgrade();
+            }
             NobleDeckCards.nobleCards.group.removeIf(card -> card.cardID.equals(oldCard.cardID));
             NobleDeckCards.nobleCards.addCard(newCard);
         }

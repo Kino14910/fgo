@@ -81,7 +81,7 @@
   },
   "${modID}:WisdomOfThePeople": {
     "NAME": "民之睿智",
-    "DESCRIPTION": "{@@}恢复 !M! 点生命。{!Upgrades!|1= NL 获得 !NP! % fgo:宝具值 。} NL  消耗 。"
+    "DESCRIPTION": "{@@}恢复 !M! 点生命，移除你身上的一个负面状态。{!Upgrades!|1= NL 获得 !NP! % fgo:宝具值 。} NL  消耗 。"
   },
   "${modID}:NFFSpecial": {
     "NAME": "NFF尖塔特别服务",
@@ -98,11 +98,6 @@
   "${modID}:SoulOfWaterChannels": {
     "NAME": "花之邪神",
     "DESCRIPTION": "保留 。 NL 获得1层 fgo:诅呪 。 NL 获得 !Star! 颗 fgo:暴击星 。 NL 消耗 。"
-  },
-  "${modID}:BackAgain": {
-    "NAME": "雅号·异星蛸",
-    "DESCRIPTION": "获得 !NP! % fgo:宝具值 。 NL 获得 !Star! 颗 fgo:暴击星 。",
-    "FLAVOR": "领域外生命。"
   },
   "${modID}:MonteCristoTreasure": {
     "NAME": "基督山的秘宝",
@@ -177,11 +172,6 @@
     "NAME": "梦之终结",
     "DESCRIPTION": "在你的回合结束时， 消耗 一张随机手牌。 NL fgo:宝具牌 攻击伤害翻倍。"
   },
-  "${modID}:WitchOfSalem": {
-    "NAME": "塞勒姆的魔女",
-    "DESCRIPTION": "{@@}给予所有敌人 3 层 易伤 ， 虚弱 和 fgo:恐怖 ( !M! %概率)。 NL 获得 {!Upgrades!|@=fgo:对恐怖特攻|1=fgo:对恐怖特攻+} 。 NL 获得 !NP! % fgo:宝具值 。",
-    "FLAVOR": "领域外生命。"
-  },
   "${modID}:SchwarzwaldFalke": {
     "NAME": "黑森之鹰",
     "DESCRIPTION": "获得 !M! 层 fgo:黄金律 。 NL 在你之后 !M! 个回合结束时，获得1次 fgo:回避 。"
@@ -190,21 +180,6 @@
     "NAME": "绝对豪运宝石圈",
     "DESCRIPTION": "在你的回合结束时，获得 !M! 点 力量 。你在这个回合内不能再抽任何牌。",
     "FLAVOR": "测试画风可以更改。"
-  },
-  "${modID}:VoidSpaceFineArts": {
-    "NAME": "虚数美术",
-    "DESCRIPTION": "获得10层 fgo:毅力 。 NL 获得1层 fgo:诅呪 3次。 NL 获得你 fgo:诅呪 数量 !M! 倍的 fgo:宝具值 。",
-    "FLAVOR": "领域外生命。"
-  },
-  "${modID}:TheYellowHouse": {
-    "NAME": "黄房子",
-    "DESCRIPTION": "获得1次 fgo:回避 。 NL 获得1层 fgo:诅呪 。 NL 将这张牌放入抽牌堆。",
-    "FLAVOR": "领域外生命。"
-  },
-  "${modID}:Insanity": {
-    "NAME": "澪标之魂",
-    "DESCRIPTION": "你每打出一张攻击牌，移除你的1层 fgo:诅呪 并且成功时获得1点 力量 和 !M! % fgo:宝具值 。 NL 吸收所有敌人的 fgo:诅呪 。",
-    "FLAVOR": "领域外生命。"
   },
   "${modID}:TaisuiSMisfortune": {
     "NAME": "血染的皇子",
@@ -273,10 +248,6 @@
     "NAME": "骑士的架势",
     "DESCRIPTION": "获得 !B! 点 格挡 。 NL 在这个回合受到的攻击伤害降低 !M! %。 NL 获得1层 fgo:黄金律 。"
   },
-  "${modID}:CurtainoftheNight": {
-    "NAME": "夜之帷幕",
-    "DESCRIPTION": "{@@}将弃牌堆中的{!M!|1=一|@= !M! }张牌放入你的手牌，并将这张牌 升级 。"
-  },
   "${modID}:TeachingsoftheEternal": {
     "NAME": "无穷的教诲",
     "DESCRIPTION": "获得 !NP! % fgo:宝具值 。 NL 获得 !M! % fgo:宝具威力 。"
@@ -310,7 +281,7 @@
   },
   "${modID}:Chasmatis": {
     "NAME": "天之裂谷",
-    "DESCRIPTION": "每当你从卡牌或负面 状态 失去生命时， NL 抽 !M! 张牌。"
+    "DESCRIPTION": "每当你因怪物攻击以外方式失去生命时， NL 抽 !M! 张牌。"
   },
   "${modID}:WindsweptSlash": {
     "NAME": "势如破竹",
@@ -321,11 +292,6 @@
     "NAME": "祈祷救济之人",
     "DESCRIPTION": "{@@}{!Upgrades!|1=固有 。 NL }在你的回合开始时，获得 !NP! % fgo:宝具值 。"
   },
-  "${modID}:FacelessMoon": {
-    "NAME": "无貌之月",
-    "DESCRIPTION": "{@@}{!Upgrades!|1=保留 。 NL }在本回合 保留 你的手牌，每 保留 一张牌，就获得 !M! 点 格挡 和 fgo:暴击星 。",
-    "FLAVOR": "领域外生命。"
-  },
   "${modID}:CharismaofAdversity": {
     "NAME": "逆境的魅力",
     "DESCRIPTION": "造成 !D! 点伤害。 NL 每6点已失去生命， NL 造成 !D! 点伤害。",
@@ -333,11 +299,6 @@
       " NL （再造成 !D! 点伤害",
       "次。）"
     ]
-  },
-  "${modID}:Swingby": {
-    "NAME": "重力助推",
-    "DESCRIPTION": "丢弃所有手牌， NL 每张获得 !M! 点 格挡 和 fgo:暴击星 。",
-    "FLAVOR": "领域外生命。"
   },
   "${modID}:KnightoftheLake": {
     "NAME": "湖上骑士",
@@ -354,11 +315,6 @@
   "${modID}:CurseDisaster": {
     "NAME": "呪灾",
     "DESCRIPTION": "不能被打出 。 NL 抽到这张牌时给予你和所有敌人 !M! 层 fgo:诅呪 。 NL 虚无 。"
-  },
-  "${modID}:FgoInsight": {
-    "NAME": "洞见",
-    "DESCRIPTION": "保留 。 NL 抽 !M! 张牌。 NL 消耗 。",
-    "FLAVOR": "测试画风可以更改。"
   },
   "${modID}:PrimevalRune": {
     "NAME": "冰冻暴风雪",
@@ -378,7 +334,7 @@
   },
   "${modID}:PeerlessStrike": {
     "NAME": "顷刻一击",
-    "DESCRIPTION": "{@@}只有当自己生命值为一半以下时才能打出。 NL 获得5点 力量 和100% fgo:暴击威力 。 NL {!Upgrades!|@=立即死亡。|1=回合结束时死亡。}",
+    "DESCRIPTION": "{@@}只有当生命值为一半以下时才能打出。 NL 获得5点 力量 和100% fgo:暴击威力 。 NL {!Upgrades!|@=立即死亡。|1=回合结束时死亡。}",
     "EXTENDED_DESCRIPTION": [
       "我的生命不够低。"
     ]
@@ -393,7 +349,7 @@
   },
   "${modID}:Coaching": {
     "NAME": "指导",
-    "DESCRIPTION": "获得 [E] [E] 。 NL  消耗 。"
+    "DESCRIPTION": "获得 [E] [E] 。 NL 失去 !M! 点生命，获得 !M! 点 fgo:临时生命 。 NL  消耗 。"
   },
   "${modID}:MaidensWillpower": {
     "NAME": "少女的志气",
@@ -427,6 +383,45 @@
   "${modID}:LakeTexcoco": {
     "NAME": "第三太阳",
     "DESCRIPTION": "获得 !NP! % fgo:宝具值 。 NL 在接下来3回合，获得 !M! % fgo:宝具值 。 NL 获得 fgo:水边 。 NL 消耗 "
+  },
+  "${modID}:WitchOfSalem": {
+    "NAME": "塞勒姆的魔女",
+    "DESCRIPTION": "{@@}给予所有敌人 3 层 易伤 ， 虚弱 和 fgo:恐怖 ( !M! %概率)。 NL 获得 {!Upgrades!|@=fgo:对恐怖特攻|1=fgo:对恐怖特攻+} 。 NL 获得 !NP! % fgo:宝具值 。",
+    "FLAVOR": "领域外生命。"
+  },
+  "${modID}:BackAgain": {
+    "NAME": "雅号·异星蛸",
+    "DESCRIPTION": "获得 !NP! % fgo:宝具值 。 NL 获得 !Star! 颗 fgo:暴击星 。",
+    "FLAVOR": "领域外生命。"
+  },
+  "${modID}:Swingby": {
+    "NAME": "重力助推",
+    "DESCRIPTION": "丢弃所有手牌， NL 每张获得 !M! 点 格挡 和 fgo:暴击星 。",
+    "FLAVOR": "领域外生命。"
+  },
+  "${modID}:FacelessMoon": {
+    "NAME": "无貌之月",
+    "DESCRIPTION": "{@@}{!Upgrades!|1=保留 。 NL }在本回合 保留 你的手牌，每 保留 一张牌，就获得 !M! 点 格挡 和 fgo:暴击星 。",
+    "FLAVOR": "领域外生命。"
+  },
+  "${modID}:VoidSpaceFineArts": {
+    "NAME": "虚数美术",
+    "DESCRIPTION": "获得10层 fgo:毅力 。 NL 获得1层 fgo:诅呪 3次。 NL 获得你 fgo:诅呪 数量 !M! 倍的 fgo:宝具值 。",
+    "FLAVOR": "领域外生命。"
+  },
+  "${modID}:Insanity": {
+    "NAME": "澪标之魂",
+    "DESCRIPTION": "你每打出一张攻击牌，移除你的1层 fgo:诅呪 并且成功时获得1点 力量 和 !M! % fgo:宝具值 。 NL 吸收所有敌人的 fgo:诅呪 。",
+    "FLAVOR": "领域外生命。"
+  },
+  "${modID}:DepartureOfTheSun": {
+    "NAME": "与太阳的诀别",
+    "DESCRIPTION": "每有10个 fgo:暴击星 ，获得30% fgo:暴击威力 。",
+    "FLAVOR": "领域外生命。"
+  },
+  "${modID}:CalamityOfTheNorth": {
+    "NAME": "北之灾厄",
+    "DESCRIPTION": "给予所有敌人 !M! 层 中毒 和 fgo:诅呪 。"
   },
   "${modID}:LevelSlash": {
     "NAME": "壹之突",
@@ -466,6 +461,11 @@
     "NAME": "命运指定",
     "DESCRIPTION": "所有非boss敌人死亡。 NL stslib:即逝 。"
   },
+  "${modID}:Dumuzid": {
+    "NAME": "杜木兹",
+    "DESCRIPTION": "stslib:即逝 。"
+  },
+  
   "${modID}:Kaleidoscope": {
     "NAME": "万华镜",
     "DESCRIPTION": "获得 !NP! % fgo:宝具值 。"
@@ -474,6 +474,7 @@
     "NAME": "黑之圣杯",
     "DESCRIPTION": "获得 !M! % fgo:宝具威力 。"
   },
+  
   "${modID}:SupportCraft": {
     "NAME": "支援牌",
     "DESCRIPTION": "获得 !NP! % fgo:宝具值 。 NL 升级 没有效果。"
@@ -507,11 +508,11 @@
   },
   "${modID}:IraLupus": {
     "NAME": "狂暴少女狼",
-    "DESCRIPTION": "使敌人失去 !D! 点生命。 NL 给予 !M! 层 易伤 。"
+    "DESCRIPTION": "使敌人失去 !D!  NL 给予 !M! 层 易伤 。"
   },
   "${modID}:LostLonginus": {
     "NAME": "选定之枪",
-    "DESCRIPTION": " fgo:无敌贯通 。对所有敌人造成 !D! 点伤害，移除 *坚不可摧 。"
+    "DESCRIPTION": " fgo:无敌贯通 。对所有敌人造成 !D! 点伤害，将 *坚不可摧 增加100点。"
   },
   "${modID}:ExcaliburGalatine": {
     "NAME": "轮转胜利之剑",
@@ -580,7 +581,7 @@
   },
   "${modID}:LordChaldeas": {
     "NAME": "构筑希望的人理之盾",
-    "DESCRIPTION": "获得1层 人工制品 ， !${modID}:metal! fgo:金属化 ， 3层 力量 ， !M! % fgo:伤害减免 。 NL 获得30% fgo:宝具威力 。 NL  fgo:迦勒底的圣骑士 。"
+    "DESCRIPTION": "获得1层 人工制品 ， !${modID}:metal! 层 fgo:金属化 ， 3层 力量 ， !M! % fgo:伤害减免 。 NL 获得30% fgo:宝具威力 。 NL  fgo:迦勒底的圣骑士 。"
   },
   "${modID}:RayProofKyrielight": {
     "NAME": "明证希望的人理之剑",
@@ -618,7 +619,7 @@
   },
   "${modID}:MahaPralaya": {
     "NAME": "裁定归灭之回剑",
-    "DESCRIPTION": "对所有敌人造成 !D! 点伤害5次。 NL 额外造成所有敌人总负面 状态 种类的伤害。"
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害5次。 NL 额外造成所有敌人总负面状态种类的伤害。"
   },
   "${modID}:KurKigalIrkalla": {
     "NAME": "灵峰踏抱冥府之鞴",

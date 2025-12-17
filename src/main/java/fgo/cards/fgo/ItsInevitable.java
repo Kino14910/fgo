@@ -2,8 +2,6 @@ package fgo.cards.fgo;
 
 import static fgo.FGOMod.cardPath;
 
-import com.badlogic.gdx.graphics.Color;
-import com.evacipated.cardcrawl.mod.stslib.patches.FlavorText;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
@@ -23,9 +21,6 @@ public class ItsInevitable extends FGOCard {
         setDamage(5, 1);
         setMagic(2, 1);
         portraitImg = ImageMaster.loadImage(cardPath("attack/ItsInevitable"));
-
-        FlavorText.AbstractCardFlavorFields.textColor.set(this, Color.CHARTREUSE);
-        FlavorText.AbstractCardFlavorFields.flavorBoxType.set(this, FlavorText.boxType.TRADITIONAL);
     }
 
     @Override

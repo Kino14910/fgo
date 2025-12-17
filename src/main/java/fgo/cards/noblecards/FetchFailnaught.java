@@ -40,7 +40,7 @@ public class FetchFailnaught extends AbsNoblePhantasmCard {
         }
 
         addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-        addToBot(new ApplyPowerAction(m, p, new CursePower(m, magicNumber)));
+        addToBot(new ApplyPowerAction(m, p, new CursePower(m, p, magicNumber)));
         addToBot(new FetchFailnaughtAction(m, p));
     }
 

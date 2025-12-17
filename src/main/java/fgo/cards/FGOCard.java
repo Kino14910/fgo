@@ -10,6 +10,7 @@ import java.util.Map;
 
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.CommonKeywordIconsField;
+import com.evacipated.cardcrawl.mod.stslib.patches.FlavorText;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -115,6 +116,9 @@ public abstract class FGOCard extends CustomCard {
         upgradeNP = false;
         star = baseStar = starUpgrade = 0; 
         upgradeStar = false;
+        
+        FlavorText.AbstractCardFlavorFields.textColor.set(this, Color.CHARTREUSE);
+        FlavorText.AbstractCardFlavorFields.flavorBoxType.set(this, FlavorText.boxType.TRADITIONAL);
 
         setCustomVar("NP", baseNP, npUpgrade);
         setCustomVar("S", baseStar, starUpgrade);

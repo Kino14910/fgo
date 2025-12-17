@@ -8,6 +8,7 @@ import fgo.FGOMod;
 public class FGOConfig extends EasyConfigPanel {
     public static boolean enableColorlessCards = true;
     public static boolean enableEmiya = true;
+    public static boolean enablePadoru = true;
 
 
     public FGOConfig() {

@@ -2,8 +2,6 @@ package fgo.cards.fgo;
 
 import static fgo.characters.CustomEnums.FGO_Foreigner;
 
-import com.badlogic.gdx.graphics.Color;
-import com.evacipated.cardcrawl.mod.stslib.patches.FlavorText;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -19,9 +17,6 @@ public class Insanity extends FGOCard {
         super(ID, 1, CardType.POWER, CardTarget.ALL_ENEMY, CardRarity.RARE);
         setMagic(10, 10);
         tags.add(FGO_Foreigner);
-
-        FlavorText.AbstractCardFlavorFields.textColor.set(this, Color.CHARTREUSE);
-        FlavorText.AbstractCardFlavorFields.flavorBoxType.set(this, FlavorText.boxType.TRADITIONAL);
     }
 
     @Override
@@ -31,7 +26,7 @@ public class Insanity extends FGOCard {
             if (mo.hasPower(CursePower.POWER_ID)) {
                 int CurseAmt = 0;
                 CurseAmt += (mo.getPower(CursePower.POWER_ID)).amount;
-                addToBot(new ApplyPowerAction(p, p, new CursePower(p, CurseAmt), CurseAmt));
+                addToBot(new ApplyPowerAction(p, p, new CursePower(m, p, CurseAmt), CurseAmt));
                 addToBot(new RemoveSpecificPowerAction(mo, p, CursePower.POWER_ID));
             }
         }

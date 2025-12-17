@@ -2,8 +2,6 @@ package fgo.cards.fgo;
 
 import static fgo.FGOMod.cardPath;
 
-import com.badlogic.gdx.graphics.Color;
-import com.evacipated.cardcrawl.mod.stslib.patches.FlavorText;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -19,9 +17,6 @@ public class MaidenOfaFlowerPatio extends FGOCard {
         setBlock(15, 5);
         setMagic(1);
         portraitImg = ImageMaster.loadImage(cardPath("skill/MaidenOfaFlowerPatio"));
-
-        FlavorText.AbstractCardFlavorFields.textColor.set(this, Color.CHARTREUSE);
-        FlavorText.AbstractCardFlavorFields.flavorBoxType.set(this, FlavorText.boxType.TRADITIONAL);
     }
 
 
@@ -29,7 +24,7 @@ public class MaidenOfaFlowerPatio extends FGOCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainBlockAction(p, p, block));
-        addToBot(new ApplyPowerAction(p, p, new CursePower(p, magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new CursePower(m, p, magicNumber)));
     }
 }
 

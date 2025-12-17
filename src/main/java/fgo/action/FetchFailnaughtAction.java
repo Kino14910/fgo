@@ -19,7 +19,7 @@ public class FetchFailnaughtAction extends AbstractGameAction {
     public void update() {
         if (target != null && target.hasPower(CursePower.POWER_ID)) {
             int curAmt = target.getPower(CursePower.POWER_ID).amount;
-            addToBot(new ApplyPowerAction(target, AbstractDungeon.player, new CursePower(target, curAmt)));
+            addToBot(new ApplyPowerAction(target, AbstractDungeon.player, new CursePower(target, AbstractDungeon.player, curAmt)));
         }
 
         isDone = true;

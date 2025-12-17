@@ -11,7 +11,7 @@ import fgo.characters.CustomEnums.FGOCardColor;
 import fgo.powers.GutsPower;
 
 public class AstrologicalTeapot extends BaseRelic {
-    private static final String NAME = "AstrologicalTeapot";
+    private static final String NAME = AstrologicalTeapot.class.getSimpleName();
 	public static final String ID = makeID(NAME);
     public AstrologicalTeapot() {
         super(ID, NAME, FGOCardColor.FGO, RelicTier.RARE, LandingSound.FLAT);

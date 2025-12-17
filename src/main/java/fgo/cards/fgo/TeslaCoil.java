@@ -15,7 +15,7 @@ import fgo.powers.NPRatePower;
 public class TeslaCoil extends FGOCard {
     public static final String ID = makeID(TeslaCoil.class.getSimpleName());
     public TeslaCoil() {
-        super(ID, 0, CardType.ATTACK, CardTarget.ENEMY, CardRarity.UNCOMMON);
+        super(ID, 0, CardType.ATTACK, CardTarget.ENEMY, CardRarity.COMMON);
         setDamage(5, 2);
         setMagic(3, 1);
     }

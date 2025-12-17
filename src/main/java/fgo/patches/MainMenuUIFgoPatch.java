@@ -2,6 +2,7 @@ package fgo.patches;
 
 import static fgo.FGOMod.characterPath;
 import static fgo.characters.CustomEnums.FGO_MASTER;
+import static fgo.ui.panels.MasterSkin.modifierIndexes;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -26,10 +27,9 @@ import com.megacrit.cardcrawl.screens.charSelect.CharacterOption;
 import com.megacrit.cardcrawl.screens.options.DropdownMenu;
 
 import basemod.ReflectionHacks;
-import basemod.abstracts.CustomSavable;
-import basemod.interfaces.ISubscriber;;
+import basemod.interfaces.ISubscriber;
 
-public class MainMenuUIFgoPatch implements ISubscriber, CustomSavable<Integer> {
+public class MainMenuUIFgoPatch implements ISubscriber{
     public static final ArrayList<DropdownMenu> dropdowns = new ArrayList<>();
     public static final ArrayList<String> packSetups = new ArrayList<>();
     private static final Hitbox packDraftToggle = new Hitbox(40.0f * Settings.scale, 40.0f * Settings.scale);
@@ -46,7 +46,6 @@ public class MainMenuUIFgoPatch implements ISubscriber, CustomSavable<Integer> {
     private static final float DROPDOWNS_START_Y = CHECKBOX_Y + DROPDOWNS_SPACING * (1.5f);
     public static HashMap<String, Integer> idToIndex;
     public static boolean customDraft;
-    public static int modifierIndexes = 0;
 
     static {
         options.addAll(Arrays.asList(TEXT).subList(2, 22));
@@ -77,7 +76,14 @@ public class MainMenuUIFgoPatch implements ISubscriber, CustomSavable<Integer> {
 
         for (int i = 0; i < dropdowns.size(); i++) {
             DropdownMenu ddm = dropdowns.get(i);
-            ddm.setSelectedIndex(idToIndex.get(packSetups.get(i)));
+            // 优先使用已保存的 modifierIndexes 作为初始选择，避免覆盖从存档加载的值
+            int initial = 0;
+            try {
+                initial = Math.max(0, Math.min(options.size() - 1, modifierIndexes));
+            } catch (Exception e) {
+                initial = idToIndex.get(packSetups.get(i));
+            }
+            ddm.setSelectedIndex(initial);
         }
 
         float dropdownX = Settings.WIDTH - (50.0f * Settings.scale) - dropdowns.get(0).approximateOverallWidth();
@@ -99,16 +105,6 @@ public class MainMenuUIFgoPatch implements ISubscriber, CustomSavable<Integer> {
             skinPath = characterPath("Cat_Arcueid_Brunestud");
         }
         return skinPath;
-    }
-
-    @Override
-    public void onLoad(Integer arg0) {
-        modifierIndexes = arg0;
-    }
-
-    @Override
-    public Integer onSave() {
-        return modifierIndexes;
     }
 
     @SpirePatch(clz = CharacterOption.class, method = "renderRelics")

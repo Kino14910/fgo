@@ -12,7 +12,7 @@ import fgo.powers.WatersidePower;
 public class WaterfrontSaintess extends FGOCard {
     public static final String ID = makeID(WaterfrontSaintess.class.getSimpleName());
     public WaterfrontSaintess() {
-        super(ID, 2, CardType.SKILL, CardTarget.SELF, CardRarity.UNCOMMON);
+        super(ID, 1, CardType.SKILL, CardTarget.SELF, CardRarity.UNCOMMON);
         setNP(20, 20);
         setMagic(10, 10);
         setCustomVar("CriticalDamage", 30, 20);

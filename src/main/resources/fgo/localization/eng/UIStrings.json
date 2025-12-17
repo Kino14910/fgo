@@ -108,7 +108,8 @@
   "${modID}:FGOConfig": {
     "TEXT_DICT": {
       "enableColorlessCards": "Enable Colorless Cards (Requires game restart)",
-      "enableEmiya": "Enable BOSS: Emiya (Requires game restart)"
+      "enableEmiya": "Enable BOSS: Emiya (Requires game restart)",
+      "enablePadoru": "Enable Christmas Easter Egg (Requires game restart)"
     }
   },
   "${modID}:NobleDeckViewScreen": {

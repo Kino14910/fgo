@@ -2,8 +2,6 @@ package fgo.cards.fgo;
 
 import static fgo.characters.CustomEnums.FGO_Foreigner;
 
-import com.badlogic.gdx.graphics.Color;
-import com.evacipated.cardcrawl.mod.stslib.patches.FlavorText;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -19,9 +17,6 @@ public class VoidSpaceFineArts extends FGOCard {
         setMagic(5, 5);
         tags.add(CardTags.HEALING);
         tags.add(FGO_Foreigner);
-
-        FlavorText.AbstractCardFlavorFields.textColor.set(this, Color.CHARTREUSE);
-        FlavorText.AbstractCardFlavorFields.flavorBoxType.set(this, FlavorText.boxType.TRADITIONAL);
     }
 
     @Override
@@ -36,7 +31,7 @@ public class VoidSpaceFineArts extends FGOCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new GutsPower(p, 10)));
         for(int i = 0; i < 3; ++i) {
-            addToBot(new ApplyPowerAction(p, p, new CursePower(p, 1)));
+            addToBot(new ApplyPowerAction(p, p, new CursePower(m, p, 1)));
         }
         
         if (p.hasPower(CursePower.POWER_ID)) {

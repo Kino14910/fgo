@@ -2,12 +2,13 @@ package fgo.cards.noblecards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.InvinciblePower;
 import com.megacrit.cardcrawl.vfx.combat.MindblastEffect;
 
 import fgo.action.IgnoresInvincibilityAction;
@@ -19,7 +20,6 @@ public class LostLonginus extends AbsNoblePhantasmCard {
     public LostLonginus() {
         super(ID,CardType.ATTACK, CardTarget.ALL_ENEMY, 1);
         setDamage(24, 6);
-        setMagic(3);
     }
 
     @Override
@@ -31,8 +31,8 @@ public class LostLonginus extends AbsNoblePhantasmCard {
 
         for (AbstractMonster m2 : AbstractDungeon.getCurrRoom().monsters.monsters) {
             if (!m2.isDeadOrEscaped()) {
-                if (m2.hasPower("Invincible")) {
-                    addToBot(new RemoveSpecificPowerAction(m2, p, "Invincible"));
+                if (m2.hasPower(InvinciblePower.POWER_ID)) {
+                    addToBot(new ApplyPowerAction(m, p, new InvinciblePower(m, 100)));
                 }
             }
         }

@@ -48,9 +48,9 @@ public class CurseDisaster extends FGOCard {
         );
 
         addToBot(
-                new ApplyPowerAction(p, p, new CursePower(p, magicNumber))
+                new ApplyPowerAction(p, p, new CursePower(p, p, magicNumber))
         );
         addToBot(new AllEnemyApplyPowerAction(p, magicNumber,
-                monster -> new CursePower(monster, magicNumber)));
+                monster -> new CursePower(monster, p, magicNumber)));
     }
 }

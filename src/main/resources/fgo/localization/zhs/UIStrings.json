@@ -112,7 +112,8 @@
   "${modID}:FGOConfig": {
     "TEXT_DICT": {
       "enableColorlessCards": "启用无色卡（需要重启游戏）",
-      "enableEmiya": "启用BOSS: 卫宫（需要重启游戏）"
+      "enableEmiya": "启用BOSS: 卫宫（需要重启游戏）",
+      "enablePadoru": "启用圣诞节彩蛋（需要重启游戏）"
     }
   },
   "${modID}:MysticCode": {

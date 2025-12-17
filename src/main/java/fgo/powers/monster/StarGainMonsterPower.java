@@ -7,12 +7,11 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 
-import fgo.powers.ArchetypeORTPower;
 import fgo.powers.BasePower;
 import fgo.powers.CriticalDamageUpPower;
 
 public class StarGainMonsterPower extends BasePower {
-    public static final String POWER_ID = makeID(ArchetypeORTPower.class.getSimpleName());
+    public static final String POWER_ID = makeID(StarGainMonsterPower.class.getSimpleName());
 
     public StarGainMonsterPower(AbstractCreature owner, int amount) {
         super(POWER_ID, PowerType.BUFF, false, owner, amount);

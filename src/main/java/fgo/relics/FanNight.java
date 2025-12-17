@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.powers.WeakPower;
 import fgo.characters.CustomEnums.FGOCardColor;
 
 public class FanNight extends BaseRelic {
-    private static final String NAME = "FanNight";
+    private static final String NAME = FanNight.class.getSimpleName();
 	public static final String ID = makeID(NAME);
     public static final int WEAKENED_AMT = 2;
 

@@ -5,7 +5,7 @@ import static fgo.FGOMod.makeID;
 import fgo.characters.CustomEnums.FGOCardColor;
 
 public class SuitcaseFgo extends BaseRelic{
-    private static final String NAME = "SuitcaseFgo";
+    private static final String NAME = SuitcaseFgo.class.getSimpleName();
     public static final String ID = makeID(NAME);
     public SuitcaseFgo() {
         super(ID, NAME, FGOCardColor.FGO, RelicTier.STARTER, LandingSound.MAGICAL);

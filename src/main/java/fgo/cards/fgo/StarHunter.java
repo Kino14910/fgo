@@ -10,7 +10,7 @@ import fgo.powers.StarPower;
 public class StarHunter extends FGOCard {
     public static final String ID = makeID(StarHunter.class.getSimpleName());
     public StarHunter() {
-        super(ID, 1, CardType.SKILL, CardTarget.SELF, CardRarity.RARE);
+        super(ID, 1, CardType.SKILL, CardTarget.SELF, CardRarity.UNCOMMON);
         setMagic(50, 50);
         setStar(10);
         setExhaust();

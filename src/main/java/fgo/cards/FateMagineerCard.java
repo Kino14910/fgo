@@ -53,7 +53,8 @@ public abstract class FateMagineerCard extends FGOCard implements CustomCardPort
     public ArrayList<RenderLayer> getPortraitLayers512() {
         portraitLayers512.clear();
         addCardArtLayers512(portraitLayers512);
-        portraitLayers512.add(new RenderImageLayer(TextureLoader.getTexture(nobleResourcePath("512/desc_shadow"))));
+        
+        portraitLayers512.add(new RenderImageLayer(TextureLoader.getTexture(this.description.size() >= 4 ? nobleResourcePath("512/desc_shadow") : nobleResourcePath("512/desc_shadow_small"))));
         portraitLayers512.add(new RenderImageLayer(TextureLoader.getTexture(nobleResourcePath("512/" + type.toString().toLowerCase() + "_common"))));
         return portraitLayers512;
     }

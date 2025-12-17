@@ -6,14 +6,16 @@ import static fgo.characters.CustomEnums.FGO_Foreigner;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 
 import fgo.characters.CustomEnums.FGOCardColor;
+import fgo.powers.StarPower;
 
 public class Salem extends BaseRelic {
-    private static final String NAME = "Salem";
+    private static final String NAME = Salem.class.getSimpleName();
     public static final String ID = makeID(NAME);
     
     public Salem() {
@@ -36,11 +38,9 @@ public class Salem extends BaseRelic {
     }
 
     private void updateDescriptionAndTips() {
-        if (counter == 0) {
-            description = String.format(DESCRIPTIONS[0] + DESCRIPTIONS[1], 1);
-        } else {
-            description = String.format(DESCRIPTIONS[0] + DESCRIPTIONS[2], 1, counter);
-        }
+        description = counter == 0 ? 
+            String.format(DESCRIPTIONS[0] + DESCRIPTIONS[1], 1) : 
+            String.format(DESCRIPTIONS[0] + DESCRIPTIONS[2], 2, counter);
 
         tips.clear();
         tips.add(new PowerTip(name, description));
@@ -67,11 +67,12 @@ public class Salem extends BaseRelic {
 
     @Override
     public void atTurnStart() {
+        AbstractPlayer p = AbstractDungeon.player;
         if (counter > 0) {
             flash();
-            addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, 
-                new VigorPower(AbstractDungeon.player, counter), counter));
-            addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+            addToTop(new ApplyPowerAction(p, p, new VigorPower(p, counter * 2)));
+            addToTop(new ApplyPowerAction(p, p, new StarPower(p, counter * 2)));
+            addToTop(new RelicAboveCreatureAction(p, this));
         }
     }
 }

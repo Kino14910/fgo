@@ -82,6 +82,7 @@ import fgo.event.DevilSlot;
 import fgo.event.ManofChaldea;
 import fgo.event.ProofAndRebuttalEvent;
 import fgo.monsters.Emiya;
+import fgo.patches.MainMenuUIFgoPatch;
 import fgo.potions.BasePotion;
 import fgo.powers.ArtsPerformancePower;
 import fgo.powers.NPRatePower;
@@ -91,6 +92,7 @@ import fgo.relics.SuitcaseFgo;
 import fgo.ui.panelitems.NobleDeckPanelItem;
 import fgo.ui.panels.CommandSpellPanel;
 import fgo.ui.panels.FGOConfig;
+import fgo.ui.panels.MasterSkin;
 import fgo.ui.panels.NobleDeckCards;
 import fgo.ui.screens.NobleDeckViewScreen;
 import fgo.utils.GeneralUtils;
@@ -178,8 +180,9 @@ public class FGOMod implements
         BaseMod.addColor(FGOCardColor.FGO, SILVER, DEFAULT_CC, DEFAULT_CC, DEFAULT_CC, ENERGY_ORB_CC, DEFAULT_CC_PORTRAIT, DEFAULT_CC_PORTRAIT, DEFAULT_CC_PORTRAIT, ENERGY_ORB_CC_PORTRAIT, CARD_ENERGY_ORB);
         BaseMod.addColor(FGOCardColor.NOBLE_PHANTASM, NOBLE, ATTACK_Noble, SKILL_Noble, POWER_Noble, NOBLE_ORB_CC, ATTACK_Noble_PORTRAIT, SKILL_Noble_PORTRAIT, POWER_Noble_PORTRAIT, NOBLE_ORB_CC_PORTRAIT, NOBLE_ENERGY_ORB);
         BaseMod.addColor(FGOCardColor.FGO_DERIVATIVE, SILVER, DEFAULT_CC, DEFAULT_CC, DEFAULT_CC, ENERGY_ORB_CC, DEFAULT_CC_PORTRAIT, DEFAULT_CC_PORTRAIT, DEFAULT_CC_PORTRAIT, ENERGY_ORB_CC_PORTRAIT, CARD_ENERGY_ORB);
-        BaseMod.addSaveField("commandSpellCount", new CommandSpellPanel());
-        BaseMod.addSaveField("cards", new NobleDeckCards());
+        BaseMod.addSaveField(makeID("commandSpellCount"), new CommandSpellPanel());
+        BaseMod.addSaveField(makeID("modifierIndexes"), new MasterSkin());
+        BaseMod.addSaveField(makeID("nobleDeckCards"), new NobleDeckCards());
         logger.info(modID + " subscribed to BaseMod.");
     }
 
@@ -502,7 +505,7 @@ public class FGOMod implements
     }
     @Override
     public void receiveCardUsed(AbstractCard card) {
-        if (!isMaster() || card == null || card.color != FGOCardColor.NOBLE_PHANTASM) {
+        if (!isMaster() || card == null || card.color == FGOCardColor.NOBLE_PHANTASM) {
             return;
         }
 
