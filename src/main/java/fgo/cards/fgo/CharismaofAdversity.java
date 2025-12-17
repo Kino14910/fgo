@@ -41,7 +41,7 @@ public class CharismaofAdversity extends FGOCard {
         int lostHealthPercentage = AbstractDungeon.player.maxHealth - AbstractDungeon.player.currentHealth;
         int extraHits = lostHealthPercentage / 6;
         if (extraHits >= 1) {
-            rawDescription = cardStrings.DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0] + extraHits + cardStrings.EXTENDED_DESCRIPTION[1];
+            rawDescription =  cardStrings.DESCRIPTION + String.format(cardStrings.EXTENDED_DESCRIPTION[0], extraHits);
         }
         super.applyPowers();
         initializeDescription();

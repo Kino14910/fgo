@@ -14,12 +14,12 @@ import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 
+import fgo.cards.colorless.DazzlingMoon;
 import fgo.cards.colorless.EightKindness;
 import fgo.cards.colorless.MaraPapiyas;
-import fgo.cards.colorless.MillenniumCastle;
 import fgo.cards.colorless.PrimevalRune;
 import fgo.cards.colorless.UndeadBird;
-import fgo.cards.fgo.DeathOfDeath;
+import fgo.cards.fgo.AbyssOfDeath;
 import fgo.cards.fgo.PeerlessStrike;
 import fgo.cards.fgo.SpringOfFire;
 
@@ -69,8 +69,8 @@ public class FGOLibrary extends BaseEvent {
                 CardGroup group = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
                 group.addToBottom(new PrimevalRune());
                 group.addToBottom(new SpringOfFire());
-                group.addToBottom(new MillenniumCastle());
-                group.addToBottom(new DeathOfDeath());
+                group.addToBottom(new DazzlingMoon());
+                group.addToBottom(new AbyssOfDeath());
                 group.addToBottom(new EightKindness());
                 group.addToBottom(new PeerlessStrike());
                 group.addToBottom(new UndeadBird());

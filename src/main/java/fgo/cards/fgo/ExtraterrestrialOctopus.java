@@ -12,10 +12,10 @@ import fgo.action.FgoNpAction;
 import fgo.cards.FGOCard;
 import fgo.powers.StarPower;
 
-public class BackAgain extends FGOCard {
-    public static final String ID = makeID(BackAgain.class.getSimpleName());
+public class ExtraterrestrialOctopus extends FGOCard {
+    public static final String ID = makeID(ExtraterrestrialOctopus.class.getSimpleName());
 
-    public BackAgain() {
+    public ExtraterrestrialOctopus() {
         super(ID, 1, CardType.ATTACK, CardTarget.SELF, CardRarity.UNCOMMON);
         setNP(20, 10);
         setStar(5, 10);

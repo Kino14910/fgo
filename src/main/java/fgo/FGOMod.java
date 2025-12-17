@@ -82,7 +82,6 @@ import fgo.event.DevilSlot;
 import fgo.event.ManofChaldea;
 import fgo.event.ProofAndRebuttalEvent;
 import fgo.monsters.Emiya;
-import fgo.patches.MainMenuUIFgoPatch;
 import fgo.potions.BasePotion;
 import fgo.powers.ArtsPerformancePower;
 import fgo.powers.NPRatePower;

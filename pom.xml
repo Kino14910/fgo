@@ -112,6 +112,8 @@
                 <configuration>
                     <excludes>
                         <exclude>**/*.psd</exclude>
+                        <exclude>**/*.xlsx</exclude>
+                        <exclude>node_modules/**</exclude>
                     </excludes>
                 </configuration>
             </plugin>

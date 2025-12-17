@@ -9,9 +9,9 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import fgo.cards.FGOCard;
 import fgo.powers.MillenniumCastlePower;
-public class MillenniumCastle extends FGOCard {
-    public static final String ID = makeID(MillenniumCastle.class.getSimpleName());
-    public MillenniumCastle() {
+public class DazzlingMoon extends FGOCard {
+    public static final String ID = makeID(DazzlingMoon.class.getSimpleName());
+    public DazzlingMoon() {
         super(ID, 3, CardType.POWER, CardTarget.SELF, CardRarity.RARE, CardColor.COLORLESS);
         setMagic(3);
         setInnate(false, true);

@@ -3,11 +3,12 @@ package fgo.cards.fgo;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.stances.CalmStance;
 import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
 
 import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.MultiCardPreview;
@@ -29,8 +30,8 @@ public class LevelSlash extends FGOCard {
         addToBot(new SFXAction("ATTACK_HEAVY"));
         addToBot(new VFXAction(p, new CleaveEffect(), 0.1F));
         addToBot(new DamageAllEnemiesAction(p, damage, damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
-        addToBot(new ChangeStanceAction("Calm"));
-        addToBot(new MakeTempCardInDrawPileAction(new DivineDualEdge().makeStatEquivalentCopy(), 1, true, true));
+        addToBot(new ChangeStanceAction(CalmStance.STANCE_ID));
+        addToBot(new MakeTempCardInHandAction(new DivineDualEdge().makeStatEquivalentCopy(), 1, true));
     }
 }
 
