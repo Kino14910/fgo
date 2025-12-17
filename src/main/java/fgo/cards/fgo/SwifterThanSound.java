@@ -13,16 +13,16 @@ import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
 
 import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.MultiCardPreview;
 import fgo.cards.FGOCard;
-import fgo.cards.colorless.CrimsonSlash;
-import fgo.cards.colorless.DivineDualEdge;
-public class LevelSlash extends FGOCard {
-    public static final String ID = makeID(LevelSlash.class.getSimpleName());
-    public LevelSlash() {
+import fgo.cards.colorless.InfiniteSuffering;
+import fgo.cards.colorless.TheAbsoluteSword;
+public class SwifterThanSound extends FGOCard {
+    public static final String ID = makeID(SwifterThanSound.class.getSimpleName());
+    public SwifterThanSound() {
         super(ID, 1, CardType.ATTACK, CardTarget.ALL_ENEMY, CardRarity.RARE);
         setDamage(6, 3);
         setExhaust();
         
-        MultiCardPreview.add(this, new CrimsonSlash(), new DivineDualEdge());
+        MultiCardPreview.add(this, new InfiniteSuffering(), new TheAbsoluteSword());
     }
 
     @Override
@@ -31,7 +31,7 @@ public class LevelSlash extends FGOCard {
         addToBot(new VFXAction(p, new CleaveEffect(), 0.1F));
         addToBot(new DamageAllEnemiesAction(p, damage, damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
         addToBot(new ChangeStanceAction(CalmStance.STANCE_ID));
-        addToBot(new MakeTempCardInHandAction(new DivineDualEdge().makeStatEquivalentCopy(), 1, true));
+        addToBot(new MakeTempCardInHandAction(new TheAbsoluteSword().makeStatEquivalentCopy(), 1, true));
     }
 }
 

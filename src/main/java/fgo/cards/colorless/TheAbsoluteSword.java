@@ -12,9 +12,9 @@ import com.megacrit.cardcrawl.powers.DrawPower;
 import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
 
 import fgo.cards.FGOCard;
-public class DivineDualEdge extends FGOCard {
-    public static final String ID = makeID(DivineDualEdge.class.getSimpleName());
-    public DivineDualEdge() {
+public class TheAbsoluteSword extends FGOCard {
+    public static final String ID = makeID(TheAbsoluteSword.class.getSimpleName());
+    public TheAbsoluteSword() {
         super(ID, 3, CardType.ATTACK, CardTarget.ALL_ENEMY, CardRarity.SPECIAL, CardColor.COLORLESS);
         setDamage(10, 3);
         setExhaust();

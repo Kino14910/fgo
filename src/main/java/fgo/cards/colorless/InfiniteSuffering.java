@@ -15,14 +15,14 @@ import com.megacrit.cardcrawl.stances.WrathStance;
 import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
 
 import fgo.cards.FGOCard;
-public class CrimsonSlash extends FGOCard {
-    public static final String ID = makeID(CrimsonSlash.class.getSimpleName());
-    public CrimsonSlash() {
+public class InfiniteSuffering extends FGOCard {
+    public static final String ID = makeID(InfiniteSuffering.class.getSimpleName());
+    public InfiniteSuffering() {
         super(ID, 2, CardType.ATTACK, CardTarget.ALL_ENEMY, CardRarity.SPECIAL, CardColor.COLORLESS);
         setDamage(8, 2);
         setMagic(2, 1);
         setExhaust();
-        cardsToPreview = new DivineDualEdge();
+        cardsToPreview = new TheAbsoluteSword();
     }
 
     @Override

@@ -222,7 +222,7 @@
   },
   "${modID}:SwanLake": {
     "NAME": "天鹅湖",
-    "DESCRIPTION": "造成 !D! 点伤害 !M! 次。 NL 获得 fgo:水边 。 NL 消耗 。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 获得 fgo:水边 。 NL 消耗 。"
   },
   "${modID}:LuckySpinning": {
     "NAME": "幸运的纺线",
@@ -530,7 +530,7 @@
   },
   "${modID}:IraLupus": {
     "NAME": "狂暴少女狼",
-    "DESCRIPTION": "使敌人失去 !D! NL 给予 !M! 层 易伤 。"
+    "DESCRIPTION": "使敌人失去 !D! 生命。 NL 给予 !M! 层 易伤 。"
   },
   "${modID}:LostLonginus": {
     "NAME": "选定之枪",

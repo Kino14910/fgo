@@ -11,7 +11,7 @@ public class Failnaught extends AbsNoblePhantasmCard {
 
     public Failnaught() {
         super(ID,CardType.ATTACK, CardTarget.ENEMY, 2);
-        setDamage(48, 8);
+        setDamage(48, 12);
     }
 
     @Override
