@@ -56,7 +56,7 @@ public class StarPower extends BasePower {
 
         int CrAmt = critAmt + starHunterAmt;
         return type == DamageInfo.DamageType.NORMAL
-                ? damage * multiplier * (1.0F + CrAmt / 100.0F)
+                ? damage * (multiplier + CrAmt / 100.0F)
                 : damage;
     }
 
@@ -68,7 +68,7 @@ public class StarPower extends BasePower {
         
         //在有十二辉剑时，有卡牌暴击时获得一层十二辉剑效果。
         if (owner.hasPower(HeroicKingPower.POWER_ID)) {
-            addToBot(new ApplyPowerAction(owner, owner, new HeroicKingPower(owner, 1), 1));
+            addToBot(new ApplyPowerAction(owner, owner, new HeroicKingPower(owner, 1)));
         }
         if (owner.hasPower(LoseCritDamagePower.POWER_ID)) {
             addToBot(new RemoveSpecificPowerAction(owner, owner, LoseCritDamagePower.POWER_ID));

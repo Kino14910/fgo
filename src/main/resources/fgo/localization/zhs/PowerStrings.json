@@ -439,7 +439,7 @@
   "${modID}:MorningLarkPower": {
     "NAME": "晨之云雀",
     "DESCRIPTIONS": [
-      "在你的下一个回合开始时，少抽 #b%d 张牌。"
+      "在你的回合结束时，失去 #b%d%% fgo:宝具值。"
     ]
   },
   "${modID}:MaxHPPower": {
@@ -511,9 +511,9 @@
     ]
   },
   "${modID}:StarHunterPower": {
-    "NAME": "星辰猎人",
+    "NAME": "星之猎人",
     "DESCRIPTIONS": [
-      "之后 #b%d 次#y暴击，提高 #b%d %% #y暴击威力。"
+      "之后 #b%d 次 #y暴击 ，提高 #b%d %% #y暴击威力 。"
     ]
   }
 }

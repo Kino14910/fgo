@@ -4,6 +4,7 @@ import static fgo.characters.CustomEnums.FGO_MASTER;
 import static fgo.characters.Master.fgoNp;
 import static fgo.utils.ModHelper.addToBot;
 
+import java.io.IOException;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.nio.charset.StandardCharsets;
@@ -35,12 +36,14 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.dungeons.Exordium;
 import com.megacrit.cardcrawl.dungeons.TheBeyond;
 import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.helpers.CardHelper;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.RelicLibrary;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
@@ -60,6 +63,7 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
 import basemod.AutoAdd;
 import basemod.BaseMod;
+import basemod.abstracts.CustomMultiPageFtue;
 import basemod.interfaces.AddAudioSubscriber;
 import basemod.interfaces.EditCardsSubscriber;
 import basemod.interfaces.EditCharactersSubscriber;
@@ -126,6 +130,9 @@ public class FGOMod implements
     
     private static final int BASE_NP_PERCARD = 5;
     private static final int NP_RATE_POWER_MULTIPLIER = 2;
+    
+    static Texture[] ftues;
+    static String[] tutTexts;
     //This is used to prefix the IDs of various objects like cards and relics,
     //to avoid conflicts between different mods using the same name for things.
     public static String makeID(String id) {
@@ -201,7 +208,7 @@ public class FGOMod implements
 
         if(config.getBool("enableEmiya")){
             BaseMod.addMonster(Emiya.ID, Emiya.NAME, () -> new MonsterGroup(new AbstractMonster[]{new Emiya()}));
-            BaseMod.addBoss(TheCity.ID, Emiya.ID, imagePath("monster/map_emiya"), imagePath("monster/map_emiya_outline"));
+            BaseMod.addBoss(TheCity.ID, Emiya.ID, monsterPath("map_emiya"), monsterPath("map_emiya_outline"));
         }
         shouldRenderNobleDeck = true;
     }
@@ -234,7 +241,6 @@ public class FGOMod implements
                 e.printStackTrace();
             }
         }
-
     }
 
     @Override
@@ -447,7 +453,6 @@ public class FGOMod implements
                 .notPackageFilter("fgo.cards.optionCards")
                 .notPackageFilter("fgo.cards.deprecated");
 
-//        System.out.println("enableColorlessCards: " + config.getBool("enableColorlessCards"));
         if (!config.getBool("enableColorlessCards")) {
             autoAdd = autoAdd.notPackageFilter("fgo.cards.colorless");
         }
@@ -527,6 +532,27 @@ public class FGOMod implements
         if(AbstractDungeon.floorNum == 16) {
             AbstractDungeon.getCurrRoom().spawnRelicAndObtain((float)(Settings.WIDTH / 2), (float)(Settings.HEIGHT / 2), RelicLibrary.getRelic(LockChocolateStrawberry.ID).makeCopy());
         }
+        
+        if ((config.getBool("enableFtue") && (Settings.language == Settings.GameLanguage.ZHS || Settings.language == Settings.GameLanguage.ZHT) )
+                && AbstractDungeon.getCurrRoom().monsters != null){
+                boolean hasTexture  = false;
+                for (Texture tex : ftues) {
+                    if (tex == null) {
+                        continue;
+                    }
+                    hasTexture = true;
+                    System.out.println("ftue: " + tex.toString());
+                }
+                System.out.println("hasTexture: " + hasTexture);
+            AbstractDungeon.ftue = new CustomMultiPageFtue(ftues, tutTexts);
+            // config.setBool("enableFtue", false);
+            FGOConfig.enableFtue = false;
+            try {
+                config.save();
+            } catch (IOException e) {
+                logger.error(e);
+            }
+        }
     }
 
     @Override
@@ -574,6 +600,13 @@ public class FGOMod implements
                 BaseMod.addCustomScreen(new NobleDeckViewScreen());
                 shouldRenderNobleDeck = false;
             }
+            ftues = new Texture[] {
+                ImageMaster.loadImage(uiPath("tutorial/1")),
+                ImageMaster.loadImage(uiPath("tutorial/2")),
+                ImageMaster.loadImage(uiPath("tutorial/3")),
+                ImageMaster.loadImage(uiPath("tutorial/4")),
+            };
+            tutTexts = CardCrawlGame.languagePack.getUIString(makeID("ftue")).TEXT;
         }
     }
 

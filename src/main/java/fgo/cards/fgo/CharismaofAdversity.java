@@ -1,14 +1,12 @@
 package fgo.cards.fgo;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.vfx.combat.VerticalImpactEffect;
 
 import fgo.cards.FGOCard;
 
@@ -22,10 +20,6 @@ public class CharismaofAdversity extends FGOCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (m != null) {
-            addToBot(new VFXAction(new VerticalImpactEffect(m.hb.cX + m.hb.width / 4.0F, m.hb.cY - m.hb.height / 4.0F)));
-        }
-
         int lostHealthPercentage = p.maxHealth - p.currentHealth;
         int extraHits = lostHealthPercentage / 6;
         addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));

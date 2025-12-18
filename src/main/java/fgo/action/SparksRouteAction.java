@@ -3,6 +3,7 @@ package fgo.action;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.PutOnDeckAction;
+import com.megacrit.cardcrawl.actions.common.ShuffleAction;
 import com.megacrit.cardcrawl.actions.unique.ArmamentsAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -42,10 +43,10 @@ public class SparksRouteAction extends AbstractGameAction {
             shuffled = true;
             AbstractPlayer p = AbstractDungeon.player;
             int theSize = p.hand.size();
-            addToTop(new DrawCardAction(p, theSize));
-            addToTop(new PutOnDeckAction(p, p, theSize, true));
-            addToTop(new ArmamentsAction(upgraded));
-            p.discardPile.shuffle(AbstractDungeon.shuffleRng);
+            addToBot(new ArmamentsAction(true));
+            addToBot(new PutOnDeckAction(p, p, theSize, true));
+            addToBot(new ShuffleAction(p.drawPile));
+            addToBot(new DrawCardAction(p, theSize));
         }
 
         isDone = true;

@@ -13,8 +13,8 @@ public class AroundCaliburn extends AbsNoblePhantasmCard {
     public static final String ID = makeID(AroundCaliburn.class.getSimpleName());
 
     public AroundCaliburn() {
-        super(ID,CardType.POWER, CardTarget.SELF, 2);
-        setMagic(2, 1);
+        super(ID,CardType.POWER, CardTarget.SELF, 1);
+        setMagic(1, 1);
     }
 
 

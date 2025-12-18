@@ -9,7 +9,8 @@ public class FGOConfig extends EasyConfigPanel {
     public static boolean enableColorlessCards = true;
     public static boolean enableEmiya = true;
     public static boolean enablePadoru = true;
-
+    public static boolean enableFtue = true;
+    
 
     public FGOConfig() {
         super(FGOMod.modID, makeID(FGOConfig.class.getSimpleName()));

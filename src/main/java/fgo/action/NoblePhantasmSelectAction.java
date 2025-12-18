@@ -19,13 +19,10 @@ import fgo.utils.NobleCardGroup;
 
 public class NoblePhantasmSelectAction extends AbstractGameAction {
     private static final String[] NPTEXT = CardCrawlGame.languagePack.getUIString("fgo:NPText").TEXT;
-    private final boolean upgraded;
-    private int powerAmount;
-    public NoblePhantasmSelectAction(boolean upgraded, int amount) {
+    private int OCAmt;
+    public NoblePhantasmSelectAction() {
         actionType = ActionType.CARD_MANIPULATION;
         duration = Settings.ACTION_DUR_MED;
-        this.upgraded = upgraded;
-        this.amount = amount;
     }
 
     @Override
@@ -46,12 +43,11 @@ public class NoblePhantasmSelectAction extends AbstractGameAction {
             AbstractPlayer p = AbstractDungeon.player;
             String OC = NPOverChargePower.POWER_ID;
             int OCAmt = p.hasPower(OC) ? p.getPower(OC).amount : 0;
-            powerAmount = (upgraded ? amount : 0) + OCAmt;
 
-            if (powerAmount > 0) {
+            if (OCAmt > 0) {
                 nobleCardGroup.group.forEach(card -> {
                     if (card instanceof AbsNoblePhantasmCard) {
-                        for (int i = 0; i < powerAmount; i++) {
+                        for (int i = 0; i < OCAmt; i++) {
                             ((AbsNoblePhantasmCard) card).upgrade();
                         }
                     }
@@ -71,6 +67,11 @@ public class NoblePhantasmSelectAction extends AbstractGameAction {
         if (!selectedCards.isEmpty()) {
             AbsNoblePhantasmCard selectedCard = (AbsNoblePhantasmCard)selectedCards.get(0);
             AbsNoblePhantasmCard selectedCardCopy = (AbsNoblePhantasmCard)selectedCard.makeCopy();
+            if (OCAmt > 0) {
+                for (int i = 0; i < OCAmt; i++) {
+                    selectedCardCopy.upgrade();
+                }
+            }
             addToBot(new MakeTempCardInHandAction(selectedCardCopy));
             selectedCards.clear();
         }
