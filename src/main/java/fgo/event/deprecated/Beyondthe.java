@@ -1,4 +1,4 @@
-package fgo.event;
+package fgo.event.deprecated;
 
 import static fgo.FGOMod.eventPath;
 import static fgo.FGOMod.makeID;
@@ -10,7 +10,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 
-import fgo.cards.colorless.Shvibzik;
+import fgo.cards.fgo.Strike;
+import fgo.event.BaseEvent;
 
 public class Beyondthe extends BaseEvent {
     public static final String ID = makeID(Beyondthe.class.getSimpleName());
@@ -38,14 +39,14 @@ public class Beyondthe extends BaseEvent {
         switch (screen) {
             case CONTINUE0:
                 imageEventText.updateBodyText(DESCRIPTIONS[1]);
-                imageEventText.updateDialogOption(0, OPTIONS[1], new Shvibzik());
+                imageEventText.updateDialogOption(0, OPTIONS[1], new Strike());
                 imageEventText.setDialogOption(OPTIONS[2] + maxHPAmt + OPTIONS[3]);
                 screen = CUR_SCREEN.CONTINUE1;
                 break;
             case CONTINUE1:
                 switch (buttonPressed) {
                     case 0:
-                        AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new Shvibzik(), (float) Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
+                        AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new Strike(), (float) Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
                         imageEventText.clearAllDialogs();
                         imageEventText.setDialogOption(OPTIONS[4]);
                         imageEventText.updateBodyText(DESCRIPTIONS[2]);

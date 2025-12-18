@@ -11,9 +11,8 @@ import fgo.powers.BlessingOfKurPower;
 public class BlessingOfKur extends FGOCard {
     public static final String ID = makeID(BlessingOfKur.class.getSimpleName());
     public BlessingOfKur() {
-        super(ID, 1, CardType.POWER, CardTarget.SELF, CardRarity.RARE);
-        setMagic(10, 5);
-        setExhaust();
+        super(ID, 1, CardType.POWER, CardTarget.SELF, CardRarity.UNCOMMON);
+        setMagic(6, 9);
         cardsToPreview = new KurKigalIrkalla();
     }
 

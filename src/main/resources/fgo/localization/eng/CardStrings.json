@@ -428,6 +428,10 @@
     "NAME": "Calamity of the North",
     "DESCRIPTION": "Apply !M! Poison and fgo:Evil_Curse to ALL enemies"
   },
+  "${modID}:ExtremityOfVillains": {
+    "NAME": "Extremity of Villains",
+    "DESCRIPTION": "给予所有敌人 !M! 层 中毒 和 fgo:诅呪 。"
+  },
   "${modID}:SwifterThanSound": {
     "NAME": "Swifter Than Sound",
     "DESCRIPTION": "Deal !D! damage to ALL enemies.  NL Shuffle an *Second *Thrust into your draw pile.  NL Enter Calm.  NL Exhaust."

@@ -32,12 +32,8 @@ public class FacelessMoonPower extends BasePower {
                 addToBot(new GainBlockAction(owner, handAmt * amount));
                 addToBot(new ApplyPowerAction(owner, owner, new StarPower(owner, handAmt * amount)));
             }
+            addToBot(new RemoveSpecificPowerAction(owner, owner, ID));
         }
-    }
-
-    @Override
-    public void atEndOfRound() {
-        addToBot(new RemoveSpecificPowerAction(owner, owner, ID));
     }
 
     @Override

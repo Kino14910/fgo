@@ -47,12 +47,6 @@
       "在每回合开始时，随机将你抽牌堆中 #b%1$s 张攻击牌加入你的手牌，并将其 #y升级 。"
     ]
   },
-  "${modID}:TheOneWhoRevealsTruthPower": {
-    "NAME": "毅力：永续",
-    "DESCRIPTIONS": [
-      "你的 #y毅力 回合数不再减少。"
-    ]
-  },
   "${modID}:ComeOnPower": {
     "NAME": "毅力：治愈",
     "DESCRIPTIONS": [
@@ -76,13 +70,6 @@
     "NAME": "诅呪",
     "DESCRIPTIONS": [
       "在每回合开始时失去 #b%1$s 点 #y生命 。"
-    ]
-  },
-  "${modID}:GloriousStrikePower": {
-    "NAME": "健全化",
-    "DESCRIPTIONS": [
-      "在这个回合结束时，移除你身上的所有负面效果。",
-      "在接下来 #b%d 个回合结束时，移除你身上的所有负面效果。"
     ]
   },
   "${modID}:BeastMagicPower": {
@@ -236,13 +223,6 @@
       "在你的回合开始时，有 #y格挡 的敌人失去等于其 #y格挡 的生命并且给予其 #b%d 层 #y易伤 。"
     ]
   },
-  "${modID}:InvincibilityPower": {
-    "NAME": "无敌",
-    "DESCRIPTIONS": [
-      "在本回合阻止下一次你受到的攻击。",
-      "在本回合阻止下 #b%d 次你受到的攻击。"
-    ]
-  },
   "${modID}:InvincibilityTurnPower": {
     "NAME": "无敌",
     "DESCRIPTIONS": [
@@ -257,11 +237,10 @@
       "阻止下 #b%d 次你受到的生命值损伤。每次阻止成功获得 #b5 点临时生命。"
     ]
   },
-  "${modID}:NPOverchargePower": {
+  "${modID}:NPOverChargePower": {
     "NAME": "充能阶段上升",
     "DESCRIPTIONS": [
-      "你的下 #b%d 张 #y宝具 牌将被打出两次。",
-      "你的下一张 #y宝具 牌将被打出两次。"
+      "每层充能使宝具强化一次，最多 #b%d 层。回合结束失去所有充能。"
     ]
   },
   "${modID}:CurseEvilFormPower": {
@@ -320,8 +299,8 @@
       " #y宝具 攻击伤害提升 #b%d %% 。"
     ]
   },
-  "${modID}:MillenniumCastlePower": {
-    "NAME": "千年城",
+  "${modID}:DazzlingMoonPower": {
+    "NAME": "光辉之月",
     "DESCRIPTIONS": [
       "在每回合开始时，失去 #b1 点 #y力量 ，所有敌人失去 #b2 点 #y力量 ，持续 #b%d 回合。在结束时反转你的负面 #y力量 ，获得等量 #y敏捷 。"
     ]
@@ -389,13 +368,6 @@
       " 加入你的手牌，而不是选择一张。"
     ]
   },
-  "${modID}:ViyViyViyPower": {
-    "NAME": "维",
-    "DESCRIPTIONS": [
-      "在战斗结束时你失去 #r",
-      " 。"
-    ]
-  },
   "${modID}:QuickPerformancePower": {
     "NAME": "绿牌性能提升",
     "DESCRIPTIONS": [
@@ -450,12 +422,6 @@
     "NAME": "斩剜战神之剑",
     "DESCRIPTIONS": [
       "在本回合，每受到一次 #y攻击 ，造成 #b%d 点反伤 ，你获得 #b10 颗 #y暴击星 。"
-    ]
-  },
-  "${modID}:InfiniteGrowthPower": {
-    "NAME": "增殖",
-    "DESCRIPTIONS": [
-      "阻止下一次受到的等于或低于 #b%d 点的生命值损伤。"
     ]
   },
   "${modID}:TerrorPower": {

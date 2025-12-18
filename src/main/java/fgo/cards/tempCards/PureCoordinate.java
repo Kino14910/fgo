@@ -4,9 +4,9 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.BufferPower;
 
 import fgo.cards.FGOCard;
-import fgo.powers.InvincibilityPower;
 
 public class PureCoordinate extends FGOCard {
     public static final String ID = makeID(PureCoordinate.class.getSimpleName());
@@ -22,6 +22,6 @@ public class PureCoordinate extends FGOCard {
     @Override
     public void onChoseThisOption() {
         AbstractPlayer p = AbstractDungeon.player;
-        addToBot(new ApplyPowerAction(p, p, new InvincibilityPower(p, magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new BufferPower(p, magicNumber)));
     }
 }

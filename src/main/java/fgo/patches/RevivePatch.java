@@ -15,7 +15,6 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 import fgo.action.FgoNpAction;
 import fgo.powers.DeathOfDeathPower;
-import fgo.powers.GutsAtTheWellPower;
 import fgo.powers.GutsPower;
 import fgo.powers.IndomitablePower;
 import fgo.powers.NonStackableGutsPower;
@@ -28,7 +27,6 @@ public class RevivePatch {
         @SpireInsertPatch(locator = GutsPowerLocator.class)
         public static SpireReturn<Void> Insert(AbstractPlayer p) {
             String[] powerIds = {
-                GutsAtTheWellPower.POWER_ID,
                 SpringOfFirePower.POWER_ID,
                 DeathOfDeathPower.POWER_ID,
                 IndomitablePower.POWER_ID

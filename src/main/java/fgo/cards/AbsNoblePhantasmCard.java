@@ -6,14 +6,15 @@ import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.CommonKeywordIconsField;
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.PurgeField;
 import com.evacipated.cardcrawl.mod.stslib.patches.FlavorText;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import fgo.characters.CustomEnums.FGOCardColor;
 import fgo.hexui_lib.util.RenderImageLayer;
 import fgo.hexui_lib.util.TextureLoader;
+import fgo.powers.NPOverChargePower;
 
 public abstract class AbsNoblePhantasmCard extends FateMagineerCard {
     public AbsNoblePhantasmCard(String id, AbstractCard.CardType type, AbstractCard.CardTarget target) {
@@ -36,21 +37,56 @@ public abstract class AbsNoblePhantasmCard extends FateMagineerCard {
         return cardPath("noble/" + file);
     }
 
-    @Override
-    public void triggerWhenDrawn() {
-        if (inBottleFlame || inBottleLightning || inBottleTornado) {
-            addToTop(new DrawCardAction(AbstractDungeon.player, 2));
-            addToTop(new ExhaustSpecificCardAction(this, AbstractDungeon.player.hand));
-        }
-    }
+    // @Override
+    // public void triggerWhenDrawn() {
+    //     if (inBottleFlame || inBottleLightning || inBottleTornado) {
+    //         addToTop(new DrawCardAction(AbstractDungeon.player, 2));
+    //         addToTop(new ExhaustSpecificCardAction(this, AbstractDungeon.player.hand));
+    //     }
+    // }
 
     @Override
     public boolean canUpgrade() {
-        return false;
+        return true;
+    }
+    
+    @Override
+    public void upgrade() {
+        timesUpgraded++;
+        upgraded = true;
+        name = cardStrings.NAME + "+" + (timesUpgraded == 0 ? "" : timesUpgraded);
+        initializeTitle();
+
+        if (upgradeDamage)
+            upgradeDamage(damageUpgrade);
+
+        if (upgradeBlock)
+            upgradeBlock(blockUpgrade);
+
+        if (upgradeMagic)
+            upgradeMagicNumber(magicUpgrade);
+
+        for (LocalVarInfo var : cardVariables.values()) {
+            upgradeCustomVar(var);
+        }
+
+        if (baseExhaust ^ upgExhaust)
+            exhaust = upgExhaust;
+
+        initializeDescription();
     }
 
+    @Override
+    public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new ApplyPowerAction(p, p, new NPOverChargePower(p, 1)));
+    }
+    
     // @Override
-    // public AbstractCard makeCopy() {
-    //     return new SupportCraft();
+    // public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+    //     boolean canUse = super.canUse(p, m);
+    //     if (p.hasPower(NPOverChargePower.POWER_ID) && p.getPower(NPOverChargePower.POWER_ID).amount > 5) {
+    //         canUse = false;
+    //     }
+    //     return canUse;
     // }
 }

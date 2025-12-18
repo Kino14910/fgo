@@ -9,7 +9,7 @@ import fgo.cards.FGOCard;
 public class SongOfThePoet extends FGOCard {
     public static final String ID = makeID(SongOfThePoet.class.getSimpleName());
     public SongOfThePoet() {
-        super(ID, 1, CardType.ATTACK, CardTarget.ENEMY, CardRarity.UNCOMMON);
+        super(ID, 1, CardType.ATTACK, CardTarget.ENEMY, CardRarity.COMMON);
         setDamage(9, 3);
     }
 

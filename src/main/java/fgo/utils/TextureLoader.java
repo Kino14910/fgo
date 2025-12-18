@@ -18,7 +18,7 @@ public class TextureLoader {
 
     /**
      * @param filePath - String path to the texture you want to load relative to resources,
-     * Example: imagePath("missing.png")
+     * Example: imagePath("missing")
      * @return <b>com.badlogic.gdx.graphics.Texture</b> - The texture from the path provided, or a "missing image" texture if it doesn't exist.
      */
     public static Texture getTexture(final String filePath) {
@@ -27,7 +27,7 @@ public class TextureLoader {
 
     /**
      * @param filePath - String path to the texture you want to load relative to resources,
-     * Example: imagePath("missing.png")
+     * Example: imagePath("missing")
      * @param linear - Whether the image should use a linear or nearest filter for scaling.
      * @return <b>com.badlogic.gdx.graphics.Texture</b> - The texture from the path provided, or a "missing image" texture if it doesn't exist.
      */
@@ -54,7 +54,7 @@ public class TextureLoader {
 
     /**
      * @param filePath - String path to the texture you want to load relative to resources,
-     * Example: imagePath("missing.png")
+     * Example: imagePath("missing")
      * @return <b>com.badlogic.gdx.graphics.Texture</b> - The texture from the path provided, or null if it doesn't exist.
      */
     public static Texture getTextureNull(final String filePath) {
@@ -63,7 +63,7 @@ public class TextureLoader {
 
     /**
      * @param filePath - String path to the texture you want to load relative to resources,
-     * Example: imagePath("missing.png")
+     * Example: imagePath("missing")
      * @param linear - Whether the image should use a linear or nearest filter for scaling.
      * @return <b>com.badlogic.gdx.graphics.Texture</b> - The texture from the path provided, or null if it doesn't exist.
      */

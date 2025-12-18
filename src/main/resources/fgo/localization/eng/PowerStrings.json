@@ -48,12 +48,6 @@
       "At the start of your turn, put #b%1$s random Attacks from your draw pile into your hand and Upgrade it."
     ]
   },
-  "${modID}:TheOneWhoRevealsTruthPower": {
-    "NAME": "Reveals Truth",
-    "DESCRIPTIONS": [
-      "Your #yGuts turns is not reduce."
-    ]
-  },
   "${modID}:ComeOnPower": {
     "NAME": "Guts: Come On",
     "DESCRIPTIONS": [
@@ -77,12 +71,6 @@
     "NAME": "Evil Curse",
     "DESCRIPTIONS": [
       "At the start of turn, lose #b%1$s #yHP."
-    ]
-  },
-  "${modID}:GloriousStrikePower": {
-    "NAME": "Remove Debuffs.",
-    "DESCRIPTIONS": [
-      "Next turn, remove all of your debuffs."
     ]
   },
   "${modID}:BeastMagicPower": {
@@ -327,8 +315,8 @@
       "Increases Noble Phantasm attack damage by #b%d %."
     ]
   },
-  "${modID}:MillenniumCastlePower": {
-    "NAME": "Millennium Castle",
+  "${modID}:DazzlingMoonPower": {
+    "NAME": "Dazzling Moon",
     "DESCRIPTIONS": [
       "At the start of each turn, lose #b1 #yStrength and ALL enemies lose #b2 #yStrength for #b%d turns. Reverse your negative #yStrength and gain an equal amount of #yDexterity at the end."
     ]
@@ -391,13 +379,6 @@
       " into your hand."
     ]
   },
-  "${modID}:ViyViyViyPower": {
-    "NAME": "Viy",
-    "DESCRIPTIONS": [
-      "You lose #r",
-      " at the end of combat."
-    ]
-  },
   "${modID}:QuickPerformancePower": {
     "NAME": "Quick",
     "DESCRIPTIONS": [
@@ -452,12 +433,6 @@
     "NAME": "Fragarach",
     "DESCRIPTIONS": [
       "When attacked, deals #b%d damage back and you gain #b10 Stars."
-    ]
-  },
-  "${modID}:InfiniteGrowthPower": {
-    "NAME": "Growth",
-    "DESCRIPTIONS": [
-      "Prevent the next time is at or below #b%d you would lose HP."
     ]
   },
   "${modID}:TerrorPower": {

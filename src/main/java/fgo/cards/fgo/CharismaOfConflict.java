@@ -12,7 +12,7 @@ public class CharismaOfConflict extends FGOCard {
     public static final String ID = makeID(CharismaOfConflict.class.getSimpleName());
 
     public CharismaOfConflict() {
-        super(ID, 1, CardType.ATTACK, CardTarget.ALL_ENEMY, CardRarity.UNCOMMON);
+        super(ID, 1, CardType.ATTACK, CardTarget.ALL_ENEMY, CardRarity.COMMON);
         setDamage(7, 3);
     }
 

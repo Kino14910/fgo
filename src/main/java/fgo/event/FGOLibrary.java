@@ -68,11 +68,8 @@ public class FGOLibrary extends BaseEvent {
                 pickCard = true;
                 CardGroup group = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
                 group.addToBottom(new PrimevalRune());
-                group.addToBottom(new SpringOfFire());
                 group.addToBottom(new DazzlingMoon());
-                group.addToBottom(new AbyssOfDeath());
                 group.addToBottom(new EightKindness());
-                group.addToBottom(new PeerlessStrike());
                 group.addToBottom(new UndeadBird());
                 group.addToBottom(new MaraPapiyas());
 

@@ -12,7 +12,6 @@ public class SpringOfFire extends FGOCard {
     public SpringOfFire() {
         super(ID, 3, CardType.POWER, CardTarget.SELF, CardRarity.RARE);
         setMagic(3, 3);
-        setEthereal(true, false);
         tags.add(CardTags.HEALING);
     }
 

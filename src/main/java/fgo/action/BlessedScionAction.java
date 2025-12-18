@@ -4,12 +4,10 @@ import static fgo.FGOMod.makeID;
 
 import com.evacipated.cardcrawl.mod.stslib.actions.common.SelectCardsInHandAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
 
 public class BlessedScionAction extends AbstractGameAction {
@@ -22,13 +20,9 @@ public class BlessedScionAction extends AbstractGameAction {
 
     @Override
     public void update() {
-        addToBot(new SelectCardsInHandAction(1, TEXT[0], cards -> {
-            for (AbstractCard card : cards) {
-                addToBot(new ExhaustSpecificCardAction(card, AbstractDungeon.player.hand));
-                addToBot(new MakeTempCardInDrawPileAction(processCard(card), amount, false, false));
-            }
-        }));
-        isDone = true;
+        addToBot(new SelectCardsInHandAction(amount, TEXT[0], cards -> 
+            cards.forEach(card -> addToBot(new MakeTempCardInHandAction(processCard(card), 1, false)))));
+            isDone = true;
     }
 
     private AbstractCard processCard(AbstractCard card) {

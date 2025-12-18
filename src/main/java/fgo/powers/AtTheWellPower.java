@@ -9,6 +9,8 @@ import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.vfx.combat.LightningEffect;
 
+import fgo.action.FgoNpAction;
+
 public class AtTheWellPower extends BasePower {
     public static final String POWER_ID = makeID(AtTheWellPower.class.getSimpleName());
 
@@ -19,12 +21,10 @@ public class AtTheWellPower extends BasePower {
     @Override
     public void atStartOfTurn() {
         flash();
-        if (!owner.hasPower(GutsPower.POWER_ID)) {
-            addToBot(new ApplyPowerAction(owner, owner, new GutsPower(owner, amount)));
-        }
-        addToBot(new ApplyPowerAction(owner, owner, new GutsAtTheWellPower(owner, 3)));
+        addToBot(new ApplyPowerAction(owner, owner, new GutsPower(owner, 3)));
         addToBot(new VFXAction(new LightningEffect(owner.hb.cX, owner.hb.cY)));
         addToBot(new LoseHPAction(owner, owner, 99999));
+        addToBot(new FgoNpAction(80));
         addToBot(new RemoveSpecificPowerAction(owner, owner, ID));
     }
 

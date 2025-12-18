@@ -14,7 +14,7 @@ public class StarGainMonsterPower extends BasePower {
     public static final String POWER_ID = makeID(StarGainMonsterPower.class.getSimpleName());
 
     public StarGainMonsterPower(AbstractCreature owner, int amount) {
-        super(POWER_ID, PowerType.BUFF, false, owner, amount);
+        super(POWER_ID, PowerType.BUFF, false, owner, amount, "StarPower");
     }
 
     @Override

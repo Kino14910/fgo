@@ -12,7 +12,7 @@ public class StarHunter extends FGOCard {
     public StarHunter() {
         super(ID, 1, CardType.SKILL, CardTarget.SELF, CardRarity.UNCOMMON);
         setMagic(50, 50);
-        setStar(10);
+        setStar(8);
         setExhaust();
     }
 

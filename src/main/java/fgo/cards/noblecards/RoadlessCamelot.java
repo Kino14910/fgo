@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import fgo.cards.AbsNoblePhantasmCard;
-import fgo.powers.NPOverchargePower;
+import fgo.powers.NPRatePower;
 
 public class RoadlessCamelot extends AbsNoblePhantasmCard {
     public static final String ID = makeID(RoadlessCamelot.class.getSimpleName());
@@ -28,6 +28,6 @@ public class RoadlessCamelot extends AbsNoblePhantasmCard {
             }
             addToBot(new DamageAllEnemiesAction(p, damage, damageTypeForTurn, AbstractGameAction.AttackEffect.BLUNT_HEAVY));
         }
-        addToBot(new ApplyPowerAction(p, p, new NPOverchargePower(p, magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new NPRatePower(p, magicNumber)));
     }
 }

@@ -77,7 +77,6 @@ import fgo.action.FgoNpAction;
 import fgo.cards.FGOCard;
 import fgo.characters.CustomEnums.FGOCardColor;
 import fgo.characters.Master;
-import fgo.event.Beyondthe;
 import fgo.event.DevilSlot;
 import fgo.event.ManofChaldea;
 import fgo.event.ProofAndRebuttalEvent;
@@ -495,7 +494,6 @@ public class FGOMod implements
         // BaseMod.addEvent(ConflictEvent.ID, ConflictEvent.class, TheBeyond.ID);
         BaseMod.addEvent(ProofAndRebuttalEvent.ID, ProofAndRebuttalEvent.class, Exordium.ID);
         BaseMod.addEvent(ManofChaldea.ID, ManofChaldea.class, TheBeyond.ID);
-        BaseMod.addEvent(Beyondthe.ID, Beyondthe.class, TheBeyond.ID);
         BaseMod.addEvent(DevilSlot.ID, DevilSlot.class, TheBeyond.ID);
 //        BaseMod.addEvent((new AddEventParams.Builder(FGOLibrary.ID, FGOLibrary.class))
 //                .dungeonID(TheCity.ID)

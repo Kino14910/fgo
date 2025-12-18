@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 
+import fgo.cards.AbsNoblePhantasmCard;
 import fgo.cards.FGOCard;
 import fgo.cards.derivative.mash.BlackBarrel;
 import fgo.cards.derivative.mash.Camelot;
@@ -91,7 +92,7 @@ public class LockChocolateStrawberry extends BaseRelic {
             AbstractDungeon.player.masterDeck.addToBottom(newCard);
         }
     }
-    private void changeNobleCard(FGOCard oldCard, FGOCard newCard) {
+    private void changeNobleCard(AbsNoblePhantasmCard oldCard, AbsNoblePhantasmCard newCard) {
         boolean hasCard = NobleDeckCards.nobleCards.group.stream()
             .anyMatch(card -> card.cardID.equals(oldCard.cardID));
         if (oldCard != null && hasCard) {

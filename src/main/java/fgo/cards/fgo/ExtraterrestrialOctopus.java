@@ -2,13 +2,14 @@ package fgo.cards.fgo;
 
 import static fgo.characters.CustomEnums.FGO_Foreigner;
 
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import fgo.action.FgoNpAction;
 import fgo.cards.FGOCard;
 import fgo.powers.StarPower;
 
@@ -16,21 +17,38 @@ public class ExtraterrestrialOctopus extends FGOCard {
     public static final String ID = makeID(ExtraterrestrialOctopus.class.getSimpleName());
 
     public ExtraterrestrialOctopus() {
-        super(ID, 1, CardType.ATTACK, CardTarget.SELF, CardRarity.UNCOMMON);
-        setNP(20, 10);
-        setStar(5, 10);
+        super(ID, 1, CardType.ATTACK, CardTarget.ENEMY, CardRarity.UNCOMMON);
+        setDamage(0);
+        setMagic(2, 1);
         tags.add(FGO_Foreigner);
+    }
+
+    
+    @Override
+    public void applyPowers() {
+        AbstractPlayer p = AbstractDungeon.player;
+        if (p.hasPower(StarPower.POWER_ID)) {
+            setDamage((p.getPower(StarPower.POWER_ID).amount * magicNumber));
+            
+        }
+        super.applyPowers();
+        isBlockModified = true;
+    }
+
+    @Override
+    public void onMoveToDiscard() {
+        baseDamage = 0;
+        super.applyPowers();
     }
     
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new FgoNpAction(np));
-        addToBot(new ApplyPowerAction(p, p, new StarPower(p, star)));
+        addToBot(new DamageAction(m, new DamageInfo(p, block), AttackEffect.SLASH_DIAGONAL));
     }
 
     @Override
     public void triggerOnGlowCheck() {
-        if (!AbstractDungeon.actionManager.cardsPlayedThisCombat.isEmpty() && AbstractDungeon.actionManager.cardsPlayedThisCombat.get(AbstractDungeon.actionManager.cardsPlayedThisCombat.size() - 1).type == CardType.ATTACK) {
+        if (AbstractDungeon.player.hasPower(StarPower.POWER_ID)) {
             glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
         } else {
             glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
