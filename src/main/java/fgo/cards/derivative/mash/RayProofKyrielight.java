@@ -31,7 +31,7 @@ public class RayProofKyrielight extends AbsNoblePhantasmCard {
                 addToBot(new ApplyPowerAction(mo, p, new VulnerablePower(mo, magicNumber, false)));
             }
         }
-        addToBot(new DamageAllEnemiesAction(p, damage, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.SLASH_HEAVY));
+        addToBot(new DamageAllEnemiesAction(p, multiDamage, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.SLASH_HEAVY));
         if (m.type != AbstractMonster.EnemyType.BOSS) {
             for (AbstractPower pow : m.powers) {
                 if (pow.type == AbstractPower.PowerType.BUFF) {

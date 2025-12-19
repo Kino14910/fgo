@@ -18,9 +18,9 @@ public class CharismaOfConflict extends FGOCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAllEnemiesAction(p, damage, damageType, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+        addToBot(new DamageAllEnemiesAction(p, multiDamage, damageType, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
         if (p.hasPower(GutsPower.POWER_ID)) {
-            addToBot(new DamageAllEnemiesAction(p, damage, damageType, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+            addToBot(new DamageAllEnemiesAction(p, multiDamage, damageType, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
         }
     }
 }

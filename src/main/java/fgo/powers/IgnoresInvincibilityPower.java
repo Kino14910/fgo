@@ -26,7 +26,7 @@ public class IgnoresInvincibilityPower extends BasePower {
 
     @Override
     public float atDamageGive(float damage, DamageInfo.DamageType type) {
-        return type == DamageType.NORMAL && amount > 0 ? damage * amount : damage;
+        return (type == DamageType.NORMAL && amount > 0) ? damage * (1 + amount) : damage;
     }
 
     @Override

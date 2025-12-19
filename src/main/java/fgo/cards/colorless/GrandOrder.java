@@ -29,7 +29,7 @@ public class GrandOrder extends FGOCard {
 
             m = var1.next();
         } while(m.type == AbstractMonster.EnemyType.BOSS);
-        addToBot(new DamageAllEnemiesAction(p, damage, damageTypeForTurn, AbstractGameAction.AttackEffect.SLASH_HEAVY));
+        addToBot(new DamageAllEnemiesAction(p, multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.SLASH_HEAVY));
         // addToBot(new DamageAction(m, new DamageInfo(m, damage)));
     }
 

@@ -25,7 +25,7 @@ public class SneferuIteruNile extends AbsNoblePhantasmCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAllEnemiesAction(p, damage, DamageType.NORMAL, AttackEffect.NONE));
+        addToBot(new DamageAllEnemiesAction(p, multiDamage, DamageType.NORMAL, AttackEffect.NONE));
         for (AbstractMonster mo : AbstractDungeon.getMonsters().monsters) {
             if(mo.isDead || mo.isDying) continue;
             addToBot(new ApplyPowerAction(mo, p, new VulnerablePower(mo, 3, false)));

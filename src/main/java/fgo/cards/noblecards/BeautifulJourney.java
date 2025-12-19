@@ -27,7 +27,7 @@ public class BeautifulJourney extends AbsNoblePhantasmCard {
         addToBot(new ApplyPowerAction(p, p, new ArtsPerformancePower(p, 1)));
         addToBot(new ApplyPowerAction(p, p, new LoseArtsPerformancePower(p, 1)));
 
-        addToBot(new DamageAllEnemiesAction(p, damage, damageTypeForTurn, AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+        addToBot(new DamageAllEnemiesAction(p, multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         for (AbstractMonster monster : AbstractDungeon.getCurrRoom().monsters.monsters) {
             if (!monster.isDeadOrEscaped()) {
                 addToBot(new FgoNpAction(np));

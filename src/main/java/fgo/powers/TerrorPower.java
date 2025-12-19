@@ -9,16 +9,12 @@ import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.NonStackablePower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class TerrorPower extends BasePower implements NonStackablePower{
     public static final String POWER_ID = makeID(TerrorPower.class.getSimpleName());
-    private static final PowerType TYPE = PowerType.DEBUFF;
-    private static final boolean TURN_BASED = true;
     private final Random random = new Random();
 
     public TerrorPower(AbstractCreature owner, int turns, int chance) {
@@ -44,13 +40,13 @@ public class TerrorPower extends BasePower implements NonStackablePower{
         }
     }
 
-    @Override
-    public float atDamageReceive(float damage, DamageInfo.DamageType type) {
-        if (type == DamageInfo.DamageType.NORMAL) {
-            if (!owner.isPlayer && AbstractDungeon.player.hasPower(VSTerrorDamageUpPower.POWER_ID)) {
-                return damage * (1 + AbstractDungeon.player.getPower(VSTerrorDamageUpPower.POWER_ID).amount / 100.0f);
-            }
-        }
-        return damage;
-    }
+    // @Override
+    // public float atDamageReceive(float damage, DamageInfo.DamageType type) {
+    //     if (type == DamageInfo.DamageType.NORMAL) {
+    //         if (!owner.isPlayer && AbstractDungeon.player.hasPower(VSTerrorDamageUpPower.POWER_ID)) {
+    //             return damage * (1 + AbstractDungeon.player.getPower(VSTerrorDamageUpPower.POWER_ID).amount / 100.0f);
+    //         }
+    //     }
+    //     return damage;
+    // }
 }

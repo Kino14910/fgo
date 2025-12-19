@@ -26,7 +26,7 @@ public class ItsInevitable extends FGOCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new SFXAction(Sounds.gun));
-        addToBot(new DamageAllEnemiesAction(p, damage, damageTypeForTurn, AbstractGameAction.AttackEffect.FIRE));
+        addToBot(new DamageAllEnemiesAction(p, multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.FIRE));
         addToBot(new ApplyPowerAction(p, p, new ItsInevitablePower(p, damage, magicNumber)));
         //addToBot(new ApplyPowerAction(p, p, new BurnDamagePower(p, magicNumber)));
     }
