@@ -21,6 +21,9 @@ public class CharismaOfTheJade extends FGOCard {
         setMagic(3, 1);
     }
 
+    /**
+     * @see StarPower
+     */
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (p.hasPower(StarPower.POWER_ID) && p.getPower(StarPower.POWER_ID).amount >= 20) {

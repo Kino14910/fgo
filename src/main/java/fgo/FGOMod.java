@@ -4,7 +4,6 @@ import static fgo.characters.CustomEnums.FGO_MASTER;
 import static fgo.characters.Master.fgoNp;
 import static fgo.utils.ModHelper.addToBot;
 
-import java.io.IOException;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.nio.charset.StandardCharsets;
@@ -29,7 +28,6 @@ import com.badlogic.gdx.utils.GdxRuntimeException;
 import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.ModInfo;
 import com.evacipated.cardcrawl.modthespire.Patcher;
-import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -124,6 +122,7 @@ public class FGOMod implements
         {
     public static ModInfo info;
     public static String modID; //Edit your pom.xml to change this
+    public static FGOConfig config;
     static { loadModInfo(); }
     public static final Logger logger = LogManager.getLogger(modID); //Used to output to the console.
     private static final String resourcesFolder = checkResourcesPath();
@@ -170,15 +169,6 @@ public class FGOMod implements
     //默认背景图片。
     private static final String MASTER_PORTRAIT = imagePath("charSelect/MasterPortrait1");
     
-    public static SpireConfig config;
-
-    static {
-        try {
-            config = new SpireConfig(modID, "config");
-        } catch (Exception e) {
-            logger.error("Failed to initialize config file for FGO Mod", e);
-        }
-    }
 
     public FGOMod() {
         BaseMod.subscribe(this); //This will make BaseMod trigger all the subscribers at their appropriate times.
@@ -204,9 +194,11 @@ public class FGOMod implements
         //If you want to set up a config panel, that will be done here.
         //The Mod Badges page has a basic example of this, but setting up config is overall a bit complex.
 
-        BaseMod.registerModBadge(badgeTexture, info.Name, GeneralUtils.arrToString(info.Authors), info.Description, new FGOConfig());
+        config = new FGOConfig();
 
-        if(config.getBool("enableEmiya")){
+        BaseMod.registerModBadge(badgeTexture, info.Name, GeneralUtils.arrToString(info.Authors), info.Description, config);
+
+        if(FGOConfig.enableEmiya){
             BaseMod.addMonster(Emiya.ID, Emiya.NAME, () -> new MonsterGroup(new AbstractMonster[]{new Emiya()}));
             BaseMod.addBoss(TheCity.ID, Emiya.ID, monsterPath("map_emiya"), monsterPath("map_emiya_outline"));
         }
@@ -453,7 +445,7 @@ public class FGOMod implements
                 .notPackageFilter("fgo.cards.optionCards")
                 .notPackageFilter("fgo.cards.deprecated");
 
-        if (!config.getBool("enableColorlessCards")) {
+        if (!FGOConfig.enableColorlessCards) {
             autoAdd = autoAdd.notPackageFilter("fgo.cards.colorless");
         }
         autoAdd.setDefaultSeen(true) //And marks them as seen in the compendium
@@ -533,7 +525,7 @@ public class FGOMod implements
             AbstractDungeon.getCurrRoom().spawnRelicAndObtain((float)(Settings.WIDTH / 2), (float)(Settings.HEIGHT / 2), RelicLibrary.getRelic(LockChocolateStrawberry.ID).makeCopy());
         }
         
-        if ((config.getBool("enableFtue") && (Settings.language == Settings.GameLanguage.ZHS || Settings.language == Settings.GameLanguage.ZHT) )
+        if ((FGOConfig.enableFtue && (Settings.language == Settings.GameLanguage.ZHS || Settings.language == Settings.GameLanguage.ZHT) )
                 && AbstractDungeon.getCurrRoom().monsters != null){
                 boolean hasTexture  = false;
                 for (Texture tex : ftues) {
@@ -545,13 +537,8 @@ public class FGOMod implements
                 }
                 System.out.println("hasTexture: " + hasTexture);
             AbstractDungeon.ftue = new CustomMultiPageFtue(ftues, tutTexts);
-            config.setBool("enableFtue", false);
             FGOConfig.enableFtue = false;
-            try {
-                config.save();
-            } catch (IOException e) {
-                logger.error(e);
-            }
+            FGOMod.config.save();
         }
     }
 

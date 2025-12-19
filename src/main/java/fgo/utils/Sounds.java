@@ -4,16 +4,10 @@ package fgo.utils;
 import static fgo.FGOMod.musicPath;
 import static fgo.FGOMod.soundPath;
 
-import java.time.LocalDate;
-import java.time.Month;
-
-import fgo.FGOMod;
-
 public class Sounds {
     public static final String UBW_Music = musicPath("UBW_Extended.mp3");
-    public static final String masterChoose = soundPath(
-        LocalDate.now().getMonth() == Month.DECEMBER && FGOMod.config.getBool("enablePadoru")
-            ? "Padoru.mp3" : "MASTER_CHOOSE.mp3");
+    public static final String masterChoose = soundPath("MASTER_CHOOSE.mp3");
+    public static final String Padoru = soundPath("Padoru.mp3");
     public static final String masterCurse = soundPath("MASTER_CURSE.wav");
     public static final String masterInvictusSpiritus = soundPath("MASTER_INVICTUS_SPIRITUS.mp3");
     

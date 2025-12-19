@@ -18,8 +18,8 @@ public class ImitationGodForce extends AbsNoblePhantasmCard {
 
     public ImitationGodForce() {
         super(ID,CardType.ATTACK, CardTarget.ALL_ENEMY, 1);
-        setDamage(5, 1);
-        setMagic(4);
+        setDamage(8, 2);
+        setMagic(3);
     }
 
     @Override

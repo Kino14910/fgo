@@ -14,9 +14,9 @@ public class GardenOfAvalon extends AbsNoblePhantasmCard {
 
     public GardenOfAvalon() {
         super(ID,CardType.POWER, CardTarget.SELF, 1);
-        setBlock(5, 3);
+        setBlock(3, 1);
         setNP(5);
-        setStar(5, 10);
+        setStar(5, 5);
     }
 
 

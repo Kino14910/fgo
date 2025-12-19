@@ -7,6 +7,9 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 public class CriticalDamageUpPower extends BasePower {
     public static final String POWER_ID = makeID(CriticalDamageUpPower.class.getSimpleName());
 
+    /**
+     * @see StarPower
+     */
     public CriticalDamageUpPower(AbstractCreature owner, int amount) {
          super(POWER_ID, PowerType.BUFF, false, owner, amount);
     }

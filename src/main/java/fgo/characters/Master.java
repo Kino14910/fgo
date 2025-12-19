@@ -38,6 +38,7 @@ import fgo.characters.CustomEnums.FGOCardColor;
 import fgo.patches.MainMenuUIFgoPatch;
 import fgo.patches.PictureSelectFgoPatch;
 import fgo.relics.SuitcaseFgo;
+import fgo.ui.panels.FGOConfig;
 import fgo.utils.Sounds;
 
 public class Master extends CustomPlayer{
@@ -164,7 +165,9 @@ public class Master extends CustomPlayer{
     @Override
     public void doCharSelectScreenSelectEffect() {
         CardCrawlGame.mainMenuScreen.charSelectScreen.bgCharImg = PictureSelectFgoPatch.updateBgImg();
-        CardCrawlGame.sound.playV(Sounds.masterChoose, 0.8F);
+        CardCrawlGame.sound.playV(
+            // LocalDate.now().getMonth() == Month.DECEMBER && 
+            FGOConfig.enablePadoru ? Sounds.Padoru : Sounds.masterChoose, 0.8F);
         CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.MED, ScreenShake.ShakeDur.SHORT, true);
     }
 

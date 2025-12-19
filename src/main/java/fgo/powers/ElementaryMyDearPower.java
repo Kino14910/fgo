@@ -10,10 +10,10 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 
-public class IgnoreDefensePower extends BasePower {
-    public static final String POWER_ID = makeID(IgnoreDefensePower.class.getSimpleName());
+public class ElementaryMyDearPower extends BasePower {
+    public static final String POWER_ID = makeID(ElementaryMyDearPower.class.getSimpleName());
 
-    public IgnoreDefensePower(AbstractCreature owner, int amount) {
+    public ElementaryMyDearPower(AbstractCreature owner, int amount) {
         super(POWER_ID, PowerType.BUFF, false, owner, amount);
     }
 

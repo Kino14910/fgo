@@ -20,7 +20,7 @@ public class TimewornBulletKindling extends FGOCard {
     public static final String ID = makeID(TimewornBulletKindling.class.getSimpleName());
 
     public TimewornBulletKindling() {
-        super(ID, 1, CardType.POWER, CardTarget.SELF, CardRarity.SPECIAL, FGOCardColor.FGO_DERIVATIVE);
+        super(ID, 0, CardType.POWER, CardTarget.SELF, CardRarity.SPECIAL, FGOCardColor.FGO_DERIVATIVE);
         setMagic(20);
         PurgeField.purge.set(this, true);
         cardsToPreview = new ObscurantWallofChalk();

@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.vfx.BorderLongFlashEffect;
 import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
 import com.megacrit.cardcrawl.vfx.combat.DaggerSprayEffect;
@@ -35,24 +36,31 @@ public class TsumukariMuramasa extends AbsNoblePhantasmCard {
         addToBot(new VFXAction(p, new CleaveEffect(), 0.1F));
         addToBot(new DamageAllEnemiesAction(p, multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
 
+        addToBot(new SFXAction("SLASH_HEAVY"));
         addToBot(new VFXAction(new DaggerSprayEffect(AbstractDungeon.getMonsters().shouldFlipVfx()), 0.0F));
         addToBot(new DamageAllEnemiesAction(p, multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
 
+        addToBot(new SFXAction("SLASH_HORIZONTAL"));
         addToBot(new VFXAction(new BorderLongFlashEffect(Color.LIGHT_GRAY)));
+        addToBot(new DamageAllEnemiesAction(p, multiDamage, damageType, AbstractGameAction.AttackEffect.NONE));
+        
+        addToBot(new DamageAllEnemiesAction(p, multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+
         addToBot(new VFXAction(new DieDieDieEffect(), 0.7F));
         addToBot(new ShakeScreenAction(0.0F, ScreenShake.ShakeDur.MED, ScreenShake.ShakeIntensity.HIGH));
         addToBot(new DamageAllEnemiesAction(p, multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
 
-        addToBot(new DamageAllEnemiesAction(p, multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-
         addToBot(new SFXAction("ATTACK_WHIRLWIND"));
         addToBot(new VFXAction(new WhirlwindEffect(), 0.0F));
+        addToBot(new DamageAllEnemiesAction(p, multiDamage, damageType, AbstractGameAction.AttackEffect.NONE));
+
         addToBot(new SFXAction("ATTACK_HEAVY"));
         addToBot(new VFXAction(p, new CleaveEffect(), 0.0F));
         addToBot(new DamageAllEnemiesAction(p, multiDamage, damageType, AbstractGameAction.AttackEffect.NONE));
 
-        for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-            addToBot(new RemoveSpecificPowerAction(mo, p, "Strength"));
-        }
+        addToBot(new RemoveSpecificPowerAction(p, p, StrengthPower.POWER_ID));
+        // for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
+        //     addToBot(new RemoveSpecificPowerAction(mo, p, StrengthPower.POWER_ID));
+        // }
     }
 }

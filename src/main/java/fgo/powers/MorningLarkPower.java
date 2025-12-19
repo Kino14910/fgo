@@ -15,7 +15,7 @@ public class MorningLarkPower extends BasePower {
 
     @Override
     public void updateDescription() {
-        description = String.format(DESCRIPTIONS[0], amount);
+        description = String.format(DESCRIPTIONS[0], 20);
     }
 //
 //    @Override

@@ -24,6 +24,9 @@ public class StarHunterPower extends BasePower {
         description = String.format(DESCRIPTIONS[0], amount, amount2);
     }
 
+    /**
+     * @see StarPower
+     */
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
         super.onUseCard(card, action);

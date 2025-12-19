@@ -1,6 +1,7 @@
 package fgo.powers;
 
 import static fgo.FGOMod.makeID;
+import static fgo.characters.CustomEnums.FGO_Foreigner;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
@@ -9,6 +10,7 @@ import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import fgo.cards.fgo.CharismaOfTheJade;
 import fgo.characters.CustomEnums.FGOCardColor;
@@ -27,8 +29,10 @@ public class StarPower extends BasePower {
 
     @Override
     public float atDamageGive(float damage, DamageInfo.DamageType type, AbstractCard card) {
-        //如果你有20颗暴击星时，使用翡翠的魅力时，暴击威力增加200%。
-        if (CharismaOfTheJade.ID.equals(card.cardID) && amount >= 20) {
+        //如果你有20颗暴击星，使用翡翠的魅力时，暴击威力增加200%。
+        //如果你有20颗暴击星且拥有星月夜能力，使用领域外生命的卡时，暴击威力增加200%。
+        if (CharismaOfTheJade.ID.equals(card.cardID) && amount >= 20 
+                || AbstractDungeon.player.hasPower(ForeignerPower.POWER_ID) && card.hasTag(FGO_Foreigner) && amount >= 10) {
             return finalDamage(damage, type, 3.0F);
         }
 

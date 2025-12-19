@@ -1,13 +1,12 @@
 package fgo.cards.fgo;
 
 import com.evacipated.cardcrawl.mod.stslib.actions.common.FetchAction;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.AttackDamageRandomEnemyAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import fgo.action.HeroicKingAction;
 import fgo.cards.FGOCard;
 import fgo.powers.HeroicKingPower;
 public class HeroicKing extends FGOCard {
@@ -20,10 +19,9 @@ public class HeroicKing extends FGOCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        for(int i = 0; i < magicNumber; ++i) {
-            addToBot(new HeroicKingAction(this, AbstractGameAction.AttackEffect.NONE));
+        for(int i = 0; i < magicNumber; i++) {
+            addToBot(new AttackDamageRandomEnemyAction(this));
         }
-
     }
 
     @Override

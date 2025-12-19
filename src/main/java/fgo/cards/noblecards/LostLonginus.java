@@ -20,6 +20,7 @@ public class LostLonginus extends AbsNoblePhantasmCard {
     public LostLonginus() {
         super(ID,CardType.ATTACK, CardTarget.ALL_ENEMY, 1);
         setDamage(24, 6);
+        setMagic(100, 100);
     }
 
     @Override
@@ -32,7 +33,7 @@ public class LostLonginus extends AbsNoblePhantasmCard {
         for (AbstractMonster m2 : AbstractDungeon.getCurrRoom().monsters.monsters) {
             if (!m2.isDeadOrEscaped()) {
                 if (m2.hasPower(InvinciblePower.POWER_ID)) {
-                    addToBot(new ApplyPowerAction(m, p, new InvinciblePower(m, 100)));
+                    addToBot(new ApplyPowerAction(m, p, new InvinciblePower(m, magicNumber)));
                 }
             }
         }

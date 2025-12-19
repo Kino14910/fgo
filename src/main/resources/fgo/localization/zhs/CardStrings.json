@@ -261,7 +261,7 @@
   },
   "${modID}:Chasmatis": {
     "NAME": "天之裂谷",
-    "DESCRIPTION": "使下一张打出的宝具卡 升级 。"
+    "DESCRIPTION": " fgo:宝具充能阶段上升 。"
   },
   "${modID}:WindsweptSlash": {
     "NAME": "势如破竹",
@@ -324,7 +324,7 @@
   },
   "${modID}:HeroCreation": {
     "NAME": "英雄塑造",
-    "DESCRIPTION": "{@@}{!Upgrades!|1=保留 。 NL }获得100% fgo:暴击威力 。 NL 你的回合结束时，失去100% fgo:暴击威力 。"
+    "DESCRIPTION": "获得 !M! 点 力量 和 !${CriticalDamage}! % fgo:暴击威力 。 NL 你的回合结束时，失去 !M! 点 力量 和 !${CriticalDamage}! % fgo:暴击威力 。"
   },
   "${modID}:Coaching": {
     "NAME": "指导",
@@ -511,7 +511,7 @@
   },
   "${modID}:TsumukariMuramasa": {
     "NAME": "无元剑制",
-    "DESCRIPTION": "对所有敌人造成 !D! 点伤害6次，失去所有 力量 。"
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害8次。 NL 失去所有 力量 。"
   },
   "${modID}:ImitationGodForce": {
     "NAME": "伪·军神五兵",
@@ -522,7 +522,7 @@
   },
   "${modID}:BridalSpinWheel": {
     "NAME": "赠予新娘的纺车",
-    "DESCRIPTION": "{@@}获得 {!M!|repeat= [E]} 。 NL 获得 !Star! 颗 fgo:暴击星 。"
+    "DESCRIPTION": "获得 !M! 层 fgo:金属化 。 获得 !Star! 颗 fgo:暴击星 。"
   },
   "${modID}:IraLupus": {
     "NAME": "狂暴少女狼",
@@ -530,11 +530,11 @@
   },
   "${modID}:LostLonginus": {
     "NAME": "选定之枪",
-    "DESCRIPTION": " fgo:无敌贯通 。对所有敌人造成 !D! 点伤害，将 *坚不可摧 增加100点。"
+    "DESCRIPTION": " fgo:无敌贯通 。对所有敌人造成 !D! 点伤害，将 *坚不可摧 增加 !M! 点。"
   },
   "${modID}:ExcaliburGalatine": {
     "NAME": "轮转胜利之剑",
-    "DESCRIPTION": "获得 fgo:阳光照射 3回合。 NL 获得 !M! 点 活力 。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 获得 fgo:阳光照射 3回合。 NL 获得 !M! 点 活力 。 NL 有阳光照射时，获得50% fgo:暴击威力 。"
   },
   "${modID}:Overload": {
     "NAME": "缚锁全断·过重湖光",
@@ -554,23 +554,23 @@
   },
   "${modID}:LieLikeVortigern": {
     "NAME": "与彼方同坠的梦之瞳眸",
-    "DESCRIPTION": "对所有敌人造成 !D! 点伤害，失去2点 力量 ， NL 给予 !M! 层 无实体 。 NL 获得 !M! 层 无实体 。"
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害，使其失去2点 力量 ， NL 给予 !M! 层 无实体 。 NL 获得 !M! 层 无实体 。"
   },
   "${modID}:RoadlessCamelot": {
     "NAME": "业已无法抵达的理想乡",
-    "DESCRIPTION": "{@@}对所有敌人造成 !D! 点伤害3次。 NL 你打出的下{!M!|1=一|@= !M! }张 fgo:宝具牌 将被打出两次。"
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 给予 3 层 fgo:诅呪 。 NL fgo:宝具充能阶段上升 。"
   },
   "${modID}:BlackdogGalatine": {
     "NAME": "捕食日轮之角",
-    "DESCRIPTION": "对所有敌人造成 !D! 点伤害5次。 NL 获得 !M! 层 *多层护甲 。"
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 获得 !M! fgo:临时生命 。 NL 获得 [E][E] 。"
   },
   "${modID}:FetchFailnaught": {
     "NAME": "痛幻哭奏",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 敌人每有一层 fgo:诅呪 伤害就提高10%。 NL 给予 !M! 层 fgo:诅呪 。 NL 将敌人的 fgo:诅呪 层数翻倍。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 敌人每有一层 fgo:诅呪 伤害就提高10%。 NL 给予3层 fgo:诅呪 。 NL 将敌人的 fgo:诅呪 层数增加 !M! 倍。"
   },
   "${modID}:Sevendrive": {
     "NAME": "79式掷祸大社",
-    "DESCRIPTION": "获得 1 点 力量 。 NL 你的回合结束时，失去 1 点 力量 。 NL 对所有敌人造成 !D! 点伤害。 NL 减少敌人多段攻击1段。 NL 获得 !NP! % fgo:宝具值 。"
+    "DESCRIPTION": "获得 2 点 力量 。 NL 你的回合结束时，失去 2 点 力量 。 NL 对所有敌人造成 !D! 点伤害。 NL 减少敌人多段攻击1段。 NL 获得 !NP! % fgo:宝具值 。"
   },
   "${modID}:Excalibur": {
     "NAME": "誓约胜利之剑",
@@ -583,7 +583,8 @@
   },
   "${modID}:Desterrennacht": {
     "NAME": "星月夜",
-    "DESCRIPTION": "给予所有敌人3层 fgo:恐怖 (60%概率)。 NL 获得 !M! 点 力量 和 !${modID}:CriticalDamage! % fgo:暴击威力 。 NL 每回合获得10颗 fgo:暴击星 。"
+    "DESCRIPTION": "给予所有敌人3层 fgo:恐怖 (60%概率)。 NL 获得 !M! 点 力量 和 !${modID}:CriticalDamage! % fgo:暴击威力 。 NL *〔领域外生命〕 卡攻击造成的的暴击威力提升。 NL 每回合获得10颗 fgo:暴击星 。",
+    "FLAVOR": "领域外生命。"
   },
   "${modID}:Fragarach": {
     "NAME": "斩剜战神之剑",
@@ -596,7 +597,7 @@
   },
   "${modID}:MahaPralaya": {
     "NAME": "裁定归灭之回剑",
-    "DESCRIPTION": "对所有敌人造成 !D! 点伤害5次。 NL 额外造成所有敌人总负面状态种类的伤害。"
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 额外造成所有敌人状态种类的伤害5倍的伤害。"
   },
   "${modID}:KurKigalIrkalla": {
     "NAME": "灵峰踏抱冥府之鞴",

@@ -14,7 +14,7 @@ public class SuitenNikko extends AbsNoblePhantasmCard {
 
     public SuitenNikko() {
         super(ID, AbstractCard.CardType.SKILL, AbstractCard.CardTarget.SELF, 1);
-        setMagic(25, 25);
+        setMagic(30, 5);
     }
 
     @Override

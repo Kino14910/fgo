@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 
 import fgo.cards.AbsNoblePhantasmCard;
 import fgo.powers.CriticalDamageUpPower;
+import fgo.powers.ForeignerPower;
 import fgo.powers.StarRegenPower;
 import fgo.powers.TerrorPower;
 public class Desterrennacht extends AbsNoblePhantasmCard {
@@ -17,8 +18,8 @@ public class Desterrennacht extends AbsNoblePhantasmCard {
 
     public Desterrennacht() {
         super(ID,CardType.POWER, CardTarget.ALL_ENEMY, 2);
-        setMagic(3, 2);
-        setCustomVar("CriticalDamage", 50, 50);
+        setMagic(2, 1);
+        setCustomVar("CriticalDamage", 60, 10);
         tags.add(FGO_Foreigner);
     }
 
@@ -30,6 +31,7 @@ public class Desterrennacht extends AbsNoblePhantasmCard {
         }
         addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, magicNumber)));
         addToBot(new ApplyPowerAction(p, p, new CriticalDamageUpPower(p, customVar("CriticalDamage"))));
+        addToBot(new ApplyPowerAction(p, p, new ForeignerPower(p, 100)));
         addToBot(new ApplyPowerAction(p, p, new StarRegenPower(p, 10)));
     }
 }

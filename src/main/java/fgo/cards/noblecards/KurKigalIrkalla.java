@@ -3,7 +3,6 @@ package fgo.cards.noblecards;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.LoseHPAction;
-import com.megacrit.cardcrawl.actions.watcher.ExpungeVFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -24,7 +23,6 @@ public class KurKigalIrkalla extends AbsNoblePhantasmCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-            addToBot(new ExpungeVFXAction(mo));
             if (!mo.hasPower(FlightPower.POWER_ID)) {
                 addToBot(new LoseHPAction(mo, p, mo.maxHealth / 10));
             }

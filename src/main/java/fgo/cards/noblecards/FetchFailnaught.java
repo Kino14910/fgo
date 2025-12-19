@@ -12,7 +12,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.StarBounceEffect;
 import com.megacrit.cardcrawl.vfx.combat.ViolentAttackEffect;
 
-import fgo.action.FetchFailnaughtAction;
 import fgo.cards.AbsNoblePhantasmCard;
 import fgo.powers.CursePower;
 
@@ -22,7 +21,7 @@ public class FetchFailnaught extends AbsNoblePhantasmCard {
     public FetchFailnaught() {
         super(ID,CardType.ATTACK, CardTarget.ENEMY, 1);
         setDamage(30, 8);
-        setMagic(3);
+        setMagic(1, 1);
     }
 
 
@@ -40,8 +39,11 @@ public class FetchFailnaught extends AbsNoblePhantasmCard {
         }
 
         addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-        addToBot(new ApplyPowerAction(m, p, new CursePower(m, p, magicNumber)));
-        addToBot(new FetchFailnaughtAction(m, p));
+        addToBot(new ApplyPowerAction(m, p, new CursePower(m, p, 2)));
+        if (m != null && m.hasPower(CursePower.POWER_ID)) {
+            int curAmt = m.getPower(CursePower.POWER_ID).amount;
+            addToBot(new ApplyPowerAction(m, p, new CursePower(m, p, curAmt * magicNumber)));
+        }
     }
 
     @Override

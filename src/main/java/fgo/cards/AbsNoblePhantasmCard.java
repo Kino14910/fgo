@@ -66,6 +66,12 @@ public abstract class AbsNoblePhantasmCard extends FateMagineerCard {
         if (upgradeMagic)
             upgradeMagicNumber(magicUpgrade);
 
+        if (upgradeNP)
+            upgradeMagicNumber(npUpgrade);
+
+        if (upgradeStar)
+            upgradeMagicNumber(starUpgrade);
+
         for (LocalVarInfo var : cardVariables.values()) {
             upgradeCustomVar(var);
         }

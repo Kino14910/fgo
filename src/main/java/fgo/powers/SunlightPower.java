@@ -1,15 +1,12 @@
 package fgo.powers;
 
 import static fgo.FGOMod.makeID;
-import static fgo.utils.ModHelper.addToBotAbstract;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 
 public class SunlightPower extends BasePower {
@@ -21,30 +18,30 @@ public class SunlightPower extends BasePower {
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
         if (card.type == AbstractCard.CardType.ATTACK) {
-            if (owner.hasPower("Vigor")) {
-                int VigorAmt = owner.getPower("Vigor").amount;
-                addToBot(new ApplyPowerAction(owner, owner, new VigorPower(owner, VigorAmt), VigorAmt));
-            }
+            flash();
+            gainVigor();
         }
     }
 
     @Override
     public void atEndOfTurn(boolean isPlayer) {
         flash();
-        AbstractPlayer p = AbstractDungeon.player;
-        addToBotAbstract(() -> {
-            if (p.hasPower("Vigor")) {
-                int strAmt = p.getPower("Vigor").amount;
-                addToBot(new ApplyPowerAction(p, p, new VigorPower(p, strAmt), strAmt));
-        }
-        });
+        gainVigor();
         addToBot(new ReducePowerAction(owner, owner, ID, 1));
+        if (amount == 1) {
+            addToBot(new ReducePowerAction(owner, owner, CriticalDamageUpPower.POWER_ID, 50));
+        } 
+    }
+    
+    private void gainVigor() {
+        if (owner.hasPower(VigorPower.POWER_ID)) {
+            int VigorAmt = owner.getPower(VigorPower.POWER_ID).amount;
+            addToBot(new ApplyPowerAction(owner, owner, new VigorPower(owner, VigorAmt)));
+        }
     }
 
     @Override
     public void updateDescription() {
         description = DESCRIPTIONS[0];
     }
-
-    
 }

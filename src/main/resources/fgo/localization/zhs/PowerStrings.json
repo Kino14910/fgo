@@ -515,5 +515,11 @@
     "DESCRIPTIONS": [
       "之后 #b%d 次 #y暴击 ，提高 #b%d %% #y暴击威力 。"
     ]
+  },
+  "${modID}:ForeignerPower": {
+    "NAME": "星月夜",
+    "DESCRIPTIONS": [
+      "#g〔领域外生命〕 卡攻击造成的的暴击威力提升 100% 。"
+    ]
   }
 }
