@@ -12,10 +12,9 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public class FragarachPower extends BasePower {
     public static final String POWER_ID = makeID(FragarachPower.class.getSimpleName());
-    private static final PowerType TYPE = PowerType.BUFF;
 
     public FragarachPower(AbstractCreature owner, int amount) {
-        super(POWER_ID, TYPE, false, owner, amount); 
+        super(POWER_ID, PowerType.BUFF, false, owner, amount); 
     }
 
     @Override

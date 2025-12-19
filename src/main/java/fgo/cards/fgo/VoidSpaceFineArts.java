@@ -15,7 +15,6 @@ public class VoidSpaceFineArts extends FGOCard {
     public VoidSpaceFineArts() {
         super(ID, 1, CardType.SKILL, CardTarget.SELF, CardRarity.UNCOMMON);
         setMagic(5, 5);
-        tags.add(CardTags.HEALING);
         tags.add(FGO_Foreigner);
     }
 
@@ -31,7 +30,7 @@ public class VoidSpaceFineArts extends FGOCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new GutsPower(p, 10)));
         for(int i = 0; i < 3; ++i) {
-            addToBot(new ApplyPowerAction(p, p, new CursePower(m, p, 1)));
+            addToBot(new ApplyPowerAction(p, p, new CursePower(p, p, 1)));
         }
         
         if (p.hasPower(CursePower.POWER_ID)) {

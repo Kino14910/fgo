@@ -14,10 +14,9 @@ import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 
 public class SunlightPower extends BasePower {
     public static final String POWER_ID = makeID(SunlightPower.class.getSimpleName());
-   private static final PowerType TYPE = PowerType.BUFF;
 
     public SunlightPower(AbstractCreature owner, int amount) {
-        super(POWER_ID, TYPE, false, owner, amount);
+        super(POWER_ID, PowerType.BUFF, false, owner, amount);
     }
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {

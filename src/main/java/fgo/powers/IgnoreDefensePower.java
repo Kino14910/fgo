@@ -12,10 +12,9 @@ import com.megacrit.cardcrawl.powers.VulnerablePower;
 
 public class IgnoreDefensePower extends BasePower {
     public static final String POWER_ID = makeID(IgnoreDefensePower.class.getSimpleName());
-    private static final PowerType TYPE = PowerType.BUFF;
 
     public IgnoreDefensePower(AbstractCreature owner, int amount) {
-        super(POWER_ID, TYPE, false, owner, amount);
+        super(POWER_ID, PowerType.BUFF, false, owner, amount);
     }
 
     @Override

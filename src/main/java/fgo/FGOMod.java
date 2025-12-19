@@ -545,7 +545,7 @@ public class FGOMod implements
                 }
                 System.out.println("hasTexture: " + hasTexture);
             AbstractDungeon.ftue = new CustomMultiPageFtue(ftues, tutTexts);
-            // config.setBool("enableFtue", false);
+            config.setBool("enableFtue", false);
             FGOConfig.enableFtue = false;
             try {
                 config.save();

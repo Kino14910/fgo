@@ -10,10 +10,9 @@ import fgo.patches.RevivePatch;
 
 public class IndomitablePower extends BasePower {
     public static final String POWER_ID = makeID(IndomitablePower.class.getSimpleName());
-    private static final PowerType TYPE = PowerType.BUFF;
 
     public IndomitablePower(AbstractCreature owner, int amount) {
-        super(POWER_ID, TYPE, false, owner, owner, amount, "GutsTriggerPower");
+        super(POWER_ID, PowerType.BUFF, false, owner, owner, amount, "GutsTriggerPower");
     }
 
     /**

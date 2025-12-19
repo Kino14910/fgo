@@ -7,10 +7,9 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 
 public class NoPrayerForRainPower extends BasePower {
     public static final String POWER_ID = makeID(NoPrayerForRainPower.class.getSimpleName());
-    private static final PowerType TYPE = PowerType.BUFF;
 
     public NoPrayerForRainPower(AbstractCreature owner) {
-        super(POWER_ID, TYPE, false, owner, "PutOnFakeFacePower");
+        super(POWER_ID, PowerType.BUFF, false, owner, "PutOnFakeFacePower");
     }
 
     @Override

@@ -2,6 +2,7 @@ package fgo.cards.fgo;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.PoisonPower;
 
@@ -17,8 +18,10 @@ public class CalamityOfTheNorth extends FGOCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new PoisonPower(m, p, magicNumber)));
-        addToBot(new ApplyPowerAction(p, p, new CursePower(m, p, magicNumber)));
+        for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
+            addToBot(new ApplyPowerAction(mo, p, new PoisonPower(mo, p, magicNumber)));
+            addToBot(new ApplyPowerAction(mo, p, new CursePower(mo, p, magicNumber)));
+        }
     }
 }
 

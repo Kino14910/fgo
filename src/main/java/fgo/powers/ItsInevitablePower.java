@@ -9,10 +9,9 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 
 public class ItsInevitablePower extends BasePower {
     public static final String POWER_ID = makeID(ItsInevitablePower.class.getSimpleName());
-    private static final PowerType TYPE = PowerType.BUFF;
 
     public ItsInevitablePower(AbstractCreature owner, int amount, int boost) {
-        super(POWER_ID, TYPE, false, owner, amount, "BurningPower");
+        super(POWER_ID, PowerType.BUFF, false, owner, amount, "BurningPower");
         amount2 += boost;
         updateDescription();
     }

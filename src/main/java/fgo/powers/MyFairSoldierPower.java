@@ -12,7 +12,6 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 
 public class MyFairSoldierPower extends BasePower {
     public static final String POWER_ID = makeID(MyFairSoldierPower.class.getSimpleName());
-    private static final PowerType TYPE = PowerType.DEBUFF;
 
     public MyFairSoldierPower(AbstractCreature owner, int amount) {
         super(POWER_ID, PowerType.DEBUFF, false, owner, amount, "SkillSeal");

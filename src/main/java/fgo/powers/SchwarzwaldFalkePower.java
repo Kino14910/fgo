@@ -8,10 +8,9 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 
 public class SchwarzwaldFalkePower extends BasePower {
     public static final String POWER_ID = makeID(SchwarzwaldFalkePower.class.getSimpleName());
-    private static final PowerType TYPE = PowerType.BUFF;
 
     public SchwarzwaldFalkePower(AbstractCreature owner, int amount) {
-        super(POWER_ID, TYPE, false, owner, amount, "DelayedBuffPower");
+        super(POWER_ID, PowerType.BUFF, false, owner, amount, "DelayedBuffPower");
     }
 
     @Override

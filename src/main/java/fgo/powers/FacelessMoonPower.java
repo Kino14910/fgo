@@ -11,10 +11,9 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public class FacelessMoonPower extends BasePower {
     public static final String POWER_ID = makeID(FacelessMoonPower.class.getSimpleName());
-    private static final PowerType TYPE = PowerType.BUFF;
 
     public FacelessMoonPower(AbstractCreature owner, int amount) {
-        super(POWER_ID, TYPE, false, owner, amount); 
+        super(POWER_ID, PowerType.BUFF, false, owner, amount); 
     }
 
     @Override

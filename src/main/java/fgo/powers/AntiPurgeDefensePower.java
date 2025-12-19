@@ -24,6 +24,7 @@ public class AntiPurgeDefensePower extends BasePower {
     @Override
     public int onAttackedToChangeDamage(DamageInfo info, int damageAmount) {
         if (damageAmount > 0) {
+            flash();
             addToBot(new AddTemporaryHPAction(owner, owner, 5));
             addToTop(new ReducePowerAction(owner, owner, ID, 1));
         }

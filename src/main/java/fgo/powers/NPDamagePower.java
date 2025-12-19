@@ -11,10 +11,9 @@ import fgo.characters.CustomEnums.FGOCardColor;
 
 public class NPDamagePower extends BasePower {
     public static final String POWER_ID = makeID(NPDamagePower.class.getSimpleName());
-    private static final PowerType TYPE = PowerType.BUFF;
 
     public NPDamagePower(int amount) {
-        super(POWER_ID, TYPE, false, AbstractDungeon.player, Math.min(amount, 999));
+        super(POWER_ID, PowerType.BUFF, false, AbstractDungeon.player, Math.min(amount, 999));
     }
 
         // 根据卡牌数值amount判断使用哪种描述格式

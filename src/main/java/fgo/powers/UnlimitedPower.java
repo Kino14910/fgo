@@ -12,10 +12,9 @@ import basemod.helpers.CardModifierManager;
 
 public class UnlimitedPower extends BasePower {
     public static final String POWER_ID = makeID(UnlimitedPower.class.getSimpleName());
-    private static final PowerType TYPE = PowerType.BUFF;
 
     public UnlimitedPower(AbstractCreature owner, int amount) {
-        super(POWER_ID, TYPE, false, owner, amount, "PutOnFakeFacePower");
+        super(POWER_ID, PowerType.BUFF, false, owner, amount, "PutOnFakeFacePower");
     }
 
     @Override

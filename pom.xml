@@ -113,7 +113,10 @@
                     <excludes>
                         <exclude>**/*.psd</exclude>
                         <exclude>**/*.xlsx</exclude>
+                        <exclude>**/*.js</exclude>
                         <exclude>node_modules/**</exclude>
+                        <exclude>package.json</exclude>
+                        <exclude>package-lock.json</exclude>
                     </excludes>
                 </configuration>
             </plugin>

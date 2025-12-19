@@ -14,11 +14,10 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class FifthFormPower extends BasePower {
     public static final String POWER_ID = makeID(FifthFormPower.class.getSimpleName());
-    private static final PowerType TYPE = PowerType.BUFF;
     private boolean justApplied = false;
    
     public FifthFormPower(AbstractCreature owner, int amount, boolean upgraded) {
-        super(POWER_ID, TYPE, false, owner, amount); 
+        super(POWER_ID, PowerType.BUFF, false, owner, amount); 
         if (upgraded) {
             justApplied = true;
         }

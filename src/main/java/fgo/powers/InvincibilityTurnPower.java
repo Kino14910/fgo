@@ -8,10 +8,9 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 
 public class InvincibilityTurnPower extends BasePower {
     public static final String POWER_ID = makeID(InvincibilityTurnPower.class.getSimpleName());
-    private static final PowerType TYPE = PowerType.BUFF;
 
     public InvincibilityTurnPower(AbstractCreature owner, int amount) {
-        super(POWER_ID, TYPE, false, owner, amount, "InvincibilityPower");
+        super(POWER_ID, PowerType.BUFF, false, owner, amount, "InvincibilityPower");
     }
 
     @Override

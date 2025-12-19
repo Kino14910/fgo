@@ -28,8 +28,10 @@ import fgo.cards.derivative.mash.LordCamelot;
 import fgo.cards.derivative.mash.LordChaldeas;
 import fgo.cards.derivative.mash.RayProofKyrielight;
 import fgo.cards.noblecards.HollowHeartAlbion;
+import fgo.cards.noblecards.LastSunXibalba;
 import fgo.cards.noblecards.Unlimited;
 import fgo.characters.CustomEnums.FGOCardColor;
+import fgo.relics.ArchetypeORT;
 import fgo.ui.campfire.AlterOption;
 import fgo.ui.panels.NobleDeckCards;
 import fgo.utils.NobleCardHelper;
@@ -80,8 +82,13 @@ public class AlterOptionEffect extends AbstractGameEffect {
                 Camelot.ID,
                 LordCamelot.ID,
                 LordChaldeas.ID,
-                RayProofKyrielight.ID
+                RayProofKyrielight.ID,
+                LastSunXibalba.ID
             ));
+
+            if (AbstractDungeon.player.hasRelic(ArchetypeORT.ID)) {
+                excludedCards.remove(LastSunXibalba.ID);
+            }
 
             for (AbstractCard card : noblePhantasmCards) {
                 if (!NobleCardHelper.hasCardWithID(card.cardID)

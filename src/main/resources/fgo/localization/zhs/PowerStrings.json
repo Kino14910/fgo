@@ -69,7 +69,7 @@
   "${modID}:CursePower": {
     "NAME": "诅呪",
     "DESCRIPTIONS": [
-      "在每回合开始时失去 #b%1$s 点 #y生命 。"
+      "在每回合开始时失去 #b%d 点 #y生命 。"
     ]
   },
   "${modID}:BeastMagicPower": {

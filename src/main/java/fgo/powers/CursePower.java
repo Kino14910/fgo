@@ -9,7 +9,7 @@ public class CursePower extends BasePower {
     public static final String POWER_ID = makeID(CursePower.class.getSimpleName());
 
     public CursePower(AbstractCreature owner, AbstractCreature source, int amount) {
-        super(POWER_ID, PowerType.DEBUFF, false, owner, amount); 
+        super(POWER_ID, PowerType.DEBUFF, false, owner, source, amount); 
     }
 
     @Override
@@ -19,6 +19,7 @@ public class CursePower extends BasePower {
 
     @Override
     public void atStartOfTurn() {
+        flash();
         addToBot(new LoseHPAction(owner, owner, amount));
     }
 

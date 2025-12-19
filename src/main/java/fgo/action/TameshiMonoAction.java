@@ -18,7 +18,7 @@ public class TameshiMonoAction extends AbstractGameAction {
       .getUIString("ExhaustAction");
   private static final String[] TEXT = uiStrings.TEXT;
   private AbstractPlayer p;
-  private int num;
+  private final int num;
 
   public TameshiMonoAction(int number) {
     actionType = AbstractGameAction.ActionType.CARD_MANIPULATION;
@@ -29,20 +29,21 @@ public class TameshiMonoAction extends AbstractGameAction {
 
   @Override
 public void update() {
+    GridCardSelectScreen screen = AbstractDungeon.gridSelectScreen;
     if (duration == Settings.ACTION_DUR_FAST) {
       if (p.discardPile.isEmpty()) {
         isDone = true;
         return;
       }
-      AbstractDungeon.gridSelectScreen.open(p.discardPile, 2, true, TEXT[0]);
+      screen.open(p.discardPile, num, true, TEXT[0]);
       tickDuration();
       return;
     }
 
-    if (!AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
-      int selectedAmt = (int)ReflectionHacks.getPrivate(AbstractDungeon.gridSelectScreen, GridCardSelectScreen.class, "cardSelectAmount");
+    if (!screen.selectedCards.isEmpty()) {
+      int selectedAmt = (int)ReflectionHacks.getPrivate(screen, GridCardSelectScreen.class, "cardSelectAmount");
       addToBot(new ApplyPowerAction(p, p, new StarPower(p, selectedAmt * 4)));
-      AbstractDungeon.gridSelectScreen.selectedCards.clear();
+      screen.selectedCards.clear();
     }
     tickDuration();
   }

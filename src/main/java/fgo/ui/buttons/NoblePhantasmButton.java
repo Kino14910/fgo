@@ -19,7 +19,6 @@ import com.megacrit.cardcrawl.helpers.input.InputHelper;
 import com.megacrit.cardcrawl.localization.TutorialStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.ui.panels.AbstractPanel;
-import com.megacrit.cardcrawl.vfx.ThoughtBubble;
 
 import fgo.action.NoblePhantasmSelectAction;
 import fgo.characters.Master;
@@ -73,10 +72,10 @@ public class NoblePhantasmButton extends AbstractPanel {
     private void chooseNobleCard() {
         AbstractPlayer p = AbstractDungeon.player;
 
-        if (p.hasPower(SealNPPower.POWER_ID)) {
-            AbstractDungeon.effectList.add(new ThoughtBubble(p.dialogX, p.dialogY, 3.0f, uiStrings.TEXT[0], true));
-            return;
-        } 
+        // if (p.hasPower(SealNPPower.POWER_ID)) {
+        //     AbstractDungeon.effectList.add(new ThoughtBubble(p.dialogX, p.dialogY, 3.0f, uiStrings.TEXT[0], true));
+        //     return;
+        // } 
         
         if (Master.fgoNp >= 100) {
             Master.fgoNp = 0;
@@ -89,7 +88,7 @@ public class NoblePhantasmButton extends AbstractPanel {
     public void render(SpriteBatch sb) {
         sb.setColor(renderColor);
 
-        if (Master.fgoNp >= 100 && !AbstractDungeon.isScreenUp) {
+        if (!AbstractDungeon.player.hasPower(SealNPPower.POWER_ID) && Master.fgoNp >= 100 && !AbstractDungeon.isScreenUp) {
             sb.draw(NP_MAX, current_x, current_y, 32.0F, 32.0F, 64.0F, 64.0F, scale, scale, 0.0F, 0, 0, 64, 64, false, false);
         }
 

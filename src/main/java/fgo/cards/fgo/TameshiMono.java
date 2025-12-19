@@ -15,10 +15,7 @@ public class TameshiMono extends FGOCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new TameshiMonoAction(2));
-        // addToBot(new MoveCardsAction(p.exhaustPile, p.discardPile, magicNumber, (cards) -> {
-        //     cards.forEach(c -> new ApplyPowerAction(p, p, new StarPower(p, 4)));
-        // }));
+        addToBot(new TameshiMonoAction(magicNumber));
     }
 }
 

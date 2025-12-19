@@ -7,10 +7,9 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 
 public class NPRatePower extends BasePower {
     public static final String POWER_ID = makeID(NPRatePower.class.getSimpleName());
-    private static final PowerType TYPE = PowerType.BUFF;
 
     public NPRatePower(AbstractCreature owner, int amount) {
-        super(POWER_ID, TYPE, false, owner, amount); 
+        super(POWER_ID, PowerType.BUFF, false, owner, amount); 
     }
 
     @Override

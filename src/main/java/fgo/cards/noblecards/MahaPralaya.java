@@ -24,18 +24,18 @@ public class MahaPralaya extends AbsNoblePhantasmCard {
     }
 
     @Override
-    public void calculateCardDamage(AbstractMonster mo) {
+    public void calculateCardDamage(AbstractMonster m) {
         int MahaAmt = 0;
-        for (AbstractMonster moo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-            for (AbstractPower power : moo.powers) {
+        for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
+            for (AbstractPower power : mo.powers) {
                 if (power.type == AbstractPower.PowerType.DEBUFF) {
-                    ++MahaAmt;
+                    MahaAmt++;
                 }
             }
         }
         int realBaseDamage = baseDamage;
         baseDamage += MahaAmt;
-        super.calculateCardDamage(mo);
+        super.calculateCardDamage(m);
         baseDamage = realBaseDamage;
         isDamageModified = damage != baseDamage;
     }

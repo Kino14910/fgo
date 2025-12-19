@@ -35,7 +35,7 @@ public class SparksRoute extends FGOCard {
             return false;
         }
 
-        if (Master.fgoNp <= 10) {
+        if (Master.fgoNp < 10) {
             canUse = false;
             cantUseMessage = cardStrings.EXTENDED_DESCRIPTION[0];
         }

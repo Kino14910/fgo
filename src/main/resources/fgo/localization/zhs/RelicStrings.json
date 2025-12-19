@@ -129,7 +129,7 @@
     "NAME": "Archetype ORT",
     "FLAVOR": "使用ORT的心脏与星际外来种融合制作（设计）出来的生命体。",
     "DESCRIPTIONS": [
-      "获得的 #yfgo:无敌 变化为获得 #yfgo:肃正防御 。在第二回合和之后每回合开始时，获得 #b10 颗 #yfgo:暴击星 和 #b3% #yfgo:宝具值 。"
+      "获得的 #y缓冲 变化为获得 #yfgo:肃正防御 。在每回合开始时，获得 #b10 颗 #yfgo:暴击星 和 #b3% #yfgo:宝具值 。"
     ]
   },
   "${modID}:BB": {

@@ -9,10 +9,9 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class CurseHarmonyPower extends BasePower {
     public static final String POWER_ID = makeID(CurseHarmonyPower.class.getSimpleName());
-    private static final PowerType TYPE = PowerType.BUFF;
 
     public CurseHarmonyPower(AbstractCreature owner, int amount) {
-        super(POWER_ID, TYPE, false, owner, amount, "ThirstForVengeancePower");
+        super(POWER_ID, PowerType.BUFF, false, owner, amount, "ThirstForVengeancePower");
     }
 
     @Override

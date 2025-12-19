@@ -12,10 +12,9 @@ import fgo.characters.CustomEnums.FGOCardColor;
 
 public class StarHunterPower extends BasePower {
     public static final String POWER_ID = makeID(StarHunterPower.class.getSimpleName());
-    private static final PowerType TYPE = PowerType.BUFF;
 
     public StarHunterPower(AbstractCreature owner, int times, int amount2) {
-        super(POWER_ID, TYPE, false, owner, times, "CriticalDamageUpPower");
+        super(POWER_ID, PowerType.BUFF, false, owner, times, "CriticalDamageUpPower");
         this.amount2 = amount2;
         updateDescription();
     }

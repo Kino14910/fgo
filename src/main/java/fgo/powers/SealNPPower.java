@@ -8,7 +8,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public class SealNPPower extends BasePower {
     public static final String POWER_ID = makeID(SealNPPower.class.getSimpleName());
-    private static final PowerType TYPE = PowerType.DEBUFF;
 
     public SealNPPower(AbstractCreature owner, int amount) {
         super(POWER_ID, PowerType.DEBUFF, false, owner, amount); 

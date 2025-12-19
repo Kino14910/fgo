@@ -12,7 +12,7 @@ public class GutsPower extends BasePower{
     public static final String POWER_ID = makeID(GutsPower.class.getSimpleName());
  
     public GutsPower(AbstractCreature owner, int amount) {
-        super(POWER_ID, PowerType.BUFF, false, owner, amount); 
+        super(POWER_ID, PowerType.BUFF, false, owner, owner, amount); 
     }
 
     /**
@@ -20,6 +20,7 @@ public class GutsPower extends BasePower{
      */
     @Override
     public void onSpecificTrigger() {
+        flash();
         AbstractDungeon.player.heal(Math.max(amount, 1), true);
         addToTop(new RemoveSpecificPowerAction(owner, owner, ID));
     }

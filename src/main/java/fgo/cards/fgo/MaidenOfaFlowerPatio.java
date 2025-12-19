@@ -24,7 +24,7 @@ public class MaidenOfaFlowerPatio extends FGOCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainBlockAction(p, p, block));
-        addToBot(new ApplyPowerAction(p, p, new CursePower(m, p, magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new CursePower(p, p, magicNumber)));
     }
 }
 

@@ -12,10 +12,9 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 
 public class DazzlingMoonPower extends BasePower {
     public static final String POWER_ID = makeID(DazzlingMoonPower.class.getSimpleName());
-    private static final PowerType TYPE = PowerType.BUFF;
 
     public DazzlingMoonPower(AbstractCreature owner, int amount) {
-        super(POWER_ID, TYPE, false, owner, amount); 
+        super(POWER_ID, PowerType.BUFF, false, owner, amount); 
     }
 
     @Override

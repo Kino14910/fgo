@@ -9,10 +9,9 @@ import com.megacrit.cardcrawl.powers.PoisonPower;
 
 public class GoddessMetamorphosisBeastPower extends BasePower {
     public static final String POWER_ID = makeID(GoddessMetamorphosisBeastPower.class.getSimpleName());
-    private static final PowerType TYPE = PowerType.BUFF;
 
     public GoddessMetamorphosisBeastPower(AbstractCreature owner, int amount) {
-        super(POWER_ID, TYPE, false, owner, amount, "BeastPower");
+        super(POWER_ID, PowerType.BUFF, false, owner, amount, "BeastPower");
     }
 
     @Override

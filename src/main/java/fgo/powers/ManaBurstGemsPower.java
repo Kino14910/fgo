@@ -9,10 +9,9 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 
 public class ManaBurstGemsPower extends BasePower {
     public static final String POWER_ID = makeID(ManaBurstGemsPower.class.getSimpleName());
-    private static final PowerType TYPE = PowerType.BUFF;
 
     public ManaBurstGemsPower(AbstractCreature owner, int amount) {
-        super(POWER_ID, TYPE, false, owner, amount, "DelayedBuffPower");
+        super(POWER_ID, PowerType.BUFF, false, owner, amount, "DelayedBuffPower");
     }
 
     @Override

@@ -22,6 +22,7 @@ public class DeathOfDeathPower extends BasePower {
      */
     @Override
     public void onSpecificTrigger() {
+        flash();
         addToBot(new ApplyPowerAction(owner, owner, new PhantasmalPower(owner, 1)));
         addToBot(new RemoveSpecificPowerAction(owner, owner, ID));
     }
