@@ -2,9 +2,9 @@ package fgo.cards.noblecards;
 
 import static fgo.characters.CustomEnums.FGO_Foreigner;
 
+import com.evacipated.cardcrawl.mod.stslib.actions.common.AllEnemyApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
@@ -26,9 +26,9 @@ public class Desterrennacht extends AbsNoblePhantasmCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-            addToBot(new ApplyPowerAction(mo, p, new TerrorPower(mo, 3, 60)));
-        }
+        addToBot(new AllEnemyApplyPowerAction(p, magicNumber,
+                monster -> new TerrorPower(monster, 3, 60))
+        );
         addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, magicNumber)));
         addToBot(new ApplyPowerAction(p, p, new CriticalDamageUpPower(p, customVar("CriticalDamage"))));
         addToBot(new ApplyPowerAction(p, p, new ForeignerPower(p, 100)));

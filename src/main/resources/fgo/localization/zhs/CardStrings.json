@@ -50,7 +50,7 @@
   },
   "${modID}:HolyShroud": {
     "NAME": "圣骸布",
-    "DESCRIPTION": "如果所有敌人即将造成总共20以上的伤害，在这个回合受到的攻击伤害降低 !M! %。"
+    "DESCRIPTION": "如果敌人造成总共20以上的伤害，在这个回合受到的攻击伤害降低 !M! %。"
   },
   "${modID}:QueensCovenant": {
     "NAME": "女王的契约",
@@ -289,11 +289,11 @@
   },
   "${modID}:Canopus": {
     "NAME": "卡诺波",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 将一张 *呪灾 放入你的弃牌堆中。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 增加一张 *呪灾 到你的弃牌堆。"
   },
   "${modID}:CurseDisaster": {
     "NAME": "呪灾",
-    "DESCRIPTION": "不能被打出 。 NL 抽到这张牌时给予你和所有敌人 !M! 层 fgo:诅呪 。 NL 虚无 。"
+    "DESCRIPTION": "不能被打出 。 NL 抽到时给予你和所有敌人 !M! 层 fgo:诅呪 。 NL 虚无 。"
   },
   "${modID}:PrimevalRune": {
     "NAME": "冰冻暴风雪",
@@ -324,7 +324,7 @@
   },
   "${modID}:HeroCreation": {
     "NAME": "英雄塑造",
-    "DESCRIPTION": "获得 !M! 点 力量 和 !${CriticalDamage}! % fgo:暴击威力 。 NL 你的回合结束时，失去 !M! 点 力量 和 !${CriticalDamage}! % fgo:暴击威力 。"
+    "DESCRIPTION": "获得 !M! 点 力量 和 !fgo:CriticalDamage! % fgo:暴击威力 。 NL 你的回合结束时，失去 !M! 点 力量 和 !fgo:CriticalDamage! % fgo:暴击威力 。"
   },
   "${modID}:Coaching": {
     "NAME": "指导",
@@ -344,7 +344,7 @@
   },
   "${modID}:WaterfrontSaintess": {
     "NAME": "水边圣女",
-    "DESCRIPTION": "获得 !NP! % fgo:宝具值 和 !M! % fgo:宝具威力 。 NL fgo:水边 ：获得 !${modID}:CriticalDamage! fgo:暴击威力 。"
+    "DESCRIPTION": "获得 !NP! % fgo:宝具值 和 !M! % fgo:宝具威力 。 NL fgo:水边 ：获得 !fgo:CriticalDamage! fgo:暴击威力 。"
   },
   "${modID}:PursuerofLove": {
     "NAME": "恋之追踪者",
@@ -558,7 +558,7 @@
   },
   "${modID}:RoadlessCamelot": {
     "NAME": "业已无法抵达的理想乡",
-    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 给予 3 层 fgo:诅呪 。 NL fgo:宝具充能阶段上升 。"
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 给予 3 层 fgo:诅呪 。 NL  fgo:宝具充能阶段上升 。"
   },
   "${modID}:BlackdogGalatine": {
     "NAME": "捕食日轮之角",
@@ -583,7 +583,7 @@
   },
   "${modID}:Desterrennacht": {
     "NAME": "星月夜",
-    "DESCRIPTION": "给予所有敌人3层 fgo:恐怖 (60%概率)。 NL 获得 !M! 点 力量 和 !${modID}:CriticalDamage! % fgo:暴击威力 。 NL *〔领域外生命〕 卡攻击造成的的暴击威力提升。 NL 每回合获得10颗 fgo:暴击星 。",
+    "DESCRIPTION": "给予所有敌人3层 fgo:恐怖 (60%概率)。 NL 获得 !M! 点 力量 和 !fgo:CriticalDamage! % fgo:暴击威力 。 NL *〔领域外生命〕 卡攻击造成的的暴击威力提升。 NL 每回合获得10颗 fgo:暴击星 。",
     "FLAVOR": "领域外生命。"
   },
   "${modID}:Fragarach": {

@@ -30,6 +30,7 @@
     "NAMES": [
       "evil curse",
       "evil_curse",
+      "Evil_Curse",
       "curse"
     ],
     "DESCRIPTION": "At the start of turn, lose HP equal to the number of Evil Curse."
@@ -154,14 +155,18 @@
     "PROPER_NAME": "Star",
     "NAMES": [
       "star",
-      "stars"
+      "stars",
+      "Stars"
     ],
     "DESCRIPTION": "When you have at least #b10 Crit Stars, non-#yNoble Phantasm attack cards deal #b100% more damage and consume #b10 Crit Stars when played."
   },
   {
     "PROPER_NAME": "Critical",
     "NAMES": [
-      "critical"
+      "critical",
+      "Critical_Damage",
+      "Critical Damage",
+      "CriticalDamage"
     ],
     "DESCRIPTION": "Further increases #yCritical Hit damage."
   },
@@ -271,5 +276,22 @@
       "stunned"
     ],
     "DESCRIPTION": "Cannot act. At the end of its turn, lose 1 stack of Stunned."
+  },
+  {
+    "PROPER_NAME": "TempHP",
+    "NAMES": [
+      "Temporary HP",
+      "Temporary_HP",
+      "Temp_HP",
+      "TempHp"
+    ],
+    "DESCRIPTION": "Temporary HP that exists only during battle (not subject to maximum HP limits). Can be lost as HP."
+  },
+  {
+    "PROPER_NAME": "OverCharge",
+    "NAMES":[
+      "OC"
+    ],
+    "DESCRIPTIONS": "Each stack enhances the Noble Phantasm once. All stacks are lost at the end of the turn."
   }
 ]

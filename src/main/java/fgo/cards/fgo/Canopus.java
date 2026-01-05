@@ -15,7 +15,7 @@ public class Canopus extends FGOCard {
     public static final String ID = makeID(Canopus.class.getSimpleName());
     public Canopus() {
         super(ID, 1, CardType.ATTACK, CardTarget.ENEMY, CardRarity.COMMON);
-        setDamage(12, 5);
+        setDamage(15, 5);
         cardsToPreview = new CurseDisaster();
     }
 

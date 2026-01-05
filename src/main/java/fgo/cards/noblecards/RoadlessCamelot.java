@@ -1,5 +1,6 @@
 package fgo.cards.noblecards;
 
+import com.evacipated.cardcrawl.mod.stslib.actions.common.AllEnemyApplyPowerAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
@@ -15,7 +16,7 @@ public class RoadlessCamelot extends AbsNoblePhantasmCard {
 
     public RoadlessCamelot() {
         super(ID,CardType.ATTACK, CardTarget.ALL_ENEMY, 1);
-        setDamage(24, 8);
+        setDamage(24);
         setMagic(1, 1);
     }
 
@@ -23,7 +24,7 @@ public class RoadlessCamelot extends AbsNoblePhantasmCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAllEnemiesAction(p, multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.BLUNT_HEAVY));
         
-        addToBot(new ApplyPowerAction(p, p, new CursePower(m, p, 3)));
-        addToBot(new ApplyPowerAction(p, p, new NPOverChargePower(p, 1)));
+        addToBot(new AllEnemyApplyPowerAction(p, 3, monster -> new CursePower(monster, p, 3)));
+        addToBot(new ApplyPowerAction(p, p, new NPOverChargePower(p, magicNumber)));
     }
 }
