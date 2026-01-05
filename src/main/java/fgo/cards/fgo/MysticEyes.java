@@ -23,7 +23,7 @@ public class MysticEyes extends FGOCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new VFXAction(new ViceCrushEffect(m.hb.cX, m.hb.cY), 0.5F));
+        addToBot(new VFXAction(new ViceCrushEffect(m.hb.cX, m.hb.cY), 0.5f));
         addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
         addToBot(new ApplyPowerAction(m, p, new CursePower(m, p, magicNumber), magicNumber));
         if (!m.hasPower(StunMonsterPower.POWER_ID)) {

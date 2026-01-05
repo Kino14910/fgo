@@ -9,9 +9,9 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.EventStrings;
-import com.megacrit.cardcrawl.relics.Circlet;
 import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
 
+import basemod.abstracts.events.phases.TextPhase;
 import fgo.relics.BB;
 
 public class DevilSlot extends BaseEvent {
@@ -19,15 +19,38 @@ public class DevilSlot extends BaseEvent {
     private static final EventStrings eventStrings = CardCrawlGame.languagePack.getEventString(ID);
     private static final String[] DESCRIPTIONS = eventStrings.DESCRIPTIONS;
     private static final String[] OPTIONS = eventStrings.OPTIONS;
-    private static final String title = eventStrings.NAME;
+    private static final String NAME = eventStrings.NAME;
 
     public DevilSlot() {
-        super(ID, title, eventPath("DevilSlot"));
-        body = DESCRIPTIONS[0];
-        imageEventText.setDialogOption(OPTIONS[0], new BB());
-        imageEventText.setDialogOption(OPTIONS[1]);
+        super(ID, NAME, eventPath("DevilSlot"));
+        
+        // 这可是最糟的情况，你走投无路。
+        registerPhase(0, new TextPhase(DESCRIPTIONS[0])
+            .addOption(OPTIONS[0], i -> {
+                AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH / 2.0f, Settings.HEIGHT / 2.0f, new BB());
+                transitionKey("BB");
+            })
+            .addOption(OPTIONS[1], i -> {
+                CardGroup group = CardGroup.getGroupWithoutBottledCards(AbstractDungeon.player.masterDeck.getPurgeableCards());
+                if (!group.isEmpty()) {
+                    imageEventText.updateBodyText(DESCRIPTIONS[2]);
+                    AbstractDungeon.gridSelectScreen.open(group, 1, OPTIONS[2], false);
+                }
+                transitionKey("Leave");
+            })
+        );
+
+        // 好巧不巧。
+        registerPhase("BB", new TextPhase(DESCRIPTIONS[1])
+            .addOption(OPTIONS[2], i -> openMap()));
+
+        registerPhase("Leave", new TextPhase(DESCRIPTIONS[2])
+            .addOption(OPTIONS[2], i -> openMap()));
+
+        transitionKey(0);
     }
 
+    
     @Override
     public void update() {
         super.update();
@@ -36,35 +59,6 @@ public class DevilSlot extends BaseEvent {
             AbstractDungeon.effectList.add(new PurgeCardEffect(c));
             AbstractDungeon.player.masterDeck.removeCard(c);
             AbstractDungeon.gridSelectScreen.selectedCards.remove(c);
-        }
-    }
-
-    @Override
-    protected void buttonEffect(int buttonPressed) {
-        switch (screenNum) {
-            case 0:
-                if (buttonPressed == 0) {
-                    imageEventText.updateBodyText(DESCRIPTIONS[2]);
-                    imageEventText.updateDialogOption(0, OPTIONS[2]);
-                    if (AbstractDungeon.player.hasRelic(BB.ID)) {
-                        AbstractDungeon.getCurrRoom().spawnRelicAndObtain((float)(Settings.WIDTH / 2), (float)(Settings.HEIGHT / 2), new Circlet());
-                    } else {
-                        AbstractDungeon.getCurrRoom().spawnRelicAndObtain((float)(Settings.WIDTH / 2), (float)(Settings.HEIGHT / 2), new BB());
-                    }
-                    imageEventText.clearRemainingOptions();
-                } else {
-                    imageEventText.updateDialogOption(0, OPTIONS[2]);
-                    if (!CardGroup.getGroupWithoutBottledCards(AbstractDungeon.player.masterDeck.getPurgeableCards()).isEmpty()) {
-                        imageEventText.updateBodyText(DESCRIPTIONS[1]);
-                        AbstractDungeon.gridSelectScreen.open(CardGroup.getGroupWithoutBottledCards(AbstractDungeon.player.masterDeck.getPurgeableCards()), 1, OPTIONS[2], false);
-                    }
-                    imageEventText.clearRemainingOptions();
-                }
-
-                screenNum = 1;
-                break;
-            case 1:
-                openMap();
         }
     }
 }

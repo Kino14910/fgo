@@ -62,6 +62,7 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import basemod.AutoAdd;
 import basemod.BaseMod;
 import basemod.abstracts.CustomMultiPageFtue;
+import basemod.eventUtil.AddEventParams;
 import basemod.interfaces.AddAudioSubscriber;
 import basemod.interfaces.EditCardsSubscriber;
 import basemod.interfaces.EditCharactersSubscriber;
@@ -80,6 +81,7 @@ import fgo.cards.FGOCard;
 import fgo.characters.CustomEnums.FGOCardColor;
 import fgo.characters.Master;
 import fgo.event.DevilSlot;
+import fgo.event.FGOLibrary;
 import fgo.event.ManofChaldea;
 import fgo.event.ProofAndRebuttalEvent;
 import fgo.monsters.Emiya;
@@ -154,9 +156,9 @@ public class FGOMod implements
     private static final String DEFAULT_CC_PORTRAIT = imagePath("1024/bg_master");
     private static final String ENERGY_ORB_CC = imagePath("512/MASTEROrb");
     private static final String ENERGY_ORB_CC_PORTRAIT = imagePath("1024/MASTEROrb");
+    //宝具牌背景
     private static final String NOBLE_ORB_CC = imagePath("512/noble_orb_512");
     private static final String NOBLE_ORB_CC_PORTRAIT = imagePath("1024/noble_orb_1024");
-    //宝具牌背景    //宝具牌
     private static final String ATTACK_Noble = imagePath("512/bg_empty_512");
     private static final String SKILL_Noble = imagePath("512/bg_empty_512");
     private static final String POWER_Noble = imagePath("512/bg_empty_512");
@@ -492,10 +494,10 @@ public class FGOMod implements
         BaseMod.addEvent(ProofAndRebuttalEvent.ID, ProofAndRebuttalEvent.class, Exordium.ID);
         BaseMod.addEvent(ManofChaldea.ID, ManofChaldea.class, TheBeyond.ID);
         BaseMod.addEvent(DevilSlot.ID, DevilSlot.class, TheBeyond.ID);
-//        BaseMod.addEvent((new AddEventParams.Builder(FGOLibrary.ID, FGOLibrary.class))
-//                .dungeonID(TheCity.ID)
-//                .playerClass(FGO_MASTER)
-//                .create());
+        BaseMod.addEvent((new AddEventParams.Builder(FGOLibrary.ID, FGOLibrary.class))
+                .dungeonID(TheCity.ID)
+                .playerClass(FGO_MASTER)
+                .create());
     }
     @Override
     public void receiveCardUsed(AbstractCard card) {
@@ -522,7 +524,7 @@ public class FGOMod implements
             fgoNp = 20;
         }
         if(AbstractDungeon.floorNum == 16) {
-            AbstractDungeon.getCurrRoom().spawnRelicAndObtain((float)(Settings.WIDTH / 2), (float)(Settings.HEIGHT / 2), RelicLibrary.getRelic(LockChocolateStrawberry.ID).makeCopy());
+            AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH / 2.0f, Settings.HEIGHT / 2.0f, RelicLibrary.getRelic(LockChocolateStrawberry.ID).makeCopy());
         }
         
         if ((FGOConfig.enableFtue && (Settings.language == Settings.GameLanguage.ZHS || Settings.language == Settings.GameLanguage.ZHT) )

@@ -142,7 +142,7 @@ public class ModHelper {
             return null;
         } else {
             ArrayList<AbstractMonster> tmp;
-            Iterator var5;
+            Iterator<AbstractMonster> var5;
             AbstractMonster m;
             if (predicate == null) {
                 if (aliveOnly) {
@@ -150,7 +150,7 @@ public class ModHelper {
                     var5 = group.monsters.iterator();
 
                     while (var5.hasNext()) {
-                        m = (AbstractMonster) var5.next();
+                        m = var5.next();
                         if (check(m)) {
                             tmp.add(m);
                         }
@@ -175,7 +175,7 @@ public class ModHelper {
                 var5 = group.monsters.iterator();
 
                 while (var5.hasNext()) {
-                    m = (AbstractMonster) var5.next();
+                    m = var5.next();
                     if (!m.halfDead && !m.isDying && !m.isEscaping && predicate.test(m)) {
                         tmp.add(m);
                     }
@@ -191,7 +191,7 @@ public class ModHelper {
                 var5 = group.monsters.iterator();
 
                 while (var5.hasNext()) {
-                    m = (AbstractMonster) var5.next();
+                    m = var5.next();
                     if (predicate.test(m)) {
                         tmp.add(m);
                     }
@@ -224,11 +224,11 @@ public class ModHelper {
             info.isModified = false;
         }
         float tmp = (float) info.output;
-        Iterator var3 = target.powers.iterator();
+        Iterator<AbstractPower> var3 = target.powers.iterator();
 
         AbstractPower p;
         while (var3.hasNext()) {
-            p = (AbstractPower) var3.next();
+            p = var3.next();
             tmp = p.atDamageReceive(tmp, info.type);
             if (info.base != info.output) {
                 info.isModified = true;
@@ -238,15 +238,15 @@ public class ModHelper {
         var3 = target.powers.iterator();
 
         while (var3.hasNext()) {
-            p = (AbstractPower) var3.next();
+            p = var3.next();
             tmp = p.atDamageFinalReceive(tmp, info.type);
             if (info.base != info.output) {
                 info.isModified = true;
             }
         }
 
-        if (tmp < 0.0F) {
-            tmp = 0.0F;
+        if (tmp < 0.0f) {
+            tmp = 0.0f;
         }
 
         info.output = MathUtils.floor(tmp);

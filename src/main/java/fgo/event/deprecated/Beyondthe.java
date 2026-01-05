@@ -2,6 +2,7 @@ package fgo.event.deprecated;
 
 import static fgo.FGOMod.eventPath;
 import static fgo.FGOMod.makeID;
+import static fgo.utils.ModHelper.eventAscension;
 
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -10,6 +11,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 
+import basemod.abstracts.events.phases.TextPhase;
+import basemod.abstracts.events.phases.TextPhase.OptionInfo;
 import fgo.cards.fgo.Strike;
 import fgo.event.BaseEvent;
 
@@ -18,53 +21,29 @@ public class Beyondthe extends BaseEvent {
     private static final EventStrings eventStrings = CardCrawlGame.languagePack.getEventString(ID);
     private static final String[] DESCRIPTIONS = eventStrings.DESCRIPTIONS;
     private static final String[] OPTIONS = eventStrings.OPTIONS;
-    private static final String title = eventStrings.NAME;
-    private CUR_SCREEN screen;
-    private final int maxHPAmt;
+    private static final String NAME = eventStrings.NAME;
+    private static final int maxHPAmt = eventAscension() ? MathUtils.round(4) : MathUtils.round(4);
     public Beyondthe() {
-        super(ID, title, eventPath("Beyondthe"));
-        body = DESCRIPTIONS[0];
-        if (AbstractDungeon.ascensionLevel >= 15) {
-            maxHPAmt = MathUtils.round(4);
-        } else {
-            maxHPAmt = MathUtils.round(6);
-        }
-        screen = CUR_SCREEN.CONTINUE0;
-        //人类即为过去延续到未来的足迹（记忆）， NL 只有一直积累经验、知识与故事， NL 才能作为人而不断成长。
-        imageEventText.setDialogOption(OPTIONS[0]);
-    }
+        super(ID, NAME, eventPath("Beyondthe"));
 
-    @Override
-    protected void buttonEffect(int buttonPressed) {
-        switch (screen) {
-            case CONTINUE0:
-                imageEventText.updateBodyText(DESCRIPTIONS[1]);
-                imageEventText.updateDialogOption(0, OPTIONS[1], new Strike());
-                imageEventText.setDialogOption(OPTIONS[2] + maxHPAmt + OPTIONS[3]);
-                screen = CUR_SCREEN.CONTINUE1;
-                break;
-            case CONTINUE1:
-                switch (buttonPressed) {
-                    case 0:
-                        AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new Strike(), (float) Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
-                        imageEventText.clearAllDialogs();
-                        imageEventText.setDialogOption(OPTIONS[4]);
-                        imageEventText.updateBodyText(DESCRIPTIONS[2]);
-                        screen = CUR_SCREEN.CONTINUE2;
-                        return;
-                    case 1:
-                        AbstractDungeon.player.increaseMaxHp(maxHPAmt, true);
-                        imageEventText.clearAllDialogs();
-                        imageEventText.setDialogOption(OPTIONS[4]);
-                        imageEventText.updateBodyText(DESCRIPTIONS[2]);
-                        screen = CUR_SCREEN.CONTINUE2;
-                        return;
-                }
-                break;
-            case CONTINUE2:
-                openMap();
-            default:
-                break;
-        }
+        registerPhase(0, new TextPhase(DESCRIPTIONS[0])
+            .addOption(OPTIONS[0], i -> transitionKey("Phase 1")));
+        
+        registerPhase("Phase 1", new TextPhase(DESCRIPTIONS[2])
+            .addOption(new OptionInfo(OPTIONS[1], new Strike()) // 原来的卡是小恶魔Shvibzik
+                .setOptionResult(i -> {
+                    AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new Strike(), Settings.WIDTH / 2.0f, Settings.HEIGHT / 2.0f));
+                    transitionKey("Leave");
+                }))
+            .addOption(String.format(OPTIONS[2], maxHPAmt), i -> {
+                AbstractDungeon.player.increaseMaxHp(maxHPAmt, true);
+                transitionKey("Leave");
+            })
+        );
+
+        registerPhase("Leave", new TextPhase(DESCRIPTIONS[3])
+            .addOption(OPTIONS[3], i -> openMap()));
+
+        transitionKey(0);
     }
 }

@@ -33,16 +33,16 @@ public class MoveToEffect extends AbstractGameEffect {
     @Override
     public void update() {
         duration -= Gdx.graphics.getDeltaTime();
-        if (duration <= 0.0F) {
+        if (duration <= 0.0f) {
             isDone = true;
             creature.animY = startY;
             creature.animX = startX;
         } else {
             float tmp;
             if (moveBack) {
-                tmp = 1.0F - Math.abs(duration / startingDuration * 2.0F - 1.0F);
+                tmp = 1.0f - Math.abs(duration / startingDuration * 2.0f - 1.0f);
             } else {
-                tmp = 1.0F - duration / startingDuration;
+                tmp = 1.0f - duration / startingDuration;
             }
 
             creature.animX = Interpolation.pow2In.apply(startX, targetX, tmp);

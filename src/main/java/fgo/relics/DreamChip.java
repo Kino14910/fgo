@@ -14,7 +14,6 @@ public class DreamChip extends BaseRelic {
     private static final String NAME = DreamChip.class.getSimpleName();
 	public static final String ID = makeID(NAME);
     private static boolean usedThisCombat = false;
-    //调用父类的构造方法，传参为super(遗物ID,遗物全图，遗物白底图，遗物稀有度，获得遗物时的音效)
     public DreamChip() {
         super(ID, NAME, FGOCardColor.FGO, RelicTier.SHOP, LandingSound.FLAT);
     }

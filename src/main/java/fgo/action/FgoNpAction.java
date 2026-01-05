@@ -52,7 +52,7 @@ public class FgoNpAction extends AbstractGameAction {
             String text = "NP" + (amount > 0 ? "+" : "") + amount + "%";
             AbstractDungeon.effectList.add(new TextAboveCreatureEffect(
             p.hb.cX - p.animX,
-            p.hb.cY + p.hb.height / 2.0F,
+            p.hb.cY + p.hb.height / 2.0f,
             text,
             Color.WHITE.cpy()));
 }

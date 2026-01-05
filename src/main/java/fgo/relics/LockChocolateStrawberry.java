@@ -53,23 +53,13 @@ public class LockChocolateStrawberry extends BaseRelic {
     }
 
     private AbstractGameEffect ObtainCardEffect(FGOCard card) {
-        return new ShowCardAndObtainEffect(card, (float) Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F);
+        return new ShowCardAndObtainEffect(card, Settings.WIDTH / 2.0f, Settings.HEIGHT / 2.0f);
     }
 
     @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];
     }
-
-    // @Override
-    // public void onEnterRoom(AbstractRoom room) {
-    //     if (AbstractDungeon.actNum > 1 && AbstractDungeon.floorNum % 17 == 0) {
-    //         changeNobleCard(LockChocolateStrawberry.lordCamelot, LockChocolateStrawberry.lordChaldeas);
-    //         changeNobleCard(LockChocolateStrawberry.camelot, LockChocolateStrawberry.lordCamelot);
-    //         changeCard(LockChocolateStrawberry.veneratedWall, LockChocolateStrawberry.veneratedShield);
-    //         changeCard(LockChocolateStrawberry.wall, LockChocolateStrawberry.veneratedWall);
-    //     }
-    // }
 
     @Override
     public void onMonsterDeath(AbstractMonster m) {

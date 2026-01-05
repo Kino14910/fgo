@@ -18,8 +18,6 @@ public class IgnoresInvincibilityPower extends BasePower {
     }
 
     @Override
-    // public void updateDescription() {description = String.format(DESCRIPTIONS[0],
-    // amount);}
     public void updateDescription() {
         description = String.format(DESCRIPTIONS[0], amount);
     }

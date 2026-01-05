@@ -3,11 +3,14 @@ package fgo.ui.panelitems;
 import static fgo.FGOMod.makeID;
 import static fgo.FGOMod.uiPath;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.MathHelper;
 import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.localization.TutorialStrings;
 
@@ -26,6 +29,7 @@ public class NobleDeckPanelItem extends TopPanelItem {
     public static final String[] TEXT = NobleDeckPanelItem.tutorialStrings.TEXT;
     public static final String LABEL = TEXT[0];
     public static final String MSG = TEXT[1];
+    private float rotateTimer = 0.0f;
     public NobleDeckPanelItem() {
         super(IMG, ID);
     }
@@ -36,6 +40,12 @@ public class NobleDeckPanelItem extends TopPanelItem {
             super.update();
             if (FGOInputActionSet.nobleDeckAction.isJustPressed()) {
                 onClick();
+            }
+            if (AbstractDungeon.screen == NobleDeckViewScreen.Enum.Noble_Phantasm) {
+                rotateTimer += Gdx.graphics.getDeltaTime() * 4.0f;
+                angle = MathHelper.angleLerpSnap(angle, MathUtils.sin(rotateTimer) * 15.0f);
+            } else {
+                angle = hitbox.hovered ? MathHelper.angleLerpSnap(angle, 15.0f) : MathHelper.angleLerpSnap(angle, 0.0f);
             }
         }
     }
@@ -132,9 +142,7 @@ public class NobleDeckPanelItem extends TopPanelItem {
 
     @Override
     protected void onHover() {
-        if (!AbstractDungeon.isScreenUp || AbstractDungeon.screen == NobleDeckViewScreen.Enum.Noble_Phantasm) {
-            TipHelper.renderGenericTip(1550.0f * Settings.scale, (float)Settings.HEIGHT - 120.0f * Settings.scale, LABEL + "(" + FGOInputActionSet.nobleDeckAction.getKeyString() + ")", MSG);
-        }
+        TipHelper.renderGenericTip(1550.0f * Settings.scale, (float)Settings.HEIGHT - 120.0f * Settings.scale, LABEL + "(" + FGOInputActionSet.nobleDeckAction.getKeyString() + ")", MSG);
         super.onHover();
     }
 

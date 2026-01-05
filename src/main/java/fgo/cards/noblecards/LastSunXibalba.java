@@ -17,7 +17,6 @@ import fgo.powers.StarPower;
 
 public class LastSunXibalba extends AbsNoblePhantasmCard {
     public static final String ID = makeID(LastSunXibalba.class.getSimpleName());
-//    public static final String ID = "LastSunXibalba";
     public LastSunXibalba() {
         super(ID,CardType.ATTACK, CardTarget.ALL_ENEMY, 1);
         setDamage(6, 2);
@@ -37,16 +36,9 @@ public class LastSunXibalba extends AbsNoblePhantasmCard {
             addToBot(new DamageAllEnemiesAction(p, multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.BLUNT_HEAVY));
         }
 
-        /*for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-            addToBot(new ApplyPowerAction(mo, p, new BuffBlockPower(mo, 1), 1));
-        }*/
+        // addToBot(new AllEnemyApplyPowerAction(m, 1, monster -> new BuffBlockPower(monster, 1)));
 
-        if (Settings.FAST_MODE) {
-            addToBot(new VFXAction(p, new FlameBarrierEffect(p.hb.cX, p.hb.cY), 0.1F));
-        } else {
-            addToBot(new VFXAction(p, new FlameBarrierEffect(p.hb.cX, p.hb.cY), 0.5F));
-        }
-
+        addToBot(new VFXAction(p, new FlameBarrierEffect(p.hb.cX, p.hb.cY), Settings.FAST_MODE ? 0.1f : 0.5f));
         addToBot(new ApplyPowerAction(p, p, new StarPower(p, star)));
     }
 }

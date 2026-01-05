@@ -20,7 +20,7 @@ public class ManaBurstGems extends FGOCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new ManaBurstGemsPower(p, magicNumber)));
-        addToBot(new VFXAction(p, new VerticalAuraEffect(Color.FIREBRICK, p.hb.cX, p.hb.cY), 0.0F));
+        addToBot(new VFXAction(p, new VerticalAuraEffect(Color.FIREBRICK, p.hb.cX, p.hb.cY), 0.0f));
         addToBot(new ApplyPowerAction(p, p, new NoDrawPower(p)));
     }
 }

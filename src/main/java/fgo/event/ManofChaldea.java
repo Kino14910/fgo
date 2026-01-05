@@ -8,87 +8,59 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.vfx.RainingGoldEffect;
 
+import basemod.abstracts.events.phases.TextPhase;
+
 public class ManofChaldea extends BaseEvent {
     public static final String ID = makeID(ManofChaldea.class.getSimpleName());
     private static final EventStrings eventStrings = CardCrawlGame.languagePack.getEventString(ID);
     private static final String[] DESCRIPTIONS = eventStrings.DESCRIPTIONS;
     private static final String[] OPTIONS = eventStrings.OPTIONS;
-    private static final String title = eventStrings.NAME;
-    private CUR_SCREEN screen;
-    public ManofChaldea() {
-        super(ID, title, eventPath("ManofChaldea"));
-        body = DESCRIPTIONS[0];
-        screen = CUR_SCREEN.CONTINUE0;
-        //人类即为过去延续到未来的足迹（记忆）， NL 只有一直积累经验、知识与故事， NL 才能作为人而不断成长。
-        imageEventText.setDialogOption(OPTIONS[0]);
-    }
+    private static final String NAME = eventStrings.NAME;
 
-    @Override
-    protected void buttonEffect(int buttonPressed) {
-        switch (screen) {
-            case CONTINUE0:
-                imageEventText.updateBodyText(DESCRIPTIONS[1]);
-                //一小时内有过的三两谈话。 NL 一天内交到的珍贵好友。 NL 一年内取得的耀眼成长。
-                screen = CUR_SCREEN.CONTINUE1;
-                break;
-            case CONTINUE1:
-                imageEventText.updateBodyText(DESCRIPTIONS[2]);
-                //但是，没有人能够 NL 鲜明地记得经历的一切。
-                screen = CUR_SCREEN.CONTINUE2;
-                break;
-            case CONTINUE2:
-                imageEventText.updateBodyText(DESCRIPTIONS[3]);
-                //留下的仅有结果。 NL 过程通常会被忘记。
-                screen = CUR_SCREEN.CONTINUE3;
-                break;
-            case CONTINUE3:
-                imageEventText.updateBodyText(DESCRIPTIONS[4]);
-                //从长期角度，或是客观角度来看， NL 少年与人们并无差别。
-                screen = CUR_SCREEN.CONTINUE4;
-                break;
-            case CONTINUE4:
-                imageEventText.updateBodyText(DESCRIPTIONS[5]);
-                //每天结束时，他的记忆都会被刷新。 NL 化作一片空白。 NL 而少年，仅能保存其中重要的东西。
-                screen = CUR_SCREEN.CONTINUE5;
-                break;
-            case CONTINUE5:
-                imageEventText.updateBodyText(DESCRIPTIONS[6]);
-                //23小时55分钟的丧失。 NL 每天经历过的耀眼记忆，都会被漂白。
-                screen = CUR_SCREEN.CONTINUE6;
-                break;
-            case CONTINUE6:
-                imageEventText.updateBodyText(DESCRIPTIONS[7]);
-                //5分钟的信念。 NL 抵抗刷新的意志， NL 让他获得了不会失去／无法忘怀的回忆。
-                screen = CUR_SCREEN.CONTINUE7;
-                break;
-            case CONTINUE7:
-                imageEventText.updateBodyText(DESCRIPTIONS[8]);
-                //就这样，少年长大成人。 NL 不断积累着仅为人类（自己）所需的信息， NL 到达了『一名人类的模样』。
-                screen = CUR_SCREEN.CONTINUE8;
-                break;
-            case CONTINUE8:
-                imageEventText.updateBodyText(DESCRIPTIONS[9]);
-                //自己究竟是真正的人类，还是虚有其表的冒牌货， NL 他并未考虑过这个问题。 NL 只是拥有的愿望、信念、誓言非常单纯。 NL 『人类会行善』 NL 只有这一点是他足以被称作人类的，唯一的冠位指定。
-                imageEventText.updateDialogOption(0, OPTIONS[1]);
-                screen = CUR_SCREEN.CONTINUE9;
-                break;
-            case CONTINUE9:
+    public ManofChaldea() {
+        super(ID, NAME, eventPath("ManofChaldea"));
+        
+        // 人类即为过去延续到未来的足迹（记忆），只有一直积累经验、知识与故事，才能作为人而不断成长。 NL 一小时内有过的三两谈话。 NL 一天内交到的珍贵好友。 NL 一年内取得的耀眼成长。
+        registerPhase(0, new TextPhase(DESCRIPTIONS[0])
+            .addOption(OPTIONS[0], i -> transitionKey("Phase 1")));
+        
+        // 但是，没有人能够鲜明地记得经历的一切。 NL 留下的仅有结果。过程通常会被忘记。 NL 从长期角度，或是客观角度来看，少年与人们并无差别。
+        registerPhase("Phase 1", new TextPhase(DESCRIPTIONS[1])
+            .addOption(OPTIONS[0], i -> transitionKey("Phase 2")));
+        
+        // 每天结束时，他的记忆都会被刷新。 NL 化作一片空白。 NL 而少年，仅能保存其中重要的东西。
+        registerPhase("Phase 2", new TextPhase(DESCRIPTIONS[2])
+            .addOption(OPTIONS[0], i -> transitionKey("Phase 3")));
+        
+        // 23小时55分钟的丧失。每天经历过的耀眼记忆，都会被漂白。5分钟的信念。 NL 抵抗刷新的意志，让他获得了不会失去／无法忘怀的回忆。
+        registerPhase("Phase 3", new TextPhase(DESCRIPTIONS[3])
+            .addOption(OPTIONS[0], i -> transitionKey("Phase 4")));
+        
+        // 就这样，少年长大成人。不断积累着仅为人类（自己）所需的信息，到达了『一名人类的模样』。
+        registerPhase("Phase 4", new TextPhase(DESCRIPTIONS[4])
+            .addOption(OPTIONS[0], i -> transitionKey("Phase 5")));
+        
+        // 自己究竟是真正的人类，还是虚有其表的冒牌货，他并未考虑过这个问题。 NL 只是拥有的愿望、信念、誓言非常单纯。 NL 『人类会行善』 NL 只有这一点是他足以被称作人类的，唯一的冠位指定。
+        registerPhase("Phase 5", new TextPhase(DESCRIPTIONS[5])
+            .addOption(OPTIONS[0], i -> transitionKey("Phase 6")));
+        
+        // 获得金币
+        registerPhase("Phase 6", new TextPhase(DESCRIPTIONS[6])
+            .addOption(OPTIONS[2], i -> {
                 AbstractDungeon.effectList.add(new RainingGoldEffect(125));
                 AbstractDungeon.player.gainGold(75);
-                imageEventText.updateBodyText(DESCRIPTIONS[10]);
-                //你获得一些金币。
-                imageEventText.updateDialogOption(0, OPTIONS[2]);
-                screen = CUR_SCREEN.CONTINUE10;
-                break;
-            case CONTINUE10:
+                transitionKey("Phase 8");
+            }));
+        
+        
+        // 恢复体力
+        registerPhase("Phase 7", new TextPhase(DESCRIPTIONS[7])
+            .addOption(OPTIONS[3], i -> {
                 AbstractDungeon.player.heal(15, true);
-                imageEventText.updateBodyText(DESCRIPTIONS[11]);
-                //你恢复了些许体力。
-                imageEventText.updateDialogOption(0, OPTIONS[3]);
-                screen = CUR_SCREEN.CONTINUE11;
-                break;
-            case CONTINUE11:
                 openMap();
-            }
+            }));
+        
+        // 设置事件的起始阶段
+        transitionKey(0);
     }
 }

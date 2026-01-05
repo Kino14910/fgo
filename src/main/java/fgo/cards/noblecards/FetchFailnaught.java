@@ -28,13 +28,8 @@ public class FetchFailnaught extends AbsNoblePhantasmCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int i;
-        if (Settings.FAST_MODE) {
-            addToBot(new VFXAction(new ViolentAttackEffect(m.hb.cX, m.hb.cY, Color.RED)));
-        } else {
-            addToBot(new VFXAction(new ViolentAttackEffect(m.hb.cX, m.hb.cY, Color.RED), 0.4F));
-        }
-        for(i = 0; i < 5; i++) {
+        addToBot(new VFXAction(new ViolentAttackEffect(m.hb.cX, m.hb.cY, Color.RED), Settings.FAST_MODE ? 0 : 0.4f));
+        for(int i = 0; i < 5; i++) {
             addToBot(new VFXAction(new StarBounceEffect(m.hb.cX, m.hb.cY)));
         }
 

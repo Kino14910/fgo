@@ -39,9 +39,9 @@ public class CommandSpellButton extends AbstractPanel {
     public CommandSpellButton() {
         super(
             Settings.WIDTH - 128.0f * Settings.scale,
-            Settings.HEIGHT - 320.0F * Settings.scale,
+            Settings.HEIGHT - 320.0f * Settings.scale,
             Settings.WIDTH,
-            Settings.HEIGHT - 320.0F * Settings.scale,
+            Settings.HEIGHT - 320.0f * Settings.scale,
             8.0f * Settings.xScale,
             0.0f,
             null,
@@ -49,9 +49,9 @@ public class CommandSpellButton extends AbstractPanel {
         );
         hb = new Hitbox(
             Settings.WIDTH - 128.0f * Settings.scale,
-            Settings.HEIGHT - 320.0F * Settings.scale,
-            128.0F * Settings.scale,
-            128.0F * Settings.scale
+            Settings.HEIGHT - 320.0f * Settings.scale,
+            128.0f * Settings.scale,
+            128.0f * Settings.scale
         );
     }
 
@@ -73,7 +73,7 @@ public class CommandSpellButton extends AbstractPanel {
 
     
     /**
-     * @see RevivePatch
+     * {@link RevivePatch}
      */
     public void chooseCommandSpell() {
         AbstractPlayer p = AbstractDungeon.player;
@@ -99,7 +99,7 @@ public class CommandSpellButton extends AbstractPanel {
         CommandSpellPanel.CommandSpell = ImageMaster.loadImage(
             uiPath("CommandSpell/CommandSpell" + CommandSpellPanel.commandSpellCount + "")
         );
-        sb.draw(CommandSpellPanel.CommandSpell, current_x, current_y, 64.0F, 64.0F, 128.0F, 128.0F, scale, scale, 0.0F, 0, 0, 128, 128, false, false);
+        sb.draw(CommandSpellPanel.CommandSpell, current_x, current_y, 64.0f, 64.0f, 128.0f, 128.0f, scale, scale, 0.0f, 0, 0, 128, 128, false, false);
 
         hb.render(sb);
 

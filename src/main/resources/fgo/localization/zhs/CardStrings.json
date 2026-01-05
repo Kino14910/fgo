@@ -562,7 +562,7 @@
   },
   "${modID}:BlackdogGalatine": {
     "NAME": "捕食日轮之角",
-    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 获得 !M! fgo:临时生命 。 NL 获得 [E][E] 。"
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 获得 !M! fgo:临时生命 。 NL 获得 [E] [E] 。"
   },
   "${modID}:FetchFailnaught": {
     "NAME": "痛幻哭奏",

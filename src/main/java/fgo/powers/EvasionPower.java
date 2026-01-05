@@ -20,7 +20,7 @@ public class EvasionPower extends BasePower {
 
     @Override
     public void stackPower(int stackAmount) {
-        fontScale = 8.0F;
+        fontScale = 8.0f;
         amount += stackAmount;
     }
 

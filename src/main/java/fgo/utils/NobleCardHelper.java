@@ -1,24 +1,19 @@
 package fgo.utils;
 
-import java.util.Iterator;
-
 import com.megacrit.cardcrawl.cards.AbstractCard;
 
 import fgo.ui.panels.NobleDeckCards;
 
 public class NobleCardHelper {
     public static boolean hasCardWithID(String targetID) {
-        Iterator var1 = NobleDeckCards.nobleCards.group.iterator();
-
-        AbstractCard c;
-        do {
-            if (!var1.hasNext()) {
-                return false;
+        if (targetID == null) {
+            return false;
+        }
+        for (AbstractCard card : NobleDeckCards.nobleCards.group) {
+            if (targetID.equals(card.cardID)) {
+                return true;
             }
-
-            c = (AbstractCard)var1.next();
-        } while(!c.cardID.equals(targetID));
-
-        return true;
+        }
+        return false;
     }
 }

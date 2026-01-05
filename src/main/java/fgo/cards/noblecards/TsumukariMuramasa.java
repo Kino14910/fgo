@@ -37,7 +37,7 @@ public class TsumukariMuramasa extends AbsNoblePhantasmCard {
         addToBot(new DamageAllEnemiesAction(p, multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
 
         addToBot(new SFXAction("SLASH_HEAVY"));
-        addToBot(new VFXAction(new DaggerSprayEffect(AbstractDungeon.getMonsters().shouldFlipVfx()), 0.0F));
+        addToBot(new VFXAction(new DaggerSprayEffect(AbstractDungeon.getMonsters().shouldFlipVfx()), 0.0f));
         addToBot(new DamageAllEnemiesAction(p, multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
 
         addToBot(new SFXAction("SLASH_HORIZONTAL"));
@@ -47,20 +47,17 @@ public class TsumukariMuramasa extends AbsNoblePhantasmCard {
         addToBot(new DamageAllEnemiesAction(p, multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
 
         addToBot(new VFXAction(new DieDieDieEffect(), 0.7F));
-        addToBot(new ShakeScreenAction(0.0F, ScreenShake.ShakeDur.MED, ScreenShake.ShakeIntensity.HIGH));
+        addToBot(new ShakeScreenAction(0.0f, ScreenShake.ShakeDur.MED, ScreenShake.ShakeIntensity.HIGH));
         addToBot(new DamageAllEnemiesAction(p, multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
 
         addToBot(new SFXAction("ATTACK_WHIRLWIND"));
-        addToBot(new VFXAction(new WhirlwindEffect(), 0.0F));
+        addToBot(new VFXAction(new WhirlwindEffect(), 0.0f));
         addToBot(new DamageAllEnemiesAction(p, multiDamage, damageType, AbstractGameAction.AttackEffect.NONE));
 
         addToBot(new SFXAction("ATTACK_HEAVY"));
-        addToBot(new VFXAction(p, new CleaveEffect(), 0.0F));
+        addToBot(new VFXAction(p, new CleaveEffect(), 0.0f));
         addToBot(new DamageAllEnemiesAction(p, multiDamage, damageType, AbstractGameAction.AttackEffect.NONE));
 
         addToBot(new RemoveSpecificPowerAction(p, p, StrengthPower.POWER_ID));
-        // for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-        //     addToBot(new RemoveSpecificPowerAction(mo, p, StrengthPower.POWER_ID));
-        // }
     }
 }

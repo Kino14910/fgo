@@ -22,8 +22,7 @@ public class KnightoftheLake extends FGOCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        float duration = Settings.FAST_MODE ?0.1F :0.5F;
-        addToBot(new VFXAction(p, new FlameBarrierEffect(p.hb.cX, p.hb.cY), duration));
+        addToBot(new VFXAction(p, new FlameBarrierEffect(p.hb.cX, p.hb.cY), Settings.FAST_MODE ? 0.1F : 0.5f));
 
         if (!p.hasPower(CriticalDamageUpPower.POWER_ID)) {
             addToBot(new ApplyPowerAction(p, p, new CriticalDamageUpPower(p, magicNumber)));

@@ -18,7 +18,7 @@ public class DeathOfDeathPower extends BasePower {
     }
 
     /**
-     * @see RevivePatch
+     * {@link RevivePatch}
      */
     @Override
     public void onSpecificTrigger() {

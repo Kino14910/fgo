@@ -53,8 +53,8 @@ public class FifthFormPower extends BasePower {
             AbstractDungeon.player.limbo.addToBottom(tmp);
             tmp.current_x = card.current_x;
             tmp.current_y = card.current_y;
-            tmp.target_x = (float) Settings.WIDTH / 2.0F - 300.0F * Settings.scale;
-            tmp.target_y = (float)Settings.HEIGHT / 2.0F;
+            tmp.target_x = Settings.WIDTH / 2.0f - 300.0f * Settings.scale;
+            tmp.target_y = Settings.HEIGHT / 2.0f;
             if (m != null) {
                 tmp.calculateCardDamage(m);
             }
@@ -70,7 +70,7 @@ public class FifthFormPower extends BasePower {
             if (justApplied) {
                 return type == DamageInfo.DamageType.NORMAL ? damage * 0.8F : damage;
             } else {
-                return type == DamageInfo.DamageType.NORMAL ? damage * 0.5F : damage;
+                return type == DamageInfo.DamageType.NORMAL ? damage * 0.5f : damage;
             }
         }
 

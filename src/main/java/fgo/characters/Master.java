@@ -54,17 +54,16 @@ public class Master extends CustomPlayer{
             uiPath("EPanel/layer3d"),
             uiPath("EPanel/layer2d"),
             uiPath("EPanel/layer1d")};
-    private static final float[] LAYER_SPEED = new float[] { -40.0F, -32.0F, 20.0F, -20.0F, 0.0F, -10.0F, -8.0F, 5.0F, -5.0F, 0.0F };
-    //返回一个颜色
+    private static final float[] LAYER_SPEED = new float[] { -40.0f, -32.0f, 20.0f, -20.0f, 0.0f, -10.0f, -8.0f, 5.0f, -5.0f, 0.0f };
     public static final Color SILVER = CardHelper.getColor(200, 200, 200);
-    public static float FgoNp_BAR_HEIGHT = 20.0F * Settings.scale;
+    public static float FgoNp_BAR_HEIGHT = 20.0f * Settings.scale;
     private Hitbox FgoNPhb;
     public Color FgoNpBarColor1 = CardHelper.getColor(204, 128, 28);
     public Color FgoNpBarColor2 = CardHelper.getColor(238, 175, 10);
     public Color FgoNpBarColor3 = CardHelper.getColor(242, 236, 103);
-    public Color FgoNpShadowColor = new Color(0.0F, 0.0F, 0.0F, 0.5F);
-    public Color FgoNpBgColor = new Color(0.0F, 0.0F, 0.0F, 0.5F);
-    public Color FgoNptextColor = new Color(1.0F, 1.0F, 1.0F, 1.0F);
+    public Color FgoNpShadowColor = new Color(0.0f, 0.0f, 0.0f, 0.5f);
+    public Color FgoNpBgColor = new Color(0.0f, 0.0f, 0.0f, 0.5f);
+    public Color FgoNptextColor = new Color(1.0f, 1.0f, 1.0f, 1.0f);
     private static final String[] TEXT = CardCrawlGame.languagePack.getCharacterString(makeID("Master")).TEXT;
     private static final String[] NPTEXT = CardCrawlGame.languagePack.getUIString(makeID("NPText")).TEXT;
     private float FgoNpWidth;
@@ -72,18 +71,17 @@ public class Master extends CustomPlayer{
     public static int fgoNp;
     
     public Master(String name) {
-        //构造方法，初始化参数
         super(name, FGO_MASTER, ORB_TEXTURES, uiPath("energyBlueVFX"), LAYER_SPEED, null, null);
-        dialogX = drawX + 0.0F * Settings.scale;
-        dialogY = drawY + 220.0F * Settings.scale;
+        dialogX = drawX + 0.0f * Settings.scale;
+        dialogY = drawY + 220.0f * Settings.scale;
 
         initializeClass(
                 String.valueOf(MainMenuUIFgoPatch.refreshSkinFgo()),
                 characterPath("shoulder2"), characterPath("shoulder1"),
                 characterPath("fallen"),
                 getLoadout(),
-                0.0F, 5.0F,
-                240.0F, 300.0F,
+                0.0f, 5.0f,
+                240.0f, 300.0f,
                 new EnergyManager(3)
         );
     }
@@ -91,8 +89,6 @@ public class Master extends CustomPlayer{
     @Override
     public ArrayList<String> getStartingDeck() {
         // int charIndex = MainMenuUIFgoPatch.modifierIndexes;
-
-        //添加初始卡组
         ArrayList<String> retVal = new ArrayList<>(Arrays.asList(
             Strike.ID, Strike.ID, Strike.ID, Strike.ID,
             Defend.ID, Defend.ID, Defend.ID,
@@ -104,7 +100,6 @@ public class Master extends CustomPlayer{
 
     @Override
     public ArrayList<String> getStartingRelics() {
-        //添加初始遗物
         ArrayList<String> retVal = new ArrayList<>();
         retVal.add(SuitcaseFgo.ID);
         return retVal;
@@ -133,7 +128,6 @@ public class Master extends CustomPlayer{
 
     @Override
     public AbstractCard.CardColor getCardColor() {
-        //选择卡牌颜色
         return FGOCardColor.FGO;
     }
 
@@ -231,7 +225,7 @@ public class Master extends CustomPlayer{
     
     public void TruthValueUpdatedEvent() {
         int base = fgoNp > 200 ? 200 : (fgoNp > 100 ? 100 : 0);
-        FgoNpWidth = hb.width * (fgoNp - base) / 100.0F;
+        FgoNpWidth = hb.width * (fgoNp - base) / 100.0f;
     }
 
     @Override
@@ -266,9 +260,9 @@ public class Master extends CustomPlayer{
         Color color = fgoNp > 200 ? FgoNpBarColor3 : (fgoNp > 100 ? FgoNpBarColor2 : FgoNpBarColor1);
         sb.setColor(color);
 
-        sb.draw(ImageMaster.HEALTH_BAR_L, x - FgoNp_BAR_HEIGHT, FgoNPhb.cY - FgoNp_BAR_HEIGHT / 2.0F, 20.0F * Settings.scale, FgoNp_BAR_HEIGHT);
-        sb.draw(ImageMaster.HEALTH_BAR_B, x, FgoNPhb.cY - FgoNp_BAR_HEIGHT / 2.0F, FgoNpWidth, FgoNp_BAR_HEIGHT);
-        sb.draw(ImageMaster.HEALTH_BAR_R, x + FgoNpWidth, FgoNPhb.cY - FgoNp_BAR_HEIGHT / 2.0F, 20.0F * Settings.scale, FgoNp_BAR_HEIGHT);
+        sb.draw(ImageMaster.HEALTH_BAR_L, x - FgoNp_BAR_HEIGHT, FgoNPhb.cY - FgoNp_BAR_HEIGHT / 2.0f, 20.0f * Settings.scale, FgoNp_BAR_HEIGHT);
+        sb.draw(ImageMaster.HEALTH_BAR_B, x, FgoNPhb.cY - FgoNp_BAR_HEIGHT / 2.0f, FgoNpWidth, FgoNp_BAR_HEIGHT);
+        sb.draw(ImageMaster.HEALTH_BAR_R, x + FgoNpWidth, FgoNPhb.cY - FgoNp_BAR_HEIGHT / 2.0f, 20.0f * Settings.scale, FgoNp_BAR_HEIGHT);
     }
 
     private void TruthValueText(SpriteBatch sb) {
@@ -283,13 +277,13 @@ public class Master extends CustomPlayer{
         sb.setColor(color);
 
         //宝具值外框颜色。
-        sb.draw(ImageMaster.HB_SHADOW_L, x - FgoNp_BAR_HEIGHT, FgoNPhb.cY - FgoNp_BAR_HEIGHT / 2.0F, 20.0F * Settings.scale, FgoNp_BAR_HEIGHT);
-        sb.draw(ImageMaster.HB_SHADOW_B, x, FgoNPhb.cY - FgoNp_BAR_HEIGHT / 2.0F, hb.width, FgoNp_BAR_HEIGHT);
-        sb.draw(ImageMaster.HB_SHADOW_R, x + hb.width, FgoNPhb.cY - FgoNp_BAR_HEIGHT / 2.0F, 20.0F * Settings.scale, FgoNp_BAR_HEIGHT);
+        sb.draw(ImageMaster.HB_SHADOW_L, x - FgoNp_BAR_HEIGHT, FgoNPhb.cY - FgoNp_BAR_HEIGHT / 2.0f, 20.0f * Settings.scale, FgoNp_BAR_HEIGHT);
+        sb.draw(ImageMaster.HB_SHADOW_B, x, FgoNPhb.cY - FgoNp_BAR_HEIGHT / 2.0f, hb.width, FgoNp_BAR_HEIGHT);
+        sb.draw(ImageMaster.HB_SHADOW_R, x + hb.width, FgoNPhb.cY - FgoNp_BAR_HEIGHT / 2.0f, 20.0f * Settings.scale, FgoNp_BAR_HEIGHT);
         sb.setColor(FgoNpBgColor);
-        //宝具值内框灰色。
-        sb.draw(ImageMaster.HEALTH_BAR_L, x - FgoNp_BAR_HEIGHT, y, 20.0F * Settings.scale, FgoNp_BAR_HEIGHT);
+        //宝具值内框颜色。
+        sb.draw(ImageMaster.HEALTH_BAR_L, x - FgoNp_BAR_HEIGHT, y, 20.0f * Settings.scale, FgoNp_BAR_HEIGHT);
         sb.draw(ImageMaster.HEALTH_BAR_B, x, y, hb.width, FgoNp_BAR_HEIGHT);
-        sb.draw(ImageMaster.HEALTH_BAR_R, x + hb.width, y, 20.0F * Settings.scale, FgoNp_BAR_HEIGHT);
+        sb.draw(ImageMaster.HEALTH_BAR_R, x + hb.width, y, 20.0f * Settings.scale, FgoNp_BAR_HEIGHT);
     }
 }

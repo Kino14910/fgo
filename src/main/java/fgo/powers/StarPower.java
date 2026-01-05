@@ -33,12 +33,12 @@ public class StarPower extends BasePower {
         //如果你有20颗暴击星且拥有星月夜能力，使用领域外生命的卡时，暴击威力增加200%。
         if (CharismaOfTheJade.ID.equals(card.cardID) && amount >= 20 
                 || AbstractDungeon.player.hasPower(ForeignerPower.POWER_ID) && card.hasTag(FGO_Foreigner) && amount >= 10) {
-            return finalDamage(damage, type, 3.0F);
+            return finalDamage(damage, type, 3.0f);
         }
 
         //你有10颗暴击星时才能暴击。
         if (card.color != FGOCardColor.NOBLE_PHANTASM && amount >= 10) {
-            return finalDamage(damage, type, 2.0F);
+            return finalDamage(damage, type, 2.0f);
         }
 
         return damage;
@@ -59,7 +59,7 @@ public class StarPower extends BasePower {
 
         int CrAmt = critAmt + starHunterAmt;
         return type == DamageInfo.DamageType.NORMAL
-                ? damage * (multiplier + CrAmt / 100.0F)
+                ? damage * (multiplier + CrAmt / 100.0f)
                 : damage;
     }
 

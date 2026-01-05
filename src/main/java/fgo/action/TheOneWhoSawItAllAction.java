@@ -57,7 +57,7 @@ public class TheOneWhoSawItAllAction extends AbstractGameAction {
                     } else {
                         card.unhover();
                         card.lighten(true);
-                        card.setAngle(0.0F);
+                        card.setAngle(0.0f);
                         card.drawScale = 0.12F;
                         card.targetDrawScale = 0.75F;
                         card.current_x = CardGroup.DRAW_PILE_X;

@@ -54,8 +54,8 @@ public abstract class BaseMonster extends CustomMonster {
         MOVES = monsterStrings.MOVES;
         DIALOG = monsterStrings.DIALOG;
 
-        dialogX = -150.0F * Settings.scale;
-        dialogY = 70.0F * Settings.scale;
+        dialogX = -150.0f * Settings.scale;
+        dialogY = 70.0f * Settings.scale;
         
         p = AbstractDungeon.player;
         moreDamageAs = ModHelper.moreDamageAscension(type);
@@ -154,7 +154,7 @@ public abstract class BaseMonster extends CustomMonster {
     public void update() {
         super.update();
         if (floatIndex != 0)
-            animY = floatIndex * MathUtils.cosDeg((float) (System.currentTimeMillis() / 6L % 360L)) * 6.0F * Settings.scale;
+            animY = floatIndex * MathUtils.cosDeg((float) (System.currentTimeMillis() / 6L % 360L)) * 6.0f * Settings.scale;
     }
 
     public void setDamagesWithAscension(int... damages) {
@@ -264,11 +264,11 @@ public abstract class BaseMonster extends CustomMonster {
     }
 
     public void shout(int index) {
-        shout(index, 1.0F);
+        shout(index, 1.0f);
     }
 
     public void shout (int index, String sound) {
-        shout(index, sound, 1.0F);
+        shout(index, sound, 1.0f);
     }
 
     public void shout(int index, String sound, float volume) {
@@ -283,7 +283,7 @@ public abstract class BaseMonster extends CustomMonster {
     }
 
     public void shout(int start, int end) {
-        shout(AbstractDungeon.miscRng.random(start, end), 3.0F);
+        shout(AbstractDungeon.miscRng.random(start, end), 3.0f);
     }
 
     public void shoutIf(int index) {

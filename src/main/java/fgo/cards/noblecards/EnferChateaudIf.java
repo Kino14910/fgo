@@ -36,6 +36,6 @@ public class EnferChateaudIf extends AbsNoblePhantasmCard {
 
 
     private void spawnRelicWingBoots() {
-        AbstractDungeon.getCurrRoom().spawnRelicAndObtain((float)(Settings.WIDTH / 2), (float)(Settings.HEIGHT / 2), new WingBoots());
+        AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH / 2.0f, Settings.HEIGHT / 2.0f, new WingBoots());
     }
 }

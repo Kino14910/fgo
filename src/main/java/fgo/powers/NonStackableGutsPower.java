@@ -21,7 +21,7 @@ public class NonStackableGutsPower extends BasePower implements NonStackablePowe
     }
 
     /**
-     * @see RevivePatch
+     * {@link RevivePatch}
      */
     @Override
     public void onSpecificTrigger() {
@@ -34,12 +34,7 @@ public class NonStackableGutsPower extends BasePower implements NonStackablePowe
         
         updateDescription();
     }
-
-    @Override
-    public void onRemove() {
-        addToBot(new RemoveSpecificPowerAction(owner, owner, BriefStrengthPower.POWER_ID));
-    }
-
+    
     @Override
     public void updateDescription() {
         description = time == 1 ? String.format(DESCRIPTIONS[0], amount) : String.format(DESCRIPTIONS[1], time, amount);

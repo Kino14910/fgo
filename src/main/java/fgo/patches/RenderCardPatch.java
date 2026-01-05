@@ -68,8 +68,8 @@ public class RenderCardPatch {
         public static SpireReturn Insert(AbstractCard card, SpriteBatch sb, Color renderColor) {
             if (card instanceof CustomCardPortrait) {
                 sb.setColor(renderColor);
-                float drawX = card.current_x - 256.0F;
-                float drawY = card.current_y - 256.0F;
+                float drawX = card.current_x - 256.0f;
+                float drawY = card.current_y - 256.0f;
 
                 CardRenderer.renderPortrait(sb, card, drawX, drawY, false);
                 return SpireReturn.Return(null);
@@ -91,11 +91,11 @@ public class RenderCardPatch {
 
                 FontHelper.renderRotatedText(sb, font, text,
                         card.current_x,
-                        card.current_y - (location.y - 7.0F) * card.drawScale * Settings.scale,
-                        0.0F, 
-                        -1.0F * card.drawScale * Settings.scale,
+                        card.current_y - (location.y - 7.0f) * card.drawScale * Settings.scale,
+                        0.0f, 
+                        -1.0f * card.drawScale * Settings.scale,
                         card.angle, false,
-                        new Color(0.35F, 0.35F, 0.35F, 1.0F));
+                        new Color(0.35F, 0.35F, 0.35F, 1.0f));
 
                 return SpireReturn.Return(null);
             }
@@ -144,8 +144,8 @@ public class RenderCardPatch {
         )
         public static SpireReturn Insert(SingleCardViewPopup view, final SpriteBatch sb, AbstractCard card) {
             if (card instanceof CustomCardPortrait) {
-                float drawX = Settings.WIDTH / 2.0F - 512f;
-                float drawY = Settings.HEIGHT / 2.0F - 512f;
+                float drawX = Settings.WIDTH / 2.0f - 512f;
+                float drawY = Settings.HEIGHT / 2.0f - 512f;
 
                 CardRenderer.renderPortrait(sb, card, drawX, drawY, true);
                 return SpireReturn.Return(null);
@@ -167,8 +167,8 @@ public class RenderCardPatch {
                 FloatPair location = locationCard.getCardTypeLocation(new FloatPair(3f, -40f), true);
 
                 FontHelper.renderFontCentered(sb, FontHelper.panelNameFont, label,
-                        Settings.WIDTH / 2.0F + location.x * Settings.scale, Settings.HEIGHT / 2.0F - location.y * Settings.scale,
-                        new Color(0.35F, 0.35F, 0.35F, 1.0F));
+                        Settings.WIDTH / 2.0f + location.x * Settings.scale, Settings.HEIGHT / 2.0f - location.y * Settings.scale,
+                        new Color(0.35F, 0.35F, 0.35F, 1.0f));
 
                 return SpireReturn.Return();
             }

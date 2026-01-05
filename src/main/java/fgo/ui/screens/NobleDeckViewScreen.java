@@ -19,6 +19,7 @@ import com.megacrit.cardcrawl.screens.mainMenu.ScrollBar;
 import com.megacrit.cardcrawl.screens.mainMenu.ScrollBarListener;
 
 import basemod.abstracts.CustomScreen;
+import fgo.cards.AbsNoblePhantasmCard;
 import fgo.utils.NobleCardGroup;
 
 public class NobleDeckViewScreen extends CustomScreen implements ScrollBarListener {
@@ -40,7 +41,7 @@ public class NobleDeckViewScreen extends CustomScreen implements ScrollBarListen
         return Enum.Noble_Phantasm;
     }
 
-    NobleCardGroup nobleCards;
+    NobleCardGroup<AbsNoblePhantasmCard> nobleCards;
     private static float drawStartX;
     private static float drawStartY;
     private static float padX;
@@ -81,10 +82,15 @@ public class NobleDeckViewScreen extends CustomScreen implements ScrollBarListen
         scrollBar.move(0.0f, -30.0f * Settings.scale);
     }
 
-    private void open(NobleCardGroup nobleCards) {
+    @Override
+    public void open(Object... args) {
         reopen();
         // 保存传入的卡组
-        this.nobleCards = nobleCards;
+        if (args.length > 0 && args[0] instanceof NobleCardGroup) {
+            @SuppressWarnings("unchecked")
+            NobleCardGroup<AbsNoblePhantasmCard> nobleCards =  (NobleCardGroup<AbsNoblePhantasmCard>) args[0];
+            this.nobleCards = nobleCards;
+            }
 
         AbstractDungeon.player.releaseCard();
         CardCrawlGame.sound.play("DECK_OPEN");

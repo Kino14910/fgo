@@ -27,7 +27,7 @@ public class WildRule extends FGOCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new VFXAction(new BiteEffect(m.hb.cX, m.hb.cY - 40.0F * Settings.scale, Settings.GOLD_COLOR.cpy()), Settings.FAST_MODE ?0.1F :0.3F));
+        addToBot(new VFXAction(new BiteEffect(m.hb.cX, m.hb.cY - 40.0f * Settings.scale, Settings.GOLD_COLOR.cpy()), Settings.FAST_MODE ? 0.1f :0.3f));
 
         addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
         addToBot(new HealAction(p, p, 3));

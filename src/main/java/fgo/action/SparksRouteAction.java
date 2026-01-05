@@ -31,7 +31,7 @@ public class SparksRouteAction extends AbstractGameAction {
         setValues(null, null, 0);
         actionType = ActionType.SHUFFLE;
         if (!(Boolean) TipTracker.tips.get("SHUFFLE_TIP")) {
-            AbstractDungeon.ftue = new FtueTip(LABEL[0], MSG[0], (float) Settings.WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F, FtueTip.TipType.SHUFFLE);
+            AbstractDungeon.ftue = new FtueTip(LABEL[0], MSG[0], Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F, FtueTip.TipType.SHUFFLE);
             TipTracker.neverShowAgain("SHUFFLE_TIP");
         }
         upgraded = sparksRoutePlus;
@@ -43,7 +43,9 @@ public class SparksRouteAction extends AbstractGameAction {
             shuffled = true;
             AbstractPlayer p = AbstractDungeon.player;
             int theSize = p.hand.size();
-            addToBot(new ArmamentsAction(true));
+            if (upgraded) {
+                addToBot(new ArmamentsAction(true));
+            }
             addToBot(new PutOnDeckAction(p, p, theSize, true));
             addToBot(new ShuffleAction(p.drawPile));
             addToBot(new DrawCardAction(p, theSize));

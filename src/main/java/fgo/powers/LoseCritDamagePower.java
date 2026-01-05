@@ -8,7 +8,6 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 
 public class LoseCritDamagePower extends BasePower {
     public static final String POWER_ID = makeID(LoseCritDamagePower.class.getSimpleName());
-    private static final PowerType TYPE = PowerType.DEBUFF;
 
     public LoseCritDamagePower(AbstractCreature owner, int amount) {
         super(POWER_ID, PowerType.DEBUFF, false, owner, amount);

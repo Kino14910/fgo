@@ -5,6 +5,7 @@ import static fgo.FGOMod.makeID;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo.DamageType;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
@@ -25,7 +26,7 @@ public class StarHunterPower extends BasePower {
     }
 
     /**
-     * @see StarPower
+     * {@link StarPower#finalDamage(float, DamageType, float)}
      */
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {

@@ -102,7 +102,7 @@ public abstract class BasePower extends AbstractPower {
                 float alpha = c.a;
                 c = this.amount2 > 0 ? this.greenColor2 : this.redColor2;
                 c.a = alpha;
-                FontHelper.renderFontRightTopAligned(sb, FontHelper.powerAmountFont, Integer.toString(this.amount2), x, y + 15.0F * Settings.scale, this.fontScale, c);
+                FontHelper.renderFontRightTopAligned(sb, FontHelper.powerAmountFont, Integer.toString(this.amount2), x, y + 15.0f * Settings.scale, this.fontScale, c);
             }
 
         }

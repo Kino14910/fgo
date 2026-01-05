@@ -19,6 +19,7 @@ import fgo.powers.GutsPower;
 import fgo.powers.IndomitablePower;
 import fgo.powers.NonStackableGutsPower;
 import fgo.powers.SpringOfFirePower;
+import fgo.relics.SaveStone;
 import fgo.ui.panels.CommandSpellPanel;
 import javassist.CtBehavior;
 public class RevivePatch {
@@ -45,6 +46,10 @@ public class RevivePatch {
                     }
                 }
                 return SpireReturn.Return(null);
+            }
+            if (p.hasRelic(SaveStone.ID)) {
+                p.currentHealth = 0;
+                p.getRelic(SaveStone.ID).onTrigger();
             }
             return SpireReturn.Continue();
         }

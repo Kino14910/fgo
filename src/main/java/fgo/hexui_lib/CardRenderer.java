@@ -25,7 +25,7 @@ public class CardRenderer {
     public static void renderImageHelper(AbstractCard card, SpriteBatch sb, Color color, Texture img, float drawX, float drawY) {
         sb.setColor(color);
         try {
-            sb.draw(img, drawX, drawY, 256.0F, 256.0F, 512.0F, 512.0F, card.drawScale * Settings.scale, card.drawScale * Settings.scale, card.angle, 0, 0, 512, 512, false, false);
+            sb.draw(img, drawX, drawY, 256.0f, 256.0f, 512.0f, 512.0f, card.drawScale * Settings.scale, card.drawScale * Settings.scale, card.angle, 0, 0, 512, 512, false, false);
         } catch (Exception ignored) {
         }
     }
@@ -47,7 +47,7 @@ public class CardRenderer {
             case FBO_START:
                 sb.end();
                 fbo.begin();
-                Gdx.gl.glClearColor(0.0F, 0.0F, 0.0F, 0.0F);
+                Gdx.gl.glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
                 Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT | GL20.GL_DEPTH_BUFFER_BIT);
                 Gdx.gl.glColorMask(true, true, true, true);
                 sb.begin();
@@ -61,7 +61,7 @@ public class CardRenderer {
                 sb.begin();
                 TextureRegion drawTex = new TextureRegion(fbo.getColorBufferTexture());
                 drawTex.flip(false, true);
-                sb.draw(drawTex, 0.0F, 0.0F);
+                sb.draw(drawTex, 0.0f, 0.0f);
                 setBlending(sb, RenderLayer.BLENDMODE.NORMAL);
                 Gdx.gl.glColorMask(true, true, true, true);
                 Gdx.gl.glClear(GL20.GL_DEPTH_BUFFER_BIT);
@@ -74,7 +74,7 @@ public class CardRenderer {
                 drawTex2.flip(false, true);
                 sb.setBlendFunction(-1, -1);//disable spritebatch blending override
                 Gdx.gl.glBlendFuncSeparate(GL20.GL_SRC_ALPHA, GL20.GL_ONE, GL20.GL_ONE, GL20.GL_ONE);
-                sb.draw(drawTex2, 0.0F, 0.0F);
+                sb.draw(drawTex2, 0.0f, 0.0f);
                 setBlending(sb, RenderLayer.BLENDMODE.NORMAL);
                 Gdx.gl.glColorMask(true, true, true, true);
                 Gdx.gl.glClear(GL20.GL_DEPTH_BUFFER_BIT);
@@ -87,8 +87,8 @@ public class CardRenderer {
                 drawTex3.flip(false, true);
                 sb.setBlendFunction(-1, -1);//disable spritebatch blending override
                 Gdx.gl.glBlendFuncSeparate(GL20.GL_SRC_ALPHA, GL20.GL_ONE, GL20.GL_ONE, GL20.GL_ONE);
-                sb.draw(drawTex3, 0.0F, 0.0F);
-                sb.draw(drawTex3, 0.0F, 0.0F);
+                sb.draw(drawTex3, 0.0f, 0.0f);
+                sb.draw(drawTex3, 0.0f, 0.0f);
                 setBlending(sb, RenderLayer.BLENDMODE.NORMAL);
                 Gdx.gl.glColorMask(true, true, true, true);
                 Gdx.gl.glClear(GL20.GL_DEPTH_BUFFER_BIT);

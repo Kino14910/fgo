@@ -18,7 +18,6 @@ public class GraceUnexpectedBirth extends FGOCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new FgoNpAction(np));
         addToBot(new ApplyPowerAction(p, p, new SealNPPower(p, 1)));
-        //addToBot(new ApplyPowerAction(p, p, new DrawReductionPower(p, 1), 1));
     }
 }
 

@@ -46,7 +46,7 @@ public class PeerlessStrike extends FGOCard {
             return false;
         } 
 
-        if ((float)p.currentHealth > (float)p.maxHealth / 2.0F) {
+        if ((float)p.currentHealth > (float)p.maxHealth / 2.0f) {
             canUse = false;
             cantUseMessage = cardStrings.EXTENDED_DESCRIPTION[0];
         }
@@ -57,7 +57,7 @@ public class PeerlessStrike extends FGOCard {
     @Override
     public void triggerOnGlowCheck() {
         AbstractPlayer p = AbstractDungeon.player;
-        if ((float)p.currentHealth <= (float)p.maxHealth / 2.0F && p.currentHealth > 0) {
+        if ((float)p.currentHealth <= (float)p.maxHealth / 2.0f && p.currentHealth > 0) {
             glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
         }
     }

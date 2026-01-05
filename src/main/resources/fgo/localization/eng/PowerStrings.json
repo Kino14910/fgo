@@ -111,12 +111,6 @@
       "When you would next die, heal #b%1$s HP instead and deal #yDouble #yDamage next turn."
     ]
   },
-  "${modID}:BriefStrengthPower": {
-    "NAME": "Delayed Buff",
-    "DESCRIPTIONS": [
-      "The next time you Trigger #yAbyss #yof #yDeath, lose #b%d #yStrength."
-    ]
-  },
   "${modID}:StarRegenPower": {
     "NAME": "Gain Stars Every Turn",
     "DESCRIPTIONS": [

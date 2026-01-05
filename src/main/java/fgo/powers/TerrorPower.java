@@ -39,14 +39,4 @@ public class TerrorPower extends BasePower implements NonStackablePower{
             addToBot(new RemoveSpecificPowerAction(owner, owner, this));
         }
     }
-
-    // @Override
-    // public float atDamageReceive(float damage, DamageInfo.DamageType type) {
-    //     if (type == DamageInfo.DamageType.NORMAL) {
-    //         if (!owner.isPlayer && AbstractDungeon.player.hasPower(VSTerrorDamageUpPower.POWER_ID)) {
-    //             return damage * (1 + AbstractDungeon.player.getPower(VSTerrorDamageUpPower.POWER_ID).amount / 100.0f);
-    //         }
-    //     }
-    //     return damage;
-    // }
 }

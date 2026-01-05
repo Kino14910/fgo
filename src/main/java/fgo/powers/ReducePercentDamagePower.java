@@ -20,8 +20,7 @@ public class ReducePercentDamagePower extends BasePower {
 
     @Override
     public float atDamageFinalReceive(float damage, DamageInfo.DamageType type) {
-        // return type != DamageInfo.DamageType.HP_LOSS && type != DamageInfo.DamageType.THORNS ? damage * (100.0F - amount) / 100.0F : damage;
-        return damage * (100.0F - amount) / 100.0F;
+        return damage * (100.0f - amount) / 100.0f;
     }
 
 

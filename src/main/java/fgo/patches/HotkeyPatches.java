@@ -31,7 +31,7 @@ public class HotkeyPatches {
         )
         public static void insert(InputSettingsScreen __instance, ArrayList<RemapInputElement> elements) {
             if (!Settings.isControllerMode) {
-                elements.add(new RemapInputElement(__instance, "打开宝具卡组", FGOInputActionSet.nobleDeckAction));
+                elements.add(new RemapInputElement(__instance, "查看宝具牌组", FGOInputActionSet.nobleDeckAction));
             }
         }
 
@@ -76,32 +76,4 @@ public class HotkeyPatches {
             FGOInputActionSet.resetToDefaults();
         }
     }
-
-    // @SpirePatch(
-    //         clz = InputAction.class,
-    //         method = "isJustPressed"
-    // )
-    // public static class onInitialPress {
-    //     @SpirePrefixPatch
-    //     public static SpireReturn<Boolean> preventInitialPress(InputAction __instance) {
-    //         if (EUIInputManager.isInputTyping()) {
-    //             return SpireReturn.Return(false);
-    //         }
-    //         return SpireReturn.Continue();
-    //     }
-    // }
-
-    // @SpirePatch(
-    //         clz = InputAction.class,
-    //         method = "isPressed"
-    // )
-    // public static class onPress {
-    //     @SpirePrefixPatch
-    //     public static SpireReturn<Boolean> preventPress(InputAction __instance) {
-    //         if (EUIInputManager.isInputTyping()) {
-    //             return SpireReturn.Return(false);
-    //         }
-    //         return SpireReturn.Continue();
-    //     }
-    // }
 }

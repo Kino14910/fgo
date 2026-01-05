@@ -103,12 +103,6 @@
       "在你 #y毅力 发动时，下一回合造成 #y双倍伤害 。"
     ]
   },
-  "${modID}:BriefStrengthPower": {
-    "NAME": "延迟发动",
-    "DESCRIPTIONS": [
-      "下次触发 #y死之渊 时 #r失去 #b%d 点 #y力量 。"
-    ]
-  },
   "${modID}:StarRegenPower": {
     "NAME": "每回合暴击星获得",
     "DESCRIPTIONS": [

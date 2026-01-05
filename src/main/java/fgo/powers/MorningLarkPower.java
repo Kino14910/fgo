@@ -17,22 +17,7 @@ public class MorningLarkPower extends BasePower {
     public void updateDescription() {
         description = String.format(DESCRIPTIONS[0], 20);
     }
-//
-//    @Override
-//    public void onInitialApplication() {
-//        AbstractDungeon.player.gameHandSize -= amount;
-//    }
-//
-//    @Override
-//    public void onRemove() {
-//        AbstractDungeon.player.gameHandSize += amount;
-//    }
-//
-//    @Override
-//    public void atStartOfTurn() {
-//        addToBot(new RemoveSpecificPowerAction(owner, owner, ID));
-//    }
-
+    
     @Override
     public void atEndOfTurn(boolean isPlayer) {
         addToBot(new FgoNpAction(-20));

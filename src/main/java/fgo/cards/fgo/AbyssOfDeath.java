@@ -3,7 +3,6 @@ package fgo.cards.fgo;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.StrengthPower;
 
 import fgo.cards.FGOCard;
 import fgo.powers.DeathOfDeathPower;
@@ -21,8 +20,6 @@ public class AbyssOfDeath extends FGOCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new GutsPower(p, magicNumber)));
         addToBot(new ApplyPowerAction(p, p, new DeathOfDeathPower(p, 3)));
-        addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, 3)));
-        //addToBot(new ApplyPowerAction(p, p, new BriefStrengthPower(p, 1), 1));
     }
 }
 

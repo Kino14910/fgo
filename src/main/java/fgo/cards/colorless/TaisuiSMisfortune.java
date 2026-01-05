@@ -21,11 +21,7 @@ public class TaisuiSMisfortune extends FGOCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (Settings.FAST_MODE) {
-            addToBot(new VFXAction(new OfferingEffect(), 0.1F));
-        } else {
-            addToBot(new VFXAction(new OfferingEffect(), 0.5F));
-        }
+        addToBot(new VFXAction(new OfferingEffect(), Settings.FAST_MODE ? 0.1f : 0.5f));
         addToBot(new GainEnergyAction(1));
         addToBot(new AllEnemyApplyPowerAction(p, magicNumber,
                 monster -> new TaisuiSPower(monster, magicNumber))

@@ -70,12 +70,12 @@ public class Emiya extends BaseMonster {
     private boolean halfDead = false;
     
     public Emiya() {
-        this(0.0F, 0.0F);
+        this(0.0f, 0.0f);
     }
     
     public Emiya(float x, float y) {
         // Pass raw id to BaseMonster (it will call FGOMod.makeID internally)
-        super(NAME, ID, BASE_HP, 0.0F, 0.0F, 320.0F, 320.0F, IMG, x, y);
+        super(NAME, ID, BASE_HP, 0.0f, 0.0f, 320.0f, 320.0f, IMG, x, y);
         setHp(AbstractDungeon.ascensionLevel < 9 ? BASE_HP : A9_HP);
 
         if (ModHelper.moreDamageAscension(type)) {
@@ -208,7 +208,7 @@ public class Emiya extends BaseMonster {
             super.die();
             if (!CardHelper.hasCardWithID(Unlimited.ID) && AbstractDungeon.player instanceof Master) {
                 AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new Unlimited(), 
-                    (float)Settings.WIDTH / 2.0F + 190.0F * Settings.scale, (float)Settings.HEIGHT / 2.0F));
+                    (float)Settings.WIDTH / 2.0f + 190.0f * Settings.scale, Settings.HEIGHT / 2.0f));
             }
             onBossVictoryLogic();
         }

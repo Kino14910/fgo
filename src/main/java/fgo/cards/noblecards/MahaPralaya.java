@@ -39,7 +39,7 @@ public class MahaPralaya extends AbsNoblePhantasmCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new VFXAction(new BorderLongFlashEffect(Color.LIGHT_GRAY)));
         addToBot(new VFXAction(new DieDieDieEffect(), 0.7F));
-        addToBot(new ShakeScreenAction(0.0F, ScreenShake.ShakeDur.MED, ScreenShake.ShakeIntensity.HIGH));
+        addToBot(new ShakeScreenAction(0.0f, ScreenShake.ShakeDur.MED, ScreenShake.ShakeIntensity.HIGH));
         addToBot(new DamageAllEnemiesAction(p, multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
     }
 }

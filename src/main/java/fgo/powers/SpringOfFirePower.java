@@ -16,7 +16,7 @@ public class SpringOfFirePower extends BasePower {
     }
     
     /**
-     * @see RevivePatch
+     * {@link RevivePatch}
      */
     @Override
     public void onSpecificTrigger() {

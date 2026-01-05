@@ -32,9 +32,9 @@ public class StarGainMonsterPower extends BasePower {
     public float atDamageGive(float damage, DamageInfo.DamageType type) {
         if (owner.hasPower(CriticalDamageUpPower.POWER_ID)) {
             int CrAmt = (owner.getPower(CriticalDamageUpPower.POWER_ID)).amount;
-            return type == DamageInfo.DamageType.NORMAL ? damage * (200.0F + CrAmt) / 100.0F : damage;
+            return type == DamageInfo.DamageType.NORMAL ? damage * (200.0f + CrAmt) / 100.0f : damage;
         }
-        return type == DamageInfo.DamageType.NORMAL ? damage * 2.0F : damage;
+        return type == DamageInfo.DamageType.NORMAL ? damage * 2.0f : damage;
     }
 
     @Override

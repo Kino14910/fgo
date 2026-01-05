@@ -25,7 +25,7 @@ public class BurgerKing extends BaseRelic {
     public void onEquip() {
         AbstractDungeon.player.increaseMaxHp(40, true);
         for (int i = 0; i < 3; i++) {
-            AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new Dumuzid(), (float) Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
+            AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new Dumuzid(), Settings.WIDTH / 2.0f, Settings.HEIGHT / 2.0f));
         }
     }
 }

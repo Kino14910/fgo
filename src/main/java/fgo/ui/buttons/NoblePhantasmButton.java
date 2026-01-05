@@ -6,7 +6,6 @@ import static fgo.utils.ModHelper.addToBot;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.math.Vector2;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -17,7 +16,6 @@ import com.megacrit.cardcrawl.helpers.MathHelper;
 import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.helpers.input.InputHelper;
 import com.megacrit.cardcrawl.localization.TutorialStrings;
-import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.ui.panels.AbstractPanel;
 
 import fgo.action.NoblePhantasmSelectAction;
@@ -26,9 +24,6 @@ import fgo.powers.SealNPPower;
 
 public class NoblePhantasmButton extends AbstractPanel {
     private static final TutorialStrings tutorialStrings = CardCrawlGame.languagePack.getTutorialString("fgo:NoblePhantasm");
-    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("fgo:NoblePhantasm");
-
-    private final Vector2 position = new Vector2();
     private float scale = 1.0f;
     private final Hitbox hb;
     private final Color renderColor = Color.WHITE.cpy();
@@ -36,20 +31,20 @@ public class NoblePhantasmButton extends AbstractPanel {
 
     public NoblePhantasmButton() {
         super(
-            AbstractDungeon.player.hb.x - 48.0F * Settings.scale,
-            AbstractDungeon.player.hb.y + AbstractDungeon.player.hb.height - 16.0F * Settings.scale,
+            AbstractDungeon.player.hb.x - 48.0f * Settings.scale,
+            AbstractDungeon.player.hb.y + AbstractDungeon.player.hb.height - 16.0f * Settings.scale,
             -Settings.WIDTH,
-            AbstractDungeon.player.hb.y + AbstractDungeon.player.hb.height - 16.0F * Settings.scale,
+            AbstractDungeon.player.hb.y + AbstractDungeon.player.hb.height - 16.0f * Settings.scale,
             8.0f * Settings.xScale,
             0.0f,
             null,
             true
         );
         hb = new Hitbox(
-            AbstractDungeon.player.hb.x - 64.0F * Settings.scale,
-            AbstractDungeon.player.hb.y + AbstractDungeon.player.hb.height - 12.0F * Settings.scale,
-            64.0F * Settings.scale,
-            64.0F * Settings.scale
+            AbstractDungeon.player.hb.x - 64.0f * Settings.scale,
+            AbstractDungeon.player.hb.y + AbstractDungeon.player.hb.height - 12.0f * Settings.scale,
+            64.0f * Settings.scale,
+            64.0f * Settings.scale
         );
     }
 
@@ -72,11 +67,6 @@ public class NoblePhantasmButton extends AbstractPanel {
     private void chooseNobleCard() {
         AbstractPlayer p = AbstractDungeon.player;
 
-        // if (p.hasPower(SealNPPower.POWER_ID)) {
-        //     AbstractDungeon.effectList.add(new ThoughtBubble(p.dialogX, p.dialogY, 3.0f, uiStrings.TEXT[0], true));
-        //     return;
-        // } 
-        
         if (Master.fgoNp >= 100) {
             Master.fgoNp = 0;
             ((Master)p).TruthValueUpdatedEvent();
@@ -89,15 +79,15 @@ public class NoblePhantasmButton extends AbstractPanel {
         sb.setColor(renderColor);
 
         if (!AbstractDungeon.player.hasPower(SealNPPower.POWER_ID) && Master.fgoNp >= 100 && !AbstractDungeon.isScreenUp) {
-            sb.draw(NP_MAX, current_x, current_y, 32.0F, 32.0F, 64.0F, 64.0F, scale, scale, 0.0F, 0, 0, 64, 64, false, false);
+            sb.draw(NP_MAX, current_x, current_y, 32.0f, 32.0f, 64.0f, 64.0f, scale, scale, 0.0f, 0, 0, 64, 64, false, false);
         }
 
         hb.render(sb);
 
         if (shouldRenderTip()) {
             TipHelper.renderGenericTip(
-                AbstractDungeon.player.hb.x - 128.0F * Settings.scale,
-                AbstractDungeon.player.hb.y + AbstractDungeon.player.hb.height - 32.0F * Settings.scale,
+                AbstractDungeon.player.hb.x - 128.0f * Settings.scale,
+                AbstractDungeon.player.hb.y + AbstractDungeon.player.hb.height - 32.0f * Settings.scale,
                 tutorialStrings.LABEL[0],
                 tutorialStrings.TEXT[0] + tutorialStrings.TEXT[1] + tutorialStrings.TEXT[2]
             );

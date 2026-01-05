@@ -12,7 +12,6 @@ import fgo.ui.buttons.CommandSpellButton;
 import fgo.ui.buttons.NoblePhantasmButton;
 
 public class OverlayMenuPatch {
-    // 添加 CommandSpellButton 属性
     @SpirePatch(
         clz = OverlayMenu.class,
         method = SpirePatch.CLASS
@@ -21,7 +20,6 @@ public class OverlayMenuPatch {
         public static SpireField<CommandSpellButton> commandSpellButton = new SpireField<>(CommandSpellButton::new);
     }
 
-    // 添加 CommandSpellButton 属性
     @SpirePatch(
         clz = OverlayMenu.class,
         method = SpirePatch.CLASS
@@ -30,8 +28,6 @@ public class OverlayMenuPatch {
         public static SpireField<NoblePhantasmButton> noblePhantasmButton = new SpireField<>(NoblePhantasmButton::new);
     }
 
-
-    // 修改 update 方法
     @SpirePatch(
         clz = OverlayMenu.class,
         method = "update"
@@ -46,7 +42,6 @@ public class OverlayMenuPatch {
         }
     }
 
-    // 修改 render 方法
     @SpirePatch(
         clz = OverlayMenu.class,
         method = "render"
@@ -61,7 +56,6 @@ public class OverlayMenuPatch {
         }
     }
 
-    // 修改 showCombatPanels 方法
     @SpirePatch(
         clz = OverlayMenu.class,
         method = "showCombatPanels"
@@ -76,7 +70,6 @@ public class OverlayMenuPatch {
         }
     }
 
-    // 修改 hideCombatPanels 方法
     @SpirePatch(
         clz = OverlayMenu.class,
         method = "hideCombatPanels"

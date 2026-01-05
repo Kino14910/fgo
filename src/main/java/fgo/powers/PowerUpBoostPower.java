@@ -32,8 +32,7 @@ public class PowerUpBoostPower extends BasePower {
 
     @Override
     public float atDamageGive(float damage, DamageInfo.DamageType type) {
-        // return type == DamageInfo.DamageType.NORMAL ? damage * (1.0F + amount) : damage;
-        return damage * (1.0F + amount);
+        return damage * (1.0f + amount);
     }
 
     @Override

@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 
 import basemod.abstracts.CustomSavable;
+import fgo.cards.AbsNoblePhantasmCard;
 import fgo.cards.noblecards.AroundCaliburn;
 import fgo.cards.noblecards.BeautifulJourney;
 import fgo.cards.noblecards.IraLupus;
@@ -17,11 +18,11 @@ import fgo.utils.NobleCardGroup;
 
 public class NobleDeckCards implements CustomSavable<ArrayList<String>> {
     public static ArrayList<String> cards;
-    public static NobleCardGroup nobleCards;
+    public static NobleCardGroup<AbsNoblePhantasmCard> nobleCards;
 
-    public static NobleCardGroup getNobleCards() {
+    public static NobleCardGroup<AbsNoblePhantasmCard> getNobleCards() {
         if (nobleCards == null) {
-            nobleCards = new NobleCardGroup();
+            nobleCards = new NobleCardGroup<>();
         }
         return nobleCards;
     }

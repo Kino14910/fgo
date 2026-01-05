@@ -38,7 +38,7 @@ public class ChangeSceneEffect extends AbstractChangeSceneEffect {
             drawWidth = (float) Settings.HEIGHT / img.getHeight() * img.getWidth();
         }
 
-        sb.draw(img, 0.0F, 0.0F, drawWidth, drawHeight);
+        sb.draw(img, 0.0f, 0.0f, drawWidth, drawHeight);
     }
 
 
