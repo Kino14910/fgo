@@ -21,7 +21,7 @@ import fgo.utils.FGOInputActionSet;
 public class NobleDeckPanelItem extends TopPanelItem {
     private static final Texture IMG = new Texture(uiPath("NobleTopPanel"));
     public static final String ID = makeID(NobleDeckPanelItem.class.getSimpleName());
-    private static final String[] NPTEXT = CardCrawlGame.languagePack.getUIString("fgo:NPText").TEXT;
+    // private static final String[] NPTEXT = CardCrawlGame.languagePack.getUIString("fgo:NPText").TEXT;
     private static final TutorialStrings tutorialStrings = CardCrawlGame.languagePack.getTutorialString(makeID(NobleDeckPanelItem.class.getSimpleName()));
     public static final String[] TEXT = NobleDeckPanelItem.tutorialStrings.TEXT;
     public static final String LABEL = TEXT[0];

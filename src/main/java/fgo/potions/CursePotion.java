@@ -5,19 +5,16 @@ import static fgo.FGOMod.makeID;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.helpers.TipHelper;
-import com.megacrit.cardcrawl.localization.PotionStrings;
 
 import basemod.BaseMod;
 import fgo.powers.CursePower;
 
 public class CursePotion extends BasePotion {
     public static final String ID = makeID(CursePotion.class.getSimpleName());
-    private static final PotionStrings potionStrings = CardCrawlGame.languagePack.getPotionString(ID);
     public static final Color NOBLE = CardHelper.getColor(255, 215, 0);
     public CursePotion(){
         super(ID, 5, PotionRarity.UNCOMMON, PotionSize.SPHERE, Color.PURPLE, Color.RED, Color.DARK_GRAY);

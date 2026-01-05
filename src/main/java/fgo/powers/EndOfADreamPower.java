@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public class EndOfADreamPower extends BasePower {
     public static final String POWER_ID = makeID(EndOfADreamPower.class.getSimpleName());
-    private static final PowerType TYPE = PowerType.DEBUFF;
     public EndOfADreamPower(AbstractCreature owner) {
         super(POWER_ID, PowerType.DEBUFF, false, owner); 
     }

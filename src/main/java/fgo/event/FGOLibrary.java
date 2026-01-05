@@ -19,9 +19,6 @@ import fgo.cards.colorless.EightKindness;
 import fgo.cards.colorless.MaraPapiyas;
 import fgo.cards.colorless.PrimevalRune;
 import fgo.cards.colorless.UndeadBird;
-import fgo.cards.fgo.AbyssOfDeath;
-import fgo.cards.fgo.PeerlessStrike;
-import fgo.cards.fgo.SpringOfFire;
 
 public class FGOLibrary extends BaseEvent {
     public static final String ID = makeID(FGOLibrary.class.getSimpleName());
