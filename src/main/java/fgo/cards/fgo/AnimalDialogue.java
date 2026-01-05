@@ -30,11 +30,9 @@ public class AnimalDialogue extends FGOCard {
 
     @Override
     public void triggerOnGlowCheck() {
-        if (Master.fgoNp >= magicNumber) {
-            glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
-        } else {
-            glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
-        }
+        glowColor = Master.fgoNp >= magicNumber
+            ? AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy() 
+            : AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
     }
 }
 

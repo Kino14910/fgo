@@ -29,10 +29,9 @@ public class ExtraterrestrialOctopus extends FGOCard {
         AbstractPlayer p = AbstractDungeon.player;
         if (p.hasPower(StarPower.POWER_ID)) {
             setDamage((p.getPower(StarPower.POWER_ID).amount * magicNumber));
-            
         }
         super.applyPowers();
-        isBlockModified = true;
+        isDamageModified = isModified = true;
     }
 
     @Override
@@ -43,16 +42,14 @@ public class ExtraterrestrialOctopus extends FGOCard {
     
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAction(m, new DamageInfo(p, block), AttackEffect.SLASH_DIAGONAL));
+        addToBot(new DamageAction(m, new DamageInfo(p, damage), AttackEffect.SLASH_DIAGONAL));
     }
 
     @Override
     public void triggerOnGlowCheck() {
-        if (AbstractDungeon.player.hasPower(StarPower.POWER_ID)) {
-            glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
-        } else {
-            glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
-        }
+        glowColor = AbstractDungeon.player.hasPower(StarPower.POWER_ID) 
+            ? AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy() 
+            : AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
     }
 }
 
