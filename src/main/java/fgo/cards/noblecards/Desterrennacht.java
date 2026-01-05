@@ -27,7 +27,7 @@ public class Desterrennacht extends AbsNoblePhantasmCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new AllEnemyApplyPowerAction(p, magicNumber,
-                monster -> new TerrorPower(monster, 3, 60))
+            monster -> new TerrorPower(monster, 3, 60))
         );
         addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, magicNumber)));
         addToBot(new ApplyPowerAction(p, p, new CriticalDamageUpPower(p, customVar("CriticalDamage"))));

@@ -3,6 +3,7 @@ package fgo.cards.fgo;
 import static fgo.FGOMod.cardPath;
 
 import com.badlogic.gdx.graphics.Color;
+import com.evacipated.cardcrawl.mod.stslib.actions.common.AllEnemyApplyPowerAction;
 import com.evacipated.cardcrawl.mod.stslib.patches.FlavorText;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -25,8 +26,9 @@ public class BeyondTheFurthestEnd extends FGOCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(m, p, new WeakPower(m, 3, false)));
-
+        addToBot(new AllEnemyApplyPowerAction(p, 3, 
+            monster -> new WeakPower(monster, 3, false))
+        );
         addToBot(new ApplyPowerAction(p, p, new BeyondTheFurthestEndPower(p, magicNumber)));
     }
 }

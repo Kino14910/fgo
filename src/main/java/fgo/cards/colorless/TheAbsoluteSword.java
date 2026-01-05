@@ -27,7 +27,7 @@ public class TheAbsoluteSword extends FGOCard {
             addToBot(new VFXAction(p, new CleaveEffect(), 0.1F));
             addToBot(new DamageAllEnemiesAction(p, multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
         }
-        addToBot(new ApplyPowerAction(p, p, new DrawPower(p, 1), 1));
+        addToBot(new ApplyPowerAction(p, p, new DrawPower(p, 1)));
         addToBot(new ChangeStanceAction("Divinity"));
     }
 }

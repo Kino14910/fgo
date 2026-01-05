@@ -30,7 +30,7 @@ public class ImitationGodForce extends AbsNoblePhantasmCard {
         }
 
         addToBot(new AllEnemyApplyPowerAction(p, magicNumber,
-                monster -> new WeakPower(monster, magicNumber, false))
+            monster -> new WeakPower(monster, magicNumber, false))
         );
     }
 }
