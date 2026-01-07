@@ -1,12 +1,47 @@
 {
   "${modID}:CommandSpell": {
     "TEXT": [
-      "宝具解放: 获得 #b100% #y宝具值 。 NL 使用 #b1 划令咒发动。 NL ",
-      "灵基修复: 回复30点生命。 NL 使用 #b1 划令咒发动。 NL ",
-      "灵基复原: 免死并回复所有生命。 NL 获得 !NP! % #y宝具值 。 NL 在你要被杀死时显现，消耗 #b3 划令咒发动。 "
+      " #yNoble Phantasm Release: Gain #b100% #yNoble Phantasm Gauge. NL Activated by using #b1 #yCommand Spell. NL NL ",
+      " #ySpiritron Repair: Restore #b30 HP. NL Activated by using #b1 #yCommand Spell. NL NL ",
+      " #ySpiritron Restoration: Survive fatal damage and restore all HP. NL Gain #b300% #yNoble Phantasm Gauge. NL Activates when you are about to be defeated, consuming #b3 #yCommand Spells. "
     ],
     "LABEL": [
-      "令咒"
+      "Command Spell"
+    ]
+  },
+  "${modID}:NoblePhantasm": {
+    "TEXT": [
+      "When #yNoble Phantasm Gauge reaches #b100%, click to select a Noble Phantasm card to add to your hand, and #rreset your #yNoble Phantasm Gauge. NL NL ",
+      "When #yNoble Phantasm Gauge reaches #b200%, #yupgrade the selectable #yNoble Phantasm card. NL NL ",
+      "When #yNoble Phantasm Gauge reaches #b300%, you receive #ytwo Noble Phantasm cards."
+    ],
+    "LABEL": [
+      "Noble Phantasm Release"
+    ]
+  },
+  "${modID}:MysticCode": {
+    "TEXT": [
+      "#yShining Accompaniment: Gain !M! fgo:Critical Stars. NL Gain !NP! % fgo:Noble Phantasm Gauge. Cooldown: 8 turns",
+      "#yPure Combination: Gain fgo:Invincible 2 times this turn. Cooldown: 8 turns",
+      "#yHappy Regeneration: Gain 2 Energy. NL Draw 2 cards. Cooldown: 8 turns",
+      "#yPrediction Calculation: Discard 1 card. NL Select 1 card from draw pile and add to your hand. NL Added in Act 2. Cooldown: 8 turns"
+    ],
+    "LABEL": [
+      "Mystic Code"
+    ]
+  },
+  "${modID}:NobleDeckPanelItem": {
+    "TEXT": [
+      "Noble Phantasm Deck",
+      "You can view currently #yunlocked Noble Phantasm cards. More Noble Phantasm cards will be unlocked as you explore the Spire.",
+      "Currently unlocked Noble Phantasm cards."
+    ]
+  },
+  "${modID}:NobleDeckViewScreen": {
+    "TEXT": [
+      "These cards will be retained and removed from combat after being played.",
+      "Return",
+      "Click for details"
     ]
   }
 }

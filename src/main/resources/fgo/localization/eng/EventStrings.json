@@ -40,12 +40,10 @@
       "I won't get tired of reading the stories of the heroes a few times. NL NL You noticed them staring at you, NL you quickly left."
     ],
     "OPTIONS": [
-      "[Read] #gChoose #g1 #gof #g? #gcards #gto #gadd #gto #gyour #gdeck. #rLose #r",
-      "[Sleep] #gHeal #g",
-      " #gHP.",
+      "[Read] #gChoose #g1 #gof #g? #gcards #gto #gadd #gto #gyour #gdeck. #rLose #r %d #rMax #rHP.",
+      "[Sleep] #gHeal #g %d #gHP.",
       "[Leave]",
-      "Add a card to your deck.",
-      " #rMax #rHP."
+      "Add a card to your deck."
     ]
   },
   "${modID}:ConflictEvent": {
@@ -71,24 +69,18 @@
     ],
     "OPTIONS": [
       "[Witness] #gGet #ga #gProof #gand #gRebuttal.",
-      "[Enjoy] #gUpgrade #g2 #grandom #gcards. #rLose #r",
-      " #rGold.",
+      "[Enjoy] #gUpgrade #g2 #grandom #gcards. #rLose #r %d #rGold.",
       "[Leave]",
-      "选择两张牌升级。",
       "[Locked] Requires: Upgradeable Cards"
     ]
   },
   "${modID}:ManofChaldea": {
     "NAME": "Man of Chaldea",
     "DESCRIPTIONS": [
-      "As humanity is the continuous footprint (memories) from the past to the future, a person grows by accumulating experience, knowledge, and stories.",
-      "The trivial conversation in an hour. NL The difficult to acquire friendship in a day. NL The promising growth in a year.",
-      "No humans can remember those things in details.",
-      "The only thing that remains is the result, and the progress is always forgotten.",
-      "In the long run, or rather objectively, the boy is no different to other humans.",
+      "As humanity is the continuous footprint (memories) from the past to the future, a person grows by accumulating experience, knowledge, and stories. NL The trivial conversation in an hour. NL The difficult to acquire friendship in a day. NL The promising growth in a year.",
+      "No humans can remember those things in details. NL The only thing that remains is the result, and the progress is always forgotten. NL In the long run, or rather objectively, the boy is no different to other humans.",
       "At the end of the day, his memories are renewed. NL They turn into a blank state. NL Among those memories, he only retains the essential ones.",
-      "23 hours and 55 minutes are lost. NL All the dazzlingly beautiful experiences that occurred in a day are bleached.",
-      "His belief lies in 5 minutes. NL His will to fight against the renewal allows him to keep the memories that he must not lose/that he must not forget.",
+      "23 hours and 55 minutes are lost. All the dazzlingly beautiful experiences that occurred in a day are bleached. 5 minutes of belief. NL His will to fight against the renewal allows him to keep the memories that he must not lose/that he must not forget.",
       "And so, the boy became an adult. NL By collecting only the necessary information to a human being (himself), he has successfully become \"The shape of a certain someone\".",
       "He does not think of that as real or fake. NL Things like wishes, beliefs, and vows are simple. NL \"Humans are beings that do good things\". NL It is the one and only Grand Order that makes him human.",
       "You gain some gold.",

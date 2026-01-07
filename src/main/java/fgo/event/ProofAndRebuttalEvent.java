@@ -48,8 +48,8 @@ public class ProofAndRebuttalEvent extends BaseEvent {
                 }))
             .addOption(
                 new TextPhase.OptionInfo(p.masterDeck.hasUpgradableCards() 
-                    ? OPTIONS[1] + goldLoss + OPTIONS[2] 
-                    : OPTIONS[5]
+                    ? String.format(OPTIONS[1], goldLoss)
+                    : OPTIONS[3]
                 ).enabledCondition(p.masterDeck::hasUpgradableCards)
                 .setOptionResult(i -> {
                     AbstractDungeon.effectList.add(new FlashAtkImgEffect(p.hb.cX, p.hb.cY, AbstractGameAction.AttackEffect.FIRE));
@@ -61,11 +61,11 @@ public class ProofAndRebuttalEvent extends BaseEvent {
             );
 
         registerPhase("Witness", new TextPhase(DESCRIPTIONS[1])
-            .addOption(OPTIONS[3],  i -> openMap())
+            .addOption(OPTIONS[2],  i -> openMap())
         );
 
         registerPhase("Enjoy", new TextPhase(DESCRIPTIONS[2])
-            .addOption(OPTIONS[3],  i -> openMap())
+            .addOption(OPTIONS[2],  i -> openMap())
         );
 
         transitionKey(0);

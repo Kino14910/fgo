@@ -1,14 +1,21 @@
 {
   "fgo:Emiya": {
     "MOVES": [
-      "Mind's Eye (True)",
-      "鹰之瞳",
+      "Caladbolg Ⅱ",
+      "Kanshou Bakuya",
+      "Unlimited Blade Works",
+      "Trace On",
+      "Eye of the Mind (True)",
+      "Hawkeye",
       "Circuit Connect"
     ],
     "NAME": "Emiya",
     "DIALOG": [
+      "There!",
+      "Kanshou, Bakuya!",
+      "How dare you...",
+      "Trace On!",
       "Sorry. Bad habit.",
-      "Trace, on！",
       "This is the opportune time. I'm taking them down now."
     ]
   }

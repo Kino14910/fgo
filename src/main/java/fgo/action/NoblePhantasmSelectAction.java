@@ -63,7 +63,7 @@ public class NoblePhantasmSelectAction extends AbstractGameAction {
             return;
         }
 
-        ArrayList selectedCards = AbstractDungeon.gridSelectScreen.selectedCards;
+        ArrayList<AbstractCard> selectedCards = AbstractDungeon.gridSelectScreen.selectedCards;
         if (!selectedCards.isEmpty()) {
             AbsNoblePhantasmCard selectedCard = (AbsNoblePhantasmCard)selectedCards.get(0);
             AbsNoblePhantasmCard selectedCardCopy = (AbsNoblePhantasmCard)selectedCard.makeCopy();

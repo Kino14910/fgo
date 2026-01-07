@@ -495,10 +495,36 @@
       "When you would next die, Gain #b%d Strength。"
     ]
   },
-  "${modID}:HeraclesGutsPower": {
+  "${modID}:NonStackableGutsPower": {
     "NAME": "Guts",
     "DESCRIPTIONS": [
-      "When you would die, heal #b%1$s HP instead."
+      "When you are about to be killed, survive and restore #b%d #yHP.",
+      "For the next #b%d times you are about to be killed, survive and restore #b%d #yHP."
+    ]
+  },
+    "${modID}:NonStackableEnergyRegenPower": {
+    "NAME": "NP Gain Per Turn",
+    "DESCRIPTIONS": [
+      "Gain #b%d %% #yNoble Phantasm Gauge at the start of each turn.",
+      "Lasts #b%d turns."
+    ]
+  },
+  "${modID}:LoseArtsPerformancePower": {
+    "NAME": "Lose NP Gain Boost",
+    "DESCRIPTIONS": [
+      "At the end of your turn, lose #b%d #yStrength."
+    ]
+  },
+  "${modID}:StarHunterPower": {
+    "NAME": "Star Hunter",
+    "DESCRIPTIONS": [
+      "For the next #b%d #yCriticals, increase #yCritical Damage by #b%d %%."
+    ]
+  },
+  "${modID}:ForeignerPower": {
+    "NAME": "Starry Night",
+    "DESCRIPTIONS": [
+      "#g〔Foreigner〕 cards deal 100% increased #yCritical Damage."
     ]
   }
 }

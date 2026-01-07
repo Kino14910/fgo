@@ -106,7 +106,7 @@
     "NAME": "Cosmic Medallion",
     "FLAVOR": "From the Universe Medal.",
     "DESCRIPTIONS": [
-      "Block is not removed at the start of your next #b3 turn."
+      "Whenever you lose HP during your turn, gain double that amount in Block."
     ]
   },
   "${modID}:MidsummerNightDream": {

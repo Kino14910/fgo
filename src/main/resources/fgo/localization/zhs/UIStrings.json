@@ -82,15 +82,14 @@
       "宝具值不够。"
     ]
   },
-  "${modID}:InSonorousEffectCard": {
-    "TEXT": [
-      "圆桌骑士的祝福（前六层）",
-      "玛修的支援"
-    ]
-  },
   "${modID}:AlterOption": {
     "TEXT": [
       "灵基再临",
+      "选择获得一张宝具牌，此选项不占用火堆次数。"
+    ]
+  },
+  "${modID}:AlterOptionEffect": {
+    "TEXT": [
       "选择获得一张宝具牌，此选项不占用火堆次数。"
     ]
   },
@@ -104,11 +103,6 @@
       "宝具被封印了。"
     ]
   },
-  "${modID}:AlterOptionEffect": {
-    "TEXT": [
-      "选择获得一张宝具牌，此选项不占用火堆次数。"
-    ]
-  },
   "${modID}:FGOConfig": {
     "TEXT_DICT": {
       "enableColorlessCards": "启用无色卡（需要重启游戏）",
@@ -116,11 +110,6 @@
       "enablePadoru": "启用圣诞节彩蛋",
       "enableFtue": "启用新手教程"
     }
-  },
-  "${modID}:MysticCode": {
-    "TEXT": [
-      "点击使用技能。"
-    ]
   },
   "${modID}:ftue": {
     "TEXT": [
