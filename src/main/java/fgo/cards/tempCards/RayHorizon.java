@@ -7,8 +7,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import fgo.action.FgoNpAction;
 import fgo.cards.FGOCard;
 import fgo.cards.noblecards.HollowHeartAlbion;
+import fgo.powers.ForcedNPCardPower;
 import fgo.powers.InvincibilityTurnPower;
-import fgo.powers.NoblePhantasmCardPower;
 
 public class RayHorizon extends FGOCard {
     public static final String ID = makeID(RayHorizon.class.getSimpleName());
@@ -23,7 +23,7 @@ public class RayHorizon extends FGOCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new FgoNpAction(np));
-        addToBot(new ApplyPowerAction(p, p, new NoblePhantasmCardPower(p, cardsToPreview)));
+        addToBot(new ApplyPowerAction(p, p, new ForcedNPCardPower(p, cardsToPreview, false)));
         addToBot(new ApplyPowerAction(p, p, new InvincibilityTurnPower(p, magicNumber)));
     }
 }

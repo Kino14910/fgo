@@ -77,12 +77,9 @@
   "${modID}:ManofChaldea": {
     "NAME": "Man of Chaldea",
     "DESCRIPTIONS": [
-      "As humanity is the continuous footprint (memories) from the past to the future, a person grows by accumulating experience, knowledge, and stories. NL The trivial conversation in an hour. NL The difficult to acquire friendship in a day. NL The promising growth in a year.",
-      "No humans can remember those things in details. NL The only thing that remains is the result, and the progress is always forgotten. NL In the long run, or rather objectively, the boy is no different to other humans.",
-      "At the end of the day, his memories are renewed. NL They turn into a blank state. NL Among those memories, he only retains the essential ones.",
-      "23 hours and 55 minutes are lost. All the dazzlingly beautiful experiences that occurred in a day are bleached. 5 minutes of belief. NL His will to fight against the renewal allows him to keep the memories that he must not lose/that he must not forget.",
-      "And so, the boy became an adult. NL By collecting only the necessary information to a human being (himself), he has successfully become \"The shape of a certain someone\".",
-      "He does not think of that as real or fake. NL Things like wishes, beliefs, and vows are simple. NL \"Humans are beings that do good things\". NL It is the one and only Grand Order that makes him human.",
+      "As humanity is the continuous footprint (memories) from the past to the future, a person grows by accumulating experience, knowledge, and stories. NL NL The trivial conversation in an hour. NL The difficult to acquire friendship in a day. NL The promising growth in a year. No humans can remember those things in details. NL The only thing that remains is the result, and the progress is always forgotten. NL In the long run, or rather objectively, the boy is no different to other humans.",
+      "At the end of the day, his memories are renewed. NL They turn into a blank state. NL Among those memories, he only retains the essential ones. 23 hours and 55 minutes are lost. All the dazzlingly beautiful experiences that occurred in a day are bleached. 5 minutes of belief. NL His will to fight against the renewal allows him to keep the memories that he must not lose/that he must not forget.",
+      "And so, the boy became an adult. NL By collecting only the necessary information to a human being (himself), he has successfully become \"The shape of a certain someone\". He does not think of that as real or fake. NL Things like wishes, beliefs, and vows are simple. NL NL \"Humans are beings that do good things\". NL NL It is the one and only Grand Order that makes him human.",
       "You gain some gold.",
       "You heal some HP."
     ],

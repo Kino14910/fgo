@@ -366,11 +366,10 @@
       "Whenever you deal #yCritical damage, gain #b1 #yHeroic #yKing. Deal damage again for each #yHeroic #yKing."
     ]
   },
-  "${modID}:NoblePhantasmCardPower": {
+  "${modID}:ForcedNPCardPower": {
     "NAME": "Noble Phantasm Card",
     "DESCRIPTIONS": [
-      "Whenever your NP gauge is at or above #b100%, add a ",
-      " into your hand."
+      "Whenever your NP gauge is at or above #b100%, add a %s into your hand."
     ]
   },
   "${modID}:QuickPerformancePower": {

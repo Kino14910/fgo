@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -12,8 +13,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
 import fgo.cards.AbsNoblePhantasmCard;
+import fgo.powers.ForcedNPCardPower;
 import fgo.powers.NPOverChargePower;
-import fgo.powers.NoblePhantasmCardPower;
 import fgo.ui.panels.NobleDeckCards;
 import fgo.utils.NobleCardGroup;
 
@@ -27,8 +28,23 @@ public class NoblePhantasmSelectAction extends AbstractGameAction {
 
     @Override
     public void update() {
+        AbstractPlayer p = AbstractDungeon.player;
         if (duration == Settings.ACTION_DUR_MED) {
+            if (p.hasPower(ForcedNPCardPower.POWER_ID)) {
+                ForcedNPCardPower npCardPower = (ForcedNPCardPower)p.getPower(ForcedNPCardPower.POWER_ID);
+                AbsNoblePhantasmCard card = (AbsNoblePhantasmCard)npCardPower.card;
+                UnlockTracker.markCardAsSeen(card.cardID);
+                for(int i = 0; i < OCAmt; i++) {
+                    card.upgrade();
+                }
+                addToBot(new MakeTempCardInHandAction(card, 1));
+                addToBot(new RemoveSpecificPowerAction(p, p, ForcedNPCardPower.POWER_ID));
+                tickDuration();
+                return;
+            }
+            
             NobleCardGroup<AbsNoblePhantasmCard> nobleCardGroup = new NobleCardGroup<AbsNoblePhantasmCard>();
+            
             if (NobleDeckCards.nobleCards.group.isEmpty()) {
                 isDone = true;
                 return;
@@ -40,7 +56,6 @@ public class NoblePhantasmSelectAction extends AbstractGameAction {
                 UnlockTracker.markCardAsSeen(cardCopy.cardID);
             }
             
-            AbstractPlayer p = AbstractDungeon.player;
             String OC = NPOverChargePower.POWER_ID;
             int OCAmt = p.hasPower(OC) ? p.getPower(OC).amount : 0;
 
@@ -53,10 +68,6 @@ public class NoblePhantasmSelectAction extends AbstractGameAction {
                     }
                 });
             }
-
-            if (p.hasPower(NoblePhantasmCardPower.POWER_ID)) {
-                nobleCardGroup.addToTop(NoblePhantasmCardPower.card);
-            }
             
             AbstractDungeon.gridSelectScreen.open(nobleCardGroup, 1, NPTEXT[2], false, false, true, false);
             tickDuration();
@@ -64,6 +75,7 @@ public class NoblePhantasmSelectAction extends AbstractGameAction {
         }
 
         ArrayList<AbstractCard> selectedCards = AbstractDungeon.gridSelectScreen.selectedCards;
+
         if (!selectedCards.isEmpty()) {
             AbsNoblePhantasmCard selectedCard = (AbsNoblePhantasmCard)selectedCards.get(0);
             AbsNoblePhantasmCard selectedCardCopy = (AbsNoblePhantasmCard)selectedCard.makeCopy();

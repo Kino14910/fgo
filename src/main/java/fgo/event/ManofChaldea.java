@@ -20,46 +20,39 @@ public class ManofChaldea extends BaseEvent {
     public ManofChaldea() {
         super(ID, NAME, eventPath("ManofChaldea"));
         
-        // 人类即为过去延续到未来的足迹（记忆），只有一直积累经验、知识与故事，才能作为人而不断成长。 NL 一小时内有过的三两谈话。 NL 一天内交到的珍贵好友。 NL 一年内取得的耀眼成长。
+        // 人类即为过去延续到未来的足迹（记忆），只有一直积累经验、知识与故事，才能作为人而不断成长。 NL 一小时内有过的三两谈话。 NL 一天内交到的珍贵好友。 NL 一年内取得的耀眼成长。但是，没有人能够鲜明地记得经历的一切。 NL 留下的仅有结果。过程通常会被忘记。 NL 从长期角度，或是客观角度来看，少年与人们并无差别。
         registerPhase(0, new TextPhase(DESCRIPTIONS[0])
             .addOption(OPTIONS[0], i -> transitionKey("Phase 1")));
-        
-        // 但是，没有人能够鲜明地记得经历的一切。 NL 留下的仅有结果。过程通常会被忘记。 NL 从长期角度，或是客观角度来看，少年与人们并无差别。
+
+        // 每天结束时，他的记忆都会被刷新。 NL 化作一片空白。 NL 而少年，仅能保存其中重要的东西。23小时55分钟的丧失。每天经历过的耀眼记忆，都会被漂白。5分钟的信念。 NL 抵抗刷新的意志，让他获得了不会失去／无法忘怀的回忆。
         registerPhase("Phase 1", new TextPhase(DESCRIPTIONS[1])
             .addOption(OPTIONS[0], i -> transitionKey("Phase 2")));
-        
-        // 每天结束时，他的记忆都会被刷新。 NL 化作一片空白。 NL 而少年，仅能保存其中重要的东西。
-        registerPhase("Phase 2", new TextPhase(DESCRIPTIONS[2])
-            .addOption(OPTIONS[0], i -> transitionKey("Phase 3")));
-        
-        // 23小时55分钟的丧失。每天经历过的耀眼记忆，都会被漂白。5分钟的信念。 NL 抵抗刷新的意志，让他获得了不会失去／无法忘怀的回忆。
-        registerPhase("Phase 3", new TextPhase(DESCRIPTIONS[3])
-            .addOption(OPTIONS[0], i -> transitionKey("Phase 4")));
-        
+
         // 就这样，少年长大成人。不断积累着仅为人类（自己）所需的信息，到达了『一名人类的模样』。
-        registerPhase("Phase 4", new TextPhase(DESCRIPTIONS[4])
-            .addOption(OPTIONS[0], i -> transitionKey("Phase 5")));
-        
-        // 自己究竟是真正的人类，还是虚有其表的冒牌货，他并未考虑过这个问题。 NL 只是拥有的愿望、信念、誓言非常单纯。 NL 『人类会行善』 NL 只有这一点是他足以被称作人类的，唯一的冠位指定。
-        registerPhase("Phase 5", new TextPhase(DESCRIPTIONS[5])
-            .addOption(OPTIONS[0], i -> transitionKey("Phase 6")));
-        
-        // 获得金币
-        registerPhase("Phase 6", new TextPhase(DESCRIPTIONS[6])
-            .addOption(OPTIONS[2], i -> {
-                AbstractDungeon.effectList.add(new RainingGoldEffect(125));
+        // 获得金币或恢复体力
+        registerPhase("Phase 2", new TextPhase(DESCRIPTIONS[2])
+            .addOption(OPTIONS[1], i -> {
+                AbstractDungeon.effectList.add(new RainingGoldEffect(75));
                 AbstractDungeon.player.gainGold(75);
-                transitionKey("Phase 8");
+                transitionKey("Gold");
+            })
+            .addOption(OPTIONS[2], i -> {
+                AbstractDungeon.player.heal(15, true);
+                transitionKey("Heal");
             }));
         
-        
-        // 恢复体力
-        registerPhase("Phase 7", new TextPhase(DESCRIPTIONS[7])
+
+        registerPhase("Gold", new TextPhase(DESCRIPTIONS[3])
             .addOption(OPTIONS[3], i -> {
                 AbstractDungeon.player.heal(15, true);
                 openMap();
             }));
         
+        registerPhase("Heal", new TextPhase(DESCRIPTIONS[4])
+            .addOption(OPTIONS[3], i -> {
+                AbstractDungeon.player.heal(15, true);
+                openMap();
+            }));
         // 设置事件的起始阶段
         transitionKey(0);
     }

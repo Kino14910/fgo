@@ -404,11 +404,11 @@
   },
   "${modID}:SwifterThanSound": {
     "NAME": "越音",
-    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。进入 平静 。 NL 将一张 *无间 放入你的抽牌堆中。 消耗 。"
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。进入 平静 。 NL 在你的手牌中加入一张 *无间 。 消耗 。"
   },
   "${modID}:InfiniteSuffering": {
     "NAME": "无间",
-    "DESCRIPTION": "对所有敌人造成 !D! 点伤害，给予 !M! 层 易伤 。 NL 进入 愤怒 。 NL 将一张 *绝刀 放入你的抽牌堆中。 消耗 。"
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害，给予 !M! 层 易伤 。 NL 进入 愤怒 。 NL 在你的手牌中加入一张 *绝刀 。 消耗 。"
   },
   "${modID}:TheAbsoluteSword": {
     "NAME": "绝刀",

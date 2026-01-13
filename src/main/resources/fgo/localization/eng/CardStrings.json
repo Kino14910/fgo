@@ -428,11 +428,11 @@
   },
   "${modID}:SwifterThanSound": {
     "NAME": "Swifter Than Sound",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Shuffle an *Second *Thrust into your draw pile. NL Enter Calm. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Add a *Second *Thrust to your hand . NL Enter Calm. NL Exhaust."
   },
   "${modID}:InfiniteSuffering": {
     "NAME": "Infinite Suffering",
-    "DESCRIPTION": "Deal !D! damage and apply !M! Vulnerable to ALL enemies. NL Shuffle an *Third *Thrust into your draw pile. NL Enter Wrath. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage and apply !M! Vulnerable to ALL enemies. NL Add a *Third *Thrust to your hand . NL Enter Wrath. NL Exhaust."
   },
   "${modID}:TheAbsoluteSword": {
     "NAME": "The Absolute Sword",

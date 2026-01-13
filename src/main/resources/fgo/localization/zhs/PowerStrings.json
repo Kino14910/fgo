@@ -355,11 +355,10 @@
       "每当你造成 #y暴击 时，获得 #b1 层 #y王威 。每层 #y王威 会让十二辉剑多造成一次伤害。"
     ]
   },
-  "${modID}:NoblePhantasmCardPower": {
+  "${modID}:ForcedNPCardPower": {
     "NAME": "宝具牌",
     "DESCRIPTIONS": [
-      "在宝具值达到 #b100%% 及以上时，将一张 ",
-      " 加入你的手牌，而不是选择一张。"
+      "在宝具值达到 #b100%% 及以上时，将一张 %s 加入你的手牌，而不是选择一张。"
     ]
   },
   "${modID}:QuickPerformancePower": {
