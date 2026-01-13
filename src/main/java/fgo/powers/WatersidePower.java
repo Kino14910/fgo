@@ -21,7 +21,7 @@ public class WatersidePower extends BasePower {
             flash();
 
             addToBot(new GainBlockAction(owner, owner, BLOCK_AMT));
-            for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
+            for (AbstractMonster mo : AbstractDungeon.getMonsters().monsters) {
                 addToBot(new GainBlockAction(mo, owner, BLOCK_AMT));
             }
         }

@@ -525,5 +525,11 @@
     "DESCRIPTIONS": [
       "#g〔Foreigner〕 cards deal 100% increased #yCritical Damage."
     ]
+  },
+  "${modID}:DeathChancePower": {
+    "NAME": "Death Chance",
+    "DESCRIPTIONS": [
+      "When HP below #b%d , #rdie."
+    ]
   }
 }

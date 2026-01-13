@@ -514,5 +514,11 @@
     "DESCRIPTIONS": [
       "#g〔领域外生命〕 卡攻击造成的的暴击威力提升 100% 。"
     ]
+  },
+  "${modID}:DeathChancePower": {
+    "NAME": "即死",
+    "DESCRIPTIONS": [
+      "生命值 #b%d 以下时 #r死亡。"
+    ]
   }
 }

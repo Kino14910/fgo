@@ -293,5 +293,22 @@
       "OC"
     ],
     "DESCRIPTIONS": "Each stack enhances the Noble Phantasm once. All stacks are lost at the end of the turn."
+  },
+  {
+    "NAMES": [
+      "Death Chance",
+      "DeathChance"
+    ],
+    "DESCRIPTIONS": [
+      "When HP below #yDeath #yChance, #rDie。"
+    ]
+  },
+  {
+    "NAMES": [
+      "Pursue"
+    ],
+    "DESCRIPTIONS": [
+      "Pursued creatures take #b25% more damage from Attacks."
+    ]
   }
 ]

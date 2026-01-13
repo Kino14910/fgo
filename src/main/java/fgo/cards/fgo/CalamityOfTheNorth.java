@@ -18,7 +18,7 @@ public class CalamityOfTheNorth extends FGOCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
+        for (AbstractMonster mo : AbstractDungeon.getMonsters().monsters) {
             addToBot(new ApplyPowerAction(mo, p, new PoisonPower(mo, p, magicNumber)));
             addToBot(new ApplyPowerAction(mo, p, new CursePower(mo, p, magicNumber)));
         }

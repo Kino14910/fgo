@@ -647,10 +647,10 @@
   },
   "${modID}:SneferuIteruNile": {
     "NAME": "Sneferu Iteru Nile",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL apply !M! Vulnerable. NL Gain fgo:Waterside ."
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Apply !M! Vulnerable. NL Apply !M! fgo:DeathChance NL Gain fgo:Waterside ."
   },
   "${modID}:CodeOriginalSin": {
     "NAME": "Code Original Sin",
-    "DESCRIPTION": "All enemies lose !D! HP. NL  Gain !NP! % fgo:NP ."
+    "DESCRIPTION": "All enemies lose !D! HP. NL Gain !NP! % fgo:NP ."
   }
 }

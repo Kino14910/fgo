@@ -39,13 +39,13 @@ public class Sevendrive extends AbsNoblePhantasmCard {
         addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, 2)));
         addToBot(new ApplyPowerAction(p, p, new LoseStrengthPower(p, 2)));
         addToBot(new DamageAllEnemiesAction(p, multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, true));
-        for (AbstractMonster mon : AbstractDungeon.getCurrRoom().monsters.monsters) {
-            if (mon == null || mon.isDeadOrEscaped()) 
+        for (AbstractMonster mo : AbstractDungeon.getMonsters().monsters) {
+            if (mo == null || mo.isDeadOrEscaped()) 
                 return;
-            int intentMultiAmt = (int)ReflectionHacks.getPrivate(mon, AbstractMonster.class, "intentMultiAmt");
+            int intentMultiAmt = (int)ReflectionHacks.getPrivate(mo, AbstractMonster.class, "intentMultiAmt");
             if (intentMultiAmt > 1) {
                 addToBotAbstract(() -> {
-                    ReflectionHacks.setPrivate(mon, AbstractMonster.class, "intentMultiAmt", intentMultiAmt - 1);
+                    ReflectionHacks.setPrivate(mo, AbstractMonster.class, "intentMultiAmt", intentMultiAmt - 1);
                 });
             }
         }

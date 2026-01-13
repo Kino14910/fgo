@@ -629,7 +629,7 @@
   },
   "${modID}:SneferuIteruNile": {
     "NAME": "青色美丽的尼罗河",
-    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 给予 3 层 易伤 。 NL 如果敌人的生命值小于等于 !M! 点，则将其生命值变为0。 NL 获得 fgo:水边 。"
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 给予 3 层 易伤 。 NL 给予 !M! 层 fgo:即死 。 NL 获得 fgo:水边 。"
   },
   "${modID}:CodeOriginalSin": {
     "NAME": "第七圣典·断罪死",

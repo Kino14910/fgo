@@ -29,7 +29,7 @@ public class LostLonginus extends AbsNoblePhantasmCard {
         addToBot(new VFXAction(p, new MindblastEffect(p.dialogX, p.dialogY, p.flipHorizontal), 0.1F));
         addToBot(new DamageAllEnemiesAction(p, multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
 
-        for (AbstractMonster m2 : AbstractDungeon.getCurrRoom().monsters.monsters) {
+        for (AbstractMonster m2 : AbstractDungeon.getMonsters().monsters) {
             if (!m2.isDeadOrEscaped()) {
                 if (m2.hasPower(InvinciblePower.POWER_ID)) {
                     addToBot(new ApplyPowerAction(m, p, new InvinciblePower(m, magicNumber)));

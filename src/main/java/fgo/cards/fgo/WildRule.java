@@ -40,7 +40,7 @@ public class WildRule extends FGOCard {
     @Override
     public void triggerOnGlowCheck() {
         glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
-        for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
+        for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
             if (m.hasPower(StrengthPower.POWER_ID) && (m.getPower(StrengthPower.POWER_ID)).amount > 0) {
                 glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
                 hasVulnerable = true;

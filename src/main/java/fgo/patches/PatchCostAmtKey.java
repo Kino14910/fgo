@@ -5,6 +5,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePrefixPatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -24,10 +25,11 @@ public class PatchCostAmtKey {
     public static class PatchSkeletonKeyCanUpgrade {
         @SpirePrefixPatch
         public static void Prefix(AbstractCard __instance, SpriteBatch sb) {
-            if (!(AbstractDungeon.player instanceof Master) || __instance.isLocked || AbstractDungeon.player.isDraggingCard || AbstractDungeon.player.inSingleTargetMode) {
+            AbstractPlayer p = AbstractDungeon.player;
+            if (!(p instanceof Master) || __instance.isLocked || p.isDraggingCard || p.inSingleTargetMode) {
                 return;
             }
-            if (PatchSkeletonKeyCanUpgrade.isInCombat() && AbstractDungeon.player.hoveredCard == __instance && __instance.costForTurn > -2 && __instance.costForTurn != 0 && !AbstractDungeon.player.hasPower(SealNPPower.POWER_ID) && __instance.color != FGOCardColor.NOBLE_PHANTASM) {
+            if (PatchSkeletonKeyCanUpgrade.isInCombat() && p.hoveredCard == __instance && __instance.costForTurn > -2 && __instance.costForTurn != 0 && !p.hasPower(SealNPPower.POWER_ID) && __instance.color != FGOCardColor.NOBLE_PHANTASM) {
                 int costModifier = PatchSkeletonKeyCanUpgrade.getCostModifier();
                 int costAmt = PatchSkeletonKeyCanUpgrade.calculateCostAmount(__instance.costForTurn, costModifier);
                 FontHelper.renderFontCentered(sb, FontHelper.topPanelInfoFont, ("+" + costAmt + "% " + NPTEXT[0]), __instance.hb.cX, (__instance.hb.height + 24.0f * Settings.scale), Color.WHITE.cpy());
@@ -40,12 +42,6 @@ public class PatchCostAmtKey {
 
         private static int getCostModifier() {
             boolean hasGoldLaw = AbstractDungeon.player.hasPower(NPRatePower.POWER_ID);
-            if (Master.fgoNp >= 200) {
-                return hasGoldLaw ? 20 : 10;
-            }
-            if (Master.fgoNp >= 100) {
-                return hasGoldLaw ? 14 : 7;
-            }
             return hasGoldLaw ? 10 : 5;
         }
 

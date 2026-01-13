@@ -22,7 +22,7 @@ public class KurKigalIrkalla extends AbsNoblePhantasmCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
+        for (AbstractMonster mo : AbstractDungeon.getMonsters().monsters) {
             if (!mo.hasPower(FlightPower.POWER_ID)) {
                 addToBot(new LoseHPAction(mo, p, mo.maxHealth / 10));
             }

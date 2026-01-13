@@ -2,9 +2,6 @@ package fgo.patches;
 
 import static fgo.utils.ModHelper.addToBot;
 
-import com.evacipated.cardcrawl.modthespire.lib.LineFinder;
-import com.evacipated.cardcrawl.modthespire.lib.Matcher;
-import com.evacipated.cardcrawl.modthespire.lib.SpireInsertLocator;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePostfixPatch;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -16,7 +13,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import fgo.characters.Master;
 import fgo.powers.StarPower;
 import fgo.powers.StarRatePower;
-import javassist.CtBehavior;
 
 @SpirePatch(
     clz = AbstractMonster.class,
@@ -30,18 +26,5 @@ public class CriticalStarPatch {
             int starAmt = p.hasPower(StarRatePower.POWER_ID) ? p.getPower(StarRatePower.POWER_ID).amount : 0;
             addToBot(new ApplyPowerAction(p, p, new StarPower(p, 1 + starAmt)));
         }
-    }
-
-    private static class Locator extends SpireInsertLocator {
-        private Locator() {
-        }
-
-        @Override
-        public int[] Locate(CtBehavior ctBehavior) throws Exception {
-            Matcher matcher = new Matcher.FieldAccessMatcher(AbstractMonster.class, "currentHealth");
-            int line = LineFinder.findAllInOrder(ctBehavior, matcher)[2] + 1;
-            return new int[]{line};
-        }
-
     }
 }

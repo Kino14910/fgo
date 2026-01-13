@@ -25,7 +25,7 @@ public class LastSunXibalba extends AbsNoblePhantasmCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
+        for (AbstractMonster mo : AbstractDungeon.getMonsters().monsters) {
             if (mo != null) {
                 addToBot(new VFXAction(new WeightyImpactEffect(mo.hb.cX, mo.hb.cY)));
             }

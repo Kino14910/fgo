@@ -14,7 +14,7 @@ public class ElementaryMyDearPower extends BasePower {
     public static final String POWER_ID = makeID(ElementaryMyDearPower.class.getSimpleName());
 
     public ElementaryMyDearPower(AbstractCreature owner, int amount) {
-        super(POWER_ID, PowerType.BUFF, false, owner, amount);
+        super(POWER_ID, PowerType.BUFF, false, owner, amount, "IgnoreDefensePower");
     }
 
     @Override
@@ -25,7 +25,7 @@ public class ElementaryMyDearPower extends BasePower {
     @Override
     public void atStartOfTurn() {
         flash();
-        for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
+        for (AbstractMonster mo : AbstractDungeon.getMonsters().monsters) {
             if (mo.currentBlock > 0) {
                 addToBot(new LoseHPAction(mo, owner, mo.currentBlock, AbstractGameAction.AttackEffect.SHIELD));
                 addToBot(new ApplyPowerAction(mo, owner, new VulnerablePower(mo, amount, false),

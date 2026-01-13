@@ -20,7 +20,7 @@ public class SecondLife extends AbsNoblePhantasmCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ExhumeAction(true));
-        for (AbstractMonster monster : AbstractDungeon.getCurrRoom().monsters.monsters) {
+        for (AbstractMonster monster : AbstractDungeon.getMonsters().monsters) {
             if (!monster.hasPower("Minion")) continue;
             addToBot(new InstantKillAction(monster));
             addToBot(new FgoNpAction(np));

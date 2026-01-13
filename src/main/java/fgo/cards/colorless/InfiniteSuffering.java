@@ -37,8 +37,8 @@ public class InfiniteSuffering extends FGOCard {
         addToBot(new SFXAction("ATTACK_HEAVY"));
         addToBot(new VFXAction(p, new CleaveEffect(), 0.1F));
         addToBot(new DamageAllEnemiesAction(p, multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
-        addToBot(new AllEnemyApplyPowerAction(p, magicNumber,
-                monster -> new VulnerablePower(monster, magicNumber, false))
+        addToBot(new AllEnemyApplyPowerAction(p, magicNumber, 
+            monster -> new VulnerablePower(monster, magicNumber, false))
         );
         addToBot(new ChangeStanceAction(WrathStance.STANCE_ID));
         addToBot(new MakeTempCardInHandAction(cardsToPreview.makeStatEquivalentCopy(), 1, true));

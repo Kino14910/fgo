@@ -208,7 +208,7 @@ public class ModHelper {
                 || AbstractDungeon.getMonsters().monsters == null) {
             return null;
         }
-        return AbstractDungeon.getCurrRoom().monsters.monsters.stream()
+        return AbstractDungeon.getMonsters().monsters.stream()
                 .filter(ModHelper::check)
                 .max(Comparator.comparingInt(m -> m.maxHealth))
                 .orElse(null);
