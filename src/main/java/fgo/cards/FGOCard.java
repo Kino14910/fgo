@@ -116,6 +116,10 @@ public abstract class FGOCard extends CustomCard {
         upgradeNP = false;
         star = baseStar = starUpgrade = 0; 
         upgradeStar = false;
+
+        if (target == CardTarget.ALL_ENEMY && type == CardType.ATTACK) {
+            isMultiDamage = true;
+        }
         
         FlavorText.AbstractCardFlavorFields.textColor.set(this, Color.CHARTREUSE);
         FlavorText.AbstractCardFlavorFields.flavorBoxType.set(this, FlavorText.boxType.TRADITIONAL);
