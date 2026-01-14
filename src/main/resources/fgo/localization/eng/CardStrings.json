@@ -9,7 +9,7 @@
   },
   "${modID}:DreamUponTheStars": {
     "NAME": "Dream Upon Stars",
-    "DESCRIPTION": "Gain !B! Block. NL Gain !NP!% fgo:NP. NL Gain !M!% fgo:NP_Damage."
+    "DESCRIPTION": "Gain !NP!% fgo:NP. NL Gain !M!% fgo:NP_Damage. NL fgo:OverCharge ."
   },
   "${modID}:CharismaOfHope": {
     "NAME": "Charisma of Hope",
@@ -368,7 +368,7 @@
   },
   "${modID}:PursuerofLove": {
     "NAME": "Pursuer of Love",
-    "DESCRIPTION": "Apply 1 Strength. NL Apply 3 Vulnerable."
+    "DESCRIPTION": "Apply 1 Strength. NL Apply 3 fgo:Pursue."
   },
   "${modID}:DazzlingMoon": {
     "NAME": "Dazzling Moon",

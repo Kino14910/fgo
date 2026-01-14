@@ -11,12 +11,12 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 
+import basemod.abstracts.events.PhasedEvent;
 import basemod.abstracts.events.phases.TextPhase;
 import basemod.abstracts.events.phases.TextPhase.OptionInfo;
 import fgo.cards.fgo.Strike;
-import fgo.event.BaseEvent;
 
-public class Beyondthe extends BaseEvent {
+public class Beyondthe extends PhasedEvent {
     public static final String ID = makeID(Beyondthe.class.getSimpleName());
     private static final EventStrings eventStrings = CardCrawlGame.languagePack.getEventString(ID);
     private static final String[] DESCRIPTIONS = eventStrings.DESCRIPTIONS;

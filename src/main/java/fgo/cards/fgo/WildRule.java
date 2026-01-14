@@ -1,5 +1,7 @@
 package fgo.cards.fgo;
 
+import static fgo.utils.ModHelper.getPowerCount;
+
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -31,7 +33,7 @@ public class WildRule extends FGOCard {
 
         addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
         addToBot(new HealAction(p, p, 3));
-        if (m.hasPower(StrengthPower.POWER_ID) && (m.getPower(StrengthPower.POWER_ID)).amount > 0) {
+        if (getPowerCount(m, StrengthPower.POWER_ID) > 0) {
             addToBot(new ApplyPowerAction(m, p, new StrengthPower(m, -1), -1));
             addToBot(new ApplyPowerAction(m, p, new VulnerablePower(m, magicNumber, false), magicNumber));
         }
@@ -41,7 +43,7 @@ public class WildRule extends FGOCard {
     public void triggerOnGlowCheck() {
         glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
         for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
-            if (m.hasPower(StrengthPower.POWER_ID) && (m.getPower(StrengthPower.POWER_ID)).amount > 0) {
+            if (getPowerCount(m, StrengthPower.POWER_ID) > 0) {
                 glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
                 hasVulnerable = true;
                 break;

@@ -3,6 +3,7 @@ package fgo;
 import static fgo.characters.CustomEnums.FGO_MASTER;
 import static fgo.characters.Master.fgoNp;
 import static fgo.utils.ModHelper.addToBot;
+import static fgo.utils.ModHelper.getPowerCount;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
@@ -129,8 +130,8 @@ public class FGOMod implements
     public static final Logger logger = LogManager.getLogger(modID); //Used to output to the console.
     private static final String resourcesFolder = checkResourcesPath();
     
-    private static final int BASE_NP_PERCARD = 5;
-    private static final int NP_RATE_POWER_MULTIPLIER = 2;
+    public static final int BASE_NP_PERCARD = 3;
+    public static final int NP_RATE_POWER_MULTIPLIER = 2;
     
     static Texture[] ftues;
     static String[] tutTexts;
@@ -603,13 +604,12 @@ public class FGOMod implements
     private int calculateNpRateMultiplier() {
         int multiplier = BASE_NP_PERCARD;
         
-        if (AbstractDungeon.player.hasPower(NPRatePower.POWER_ID)) {
+        AbstractPlayer p = AbstractDungeon.player;
+        if (p.hasPower(NPRatePower.POWER_ID)) {
             multiplier *= NP_RATE_POWER_MULTIPLIER;
         }
-        
-        if (AbstractDungeon.player.hasPower(ArtsPerformancePower.POWER_ID)) {
-            multiplier += AbstractDungeon.player.getPower(ArtsPerformancePower.POWER_ID).amount;
-        }
+
+        multiplier += getPowerCount(p, ArtsPerformancePower.POWER_ID);
         
         return multiplier;
     }

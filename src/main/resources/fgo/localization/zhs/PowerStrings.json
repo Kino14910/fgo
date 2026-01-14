@@ -56,7 +56,7 @@
   "${modID}:SpringOfFirePower": {
     "NAME": "毅力：喝彩",
     "DESCRIPTIONS": [
-      "每当你发动 #y毅力 时，就获得 #b%d %% #y宝具威力 。移除身上的所有负面效果。"
+      "每当你发动 #y毅力 时，就获得 #b%d%% #y宝具威力 。移除身上的所有负面效果。"
     ]
   },
   "${modID}:MonteCristoTreasurePower": {
@@ -167,7 +167,7 @@
   "${modID}:EnergyRegenPower": {
     "NAME": "每回合获得NP",
     "DESCRIPTIONS": [
-      "在每回合开始时获得 #b%d %% #y宝具值 。"
+      "在每回合开始时获得 #b%d%% #y宝具值 。"
     ]
   },
   "${modID}:EvasionPower": {
@@ -253,7 +253,7 @@
   "${modID}:InsanityPower": {
     "NAME": "澪标之魂",
     "DESCRIPTIONS": [
-      "你每打出一张攻击牌，移除你的 #b1 层 #y诅呪 并且移除成功时获得 #b1 点 #y力量 和 #b%d %% #y宝具值 。"
+      "你每打出一张攻击牌，移除你的 #b1 层 #y诅呪 并且移除成功时获得 #b1 点 #y力量 和 #b%d%% #y宝具值 。"
     ]
   },
   "${modID}:TaisuiSPower": {
@@ -290,7 +290,7 @@
   "${modID}:NPDamagePower": {
     "NAME": "宝具威力",
     "DESCRIPTIONS": [
-      " #y宝具 攻击伤害提升 #b%d %% 。"
+      " #y宝具 攻击伤害提升 #b%d%% 。"
     ]
   },
   "${modID}:DazzlingMoonPower": {
@@ -334,7 +334,7 @@
   "${modID}:ReducePercentDamagePower": {
     "NAME": "防御中",
     "DESCRIPTIONS": [
-      "在这个回合降低 #b%d %% 受到的攻击伤害。"
+      "在这个回合降低 #b%d%% 受到的攻击伤害。"
     ]
   },
   "${modID}:ItsInevitablePower": {
@@ -370,7 +370,7 @@
   "${modID}:ArtsPerformancePower": {
     "NAME": "宝具值获取提升",
     "DESCRIPTIONS": [
-      "每当你打出一张牌，额外获得 #b%d %% #y宝具值 。"
+      "每当你打出一张牌，额外获得 #b%d%% #y宝具值 。"
     ]
   },
   "${modID}:BusterPerformancePower": {
@@ -382,7 +382,7 @@
   "${modID}:NPRatePower": {
     "NAME": "黄金律",
     "DESCRIPTIONS": [
-      "在这个回合，打出手牌和受到攻击时，获得的宝具值提高 #b100%% 。",
+      "在这个回合，打出手牌和受到攻击时，获得的宝具值提高 #b100% 。",
       "打出手牌和受到攻击时，获得的宝具值提高 #b100%% ，持续 #b%d 回合。"
     ]
   },
@@ -402,13 +402,13 @@
   "${modID}:CriticalDamageUpPower": {
     "NAME": "暴击威力",
     "DESCRIPTIONS": [
-      "#y暴击 额外造成 #b%d %% 伤害。"
+      "#y暴击 额外造成 #b%d%% 伤害。"
     ]
   },
   "${modID}:LoseCritDamagePower": {
     "NAME": "失去暴击威力",
     "DESCRIPTIONS": [
-      "在你的回合结束时，失去 #b%d %% #y暴击威力 。"
+      "在你的回合结束时，失去 #b%d%% #y暴击威力 。"
     ]
   },
   "${modID}:FragarachPower": {
@@ -420,7 +420,7 @@
   "${modID}:TerrorPower": {
     "NAME": "恐怖",
     "DESCRIPTIONS": [
-      "有 #b%d %%概率 #y无法行动 一回合。持续 #b%d 回合。"
+      "有 #b%d%%概率 #y无法行动 一回合。持续 #b%d 回合。"
     ]
   },
   "${modID}:GoddessMetamorphosisBeastPower": {
@@ -474,7 +474,7 @@
   "${modID}:VSTerrorDamageUpPower": {
     "NAME": "对恐怖特攻",
     "DESCRIPTIONS": [
-      "你在这个回合内对有恐怖的敌人额外造成 #b%d %% 伤害。"
+      "你在这个回合内对有恐怖的敌人额外造成 #b%d%% 伤害。"
     ]
   },
   "${modID}:IndomitablePower": {
@@ -493,7 +493,7 @@
     "${modID}:NonStackableEnergyRegenPower": {
     "NAME": "每回合获得NP",
     "DESCRIPTIONS": [
-      "在每回合开始时获得 #b%d %% #y宝具值 。",
+      "在每回合开始时获得 #b%d%% #y宝具值 。",
       "持续 #b%d 回合。"
     ]
   },
@@ -506,19 +506,27 @@
   "${modID}:StarHunterPower": {
     "NAME": "星之猎人",
     "DESCRIPTIONS": [
-      "之后 #b%d 次 #y暴击 ，提高 #b%d %% #y暴击威力 。"
+      "之后 #b%d 次 #y暴击 ，提高 #b%d%% #y暴击威力 。"
     ]
   },
   "${modID}:ForeignerPower": {
     "NAME": "星月夜",
     "DESCRIPTIONS": [
-      "#g〔领域外生命〕 卡攻击造成的的暴击威力提升 100% 。"
+      "#g〔领域外生命〕 卡攻击造成的的暴击威力提升 #b100% 。"
     ]
   },
   "${modID}:DeathChancePower": {
     "NAME": "即死",
     "DESCRIPTIONS": [
       "生命值 #b%d 以下时 #r死亡。"
+    ]
+  },
+  "${modID}:PursuerOfLovePower": {
+    "NAME": "追踪",
+    "DESCRIPTIONS": [
+      "从 #y攻击 受到的伤害增加 #b%d%% 。持续时间 #b",
+      " 回合。",
+      " 回合。"
     ]
   }
 }

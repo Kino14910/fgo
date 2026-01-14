@@ -19,7 +19,7 @@ public class MahaPralaya extends AbsNoblePhantasmCard {
 
     public MahaPralaya() {
         super(ID,CardType.ATTACK, CardTarget.ALL_ENEMY, 1);
-        setDamage(24, 10);
+        setDamage(8, 3);
     }
 
     @Override
@@ -29,7 +29,7 @@ public class MahaPralaya extends AbsNoblePhantasmCard {
             MahaAmt += mo.powers.size();
         }
         int realBaseDamage = baseDamage;
-        baseDamage += MahaAmt;
+        baseDamage *= MahaAmt;
         super.calculateCardDamage(m);
         baseDamage = realBaseDamage;
         isDamageModified = damage != baseDamage;

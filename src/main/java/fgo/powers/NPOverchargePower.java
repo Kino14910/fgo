@@ -3,14 +3,14 @@ package fgo.powers;
 import static fgo.FGOMod.makeID;
 
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
-import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public class NPOverChargePower extends BasePower {
     public static final String POWER_ID = makeID(NPOverChargePower.class.getSimpleName());
     private static final int MAX_AMOUNT = 4;
 
-    public NPOverChargePower(AbstractCreature owner, int amount) {
-        super(POWER_ID, PowerType.BUFF, false, owner, Math.min(amount, MAX_AMOUNT));
+    public NPOverChargePower(int amount) {
+        super(POWER_ID, PowerType.BUFF, false, AbstractDungeon.player, Math.min(amount, MAX_AMOUNT));
     }
 
     @Override

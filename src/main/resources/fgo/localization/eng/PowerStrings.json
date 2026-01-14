@@ -176,7 +176,7 @@
   "${modID}:EnergyRegenPower": {
     "NAME": "Energy Regen",
     "DESCRIPTIONS": [
-      "At the start of your turn, gain #b%d %% NP."
+      "At the start of your turn, gain #b%d%% NP."
     ]
   },
   "${modID}:EvasionPower": {
@@ -269,7 +269,7 @@
   "${modID}:InsanityPower": {
     "NAME": "Insanity",
     "DESCRIPTIONS": [
-      "Whenever you play a Attack card, removes #b1 #yEvil #yCurse, gain #b1 #yStrength and #b%d %% #yNP if successfully removed."
+      "Whenever you play a Attack card, removes #b1 #yEvil #yCurse, gain #b1 #yStrength and #b%d%% #yNP if successfully removed."
     ]
   },
   "${modID}:TaisuiSPower": {
@@ -381,7 +381,7 @@
   "${modID}:ArtsPerformancePower": {
     "NAME": "Arts",
     "DESCRIPTIONS": [
-      "Whenever you play a card, gain #b%d %% additional NP. Up to gain 5%% additional NP."
+      "Whenever you play a card, gain #b%d%% additional NP. Up to gain 5%% additional NP."
     ]
   },
   "${modID}:BusterPerformancePower": {
@@ -419,7 +419,7 @@
   "${modID}:LoseCritDamagePower": {
     "NAME": "Lose Critical Damage",
     "DESCRIPTIONS": [
-      "Whenever you deal #yCritical damage, lose #b%d %% #yCritical."
+      "Whenever you deal #yCritical damage, lose #b%d%% #yCritical."
     ]
   },
   "${modID}:FragarachPower": {
@@ -504,7 +504,7 @@
     "${modID}:NonStackableEnergyRegenPower": {
     "NAME": "NP Gain Per Turn",
     "DESCRIPTIONS": [
-      "Gain #b%d %% #yNoble Phantasm Gauge at the start of each turn.",
+      "Gain #b%d%% #yNoble Phantasm Gauge at the start of each turn.",
       "Lasts #b%d turns."
     ]
   },
@@ -517,19 +517,27 @@
   "${modID}:StarHunterPower": {
     "NAME": "Star Hunter",
     "DESCRIPTIONS": [
-      "For the next #b%d #yCriticals, increase #yCritical Damage by #b%d %%."
+      "For the next #b%d #yCriticals, increase #yCritical Damage by #b%d%%."
     ]
   },
   "${modID}:ForeignerPower": {
     "NAME": "Starry Night",
     "DESCRIPTIONS": [
-      "#g〔Foreigner〕 cards deal 100% increased #yCritical Damage."
+      "#g〔Foreigner〕 cards deal #b100% increased #yCritical Damage."
     ]
   },
   "${modID}:DeathChancePower": {
     "NAME": "Death Chance",
     "DESCRIPTIONS": [
       "When HP below #b%d , #rdie."
+    ]
+  },
+  "${modID}:PursuerOfLovePower": {
+    "NAME": "Pursue",
+    "DESCRIPTIONS": [
+      "Receive #b25% more damage from #yAttacks for #b",
+      " turn.",
+      " turns."
     ]
   }
 }

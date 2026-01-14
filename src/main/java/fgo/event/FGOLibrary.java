@@ -5,6 +5,8 @@ import static fgo.FGOMod.eventPath;
 import static fgo.FGOMod.makeID;
 import static fgo.utils.ModHelper.eventAscension;
 
+import java.util.Collections;
+
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -12,9 +14,9 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.EventStrings;
-import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 
+import basemod.abstracts.events.PhasedEvent;
 import basemod.abstracts.events.phases.TextPhase;
 import fgo.cards.colorless.DazzlingMoon;
 import fgo.cards.colorless.EightKindness;
@@ -22,7 +24,7 @@ import fgo.cards.colorless.MaraPapiyas;
 import fgo.cards.colorless.PrimevalRune;
 import fgo.cards.colorless.UndeadBird;
 
-public class FGOLibrary extends BaseEvent {
+public class FGOLibrary extends PhasedEvent {
     public static final String ID = makeID(FGOLibrary.class.getSimpleName());
     private static final EventStrings eventStrings = CardCrawlGame.languagePack.getEventString(ID);
     private static final String[] DESCRIPTIONS = eventStrings.DESCRIPTIONS;
@@ -54,15 +56,18 @@ public class FGOLibrary extends BaseEvent {
             .addOption(String.format(OPTIONS[0], maxHPAmt), i -> {
                 pickCard = true;
                 CardGroup group = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
-                group.addToBottom(new PrimevalRune());
-                group.addToBottom(new DazzlingMoon());
-                group.addToBottom(new EightKindness());
-                group.addToBottom(new UndeadBird());
-                group.addToBottom(new MaraPapiyas());
-
-                for (AbstractCard c : group.group) {
-                    UnlockTracker.markCardAsSeen(c.cardID);
-                }
+                // group.addToBottom(new PrimevalRune());
+                // group.addToBottom(new DazzlingMoon());
+                // group.addToBottom(new EightKindness());
+                // group.addToBottom(new UndeadBird());
+                // group.addToBottom(new MaraPapiyas());
+                Collections.addAll(group.group, 
+                    new PrimevalRune(), 
+                    new DazzlingMoon(),
+                    new EightKindness(),
+                    new UndeadBird(),
+                    new MaraPapiyas()
+                );
 
                 AbstractDungeon.gridSelectScreen.open(group, 1, OPTIONS[3], false);
                 AbstractDungeon.player.decreaseMaxHealth(maxHPAmt);

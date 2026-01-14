@@ -35,17 +35,17 @@ public class FgoNpAction extends AbstractGameAction {
         AbstractPlayer p = AbstractDungeon.player;
 
         if (oldNp < 200 && Master.fgoNp >= 200) {
-            addToBot(new ApplyPowerAction(p, p, new NPOverChargePower(p, 1)));
+            addToBot(new ApplyPowerAction(p, p, new NPOverChargePower(1)));
         }
         if (oldNp < 300 && Master.fgoNp == 300) {
-            addToBot(new ApplyPowerAction(p, p, new NPOverChargePower(p, 1)));
+            addToBot(new ApplyPowerAction(p, p, new NPOverChargePower(1)));
         }
 
         if (oldNp >= 200 && Master.fgoNp < 200) {
-            addToBot(new ApplyPowerAction(p, p, new NPOverChargePower(p, -1)));
+            addToBot(new ApplyPowerAction(p, p, new NPOverChargePower(-1)));
         }
         if (oldNp == 300 && Master.fgoNp < 300) {
-            addToBot(new ApplyPowerAction(p, p, new NPOverChargePower(p, -1)));
+            addToBot(new ApplyPowerAction(p, p, new NPOverChargePower(-1)));
         }
 
         if (canText) {

@@ -3,29 +3,22 @@ package fgo.event;
 import static fgo.FGOMod.eventPath;
 import static fgo.FGOMod.makeID;
 import static fgo.utils.ModHelper.eventAscension;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Random;
+import static fgo.utils.RelicEventHelper.upgradeCards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.events.AbstractEvent;
 import com.megacrit.cardcrawl.localization.EventStrings;
-import com.megacrit.cardcrawl.vfx.UpgradeShineEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
-import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
 import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
 
+import basemod.abstracts.events.PhasedEvent;
 import basemod.abstracts.events.phases.TextPhase;
 import fgo.cards.colorless.ProofAndRebuttal;
 
-public class ProofAndRebuttalEvent extends BaseEvent {
+public class ProofAndRebuttalEvent extends PhasedEvent {
     public static final String ID = makeID(ProofAndRebuttalEvent.class.getSimpleName());
     private static final EventStrings eventStrings = CardCrawlGame.languagePack.getEventString(ID);
     private static final String[] DESCRIPTIONS = eventStrings.DESCRIPTIONS;
@@ -53,7 +46,7 @@ public class ProofAndRebuttalEvent extends BaseEvent {
                 ).enabledCondition(p.masterDeck::hasUpgradableCards)
                 .setOptionResult(i -> {
                     AbstractDungeon.effectList.add(new FlashAtkImgEffect(p.hb.cX, p.hb.cY, AbstractGameAction.AttackEffect.FIRE));
-                    upgradeCards();
+                    upgradeCards(2);
                     p.loseGold(goldLoss);
                     transitionKey("Enjoy");
                 })
@@ -76,38 +69,5 @@ public class ProofAndRebuttalEvent extends BaseEvent {
         if (Settings.AMBIANCE_ON) {
             CardCrawlGame.sound.play("EVENT_SHINING");
         }
-    }
-
-    private void upgradeCards() {
-        AbstractDungeon.topLevelEffects.add(new UpgradeShineEffect((float)Settings.WIDTH / 2.0f, Settings.HEIGHT / 2.0f));
-        ArrayList<AbstractCard> upgradableCards = new ArrayList<>();
-
-        for (AbstractCard c : AbstractDungeon.player.masterDeck.group) {
-            if (c.canUpgrade()) {
-                upgradableCards.add(c);
-            }
-        }
-
-        List<String> cardMetrics = new ArrayList<>();
-        Collections.shuffle(upgradableCards, new Random(AbstractDungeon.miscRng.randomLong()));
-        if (!upgradableCards.isEmpty()) {
-            if (upgradableCards.size() == 1) {
-                upgradableCards.get(0).upgrade();
-                cardMetrics.add(upgradableCards.get(0).cardID);
-                AbstractDungeon.player.bottledCardUpgradeCheck(upgradableCards.get(0));
-                AbstractDungeon.effectList.add(new ShowCardBrieflyEffect(upgradableCards.get(0).makeStatEquivalentCopy()));
-            } else {
-                upgradableCards.get(0).upgrade();
-                upgradableCards.get(1).upgrade();
-                cardMetrics.add(upgradableCards.get(0).cardID);
-                cardMetrics.add(upgradableCards.get(1).cardID);
-                AbstractDungeon.player.bottledCardUpgradeCheck(upgradableCards.get(0));
-                AbstractDungeon.player.bottledCardUpgradeCheck(upgradableCards.get(1));
-                AbstractDungeon.effectList.add(new ShowCardBrieflyEffect(upgradableCards.get(0).makeStatEquivalentCopy(), (float)Settings.WIDTH / 2.0f - 190.0f * Settings.scale, Settings.HEIGHT / 2.0f));
-                AbstractDungeon.effectList.add(new ShowCardBrieflyEffect(upgradableCards.get(1).makeStatEquivalentCopy(), (float)Settings.WIDTH / 2.0f + 190.0f * Settings.scale, Settings.HEIGHT / 2.0f));
-            }
-        }
-
-        AbstractEvent.logMetric("ProofAndRebuttalEvent", "Entered Light", null, null, null, cardMetrics, null, null, null, 0, 0, 0, 0, 0, 0);
     }
 }

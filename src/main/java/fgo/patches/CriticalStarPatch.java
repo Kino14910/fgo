@@ -1,6 +1,7 @@
 package fgo.patches;
 
 import static fgo.utils.ModHelper.addToBot;
+import static fgo.utils.ModHelper.getPowerCount;
 
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePostfixPatch;
@@ -23,8 +24,7 @@ public class CriticalStarPatch {
     public static void Postfix(AbstractMonster __instance, DamageInfo info) {
         AbstractPlayer p = AbstractDungeon.player;
         if (p instanceof Master && info.type == DamageInfo.DamageType.NORMAL) {
-            int starAmt = p.hasPower(StarRatePower.POWER_ID) ? p.getPower(StarRatePower.POWER_ID).amount : 0;
-            addToBot(new ApplyPowerAction(p, p, new StarPower(p, 1 + starAmt)));
+            addToBot(new ApplyPowerAction(p, p, new StarPower(p, 1 + getPowerCount(p, StarRatePower.POWER_ID))));
         }
     }
 }

@@ -300,7 +300,7 @@
       "DeathChance"
     ],
     "DESCRIPTIONS": [
-      "When HP below #yDeath #yChance, #rDie。"
+      "When HP below Death Chance, #rDie。"
     ]
   },
   {

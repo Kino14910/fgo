@@ -1,5 +1,7 @@
 package fgo.action;
 
+import static fgo.utils.ModHelper.getPowerCount;
+
 import java.util.ArrayList;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -56,8 +58,7 @@ public class NoblePhantasmSelectAction extends AbstractGameAction {
                 UnlockTracker.markCardAsSeen(cardCopy.cardID);
             }
             
-            String OC = NPOverChargePower.POWER_ID;
-            int OCAmt = p.hasPower(OC) ? p.getPower(OC).amount : 0;
+            int OCAmt = getPowerCount(p, NPOverChargePower.POWER_ID);
 
             if (OCAmt > 0) {
                 nobleCardGroup.group.forEach(card -> {

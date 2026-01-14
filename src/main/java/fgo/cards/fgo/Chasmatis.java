@@ -16,7 +16,7 @@ public class Chasmatis extends FGOCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new NPOverChargePower(p, magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new NPOverChargePower(magicNumber)));
     }
 }
 

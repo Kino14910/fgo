@@ -34,11 +34,10 @@ public class RevivePatch {
             };
 
             if (p.hasPower(GutsPower.POWER_ID) || p.hasPower(NonStackableGutsPower.POWER_ID)) {
-                if (p.hasPower(NonStackableGutsPower.POWER_ID)) {
-                    p.getPower(NonStackableGutsPower.POWER_ID).onSpecificTrigger();
-                } else {
-                    p.getPower(GutsPower.POWER_ID).onSpecificTrigger();
-                }
+                p.getPower(p.hasPower(NonStackableGutsPower.POWER_ID) 
+                    ? NonStackableGutsPower.POWER_ID 
+                    : GutsPower.POWER_ID
+                ).onSpecificTrigger();
 
                 for (String id : powerIds) {
                     if (p.hasPower(id)) {

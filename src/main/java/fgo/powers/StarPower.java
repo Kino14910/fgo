@@ -2,6 +2,7 @@ package fgo.powers;
 
 import static fgo.FGOMod.makeID;
 import static fgo.characters.CustomEnums.FGO_Foreigner;
+import static fgo.utils.ModHelper.getPowerCount;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
@@ -52,12 +53,7 @@ public class StarPower extends BasePower {
             starHunterAmt = starHunterPower.amount2;
         }
 
-        int critAmt = 0;
-        if (owner.hasPower(CriticalDamageUpPower.POWER_ID)) {
-            critAmt = owner.getPower(CriticalDamageUpPower.POWER_ID).amount;
-        }
-
-        int CrAmt = critAmt + starHunterAmt;
+        int CrAmt = getPowerCount(owner, CriticalDamageUpPower.POWER_ID) + starHunterAmt;
         return type == DamageInfo.DamageType.NORMAL
                 ? damage * (multiplier + CrAmt / 100.0f)
                 : damage;

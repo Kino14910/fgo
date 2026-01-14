@@ -1,5 +1,7 @@
 package fgo.cards.fgo;
 
+import static fgo.utils.ModHelper.getPowerCount;
+
 import com.evacipated.cardcrawl.mod.stslib.actions.common.FetchAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.AttackDamageRandomEnemyAction;
@@ -33,10 +35,7 @@ public class HeroicKing extends FGOCard {
 
     @Override
     public void applyPowers() {
-        if (AbstractDungeon.player.hasPower(HeroicKingPower.POWER_ID)) {
-            baseMagicNumber = (AbstractDungeon.player.getPower(HeroicKingPower.POWER_ID)).amount + 2;
-            magicNumber = baseMagicNumber;
-        }
+        magicNumber = baseMagicNumber = getPowerCount(AbstractDungeon.player, HeroicKingPower.POWER_ID) + 2;
         super.applyPowers();
         initializeDescription();
     }

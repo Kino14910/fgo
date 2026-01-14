@@ -1,6 +1,7 @@
 package fgo.cards.fgo;
 
 import static fgo.characters.CustomEnums.FGO_Foreigner;
+import static fgo.utils.ModHelper.getPowerCount;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -8,7 +9,6 @@ import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import fgo.cards.FGOCard;
@@ -25,11 +25,11 @@ public class ExtremityOfVillains extends FGOCard {
     
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if ((p.hasPower(StarPower.POWER_ID)) && p.getPower(StarPower.POWER_ID).amount >= 10) {
-            addToTop(new DrawCardAction(AbstractDungeon.player, magicNumber));
+        if (getPowerCount(p, StarPower.POWER_ID) >= 10) {
+            addToTop(new DrawCardAction(p, magicNumber));
             addToTop(new GainEnergyAction(1));
         }
-        addToBot(new DamageAction(m,new DamageInfo(p, damage, damageTypeForTurn),AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+        addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn),AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
     }
 }
 

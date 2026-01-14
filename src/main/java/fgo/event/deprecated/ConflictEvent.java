@@ -17,11 +17,11 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.vfx.UpgradeShineEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
 
+import basemod.abstracts.events.PhasedEvent;
 import basemod.abstracts.events.phases.TextPhase;
-import fgo.event.BaseEvent;
 import fgo.relics.deprecated.SkullCandy;
 
-public class ConflictEvent extends BaseEvent {
+public class ConflictEvent extends PhasedEvent {
     public static final String ID = makeID(ConflictEvent.class.getSimpleName());
     private static final EventStrings eventStrings = CardCrawlGame.languagePack.getEventString(ID);
     private static final String[] DESCRIPTIONS = eventStrings.DESCRIPTIONS;

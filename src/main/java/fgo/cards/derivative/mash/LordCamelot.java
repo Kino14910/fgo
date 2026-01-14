@@ -16,13 +16,13 @@ public class LordCamelot extends AbsNoblePhantasmCard {
     public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public LordCamelot() {
         super(ID,CardType.POWER, CardTarget.SELF, 1);
-        setBlock(5, 7);
-        setMagic(10, 20);
+        setCustomVar("metal", 1, 2);
+        setMagic(10, 10);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new MetallicizePower(p, block)));
+        addToBot(new ApplyPowerAction(p, p, new MetallicizePower(p, customVar("metal"))));
         addToBot(new ApplyPowerAction(p, p, new ReducePercentDamagePower(p, magicNumber)));
         addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, 3), 3));
     }

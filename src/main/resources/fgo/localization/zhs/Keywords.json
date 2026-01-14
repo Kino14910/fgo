@@ -198,25 +198,22 @@
   {
     "NAMES":[
       "宝具充能阶段上升",
+      "过充",
       "OverCharge",
       "OC"
     ],
-    "DESCRIPTIONS": "每层使宝具强化一次。回合结束失去所有充能。"
+    "DESCRIPTION": "每层使宝具强化一次。回合结束失去所有充能。"
   },
   {
     "NAMES": [
       "即死"
     ],
-    "DESCRIPTIONS": [
-      "生命值低于 #y即死 时 #r死亡。"
-    ]
+    "DESCRIPTION": "生命值低于即死时 #r死亡。"
   },
   {
     "NAMES": [
       "追踪"
     ],
-    "DESCRIPTIONS": [
-      "有追踪效果的生物从攻击中受到的伤害增加 #b25% 。"
-    ]
+    "DESCRIPTION": "有追踪效果的生物从攻击中受到的伤害增加 #b25% 。"
   }
 ]

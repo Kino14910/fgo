@@ -16,13 +16,14 @@ public class Camelot extends AbsNoblePhantasmCard {
     
     public Camelot() {
         super(ID,CardType.POWER, CardTarget.SELF, 1);
+        setCustomVar("metal", 1, 2);
         setBlock(2, 5);
         setMagic(10, 10);
     }
     
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new MetallicizePower(p, block)));
+        addToBot(new ApplyPowerAction(p, p, new MetallicizePower(p, customVar("metal"))));
         addToBot(new ApplyPowerAction(p, p, new ReducePercentDamagePower(p, magicNumber)));
     }
 }

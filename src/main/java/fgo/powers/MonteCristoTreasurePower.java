@@ -1,6 +1,7 @@
 package fgo.powers;
 
 import static fgo.FGOMod.makeID;
+import static fgo.utils.ModHelper.getPowerCount;
 
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -20,7 +21,7 @@ public class MonteCristoTreasurePower extends BasePower {
 
     @Override
     public void onAttack(DamageInfo info, int damageAmount, AbstractCreature target) {
-        if (damageAmount > 0 && target != owner && info.type == DamageInfo.DamageType.NORMAL && owner.hasPower("fgo:StarPower") && owner.getPower("fgo:StarPower").amount >= 10) {
+        if (damageAmount > 0 && target != owner && info.type == DamageInfo.DamageType.NORMAL && getPowerCount(owner, StarPower.POWER_ID) >= 10) {
             flash();
             addToBot(new GainBlockAction(owner, owner, damageAmount * amount));
         }

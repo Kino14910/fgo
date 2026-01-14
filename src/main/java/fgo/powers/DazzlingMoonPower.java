@@ -1,6 +1,7 @@
 package fgo.powers;
 
 import static fgo.FGOMod.makeID;
+import static fgo.utils.ModHelper.getPowerCount;
 
 import com.evacipated.cardcrawl.mod.stslib.actions.common.AllEnemyApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -24,7 +25,7 @@ public class DazzlingMoonPower extends BasePower {
     @Override
     public void atStartOfTurn() {
         flash();
-        addToTop(new ApplyPowerAction(owner, owner, new StrengthPower(owner, -1), -1));
+        addToTop(new ApplyPowerAction(owner, owner, new StrengthPower(owner, -1)));
         
         addToTop(new AllEnemyApplyPowerAction(owner, -2,
                 monster -> new StrengthPower(monster, -2)));
@@ -34,11 +35,11 @@ public class DazzlingMoonPower extends BasePower {
 
     @Override
     public void onRemove() {
-        if (owner.hasPower("Strength") && (owner.getPower("Strength")).amount < 0) {
-            int StrAmt = 0;
-            StrAmt -= (owner.getPower("Strength")).amount;
-            addToBot(new ApplyPowerAction(owner, owner, new StrengthPower(owner, StrAmt * 2), StrAmt * 2));
-            addToBot(new ApplyPowerAction(owner, owner, new DexterityPower(owner, StrAmt), StrAmt));
+        int strength = getPowerCount(owner, StrengthPower.POWER_ID);
+        if (strength < 0) {
+            int StrAmt = -strength;
+            addToBot(new ApplyPowerAction(owner, owner, new StrengthPower(owner, StrAmt * 2)));
+            addToBot(new ApplyPowerAction(owner, owner, new DexterityPower(owner, StrAmt)));
         }
     }
 

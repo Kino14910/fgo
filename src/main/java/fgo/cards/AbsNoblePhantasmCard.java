@@ -84,13 +84,13 @@ public abstract class AbsNoblePhantasmCard extends FateMagineerCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new NPOverChargePower(p, 1)));
+        addToBot(new ApplyPowerAction(p, p, new NPOverChargePower(1)));
     }
     
     // @Override
     // public boolean canUse(AbstractPlayer p, AbstractMonster m) {
     //     boolean canUse = super.canUse(p, m);
-    //     if (p.hasPower(NPOverChargePower.POWER_ID) && p.getPower(NPOverChargePower.POWER_ID).amount > 5) {
+    //     if (getPowerCount(p, NPOverChargePower.POWER_ID) > 5) {
     //         canUse = false;
     //     }
     //     return canUse;

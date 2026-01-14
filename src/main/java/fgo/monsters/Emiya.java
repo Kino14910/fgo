@@ -85,7 +85,7 @@ public class Emiya extends BaseMonster {
         }
 
         addMoveA(Intent.ATTACK, damage.get(0).base, mi -> {
-            shout(CALADBOLG, Sounds.Kanshou);
+            shout(CALADBOLG, Sounds.Sokoda);
             attack(mi, AbstractGameAction.AttackEffect.SMASH);
         });
         addMoveA(Intent.ATTACK, damage.get(1).base, HIT_NUM, mi -> {

@@ -1,5 +1,7 @@
 package fgo.cards.noblecards;
 
+import static fgo.utils.ModHelper.getPowerCount;
+
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -35,7 +37,7 @@ public class FetchFailnaught extends AbsNoblePhantasmCard {
 
         addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
         addToBot(new ApplyPowerAction(m, p, new CursePower(m, p, 2)));
-        if (m != null && m.hasPower(CursePower.POWER_ID)) {
+        if (m.hasPower(CursePower.POWER_ID)) {
             int curAmt = m.getPower(CursePower.POWER_ID).amount;
             addToBot(new ApplyPowerAction(m, p, new CursePower(m, p, curAmt * magicNumber)));
         }
@@ -44,10 +46,7 @@ public class FetchFailnaught extends AbsNoblePhantasmCard {
     @Override
     public void calculateCardDamage(AbstractMonster mo) {
         int realBaseDamage = baseDamage;
-        if (mo.hasPower(CursePower.POWER_ID)) {
-            int CurAmt = mo.getPower(CursePower.POWER_ID).amount;
-            baseDamage += baseDamage / 10 * CurAmt;
-        }
+        baseDamage += baseDamage / 10 * getPowerCount(mo, CursePower.POWER_ID);
         super.calculateCardDamage(mo);
         baseDamage = realBaseDamage;
         isDamageModified = damage != baseDamage;

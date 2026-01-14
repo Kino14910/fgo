@@ -1,5 +1,8 @@
 package fgo.patches;
 
+import static fgo.FGOMod.BASE_NP_PERCARD;
+import static fgo.FGOMod.NP_RATE_POWER_MULTIPLIER;
+
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
@@ -18,36 +21,37 @@ import fgo.characters.Master;
 import fgo.powers.NPRatePower;
 import fgo.powers.SealNPPower;
 
+@SpirePatch(
+    clz = AbstractCard.class,
+    method = "renderCardTip"
+)
 public class PatchCostAmtKey {
     private static final String[] NPTEXT = CardCrawlGame.languagePack.getUIString((String)"fgo:NPText").TEXT;
 
-    @SpirePatch(clz=AbstractCard.class, method="renderCardTip")
-    public static class PatchSkeletonKeyCanUpgrade {
-        @SpirePrefixPatch
-        public static void Prefix(AbstractCard __instance, SpriteBatch sb) {
-            AbstractPlayer p = AbstractDungeon.player;
-            if (!(p instanceof Master) || __instance.isLocked || p.isDraggingCard || p.inSingleTargetMode) {
-                return;
-            }
-            if (PatchSkeletonKeyCanUpgrade.isInCombat() && p.hoveredCard == __instance && __instance.costForTurn > -2 && __instance.costForTurn != 0 && !p.hasPower(SealNPPower.POWER_ID) && __instance.color != FGOCardColor.NOBLE_PHANTASM) {
-                int costModifier = PatchSkeletonKeyCanUpgrade.getCostModifier();
-                int costAmt = PatchSkeletonKeyCanUpgrade.calculateCostAmount(__instance.costForTurn, costModifier);
-                FontHelper.renderFontCentered(sb, FontHelper.topPanelInfoFont, ("+" + costAmt + "% " + NPTEXT[0]), __instance.hb.cX, (__instance.hb.height + 24.0f * Settings.scale), Color.WHITE.cpy());
-            }
+    @SpirePrefixPatch
+    public static void Prefix(AbstractCard __instance, SpriteBatch sb) {
+        AbstractPlayer p = AbstractDungeon.player;
+        if (!(p instanceof Master) || __instance.isLocked || p.isDraggingCard || p.inSingleTargetMode) {
+            return;
         }
+        if (isInCombat() && p.hoveredCard == __instance && __instance.costForTurn > -2 && __instance.costForTurn != 0 && !p.hasPower(SealNPPower.POWER_ID) && __instance.color != FGOCardColor.NOBLE_PHANTASM) {
+            int costModifier = getCostModifier();
+            int costAmt = calculateCostAmount(__instance.costForTurn, costModifier);
+            FontHelper.renderFontCentered(sb, FontHelper.topPanelInfoFont, ("+" + costAmt + "% " + NPTEXT[0]), __instance.hb.cX, (__instance.hb.height + 24.0f * Settings.scale), Color.WHITE.cpy());
+        }
+    }
 
-        private static boolean isInCombat() {
-            return AbstractDungeon.getCurrMapNode() != null && AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT;
-        }
+    private static boolean isInCombat() {
+        return AbstractDungeon.getCurrMapNode() != null && AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT;
+    }
 
-        private static int getCostModifier() {
-            boolean hasGoldLaw = AbstractDungeon.player.hasPower(NPRatePower.POWER_ID);
-            return hasGoldLaw ? 10 : 5;
-        }
+    private static int getCostModifier() {
+        boolean hasGoldLaw = AbstractDungeon.player.hasPower(NPRatePower.POWER_ID);
+        return BASE_NP_PERCARD * (hasGoldLaw ? NP_RATE_POWER_MULTIPLIER : 1);
+    }
 
-        private static int calculateCostAmount(int costForTurn, int costModifier) {
-            return costForTurn == -1 ? EnergyPanel.totalCount * costModifier : costForTurn * costModifier;
-        }
+    private static int calculateCostAmount(int costForTurn, int costModifier) {
+        return costForTurn == -1 ? EnergyPanel.totalCount * costModifier : costForTurn * costModifier;
     }
 }
 

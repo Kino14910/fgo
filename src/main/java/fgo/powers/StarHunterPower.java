@@ -1,13 +1,13 @@
 package fgo.powers;
 
 import static fgo.FGOMod.makeID;
+import static fgo.utils.ModHelper.getPowerCount;
 
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo.DamageType;
 import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import fgo.characters.CustomEnums.FGOCardColor;
 
@@ -31,7 +31,7 @@ public class StarHunterPower extends BasePower {
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
         super.onUseCard(card, action);
-        if (card.type != AbstractCard.CardType.ATTACK || AbstractDungeon.player.hasPower(StarPower.POWER_ID) && AbstractDungeon.player.getPower(StarPower.POWER_ID).amount < 10 || card.color == FGOCardColor.NOBLE_PHANTASM)
+        if (card.type != AbstractCard.CardType.ATTACK || getPowerCount(owner, StarPower.POWER_ID) < 10 || card.color == FGOCardColor.NOBLE_PHANTASM)
             return;
         
         addToBot(new ReducePowerAction(owner, owner, this, 1));

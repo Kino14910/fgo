@@ -18,7 +18,7 @@ public class RayProofKyrielight extends AbsNoblePhantasmCard {
 
     public RayProofKyrielight() {
         super(ID, CardType.ATTACK, CardTarget.ALL_ENEMY, 1);
-        setDamage(20, 20);
+        setDamage(30, 10);
         setMagic(3);
     }
 

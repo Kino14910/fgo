@@ -1,6 +1,7 @@
 package fgo.cards.fgo;
 
 import static fgo.characters.CustomEnums.FGO_Foreigner;
+import static fgo.utils.ModHelper.getPowerCount;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -26,10 +27,7 @@ public class ExtraterrestrialOctopus extends FGOCard {
     
     @Override
     public void applyPowers() {
-        AbstractPlayer p = AbstractDungeon.player;
-        if (p.hasPower(StarPower.POWER_ID)) {
-            setDamage((p.getPower(StarPower.POWER_ID).amount * magicNumber));
-        }
+        setDamage(getPowerCount(AbstractDungeon.player, StarPower.POWER_ID));
         super.applyPowers();
         isDamageModified = isModified = true;
     }

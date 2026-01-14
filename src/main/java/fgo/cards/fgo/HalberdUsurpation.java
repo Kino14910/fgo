@@ -1,5 +1,7 @@
 package fgo.cards.fgo;
 
+import static fgo.utils.ModHelper.getPowerCount;
+
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.watcher.ExpungeVFXAction;
@@ -19,10 +21,7 @@ public class HalberdUsurpation extends FGOCard {
 
     @Override
     public void calculateCardDamage(AbstractMonster mo) {
-        int StrengthAmount = 0;
-        if (mo.hasPower(StrengthPower.POWER_ID)) {
-            StrengthAmount += (mo.getPower(StrengthPower.POWER_ID)).amount;
-        }
+        int StrengthAmount = getPowerCount(mo, StrengthPower.POWER_ID);
 
         int realBaseDamage = baseDamage;
         baseDamage += StrengthAmount;
@@ -35,10 +34,10 @@ public class HalberdUsurpation extends FGOCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ExpungeVFXAction(m));
         addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn)));
-        if (m == null || m.isDeadOrEscaped() || !m.hasPower(StrengthPower.POWER_ID)) {
+        if (m == null || m.isDeadOrEscaped()) {
             return;
         }
-        int HuAmt = (m.getPower(StrengthPower.POWER_ID)).amount * 2;
+        int HuAmt = getPowerCount(m, StrengthPower.POWER_ID) * 2;
         if(HuAmt <= 0) {
             return;
         }

@@ -25,6 +25,6 @@ public class RoadlessCamelot extends AbsNoblePhantasmCard {
         addToBot(new DamageAllEnemiesAction(p, multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.BLUNT_HEAVY));
         
         addToBot(new AllEnemyApplyPowerAction(p, 3, monster -> new CursePower(monster, p, 3)));
-        addToBot(new ApplyPowerAction(p, p, new NPOverChargePower(p, magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new NPOverChargePower(magicNumber)));
     }
 }

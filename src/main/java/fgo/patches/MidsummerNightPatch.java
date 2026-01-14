@@ -18,8 +18,8 @@ import fgo.powers.CursePower;
 import fgo.relics.MidsummerNightDream;
 
 @SpirePatch(
-        clz = ApplyPowerAction.class,
-        method = "update"
+    clz = ApplyPowerAction.class,
+    method = "update"
 )
 public class MidsummerNightPatch {
     private static final String[] TEXT = CardCrawlGame.languagePack.getUIString("fgo:MidsummerNightDream").TEXT;

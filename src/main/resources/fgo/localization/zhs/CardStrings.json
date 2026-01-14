@@ -9,7 +9,7 @@
   },
   "${modID}:DreamUponTheStars": {
     "NAME": "予星以梦",
-    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 获得 !NP! % fgo:宝具值 。 NL 获得 !M! % fgo:宝具威力 。"
+    "DESCRIPTION": "获得 !NP! % fgo:宝具值 。 NL 获得 !M! % fgo:宝具威力 。 NL fgo:宝具充能阶段上升 。"
   },
   "${modID}:CharismaOfHope": {
     "NAME": "2019年的格洛斯特",
@@ -348,7 +348,7 @@
   },
   "${modID}:PursuerofLove": {
     "NAME": "恋之追踪者",
-    "DESCRIPTION": "给予 1 点 力量 。 NL 给予 3 层 易伤 。"
+    "DESCRIPTION": "给予 1 点 力量 。 NL 给予 3 层 fgo:追踪 。"
   },
   "${modID}:DazzlingMoon": {
     "NAME": "光辉之月",
@@ -482,12 +482,12 @@
   },
   "${modID}:Camelot": {
     "NAME": "拟似展开／人理之础",
-    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 在这个回合受到的攻击伤害降低 !M! %。",
+    "DESCRIPTION": "在这个回合受到的攻击伤害降低 !M! %。 NL 获得 !${modID}:metal! 点 fgo:金属化 。",
     "FLAVOR": "这张卡会在特定的时候 升级 。"
   },
   "${modID}:LordCamelot": {
     "NAME": "已然遥远的理想之城",
-    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 获得2点 力量 。 NL 在这个回合受到的攻击伤害降低 !M! %。"
+    "DESCRIPTION": "获得2点 力量 。 NL 在这个回合受到的攻击伤害降低 !M! %。 NL 获得 !${modID}:metal! 点 fgo:金属化 。"
   },
   "${modID}:LordChaldeas": {
     "NAME": "构筑希望的人理之盾",
@@ -495,7 +495,7 @@
   },
   "${modID}:RayProofKyrielight": {
     "NAME": "明证希望的人理之剑",
-    "DESCRIPTION": "fgo:无敌贯通 。 NL 给予所有敌人 !M! 层易伤 。 NL 对所有敌人造成 !D! 点伤害。 NL 移除boss以外敌人所有增益。"
+    "DESCRIPTION": "fgo:无敌贯通 。 NL 给予所有敌人 !M! 层 易伤 。 NL 对所有敌人造成 !D! 点伤害。 NL 移除boss以外敌人所有增益。"
   },
   "${modID}:AroundCaliburn": {
     "NAME": "环抱着你的希望之星",
@@ -558,7 +558,7 @@
   },
   "${modID}:RoadlessCamelot": {
     "NAME": "业已无法抵达的理想乡",
-    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 给予 3 层 fgo:诅呪 。 NL  fgo:宝具充能阶段上升 。"
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 给予 3 层 fgo:诅呪 。 NL fgo:宝具充能阶段上升 !M! 层 。"
   },
   "${modID}:BlackdogGalatine": {
     "NAME": "捕食日轮之角",
@@ -597,7 +597,7 @@
   },
   "${modID}:MahaPralaya": {
     "NAME": "裁定归灭之回剑",
-    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 额外造成所有敌人状态种类的伤害5倍的伤害。"
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 根据所有敌人状态种类数量翻倍。"
   },
   "${modID}:KurKigalIrkalla": {
     "NAME": "灵峰踏抱冥府之鞴",
@@ -634,5 +634,9 @@
   "${modID}:CodeOriginalSin": {
     "NAME": "第七圣典·断罪死",
     "DESCRIPTION": "使敌人失去 !D! 点生命。 NL 获得 !NP! % fgo:宝具值 。"
+  },
+  "${modID}:ExcaliburExcelsus": {
+    "NAME": "由此，展现誓约胜利之剑",
+    "DESCRIPTION": "fgo:无敌贯通 。对所有敌人造成 !D! 点伤害。 NL 每有一名敌人，就获得!M! 层 力量 ， fgo:过充 ， 和 !NP! % fgo:宝具值 。"
   }
 }
