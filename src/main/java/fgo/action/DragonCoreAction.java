@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public class DragonCoreAction extends AbstractGameAction {
@@ -17,20 +18,18 @@ public class DragonCoreAction extends AbstractGameAction {
     @Override
     public void update() {
         ArrayList<AbstractCard> cardsToExhaust = new ArrayList<>();
-        for (AbstractCard c : AbstractDungeon.player.hand.group) {
+        CardGroup hand = AbstractDungeon.player.hand;
+        for (AbstractCard c : hand.group) {
             if (c.type != AbstractCard.CardType.ATTACK) {
                 cardsToExhaust.add(c);
             }
         }
 
-        for (AbstractCard ignored : cardsToExhaust) {
-            AbstractCard cm = AbstractDungeon.returnTrulyRandomCardInCombat(AbstractCard.CardType.ATTACK).makeCopy();
-            cm.setCostForTurn(0);
-            addToBot(new MakeTempCardInHandAction(cm, true));
-        }
-
-        for (AbstractCard c : cardsToExhaust) {
-            addToTop(new ExhaustSpecificCardAction(c, AbstractDungeon.player.hand));
+        for (AbstractCard card : cardsToExhaust) {
+            addToTop(new ExhaustSpecificCardAction(card, hand));
+            AbstractCard randCard = AbstractDungeon.returnTrulyRandomCardInCombat(AbstractCard.CardType.ATTACK).makeCopy();
+            randCard.setCostForTurn(0);
+            addToBot(new MakeTempCardInHandAction(randCard, true));
         }
 
         isDone = true;

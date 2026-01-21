@@ -2,20 +2,18 @@ package fgo.event.deprecated;
 
 import static fgo.FGOMod.eventPath;
 import static fgo.FGOMod.makeID;
+import static fgo.utils.RelicEventHelper.upgradeCardsOfTypes;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
 
-import com.badlogic.gdx.math.MathUtils;
-import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.AbstractCard.CardType;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-import com.megacrit.cardcrawl.vfx.UpgradeShineEffect;
-import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
 
 import basemod.abstracts.events.PhasedEvent;
 import basemod.abstracts.events.phases.TextPhase;
@@ -39,21 +37,7 @@ public class ConflictEvent extends PhasedEvent {
             .addOption(OPTIONS[0] + choice1.name + OPTIONS[1], i -> {
                 imageEventText.updateBodyText(DESCRIPTIONS[1]);
                 AbstractDungeon.player.loseRelic(choice1.relicId);
-                int effectCount = 0;
-                for (AbstractCard c : AbstractDungeon.player.masterDeck.group) {
-                    if (c.canUpgrade() && c.type == AbstractCard.CardType.ATTACK) {
-                        ++effectCount;
-                        if (effectCount <= 20) {
-                            float x = MathUtils.random(0.1F, 0.9F) * (float) Settings.WIDTH;
-                            float y = MathUtils.random(0.2F, 0.8F) * (float) Settings.HEIGHT;
-                            AbstractDungeon.effectList.add(new ShowCardBrieflyEffect(c.makeStatEquivalentCopy(), x, y));
-                            AbstractDungeon.topLevelEffects.add(new UpgradeShineEffect(x, y));
-                        }
-
-                        c.upgrade();
-                        AbstractDungeon.player.bottledCardUpgradeCheck(c);
-                    }
-                }
+                upgradeCardsOfTypes(CardType.ATTACK);
                 transitionKey("Attack");
             })
             .addOption(new TextPhase.OptionInfo(OPTIONS[0] + choice2.name + OPTIONS[2], new SkullCandy())

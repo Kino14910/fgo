@@ -5,9 +5,9 @@ import static fgo.FGOMod.makeID;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.Iterator;
 import java.util.List;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
@@ -140,66 +140,38 @@ public class ModHelper {
         Random rng = AbstractDungeon.cardRandomRng;
         if (group.areMonstersBasicallyDead()) {
             return null;
-        } else {
-            ArrayList<AbstractMonster> tmp;
-            Iterator<AbstractMonster> var5;
-            AbstractMonster m;
-            if (predicate == null) {
-                if (aliveOnly) {
-                    tmp = new ArrayList<AbstractMonster>();
-                    var5 = group.monsters.iterator();
-
-                    while (var5.hasNext()) {
-                        m = var5.next();
-                        if (check(m)) {
-                            tmp.add(m);
-                        }
-                    }
-
-                    if (tmp.size() <= 0) {
-                        return null;
-                    } else {
-                        return (AbstractMonster) tmp.get(rng.random(0, tmp.size() - 1));
-                    }
-                } else {
-                    return (AbstractMonster) group.monsters.get(rng.random(0, group.monsters.size() - 1));
-                }
-            } else if (group.monsters.size() == 1) {
-                if (predicate.test((AbstractMonster) group.monsters.get(0))) {
-                    return (AbstractMonster) group.monsters.get(0);
-                } else {
-                    return null;
-                }
-            } else if (aliveOnly) {
-                tmp = new ArrayList<AbstractMonster>();
-                var5 = group.monsters.iterator();
-
-                while (var5.hasNext()) {
-                    m = var5.next();
-                    if (!m.halfDead && !m.isDying && !m.isEscaping && predicate.test(m)) {
-                        tmp.add(m);
-                    }
-                }
-
-                if (tmp.size() == 0) {
-                    return null;
-                } else {
-                    return (AbstractMonster) tmp.get(rng.random(0, tmp.size() - 1));
-                }
-            } else {
-                tmp = new ArrayList<AbstractMonster>();
-                var5 = group.monsters.iterator();
-
-                while (var5.hasNext()) {
-                    m = var5.next();
-                    if (predicate.test(m)) {
-                        tmp.add(m);
-                    }
-                }
-
-                return (AbstractMonster) tmp.get(rng.random(0, tmp.size() - 1));
-            }
         }
+
+        List<AbstractMonster> tmp;
+        if (predicate == null) {
+            if (aliveOnly) {
+                tmp = group.monsters.stream()
+                    .filter(m -> check(m))
+                    .collect(Collectors.toList());
+
+                if (tmp.isEmpty()) {
+                    return null;
+                }
+                return tmp.get(rng.random(0, tmp.size() - 1));
+            }
+            return group.monsters.get(rng.random(0, group.monsters.size() - 1));
+        }
+
+        if (group.monsters.size() == 1) {
+            AbstractMonster m = group.monsters.get(0);
+            return predicate.test(m) ? m : null;
+        }
+
+        tmp = group.monsters.stream()
+            .filter(m -> !aliveOnly || (!m.halfDead && !m.isDying && !m.isEscaping))
+            .filter(predicate::test)
+            .collect(Collectors.toList());
+
+        if (tmp.isEmpty()) {
+            return null;
+        }
+        return tmp.get(rng.random(tmp.size() - 1));
+
     }
     
     public static AbstractMonster getMonsterWithMaxHealth() {
@@ -224,21 +196,15 @@ public class ModHelper {
             info.isModified = false;
         }
         float tmp = (float) info.output;
-        Iterator<AbstractPower> var3 = target.powers.iterator();
 
-        AbstractPower p;
-        while (var3.hasNext()) {
-            p = var3.next();
+        for (AbstractPower p : target.powers) {
             tmp = p.atDamageReceive(tmp, info.type);
             if (info.base != info.output) {
                 info.isModified = true;
             }
         }
 
-        var3 = target.powers.iterator();
-
-        while (var3.hasNext()) {
-            p = var3.next();
+        for (AbstractPower p : target.powers) {
             tmp = p.atDamageFinalReceive(tmp, info.type);
             if (info.base != info.output) {
                 info.isModified = true;

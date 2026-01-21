@@ -12,6 +12,8 @@ import java.util.function.Predicate;
 
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.AbstractCard.CardType;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -37,11 +39,11 @@ public class RelicEventHelper {
     public static void upgradeCards(int amount) {
         int count = 0;
         List<String> upgradedCards = new ArrayList<>();
-        List<AbstractCard> list = AbstractDungeon.player.masterDeck.group;
-        Collections.shuffle(list, new Random(AbstractDungeon.miscRng.randomLong()));
+        List<AbstractCard> deck = AbstractDungeon.player.masterDeck.group;
+        Collections.shuffle(deck, new Random(AbstractDungeon.miscRng.randomLong()));
         float x = (float)Settings.WIDTH / 2.0f;
         float y = (float)Settings.HEIGHT / 2.0f;
-        for (AbstractCard c : list) {
+        for (AbstractCard c : deck) {
             if (c.canUpgrade() && !upgradedCards.contains(c.cardID)) {
                 upgradedCards.add(c.cardID);
                 c.upgrade();
@@ -93,6 +95,24 @@ public class RelicEventHelper {
                 AbstractDungeon.topLevelEffectsQueue.add(new UpgradeShineEffect(x, y));
             }
         }
+    }
+    public static void upgradeCards(CardGroup cards) {
+        for (AbstractCard c : cards.group) {
+            if (c.canUpgrade()) {
+                c.upgrade();
+                AbstractDungeon.player.bottledCardUpgradeCheck(c);
+                float x = MathUtils.random(0.1F, 0.9F) * (float) Settings.WIDTH;
+                float y = MathUtils.random(0.2F, 0.8F) * (float) Settings.HEIGHT;
+                AbstractDungeon.topLevelEffectsQueue.add(new ShowCardBrieflyEffect(c.makeStatEquivalentCopy(), x, y));
+                AbstractDungeon.topLevelEffectsQueue.add(new UpgradeShineEffect(x, y));
+            }
+        }
+    }
+
+    public static void upgradeCardsOfTypes(CardType type) {
+        CardGroup deck = AbstractDungeon.player.masterDeck;
+        CardGroup cardsToUpgrade = deck.getCardsOfType(type);
+        upgradeCards(cardsToUpgrade);
     }
 
     public static void gainCards(AbstractCard... cards) {

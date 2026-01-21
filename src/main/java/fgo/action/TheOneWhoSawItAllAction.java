@@ -1,7 +1,5 @@
 package fgo.action;
 
-import java.util.Iterator;
-
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
@@ -31,13 +29,11 @@ public class TheOneWhoSawItAllAction extends AbstractGameAction {
             }
 
             CardGroup tmp = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
-            Iterator<AbstractCard> var2 = p.drawPile.group.iterator();
-
             AbstractCard card;
-            while(var2.hasNext()) {
-                card = var2.next();
-                if (card.type == typeToCheck) {
-                    tmp.addToRandomSpot(card);
+            for (AbstractCard c : p.drawPile.group) {
+                card = c;
+                if (c.type == typeToCheck) {
+                    tmp.addToRandomSpot(c);
                 }
             }
 

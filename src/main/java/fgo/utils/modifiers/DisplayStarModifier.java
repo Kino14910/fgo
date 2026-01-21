@@ -1,5 +1,6 @@
 package fgo.utils.modifiers;
 
+import static fgo.FGOMod.makeID;
 import static fgo.FGOMod.uiPath;
 
 import com.badlogic.gdx.graphics.Color;
@@ -13,7 +14,7 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import basemod.abstracts.AbstractCardModifier;
 
 public class DisplayStarModifier extends AbstractCardModifier {
-    public static String MOD_ID = "fgo:DisplayStarModifier";
+    public static String MOD_ID = makeID(DisplayStarModifier.class.getSimpleName());
     private static final Texture tex = ImageMaster.loadImage(uiPath("DisplayModifier"));
     private final int amount;
     public DisplayStarModifier(int amount) {

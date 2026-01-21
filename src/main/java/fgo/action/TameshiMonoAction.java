@@ -28,7 +28,7 @@ public class TameshiMonoAction extends AbstractGameAction {
   }
 
   @Override
-public void update() {
+  public void update() {
     GridCardSelectScreen screen = AbstractDungeon.gridSelectScreen;
     if (duration == Settings.ACTION_DUR_FAST) {
       if (p.discardPile.isEmpty()) {

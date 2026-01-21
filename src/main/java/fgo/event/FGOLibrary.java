@@ -5,6 +5,7 @@ import static fgo.FGOMod.eventPath;
 import static fgo.FGOMod.makeID;
 import static fgo.utils.ModHelper.eventAscension;
 
+import java.util.ArrayList;
 import java.util.Collections;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -46,10 +47,11 @@ public class FGOLibrary extends PhasedEvent {
                 @Override
                 public void update() {
                     super.update();
-                    if (pickCard && !AbstractDungeon.isScreenUp && !AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
-                        AbstractCard c = AbstractDungeon.gridSelectScreen.selectedCards.get(0).makeCopy();
+                    ArrayList<AbstractCard> selectedCards = AbstractDungeon.gridSelectScreen.selectedCards;
+                    if (pickCard && !AbstractDungeon.isScreenUp && !selectedCards.isEmpty()) {
+                        AbstractCard c = selectedCards.get(0).makeCopy();
                         AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(c, Settings.WIDTH / 2.0f, Settings.HEIGHT / 2.0f));
-                        AbstractDungeon.gridSelectScreen.selectedCards.clear();
+                        selectedCards.clear();
                     }
                 }
             }
