@@ -12,10 +12,6 @@ public class BeastMagicPower extends BasePower {
     public BeastMagicPower(AbstractCreature owner, int amount) {
         super(POWER_ID, PowerType.BUFF, false, owner, amount, "DefenseUpPower");
     }
-    @Override
-    public void updateDescription() {
-        description = String.format(DESCRIPTIONS[0], amount);
-    }
 
     @Override
     public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {

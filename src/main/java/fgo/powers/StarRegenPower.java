@@ -13,11 +13,6 @@ public class StarRegenPower extends BasePower {
     }
 
     @Override
-    public void updateDescription() {
-        description = String.format(DESCRIPTIONS[0], amount);
-    }
-
-    @Override
     public void atStartOfTurn() {
         flash();
         addToBot(new ApplyPowerAction(owner, owner, new StarPower(owner, amount), amount));

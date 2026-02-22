@@ -13,11 +13,6 @@ public class CursePower extends BasePower {
     }
 
     @Override
-    public void updateDescription() {
-        description = String.format(DESCRIPTIONS[0], amount);
-    }
-
-    @Override
     public void atStartOfTurn() {
         flash();
         addToBot(new LoseHPAction(owner, owner, amount));

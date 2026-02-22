@@ -27,11 +27,4 @@ public class AtTheWellPower extends BasePower {
         addToBot(new FgoNpAction(80));
         addToBot(new RemoveSpecificPowerAction(owner, owner, ID));
     }
-
-    @Override
-    public void updateDescription() {
-        description = String.format(DESCRIPTIONS[0], amount);
-    }
-
-    
 }

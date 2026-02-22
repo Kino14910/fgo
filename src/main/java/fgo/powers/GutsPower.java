@@ -24,11 +24,6 @@ public class GutsPower extends BasePower{
         AbstractDungeon.player.heal(Math.max(amount, 1), true);
         addToTop(new RemoveSpecificPowerAction(owner, owner, ID));
     }
-    
-    @Override
-    public void updateDescription() {
-        description = String.format(DESCRIPTIONS[0], amount);
-    }
 
     
 }

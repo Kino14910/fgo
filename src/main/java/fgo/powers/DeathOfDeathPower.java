@@ -26,11 +26,4 @@ public class DeathOfDeathPower extends BasePower {
         addToBot(new ApplyPowerAction(owner, owner, new PhantasmalPower(owner, 1)));
         addToBot(new RemoveSpecificPowerAction(owner, owner, ID));
     }
-
-    @Override
-    public void updateDescription() {
-        description = String.format(DESCRIPTIONS[0], amount);
-    }
-
-    
 }

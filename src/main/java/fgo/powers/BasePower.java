@@ -108,6 +108,11 @@ public abstract class BasePower extends AbstractPower {
         }
     }
 
+    @Override
+    public void updateDescription() {
+        description = String.format(DESCRIPTIONS[0], amount);
+    }
+
     protected String formatDescriptionByQuantity(int amount) {
         return amount == 1 ? DESCRIPTIONS[0] : String.format(DESCRIPTIONS[1], amount);
     }

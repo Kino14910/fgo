@@ -22,6 +22,6 @@ public class SchwarzwaldFalkePower extends BasePower {
 
     @Override
     public void updateDescription() {
-        description = amount == 1 ? DESCRIPTIONS[1] : String.format(DESCRIPTIONS[0], amount);
+        description = formatDescriptionByQuantity(amount);
     }
 }

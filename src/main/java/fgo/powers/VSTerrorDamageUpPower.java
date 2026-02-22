@@ -12,16 +12,13 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 
+import fgo.modifiers.VSTerrorDamageUpModifier;
+
 public class VSTerrorDamageUpPower extends BasePower implements DamageModApplyingPower{
     public static final String POWER_ID = makeID(VSTerrorDamageUpPower.class.getSimpleName());
     
     public VSTerrorDamageUpPower(AbstractCreature owner, int amount) {
         super(POWER_ID, PowerType.BUFF, true, owner, amount, "AttackUpPower");
-    }
-
-    @Override
-    public void updateDescription() {
-        description = String.format(DESCRIPTIONS[0], amount);
     }
 
     @Override

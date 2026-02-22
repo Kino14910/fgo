@@ -19,11 +19,6 @@ public class DeathChancePower extends BasePower implements BetterOnApplyPowerPow
     }
 
     @Override
-    public void updateDescription() {
-        description = String.format(DESCRIPTIONS[0], amount);
-    }
-
-    @Override
     public boolean betterOnApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
         if(power == this) return true;
         if(power.ID == DeathChancePower.POWER_ID && target.currentHealth <= amount) {

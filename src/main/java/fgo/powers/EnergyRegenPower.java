@@ -18,9 +18,4 @@ public class EnergyRegenPower extends BasePower {
         flash();
         addToBot(new FgoNpAction(amount));
     }
-
-    @Override
-    public void updateDescription() {
-        description = String.format(DESCRIPTIONS[0], amount);
-    }
 }

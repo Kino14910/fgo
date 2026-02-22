@@ -180,8 +180,8 @@
   "${modID}:SchwarzwaldFalkePower": {
     "NAME": "黑森之鹰",
     "DESCRIPTIONS": [
-      "在你的下 #b%1$s 个回合结束时，获得 #b1 次 #y回避 。",
-      "在本回合结束时，获得 #b1 次 #y回避 。"
+      "在本回合结束时，获得 #b1 次 #y回避 。",
+      "在你的下 #b%1$s 个回合结束时，获得 #b1 次 #y回避 。"
     ]
   },
   "${modID}:MyFairSoldierPower": {
@@ -490,7 +490,7 @@
       "当你接下来 #b%d 次要被杀死时，免死并回复 #b%d 点 #y生命 。"
     ]
   },
-    "${modID}:NonStackableEnergyRegenPower": {
+  "${modID}:NonStackableEnergyRegenPower": {
     "NAME": "每回合获得NP",
     "DESCRIPTIONS": [
       "在每回合开始时获得 #b%d%% #y宝具值 。",

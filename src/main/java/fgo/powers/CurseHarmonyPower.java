@@ -15,11 +15,6 @@ public class CurseHarmonyPower extends BasePower {
     }
 
     @Override
-    public void updateDescription() {
-        description = String.format(DESCRIPTIONS[0], amount);
-    }
-
-    @Override
     public void atEndOfTurn(boolean isPlayer) {
         if (owner.hasPower(CursePower.POWER_ID) && !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
             flash();

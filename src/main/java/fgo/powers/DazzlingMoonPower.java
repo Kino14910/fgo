@@ -18,11 +18,6 @@ public class DazzlingMoonPower extends BasePower {
     }
 
     @Override
-    public void updateDescription() {
-        description = String.format(DESCRIPTIONS[0], amount);
-    }
-
-    @Override
     public void atStartOfTurn() {
         flash();
         addToTop(new ApplyPowerAction(owner, owner, new StrengthPower(owner, -1)));

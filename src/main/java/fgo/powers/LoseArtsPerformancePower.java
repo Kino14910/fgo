@@ -19,9 +19,4 @@ public class LoseArtsPerformancePower extends BasePower {
       addToBot(new ApplyPowerAction(owner, owner, new ArtsPerformancePower(owner, -amount)));
       addToBot(new RemoveSpecificPowerAction(owner, owner, ArtsPerformancePower.POWER_ID));
     }
-    
-    @Override
-    public void updateDescription() {
-        description = String.format(DESCRIPTIONS[0], amount);
-    }
 }

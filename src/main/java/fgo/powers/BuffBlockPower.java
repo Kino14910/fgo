@@ -16,11 +16,6 @@ public class BuffBlockPower extends BasePower {
     }
 
     @Override
-    public void updateDescription() {
-        description = String.format(DESCRIPTIONS[0], amount);
-    }
-
-    @Override
     public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
         if (power.type == PowerType.BUFF && source == owner && target == owner && power.ID.equals(StrengthPower.POWER_ID)) {
             addToBot(new RemoveSpecificPowerAction(target, source, power));
