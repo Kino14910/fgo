@@ -43,9 +43,7 @@ public class SparksRouteAction extends AbstractGameAction {
             shuffled = true;
             AbstractPlayer p = AbstractDungeon.player;
             int theSize = p.hand.size();
-            if (upgraded) {
-                addToBot(new ArmamentsAction(true));
-            }
+            addToBot(new ArmamentsAction(true));
             addToBot(new PutOnDeckAction(p, p, theSize, true));
             addToBot(new ShuffleAction(p.drawPile));
             addToBot(new DrawCardAction(p, theSize));

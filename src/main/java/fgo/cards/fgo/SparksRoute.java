@@ -15,8 +15,7 @@ public class SparksRoute extends FGOCard {
     public static final String ID = makeID(SparksRoute.class.getSimpleName());
     public SparksRoute() {
         super(ID, 0, CardType.SKILL, CardTarget.SELF, CardRarity.COMMON);
-        setMagic(5, 5);
-        setExhaust();
+        setExhaust(true, false);
         portraitImg = ImageMaster.loadImage(cardPath("skill/SparksRoute"));
     }
 

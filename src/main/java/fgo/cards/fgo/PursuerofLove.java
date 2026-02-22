@@ -11,6 +11,7 @@ public class PursuerofLove extends FGOCard {
     public static final String ID = makeID(PursuerofLove.class.getSimpleName());
     public PursuerofLove() {
         super(ID, 1, CardType.SKILL, CardTarget.ENEMY, CardRarity.COMMON);
+        setCostUpgrade(0);
     }
 
     @Override

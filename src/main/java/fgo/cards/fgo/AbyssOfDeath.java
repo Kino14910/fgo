@@ -12,7 +12,6 @@ public class AbyssOfDeath extends FGOCard {
     public AbyssOfDeath() {
         super(ID, 2, CardType.POWER, CardTarget.SELF, CardRarity.RARE);
         setMagic(15, 10);
-        setExhaust();
         this.tags.add(CardTags.HEALING);
     }
 

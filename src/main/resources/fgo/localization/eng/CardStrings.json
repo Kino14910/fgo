@@ -333,7 +333,7 @@
   },
   "${modID}:PeerlessStrike": {
     "NAME": "Peerless Strike",
-    "DESCRIPTION": "{@@}Can only be played when your HP is at or below half. NL Gain 5 Strength and 100% fgo:Critical Damage. NL {!Upgrades!|@=Die.|1=Die at end of turn.}",
+    "DESCRIPTION": "{@@}Can only be played when your HP is at or below half. NL Gain 100% fgo:Critical Damage. NL Deal !D! damage. NL {!Upgrades!|@=Die.|1=Die at end of turn.}",
     "EXTENDED_DESCRIPTION": [
       "My HP is not low enough."
     ]
