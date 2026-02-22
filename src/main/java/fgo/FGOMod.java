@@ -81,6 +81,8 @@ import fgo.action.FgoNpAction;
 import fgo.cards.FGOCard;
 import fgo.characters.CustomEnums.FGOCardColor;
 import fgo.characters.Master;
+import fgo.dynamic_variables.CriticalStarVariable;
+import fgo.dynamic_variables.NoblePhantasmVariable;
 import fgo.event.DevilSlot;
 import fgo.event.FGOLibrary;
 import fgo.event.ManofChaldea;
@@ -102,8 +104,6 @@ import fgo.utils.GeneralUtils;
 import fgo.utils.KeywordInfo;
 import fgo.utils.Sounds;
 import fgo.utils.TextureLoader;
-import fgo.utils.dynamicvariables.CriticalStarVariable;
-import fgo.utils.dynamicvariables.NoblePhantasmVariable;
 
 @SpireInitializer
 public class FGOMod implements

@@ -1,29 +1,34 @@
 package fgo.monsters;
 
+import static fgo.FGOMod.logger;
 import static fgo.FGOMod.makeID;
 import static fgo.FGOMod.vfxPath;
 import static fgo.utils.ModHelper.addToBotAbstract;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.ClearCardQueueAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.actions.common.SetMoveAction;
+import com.megacrit.cardcrawl.actions.unique.CanLoseAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.FrailPower;
 import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.powers.VulnerablePower;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.vfx.FadeWipeParticle;
-import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
+import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
 
 import fgo.FGOMod;
 import fgo.cards.noblecards.Unlimited;
@@ -31,6 +36,7 @@ import fgo.characters.Master;
 import fgo.effects.ChangeSceneEffect;
 import fgo.powers.CriticalDamageUpPower;
 import fgo.powers.monster.StarGainMonsterPower;
+import fgo.ui.panels.NobleDeckCards;
 import fgo.utils.ModHelper;
 import fgo.utils.Sounds;
 
@@ -75,18 +81,17 @@ public class Emiya extends BaseMonster {
         // Pass raw id to BaseMonster (it will call FGOMod.makeID internally)
         super(NAME, ID, BASE_HP, 0.0f, 0.0f, 320.0f, 320.0f, IMG, x, y);
         setHp(AbstractDungeon.ascensionLevel < 9 ? BASE_HP : A9_HP);
+        bgm = "BOSS_BEYOND";
 
-        if (ModHelper.moreDamageAscension(type)) {
-            setDamages(16, 10, 1);
-        } else {
-            setDamages(20, 12, 2);
-        }
+        final int caladbolgDmg = ModHelper.moreDamageAscension(type) ? 20 : 16;
+        final int kanshouDmg = ModHelper.moreDamageAscension(type) ? 12 : 10;
+        final int projectionDmg = ModHelper.moreDamageAscension(type) ? 2 : 1;
 
-        addMoveA(Intent.ATTACK, damage.get(0).base, mi -> {
+        addMoveA(Intent.ATTACK, caladbolgDmg, mi -> {
             shout(CALADBOLG, Sounds.Sokoda);
             attack(mi, AbstractGameAction.AttackEffect.SMASH);
         });
-        addMoveA(Intent.ATTACK, damage.get(1).base, HIT_NUM, mi -> {
+        addMoveA(Intent.ATTACK, kanshouDmg, HIT_NUM, mi -> {
             shout(KANSHOU, Sounds.Kanshou);
             attack(mi, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL);
             addToBot(new ApplyPowerAction(this, this, new StrengthPower(this, 
@@ -97,9 +102,8 @@ public class Emiya extends BaseMonster {
             CardCrawlGame.music.silenceBGMInstantly();
             addToBot(new SFXAction(Sounds.UBW_Incantation));
             addToBot(new HealAction(this, this, AbstractDungeon.ascensionLevel < 9 ? REBIRTH_HP : A9_REBIRTH_HP));
-            form1 = false;
+            addToBot(new CanLoseAction());
             halfDead = false;
-            firstTurn = true;
             AbstractDungeon.topLevelEffects.add(new FadeWipeParticle());
             addToBot(new VFXAction(new ChangeSceneEffect(ImageMaster.loadImage(vfxPath("UnlimitedBg")))));
             CardCrawlGame.music.unsilenceBGM();
@@ -108,8 +112,11 @@ public class Emiya extends BaseMonster {
             addToBotAbstract(()->{img = ImageMaster.loadImage(IMG2);});
             
         });
-        addMoveA(Intent.ATTACK_BUFF, damage.get(2).base, PROJECTION_ATK_AMT, mi -> {
-            shout(0);
+        addMoveA(Intent.ATTACK_BUFF, projectionDmg, PROJECTION_ATK_AMT, mi -> {
+            for(DamageInfo d : damage){
+                logger.info(d.base);
+            }
+            shout(PROJECTION, Sounds.TraceOn);
             addToBot(new WaitAction(0.25F));
             attack(mi, AbstractGameAction.AttackEffect.SLASH_VERTICAL);
             addToBot(new ApplyPowerAction(this, this, new IntangiblePlayerPower(this, 1), 1));
@@ -117,7 +124,7 @@ public class Emiya extends BaseMonster {
             addToBot(new ApplyPowerAction(this, this, new StarGainMonsterPower(this, 20), 20));
         });
         addMove(Intent.BUFF, mi -> {
-            shout(PROJECTION, Sounds.TraceOn);
+            shout(MIND_EYE);
             addToBot(new WaitAction(0.25F));
             addToBot(new ApplyPowerAction(this, this, new CriticalDamageUpPower(this, 25), 25));
             addToBot(new ApplyPowerAction(this, this, new StrengthPower(this, 
@@ -126,12 +133,15 @@ public class Emiya extends BaseMonster {
         addMove(Intent.DEBUFF, mi -> {
             shout(HAWK_EYE, Sounds.Konosaida);
             addToBot(new WaitAction(0.25F));
-            addToBot(new ApplyPowerAction(p, this, new FrailPower(p, 99, true), 99));
+            addToBot(new ApplyPowerAction(p, this, new FrailPower(p, 99, true)));
+            addToBot(new ApplyPowerAction(p, this, new VulnerablePower(p, 99, true)));
         });
     }
 
     @Override
     public void usePreBattleAction() {
+        super.usePreBattleAction();
+        AbstractDungeon.getCurrRoom().cannotLose = true;
     }
 
     @Override
@@ -166,6 +176,7 @@ public class Emiya extends BaseMonster {
             }
             if (secondTurn){
                 setMove(HAWK_EYE);
+                secondTurn = false;
                 return;
             }
             // 第二阶段技能选择 - 按特定顺序使用
@@ -189,26 +200,43 @@ public class Emiya extends BaseMonster {
     public void damage(DamageInfo info) {
         super.damage(info);
         
-        // 检查是否需要触发复活
         if (currentHealth <= 0 && !halfDead && form1) {
-            halfDead = true;
+            if (AbstractDungeon.getCurrRoom().cannotLose) {
+                this.halfDead = true;
+            }
+            
+            for (final AbstractPower p : this.powers) {
+                p.onDeath();
+            }
+            for (final AbstractRelic r : AbstractDungeon.player.relics) {
+                r.onMonsterDeath(this);
+            }
+
+            addToTop(new ClearCardQueueAction());
+
             setMove(REBIRTH);
             createIntent();
             addToBot(new SetMoveAction(this, REBIRTH, Intent.UNKNOWN));
             applyPowers();
+            firstTurn = true;
+            form1 = false;
         }
     }
 
     @Override
     public void die() {
-        // 只有在第二阶段死亡才会真正死亡
-        if (!form1) {
+        if (!AbstractDungeon.getCurrRoom().cannotLose) {
             super.die();
+            this.useFastShakeAnimation(5.0f);
+            CardCrawlGame.screenShake.rumble(4.0f);
             if (!CardHelper.hasCardWithID(Unlimited.ID) && AbstractDungeon.player instanceof Master) {
-                AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new Unlimited(), 
-                    (float)Settings.WIDTH / 2.0f + 190.0f * Settings.scale, Settings.HEIGHT / 2.0f));
+                // AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new Unlimited(), 
+                //     (float)Settings.WIDTH / 2.0f + 190.0f * Settings.scale, Settings.HEIGHT / 2.0f));
+                AbstractDungeon.effectList.add(new ShowCardBrieflyEffect(new Unlimited()));
+                NobleDeckCards.addCard(Unlimited.ID);
             }
             onBossVictoryLogic();
+            onFinalBossVictoryLogic();
         }
     }
 }

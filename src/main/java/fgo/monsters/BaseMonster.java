@@ -187,7 +187,6 @@ public abstract class BaseMonster extends CustomMonster {
     }
 
     public void addMoveA(Intent intent, int dmg, Supplier<Integer> dmgTime, Consumer<MoveInfo> takeMove) {
-        if (ModHelper.moreDamageAscension(type)) dmg = Math.round(dmg * 1.1f);
         addMove(intent, dmg, dmgTime, takeMove);
     }
 
@@ -196,7 +195,6 @@ public abstract class BaseMonster extends CustomMonster {
     }
 
     public void addMoveA(Intent intent, int dmg, int dmgTime, Consumer<MoveInfo> takeMove) {
-        if (ModHelper.moreDamageAscension(type)) dmg = Math.round(dmg * 1.1f);
         addMove(intent, dmg, () -> dmgTime, takeMove);
     }
 
@@ -205,7 +203,6 @@ public abstract class BaseMonster extends CustomMonster {
     }
 
     public void addMoveA(Intent intent, int dmg, Consumer<MoveInfo> takeMove) {
-        if (ModHelper.moreDamageAscension(type)) dmg = Math.round(dmg * 1.1f);
         addMove(intent, dmg, () -> 1, takeMove);
     }
 
