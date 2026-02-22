@@ -365,7 +365,7 @@
   },
   "${modID}:Swingby": {
     "NAME": "重力助推",
-    "DESCRIPTION": "获得 !B! 点 格挡 。获得 !Star! 颗 fgo:暴击星 。",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 获得 !Star! 颗 fgo:暴击星 。",
     "FLAVOR": "领域外生命。"
   },
   "${modID}:FacelessMoon": {

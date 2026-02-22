@@ -396,7 +396,7 @@
   },
   "${modID}:Swingby": {
     "NAME": "Swingby",
-    "DESCRIPTION": "Gain !B! Block .Gain !Star!  fgo:Stars .",
+    "DESCRIPTION": "Gain !B! Block . NL Gain !Star!  fgo:Stars .",
     "FLAVOR": "Life beyond the domain."
   },
   "${modID}:FacelessMoon": {
