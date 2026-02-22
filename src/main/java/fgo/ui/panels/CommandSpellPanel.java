@@ -8,7 +8,6 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import basemod.abstracts.CustomSavable;
 
 public class CommandSpellPanel implements CustomSavable<Integer> {
-    // The field value you wish to save.
     public static int commandSpellCount = 3;
     public static Texture CommandSpell;
 

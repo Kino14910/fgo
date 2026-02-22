@@ -6,7 +6,6 @@ import static fgo.FGOMod.makeID;
 import static fgo.utils.ModHelper.eventAscension;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
@@ -58,18 +57,11 @@ public class FGOLibrary extends PhasedEvent {
             .addOption(String.format(OPTIONS[0], maxHPAmt), i -> {
                 pickCard = true;
                 CardGroup group = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
-                // group.addToBottom(new PrimevalRune());
-                // group.addToBottom(new DazzlingMoon());
-                // group.addToBottom(new EightKindness());
-                // group.addToBottom(new UndeadBird());
-                // group.addToBottom(new MaraPapiyas());
-                Collections.addAll(group.group, 
-                    new PrimevalRune(), 
-                    new DazzlingMoon(),
-                    new EightKindness(),
-                    new UndeadBird(),
-                    new MaraPapiyas()
-                );
+                group.addToBottom(new PrimevalRune());
+                group.addToBottom(new DazzlingMoon());
+                group.addToBottom(new EightKindness());
+                group.addToBottom(new UndeadBird());
+                group.addToBottom(new MaraPapiyas());
 
                 AbstractDungeon.gridSelectScreen.open(group, 1, OPTIONS[3], false);
                 AbstractDungeon.player.decreaseMaxHealth(maxHPAmt);

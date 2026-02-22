@@ -16,9 +16,6 @@ public class NPDamagePower extends BasePower {
         super(POWER_ID, PowerType.BUFF, false, AbstractDungeon.player, Math.min(amount, 999));
     }
 
-        // 根据卡牌数值amount判断使用哪种描述格式
-        // 如果amount小于等于1，使用DESCRIPTIONS[0]作为描述
-        // 否则，将amount插入到DESCRIPTIONS[1]和DESCRIPTIONS[2]之间形成完整描述
     @Override
     public void updateDescription() {
         description = String.format(DESCRIPTIONS[0], amount);

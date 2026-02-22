@@ -54,7 +54,7 @@ public class ManofChaldea extends PhasedEvent {
                 AbstractDungeon.player.heal(15, true);
                 openMap();
             }));
-        // 设置事件的起始阶段
+            
         transitionKey(0);
     }
 }

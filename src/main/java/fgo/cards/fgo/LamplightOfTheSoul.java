@@ -13,7 +13,6 @@ public class LamplightOfTheSoul extends FGOCard {
     public LamplightOfTheSoul() {
         super(ID, 2, CardType.SKILL, CardTarget.SELF, CardRarity.UNCOMMON);
         setMagic(5, 2);
-        setExhaust();
     }
 
     @Override

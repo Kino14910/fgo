@@ -263,11 +263,6 @@
     "NAME": "天之裂谷",
     "DESCRIPTION": " fgo:宝具充能阶段上升 。"
   },
-  "${modID}:WindsweptSlash": {
-    "NAME": "势如破竹",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 抽 !M! 张牌。",
-    "FLAVOR": "测试画风可以更改。"
-  },
   "${modID}:DesiresSalvation": {
     "NAME": "祈祷救济之人",
     "DESCRIPTION": "{@@}{!Upgrades!|1=固有 。 NL }在你的回合开始时，获得 !NP! % fgo:宝具值 。"
@@ -332,7 +327,7 @@
   },
   "${modID}:MaidensWillpower": {
     "NAME": "少女的志气",
-    "DESCRIPTION": "获得 5 层 fgo:毅力 。 NL 获得 1 层 人工制品 。"
+    "DESCRIPTION": "获得 5 层 fgo:毅力 。 NL 获得 1 层 人工制品 。 NL  消耗 。"
   },
   "${modID}:LamplightOfTheSoul": {
     "NAME": "魂之灯火",
@@ -344,7 +339,7 @@
   },
   "${modID}:WaterfrontSaintess": {
     "NAME": "水边圣女",
-    "DESCRIPTION": "获得 !NP! % fgo:宝具值 和 !M! % fgo:宝具威力 。 NL fgo:水边 ：获得 !fgo:CriticalDamage! fgo:暴击威力 。"
+    "DESCRIPTION": "获得 !NP! % fgo:宝具值 和 !M! % fgo:宝具威力 。 NL fgo:水边 ：获得 !fgo:CriticalDamage! % fgo:暴击威力 。"
   },
   "${modID}:PursuerofLove": {
     "NAME": "恋之追踪者",

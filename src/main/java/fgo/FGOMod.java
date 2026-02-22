@@ -120,8 +120,6 @@ public class FGOMod implements
         PostBattleSubscriber,
         PostCreateStartingDeckSubscriber,
         StartGameSubscriber
-//        PostUpdateSubscriber,
-//        PostRenderSubscriber,
         {
     public static ModInfo info;
     public static String modID; //Edit your pom.xml to change this
@@ -203,7 +201,7 @@ public class FGOMod implements
 
         if(FGOConfig.enableEmiya){
             BaseMod.addMonster(Emiya.ID, Emiya.NAME, () -> new MonsterGroup(new AbstractMonster[]{new Emiya()}));
-            BaseMod.addBoss(TheCity.ID, Emiya.ID, monsterPath("map_emiya"), monsterPath("map_emiya_outline"));
+            BaseMod.addBoss(TheBeyond.ID, Emiya.ID, monsterPath("map_emiya"), monsterPath("map_emiya_outline"));
         }
         shouldRenderNobleDeck = true;
     }
@@ -436,7 +434,6 @@ public class FGOMod implements
 
     @Override
     public void receiveEditCharacters() {
-        //添加角色到MOD中
         BaseMod.addCharacter(new Master("Master"), MY_CHARACTER_BUTTON, MASTER_PORTRAIT, FGO_MASTER);
     }
 

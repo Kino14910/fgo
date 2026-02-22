@@ -37,14 +37,6 @@ public abstract class AbsNoblePhantasmCard extends FateMagineerCard {
         return cardPath("noble/" + file);
     }
 
-    // @Override
-    // public void triggerWhenDrawn() {
-    //     if (inBottleFlame || inBottleLightning || inBottleTornado) {
-    //         addToTop(new DrawCardAction(AbstractDungeon.player, 2));
-    //         addToTop(new ExhaustSpecificCardAction(this, AbstractDungeon.player.hand));
-    //     }
-    // }
-
     @Override
     public boolean canUpgrade() {
         return true;
@@ -86,13 +78,4 @@ public abstract class AbsNoblePhantasmCard extends FateMagineerCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new NPOverChargePower(1)));
     }
-    
-    // @Override
-    // public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-    //     boolean canUse = super.canUse(p, m);
-    //     if (getPowerCount(p, NPOverChargePower.POWER_ID) > 5) {
-    //         canUse = false;
-    //     }
-    //     return canUse;
-    // }
 }

@@ -35,9 +35,7 @@ public class LastSunXibalba extends AbsNoblePhantasmCard {
         for(int i = 0; i < 5; ++i) {
             addToBot(new DamageAllEnemiesAction(p, multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.BLUNT_HEAVY));
         }
-
-        // addToBot(new AllEnemyApplyPowerAction(m, 1, monster -> new BuffBlockPower(monster, 1)));
-
+        
         addToBot(new VFXAction(p, new FlameBarrierEffect(p.hb.cX, p.hb.cY), Settings.FAST_MODE ? 0.1f : 0.5f));
         addToBot(new ApplyPowerAction(p, p, new StarPower(p, star)));
     }

@@ -43,16 +43,14 @@ public class Emiya extends BaseMonster {
     public static final String[] MOVES = monsterStrings.MOVES;
     public static final String[] DIALOG = monsterStrings.DIALOG;
     
-    // Move constants - 参考AwakenedOne的编号方式
     private static final byte CALADBOLG = 0;
     private static final byte KANSHOU = 1;
-    private static final byte REBIRTH = 2; // 复活技能
+    private static final byte REBIRTH = 2;
     private static final byte PROJECTION = 3;
     private static final byte MIND_EYE = 4;
     private static final byte HAWK_EYE = 5;
     
     private static final int HIT_NUM = 2;
-    private static final int SWORD_AMT = 1;
     private static final int PROJECTION_ATK_AMT = 10;
     private static final int BASE_STR_AMT = 1;
     private static final int A19_STR_AMT = 2;

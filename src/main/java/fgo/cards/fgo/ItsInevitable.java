@@ -18,8 +18,8 @@ public class ItsInevitable extends FGOCard {
     public static final String ID = makeID(ItsInevitable.class.getSimpleName());
     public ItsInevitable() {
         super(ID, 1, CardType.ATTACK, CardTarget.ALL_ENEMY, CardRarity.COMMON);
-        setDamage(5, 1);
-        setMagic(3, 1);
+        setDamage(4, 1);
+        setMagic(4, 1);
         portraitImg = ImageMaster.loadImage(cardPath("attack/ItsInevitable"));
     }
 

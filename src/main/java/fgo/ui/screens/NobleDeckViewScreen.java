@@ -49,7 +49,6 @@ public class NobleDeckViewScreen extends CustomScreen implements ScrollBarListen
     private static final float SCROLL_BAR_THRESHOLD;
     private static final int CARDS_PER_LINE = 5;
 
-    // 交互相关字段
     private AbstractCard hoveredCard = null;
     private AbstractCard clickStartedCard = null;
     private boolean grabbedScreen = false;
@@ -58,26 +57,22 @@ public class NobleDeckViewScreen extends CustomScreen implements ScrollBarListen
     private float scrollLowerBound = -Settings.DEFAULT_SCROLL_LIMIT;
     private float scrollUpperBound = Settings.DEFAULT_SCROLL_LIMIT;
 
-    // UI 元素
     private ScrollBar scrollBar;
 
     Logger logger = new Logger(NobleDeckViewScreen.class.getName());
 
     public NobleDeckViewScreen() {
-        // 初始化UI布局
         drawStartX = Settings.WIDTH;
         drawStartX -= 5.0f * AbstractCard.IMG_WIDTH * 0.75f;
         drawStartX -= 4.0f * Settings.CARD_VIEW_PAD_X;
         drawStartX /= 2.0f;
         drawStartX += AbstractCard.IMG_WIDTH * 0.75f / 2.0f;
         
-        // 设置起始Y坐标（与MasterDeckViewScreen一致）
         drawStartY = (float)Settings.HEIGHT * 0.66f;
         
         padX = AbstractCard.IMG_WIDTH * 0.75f + Settings.CARD_VIEW_PAD_X;
         padY = AbstractCard.IMG_HEIGHT * 0.75f + Settings.CARD_VIEW_PAD_Y;
 
-        // 初始化滚动条
         scrollBar = new ScrollBar(this);
         scrollBar.move(0.0f, -30.0f * Settings.scale);
     }
@@ -100,7 +95,6 @@ public class NobleDeckViewScreen extends CustomScreen implements ScrollBarListen
         grabStartY = scrollLowerBound;
         grabbedScreen = false;
         
-        // 初始化卡牌位置
         hideCards();
         
         // 设置屏幕状态
@@ -113,7 +107,6 @@ public class NobleDeckViewScreen extends CustomScreen implements ScrollBarListen
         AbstractDungeon.overlayMenu.showBlackScreen();
         AbstractDungeon.overlayMenu.cancelButton.show(TEXT[1]);
 
-        // 计算滚动边界
         calculateScrollBounds();
     }
 
@@ -174,14 +167,12 @@ public class NobleDeckViewScreen extends CustomScreen implements ScrollBarListen
             return;
         } 
 
-        // 渲染除悬停卡牌外的所有卡牌
         nobleCards.group.forEach(card -> {
             if (card != hoveredCard) {
                 card.render(sb);
             }
         });
         
-        // 渲染悬停卡牌的阴影和卡牌本身
         hoveredCard.renderHoverShadow(sb);
         hoveredCard.render(sb);
     }
@@ -211,7 +202,6 @@ public class NobleDeckViewScreen extends CustomScreen implements ScrollBarListen
         return true;
     }
 
-    // 辅助方法
     private void calculateScrollBounds() {
         if (nobleCards == null || nobleCards.size() <= 10) {
             scrollUpperBound = Settings.DEFAULT_SCROLL_LIMIT;
@@ -300,7 +290,6 @@ public class NobleDeckViewScreen extends CustomScreen implements ScrollBarListen
         
         if ((InputHelper.justReleasedClickLeft && hoveredCard == clickStartedCard)) {
             InputHelper.justReleasedClickLeft = false;
-            // 处理卡牌点击，例如打开卡牌详情弹窗
             CardCrawlGame.cardPopup.open(hoveredCard, nobleCards);
             clickStartedCard = null;
         }

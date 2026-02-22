@@ -136,7 +136,7 @@ public class NobleDeckPanelItem extends TopPanelItem {
         BaseMod.openCustomScreen(NobleDeckViewScreen.Enum.Noble_Phantasm, NobleDeckCards.getNobleCards());
 
 
-        // // 标记卡牌为已见
+        // 标记卡牌为已见
         // NobleDeckCards.getNobleCards().group.forEach(c -> UnlockTracker.markCardAsSeen(c.cardID));
     }
 

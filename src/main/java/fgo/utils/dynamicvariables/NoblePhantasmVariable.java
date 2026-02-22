@@ -9,7 +9,6 @@ public class NoblePhantasmVariable extends DynamicVariable {
     @Override
     public String key() {
         return "NP";
-        // 在本地化文件中用于显示你的值的键。例如，!myKey!。
     }
 
     @Override

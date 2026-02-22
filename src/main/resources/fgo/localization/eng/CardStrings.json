@@ -352,11 +352,11 @@
   },
   "${modID}:MaidensWillpower": {
     "NAME": "Maidens Will power",
-    "DESCRIPTION": "Gain 5 fgo:Guts. NL Gain 1 Artifact ."
+    "DESCRIPTION": "Gain 5 fgo:Guts. NL Gain 1 Artifact . NL Exhaust."
   },
   "${modID}:LamplightOfTheSoul": {
     "NAME": "Lamplight of the Soul",
-    "DESCRIPTION": "Gain !M! fgo:Guts. NL At the end of your turn, gain !M! Block."
+    "DESCRIPTION": "Gain !M! fgo:Guts. NL At the end of your turn, gain !M! Block. NL Exhaust."
   },
   "${modID}:Indomitable": {
     "NAME": "Indomitable",
@@ -364,7 +364,7 @@
   },
   "${modID}:WaterfrontSaintess": {
     "NAME": "Waterfront Saintess",
-    "DESCRIPTION": "Gain !NP! % fgo:NP and !M! % fgo:NP_Damage . NL fgo:waterside：Gain !${modID}:CriticalDamage! fgo:Critical Damage ."
+    "DESCRIPTION": "Gain !NP! % fgo:NP and !M! % fgo:NP_Damage . NL fgo:waterside：Gain !${modID}:CriticalDamage! % fgo:Critical Damage ."
   },
   "${modID}:PursuerofLove": {
     "NAME": "Pursuer of Love",

@@ -16,7 +16,6 @@ public class AnimalDialogue extends FGOCard {
         super(ID, 1, CardType.SKILL, CardTarget.SELF, CardRarity.UNCOMMON);
         setMagic(20);
         setCostUpgrade(0);
-        setExhaust();
     }
 
 
