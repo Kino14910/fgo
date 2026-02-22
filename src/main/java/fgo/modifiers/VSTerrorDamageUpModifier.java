@@ -1,4 +1,4 @@
-package fgo.powers;
+package fgo.modifiers;
 
 import static fgo.FGOMod.makeID;
 
@@ -7,6 +7,8 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+
+import fgo.powers.TerrorPower;
 
 public class VSTerrorDamageUpModifier extends AbstractDamageModifier{
     public static final String ID = makeID(VSTerrorDamageUpModifier.class.getSimpleName());

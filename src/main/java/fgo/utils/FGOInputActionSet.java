@@ -10,7 +10,7 @@ public class FGOInputActionSet {
     public static Prefs prefs = InputActionSet.prefs;
 
     public static void load() {
-        nobleDeckAction = new InputAction(prefs.getInteger(NOBLE_DECK_KEY, 49)); // 78对应N键
+        nobleDeckAction = new InputAction(prefs.getInteger(NOBLE_DECK_KEY, 49)); // 49对应N键
     }
 
     public static void save() {

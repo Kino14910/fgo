@@ -1,4 +1,4 @@
-package fgo.utils.dynamicvariables;
+package fgo.dynamicvariables;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
 
