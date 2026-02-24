@@ -1,6 +1,5 @@
 package fgo.powers.monster;
 
-import static fgo.FGOMod.makeID;
 import static fgo.utils.ModHelper.getPowerCount;
 
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
@@ -12,7 +11,7 @@ import fgo.powers.BasePower;
 import fgo.powers.CriticalDamageUpPower;
 
 public class StarGainMonsterPower extends BasePower {
-    public static final String POWER_ID = makeID(StarGainMonsterPower.class.getSimpleName());
+    public static final String POWER_ID = StarGainMonsterPower.class.getSimpleName();
 
     public StarGainMonsterPower(AbstractCreature owner, int amount) {
         super(POWER_ID, PowerType.BUFF, false, owner, amount, "StarPower");

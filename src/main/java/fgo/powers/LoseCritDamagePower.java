@@ -14,11 +14,6 @@ public class LoseCritDamagePower extends BasePower {
     }
 
     @Override
-    public void updateDescription() {
-        description = String.format(DESCRIPTIONS[0], amount);
-    }
-
-    @Override
     public void atEndOfTurn(boolean isPlayer) {
         flash();
         addToBot(new ApplyPowerAction(owner, owner, new CriticalDamageUpPower(owner, -amount)));

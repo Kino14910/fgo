@@ -14,9 +14,7 @@ public class NPRatePower extends BasePower {
 
     @Override
     public void updateDescription() {
-        description = amount > 1 ? 
-            String.format(DESCRIPTIONS[1], amount) : 
-            DESCRIPTIONS[0];
+        description = formatDescriptionByQuantity(amount);
     }
 
     @Override

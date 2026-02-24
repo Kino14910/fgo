@@ -29,11 +29,4 @@ public class MyFairSoldierPower extends BasePower {
         addToBot(new ApplyPowerAction(owner, owner, new StrengthPower(owner, -amount), -amount));
         addToBot(new ApplyPowerAction(owner, owner, new DexterityPower(owner, -amount), -amount));
     }
-
-    @Override
-    public void updateDescription() {
-        description = String.format(DESCRIPTIONS[0], amount);
-    }
-
-    
 }

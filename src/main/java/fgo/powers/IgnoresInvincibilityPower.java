@@ -16,12 +16,7 @@ public class IgnoresInvincibilityPower extends BasePower {
     public IgnoresInvincibilityPower(AbstractCreature owner, int amount) {
         super(POWER_ID, PowerType.BUFF, false, owner, amount);
     }
-
-    @Override
-    public void updateDescription() {
-        description = String.format(DESCRIPTIONS[0], amount);
-    }
-
+    
     @Override
     public float atDamageGive(float damage, DamageInfo.DamageType type) {
         return (type == DamageType.NORMAL && amount > 0) ? damage * (1 + amount) : damage;

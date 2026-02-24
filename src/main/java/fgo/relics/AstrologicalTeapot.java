@@ -4,6 +4,7 @@ import static fgo.FGOMod.makeID;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
@@ -14,20 +15,21 @@ public class AstrologicalTeapot extends BaseRelic {
     private static final String NAME = AstrologicalTeapot.class.getSimpleName();
 	public static final String ID = makeID(NAME);
     public AstrologicalTeapot() {
-        super(ID, NAME, FGOCardColor.FGO, RelicTier.RARE, LandingSound.FLAT);
+        super(ID, NAME, FGOCardColor.FGO, RelicTier.COMMON, LandingSound.FLAT);
     }
 
     @Override
     public void onUsePotion() {
         if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
             flash();
-            addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-            addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new GutsPower(AbstractDungeon.player, 10)));
+            AbstractPlayer p = AbstractDungeon.player;
+            addToBot(new RelicAboveCreatureAction(p, this));
+            addToBot(new ApplyPowerAction(p, p, new GutsPower(p, 2)));
         }
     }
 
     @Override
     public String getUpdatedDescription() {
-        return String.format(DESCRIPTIONS[0], 1);
+        return String.format(DESCRIPTIONS[0]);
     }
 }

@@ -18,7 +18,7 @@ public class SpringOfFire extends FGOCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new NonStackableGutsPower(p, magicNumber, 3)));
-        addToBot(new ApplyPowerAction(p, p, new SpringOfFirePower(p, magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new SpringOfFirePower(p, 20)));
     }
 }
 

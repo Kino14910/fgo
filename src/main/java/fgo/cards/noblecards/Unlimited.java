@@ -13,7 +13,6 @@ import fgo.FGOMod;
 import fgo.cards.AbsNoblePhantasmCard;
 import fgo.effects.ChangeSceneEffect;
 import fgo.powers.UnlimitedPower;
-import fgo.utils.Sounds;
 
 public class Unlimited extends AbsNoblePhantasmCard {
     public static final String ID = makeID(Unlimited.class.getSimpleName());
@@ -29,7 +28,7 @@ public class Unlimited extends AbsNoblePhantasmCard {
         addToBot(new VFXAction(new ChangeSceneEffect(ImageMaster.loadImage(FGOMod.vfxPath("UnlimitedBg")))));
         CardCrawlGame.music.silenceTempBgmInstantly();
         CardCrawlGame.music.silenceBGMInstantly();
-        AbstractDungeon.getCurrRoom().playBgmInstantly(Sounds.UBW_Music);
+        AbstractDungeon.getCurrRoom().playBgmInstantly("UBW_Extended.mp3");
         addToBot(new ApplyPowerAction(p, p, new UnlimitedPower(p, magicNumber)));
     }
 }

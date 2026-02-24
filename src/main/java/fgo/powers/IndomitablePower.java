@@ -22,11 +22,4 @@ public class IndomitablePower extends BasePower {
     public void onSpecificTrigger() {
         addToBot(new ApplyPowerAction(owner, owner, new StrengthPower(owner, amount)));
     }
-
-    @Override
-    public void updateDescription() {
-        description = String.format(DESCRIPTIONS[0], amount);
-    }
-
-    
 }

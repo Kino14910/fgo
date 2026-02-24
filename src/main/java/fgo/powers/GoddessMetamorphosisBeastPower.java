@@ -11,14 +11,9 @@ public class GoddessMetamorphosisBeastPower extends BasePower {
     public static final String POWER_ID = makeID(GoddessMetamorphosisBeastPower.class.getSimpleName());
 
     public GoddessMetamorphosisBeastPower(AbstractCreature owner, int amount) {
-        super(POWER_ID, PowerType.BUFF, false, owner, amount, "BeastPower");
+        super(POWER_ID, PowerType.BUFF, false, owner, amount, "AttackDownPower");
     }
-
-    @Override
-    public void updateDescription() {
-        description = String.format(DESCRIPTIONS[0], amount);
-    }
-
+    
     @Override
     public void onAttack(DamageInfo info, int damageAmount, AbstractCreature target) {
         if (target != owner && info.type == DamageInfo.DamageType.NORMAL) {

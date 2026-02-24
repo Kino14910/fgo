@@ -19,12 +19,12 @@ public class Salem extends BaseRelic {
     public static final String ID = makeID(NAME);
     
     public Salem() {
-        super(ID, NAME, FGOCardColor.FGO, RelicTier.COMMON, LandingSound.FLAT);
+        super(ID, NAME, FGOCardColor.FGO, RelicTier.UNCOMMON, LandingSound.FLAT);
     }
 
     @Override
     public String getUpdatedDescription() {
-        return DESCRIPTIONS[0] + 1 + DESCRIPTIONS[1];
+        return DESCRIPTIONS[0];
     }
 
     private int countFGO_ForeignerCards() {
@@ -38,9 +38,9 @@ public class Salem extends BaseRelic {
     }
 
     private void updateDescriptionAndTips() {
-        description = counter == 0 ? 
-            String.format(DESCRIPTIONS[0] + DESCRIPTIONS[1], 1) : 
-            String.format(DESCRIPTIONS[0] + DESCRIPTIONS[2], 2, counter);
+        description = DESCRIPTIONS[0] + (counter == 0 ? 
+            String.format(DESCRIPTIONS[1]) : 
+            String.format(DESCRIPTIONS[2], counter));
 
         tips.clear();
         tips.add(new PowerTip(name, description));

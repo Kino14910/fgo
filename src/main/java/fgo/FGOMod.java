@@ -525,17 +525,24 @@ public class FGOMod implements
             AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH / 2.0f, Settings.HEIGHT / 2.0f, RelicLibrary.getRelic(LockChocolateStrawberry.ID).makeCopy());
         }
         
-        if ((FGOConfig.enableFtue && (Settings.language == Settings.GameLanguage.ZHS || Settings.language == Settings.GameLanguage.ZHT) )
-                && AbstractDungeon.getCurrRoom().monsters != null){
-                boolean hasTexture  = false;
-                for (Texture tex : ftues) {
-                    if (tex == null) {
-                        continue;
-                    }
-                    hasTexture = true;
-                    System.out.println("ftue: " + tex.toString());
+        if (FGOConfig.enableFtue && AbstractDungeon.getCurrRoom().monsters != null){
+            ftues = new Texture[] {
+                    ImageMaster.loadImage(uiPath("tutorial/1")),
+                    ImageMaster.loadImage(uiPath("tutorial/2")),
+                    ImageMaster.loadImage(uiPath("tutorial/3")),
+                    ImageMaster.loadImage(uiPath("tutorial/4")),
+                };
+                tutTexts = CardCrawlGame.languagePack.getUIString(makeID("ftue")).TEXT;
+                tutTexts[0] = String.format(tutTexts[0], BASE_NP_PERCARD);    
+            boolean hasTexture  = false;
+            for (Texture tex : ftues) {
+                if (tex == null) {
+                    continue;
                 }
-                System.out.println("hasTexture: " + hasTexture);
+                hasTexture = true;
+                System.out.println("ftue: " + tex.toString());
+            }
+            System.out.println("hasTexture: " + hasTexture);
             AbstractDungeon.ftue = new CustomMultiPageFtue(ftues, tutTexts);
             FGOConfig.enableFtue = false;
             FGOMod.config.save();
@@ -587,13 +594,6 @@ public class FGOMod implements
                 BaseMod.addCustomScreen(new NobleDeckViewScreen());
                 shouldRenderNobleDeck = false;
             }
-            ftues = new Texture[] {
-                ImageMaster.loadImage(uiPath("tutorial/1")),
-                ImageMaster.loadImage(uiPath("tutorial/2")),
-                ImageMaster.loadImage(uiPath("tutorial/3")),
-                ImageMaster.loadImage(uiPath("tutorial/4")),
-            };
-            tutTexts = CardCrawlGame.languagePack.getUIString(makeID("ftue")).TEXT;
         }
     }
 

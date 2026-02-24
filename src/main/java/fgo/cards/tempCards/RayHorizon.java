@@ -24,6 +24,6 @@ public class RayHorizon extends FGOCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new FgoNpAction(np));
         addToBot(new ApplyPowerAction(p, p, new ForcedNPCardPower(p, cardsToPreview, false)));
-        addToBot(new ApplyPowerAction(p, p, new InvincibilityTurnPower(p, magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new InvincibilityTurnPower(p, 1)));
     }
 }

@@ -11,12 +11,7 @@ public class StarRatePower extends BasePower {
     public StarRatePower(AbstractCreature owner, int amount) {
         super(POWER_ID, PowerType.BUFF, false, owner, amount); 
     }
-
-    @Override
-    public void updateDescription() {
-        description = String.format(DESCRIPTIONS[0], amount);
-    }
-
+    
     @Override
     public void atEndOfTurn(boolean isPlayer) {
         addToBot(new RemoveSpecificPowerAction(owner, owner, ID));

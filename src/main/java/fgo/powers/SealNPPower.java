@@ -14,11 +14,6 @@ public class SealNPPower extends BasePower {
     }
 
     @Override
-    public void updateDescription() {
-        description = String.format(DESCRIPTIONS[0], amount);
-    }
-
-    @Override
     public void atStartOfTurn() {
         if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
             addToBot(new ReducePowerAction(owner, owner, ID, 1));

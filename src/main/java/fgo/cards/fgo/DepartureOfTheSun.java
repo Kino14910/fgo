@@ -1,7 +1,6 @@
 package fgo.cards.fgo;
 
 import static fgo.characters.CustomEnums.FGO_Foreigner;
-import static fgo.utils.ModHelper.getPowerCount;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -14,12 +13,15 @@ public class DepartureOfTheSun extends FGOCard {
     public static final String ID = makeID(DepartureOfTheSun.class.getSimpleName());
     public DepartureOfTheSun() {
         super(ID, 1, CardType.SKILL, CardTarget.SELF, CardRarity.RARE);
+        setMagic(20, 10);
         tags.add(FGO_Foreigner);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new CriticalDamageUpPower(p, getPowerCount(p, StarPower.POWER_ID) / 10 * 30)));
+        if(p.hasPower(StarPower.POWER_ID)){
+            addToBot(new ApplyPowerAction(p, p, new CriticalDamageUpPower(p, p.getPower(StarPower.POWER_ID).amount / 10 * magicNumber)));
+        }
     }
 }
 

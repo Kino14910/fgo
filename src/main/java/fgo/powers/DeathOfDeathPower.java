@@ -13,8 +13,8 @@ public class DeathOfDeathPower extends BasePower {
     public static final String POWER_ID = makeID(DeathOfDeathPower.class.getSimpleName());
     private static final PowerType TYPE = PowerType.BUFF;
 
-    public DeathOfDeathPower(AbstractCreature owner, int amount) {
-        super(POWER_ID, TYPE, false, owner, owner, amount, "GutsTriggerPower");
+    public DeathOfDeathPower(AbstractCreature owner) {
+        super(POWER_ID, TYPE, false, owner, owner, -1, "GutsTriggerPower");
     }
 
     /**

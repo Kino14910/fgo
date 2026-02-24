@@ -14,11 +14,6 @@ public class ReducePercentDamagePower extends BasePower {
     }
 
     @Override
-    public void updateDescription() {
-        description = String.format(DESCRIPTIONS[0], amount);
-    }
-
-    @Override
     public float atDamageFinalReceive(float damage, DamageInfo.DamageType type) {
         return damage * (100.0f - amount) / 100.0f;
     }

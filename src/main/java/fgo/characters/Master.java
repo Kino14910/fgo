@@ -30,6 +30,7 @@ import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 
 import basemod.abstracts.CustomPlayer;
+import fgo.FGOMod;
 import fgo.cards.fgo.CharismaOfHope;
 import fgo.cards.fgo.Defend;
 import fgo.cards.fgo.DreamUponTheStars;
@@ -242,7 +243,7 @@ public class Master extends CustomPlayer{
         FgoNPhb.update();
         if (FgoNPhb.hovered) {
             if (!AbstractDungeon.isScreenUp) {
-                TipHelper.renderGenericTip((float)(hb.cX + hb.width / 2.0f + TIP_OFFSET_R_X), (float)(y + hb.height / 2.0f), (String)NPTEXT[0], (String)NPTEXT[1]);
+                TipHelper.renderGenericTip(hb.cX + hb.width / 2.0f + TIP_OFFSET_R_X, y + hb.height / 2.0f, NPTEXT[0], String.format(NPTEXT[1], FGOMod.BASE_NP_PERCARD));
             }
             FgoNpHideTimer -= Gdx.graphics.getDeltaTime() * 4.0f;
             if (FgoNpHideTimer < 0.2f) {

@@ -57,7 +57,7 @@
   "${modID}:SpringOfFirePower": {
     "NAME": "Guts BUFF",
     "DESCRIPTIONS": [
-      "Whenever you Trigger #yGuts for #b%d turn, gain #b20%% #yNP #yDamage and remove all of your debuff."
+      "Whenever you Trigger #yGuts, gain #b%d%% #yNP #yDamage and remove all of your debuff."
     ]
   },
   "${modID}:MonteCristoTreasurePower": {
@@ -220,10 +220,8 @@
   "${modID}:FifthFormPower": {
     "NAME": "Fifth Form",
     "DESCRIPTIONS": [
-      "Your Attack to an enemy is played twice this turn, but its decrease #b50%% damage.",
-      "Your Attack to an enemy is played twice for #b%d turns, but its decrease #b50%% damage.",
-      "Your Attack to an enemy is played twice this turn, but its decrease #b35%% damage.",
-      " turns, but its decrease #b35%% damage."
+      "Your Attack to an enemy is played twice this turn, but its decrease #b%d%% damage.",
+      "Your Attack to an enemy is played twice for #b%d turns, but its decrease #b%d%% damage."
     ]
   },
   "${modID}:IgnoreDefensePower": {
@@ -369,7 +367,7 @@
   "${modID}:ForcedNPCardPower": {
     "NAME": "Noble Phantasm Card",
     "DESCRIPTIONS": [
-      "Whenever your NP gauge is at or above #b100%, add a %s into your hand."
+      "Whenever your NP gauge is at or above #b100%, add a #y%s into your hand."
     ]
   },
   "${modID}:QuickPerformancePower": {
@@ -443,7 +441,7 @@
   "${modID}:MorningLarkPower": {
     "NAME": "Morning Lark",
     "DESCRIPTIONS": [
-      "Draw #b%d less card(s) next turn."
+      "Lose #b20 np next turn."
     ]
   },
   "${modID}:MaxHPPower": {
@@ -501,7 +499,7 @@
       "For the next #b%d times you are about to be killed, survive and restore #b%d #yHP."
     ]
   },
-    "${modID}:NonStackableEnergyRegenPower": {
+  "${modID}:NonStackableEnergyRegenPower": {
     "NAME": "NP Gain Per Turn",
     "DESCRIPTIONS": [
       "Gain #b%d%% #yNoble Phantasm Gauge at the start of each turn.",
@@ -535,9 +533,8 @@
   "${modID}:PursuerOfLovePower": {
     "NAME": "Pursue",
     "DESCRIPTIONS": [
-      "Receive #b25% more damage from #yAttacks for #b",
-      " turn.",
-      " turns."
+      "Receive #b25% more damage from #yAttacks for this turn.",
+      "Receive #b25%% more damage from #yAttacks for #b%d turns."
     ]
   }
 }

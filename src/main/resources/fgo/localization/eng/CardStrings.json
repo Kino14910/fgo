@@ -48,22 +48,6 @@
     "NAME": "Release Noble Phantasm",
     "DESCRIPTION": "Gain !NP!% fgo:NP. NL Use 1 Command Spell."
   },
-  "${modID}:BrilliantEscort": {
-    "NAME": "Brilliant Escort",
-    "DESCRIPTION": "Gain !Star! fgo:Stars. NL Gain !NP!% fgo:NP."
-  },
-  "${modID}:PureCoordinate": {
-    "NAME": "Pure Coordinate",
-    "DESCRIPTION": "Gain !M! fgo:Invincibility this turn."
-  },
-  "${modID}:BlessedRegenerate": {
-    "NAME": "Blessed Regenerate",
-    "DESCRIPTION": "Gain [E]. NL Draw !M! cards."
-  },
-  "${modID}:SionSkill": {
-    "NAME": "Sion Skill",
-    "DESCRIPTION": "Discard 1 card. NL Choose !M! cards from your draw pile and add them to your hand. NL Added in Act 2."
-  },
   "${modID}:HolyShroud": {
     "NAME": "Holy Shroud",
     "DESCRIPTION": "If enemies cause over 20 damage in total, Reduce !M!% damage taken this turn."

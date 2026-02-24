@@ -24,6 +24,11 @@ public class ArchetypeORT extends BaseRelic implements SuperRareRelic, OnReceive
     }
 
     @Override
+    public String getUpdatedDescription() {
+        return DESCRIPTIONS[0];
+    }
+
+    @Override
     public boolean onReceivePower(AbstractPower power, AbstractCreature p) {
         if (power.ID.equals(BufferPower.POWER_ID)) {
             flash();

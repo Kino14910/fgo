@@ -15,12 +15,7 @@ public class NPDamagePower extends BasePower {
     public NPDamagePower(int amount) {
         super(POWER_ID, PowerType.BUFF, false, AbstractDungeon.player, Math.min(amount, 999));
     }
-
-    @Override
-    public void updateDescription() {
-        description = String.format(DESCRIPTIONS[0], amount);
-    }
-
+    
     @Override
     public void playApplyPowerSfx() {
         CardCrawlGame.sound.play("POWER_STRENGTH", 0.05F);

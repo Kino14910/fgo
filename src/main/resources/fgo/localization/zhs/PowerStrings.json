@@ -205,10 +205,8 @@
   "${modID}:FifthFormPower": {
     "NAME": "第五势",
     "DESCRIPTIONS": [
-      "在这个回合对一个敌人的攻击牌会打出两次，但伤害降低 #b50%% 。",
-      "在接下来 #b%d 个回合对一个敌人的攻击牌会打出两次，但伤害降低 #b50%% 。",
-      "在这个回合对一个敌人的攻击牌会打出两次，但伤害降低 #b35%% 。",
-      " 个回合对一个敌人的攻击牌会打出两次，但伤害降低 #b35%% 。"
+      "在这个回合对一个敌人的攻击牌会打出两次，但伤害降低 #b%d%% 。",
+      "在接下来 #b%d 个回合对一个敌人的攻击牌会打出两次，但伤害降低 #b%d%% 。"
     ]
   },
   "${modID}:IgnoreDefensePower": {
@@ -358,7 +356,7 @@
   "${modID}:ForcedNPCardPower": {
     "NAME": "宝具牌",
     "DESCRIPTIONS": [
-      "在宝具值达到 #b100%% 及以上时，将一张 %s 加入你的手牌，而不是选择一张。"
+      "在宝具值达到 #b100%% 及以上时，将一张 #y%s 加入你的手牌，而不是选择一张。"
     ]
   },
   "${modID}:QuickPerformancePower": {
@@ -432,7 +430,7 @@
   "${modID}:MorningLarkPower": {
     "NAME": "晨之云雀",
     "DESCRIPTIONS": [
-      "在你的回合结束时，失去 #b%d%% fgo:宝具值。"
+      "在你的回合结束时，失去 #b20% fgo:宝具值。"
     ]
   },
   "${modID}:MaxHPPower": {
@@ -512,7 +510,7 @@
   "${modID}:ForeignerPower": {
     "NAME": "星月夜",
     "DESCRIPTIONS": [
-      "#g〔领域外生命〕 卡攻击造成的的暴击威力提升 #b100% 。"
+      "#g〔领域外生命〕 卡攻击造成的的暴击威力提升 #b%d%% 。"
     ]
   },
   "${modID}:DeathChancePower": {
@@ -524,9 +522,8 @@
   "${modID}:PursuerOfLovePower": {
     "NAME": "追踪",
     "DESCRIPTIONS": [
-      "从 #y攻击 受到的伤害增加 #b%d%% 。持续时间 #b",
-      " 回合。",
-      " 回合。"
+      "在本回合从 #y攻击 受到的伤害增加 #b25% 。",
+      "从 #y攻击 受到的伤害增加 #b25%% 。持续时间 #b%d 回合。"
     ]
   }
 }

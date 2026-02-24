@@ -17,6 +17,4 @@ public class StarRegenPower extends BasePower {
         flash();
         addToBot(new ApplyPowerAction(owner, owner, new StarPower(owner, amount), amount));
     }
-
-    
 }

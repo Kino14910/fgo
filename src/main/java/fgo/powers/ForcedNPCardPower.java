@@ -5,7 +5,6 @@ import static fgo.FGOMod.makeID;
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.NonStackablePower;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.helpers.FontHelper;
 
 public class ForcedNPCardPower extends BasePower implements NonStackablePower{
     public static final String POWER_ID = makeID(ForcedNPCardPower.class.getSimpleName());
@@ -23,6 +22,6 @@ public class ForcedNPCardPower extends BasePower implements NonStackablePower{
 
     @Override
     public void updateDescription() {
-        description = String.format(DESCRIPTIONS[0], FontHelper.colorString(card.name, "y"));
+        description = String.format(DESCRIPTIONS[0], card.name);
     }
 }

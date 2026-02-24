@@ -17,12 +17,7 @@ public class InsanityPower extends BasePower {
     public InsanityPower(AbstractCreature owner, int amount) {
         super(POWER_ID, PowerType.BUFF, false, owner, amount, "FightToDeathPower");
     }
-
-    @Override
-    public void updateDescription() {
-        description = String.format(DESCRIPTIONS[0], amount);
-    }
-
+    
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
         if (card.type == AbstractCard.CardType.ATTACK && owner.hasPower(CursePower.POWER_ID)) {

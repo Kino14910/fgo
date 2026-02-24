@@ -35,6 +35,4 @@ public class SquireOfProphecyPower extends BasePower {
     public void updateDescription() {
         description = formatDescriptionByQuantity(amount);
     }
-
-    
 }

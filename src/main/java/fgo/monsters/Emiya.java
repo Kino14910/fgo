@@ -1,6 +1,5 @@
 package fgo.monsters;
 
-import static fgo.FGOMod.logger;
 import static fgo.FGOMod.makeID;
 import static fgo.FGOMod.vfxPath;
 import static fgo.utils.ModHelper.addToBotAbstract;
@@ -80,13 +79,13 @@ public class Emiya extends BaseMonster {
     public Emiya(float x, float y) {
         // Pass raw id to BaseMonster (it will call FGOMod.makeID internally)
         super(NAME, ID, BASE_HP, 0.0f, 0.0f, 320.0f, 320.0f, IMG, x, y);
-        setHp(AbstractDungeon.ascensionLevel < 9 ? BASE_HP : A9_HP);
+        setHp(ModHelper.moreHPAscension(type) ? BASE_HP : A9_HP);
         bgm = "BOSS_BEYOND";
-
-        final int caladbolgDmg = ModHelper.moreDamageAscension(type) ? 20 : 16;
-        final int kanshouDmg = ModHelper.moreDamageAscension(type) ? 12 : 10;
-        final int projectionDmg = ModHelper.moreDamageAscension(type) ? 2 : 1;
-
+        
+        final int caladbolgDmg = getDamage(16, 20);
+        final int kanshouDmg = getDamage(10, 12);
+        final int projectionDmg = getDamage(1, 2);
+        
         addMoveA(Intent.ATTACK, caladbolgDmg, mi -> {
             shout(CALADBOLG, Sounds.Sokoda);
             attack(mi, AbstractGameAction.AttackEffect.SMASH);
@@ -113,9 +112,6 @@ public class Emiya extends BaseMonster {
             
         });
         addMoveA(Intent.ATTACK_BUFF, projectionDmg, PROJECTION_ATK_AMT, mi -> {
-            for(DamageInfo d : damage){
-                logger.info(d.base);
-            }
             shout(PROJECTION, Sounds.TraceOn);
             addToBot(new WaitAction(0.25F));
             attack(mi, AbstractGameAction.AttackEffect.SLASH_VERTICAL);

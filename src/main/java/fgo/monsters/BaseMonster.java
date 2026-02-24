@@ -38,7 +38,6 @@ public abstract class BaseMonster extends CustomMonster {
     public String[] MOVES;
     public String[] DIALOG;
     public int turnCount;
-    public int[] damages;
     public String bgm;
     public AbstractPlayer p = AbstractDungeon.player;
     public List<MoveInfo> moveInfos = new ArrayList<>();
@@ -155,23 +154,6 @@ public abstract class BaseMonster extends CustomMonster {
         super.update();
         if (floatIndex != 0)
             animY = floatIndex * MathUtils.cosDeg((float) (System.currentTimeMillis() / 6L % 360L)) * 6.0f * Settings.scale;
-    }
-
-    public void setDamagesWithAscension(int... damages) {
-        damage.clear();
-        this.damages = damages;
-        for (int i = 0; i < damages.length; i++) {
-            damages[i] = Math.round(damages[i] * (ModHelper.moreDamageAscension(type) ? 1.1f : 1));
-            damage.add(new DamageInfo(this, damages[i]));
-        }
-    }
-
-    public void setDamages(int... damages) {
-        damage.clear();
-        this.damages = damages;
-        for (int j : damages) {
-            damage.add(new DamageInfo(this, j));
-        }
     }
 
     public void addDamageActions(AbstractCreature target, int index, int numTimes, AbstractGameAction.AttackEffect effect) {
@@ -293,6 +275,10 @@ public abstract class BaseMonster extends CustomMonster {
         if (chance < AbstractDungeon.miscRng.random(100)) {
             shout(index);
         }
+    }
+    
+    public int getDamage(int normal, int ascension) {
+        return ModHelper.moreDamageAscension(type) ? normal : ascension;
     }
     
     public static class MoveInfo {

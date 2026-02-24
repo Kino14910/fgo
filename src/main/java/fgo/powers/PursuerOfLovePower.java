@@ -9,12 +9,12 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 public class PursuerOfLovePower extends BasePower {
     public static final String POWER_ID = makeID(PursuerOfLovePower.class.getSimpleName());
     public PursuerOfLovePower(AbstractCreature owner, int amount) {
-        super(POWER_ID, PowerType.BUFF, false, owner, Math.min(amount, 100), "DefenseUpPower");
+        super(POWER_ID, PowerType.BUFF, false, owner, Math.min(amount, 100), "DefenseDownPower");
     }
 
     @Override
     public void updateDescription() {
-        description = DESCRIPTIONS[0] + amount + (amount == 1 ? DESCRIPTIONS[1] : DESCRIPTIONS[2]);
+        description = formatDescriptionByQuantity(amount);
     }
 
     @Override

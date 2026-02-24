@@ -14,7 +14,7 @@ public class SpringOfFirePower extends BasePower {
     public SpringOfFirePower(AbstractCreature owner, int amount) {
         super(POWER_ID, PowerType.BUFF, false, owner, amount, "GutsTriggerPower");
     }
-    
+
     /**
      * {@link RevivePatch}
      */
@@ -23,11 +23,4 @@ public class SpringOfFirePower extends BasePower {
         addToBot(new RemoveDebuffsAction(owner));
         addToBot(new ApplyPowerAction(owner, owner, new NPDamagePower(amount)));
     }
-
-    @Override
-    public void updateDescription() {
-        description = String.format(DESCRIPTIONS[0], amount);
-    }
-
-    
 }

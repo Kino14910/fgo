@@ -385,7 +385,7 @@
   },
   "${modID}:DepartureOfTheSun": {
     "NAME": "与太阳的诀别",
-    "DESCRIPTION": "每有10个 fgo:暴击星 ，获得30% fgo:暴击威力 。",
+    "DESCRIPTION": "每有10个 fgo:暴击星 ，获得 !M! % fgo:暴击威力 。",
     "FLAVOR": "领域外生命。"
   },
   "${modID}:CalamityOfTheNorth": {
@@ -529,7 +529,7 @@
   },
   "${modID}:ExcaliburGalatine": {
     "NAME": "轮转胜利之剑",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 获得 fgo:阳光照射 3回合。 NL 获得 !M! 点 活力 。 NL 有阳光照射时，获得50% fgo:暴击威力 。"
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 获得 fgo:阳光照射 3回合。 NL 获得 !M! 点 活力 。 NL 有阳光照射时，获得50% fgo:暴击威力 。"
   },
   "${modID}:Overload": {
     "NAME": "缚锁全断·过重湖光",

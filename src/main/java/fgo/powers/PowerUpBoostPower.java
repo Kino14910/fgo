@@ -34,11 +34,4 @@ public class PowerUpBoostPower extends BasePower {
     public float atDamageGive(float damage, DamageInfo.DamageType type) {
         return damage * (1.0f + amount);
     }
-
-    @Override
-    public void updateDescription() {
-        description = String.format(DESCRIPTIONS[0], amount);
-    }
-
-    
 }

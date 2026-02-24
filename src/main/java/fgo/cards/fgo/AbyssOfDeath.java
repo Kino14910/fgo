@@ -18,7 +18,7 @@ public class AbyssOfDeath extends FGOCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new GutsPower(p, magicNumber)));
-        addToBot(new ApplyPowerAction(p, p, new DeathOfDeathPower(p, 3)));
+        addToBot(new ApplyPowerAction(p, p, new DeathOfDeathPower(p)));
     }
 }
 

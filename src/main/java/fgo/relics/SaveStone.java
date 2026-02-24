@@ -38,4 +38,9 @@ public class SaveStone extends BaseRelic implements SuperRareRelic{
         addToBot(new FgoNpAction(300));
         this.setCounter(-2);
     }
+
+    @Override
+    public String getUpdatedDescription() {
+        return DESCRIPTIONS[0];
+    }
 }

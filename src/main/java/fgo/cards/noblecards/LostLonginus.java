@@ -32,7 +32,7 @@ public class LostLonginus extends AbsNoblePhantasmCard {
         for (AbstractMonster m2 : AbstractDungeon.getMonsters().monsters) {
             if (!m2.isDeadOrEscaped()) {
                 if (m2.hasPower(InvinciblePower.POWER_ID)) {
-                    addToBot(new ApplyPowerAction(m, p, new InvinciblePower(m, magicNumber)));
+                    addToBot(new ApplyPowerAction(m2, p, new InvinciblePower(m2, magicNumber)));
                 }
             }
         }

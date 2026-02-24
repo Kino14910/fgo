@@ -20,11 +20,7 @@ public class FifthForm extends FGOCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (upgraded) {
-            addToBot(new ApplyPowerAction(p, p, new FifthFormPower(p, 1, true), 1));
-        } else {
-            addToBot(new ApplyPowerAction(p, p, new FifthFormPower(p, 1, false), 1));
-        }
+        addToBot(new ApplyPowerAction(p, p, new FifthFormPower(p, 1, upgraded)));
     }
 }
 

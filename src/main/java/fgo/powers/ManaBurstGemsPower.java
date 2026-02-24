@@ -15,15 +15,9 @@ public class ManaBurstGemsPower extends BasePower {
     }
 
     @Override
-    public void updateDescription() {
-        description = String.format(DESCRIPTIONS[0], amount);
-    }
-
-    @Override
     public void atEndOfTurn(boolean isPlayer) {
         flash();
         addToBot(new ApplyPowerAction(owner, owner, new StrengthPower(owner, amount)));
         addToBot(new RemoveSpecificPowerAction(owner, owner, ID));
     }
-
 }

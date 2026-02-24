@@ -23,7 +23,6 @@ public class Desterrennacht extends AbsNoblePhantasmCard {
         tags.add(FGO_Foreigner);
     }
 
-
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new AllEnemyApplyPowerAction(p, magicNumber,

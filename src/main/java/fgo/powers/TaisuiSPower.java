@@ -20,6 +20,4 @@ public class TaisuiSPower extends BasePower {
             addToBot(new GainEnergyAction(amount));
         }
     }
-
-    
 }

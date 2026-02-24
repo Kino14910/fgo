@@ -15,13 +15,11 @@ public class MorningLarkPower extends BasePower {
 
     @Override
     public void updateDescription() {
-        description = String.format(DESCRIPTIONS[0], 20);
+        description = DESCRIPTIONS[0];
     }
-    
+
     @Override
     public void atEndOfTurn(boolean isPlayer) {
         addToBot(new FgoNpAction(-20));
     }
-
-    
 }

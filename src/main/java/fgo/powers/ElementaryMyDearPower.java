@@ -18,11 +18,6 @@ public class ElementaryMyDearPower extends BasePower {
     }
 
     @Override
-    public void updateDescription() {
-        description = DESCRIPTIONS[0];
-    }
-
-    @Override
     public void atStartOfTurn() {
         flash();
         for (AbstractMonster mo : AbstractDungeon.getMonsters().monsters) {
