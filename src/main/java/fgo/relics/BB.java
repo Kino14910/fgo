@@ -32,21 +32,21 @@ public class BB extends BaseRelic {
         int roll = MathUtils.random(1);
 
         if (roll == 0) {
-            addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, 2), 2));
-            addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, 2), 2));
+            addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, 2)));
+            addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, 2)));
             return;
         }
 
         int roll_debuff = MathUtils.random(2);
         switch (roll_debuff) {
             case 0:
-                addToBot(new ApplyPowerAction(p, p, new VulnerablePower(p, 1, true), 1));
+                addToBot(new ApplyPowerAction(p, p, new VulnerablePower(p, 1, true)));
                 break;
             case 1:
-                addToBot(new ApplyPowerAction(p, p, new WeakPower(p, 1, true), 1));
+                addToBot(new ApplyPowerAction(p, p, new WeakPower(p, 1, true)));
                 break;
             default:
-                addToBot(new ApplyPowerAction(p, p, new FrailPower(p, 1, true), 1));
+                addToBot(new ApplyPowerAction(p, p, new FrailPower(p, 1, true)));
                 break;
         }
     }

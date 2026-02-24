@@ -24,6 +24,6 @@ public class LordCamelot extends AbsNoblePhantasmCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new MetallicizePower(p, customVar("metal"))));
         addToBot(new ApplyPowerAction(p, p, new ReducePercentDamagePower(p, magicNumber)));
-        addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, 3), 3));
+        addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, 3)));
     }
 }

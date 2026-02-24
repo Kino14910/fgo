@@ -20,7 +20,7 @@ public class MorningLark extends FGOCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new FgoNpAction(np));
         addToBot(new ApplyPowerAction(p, p, new StarPower(p, star)));
-        addToBot(new ApplyPowerAction(p, p, new MorningLarkPower(p, 1), 1));
+        addToBot(new ApplyPowerAction(p, p, new MorningLarkPower(p, 1)));
     }
 }
 

@@ -34,8 +34,8 @@ public class WildRule extends FGOCard {
         addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
         addToBot(new HealAction(p, p, 3));
         if (getPowerCount(m, StrengthPower.POWER_ID) > 0) {
-            addToBot(new ApplyPowerAction(m, p, new StrengthPower(m, -1), -1));
-            addToBot(new ApplyPowerAction(m, p, new VulnerablePower(m, magicNumber, false), magicNumber));
+            addToBot(new ApplyPowerAction(m, p, new StrengthPower(m, -1)));
+            addToBot(new ApplyPowerAction(m, p, new VulnerablePower(m, magicNumber, false)));
         }
     }
 

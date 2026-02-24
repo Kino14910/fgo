@@ -28,7 +28,7 @@ public class HolyShroud extends FGOCard {
         }
         
         if (sum >= 20) {
-            addToBot(new ApplyPowerAction(p, p, new ReducePercentDamagePower(p, magicNumber), magicNumber));
+            addToBot(new ApplyPowerAction(p, p, new ReducePercentDamagePower(p, magicNumber)));
         }
 
     }
