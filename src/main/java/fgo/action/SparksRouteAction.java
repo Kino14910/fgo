@@ -17,7 +17,6 @@ public class SparksRouteAction extends AbstractGameAction {
     public static final String[] MSG;
     public static final String[] LABEL;
     private static final TutorialStrings tutorialStrings;
-    private boolean upgraded = false;
 
     static {
         tutorialStrings = CardCrawlGame.languagePack.getTutorialString("Shuffle Tip");
@@ -34,7 +33,6 @@ public class SparksRouteAction extends AbstractGameAction {
             AbstractDungeon.ftue = new FtueTip(LABEL[0], MSG[0], Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F, FtueTip.TipType.SHUFFLE);
             TipTracker.neverShowAgain("SHUFFLE_TIP");
         }
-        upgraded = sparksRoutePlus;
     }
 
     @Override

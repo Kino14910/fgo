@@ -1,7 +1,5 @@
 package fgo.hexui_lib;
 
-import java.util.ArrayList;
-
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
@@ -19,7 +17,6 @@ import fgo.hexui_lib.util.RenderImageLayer;
 import fgo.hexui_lib.util.RenderLayer;
 
 public class CardRenderer {
-    private static final ArrayList<FrameBuffer> fboStack = new ArrayList<>();
     private static final FrameBuffer fbo = new FrameBuffer(Pixmap.Format.RGBA8888, Settings.WIDTH, Settings.HEIGHT, false, false);
 
     public static void renderImageHelper(AbstractCard card, SpriteBatch sb, Color color, Texture img, float drawX, float drawY) {
