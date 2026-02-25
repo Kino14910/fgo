@@ -5,7 +5,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import fgo.cards.AbsNoblePhantasmCard;
-import fgo.powers.ElementaryMyDearPower;
+import fgo.powers.ElementaryPower;
 
 public class ElementaryMyDear extends AbsNoblePhantasmCard {
     public static final String ID = makeID(ElementaryMyDear.class.getSimpleName());
@@ -18,6 +18,6 @@ public class ElementaryMyDear extends AbsNoblePhantasmCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new ElementaryMyDearPower(p, magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new ElementaryPower(p, magicNumber)));
     }
 }

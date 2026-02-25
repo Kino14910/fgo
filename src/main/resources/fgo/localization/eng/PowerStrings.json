@@ -218,8 +218,8 @@
       "Your Attack to an enemy is played twice for #b%d turns, but its decrease #b%d%% damage."
     ]
   },
-  "${modID}:IgnoreDefensePower": {
-    "NAME": "Ignore Defense",
+  "${modID}:ElementaryPower": {
+    "NAME": "Elementary My Dear",
     "DESCRIPTIONS": [
       "At the start of your turn, remove all #yBlock and lose HP equal to #yBlock to ALL enemies, apply #b%d #yVulnerable to ALL enemies if them have #yBlock."
     ]

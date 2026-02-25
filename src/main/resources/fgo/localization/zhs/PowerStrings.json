@@ -129,7 +129,7 @@
     ]
   },
   "${modID}:NoPrayerForRainPower": {
-    "NAME": "禁用祈雨",
+    "NAME": "失去祈雨",
     "DESCRIPTIONS": [
       "你在本回合不能在打出牌耗尽 [E] 时获得 [E] [E] 。"
     ]
@@ -209,8 +209,8 @@
       "在接下来 #b%d 个回合对一个敌人的攻击牌会打出两次，但伤害降低 #b%d%% 。"
     ]
   },
-  "${modID}:IgnoreDefensePower": {
-    "NAME": "无视格挡",
+  "${modID}:ElementaryPower": {
+    "NAME": "这是常识",
     "DESCRIPTIONS": [
       "在你的回合开始时，有 #y格挡 的敌人失去等于其 #y格挡 的生命并且给予其 #b%d 层 #y易伤 。"
     ]
@@ -366,13 +366,13 @@
     ]
   },
   "${modID}:ArtsPerformancePower": {
-    "NAME": "宝具值获取提升",
+    "NAME": "NP获取提升",
     "DESCRIPTIONS": [
       "每当你打出一张牌，额外获得 #b%d%% #y宝具值 。"
     ]
   },
   "${modID}:BusterPerformancePower": {
-    "NAME": "攻击牌性能提升",
+    "NAME": "红卡性能UP",
     "DESCRIPTIONS": [
       "#y攻击牌 额外造成 #b%d 点伤害，从 #y攻击牌 中额外获得 #b%d 点 #y格挡 。每回合开始时减少 #b1 层。"
     ]
@@ -385,7 +385,7 @@
     ]
   },
   "${modID}:StarRatePower": {
-    "NAME": "暴击星获得量提升",
+    "NAME": "出星率提升",
     "DESCRIPTIONS": [
       "在这个回合每当你造成一次伤害，额外获得一次 #b%d颗 #y暴击星 。"
     ]
@@ -395,6 +395,12 @@
     "DESCRIPTIONS": [
       "在你有至少 #b10 颗时，非 #y宝具 攻击牌伤害提高 #b100% ，并且打出时减少 #b10 颗。",
       "在你有至少 #b10 颗时，非 #y宝具 攻击牌伤害提高 #b100% ，并且打出时减少 #b10 颗。现在可以造成 #y暴击 ！"
+    ]
+  },
+  "${modID}:StarGainMonsterPower": {
+    "NAME": "暴击！",
+    "DESCRIPTIONS": [
+      "这名敌人每次攻击将使用 #b10 颗暴击星，使其下一次攻击伤害提高 #b100%% 。"
     ]
   },
   "${modID}:CriticalDamageUpPower": {
@@ -457,12 +463,6 @@
       "你无法获得 #y宝具牌 。持续 #b%d 回合。"
     ]
   },
-  "${modID}:StarGainMonsterPower": {
-    "NAME": "暴击！",
-    "DESCRIPTIONS": [
-      "这名敌人每次攻击将使用 #b10 颗暴击星，使其下一次攻击伤害提高 #b100%% 。"
-    ]
-  },
   "${modID}:IgnoresInvincibilityPower": {
     "NAME": "无敌贯通",
     "DESCRIPTIONS": [
@@ -496,7 +496,7 @@
     ]
   },
   "${modID}:LoseArtsPerformancePower": {
-    "NAME": "失去宝具值获取提升",
+    "NAME": "失去NP获取提升",
     "DESCRIPTIONS": [
       "在你的回合结束时，失去 #b%d 点 #y力量 。"
     ]

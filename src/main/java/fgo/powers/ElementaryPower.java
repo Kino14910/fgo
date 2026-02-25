@@ -12,12 +12,12 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 
-public class ElementaryMyDearPower extends BasePower {
-    public static final String POWER_ID = makeID(ElementaryMyDearPower.class.getSimpleName());
+public class ElementaryPower extends BasePower {
+    public static final String POWER_ID = makeID(ElementaryPower.class.getSimpleName());
     public static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
 
-    public ElementaryMyDearPower(AbstractCreature owner, int amount) {
-        super(POWER_ID, PowerType.BUFF, false, owner, amount, "IgnoreDefensePower");
+    public ElementaryPower(AbstractCreature owner, int amount) {
+        super(POWER_ID, PowerType.BUFF, false, owner, amount);
     }
 
     @Override

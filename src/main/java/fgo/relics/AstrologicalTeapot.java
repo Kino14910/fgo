@@ -30,6 +30,6 @@ public class AstrologicalTeapot extends BaseRelic {
 
     @Override
     public String getUpdatedDescription() {
-        return String.format(DESCRIPTIONS[0]);
+        return DESCRIPTIONS[0];
     }
 }
