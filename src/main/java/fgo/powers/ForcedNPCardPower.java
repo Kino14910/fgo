@@ -5,9 +5,12 @@ import static fgo.FGOMod.makeID;
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.NonStackablePower;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.localization.PowerStrings;
 
 public class ForcedNPCardPower extends BasePower implements NonStackablePower{
     public static final String POWER_ID = makeID(ForcedNPCardPower.class.getSimpleName());
+    public static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public AbstractCard card;
  
     public ForcedNPCardPower(AbstractCreature owner, AbstractCard copyMe, boolean isUpgraded) {

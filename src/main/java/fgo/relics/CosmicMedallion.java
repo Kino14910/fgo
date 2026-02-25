@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import fgo.characters.CustomEnums.FGOCardColor;
 
 public class CosmicMedallion extends BaseRelic {
-    private static final String NAME = "CosmicMedallion";
+    private static final String NAME = CosmicMedallion.class.getSimpleName();
 	public static final String ID = makeID(NAME);
     
     boolean isActive = false;

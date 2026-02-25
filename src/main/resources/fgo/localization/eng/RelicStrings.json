@@ -53,7 +53,7 @@
     "NAME": "Astrological Teapot",
     "FLAVOR": "Drink it and deepen the bonds.",
     "DESCRIPTIONS": [
-      "Whenever you use a potion, gain #b%d #yfgo:Guts."
+      "Whenever you use a potion, gain #b2 #yfgo:Guts."
     ]
   },
   "${modID}:SaveStone": {

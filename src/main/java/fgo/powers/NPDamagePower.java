@@ -6,11 +6,13 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.PowerStrings;
 
 import fgo.characters.CustomEnums.FGOCardColor;
 
 public class NPDamagePower extends BasePower {
     public static final String POWER_ID = makeID(NPDamagePower.class.getSimpleName());
+    public static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
 
     public NPDamagePower(int amount) {
         super(POWER_ID, PowerType.BUFF, false, AbstractDungeon.player, Math.min(amount, 999));

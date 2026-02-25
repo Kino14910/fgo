@@ -11,7 +11,7 @@ import fgo.action.FgoNpAction;
 import fgo.characters.CustomEnums.FGOCardColor;
 
 public class SaveStone extends BaseRelic implements SuperRareRelic{
-    private static final String NAME = "SaveStone";
+    private static final String NAME = SaveStone.class.getSimpleName();
 	public static final String ID = makeID(NAME);
     public SaveStone() {
         super(ID, NAME, FGOCardColor.FGO, RelicTier.RARE, LandingSound.HEAVY);

@@ -3,10 +3,13 @@ package fgo.powers;
 import static fgo.FGOMod.makeID;
 
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.PowerStrings;
 
 public class NPOverChargePower extends BasePower {
     public static final String POWER_ID = makeID(NPOverChargePower.class.getSimpleName());
+    public static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     private static final int MAX_AMOUNT = 4;
 
     public NPOverChargePower(int amount) {

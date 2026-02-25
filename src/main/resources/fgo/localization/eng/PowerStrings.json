@@ -211,12 +211,6 @@
       "Additional #b%d damage taken. At the end of its turn, reduce #b1."
     ]
   },
-  "${modID}:BuffBlockPower": {
-    "NAME": "Buff Block",
-    "DESCRIPTIONS": [
-      "Creature cannot gain buffs #b%d time."
-    ]
-  },
   "${modID}:FifthFormPower": {
     "NAME": "Fifth Form",
     "DESCRIPTIONS": [

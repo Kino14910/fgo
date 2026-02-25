@@ -5,11 +5,14 @@ import static fgo.FGOMod.makeID;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.unique.RemoveDebuffsAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.localization.PowerStrings;
 
 import fgo.patches.RevivePatch;
 
 public class SpringOfFirePower extends BasePower {
     public static final String POWER_ID = makeID(SpringOfFirePower.class.getSimpleName());
+    public static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
 
     public SpringOfFirePower(AbstractCreature owner, int amount) {
         super(POWER_ID, PowerType.BUFF, false, owner, amount, "GutsTriggerPower");

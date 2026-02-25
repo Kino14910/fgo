@@ -11,11 +11,14 @@ import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.localization.PowerStrings;
 
 import fgo.modifiers.VSTerrorDamageUpModifier;
 
 public class VSTerrorDamageUpPower extends BasePower implements DamageModApplyingPower{
     public static final String POWER_ID = makeID(VSTerrorDamageUpPower.class.getSimpleName());
+    public static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     
     public VSTerrorDamageUpPower(AbstractCreature owner, int amount) {
         super(POWER_ID, PowerType.BUFF, true, owner, amount, "AttackUpPower");

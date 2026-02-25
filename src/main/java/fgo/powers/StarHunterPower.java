@@ -8,11 +8,14 @@ import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo.DamageType;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.localization.PowerStrings;
 
 import fgo.characters.CustomEnums.FGOCardColor;
 
 public class StarHunterPower extends BasePower {
     public static final String POWER_ID = makeID(StarHunterPower.class.getSimpleName());
+    public static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
 
     public StarHunterPower(AbstractCreature owner, int times, int amount2) {
         super(POWER_ID, PowerType.BUFF, false, owner, times, "CriticalDamageUpPower");
