@@ -12,8 +12,7 @@
   "${modID}:NoblePhantasm": {
     "TEXT": [
       "When #yNoble Phantasm Gauge reaches #b100%, click to select a Noble Phantasm card to add to your hand, and #rreset your #yNoble Phantasm Gauge. NL NL ",
-      "When #yNoble Phantasm Gauge reaches #b200%, #yupgrade the selectable #yNoble Phantasm card. NL NL ",
-      "When #yNoble Phantasm Gauge reaches #b300%, you receive #ytwo Noble Phantasm cards."
+      "When #yNoble Phantasm Gauge exceeds #b100%, #yupgrade the selectable #yNoble Phantasm card for each #b100% exceeded."
     ],
     "LABEL": [
       "Noble Phantasm Release"

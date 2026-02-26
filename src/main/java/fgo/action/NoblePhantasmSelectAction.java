@@ -52,24 +52,18 @@ public class NoblePhantasmSelectAction extends AbstractGameAction {
                 return;
             }
 
-            for (AbstractCard card : NobleDeckCards.nobleCards.group) {
+            OCAmt = getPowerCount(p, NPOverChargePower.POWER_ID);
+            NobleDeckCards.nobleCards.group.forEach(card -> {
                 AbsNoblePhantasmCard cardCopy = (AbsNoblePhantasmCard)card.makeCopy();
+                if (OCAmt > 0) {
+                    for (int i = 0; i < OCAmt; i++) {
+                        cardCopy.upgrade();
+                    }
+                }
                 nobleCardGroup.addToBottom(cardCopy);
                 UnlockTracker.markCardAsSeen(cardCopy.cardID);
-            }
-            
-            int OCAmt = getPowerCount(p, NPOverChargePower.POWER_ID);
+            });
 
-            if (OCAmt > 0) {
-                nobleCardGroup.group.forEach(card -> {
-                    if (card instanceof AbsNoblePhantasmCard) {
-                        for (int i = 0; i < OCAmt; i++) {
-                            ((AbsNoblePhantasmCard) card).upgrade();
-                        }
-                    }
-                });
-            }
-            
             AbstractDungeon.gridSelectScreen.open(nobleCardGroup, 1, NPTEXT[2], false, false, true, false);
             tickDuration();
             return;
@@ -79,13 +73,7 @@ public class NoblePhantasmSelectAction extends AbstractGameAction {
 
         if (!selectedCards.isEmpty()) {
             AbsNoblePhantasmCard selectedCard = (AbsNoblePhantasmCard)selectedCards.get(0);
-            AbsNoblePhantasmCard selectedCardCopy = (AbsNoblePhantasmCard)selectedCard.makeCopy();
-            if (OCAmt > 0) {
-                for (int i = 0; i < OCAmt; i++) {
-                    selectedCardCopy.upgrade();
-                }
-            }
-            addToBot(new MakeTempCardInHandAction(selectedCardCopy));
+            addToBot(new MakeTempCardInHandAction(selectedCard));
             selectedCards.clear();
         }
         tickDuration();

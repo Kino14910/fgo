@@ -89,7 +89,7 @@ public class NoblePhantasmButton extends AbstractPanel {
                 AbstractDungeon.player.hb.x - 128.0f * Settings.scale,
                 AbstractDungeon.player.hb.y + AbstractDungeon.player.hb.height - 32.0f * Settings.scale,
                 tutorialStrings.LABEL[0],
-                tutorialStrings.TEXT[0] + tutorialStrings.TEXT[1] + tutorialStrings.TEXT[2]
+                tutorialStrings.TEXT[0] + tutorialStrings.TEXT[1]
             );
         } 
     }
