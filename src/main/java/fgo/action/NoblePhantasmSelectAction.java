@@ -22,7 +22,6 @@ import fgo.utils.NobleCardGroup;
 
 public class NoblePhantasmSelectAction extends AbstractGameAction {
     private static final String[] NPTEXT = CardCrawlGame.languagePack.getUIString("fgo:NPText").TEXT;
-    private int OCAmt;
     public NoblePhantasmSelectAction() {
         actionType = ActionType.CARD_MANIPULATION;
         duration = Settings.ACTION_DUR_MED;
@@ -32,6 +31,7 @@ public class NoblePhantasmSelectAction extends AbstractGameAction {
     public void update() {
         AbstractPlayer p = AbstractDungeon.player;
         if (duration == Settings.ACTION_DUR_MED) {
+            int OCAmt = getPowerCount(p, NPOverChargePower.POWER_ID);
             if (p.hasPower(ForcedNPCardPower.POWER_ID)) {
                 ForcedNPCardPower npCardPower = (ForcedNPCardPower)p.getPower(ForcedNPCardPower.POWER_ID);
                 AbsNoblePhantasmCard card = (AbsNoblePhantasmCard)npCardPower.card;
@@ -52,7 +52,6 @@ public class NoblePhantasmSelectAction extends AbstractGameAction {
                 return;
             }
 
-            OCAmt = getPowerCount(p, NPOverChargePower.POWER_ID);
             NobleDeckCards.nobleCards.group.forEach(card -> {
                 AbsNoblePhantasmCard cardCopy = (AbsNoblePhantasmCard)card.makeCopy();
                 if (OCAmt > 0) {
