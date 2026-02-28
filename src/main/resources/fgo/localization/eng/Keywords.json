@@ -2,12 +2,10 @@
   {
     "PROPER_NAME": "NP",
     "NAMES": [
-      "NP Gauge", 
-      "NP_Gauge", 
       "NP",
       "np"
     ],
-    "DESCRIPTION": "Noble Phantasm cards require at least #b100% NP Gauge to be obtained."
+    "DESCRIPTION": "Noble Phantasm cards require at least #b100% NP to be obtained."
   },
   {
     "PROPER_NAME": "Noble Phantasm",
@@ -149,7 +147,7 @@
       "np rate",
       "np_rate"
     ],
-    "DESCRIPTION": "NP Gauge gained from playing cards or taking damage is increased by #b100%."
+    "DESCRIPTION": "NP gained from playing cards or taking damage is increased by #b100%."
   },
   {
     "PROPER_NAME": "Star",
@@ -161,11 +159,9 @@
     "DESCRIPTION": "When you have at least #b10 Crit Stars, non-#yNoble Phantasm attack cards deal #b100% more damage and consume #b10 Crit Stars when played."
   },
   {
-    "PROPER_NAME": "Critical",
+    "PROPER_NAME": "Critical Damage",
     "NAMES": [
-      "critical",
       "Critical_Damage",
-      "Critical Damage",
       "CriticalDamage"
     ],
     "DESCRIPTION": "Further increases #yCritical Hit damage."
@@ -209,7 +205,7 @@
     "DESCRIPTION": "Inflicts Stun on enemies who are not already stunned."
   },
   {
-      "PROPER_NAME": "Anti-Terror Advantage",
+    "PROPER_NAME": "Anti-Terror Advantage",
     "NAMES": [
       "anti-terror advantage",
       "anti-terror_advantage"
@@ -289,7 +285,7 @@
   },
   {
     "PROPER_NAME": "OverCharge",
-    "NAMES":[
+    "NAMES": [
       "OC"
     ],
     "DESCRIPTIONS": "Each stack enhances the Noble Phantasm once. All stacks are lost at the end of the turn."
@@ -309,6 +305,12 @@
     ],
     "DESCRIPTIONS": [
       "Pursued creatures take #b25% more damage from Attacks."
+    ]
+  },
+  {
+    "PROPER_NAME": "Shielder Paladin",
+    "DESCRIPTIONS": [
+      "The next #yNoble Phantasm is fixed as #yRayProofKyrielight. NL Change #yObscurantWallofChalk to #yTimewornBulletKindling."
     ]
   }
 ]

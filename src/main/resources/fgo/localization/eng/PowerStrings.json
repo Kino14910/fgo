@@ -51,13 +51,13 @@
   "${modID}:ComeOnPower": {
     "NAME": "Guts: Come On",
     "DESCRIPTIONS": [
-      "The next time you Trigger #yGuts, gain #b%d #yRegen."
+      "The next time #yGuts triggered, gain #b%d #yRegen."
     ]
   },
   "${modID}:SpringOfFirePower": {
     "NAME": "Guts BUFF",
     "DESCRIPTIONS": [
-      "Whenever you Trigger #yGuts, gain #b%d%% #yNP #yDamage and remove all of your debuff."
+      "When #yGuts triggered, gain #b%d%% #yNP #yDamage and remove all of your debuff."
     ]
   },
   "${modID}:MonteCristoTreasurePower": {
@@ -92,6 +92,12 @@
       "Prevent the next #b%d times you would lose HP. When you Prevent, heal #b5 #yHP."
     ]
   },
+  "${modID}:NPOverChargePower": {
+    "NAME": "Over Charge",
+    "DESCRIPTIONS": [
+      "Charges #yNoble #yPhantasm once per #yOverCharge, up to #b%d levels. Lose all charges at the end of the turn."
+    ]
+  },
   "${modID}:ChasmatisPower": {
     "NAME": "Chasmatis",
     "DESCRIPTIONS": [
@@ -108,7 +114,7 @@
   "${modID}:DeathOfDeathPower": {
     "NAME": "Abyss of Death",
     "DESCRIPTIONS": [
-      "When you would next die, heal #b%1$s HP instead and deal #yDouble #yDamage next turn."
+      "When #yGuts triggered, deal #yDouble #yDamage next turn."
     ]
   },
   "${modID}:StarRegenPower": {
@@ -120,13 +126,13 @@
   "${modID}:AtTheWellPower": {
     "NAME": "Sacrifice For Yggdrasil",
     "DESCRIPTIONS": [
-      "Next turn, gain #b%1$s #yGuts, the next time you trigger #yGuts draw #b3 cards and gain [E] [E] [E] . #rDie next turn."
+      "Next turn, gain #b%1$s #yGuts, the next time #yGuts triggered draw #b3 cards and gain [E] [E] [E] . #rDie next turn."
     ]
   },
   "${modID}:GutsAtTheWellPower": {
     "NAME": "Sacrifice For Yggdrasil",
     "DESCRIPTIONS": [
-      "The next time you trigger #yGuts, draw #b%d cards and gain [E] #b%d times."
+      "The next time #yGuts triggered, draw #b%d cards and gain [E] #b%d times."
     ]
   },
   "${modID}:SquireOfProphecyPower": {
@@ -145,8 +151,8 @@
   "${modID}:BeyondTheFurthestEndPower": {
     "NAME": "Beyond Furthest End",
     "DESCRIPTIONS": [
-      "At the end of this turn, ALL enemies lose #b1 strength. Apply #b1 #yWeak to ALL enemies.",
-      "At the end of your turn, ALL enemies lose #b1 strength. apply #b1 #yWeak to ALL enemies."
+      "At the end of this turn, ALL enemies lose #b1 #yStrength. Apply #b1 #yWeak to ALL enemies.",
+      "At the end of your turn, ALL enemies lose #b1 #yStrength. apply #b1 #yWeak to ALL enemies."
     ]
   },
   "${modID}:EndOfADreamPower": {
@@ -176,7 +182,7 @@
   "${modID}:EnergyRegenPower": {
     "NAME": "Energy Regen",
     "DESCRIPTIONS": [
-      "At the start of your turn, gain #b%d%% NP."
+      "At the start of your turn, gain #b%d%% #yNP."
     ]
   },
   "${modID}:EvasionPower": {
@@ -298,7 +304,7 @@
   "${modID}:NPDamagePower": {
     "NAME": "NP Damage",
     "DESCRIPTIONS": [
-      "Increases Noble Phantasm attack damage by #b%d %."
+      "Increases #yNoble #yPhantasm attack damage by #b%d%% ."
     ]
   },
   "${modID}:DazzlingMoonPower": {
@@ -361,7 +367,7 @@
   "${modID}:ForcedNPCardPower": {
     "NAME": "Noble Phantasm Card",
     "DESCRIPTIONS": [
-      "Whenever your NP gauge is at or above #b100%, add a #y%s into your hand."
+      "Whenever your NP is at or above #b100%, add a #y%s into your hand."
     ]
   },
   "${modID}:QuickPerformancePower": {
@@ -396,20 +402,20 @@
     ]
   },
   "${modID}:StarPower": {
-    "NAME": "Star (Critical Damage)",
+    "NAME": "Star",
     "DESCRIPTIONS": [
       "When you obtain #b10 #yStars, deal #b100%% additional #ynon-Noble #yPhantasm Attack damage and reduce #b10.",
       "When you obtain #b10 #yStars, deal #b100%% additional #ynon-Noble #yPhantasm Attack damage and reduce #b10. Now you can deal #yCritical Damage!"
     ]
   },
   "${modID}:CriticalDamageUpPower": {
-    "NAME": "Critical Damage",
+    "NAME": "Critical Damage Up",
     "DESCRIPTIONS": [
-      "Increases #yCritical Damage by #b%d %."
+      "Increases #yCritical Damage by #b%d%% ."
     ]
   },
   "${modID}:LoseCritDamagePower": {
-    "NAME": "Lose Critical Damage",
+    "NAME": "Lose Critical Damage Up",
     "DESCRIPTIONS": [
       "Whenever you deal #yCritical damage, lose #b%d%% #yCritical."
     ]
@@ -480,10 +486,10 @@
       "You deal #b%d%% more damage to enemies with Terror this turn."
     ]
   },
-  "{modID}:IndomitablePower": {
+  "${modID}:IndomitablePower": {
     "NAME": "Indomitable",
     "DESCRIPTIONS": [
-      "When you would next die, Gain #b%d Strength。"
+      "When #yGuts trigger, Gain #b%d Strength。"
     ]
   },
   "${modID}:NonStackableGutsPower": {
@@ -509,7 +515,7 @@
   "${modID}:StarHunterPower": {
     "NAME": "Star Hunter",
     "DESCRIPTIONS": [
-      "For the next #b%d #yCriticals, increase #yCritical Damage by #b%d%%."
+      "For the next #b%d #yCriticals, increase #yCritical Damage by #b%d%% ."
     ]
   },
   "${modID}:ForeignerPower": {

@@ -78,7 +78,7 @@
   },
   "${modID}:AbsNoblePhantasmCard": {
     "TEXT": [
-      "Insufficient NP gauge."
+      "Insufficient NP."
     ]
   },
   "${modID}:AlterOption": {
